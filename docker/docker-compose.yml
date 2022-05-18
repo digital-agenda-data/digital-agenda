@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: postgres:14.2
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=digital_agenda
+      - POSTGRES_USER=digital_agenda
+      - POSTGRES_PASSWORD=digital_agenda
+    expose:
+      - 5432
+
+  app-http:
+    image: digital-agenda-app
+    volumes:
+      - static_files:/static
+      - bulk_downloads:/bulk
+    expose:
+      - "8001"
+    env_file:
+      - "${DOCKER_ENV_FILE}"
+    depends_on:
+      - db
+
+  app-ws:
+    image: digital-agenda-app
+    volumes:
+      - bulk_downloads:/bulk
+    command: ["/venv/bin/daphne", "digital_agenda.site.asgi:application", "-b", "0.0.0.0", "-p", "8002"]
+    expose:
+      - "8002"
+    env_file:
+      - "${DOCKER_ENV_FILE}"
+    depends_on:
+      - db
+
+  nginx:
+    image: digital-agenda-nginx
+    volumes:
+      - static_files:/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - app-http
+      - app-ws
+
+volumes:
+  postgres_data:
+  static_files:
+  bulk_downloads:

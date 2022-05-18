@@ -1,0 +1,126 @@
+{
+  "isoc_bde15dec": {
+    "indic_is": [
+      "e_crman",
+      "e_ebuy"
+    ]
+  },
+  "isoc_bde15ee": {
+    "indic_is": [
+      "e_igov",
+      "e_igov2",
+      "e_igov3",
+      "e_igovpr",
+      "e_igov2pr",
+      "e_igovrt",
+      "e_igov2rt"
+    ]
+  },
+  "isoc_cimobe_use": {
+    "indic_is": [
+      "e_empmd1_gt20"
+    ]
+  },
+  "isoc_bde15dip": {
+    "indic_is": [
+      "e_erp1",
+      "e_sisorp"
+    ]
+  },
+  "isoc_bde15disc": {
+    "indic_is": [
+      "e_ade",
+      "e_inv",
+      "e_inv4s_ap",
+      "e_invsndap",
+      "e_inv3sbg_ap_gt0",
+      "e_sisc"
+    ]
+  },
+  "isoc_bde15dth": {
+    "indic_is": [
+      "e_rfac",
+      "e_rfac1",
+      "e_rfid",
+      "e_rfid1"
+    ]
+  },
+  "isoc_ci_eu_en2": {
+    "indic_is": [
+      "e_broad",
+      "e_pmd",
+      "e_empmd1_gt0",
+      "e_empmd2_gt0",
+      "e_empmd2_gt20",
+      "e_eturn",
+      "e_it_mext",
+      "e_itsp2",
+      "e_itspvac2",
+      "e_pmd",
+      "e_rfpsas1",
+      "e_secpol1",
+      "e_sm_any",
+      "e_sm_ge2",
+      "e_web",
+      "p_empmd",
+      "p_empmd1",
+      "p_empmd2",
+      "p_iacc3g"
+    ]
+  },
+  "isoc_ci_in_en2": {
+    "indic_is": [
+      "e_ra"
+    ]
+  },
+  "isoc_ciweb": {
+    "indic_is": [
+      "e_webf2"
+    ]
+  },
+  "isoc_cicce_use": {
+    "indic_is": [
+      "e_cc",
+      "e_cc_ge_me",
+      "e_cc1_si"
+    ]
+  },
+  "isoc_cismt": {
+    "indic_is": [
+      "e_ads",
+      "e_ads_loc",
+      "e_ads_trk"
+    ]
+  },
+  "isoc_e_dii": {
+    "indic_is": [
+      "e_di3_hi",
+      "e_di3_lo",
+      "e_di3_vhi",
+      "e_di3_vlo"
+    ]
+  },
+  "isoc_eb_ai": {
+    "indic_is": [
+      "e_ai_tany"
+    ]
+  },
+  "isoc_eb_bd": {
+    "indic_is": [
+      "e_bda",
+      "e_bd"
+    ]
+  },
+  "isoc_ec_eseln2": {
+    "indic_is": [
+      "e_aeseu",
+      "e_aws_gt1_b2c_gt10ws",
+      "e_esell"
+    ]
+  },
+  "isoc_ske_ittn2": {
+    "indic_is": [
+      "e_itt2"
+    ]
+  }
+}

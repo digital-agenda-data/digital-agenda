@@ -1,0 +1,13 @@
+FROM python:3.9.10-slim
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PIP_NO_CACHE_DIR=1
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
+
+RUN mkdir /static
+
+RUN python -m venv /venv
+RUN . /venv/bin/activate && \
+    pip install --upgrade pip setuptools
+RUN echo 'source /venv/bin/activate' >> ~/.bashrc
