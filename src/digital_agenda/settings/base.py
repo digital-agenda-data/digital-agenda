@@ -54,6 +54,7 @@ THIRD_PARTY_APPS = [
     "health_check.db",
     "health_check.cache",
     "health_check.storage",
+    "drf_spectacular",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
@@ -196,8 +197,14 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.JSONRenderer",
         "rest_framework.renderers.BrowsableAPIRenderer",
     ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Digital Agenda Data Visualization Tool API",
+    "VERSION": "",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
@@ -209,7 +216,7 @@ SIMPLE_JWT = {
     "VERIFYING_KEY": None,
     "AUDIENCE": None,
     "ISSUER": None,
-    "AUTH_HEADER_TYPES": ("Bearer", "JWT"),
+    "AUTH_HEADER_TYPES": ("Bearer",),
     "USER_ID_FIELD": "id",
     "USER_ID_CLAIM": "user_id",
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),

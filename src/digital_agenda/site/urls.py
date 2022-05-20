@@ -7,6 +7,11 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 
 
 api_urlpatterns = [
@@ -17,7 +22,18 @@ api_urlpatterns = [
 
 urlpatterns = [
     path("api/auth/", include("dj_rest_auth.urls")),
-    path("api/", include((api_urlpatterns, "api"))),
+    path("api/v1/", include((api_urlpatterns, "api"), namespace="v1")),
+    path("api/v1/schema/", SpectacularAPIView.as_view(api_version="v1"), name="schema"),
+    path(
+        "api/v1/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path(
+        "api/v1/schema/redoc/",
+        SpectacularRedocView.as_view(url_name="schema"),
+        name="redoc",
+    ),
     path("ht/", include("health_check.urls")),
     path("ws/ht/", include("health_check.urls", namespace="ws-ht")),
     path("dashboard/", include("django_sql_dashboard.urls")),

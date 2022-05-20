@@ -10,7 +10,7 @@ DJANGO_DEBUG_TOOLBAR = get_bool_env_var("DJANGO_DEBUG_TOOLBAR", "yes")
 
 INTERNAL_IPS = ["127.0.0.1"]
 
-INSTALLED_APPS += ["django_extensions", "drf_spectacular"]
+INSTALLED_APPS += ["django_extensions"]
 if DJANGO_DEBUG_TOOLBAR:
     INSTALLED_APPS += ["debug_toolbar"]
 
