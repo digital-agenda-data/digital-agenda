@@ -26,21 +26,22 @@ class BreakdownSerializer(BaseDimensionSerializer):
         model = Breakdown
 
 
-class BreakdownGroupSerializer(serializers.ModelSerializer):
+class BreakdownGroupListSerializer(BaseDimensionSerializer):
+    class Meta(BaseDimensionSerializer.Meta):
+        model = BreakdownGroup
+
+
+class BreakdownGroupDetailSerializer(BreakdownGroupListSerializer):
 
     breakdowns = BreakdownSerializer(
         many=True,
         read_only=True,
     )
 
-    class Meta:
-        model = BreakdownGroup
-        fields = (
-            "code",
-            "label",
-            "alt_label",
+    class Meta(BreakdownGroupListSerializer.Meta):
+        fields = BreakdownGroupListSerializer.Meta.fields + [
             "breakdowns",
-        )
+        ]
 
 
 class UnitSerializer(BaseDimensionSerializer):
@@ -58,20 +59,20 @@ class PeriodSerializer(BaseDimensionSerializer):
         model = Period
 
 
-class BaseIndicatorSerializer(BaseDimensionSerializer):
+class IndicatorListSerializer(BaseDimensionSerializer):
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
 
 
-class IndicatorSerializer(BaseIndicatorSerializer):
+class IndicatorDetailSerializer(IndicatorListSerializer):
 
     breakdowns = BreakdownSerializer(many=True, read_only=True)
     units = UnitSerializer(many=True, read_only=True)
     countries = CountrySerializer(many=True, read_only=True)
     periods = PeriodSerializer(many=True, read_only=True)
 
-    class Meta(BaseIndicatorSerializer.Meta):
-        fields = BaseIndicatorSerializer.Meta.fields + [
+    class Meta(IndicatorListSerializer.Meta):
+        fields = IndicatorListSerializer.Meta.fields + [
             "definition",
             "note",
             "breakdowns",
@@ -81,9 +82,14 @@ class IndicatorSerializer(BaseIndicatorSerializer):
         ]
 
 
-class IndicatorGroupSerializer(serializers.ModelSerializer):
+class IndicatorGroupListSerializer(BaseDimensionSerializer):
+    class Meta(BaseDimensionSerializer.Meta):
+        model = IndicatorGroup
 
-    indicators = BaseIndicatorSerializer(
+
+class IndicatorGroupDetailSerializer(serializers.ModelSerializer):
+
+    indicators = IndicatorListSerializer(
         many=True,
         read_only=True,
     )

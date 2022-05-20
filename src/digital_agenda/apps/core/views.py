@@ -15,9 +15,12 @@ from .models import (
     Fact,
 )
 from .serializers import (
-    IndicatorGroupSerializer,
-    IndicatorSerializer,
-    BreakdownGroupSerializer,
+    IndicatorGroupListSerializer,
+    IndicatorGroupDetailSerializer,
+    IndicatorListSerializer,
+    IndicatorDetailSerializer,
+    BreakdownGroupListSerializer,
+    BreakdownGroupDetailSerializer,
     BreakdownSerializer,
     UnitSerializer,
     CountrySerializer,
@@ -31,53 +34,165 @@ class CodeLookupMixin:
     lookup_url_kwarg = "code"
 
 
-class IndicatorGroupViewSet(viewsets.ReadOnlyModelViewSet, CodeLookupMixin):
+class CodeInFilter(filters.BaseInFilter, filters.CharFilter):
+    pass
+
+
+class BaseCodeFilterSet(filters.FilterSet):
+    code_in = CodeInFilter(field_name="code", lookup_expr="in")
+
+    class Meta:
+        fields = ["code_in"]
+
+
+class IndicatorGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = IndicatorGroup
-    serializer_class = IndicatorGroupSerializer
     queryset = IndicatorGroup.objects.order_by("code").all()
+    pagination_class = None
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return IndicatorGroupListSerializer
+
+        return IndicatorGroupDetailSerializer
+
+
+class IndicatorCodeFilterSet(BaseCodeFilterSet):
+    class Meta(BaseCodeFilterSet.Meta):
+        model = Indicator
 
 
 class IndicatorViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Indicator
-    serializer_class = IndicatorSerializer
     queryset = Indicator.objects.order_by("code").all()
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = IndicatorCodeFilterSet
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return IndicatorListSerializer
+
+        return IndicatorDetailSerializer
+
+
+class IndicatorGroupIndicatorViewSet(IndicatorViewSet):
+    pagination_class = None
+
+    def get_queryset(self):
+        return (
+            self.model.objects.filter(
+                groups__code__in=[self.kwargs["indicator_group_code"]]
+            )
+            .order_by("code")
+            .all()
+        )
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return IndicatorListSerializer
+
+        return IndicatorDetailSerializer
 
 
 class BreakdownGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = BreakdownGroup
-    serializer_class = BreakdownGroupSerializer
     queryset = BreakdownGroup.objects.order_by("code").all()
+    pagination_class = None
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return BreakdownGroupListSerializer
+
+        return BreakdownGroupDetailSerializer
+
+
+class BreakdownCodeFilterSet(BaseCodeFilterSet):
+    class Meta(BaseCodeFilterSet.Meta):
+        model = Breakdown
 
 
 class BreakdownViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Breakdown
     serializer_class = BreakdownSerializer
     queryset = Breakdown.objects.order_by("code").all()
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = BreakdownCodeFilterSet
+
+
+class BreakdownGroupBreakdownViewSet(BreakdownViewSet):
+    pagination_class = None
+
+    def get_queryset(self):
+        return (
+            self.model.objects.filter(
+                groups__code__in=[self.kwargs["breakdown_group_code"]]
+            )
+            .order_by("code")
+            .all()
+        )
+
+
+class IndicatorFilteredMixin:
+    """
+    Mixin for queryset filtering based on indicator code URL param.
+    Used for units/countries/periods.
+    """
+
+    def get_queryset(self):
+        return self.model.objects.filter(  # noqa
+            indicators__code__in=[self.kwargs["indicator_code"]]  # noqa
+        )
+
+
+class UnitCodeFilterSet(BaseCodeFilterSet):
+    class Meta(BaseCodeFilterSet.Meta):
+        model = Unit
 
 
 class UnitViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Unit
     serializer_class = UnitSerializer
     queryset = Unit.objects.order_by("code").all()
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = UnitCodeFilterSet
+
+
+class IndicatorUnitViewSet(IndicatorFilteredMixin, UnitViewSet):
+    pagination_class = None
+
+
+class CountryCodeFilterSet(BaseCodeFilterSet):
+    class Meta(BaseCodeFilterSet.Meta):
+        model = Country
 
 
 class CountryViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Country
     serializer_class = CountrySerializer
     queryset = Country.objects.order_by("code").all()
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = CountryCodeFilterSet
+
+
+class IndicatorCountryViewSet(IndicatorFilteredMixin, CountryViewSet):
     pagination_class = None
 
-    def get_queryset(self):
-        print(self.kwargs["indicator_code"])
-        return self.model.objects.filter(
-            indicators__code__in=[self.kwargs["indicator_code"]]
-        )
+
+class PeriodCodeFilterSet(BaseCodeFilterSet):
+    class Meta(BaseCodeFilterSet.Meta):
+        model = Period
 
 
 class PeriodViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Period
     serializer_class = PeriodSerializer
     queryset = Period.objects.order_by("code").all()
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = PeriodCodeFilterSet
+
+
+class IndicatorPeriodViewSet(IndicatorFilteredMixin, PeriodViewSet):
+    pagination_class = None
 
 
 class FactsPerCountryFilter(filters.FilterSet):
