@@ -17,6 +17,7 @@ django-sql-dashboard
 djangorestframework
 djangorestframework-simplejwt
 drf-nested-routers
+drf-spectacular
 httpx
 orjson
 pandas

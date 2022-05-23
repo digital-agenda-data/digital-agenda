@@ -5,7 +5,6 @@ coverage
 django-debug-toolbar
 django-extensions
 django-request-logging
-drf-spectacular
 flake8
 ipdb
 ipython
