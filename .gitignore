@@ -58,7 +58,7 @@ docs/_build/
 
 # Environments
 .env
-.venv
+.venv*
 .envrc
 
 # Runtime data
