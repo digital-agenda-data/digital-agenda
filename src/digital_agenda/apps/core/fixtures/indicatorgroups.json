@@ -1,0 +1,218 @@
+[
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "audiovisual",
+      "label": "Audiovisual & media content",
+      "display_order": 45
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "back",
+      "label": "Background variables",
+      "display_order": 200
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "bbquality",
+      "label": "Broadband speeds and prices",
+      "display_order": 30
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "broadband",
+      "label": "Broadband take-up and coverage",
+      "display_order": 20
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "desi",
+      "label": "DESI Stacked",
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "desi_dim",
+      "label": "DESI Dimensions",
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "desi_ind",
+      "label": "DESI Individual Indicators",
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "desi_sliders",
+      "label": "DESI Overall Index - weight sliders",
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "desi_subdim",
+      "label": "DESI Sub-dimensions",
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "desi_total",
+      "label": "DESI Overall Index",
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "discontinued",
+      "label": "Discontinued indicators",
+      "display_order": 900
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ebusiness",
+      "label": "eBusiness",
+      "display_order": 80
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ecommerce",
+      "label": "eCommerce",
+      "display_order": 70
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "egovernment",
+      "label": "eGovernment",
+      "display_order": 60
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ehealth",
+      "label": "eHealth",
+      "display_order": 100
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ict-edu",
+      "label": "ICT in Education",
+      "display_order": 95
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ict-sector",
+      "label": "ICT sector",
+      "display_order": 110
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ict-skills",
+      "label": "Digital Skills",
+      "display_order": 90
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "ict-specialist",
+      "label": "ICT Specialist",
+      "display_order": 92
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "internet-services",
+      "label": "Take up of internet services",
+      "display_order": 50
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "internet-usage",
+      "label": "Internet usage",
+      "display_order": 40
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "mobile",
+      "label": "Mobile market",
+      "display_order": 35
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "research-and-development",
+      "label": "EU Research and Development Programs",
+      "display_order": 120
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "research_einfra",
+      "label": "Research e-Infrastructures",
+      "display_order": 121
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "security-privacy",
+      "label": "Security and Privacy",
+      "display_order": 105
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "telecom",
+      "label": "Telecom sector",
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.indicatorgroup",
+    "fields": {
+      "code": "wid",
+      "label": "Women in Digital",
+      "display_order": 91
+    }
+  }
+]

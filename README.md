@@ -36,6 +36,40 @@ Note that `createsuperuser` can rely on envars `DJANGO_SUPERUSER_EMAIL` & `DJANG
 django-admin createsuperuser --noinput
 ```
 
+## Initial metadata
+
+The `core` app (`digital_agenda.apps.core`) provides fixtures for seeding:
+- data sources
+- indicator groups
+- indicators
+- breakdown groups
+- breakdowns
+
+To import these fixtures (order matters):
+
+```shell
+django-admin loaddata datasources
+django-admin loaddata indicatorgroups
+django-admin loaddata indicators
+django-admin loaddata indicatorgrouplinks
+django-admin loaddata breakdowngroups
+django-admin loaddata breakdowns
+django-admin loaddata breakdowngrouplinks
+```
+
+Alternative fixtures can be produced from Excel exports of code lists from the previous version:
+```shell
+python scripts/mk_data_sources_fixture.py source.xls
+python scripts/mk_indicator_groups_fixture.py indicator-group.xls
+python scripts/mk_indicators_fixture.py indicator.xls --groups-excel-file=indicator-group.xls --data-sources-excel-file=source.xls
+python scripts/mk_breakdown_groups_fixture.py breakdown-group.xls 
+python scripts/mk_breakdowns_fixture.py breakdown.xls --groups-excel-file=breakdown-group.xls
+```
+The scripts for the indicators and breakdowns fixtures also produce the "links" fixtures with their respective groups.
+For indicators, integrity checks can be performed against the indicator groups and data sources Excel files. 
+For breakdowns, validation of the group can be done versus the breakdown groups Excel file.  
+In both cases, warnings are issued for unknown references, and those association records are **not** included in the links fixture.
+
 ## Eurostat data import
 
 ### Bulk Metadata

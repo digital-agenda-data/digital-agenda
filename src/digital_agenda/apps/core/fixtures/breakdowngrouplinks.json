@@ -1,0 +1,4262 @@
+[
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c10_12"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c10_18"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c13_15"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c16_18"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c19_23"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c19_23"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c24_25"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c24_25"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c26"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c26_33"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c27_28"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c29_30"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_c31_33"
+      ],
+      "group": [
+        "manuf"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_d35_e39"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_f41_43"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_g45"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_g46"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_g47"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_h49_53"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_i55_56"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 11
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_j58_60"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 12
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_j61"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 13
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_j62_63"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 14
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_l68"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 15
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_m69_74"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 16
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_n77_82"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 17
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "10_s951"
+      ],
+      "group": [
+        "econsector"
+      ],
+      "display_order": 18
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "1500_mhz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "1800_mhz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "1m_websites"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "261"
+      ],
+      "group": [
+        "byictsector6subsec"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "261to264"
+      ],
+      "group": [
+        "byictsector2subsec"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "261to264_582_61_62_631_951"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "262"
+      ],
+      "group": [
+        "byictsector6subsec"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "263"
+      ],
+      "group": [
+        "byictsector6subsec"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "264"
+      ],
+      "group": [
+        "byictsector6subsec"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "2_6_ghz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "2_ghz_paired"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "3_4_ghz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "3_6_ghz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "582_62_631_951"
+      ],
+      "group": [
+        "byictsector6subsec"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "5g_pb"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "61"
+      ],
+      "group": [
+        "byictsector6subsec"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "61_582_62_631_951"
+      ],
+      "group": [
+        "byictsector2subsec"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "700_mhz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "800_mhz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "900_mhz"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "all_dch"
+      ],
+      "group": [
+        "hhbytype"
+      ],
+      "display_order": 46
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "all_ndch"
+      ],
+      "group": [
+        "hhbytype"
+      ],
+      "display_order": 47
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "bus_startup"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cable"
+      ],
+      "group": [
+        "byfbbtech"
+      ],
+      "display_order": 61
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cb_eu_for"
+      ],
+      "group": [
+        "bycbirth"
+      ],
+      "display_order": 27
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cb_ext_eu"
+      ],
+      "group": [
+        "bycbirth"
+      ],
+      "display_order": 28
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cb_for"
+      ],
+      "group": [
+        "bycbirth"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cb_nat"
+      ],
+      "group": [
+        "bycbirth"
+      ],
+      "display_order": 26
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cc_eu_for"
+      ],
+      "group": [
+        "byccitizen"
+      ],
+      "display_order": 30
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cc_ext_eu"
+      ],
+      "group": [
+        "byccitizen"
+      ],
+      "display_order": 31
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cc_for"
+      ],
+      "group": [
+        "byccitizen"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cc_nat"
+      ],
+      "group": [
+        "byccitizen"
+      ],
+      "display_order": 29
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_a"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 12
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_all"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 11
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_b"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 13
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_c"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 14
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_d"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 15
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_e"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 16
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_f"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 17
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_g"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 18
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_h"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 19
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cnect_r"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 20
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "csk_hi"
+      ],
+      "group": [
+        "byskills"
+      ],
+      "display_order": 35
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "csk_lo"
+      ],
+      "group": [
+        "byskills"
+      ],
+      "display_order": 37
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "csk_me"
+      ],
+      "group": [
+        "byskills"
+      ],
+      "display_order": 36
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "cskx"
+      ],
+      "group": [
+        "byskills"
+      ],
+      "display_order": 38
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_4g"
+      ],
+      "group": [
+        "desi_c_mbb"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_5g"
+      ],
+      "group": [
+        "desi_c_mbb"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_5gc"
+      ],
+      "group": [
+        "desi_c_mbb"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_bbpi"
+      ],
+      "group": [
+        "desi_c_bbpi"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_c_bbpi"
+      ],
+      "group": [
+        "desi_conn"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_c_fbbc"
+      ],
+      "group": [
+        "desi_conn"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_c_fbbtc"
+      ],
+      "group": [
+        "desi_conn"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_c_mbb"
+      ],
+      "group": [
+        "desi_conn"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_conn"
+      ],
+      "group": [
+        "desi"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps"
+      ],
+      "group": [
+        "desi"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps_egov"
+      ],
+      "group": [
+        "desi_dps"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps_egovuser"
+      ],
+      "group": [
+        "desi_dps_egov"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps_opendata"
+      ],
+      "group": [
+        "desi_dps_egov"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps_prefform"
+      ],
+      "group": [
+        "desi_dps_egov"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps_psbiz"
+      ],
+      "group": [
+        "desi_dps_egov"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_dps_pscit"
+      ],
+      "group": [
+        "desi_dps_egov"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_fbbc"
+      ],
+      "group": [
+        "desi_c_fbbc"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_fbbtc"
+      ],
+      "group": [
+        "desi_c_fbbtc"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_gbpstc"
+      ],
+      "group": [
+        "desi_c_fbbtc"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc"
+      ],
+      "group": [
+        "desi"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_abds"
+      ],
+      "group": [
+        "desi_hc_bsu"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_abss"
+      ],
+      "group": [
+        "desi_hc_bsu"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_asd"
+      ],
+      "group": [
+        "desi_hc"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_bds"
+      ],
+      "group": [
+        "desi_hc_bsu"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_bsu"
+      ],
+      "group": [
+        "desi_hc"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_entict"
+      ],
+      "group": [
+        "desi_hc_asd"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_fictspec"
+      ],
+      "group": [
+        "desi_hc_asd"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_ictg"
+      ],
+      "group": [
+        "desi_hc_asd"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_hc_ictspec"
+      ],
+      "group": [
+        "desi_hc_asd"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt"
+      ],
+      "group": [
+        "desi"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_ai"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_bigdat"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_cloud"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_di"
+      ],
+      "group": [
+        "desi_idt"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_dtb"
+      ],
+      "group": [
+        "desi_idt"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_ecomm"
+      ],
+      "group": [
+        "desi_idt"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_ecomturn"
+      ],
+      "group": [
+        "desi_idt_ecomm"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_einv"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_eis"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_ictsust"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_sellcb"
+      ],
+      "group": [
+        "desi_idt_ecomm"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_smedi"
+      ],
+      "group": [
+        "desi_idt_di"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_smeso"
+      ],
+      "group": [
+        "desi_idt_ecomm"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_idt_socmed"
+      ],
+      "group": [
+        "desi_idt_dtb"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_mbbtu"
+      ],
+      "group": [
+        "desi_c_mbb"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_total"
+      ],
+      "group": [
+        "desi_totals"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_ufbbtu"
+      ],
+      "group": [
+        "desi_c_fbbtc"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "desi_vhcnc"
+      ],
+      "group": [
+        "desi_c_fbbc"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ds_a_basic"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ds_b_basic"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ds_basic"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ds_no"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "dsk_ab"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "dsk_b"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "dsk_x"
+      ],
+      "group": [
+        "digskill_level"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_cc_hi"
+      ],
+      "group": [
+        "byccsophistication"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_cc_lo"
+      ],
+      "group": [
+        "byccsophistication"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_cc_me"
+      ],
+      "group": [
+        "byccsophistication"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_di_hi"
+      ],
+      "group": [
+        "bydigint2015"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_di_lo"
+      ],
+      "group": [
+        "bydigint2015"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_di_vhi"
+      ],
+      "group": [
+        "bydigint2015"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_di_vlo"
+      ],
+      "group": [
+        "bydigint2015"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1a_uc_oa"
+      ],
+      "group": [
+        "e_gov_1_uc"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1a_ucg_oa"
+      ],
+      "group": [
+        "e_gov_1_ucg"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1b_uc_mf"
+      ],
+      "group": [
+        "e_gov_1_uc"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1b_ucg_us"
+      ],
+      "group": [
+        "e_gov_1_ucg"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1c_uc_us"
+      ],
+      "group": [
+        "e_gov_1_uc"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1c_ucg_mf"
+      ],
+      "group": [
+        "e_gov_1_ucg"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1d_ucg_eu"
+      ],
+      "group": [
+        "e_gov_1_ucg"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_1e_ucg_su"
+      ],
+      "group": [
+        "e_gov_1_ucg"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2a_tg_sd"
+      ],
+      "group": [
+        "e_gov_2_tg"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2a_tr_sd"
+      ],
+      "group": [
+        "e_gov_2_tr"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2b_tg_po"
+      ],
+      "group": [
+        "e_gov_2_tg"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2c_tg_pd"
+      ],
+      "group": [
+        "e_gov_2_tg"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2c_tr_pd"
+      ],
+      "group": [
+        "e_gov_2_tr"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2c_tr_sd"
+      ],
+      "group": [
+        "e_gov_2_tr"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_2x_tr_po"
+      ],
+      "group": [
+        "e_gov_2_tr"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3a_cm_oa"
+      ],
+      "group": [
+        "e_gov_3_cm"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3a_ke_eid"
+      ],
+      "group": [
+        "e_gov_3_ke"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3b_cm_us"
+      ],
+      "group": [
+        "e_gov_3_cm"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3b_ke_edoc"
+      ],
+      "group": [
+        "e_gov_3_ke"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3c_cm_eidcb"
+      ],
+      "group": [
+        "e_gov_3_cm"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3c_ke_as"
+      ],
+      "group": [
+        "e_gov_3_ke"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3d_cm_edoccb"
+      ],
+      "group": [
+        "e_gov_3_cm"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3d_ke_dp"
+      ],
+      "group": [
+        "e_gov_3_ke"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3e_cm_eu"
+      ],
+      "group": [
+        "e_gov_3_cm"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_3f_cm_su"
+      ],
+      "group": [
+        "e_gov_3_cm"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4a_bm_oa"
+      ],
+      "group": [
+        "e_gov_4_bm"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4a_cb_oa"
+      ],
+      "group": [
+        "e_gov_4_cb"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4b_bm_us"
+      ],
+      "group": [
+        "e_gov_4_bm"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4b_cb_us"
+      ],
+      "group": [
+        "e_gov_4_cb"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4c_bm_eidcb"
+      ],
+      "group": [
+        "e_gov_4_bm"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4c_cb_eid"
+      ],
+      "group": [
+        "e_gov_4_cb"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4d_bm_edoccb"
+      ],
+      "group": [
+        "e_gov_4_bm"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4d_cb_edoc"
+      ],
+      "group": [
+        "e_gov_4_cb"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4e_bm_eu"
+      ],
+      "group": [
+        "e_gov_4_bm"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_4f_bm_su"
+      ],
+      "group": [
+        "e_gov_4_bm"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_5a_ke_eid"
+      ],
+      "group": [
+        "e_gov_5_ke"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_5b_ke_edoc"
+      ],
+      "group": [
+        "e_gov_5_ke"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_5c_ke_as"
+      ],
+      "group": [
+        "e_gov_5_ke"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_5d_ke_dp"
+      ],
+      "group": [
+        "e_gov_5_ke"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_5e_ke_esafe"
+      ],
+      "group": [
+        "e_gov_5_ke"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_5f_ke_sso"
+      ],
+      "group": [
+        "e_gov_5_ke"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_1"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_2"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_3"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_4"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_5"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_6"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_7"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_8"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_events_9"
+      ],
+      "group": [
+        "e_gov_events"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_scope_1"
+      ],
+      "group": [
+        "e_gov_scope"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "e_gov_scope_2"
+      ],
+      "group": [
+        "e_gov_scope"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ec_all"
+      ],
+      "group": [
+        "cnect_directorates"
+      ],
+      "display_order": 22
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ec_all"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 21
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "egov_le_bus"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "egov_life_events"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "einfra"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 29
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "emp_con_prm"
+      ],
+      "group": [
+        "workingscheme"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "emp_con_tmp"
+      ],
+      "group": [
+        "workingscheme"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "emp_wkt_ft"
+      ],
+      "group": [
+        "workingscheme"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "emp_wkt_pt"
+      ],
+      "group": [
+        "workingscheme"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "empl_une"
+      ],
+      "group": [
+        "labour_force"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ent_all_xfin"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 57
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ent_l_xfin"
+      ],
+      "group": [
+        "byentsize"
+      ],
+      "display_order": 59
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ent_l_xfin"
+      ],
+      "group": [
+        "byentsize_s_m_l"
+      ],
+      "display_order": 62
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ent_m_xfin"
+      ],
+      "group": [
+        "byentsize_s_m_l"
+      ],
+      "display_order": 61
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ent_s_xfin"
+      ],
+      "group": [
+        "byentsize_s_m_l"
+      ],
+      "display_order": 60
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ent_sm_xfin"
+      ],
+      "group": [
+        "byentsize"
+      ],
+      "display_order": 58
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_events"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_exarrange"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_formats"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_implem"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_localpsi"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_practice"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_pricing"
+      ],
+      "group": [
+        "epsi_dimensions"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "epsiscore_total"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "f"
+      ],
+      "group": [
+        "bygender"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "f_y16_74"
+      ],
+      "group": [
+        "bygender"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "family"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "fttx"
+      ],
+      "group": [
+        "byfbbtech"
+      ],
+      "display_order": 62
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "gen_admin_move"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "gen_pract"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "goods"
+      ],
+      "group": [
+        "bytypeproduct"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "grade11gen"
+      ],
+      "group": [
+        "byedugrade"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "grade11voc"
+      ],
+      "group": [
+        "byedugrade"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "grade4"
+      ],
+      "group": [
+        "byedugrade"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "grade8"
+      ],
+      "group": [
+        "byedugrade"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hh_deg1"
+      ],
+      "group": [
+        "bydensity"
+      ],
+      "display_order": 48
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hh_deg2"
+      ],
+      "group": [
+        "bydensity"
+      ],
+      "display_order": 49
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hh_deg3"
+      ],
+      "group": [
+        "bydensity"
+      ],
+      "display_order": 50
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hh_no1"
+      ],
+      "group": [
+        "byregion"
+      ],
+      "display_order": 52
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hh_o1"
+      ],
+      "group": [
+        "byregion"
+      ],
+      "display_order": 51
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hh_total"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 41
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hhi_q1"
+      ],
+      "group": [
+        "hhbyiq"
+      ],
+      "display_order": 42
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hhi_q2"
+      ],
+      "group": [
+        "hhbyiq"
+      ],
+      "display_order": 43
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hhi_q3"
+      ],
+      "group": [
+        "hhbyiq"
+      ],
+      "display_order": 44
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "hhi_q4"
+      ],
+      "group": [
+        "hhbyiq"
+      ],
+      "display_order": 45
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "i0_2"
+      ],
+      "group": [
+        "byedu"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "i0_4"
+      ],
+      "group": [
+        "byedu"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "i3_4"
+      ],
+      "group": [
+        "byedu"
+      ],
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "i5_8"
+      ],
+      "group": [
+        "byedu"
+      ],
+      "display_order": 11
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_dch"
+      ],
+      "group": [
+        "childrenhh"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_deg1"
+      ],
+      "group": [
+        "bydensity"
+      ],
+      "display_order": 21
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_deg2"
+      ],
+      "group": [
+        "bydensity"
+      ],
+      "display_order": 22
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_deg3"
+      ],
+      "group": [
+        "bydensity"
+      ],
+      "display_order": 23
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_no1"
+      ],
+      "group": [
+        "byregion"
+      ],
+      "display_order": 25
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_no_dch"
+      ],
+      "group": [
+        "childrenhh"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_o1"
+      ],
+      "group": [
+        "byregion"
+      ],
+      "display_order": 24
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "ind_total"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_a"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_all"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_b"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_c"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_d"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_e"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_f"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_g"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_h"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "infso_r"
+      ],
+      "group": [
+        "infso_directorates"
+      ],
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "isco_ict"
+      ],
+      "group": [
+        "ictproffession"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "isco_ictx"
+      ],
+      "group": [
+        "ictproffession"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "l_c10_f43"
+      ],
+      "group": [
+        "econsector_size"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "l_c10_s951_xk"
+      ],
+      "group": [
+        "byentsize"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "l_c10_s951_xk"
+      ],
+      "group": [
+        "byentsize_s_m_l"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "l_g45_s951_xk"
+      ],
+      "group": [
+        "econsector_size"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "lose_find_job"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "m"
+      ],
+      "group": [
+        "bygender"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "m_c10_f43"
+      ],
+      "group": [
+        "econsector_size"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "m_c10_s951_xk"
+      ],
+      "group": [
+        "byentsize_s_m_l"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "m_g45_s951_xk"
+      ],
+      "group": [
+        "econsector_size"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "m_y16_74"
+      ],
+      "group": [
+        "bygender"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "men"
+      ],
+      "group": [
+        "bygender"
+      ],
+      "display_order": 11
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "not_assigned"
+      ],
+      "group": [
+        "mhz_bands"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "offer_100_mbps"
+      ],
+      "group": [
+        "bydownloadspeed4"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "offer_12_30_mbps"
+      ],
+      "group": [
+        "bydownloadspeed4"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "offer_30_100_mbps"
+      ],
+      "group": [
+        "bydownloadspeed4"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "offer_30_mbps"
+      ],
+      "group": [
+        "bydownloadspeed"
+      ],
+      "display_order": 56
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "offer_8_12_mbps"
+      ],
+      "group": [
+        "bydownloadspeed4"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "orgclass_hesrec"
+      ],
+      "group": [
+        "byorganizationclass"
+      ],
+      "display_order": 66
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "orgclass_le"
+      ],
+      "group": [
+        "byorganizationclass"
+      ],
+      "display_order": 65
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "orgclass_nil"
+      ],
+      "group": [
+        "byorganizationclass"
+      ],
+      "display_order": 67
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "orgclass_sme"
+      ],
+      "group": [
+        "byorganizationclass"
+      ],
+      "display_order": 64
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "orgclass_total"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 63
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "other_eu_countries"
+      ],
+      "group": [
+        "by_location"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "own_country"
+      ],
+      "group": [
+        "by_location"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "own_drive_car"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "reg_bus_op"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "rest_world"
+      ],
+      "group": [
+        "by_location"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "retir_other"
+      ],
+      "group": [
+        "byemp"
+      ],
+      "display_order": 14
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "rf_0"
+      ],
+      "group": [
+        "byrisk"
+      ],
+      "display_order": 32
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "rf_ge1"
+      ],
+      "group": [
+        "byrisk"
+      ],
+      "display_order": 33
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "rf_ge2"
+      ],
+      "group": [
+        "byrisk"
+      ],
+      "display_order": 34
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "rural_pop"
+      ],
+      "group": [
+        "rural_pop"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "s_c10_f43"
+      ],
+      "group": [
+        "econsector_size"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "s_c10_s951_xk"
+      ],
+      "group": [
+        "byentsize_s_m_l"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "s_g45_s951_xk"
+      ],
+      "group": [
+        "econsector_size"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "sal_self_fam"
+      ],
+      "group": [
+        "byemp"
+      ],
+      "display_order": 11
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "services"
+      ],
+      "group": [
+        "bytypeproduct"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "sm_c10_s951_xk"
+      ],
+      "group": [
+        "byentsize"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "small_claims"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_01"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_02"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_03"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_04"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_05"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_06"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 6
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_07"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 7
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_08"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 8
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_09"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 9
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_10"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_11"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 11
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_12"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 12
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_13"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 13
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_14"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 14
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_15"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 15
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_16"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 16
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_17"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 17
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_18"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 18
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_19"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 19
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_20"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 20
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_21"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 21
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_22_1"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 22
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_22_2"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 23
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_22_3"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 24
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_23"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 25
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_24"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 26
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_25"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 27
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "so_26"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 28
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "speed_10l30"
+      ],
+      "group": [
+        "bydownloadspeed"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "speed_2l10"
+      ],
+      "group": [
+        "bydownloadspeed"
+      ],
+      "display_order": 2
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "speed_30l100"
+      ],
+      "group": [
+        "bydownloadspeed"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "speed_ge100"
+      ],
+      "group": [
+        "bydownloadspeed"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "speed_l2"
+      ],
+      "group": [
+        "bydownloadspeed"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "stud"
+      ],
+      "group": [
+        "byemp"
+      ],
+      "display_order": 13
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "study"
+      ],
+      "group": [
+        "egov_le"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "tot_ict_products"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_fbb"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_mbb"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_mob"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_offers8plus"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 53
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_pop"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_pophh"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_sos"
+      ],
+      "group": [
+        "sos_agg"
+      ],
+      "display_order": 30
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "total_tel"
+      ],
+      "group": [
+        "total"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "une"
+      ],
+      "group": [
+        "byemp"
+      ],
+      "display_order": 12
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "wid_score"
+      ],
+      "group": [
+        "wid_score"
+      ],
+      "display_order": 1
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "women"
+      ],
+      "group": [
+        "bygender"
+      ],
+      "display_order": 10
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "xdsl"
+      ],
+      "group": [
+        "byfbbtech"
+      ],
+      "display_order": 60
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y16_24"
+      ],
+      "group": [
+        "byage3classes"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y16_24"
+      ],
+      "group": [
+        "byage6classes"
+      ],
+      "display_order": 3
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y25_34"
+      ],
+      "group": [
+        "byage6classes"
+      ],
+      "display_order": 16
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y25_54"
+      ],
+      "group": [
+        "byage3classes"
+      ],
+      "display_order": 4
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y25_64"
+      ],
+      "group": [
+        "others"
+      ],
+      "display_order": 91
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y35_44"
+      ],
+      "group": [
+        "byage6classes"
+      ],
+      "display_order": 17
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y45_54"
+      ],
+      "group": [
+        "byage6classes"
+      ],
+      "display_order": 18
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y55_64"
+      ],
+      "group": [
+        "byage6classes"
+      ],
+      "display_order": 19
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y55_74"
+      ],
+      "group": [
+        "byage3classes"
+      ],
+      "display_order": 5
+    }
+  },
+  {
+    "model": "core.breakdowngrouplink",
+    "fields": {
+      "breakdown": [
+        "y65_74"
+      ],
+      "group": [
+        "byage6classes"
+      ],
+      "display_order": 20
+    }
+  }
+]

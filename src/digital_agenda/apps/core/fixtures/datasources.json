@@ -1,0 +1,1212 @@
+[
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "abac",
+      "label": "ABAC",
+      "definition": "ABAC is a transversal, transactional information system allowing for the execution and monitoring of all budgetary and accounting operations by the Commission, an Agency or Institution.",
+      "url": "http://europa.eu/rapid/press-release_MEMO-05-94_en.htm?locale=en",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "bc2020",
+      "label": "Broadband coverage in Europe studies",
+      "definition": "IHS Markit, Omdia, Point Topic and VVA, Broadband coverage in Europe studies",
+      "url": "https://ec.europa.eu/digital-single-market/en/broadband-connectivity",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "bench_gp",
+      "label": "Benchmarking deployment of eHealth among General Practitioners",
+      "definition": "Studies committed by DG Connect to monitor the adoption of eHealth technologies by General Practitioners: 2007, 2013",
+      "url": "https://ec.europa.eu/digital-agenda/en/news/benchmarking-deployment-ehealth-among-general-practitioners-2013-smart-20110033",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "berec_roam",
+      "label": "International Roaming BEREC Benchmark Data Report",
+      "definition": "International Roaming Benchmark Data Report by BEREC - The Body of European Regulators for Electronic Communications",
+      "url": "http://berec.europa.eu/eng/document_register/subject_matter/berec/reports/1159-international-roaming-berec-benchmark-data-report-january-2012-8211-june-2012",
+      "note": "Document date: 28.01.2013 (Document number: BoR (13) 05)."
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "biac",
+      "label": "Broadband Internet Access Cost (BIAC) annual studies",
+      "definition": "Broadband Internet Access Cost (BIAC), annual studies for the EC realised by Van Dijk, covering EU 28 Member States as well as Canada, Iceland, Japan, South Korea, Liechtenstein, FYROM, Norway, State of California, State of Colorado, State of New York, Switzerland and Turkey.",
+      "url": "https://ec.europa.eu/digital-agenda/en/news/study-retail-broadband-access-prices-2013-smart-20100038",
+      "note": "update until feb 2012 data collection"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "capgemini",
+      "label": "eGovernment Benchmarking Reports 2001-2010",
+      "definition": "eGovernment Benchmarking Report, Study for the EC realised by Capgemini (2001-2010 data)",
+      "url": "http://ec.europa.eu/information_society/eeurope/i2010/benchmarking/index_en.htm#e-Government_Benchmarking_Reports",
+      "note": "Extraction 20 May 2011"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "cnect-estat",
+      "label": "Pilot of new Digital Skills Indicators",
+      "definition": "Pilot work carried out by DG CONNECT/F4 in relation to action 62 of the Digital Agenda to propose \"EU-wide indicators of digital competence\". These indicators have been piloted on the 2012 microdata from the Eurostat community survey on ICT usage by Households/Individuals. It is proposed for regular implementation starting with the 2015 survey.",
+      "url": "http://ec.europa.eu/information_society/newsroom/cf/dae/document.cfm?action=display&doc_id=5406",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "cocom",
+      "label": "Communications Committee survey",
+      "definition": "Electronic communications market indicators collected by Commission services, through National Regulatory Authorities, for the Communications Committee (COCOM) - January and July reports.",
+      "url": "http://ec.europa.eu/digital-agenda/about-fast-and-ultra-fast-internet-access",
+      "note": "extraction 22 May 2013"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "cocom_new",
+      "label": "Communications Committee survey",
+      "definition": "European Commission services, through the Communications Committee (COCOM)",
+      "url": "https://ec.europa.eu/digital-single-market/en/broadband-connectivity",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "corda",
+      "label": "CORDA ",
+      "definition": "Common Research Data Warehouse",
+      "url": "http://webcorda.rtd.cec.eu.int/index.cfm?page=index",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_4g",
+      "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_5g",
+      "label": "European Commission services, through the Communications Committee (COCOM)",
+      "definition": "European Commission services, through the Communications Committee (COCOM)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_5gc",
+      "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_bbpi",
+      "label": "Broadband retail prices study, annual studies for the European Commission realised by Empirica",
+      "definition": "Broadband retail prices study, annual studies for the European Commission realised by Empirica",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_dps_egovuser",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals (I_IUGOV12)",
+      "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals (I_IUGOV12)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_dps_opendata",
+      "label": "European Data Portal",
+      "definition": "European Data Portal",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_dps_prefform",
+      "label": "eGovernment Benchmark",
+      "definition": "eGovernment Benchmark",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_dps_psbiz",
+      "label": "eGovernment Benchmark",
+      "definition": "eGovernment Benchmark",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_dps_pscit",
+      "label": "eGovernment Benchmark",
+      "definition": "eGovernment Benchmark",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_fbbc",
+      "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_fbbtc",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals [H_BBFIX]",
+      "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals [H_BBFIX]",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_gbpstc",
+      "label": "European  Commission, through the Communications Committee (COCOM) and Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "definition": "European  Commission, through the Communications Committee (COCOM) and Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_abds",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_abss",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_bds",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_entict",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ITT2)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ITT2)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_fictspec",
+      "label": "Eurostat - Labour force survey (isoc_sks_itsps)",
+      "definition": "Eurostat - Labour force survey (isoc_sks_itsps)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_ictg",
+      "label": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies ",
+      "definition": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies ",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_hc_ictspec",
+      "label": "Eurostat - Labour force survey (isoc_sks_itspt)",
+      "definition": "Eurostat - Labour force survey (isoc_sks_itspt)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_ai",
+      "label": "European enterprise survey on the use of technologies based on artificial intelligence by Ipsos and iCite",
+      "definition": "European enterprise survey on the use of technologies based on artificial intelligence by Ipsos and iCite",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_bigdat",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_BDA)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_BDA)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_cloud",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_CC_GE_ME)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_CC_GE_ME)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_ecomturn",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ETURN)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ETURN)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_einv",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_INV4S_AP)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_INV4S_AP)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_eis",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ERP1)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ERP1)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_ictsust",
+      "label": "Survey of businesses on the use of digital technologies by Ipsos and iCite",
+      "definition": "Survey of businesses on the use of digital technologies by Ipsos and iCite",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_sellcb",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_AESEU)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_AESEU)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_smedi",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_smeso",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ESELL)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ESELL)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_idt_socmed",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_SM1_GE2)",
+      "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_SM1_GE2)",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_mbbtu",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals [I_IUMP]",
+      "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals [I_IUMP]",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_ufbbtu",
+      "label": "European  Commission, through the Communications Committee (COCOM) and Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "definition": "European  Commission, through the Communications Committee (COCOM) and Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "desi_vhcnc",
+      "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "e_gov_bench",
+      "label": "eGovernment Benchmarking Report",
+      "definition": "eGovernment Benchmarking Report",
+      "url": "https://ec.europa.eu/digital-single-market/en/news/egovernment-benchmark-2018-digital-efforts-european-countries-are-visibly-paying",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eco_report_03_efis_comm",
+      "label": "ECO Report 03",
+      "definition": "ECO Report 03, based on EFIS database, completed with direct communications between EU and Member States",
+      "url": "http://www.cept.org/eco/deliverables/eco-reports",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "egov_bench12",
+      "label": "eGovernment Benchmarking reports 2012-2014",
+      "definition": "eGovernment Benchmarking Report, Studies for the EC peformed by Capgemini (2012-2014)",
+      "url": "https://ec.europa.eu/digital-agenda/news-redirect/16475",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "egov_bench12_17",
+      "label": "eGovernment Benchmarking Report, Studies for the EC performed by Capgemini (2012-2017)\u00a0",
+      "definition": "eGovernment Benchmarking Report, Studies for the EC performed by Capgemini (2012-2017)\u00a0",
+      "url": "https://ec.europa.eu/digital-single-market/en/news/new-study-egovernment-services-europe-improving-cross-border-availability-services",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "einfraegi",
+      "label": "e-infrastructure project EGI",
+      "definition": "e-infrastructure project EGI",
+      "url": "http://www.egi.eu",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "einfrageant",
+      "label": "e-infrastructure project G\u00e9ant",
+      "definition": "e-infrastructure project G\u00e9ant",
+      "url": "http://www.geant.net",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "einfraprace",
+      "label": "e-infrastructure project PRACE",
+      "definition": "e-infrastructure project PRACE",
+      "url": "http://www.prace-ri.eu",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eoa_smart12-26",
+      "label": "European Audiovisual Observatory - study \"On demand audiovisual markets in the EU\"",
+      "definition": "European Audiovisual Observatory - study \"On demand audiovisual markets in the EU\", of April 2014 (smart 2012-0026)",
+      "url": "https://ec.europa.eu/digital-agenda/en/news/demand-audiovisual-markets-european-union-smart-20120028",
+      "note": "page 20 table 4"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eoa_yearbook2014",
+      "label": "European Audiovisual Observatory Yearbook 2014",
+      "definition": "European Audiovisual Observatory Yearbook 2014",
+      "url": "http://www.obs.coe.int/eservices/premiumservice",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "epsi",
+      "label": "The PSI Scoreboard",
+      "definition": "The PSI Scoreboard is a \u2018crowdsourced\u2019 tool to measure the status of Open Data and PSI re-use throughout the EU.",
+      "url": "http://www.epsiplatform.eu/content/european-psi-scoreboard",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "epsiplatform",
+      "label": "The PSI Scoreboard",
+      "definition": "The PSI Scoreboard is a \u2018crowdsourced\u2019 tool to measure the status of Open Data and PSI re-use throughout the EU. It does NOT monitor government policies, but aims to assess the overall PSI re-use situation, which includes the open data community's activities.",
+      "url": "http://www.epsiplatform.eu/content/european-psi-scoreboard",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat-ent",
+      "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises",
+      "definition": "Eurostat - Community survey on ICT usage and eCommerce in Enterprises <a href=\"http://ec.europa.eu/eurostat/web/digital-economy-and-society/data/comprehensive-database\">More information</a>.",
+      "url": "http://ec.europa.eu/eurostat/web/digital-economy-and-society/data/comprehensive-database",
+      "note": "Extraction from ENT2 comprehensive database (NACE Rev 2 in ACCESS 133 MB) version 16 Apr 2013, and from ENT (NACE Rev 1.1 in ACCESS 104 MB) version 12 Dec 2011."
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat-hh",
+      "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
+      "definition": "Eurostat - Community survey on ICT usage in Households and by Individuals <a href=\"http://ec.europa.eu/eurostat/web/digital-economy-and-society/data/comprehensive-database\">More information</a>.",
+      "url": "http://ec.europa.eu/eurostat/web/digital-economy-and-society/data/comprehensive-database",
+      "note": "Extraction from HH/Indiv comprehensive database (ACCESS) version\u00a029 April 2013"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat-lfs",
+      "label": "Eurostat - Labour Force Survey",
+      "definition": "Eurostat - Labour Force Survey",
+      "url": "http://ec.europa.eu/eurostat/web/lfs/data/database",
+      "note": "Extraction May 2013, ESTAT-G6"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat-lfs-sks",
+      "label": "Eurostat - ICT specialist statistics (derived from Labour Force Survey)",
+      "definition": "Eurostat - ICT specialist statistics (derived from Labour Force Survey)",
+      "url": "http://ec.europa.eu/eurostat/cache/metadata/en/isoc_skslf_esms.htm",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat-trade",
+      "label": "Eurostat - Trade statistics",
+      "definition": "Eurostat - Trade statistics",
+      "url": "http://ec.europa.eu/eurostat/web/international-trade/data/database",
+      "note": "Extraction May 2013, ESTAT-G6"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_educ_uoe_grad03",
+      "label": "Eurostat, Table educ_uoe_grad03: Distribution of graduates at education level and programme orientation by sex and field of education",
+      "definition": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies",
+      "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad03",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_gba_nabsfin07",
+      "label": "Eurostat, Table gba_nabsfin07: Total GBAORD by NABS 2007 socio-economic objectives",
+      "definition": "Eurostat, Table gba_nabsfin07: Total GBAORD by NABS 2007 socio-economic objectives",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/gba_nabsfin07",
+      "note": "Double check? Predict?"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15b_e",
+      "label": "Eurostat, Table isoc_bde15b_e: Broadband and connectivity - enterprises",
+      "definition": "Eurostat, Table isoc_bde15b_e: Broadband and connectivity - enterprises",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_e",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15b_h",
+      "label": "Eurostat, Table isoc_bde15b_h: Broadband and connectivity - households",
+      "definition": "Eurostat, Table isoc_bde15b_h: Broadband and connectivity - households",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_h",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15b_p",
+      "label": "Eurostat, Table isoc_bde15b_p: Broadband and connectivity - persons employed",
+      "definition": "Eurostat, Table isoc_bde15b_p: Broadband and connectivity - persons employed",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_p",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15cbc",
+      "label": "Eurostat, Table isoc_bde15cbc: E-banking and e-commerce",
+      "definition": "Eurostat, Table isoc_bde15cbc: E-banking and e-commerce",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15cbc",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15cua",
+      "label": "Eurostat, Table isoc_bde15cua: Internet use and activities",
+      "definition": "Eurostat, Table isoc_bde15cua: Internet use and activities",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15cua",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15dec",
+      "label": "Eurostat, Table estat_isoc_bde15dec: E-commerce, customer relation management (CRM) and secure transactions",
+      "definition": "Eurostat, Table estat_isoc_bde15dec: E-commerce, customer relation management (CRM) and secure transactions",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15dec",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15dip",
+      "label": "Eurostat, Table isoc_bde15dip: Integration of internal processes",
+      "definition": "Eurostat, Table isoc_bde15dip: Integration of internal processes",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15dip",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15disc",
+      "label": "Eurostat, Table isoc_bde15disc: Integration with customers/suppliers and SCM",
+      "definition": "Eurostat, Table isoc_bde15disc: Integration with customers/suppliers and SCM",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15disc",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15dth",
+      "label": "Eurostat, Table isoc_bde15dth: Key technologies for the internet of things",
+      "definition": "Eurostat, Table isoc_bde15dth: Key technologies for the internet of things",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15dth",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_bde15ee",
+      "label": "Eurostat, Table isoc_bde15ee: Enterprises using the internet for interacting with public authorities",
+      "definition": "Eurostat, Table isoc_bde15ee: Enterprises using the internet for interacting with public authorities",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15ee",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_ac_i",
+      "label": "Eurostat, Table isoc_ci_ac_i: Individuals - internet activities",
+      "definition": "Eurostat, Table isoc_pibi_ioa: Individuals doing specific online activities in the previous 3 months",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_ac_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_ac_i",
+      "label": "Eurostat, Table isoc_ci_ac_i: Internet activities - individuals",
+      "definition": "Eurostat - Community survey on ICT usage in Households and by Individuals, Table: Internet activities - individuals",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_ac_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_eu_en2",
+      "label": "Eurostat, Table isoc_ci_eu_en2: Computers and the internet: enterprises - summary of EU aggregates (NACE Rev. 2 activity)",
+      "definition": "Eurostat, Table isoc_ci_eu_en2: Computers and the internet: enterprises - summary of EU aggregates (NACE Rev. 2 activity)",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_eu_en2",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_eu_en2",
+      "label": "Eurostat, Table isoc_ci_eu_en2: Computers and the internet: enterprises - summary of EU aggregates (NACE Rev. 2 activity) ",
+      "definition": "Eurostat, Table isoc_ci_eu_en2: Computers and the internet: enterprises - summary of EU aggregates (NACE Rev. 2 activity) ",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_eu_en2",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_eu_i",
+      "label": "Eurostat, Table isoc_ci_eu_i: Computers and the internet: individuals - summary of EU aggregates",
+      "definition": "Eurostat, Table isoc_ci_eu_i: Computers and the internet: individuals - summary of EU aggregates",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_eu_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_ifp_fu",
+      "label": "Eurostat, Table isoc_ci_ifp_fu: Frequency of internet use  - individuals",
+      "definition": "Eurostat, Table isoc_ci_ifp_fu: Frequency of internet use  - individuals",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_ifp_fu",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_ifp_iu",
+      "label": "Eurostat, Table isoc_ci_ifp_iu: Internet use  - individuals",
+      "definition": "Eurostat, Table isoc_ci_ifp_iu: Internet use  - individuals",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_ifp_iu",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ci_im_i",
+      "label": "Eurostat, Table isoc_ci_im_i: Mobile internet access  - individuals",
+      "definition": "Eurostat, Table isoc_ci_im_i: Mobile internet access  - individuals",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_im_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_cicce_use",
+      "label": "Eurostat, Table isoc_cicce_use: Cloud computing services",
+      "definition": "Eurostat, Table isoc_cicce_use: Cloud computing services",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cicce_use",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_cisci_ax",
+      "label": "Eurostat, Table isoc_cisci_ax: Activities via internet not done because of security concerns",
+      "definition": "Eurostat, Table isoc_cisci_ax: Activities via internet not done because of security concerns",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cisci_ax",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_cisci_pb",
+      "label": "Eurostat, Table isoc_cisci_pb: Security related problems experienced through using the internet for private purposes",
+      "definition": "Eurostat, Table isoc_cisci_pb: Security related problems experienced through using the internet for private purposes",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cisci_pb",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_cisci_prv",
+      "label": "Eurostat, Table isoc_cisci_prv: Privacy and protection of personal information",
+      "definition": "Eurostat, Table isoc_cisci_prv: Privacy and protection of personal information",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cisci_prv",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_cismt",
+      "label": "Eurostat, Table isoc_cismt: Social media use by type",
+      "definition": "Eurostat, Table isoc_cismt: Social media use by type",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cismt",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_e_dii",
+      "label": "Eurostat, Table isoc_e_dii: Digital Intensity",
+      "definition": "Eurostat, Table isoc_e_dii: Digital Intensity",
+      "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_e_dii",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_eb_ai",
+      "label": "Eurostat, Table isoc_eb_ai: Artificial intelligence",
+      "definition": "Eurostat, Table isoc_eb_ai: Artificial intelligence",
+      "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_ai",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_eb_bd",
+      "label": "Eurostat, Table isoc_eb_bd: Big data analysis",
+      "definition": "Eurostat, Table isoc_eb_bd: Big data analysis",
+      "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_bd",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ec_eseln2",
+      "label": "Eurostat, Table isoc_ec_eseln2: Enterprises selling via internet and/or networks other than internet (NACE Rev. 2 activity)",
+      "definition": "Eurostat, Table isoc_ec_eseln2: Enterprises selling via internet and/or networks other than internet (NACE Rev. 2 activity)",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_eseln2",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ec_ibuy",
+      "label": "Eurostat, Table isoc_ec_ibuy: Internet purchases by individuals",
+      "definition": "Eurostat, Table isoc_ec_ibuy: Internet purchases by individuals",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_ibuy",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ec_iprb",
+      "label": "eurostat table isoc_ec_iprb ",
+      "definition": "eurostat table isoc_ec_iprb Problems encountered by individuals when buying/ordering over the internet ",
+      "url": "http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_ec_iprb&lang=en",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_pibi_ictbn2",
+      "label": "Eurostat, Table isoc_pibi_ictbn2: Adoption of ICT by businesses (NACE Rev. 2 activity)",
+      "definition": "Eurostat, Table isoc_pibi_ictbn2: Adoption of ICT by businesses (NACE Rev. 2 activity)",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_pibi_ictbn2",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_r_gov_i",
+      "label": "Eurostat, Table isoc_r_gov_i: Individuals who used the internet for interaction with public authorities",
+      "definition": "Eurostat, Table isoc_r_gov_i: Individuals who used the internet for interaction with public authorities",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_r_gov_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_r_iuse_i",
+      "label": "Eurostat, Table isoc_r_iuse_i: Individuals who used the internet, frequency of use and activities",
+      "definition": "Eurostat, Table isoc_r_iuse_i: Individuals who used the internet, frequency of use and activities",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_r_iuse_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_sk_cskl_i",
+      "label": "Eurostat, Table isoc_sk_cskl_i: Individuals' level of computer skills",
+      "definition": "Eurostat, Table isoc_sk_cskl_i: Individuals' level of computer skills",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sk_cskl_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_sk_dskl_i",
+      "label": "Eurostat, Table isoc_sk_dskl_i: Individuals' level of digital skills",
+      "definition": "Eurostat, Table isoc_sk_dskl_i: Individuals' level of digital skills",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sk_dskl_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_sk_dskl_i21",
+      "label": "Eurostat, Table isoc_sk_dskl_i21: Individuals' level of digital skills",
+      "definition": "Eurostat, Table isoc_sk_dskl_i21: Individuals' level of digital skills (from 2021 onwards)",
+      "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sk_dskl_i21",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_sk_how_i",
+      "label": "Eurostat, Table isoc_sk_how_i: Way of obtaining e-skills",
+      "definition": "Eurostat, Table isoc_sk_how_i: Way of obtaining e-skills",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sk_how_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_sk_iskl_i",
+      "label": "Eurostat, Table isoc_sk_iskl_i:  Individuals' level of internet skills",
+      "definition": "Eurostat, Table isoc_sk_iskl_i:  Individuals' level of internet skills",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sk_iskl_i",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_ske_ittn2",
+      "label": "Eurostat, Table isoc_ske_ittn2 : Enterprises that provided training to develop/upgrade ICT skills of their personnel (NACE Rev. 2 activity)",
+      "definition": "Eurostat, Table isoc_ske_ittn2 : Enterprises that provided training to develop/upgrade ICT skills of their personnel (NACE Rev. 2 activity)",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_ittn2",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_isoc_sks_itspt",
+      "label": "Eurostat, Table isoc_sks_itspt: ICT specialists - total",
+      "definition": "Eurostat, Table isoc_sks_itspt: ICT specialists - total",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sks_itspt",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_lfst_hhnhwhtc",
+      "label": "Eurostat, Table eurostat_lfst_hhnhwhtc: Number of private households by household composition, number of children and working status within households (1 000)",
+      "definition": "Eurostat, Table eurostat_lfst_hhnhwhtc: Number of private households by household composition, number of children and working status within households (1 000)",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/lfst_hhnhwhtc",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_nama_gdp_c",
+      "label": "Eurostat, Table estat_nama_gdp_c: GDP and main components - Current prices",
+      "definition": "Eurostat, Table estat_nama_gdp_c: GDP and main components - Current prices",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/nama_gdp_c",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_randd",
+      "label": "Eurostat\u2019s statistics on R&D expenditure",
+      "definition": "Eurostat\u2019s statistics on R&D expenditure are compiled using guidelines laid out in the Frascati manual (http://www.oecd.org/document/6/0,3343,en_2649_34451_33828550_1_1_1_1,00.html)",
+      "url": "http://ec.europa.eu/eurostat/web/science-technology-innovation/data/database",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estat_tps00188",
+      "label": "Eurostat, Table estat_tps00188: Science and technology graduates by sex",
+      "definition": "Eurostat, Table estat_tps00188: Science and technology graduates by sex",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad04",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "estathh_cocom",
+      "label": "European Commission based on Eurostat - ICT Household survey and Communications Committee survey",
+      "definition": "European Commission based on Eurostat - Community survey on ICT usage in Households and by Individuals, and Electronic communications market indicators collected by Commission services, through National Regulatory Authorities, for the Communications Committee (COCOM) - January and July reports.",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eun12",
+      "label": "ESSIE Survey about ICT in Education - SMART 2010/0039",
+      "definition": "The ESSIE Survey about ICT in Education - SMART 2010/0039 - is based on over 190,000 filled questionnaires from students, teachers and head teachers in 27 countries, collected during school-year 2011-12  (mainly between September and December 2011), with the purpose of benchmarking access, use and attitudes to IC Technologies in Europe's schools (Primary; Lower secondary; Upper secondary, both general and vocational).",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad02",
+      "note": "Data for 2006 comes from a previous study for the EC by Empirica, only partially comparable."
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "euripidis-estat",
+      "label": "JRC-IPTS Euripidis project based on Eurostat Business demography data",
+      "definition": "Garry Gabison, (forthcoming) \u201cBirth, Survival, Growth, and Death of ICT Companies. How are ICT companies faring in the European Union: a Macroeconomic Analysis.\u201d JRC Scientific and Policy Reports. Seville: JRC-IPTS.  ",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad03",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "european_data_portal",
+      "label": "European Data Portal",
+      "definition": "European Data Portal",
+      "url": "https://www.europeandataportal.eu/en/impact-studies/open-data-maturity",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eurostat_ed",
+      "label": "Eurostat education statistics (table educ_uoe_grad04 and tps00188) ",
+      "definition": "Eurostat education statistics (table educ_uoe_grad04 and tps00188) ",
+      "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad04",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eurostat_nat_acc",
+      "label": "Eurostat national accounts",
+      "definition": "Eurostat national accounts",
+      "url": "http://ec.europa.eu/eurostat/web/national-accounts/data/database",
+      "note": "extracted 21 may 2014"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "eurostat_pop",
+      "label": "Eurostat population statistics",
+      "definition": "Eurostat population statistics",
+      "url": "http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data/database",
+      "note": "extracted 21 may 2013"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "idate",
+      "label": "IDATE - Broadband coverage studies (2005-2010)",
+      "definition": "Broadband Coverage in Europe, Studies for the EC realised by IDATE (2005-2010 data), SMART 2010/037",
+      "url": "http://ec.europa.eu/digital-agenda/en/news/broadband-coverage-eu-272-phase-iii-smart-20100037",
+      "note": "extraction 4 May 2011"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "ihs_tech",
+      "label": "IHS TV Media Intelligence",
+      "definition": "IHS TV Media Intelligence",
+      "url": "https://technology.ihs.com/account/login?returnUrl=",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "ipv6obs",
+      "label": "EC - IPv6 Observatory",
+      "definition": "IPv6 Observatory, Study for the EC realized by inno",
+      "url": "http://www.ipv6observatory.eu/the-study/",
+      "note": "extraction published 3 June 2012"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "jrc-ictspec3",
+      "label": "JRC report on ICT employment 2000-2012",
+      "definition": "JRC (IPTS) \"The evolution of EU ICT employment 2000-2012\" Technical report (forthcoming) based on Eurostat - Labour Force Survey",
+      "url": "http://epp.eurostat.ec.europa.eu/portal/page/portal/employment_unemployment_lfs/methodology/definitions",
+      "note": "(forthcoming)"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "jrc_ict_randd",
+      "label": "JRC-IPTS Reports on Public ICT R&D Expenditures",
+      "definition": "JRC-IPTS Reports estimating Public ICT R&D Expenditures in the EU (PREDICT2 project)",
+      "url": "http://is.jrc.ec.europa.eu/pages/ISG/PREDICT.html",
+      "note": "2013 report"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "mis",
+      "label": "EC - FP7 ICT research projects",
+      "definition": "EC database of ICT research projects under the EU's Seventh Framework Programme (FP7) - Cooperation and Capacities (e-infrastructures) programs. Projects under the CIP ICT PSP are not included. More information on the Programmes at http://cordis.europa.eu/fp7/ict/home_en.html",
+      "url": "https://ec.europa.eu/digital-agenda/en/news/ict-research-projects-under-eus-seventh-framework-programme-fp7",
+      "note": "Extraction January 2013"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "nif_database",
+      "label": "NIF_database",
+      "definition": "NIF_database",
+      "url": "",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "point_topic",
+      "label": "Point Topic Study on broadband coverage",
+      "definition": "Broadband coverage in Europe, studies for the EC by Point Topic (2011-2012 figures, SMART 2011/0027 and 2012/0035) and IHS and Valdani, Vicari & Associati (2013 figures, SMART 2013/0054)",
+      "url": "http://ec.europa.eu/digital-agenda/about-fast-and-ultra-fast-internet-access",
+      "note": ""
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "samknows",
+      "label": "Study on \"Quality of Broadband Services in the EU\u201d SMART 2010/0036",
+      "definition": "Study on \"Quality of Broadband Services in the EU\u201d (SMART 2010/0036). For the purposes of this study 9,104 households across the European Union were given a specially configured hardware device (SamKnows Whitebox), which runs a series of purpose-built tests to measure every aspect of Internet performance. The sample is designed to represent tha main fixed broadband services, used by consumers and available all around the country.",
+      "url": "http://ec.europa.eu/digital-agenda/en/news/quality-broadband-services-eu-samknows-study-internet-speeds",
+      "note": "April 2013 Report"
+    }
+  },
+  {
+    "model": "core.datasource",
+    "fields": {
+      "code": "smart11_39",
+      "label": "Analysis of publications and patents of ICT research in FP7",
+      "definition": "Analysis conducted by DG CONNECT Unit F4, based on results of the study SMART 2011/0039 which main results are published in: Jacob, J., Sanditov, B., Smirnov, E., Wintjes, R., Surpatean, A., Notten, A., & Sasso, S. (Forthcoming). Analysis of publications and patents of ICT research in FP7. Brussels, European Commission. ",
+      "url": "http://ec.europa.eu/digital-agenda/en/digital-agenda-you/our-studies-and-open-datasets",
+      "note": ""
+    }
+  }
+]

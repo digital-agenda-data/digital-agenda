@@ -24,3 +24,4 @@ orjson
 pandas
 psycopg2-binary
 rich
+xlrd
