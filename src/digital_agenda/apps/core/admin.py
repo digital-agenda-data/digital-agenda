@@ -1,11 +1,10 @@
 from django.contrib import admin
-from django.db.models.functions import Lower
 
 from admin_auto_filters.filters import AutocompleteFilter
+from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
 
 from .models import (
     DataSource,
-    DataSourceReference,
     IndicatorGroup,
     Indicator,
     BreakdownGroup,
@@ -17,33 +16,58 @@ from .models import (
 )
 
 
-class DataSourceReferenceInline(admin.TabularInline):
-    model = DataSourceReference
-    verbose_name = "References"
-
-
-class DataSourceAdmin(admin.ModelAdmin):
-    inlines = [DataSourceReferenceInline]
-
-
-admin.site.register(DataSource, DataSourceAdmin)
-
-
 class DimensionAdmin(admin.ModelAdmin):
     list_display = ("code", "label")
     search_fields = ("code", "label")
     list_per_page = 20
 
-    def get_ordering(self, request):
-        return [Lower("code")]
+
+admin.site.register(DataSource, DimensionAdmin)
 
 
-admin.site.register(IndicatorGroup, DimensionAdmin)
+class SortableDimensionAdmin(SortableAdminMixin, DimensionAdmin):
+    pass
+
+
+class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
+    model = IndicatorGroup.indicators.through
+
+
+class IndicatorsFilter(AutocompleteFilter):
+    title = "Indicator"
+    field_name = "indicators"
+
+
+@admin.register(IndicatorGroup)
+class IndicatorGroupAdmin(SortableDimensionAdmin):
+    inlines = (IndicatorTabularInline,)
+    list_filter = [IndicatorsFilter]
+
+
 admin.site.register(Indicator, DimensionAdmin)
-admin.site.register(BreakdownGroup, DimensionAdmin)
+
+
+class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):
+    model = BreakdownGroup.breakdowns.through
+
+
+class BreakdownsFilter(AutocompleteFilter):
+    title = "Breakdown"
+    field_name = "breakdowns"
+
+
+@admin.register(BreakdownGroup)
+class BreakdownGroupAdmin(SortableDimensionAdmin):
+    inlines = (BreakdownTabularInline,)
+    list_filter = [BreakdownsFilter]
+
+
 admin.site.register(Breakdown, DimensionAdmin)
+
 admin.site.register(Unit, DimensionAdmin)
+
 admin.site.register(Country, DimensionAdmin)
+
 admin.site.register(Period, DimensionAdmin)
 
 

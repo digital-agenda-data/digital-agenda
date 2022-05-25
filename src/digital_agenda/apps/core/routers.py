@@ -13,6 +13,7 @@ from .views import (
     IndicatorCountryViewSet,
     PeriodViewSet,
     IndicatorPeriodViewSet,
+    DataSourceViewSet,
     FactsPerCountryViewSet,
 )
 
@@ -87,6 +88,10 @@ indicator_periods_router.register(
 )
 
 
+data_sources_router = routers.SimpleRouter()
+data_sources_router.register("data-sources", DataSourceViewSet, basename="data-source")
+
+
 # Fact routers
 facts_per_country_router = routers.SimpleRouter()
 facts_per_country_router.register(
@@ -101,6 +106,7 @@ main_routers = [
     units_router,
     countries_router,
     periods_router,
+    data_sources_router,
     facts_per_country_router,
 ]
 

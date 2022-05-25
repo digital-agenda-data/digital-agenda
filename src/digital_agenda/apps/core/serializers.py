@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import (
     IndicatorGroup,
     Indicator,
+    DataSource,
     BreakdownGroup,
     Breakdown,
     Unit,
@@ -18,7 +19,7 @@ from .models import (
 
 class BaseDimensionSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ["code", "label", "alt_label"]
+        fields = ["code", "label", "alt_label", "definition"]
 
 
 class BreakdownSerializer(BaseDimensionSerializer):
@@ -40,6 +41,7 @@ class BreakdownGroupDetailSerializer(BreakdownGroupListSerializer):
 
     class Meta(BreakdownGroupListSerializer.Meta):
         fields = BreakdownGroupListSerializer.Meta.fields + [
+            "url",
             "breakdowns",
         ]
 
@@ -75,6 +77,7 @@ class IndicatorDetailSerializer(IndicatorListSerializer):
         fields = IndicatorListSerializer.Meta.fields + [
             "definition",
             "note",
+            "data_source",
             "breakdowns",
             "units",
             "countries",
@@ -102,6 +105,12 @@ class IndicatorGroupDetailSerializer(serializers.ModelSerializer):
             "alt_label",
             "indicators",
         )
+
+
+class DataSourceSerializer(BaseDimensionSerializer):
+    class Meta(BaseDimensionSerializer.Meta):
+        model = DataSource
+        fields = BaseDimensionSerializer.Meta.fields + ["note", "url"]
 
 
 ###################

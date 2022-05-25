@@ -41,6 +41,7 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "adminsortable2",
     "channels",
     "corsheaders",
     "django_filters",
