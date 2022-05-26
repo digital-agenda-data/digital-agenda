@@ -170,12 +170,11 @@ The dashboard app is available at the `/dashboard/` URL.
 Add dashboards and SQL queries for importing bulk facts into the core tables - an example 
 query is available in `examples/ENT2_after_2009.sql`. Note that while each dashboard supports 
 multiple queries, only the first is used during the final import stage, by specifying the 
-dashboard's slug as the second parameter:
+dashboard's slug as the parameter:
 
 ```shell
-django-admin import-with-query estat ent2_after_2009
+django-admin import-with-query ent2_after_2009
 ```
-The first parameter above refers to the data source - one for ESTAT was created during migrations.
 
 Be aware that core facts must have unique indicator/breakdown/unit/country/period combinations. 
 Consequently, dashboard queries must either enforce this, or avoid data duplication, e.g. from 
