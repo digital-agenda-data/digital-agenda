@@ -123,7 +123,7 @@ class Command(BaseCommand):
                         dataset=dataset, code=Dimension.SURROGATE_CODE
                     )
                     setattr(dataset.config, dim_name, dimension)
-                    surrogate = DimensionValue.objects.get_or_create(
+                    surrogate, _ = DimensionValue.objects.get_or_create(
                         dimension=dimension, code=input_dim[1:]
                     )
                     setattr(dataset.config, f"{dim_name}_surrogate", surrogate)
