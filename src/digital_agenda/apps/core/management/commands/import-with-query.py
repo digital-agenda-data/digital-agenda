@@ -10,7 +10,6 @@ from rich.console import Console
 
 from digital_agenda.apps.core.models import (
     DataSource,
-    DataSourceReference,
     Indicator,
     Breakdown,
     Unit,
@@ -26,26 +25,16 @@ class Command(BaseCommand):
     help = "Run an import based on a dashboard-stored query"
 
     def add_arguments(self, parser):
-        parser.add_argument(
-            "data_source", type=str.lower, help="Data source (e.g. ESTAT)"
-        )
         parser.add_argument("dashboard_slug", type=str.lower, help="Dashboard slug")
         parser.add_argument("--batch-size", type=int, default=1000, help="Batch size")
 
     def handle(
         self,
-        data_source,
         dashboard_slug,
         batch_size,
         *args,
         **options,
     ):
-        try:
-            datasource = DataSource.objects.get(name__iexact=data_source)
-        except DataSource.DoesNotExist:
-            console.print(f"[red]Data source not found: {data_source}.")
-            exit(1)
-
         query = DashboardQuery.objects.filter(dashboard__slug=dashboard_slug).first()
         if query is None:
             console.print("[red]Dashboard not found or no query defined.")
@@ -72,7 +61,7 @@ class Command(BaseCommand):
             console.print("NONE FOUND")
 
         # Object instance caches, indexed by dimension values in the query results
-        data_source_refs = {}
+        data_sources = {}
         indicators = {}
         breakdowns = {}
         units = {}
@@ -84,7 +73,7 @@ class Command(BaseCommand):
 
         with Progress() as progress:
             batch_task = progress.add_task(
-                f"[green]Importing {data_source} facts for dashboard query {dashboard_slug}",
+                f"[green]Importing facts for dashboard query {dashboard_slug}",
                 total=batches,
             )
             for i in range(0, len(query_results), batch_size):
@@ -103,26 +92,21 @@ class Command(BaseCommand):
                     ) = row
 
                     # Datasets are kept as data source references
-                    if dataset not in data_source_refs:
+                    if dataset not in data_sources:
                         (
-                            data_source_refs[dataset],
+                            data_sources[dataset],
                             _,
-                        ) = DataSourceReference.objects.get_or_create(
-                            data_source=datasource, name=dataset
-                        )
+                        ) = DataSource.objects.get_or_create(code=dataset)
 
                     if indicator not in indicators:
                         indicators[indicator], _ = Indicator.objects.get_or_create(
-                            data_source_ref=data_source_refs[dataset],
+                            data_source=data_sources[dataset],
                             code=indicator,
                         )
-                        if (
-                            indicators[indicator].data_source_ref
-                            != data_source_refs[dataset]
-                        ):
+                        if indicators[indicator].data_source != data_sources[dataset]:
                             console.print(
                                 "[red]Aborting import = duplicated indicator in datasets"
-                                f" {indicators[indicator].data_source_ref} / {data_source_refs[dataset]}",
+                                f" {indicators[indicator].data_source_ref} / {data_sources[dataset]}",
                                 new_line_start=True,
                             )
                             exit(1)
