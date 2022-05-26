@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("estat", "0001_ciext"),
+        ("estat", "0001_citext"),
     ]
 
     operations = [

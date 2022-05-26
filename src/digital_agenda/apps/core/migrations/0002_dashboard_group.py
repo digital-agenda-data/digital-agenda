@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ("auth", "__latest__"),
         ("django_sql_dashboard", "__latest__"),
-        ("core", "0001_ciext"),
+        ("core", "0001_citext"),
     ]
 
     operations = [migrations.RunPython(add_dashboard_group)]
