@@ -10,6 +10,7 @@ from .models import (
     Dimension,
     DimensionValue,
     DatasetConfig,
+    Fact,
 )
 
 
@@ -151,3 +152,21 @@ class DimensionValueAdmin(admin.ModelAdmin):
 
 
 admin.site.register(DimensionValue, DimensionValueAdmin)
+
+
+class FactAdmin(admin.ModelAdmin):
+    list_display = (
+        "dataset",
+        "indicator",
+        "breakdown",
+        "unit",
+        "country",
+        "period",
+        "value",
+        "flags",
+    )
+    list_per_page = 50
+    list_filter = [DatasetFilter]
+
+
+admin.site.register(Fact, FactAdmin)
