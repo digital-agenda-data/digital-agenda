@@ -119,6 +119,7 @@ class DimensionValueAdmin(admin.ModelAdmin):
     list_filter = [
         AutocompleteFilterFactory("Dataset", "dimension__dataset"),
         DimensionAdminFilter,
+        'enabled',
     ]
     autocomplete_fields = ("dimension",)
     list_per_page = 30

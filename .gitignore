@@ -60,9 +60,12 @@ docs/_build/
 .env
 .venv*
 .envrc
+.vscode
 
 # Runtime data
 .media/
 .static/
+.fs
+.data
 
 docker/wheels/
