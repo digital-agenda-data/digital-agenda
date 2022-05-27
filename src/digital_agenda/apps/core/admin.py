@@ -44,7 +44,14 @@ class IndicatorGroupAdmin(SortableDimensionAdmin):
     list_filter = [IndicatorsFilter]
 
 
-admin.site.register(Indicator, DimensionAdmin)
+class DataSourceFilter(AutocompleteFilter):
+    title = "Data Source"
+    field_name = "data_source"
+
+
+@admin.register(Indicator)
+class IndicatorAdmin(DimensionAdmin):
+    list_filter = [DataSourceFilter]
 
 
 class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):
