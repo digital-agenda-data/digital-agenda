@@ -52,11 +52,6 @@ from estat_facts f
     join estat_dim_values dvu on dvu.id = f.unit_id
     join estat_dim_values dvc on dvc.id = f.country_id
     join estat_dim_values dvp on dvp.id = f.period_id
-    join estat_dimensions ddi on ddi.id = dvi.dimension_id
-    join estat_dimensions ddb on ddb.id = dvb.dimension_id
-    join estat_dimensions ddu on ddu.id = dvu.dimension_id
-    join estat_dimensions ddc on ddc.id = dvc.dimension_id
-    join estat_dimensions ddp on ddp.id = dvp.dimension_id
 where
     dvc.code in ('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'EL', 'ES', 'FI', 'FR', 'HR', 'HU', 'IE', 'IS', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK', 'EU27_2020')
     and dvu.code in (
