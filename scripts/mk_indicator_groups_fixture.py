@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import json
 
 import xlrd
@@ -14,6 +15,8 @@ def make_fixture(excel_file, output_path, order_coefficient):
     data = []
     record = {"model": "core.indicatorgroup", "fields": None}
 
+    now = datetime.datetime.now(tz=datetime.timezone.utc).isoformat()
+
     wb = xlrd.open_workbook(excel_file)
     ws = wb.sheet_by_index(0)
     for row_no in range(1, ws.nrows):
@@ -24,6 +27,8 @@ def make_fixture(excel_file, output_path, order_coefficient):
         fields = {
             "code": code,
             "label": ws.cell(row_no, cols.index("label")).value,
+            "created_at": now,
+            "updated_at": now,
         }
 
         display_order = ws.cell(row_no, cols.index("display_order")).value

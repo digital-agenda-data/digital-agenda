@@ -5,7 +5,7 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 
-from digital_agenda.common.models import BaseModel
+from digital_agenda.common.models import TimestampedModel
 
 
 class UserManager(BaseUserManager):
@@ -30,7 +30,7 @@ class UserManager(BaseUserManager):
         return user
 
 
-class User(BaseModel, AbstractBaseUser, PermissionsMixin):
+class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

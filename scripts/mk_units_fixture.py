@@ -9,13 +9,12 @@ def make_fixture(excel_file, output_path):
     cols = (
         "code",
         "label",
+        "alt_label",
         "definition",
-        "url",
-        "note",
     )
 
     data = []
-    record = {"model": "core.datasource", "fields": None}
+    record = {"model": "core.unit", "fields": None}
     now = datetime.datetime.now(tz=datetime.timezone.utc).isoformat()
 
     wb = xlrd.open_workbook(excel_file)
@@ -41,10 +40,8 @@ def make_fixture(excel_file, output_path):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        "Make data sources fixture from old site Excel export"
-    )
+    parser = argparse.ArgumentParser("Make units fixture from old site Excel export")
     parser.add_argument("excel_file")
-    parser.add_argument("--output", default="datasources.json")
+    parser.add_argument("--output", default="units.json")
     args = parser.parse_args()
     make_fixture(args.excel_file, args.output)

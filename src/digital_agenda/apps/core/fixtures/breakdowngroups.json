@@ -4,6 +4,8 @@
     "fields": {
       "code": "by_location",
       "label": "Geographical area",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Geographical area",
       "definition": "The following breakdown is considered: Own country, Other EU countries, Rest of the world",
       "display_order": 100
@@ -14,6 +16,8 @@
     "fields": {
       "code": "byage3classes",
       "label": "Age (3 groups)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Age (3 groups)",
       "definition": "breakdown by 3 age groups: 16-24, 25-54 and 55-74 years",
       "display_order": 2
@@ -24,6 +28,8 @@
     "fields": {
       "code": "byage6classes",
       "label": "Age (6 groups)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Age (6 groups)",
       "definition": "breakdown by 6 age groups: 16-24, 25-34,35-44, 45-54, 55-64 and 65-74 years",
       "display_order": 3
@@ -34,6 +40,8 @@
     "fields": {
       "code": "bycbirth",
       "label": "Country of birth",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Country of birth",
       "definition": "breakdown by country of birth (native, EU country, other non-EU country)",
       "display_order": 7
@@ -44,6 +52,8 @@
     "fields": {
       "code": "byccitizen",
       "label": "Citizenship",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Citizenship",
       "definition": "breakdown by citizenship (nationals, other EU country nationals, non EU nationals)",
       "display_order": 8
@@ -54,6 +64,8 @@
     "fields": {
       "code": "byccsophistication",
       "label": "CC services sophistication",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "CC services sophistication",
       "definition": "The seven types of cloud computing services proposed in Eurostat questionnaire are attributed a low-medium-high degree of sophistication which somehow reflect also the degree of enterprise's dependence or trust running more or less vital data-services in the cloud."
     }
@@ -63,6 +75,8 @@
     "fields": {
       "code": "bydensity",
       "label": "Urban-rural density of the living area",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Urban-rural density of the living area",
       "definition": "breakdown by 3 type of living areas: densely-populated with at least 500 inhabitants/Km2, sparsely populated area with less than 100 inhabitants/Km2, and intermediate.",
       "display_order": 12
@@ -73,6 +87,8 @@
     "fields": {
       "code": "bydigint2015",
       "label": "Level of digital intensity",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Level of digital intensity",
       "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
       "display_order": 10
@@ -83,6 +99,8 @@
     "fields": {
       "code": "bydownloadspeed",
       "label": "Maximum advertised download speed 3 categories",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Max. adv. download speed 3 cat.",
       "definition": "breakdown by the maximum advertised download speed of internet access offers, in Mbps (above 8 and up to 12;  above 12 and up to 30; above 30).",
       "display_order": 29
@@ -93,6 +111,8 @@
     "fields": {
       "code": "bydownloadspeed4",
       "label": "Maximum advertised download speed 4 categories",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Max. adv. download speed 4 cat.",
       "definition": "breakdown by the maximum advertised download speed of internet access offers, in Mbps (above 8 and up to 12;  above 12 and up to 30; above 30 and up to 100; above 100).",
       "display_order": 30
@@ -103,6 +123,8 @@
     "fields": {
       "code": "byedu",
       "label": "Education level",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Education level",
       "definition": "brekadown by education level (low, medium, high, based on ISCED 0-2, 3-4, 5-6)",
       "display_order": 4
@@ -113,6 +135,8 @@
     "fields": {
       "code": "byedugrade",
       "label": "Education grade (years of schooling)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Education grade (years of schooling)",
       "definition": "breakdown by education grade is based on the years of schooling, counting from the first year of Primary - ISCED level 1.",
       "display_order": 21
@@ -123,6 +147,8 @@
     "fields": {
       "code": "byemp",
       "label": "Employment status",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Employment status",
       "definition": "breakdown by employment status (employee or self-employed, unemployed, student, retired and other inactive)",
       "display_order": 5
@@ -133,6 +159,8 @@
     "fields": {
       "code": "byentsize",
       "label": "Enterprise size (SMEs, Large)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Enterprise size (SMEs, Large)",
       "definition": "breakdown by company size (SMEs with 10-249 persons employed, Large enterprises with 250 or more)",
       "display_order": 15
@@ -143,6 +171,8 @@
     "fields": {
       "code": "byentsize_s_m_l",
       "label": "Enterprise size (Small, Medium, Large)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Enterprise size (Small, Medium, Large)",
       "definition": "breakdown by company size (Small enterprises (10-49 persons employed),Medium enterprises (50-249 persons employed), Large enterprises with 250 or more))",
       "display_order": 16
@@ -153,6 +183,8 @@
     "fields": {
       "code": "byfbbtech",
       "label": "Fixed broadband technology",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Fixed broadband technology",
       "definition": "breakdown by type of fixed broadband technology: xDSL, cable modem, Fiber to the x.",
       "display_order": 19
@@ -163,6 +195,8 @@
     "fields": {
       "code": "bygender",
       "label": "Gender",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Gender",
       "definition": "breakdown by gender (male, female)",
       "display_order": 6
@@ -173,6 +207,8 @@
     "fields": {
       "code": "byictsector2subsec",
       "label": "ICT Sectors (2 sub-sectors)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "ICT Sectors (2 sub-sectors)",
       "definition": "breakdown by 2 operational ICT sub sectors (Manufacturing NACE2 261 to 264, Services NACE2 582,61, 62, 631, 951)"
     }
@@ -182,6 +218,8 @@
     "fields": {
       "code": "byictsector6subsec",
       "label": "ICT Sectors (6 sub-sectors)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "ICT Sectors (6 sub-sectors)",
       "definition": "breakdown by 6 operational ICT sectors: NACE2 261 to 264, 582,61, 62, 631, 951"
     }
@@ -191,6 +229,8 @@
     "fields": {
       "code": "bynaceeu",
       "label": "NACE EU",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "NACE EU",
       "definition": "breakdown by NACE EU",
       "display_order": 16
@@ -201,6 +241,8 @@
     "fields": {
       "code": "bynacenat",
       "label": "NACE NAT",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "NACE NAT",
       "definition": "breakdown by NACE NAT",
       "display_order": 17
@@ -211,6 +253,8 @@
     "fields": {
       "code": "byorganizationclass",
       "label": "Type of organization",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Type of organization",
       "definition": "Partner organisations are divided into four main classes: \nSME = Small and medium individual private enterprises with less than 250 employed persons and a turnover \u2264 50 millions euro or a balance sheet total \u2264 43 millions euro. \nLarge = all other enterprises. \nHES/REC = includes public or private higher education institutions and not for profit research organisations. \nNIL = includes all other types of organisations (i.e. public administrations, NGO, public sector enterprises, etc.).",
       "display_order": 20
@@ -221,6 +265,8 @@
     "fields": {
       "code": "byregion",
       "label": "Objective1-Convergence regions",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Objective1-Convergence regions",
       "definition": "breakdown by regions inside/outsisde Objective 1 - Convergence regions, as defined by Structural Funds regulations",
       "display_order": 13
@@ -231,6 +277,8 @@
     "fields": {
       "code": "byrisk",
       "label": "Disadvantage factors",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Disadvantage factors",
       "definition": "breakdown by disadvantage factors defined as one of the 3 following characteristics: 55 to 74 years old; low education; unemployed or inactive or retired.",
       "display_order": 9
@@ -241,6 +289,8 @@
     "fields": {
       "code": "byskills",
       "label": "Computer skills",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Computer skills",
       "definition": "breakdown by computer skills: High (5-6), Medium (3-4), Low (1-2), None(0), but have ever used a computer. The indicator is based on the count of how many of the following 6 activities individuals have ever carried out: coping or moving a file or folder, using copy and paste tools, using basic arithmetic formula in a spreadsheet, compressing (or zipping) files, connecting and installing new devices, writing a computer program using a specialised programming language. Only those having ever used a computer were proposed the question.",
       "display_order": 10
@@ -251,6 +301,8 @@
     "fields": {
       "code": "bytypeproduct",
       "label": "Type of products",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Type of products",
       "definition": "breakdown by type of products: goods or services",
       "display_order": 22
@@ -261,6 +313,8 @@
     "fields": {
       "code": "childrenhh",
       "label": "Household with or without  children",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Household with or without  children",
       "definition": "Breakdown by Individuals living in the household with or without  children",
       "display_order": 28
@@ -271,6 +325,8 @@
     "fields": {
       "code": "cnect_directorates",
       "label": "DG CONNECT Directorates",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "DG CONNECT Directorates",
       "definition": "Organisation chart since 2012. See: http://ec.europa.eu/dgs/connect/who-we-are"
     }
@@ -280,6 +336,8 @@
     "fields": {
       "code": "desi",
       "label": "Main Dimensions of the DESI",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 2
     }
   },
@@ -288,6 +346,8 @@
     "fields": {
       "code": "desi_c_bbpi",
       "label": "Indicators under Broadband prices",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 6
     }
   },
@@ -296,6 +356,8 @@
     "fields": {
       "code": "desi_c_fbbc",
       "label": "Indicators under Fixed broadband coverage",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 4
     }
   },
@@ -304,6 +366,8 @@
     "fields": {
       "code": "desi_c_fbbtc",
       "label": "Indicators under Fixed broadband take-up",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 3
     }
   },
@@ -312,6 +376,8 @@
     "fields": {
       "code": "desi_c_mbb",
       "label": "Indicators under Mobile broadband",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 5
     }
   },
@@ -320,6 +386,8 @@
     "fields": {
       "code": "desi_conn",
       "label": "Sub-dimensions of Connectivity",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 2
     }
   },
@@ -328,6 +396,8 @@
     "fields": {
       "code": "desi_dps",
       "label": "Sub-dimensions of Digital public services",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 4
     }
   },
@@ -336,6 +406,8 @@
     "fields": {
       "code": "desi_dps_egov",
       "label": "Indicators under e-Government",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 10
     }
   },
@@ -344,6 +416,8 @@
     "fields": {
       "code": "desi_hc",
       "label": "Sub-dimensions of Human capital",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 1
     }
   },
@@ -352,6 +426,8 @@
     "fields": {
       "code": "desi_hc_asd",
       "label": "Indicators under Advanced skills and development",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 2
     }
   },
@@ -360,6 +436,8 @@
     "fields": {
       "code": "desi_hc_bsu",
       "label": "Indicators under Internet user skills",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 1
     }
   },
@@ -368,6 +446,8 @@
     "fields": {
       "code": "desi_idt",
       "label": "Sub-dimensions of Integration of digital technology",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 3
     }
   },
@@ -376,6 +456,8 @@
     "fields": {
       "code": "desi_idt_di",
       "label": "Indicators under Digital intensity",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 7
     }
   },
@@ -384,6 +466,8 @@
     "fields": {
       "code": "desi_idt_dtb",
       "label": "Indicators under Digital technologies for businesses",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 8
     }
   },
@@ -392,6 +476,8 @@
     "fields": {
       "code": "desi_idt_ecomm",
       "label": "Indicators under e-Commerce",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 9
     }
   },
@@ -400,6 +486,8 @@
     "fields": {
       "code": "desi_totals",
       "label": "Aggregate scores",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "display_order": 1
     }
   },
@@ -408,6 +496,8 @@
     "fields": {
       "code": "digskill_level",
       "label": "Digital skills level",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Digital skills level",
       "display_order": 25
     }
@@ -417,6 +507,8 @@
     "fields": {
       "code": "e_gov_1_uc",
       "label": "User centricity",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "User centricity",
       "definition": "Breakdown by User centricity",
       "display_order": 108
@@ -427,6 +519,8 @@
     "fields": {
       "code": "e_gov_1_ucg",
       "label": "User Centric Government",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "User Centric Government",
       "definition": "Breakdown by User Centric Government",
       "display_order": 108
@@ -437,6 +531,8 @@
     "fields": {
       "code": "e_gov_2_tg",
       "label": "Transparent Government",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Transparent Government",
       "definition": "Breakdown by Transparent Government",
       "display_order": 109
@@ -447,6 +543,8 @@
     "fields": {
       "code": "e_gov_2_tr",
       "label": "Transparency",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Transparency",
       "definition": "Breakdown by Transparency",
       "display_order": 109
@@ -457,6 +555,8 @@
     "fields": {
       "code": "e_gov_3_cm",
       "label": "Citizen Mobility",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Citizen Mobility",
       "definition": "Breakdown by Citizen Mobility",
       "display_order": 110
@@ -467,6 +567,8 @@
     "fields": {
       "code": "e_gov_3_ke",
       "label": "Key Enablers",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Key Enablers",
       "definition": "Breakdown by Key Enablers",
       "display_order": 110
@@ -477,6 +579,8 @@
     "fields": {
       "code": "e_gov_4_bm",
       "label": "Business Mobility",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Business Mobility",
       "definition": "Breakdown by Business Mobility",
       "display_order": 111
@@ -487,6 +591,8 @@
     "fields": {
       "code": "e_gov_4_cb",
       "label": "Cross-border services",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Cross-border services",
       "definition": "Breakdown by Cross-border services",
       "display_order": 111
@@ -497,6 +603,8 @@
     "fields": {
       "code": "e_gov_5_ke",
       "label": "Key Enablers",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Key Enablers",
       "definition": "Breakdown by Key Enablers",
       "display_order": 112
@@ -507,6 +615,8 @@
     "fields": {
       "code": "e_gov_events",
       "label": "Life Events for eGovernment",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Life Events for eGovernment",
       "definition": "Breakdown by 8 life events for eGovernment",
       "display_order": 107
@@ -517,6 +627,8 @@
     "fields": {
       "code": "e_gov_scope",
       "label": "Citizen and business",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Citizen and business",
       "definition": "Breakdown by citizens and business life events",
       "display_order": 112
@@ -527,6 +639,8 @@
     "fields": {
       "code": "econsector",
       "label": "Economic sectors (17 Nace groups)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Economic sectors (17 Nace groups)",
       "definition": "Breakdown by 17 economic sectors (Nace rev.2)",
       "display_order": 40
@@ -537,6 +651,8 @@
     "fields": {
       "code": "econsector_size",
       "label": "Economic sector and size (6 groups)",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Economic sector and size (6 groups)",
       "definition": "Breakdown by economic sector and size (6 groups)",
       "display_order": 41
@@ -547,6 +663,8 @@
     "fields": {
       "code": "egov_le",
       "label": "Life Events for eGovernment benchmarking",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Life Events for eGovernment benchmarking",
       "definition": "Life Events constitute situations in which a citizen or business needs to interact with with Public Authorities. The eGovernment benchmarking defines a set of Life Events and assesses how well different countries perform in supporting all the necessary interactions between the citizen and the public administration when going through each of those Life Events.",
       "display_order": 24
@@ -557,6 +675,8 @@
     "fields": {
       "code": "epsi_dimensions",
       "label": "PSI sub-dimensions",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "PSI sub-dimensions"
     }
   },
@@ -565,6 +685,8 @@
     "fields": {
       "code": "hhbyiq",
       "label": "Household Income in quartiles",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Household Income in quartiles",
       "definition": "breakdown by income quartile of the household: from 25% lowest to 25% highest among incomes observed (after grossing up)",
       "display_order": 11
@@ -575,6 +697,8 @@
     "fields": {
       "code": "hhbytype",
       "label": "Presence of dependent childrens",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Dependent childrens",
       "definition": "breakdown by presence of dependent childrens (under 16) in the household",
       "display_order": 14
@@ -585,6 +709,8 @@
     "fields": {
       "code": "ictproffession",
       "label": "ICT and non-ICT profession",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "ICT and non-ICT profession",
       "definition": "Breakdown by ICT and non-ICT profession",
       "display_order": 27
@@ -595,6 +721,8 @@
     "fields": {
       "code": "infso_directorates",
       "label": "DG INFSO Directorates",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "DG INFSO Directorates",
       "definition": "Organisation chart for the period 2007-2011"
     }
@@ -604,6 +732,8 @@
     "fields": {
       "code": "labour_force",
       "label": "Labour force",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Labour force",
       "display_order": 26
     }
@@ -613,6 +743,8 @@
     "fields": {
       "code": "manuf",
       "label": "Manufacturing sub-sectors",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Manufacturing sub-sectors",
       "definition": "Manufacturing sector (NACE rev.2 group C) divided into 9 sub-sectors"
     }
@@ -622,6 +754,8 @@
     "fields": {
       "code": "mhz_bands",
       "label": "Spectrum Bands ",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Spectrum Bands",
       "definition": "Spectrum assigned for wireless broadband in accordance to EU level harmonisation measures"
     }
@@ -631,6 +765,8 @@
     "fields": {
       "code": "others",
       "label": "others",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "others",
       "definition": "Particular subgroups of cases (slices) which partially overlap with other complete groups of breakdown modalities.",
       "display_order": 99
@@ -641,6 +777,8 @@
     "fields": {
       "code": "rural_pop",
       "label": "Rural population",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Rural population",
       "display_order": 23
     }
@@ -650,6 +788,8 @@
     "fields": {
       "code": "sos_agg",
       "label": "Strategic Objectives Aggregated",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Strategic Objectives (27)",
       "definition": "The research strategic objectives within FP7 ICT (Cooperation theme) are aggregated into 26 thematic research areas. In addition, there is one thematic area for projects funded under Capacities Programme for eInfrastructures"
     }
@@ -659,6 +799,8 @@
     "fields": {
       "code": "total",
       "label": "Total",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Total",
       "definition": "Total (no breakdown)",
       "display_order": 1
@@ -669,6 +811,8 @@
     "fields": {
       "code": "wid_score",
       "label": "Women in Digital score",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Women in digital score",
       "display_order": 114
     }
@@ -678,6 +822,8 @@
     "fields": {
       "code": "workingscheme",
       "label": "Working patterns and conditions",
+      "created_at": "2022-05-27T14:13:37.683254+00:00",
+      "updated_at": "2022-05-27T14:13:37.683254+00:00",
       "alt_label": "Working patterns and conditions",
       "definition": "Breakdown by Working patterns(full/ part time) and conditions (contract duration)",
       "display_order": 29

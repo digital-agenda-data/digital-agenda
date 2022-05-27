@@ -4,7 +4,10 @@ from django.core.exceptions import ValidationError
 from django.utils.functional import cached_property
 
 
-class BaseLabeledModel(models.Model):
+from digital_agenda.common.models import TimestampedModel
+
+
+class BaseLabeledModel(TimestampedModel):
     label = models.CharField(max_length=300, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
@@ -111,7 +114,7 @@ class DatasetConfigManager(models.Manager):
         return self.get(dataset__code=dataset_code)
 
 
-class DatasetConfig(models.Model):
+class DatasetConfig(TimestampedModel):
 
     dataset = models.OneToOneField(
         "Dataset", on_delete=models.CASCADE, primary_key=True, related_name="config"
@@ -235,7 +238,7 @@ class DatasetConfig(models.Model):
         )
 
 
-class Fact(models.Model):
+class Fact(TimestampedModel):
     value = models.FloatField(null=True, blank=True)
     flags = models.CharField(max_length=2, blank=True)
     dataset = models.ForeignKey(

@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import json
 
 import xlrd
@@ -28,6 +29,9 @@ def make_fixture(
     group_link_record = {"model": "core.breakdowngrouplink", "fields": None}
 
     group_codes = []
+
+    now = datetime.datetime.now(tz=datetime.timezone.utc).isoformat()
+
     if groups_excel_file is not None:
         wb = xlrd.open_workbook(groups_excel_file)
         ws = wb.sheet_by_index(0)
@@ -43,6 +47,8 @@ def make_fixture(
         fields = {
             "code": code,
             "label": ws.cell(row_no, cols.index("label")).value,
+            "created_at": now,
+            "updated_at": now,
         }
 
         optional_fields = {
@@ -64,7 +70,10 @@ def make_fixture(
                 )
             else:
                 group_link_rec = group_link_record.copy()
-                group_link_rec["fields"] = {"breakdown": [code], "group": [group]}
+                group_link_rec["fields"] = {
+                    "breakdown": [code],
+                    "group": [group],
+                }
                 try:
                     display_order = (
                         int(ws.cell(row_no, cols.index("display_order")).value)

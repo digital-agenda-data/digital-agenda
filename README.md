@@ -44,6 +44,7 @@ The `core` app (`digital_agenda.apps.core`) provides fixtures for seeding:
 - indicators
 - breakdown groups
 - breakdowns
+- units of measure
 
 To import these fixtures (order matters):
 
@@ -55,14 +56,16 @@ django-admin loaddata \
   indicatorgrouplinks \
   breakdowngroups \
   breakdowns \
-  breakdowngrouplinks
+  breakdowngrouplinks \
+  units
 ```
 
 Alternative fixtures can be produced from Excel exports of code lists from the previous version:
 ```shell
 python scripts/mk_data_sources_fixture.py source.xls
+python scripts/mk_units_fixture.py unit-measure.xls
 python scripts/mk_indicator_groups_fixture.py indicator-group.xls
-python scripts/mk_indicators_fixture.py indicator.xls --groups-excel-file=indicator-group.xls --data-sources-excel-file=source.xls
+python scripts/mk_indicators_fixture.py indicator.xls --groups-excel-file=indicator-group.xls --sources-excel-file=source.xls
 python scripts/mk_breakdown_groups_fixture.py breakdown-group.xls 
 python scripts/mk_breakdowns_fixture.py breakdown.xls --groups-excel-file=breakdown-group.xls
 ```

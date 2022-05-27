@@ -4,6 +4,8 @@
     "fields": {
       "code": "audiovisual",
       "label": "Audiovisual & media content",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 45
     }
   },
@@ -12,6 +14,8 @@
     "fields": {
       "code": "back",
       "label": "Background variables",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 200
     }
   },
@@ -20,6 +24,8 @@
     "fields": {
       "code": "bbquality",
       "label": "Broadband speeds and prices",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 30
     }
   },
@@ -28,6 +34,8 @@
     "fields": {
       "code": "broadband",
       "label": "Broadband take-up and coverage",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 20
     }
   },
@@ -36,6 +44,8 @@
     "fields": {
       "code": "desi",
       "label": "DESI Stacked",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 1
     }
   },
@@ -44,6 +54,8 @@
     "fields": {
       "code": "desi_dim",
       "label": "DESI Dimensions",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 3
     }
   },
@@ -52,6 +64,8 @@
     "fields": {
       "code": "desi_ind",
       "label": "DESI Individual Indicators",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 5
     }
   },
@@ -60,6 +74,8 @@
     "fields": {
       "code": "desi_sliders",
       "label": "DESI Overall Index - weight sliders",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 5
     }
   },
@@ -68,6 +84,8 @@
     "fields": {
       "code": "desi_subdim",
       "label": "DESI Sub-dimensions",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 4
     }
   },
@@ -76,6 +94,8 @@
     "fields": {
       "code": "desi_total",
       "label": "DESI Overall Index",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 2
     }
   },
@@ -84,6 +104,8 @@
     "fields": {
       "code": "discontinued",
       "label": "Discontinued indicators",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 900
     }
   },
@@ -92,6 +114,8 @@
     "fields": {
       "code": "ebusiness",
       "label": "eBusiness",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 80
     }
   },
@@ -100,6 +124,8 @@
     "fields": {
       "code": "ecommerce",
       "label": "eCommerce",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 70
     }
   },
@@ -108,6 +134,8 @@
     "fields": {
       "code": "egovernment",
       "label": "eGovernment",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 60
     }
   },
@@ -116,6 +144,8 @@
     "fields": {
       "code": "ehealth",
       "label": "eHealth",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 100
     }
   },
@@ -124,6 +154,8 @@
     "fields": {
       "code": "ict-edu",
       "label": "ICT in Education",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 95
     }
   },
@@ -132,6 +164,8 @@
     "fields": {
       "code": "ict-sector",
       "label": "ICT sector",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 110
     }
   },
@@ -140,6 +174,8 @@
     "fields": {
       "code": "ict-skills",
       "label": "Digital Skills",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 90
     }
   },
@@ -148,6 +184,8 @@
     "fields": {
       "code": "ict-specialist",
       "label": "ICT Specialist",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 92
     }
   },
@@ -156,6 +194,8 @@
     "fields": {
       "code": "internet-services",
       "label": "Take up of internet services",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 50
     }
   },
@@ -164,6 +204,8 @@
     "fields": {
       "code": "internet-usage",
       "label": "Internet usage",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 40
     }
   },
@@ -172,6 +214,8 @@
     "fields": {
       "code": "mobile",
       "label": "Mobile market",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 35
     }
   },
@@ -180,6 +224,8 @@
     "fields": {
       "code": "research-and-development",
       "label": "EU Research and Development Programs",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 120
     }
   },
@@ -188,6 +234,8 @@
     "fields": {
       "code": "research_einfra",
       "label": "Research e-Infrastructures",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 121
     }
   },
@@ -196,6 +244,8 @@
     "fields": {
       "code": "security-privacy",
       "label": "Security and Privacy",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 105
     }
   },
@@ -204,6 +254,8 @@
     "fields": {
       "code": "telecom",
       "label": "Telecom sector",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 10
     }
   },
@@ -212,6 +264,8 @@
     "fields": {
       "code": "wid",
       "label": "Women in Digital",
+      "created_at": "2022-05-27T14:12:51.541359+00:00",
+      "updated_at": "2022-05-27T14:12:51.541359+00:00",
       "display_order": 91
     }
   }

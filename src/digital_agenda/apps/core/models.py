@@ -3,12 +3,15 @@ from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
 
 
+from digital_agenda.common.models import TimestampedModel
+
+
 class BaseDimensionManager(models.Manager):
     def get_by_natural_key(self, code):
         return self.get(code=code)
 
 
-class BaseDimensionModel(models.Model):
+class BaseDimensionModel(TimestampedModel):
 
     """
     Base model for dimension-like models, with a unique code and label/short label fields.
@@ -205,7 +208,7 @@ class Period(BaseDimensionModel):
         ordering = ["code"]
 
 
-class Fact(models.Model):
+class Fact(TimestampedModel):
     """
     The facts table, center of the star schema.
     """
