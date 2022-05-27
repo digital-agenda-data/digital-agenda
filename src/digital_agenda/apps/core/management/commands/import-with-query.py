@@ -18,6 +18,8 @@ from digital_agenda.apps.core.models import (
     Fact,
 )
 
+from digital_agenda.apps.estat.models import Dataset, DimensionValue
+
 console = Console()
 
 
@@ -60,13 +62,16 @@ class Command(BaseCommand):
         else:
             console.print("NONE FOUND")
 
-        # Object instance caches, indexed by dimension values in the query results
+        # Caches of pairs of object instances and "created" flags, indexed by dimension values
+        # in the query results
         data_sources = {}
         indicators = {}
         breakdowns = {}
         units = {}
         countries = {}
         periods = {}
+
+        datasets = {}
 
         batches = math.ceil(len(query_results) / batch_size)
         imported_count = 0
@@ -91,55 +96,74 @@ class Command(BaseCommand):
                         flags,
                     ) = row
 
+                    dataset = f"estat_{dataset}"
+
                     # Datasets are kept as data source references
                     if dataset not in data_sources:
-                        (
-                            data_sources[dataset],
-                            _,
-                        ) = DataSource.objects.get_or_create(code=dataset)
+                        data_sources[dataset] = DataSource.objects.get_or_create(
+                            code=dataset
+                        )
 
                     if indicator not in indicators:
-                        indicators[indicator], _ = Indicator.objects.get_or_create(
-                            data_source=data_sources[dataset],
+                        indicators[indicator] = Indicator.objects.update_or_create(
                             code=indicator,
+                            defaults={
+                                "data_source": data_sources[dataset][0],
+                            },
                         )
-                        if indicators[indicator].data_source != data_sources[dataset]:
-                            console.print(
-                                "[red]Aborting import = duplicated indicator in datasets"
-                                f" {indicators[indicator].data_source_ref} / {data_sources[dataset]}",
-                                new_line_start=True,
-                            )
-                            exit(1)
 
                     if breakdown not in breakdowns:
-                        breakdowns[breakdown], _ = Breakdown.objects.get_or_create(
+                        breakdowns[breakdown] = Breakdown.objects.get_or_create(
                             code=breakdown
                         )
-                    indicators[indicator].breakdowns.add(breakdowns[breakdown])
+                    indicators[indicator][0].breakdowns.add(breakdowns[breakdown][0])
+
+                    if dataset not in datasets:
+                        datasets[dataset] = Dataset.objects.get(code=dataset)
 
                     if unit not in units:
-                        units[unit], _ = Unit.objects.get_or_create(code=unit)
-                    indicators[indicator].units.add(units[unit])
+                        units[unit] = Unit.objects.get_or_create(code=unit)
+                        if units[unit][1]:
+                            if datasets[dataset].config.unit:
+                                dim_val = datasets[dataset].config.unit.values.get(
+                                    code=unit
+                                )
+                            else:
+                                dim_val = datasets[dataset].config.unit_surrogate
+
+                            units[unit][0].label = dim_val.label
+                            units[unit][0].save()
+
+                    indicators[indicator][0].units.add(units[unit][0])
 
                     if country not in countries:
-                        countries[country], _ = Country.objects.get_or_create(
-                            code=country
-                        )
-                    indicators[indicator].countries.add(countries[country])
+                        countries[country] = Country.objects.get_or_create(code=country)
+                        if countries[country][1]:
+                            if datasets[dataset].config.country:
+                                dim_val = datasets[dataset].config.country.values.get(
+                                    code=country
+                                )
+                            else:
+                                dim_val = datasets[dataset].config.country_surrogate
+
+                            countries[country][0].label = dim_val.label
+                            countries[country][0].save()
+
+                    indicators[indicator][0].countries.add(countries[country][0])
 
                     if period not in periods:
-                        periods[period], _ = Period.objects.get_or_create(code=period)
-                    indicators[indicator].periods.add(periods[period])
+                        periods[period] = Period.objects.get_or_create(code=period)
+                    indicators[indicator][0].periods.add(periods[period][0])
 
                     fact_objects.append(
                         Fact(
                             value=value,
                             flags=flags,
-                            indicator=indicators[indicator],
-                            breakdown=breakdowns[breakdown],
-                            unit=units[unit],
-                            country=countries[country],
-                            period=periods[period],
+                            indicator=indicators[indicator][0],
+                            breakdown=breakdowns[breakdown][0],
+                            unit=units[unit][0],
+                            country=countries[country][0],
+                            period=periods[period][0],
                         )
                     )
 
@@ -152,3 +176,28 @@ class Command(BaseCommand):
         console.print(
             f"Imported facts: {imported_count} / {len(query_results)}",
         )
+
+        new_data_sources = [k for k, v in data_sources.items() if v[1]]
+        new_indicators = [k for k, v in indicators.items() if v[1]]
+        new_breakdowns = [k for k, v in breakdowns.items() if v[1]]
+        new_units = [k for k, v in units.items() if v[1]]
+        new_countries = [k for k, v in countries.items() if v[1]]
+        new_periods = [k for k, v in periods.items() if v[1]]
+
+        if new_data_sources:
+            console.print(f"[bold]New data sources[/]: {new_data_sources}")
+
+        if new_indicators:
+            console.print(f"[bold]New indicators[/]: {new_indicators}")
+
+        if new_breakdowns:
+            console.print(f"[bold]New breakdowns[/]: {new_breakdowns}")
+
+        if new_units:
+            console.print(f"[bold]New units[/]: {new_units}")
+
+        if new_countries:
+            console.print(f"[bold]New countries[/]: {new_countries}")
+
+        if new_periods:
+            console.print(f"[bold]New periods[/]: {new_periods}")
