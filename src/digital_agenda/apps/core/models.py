@@ -138,7 +138,6 @@ class BreakdownGroup(BaseDimensionModel, DisplayOrderModel):
     and function as a hierarchical dimension table.
     """
 
-    url = models.URLField(null=True, blank=True)
     breakdowns = models.ManyToManyField(
         "Breakdown", through="BreakdownGroupLink", related_name="groups", blank=True
     )
@@ -150,8 +149,6 @@ class BreakdownGroup(BaseDimensionModel, DisplayOrderModel):
 
 class Breakdown(BaseDimensionModel):
     """Dimension model for secondary dimensions, a.k.a. breakdowns."""
-
-    url = models.URLField(null=True, blank=True)
 
     class Meta:
         db_table = "breakdowns"

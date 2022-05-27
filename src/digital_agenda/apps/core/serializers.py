@@ -41,7 +41,6 @@ class BreakdownGroupDetailSerializer(BreakdownGroupListSerializer):
 
     class Meta(BreakdownGroupListSerializer.Meta):
         fields = BreakdownGroupListSerializer.Meta.fields + [
-            "url",
             "breakdowns",
         ]
 

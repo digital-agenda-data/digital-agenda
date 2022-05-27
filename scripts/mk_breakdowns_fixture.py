@@ -17,7 +17,7 @@ def make_fixture(
         "alt_label",
         "group",
         "display_order",
-        "url",
+        "url",  # not imported
         "definition",
     )
 
@@ -48,7 +48,6 @@ def make_fixture(
         optional_fields = {
             "alt_label": ws.cell(row_no, cols.index("alt_label")).value.strip(),
             "definition": ws.cell(row_no, cols.index("definition")).value.strip(),
-            "url": ws.cell(row_no, cols.index("url")).value.strip(),
         }
         fields.update({k: v for k, v in optional_fields.items() if v})
 

@@ -10,7 +10,7 @@ def make_fixture(excel_file, output_path, order_coefficient):
         "label",
         "alt_label",
         "definition",
-        "url",
+        "url",  # not imported
         "display_order",
     )
 
@@ -32,7 +32,6 @@ def make_fixture(excel_file, output_path, order_coefficient):
         optional_fields = {
             "alt_label": ws.cell(row_no, cols.index("alt_label")).value.strip(),
             "definition": ws.cell(row_no, cols.index("definition")).value.strip(),
-            "url": ws.cell(row_no, cols.index("url")).value.strip(),
         }
         fields.update({k: v for k, v in optional_fields.items() if v})
 

@@ -16,7 +16,6 @@
       "label": "Age (3 groups)",
       "alt_label": "Age (3 groups)",
       "definition": "breakdown by 3 age groups: 16-24, 25-54 and 55-74 years",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 2
     }
   },
@@ -27,7 +26,6 @@
       "label": "Age (6 groups)",
       "alt_label": "Age (6 groups)",
       "definition": "breakdown by 6 age groups: 16-24, 25-34,35-44, 45-54, 55-64 and 65-74 years",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 3
     }
   },
@@ -38,7 +36,6 @@
       "label": "Country of birth",
       "alt_label": "Country of birth",
       "definition": "breakdown by country of birth (native, EU country, other non-EU country)",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 7
     }
   },
@@ -49,7 +46,6 @@
       "label": "Citizenship",
       "alt_label": "Citizenship",
       "definition": "breakdown by citizenship (nationals, other EU country nationals, non EU nationals)",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 8
     }
   },
@@ -109,7 +105,6 @@
       "label": "Education level",
       "alt_label": "Education level",
       "definition": "brekadown by education level (low, medium, high, based on ISCED 0-2, 3-4, 5-6)",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 4
     }
   },
@@ -130,7 +125,6 @@
       "label": "Employment status",
       "alt_label": "Employment status",
       "definition": "breakdown by employment status (employee or self-employed, unemployed, student, retired and other inactive)",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 5
     }
   },
@@ -141,7 +135,6 @@
       "label": "Enterprise size (SMEs, Large)",
       "alt_label": "Enterprise size (SMEs, Large)",
       "definition": "breakdown by company size (SMEs with 10-249 persons employed, Large enterprises with 250 or more)",
-      "url": "http://eurostat.linked-statistics.org/dic/sizen_r2",
       "display_order": 15
     }
   },
@@ -152,7 +145,6 @@
       "label": "Enterprise size (Small, Medium, Large)",
       "alt_label": "Enterprise size (Small, Medium, Large)",
       "definition": "breakdown by company size (Small enterprises (10-49 persons employed),Medium enterprises (50-249 persons employed), Large enterprises with 250 or more))",
-      "url": "http://eurostat.linked-statistics.org/dic/sizen_r2",
       "display_order": 16
     }
   },
@@ -173,7 +165,6 @@
       "label": "Gender",
       "alt_label": "Gender",
       "definition": "breakdown by gender (male, female)",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 6
     }
   },
@@ -242,7 +233,6 @@
       "label": "Disadvantage factors",
       "alt_label": "Disadvantage factors",
       "definition": "breakdown by disadvantage factors defined as one of the 3 following characteristics: 55 to 74 years old; low education; unemployed or inactive or retired.",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 9
     }
   },
@@ -253,7 +243,6 @@
       "label": "Computer skills",
       "alt_label": "Computer skills",
       "definition": "breakdown by computer skills: High (5-6), Medium (3-4), Low (1-2), None(0), but have ever used a computer. The indicator is based on the count of how many of the following 6 activities individuals have ever carried out: coping or moving a file or folder, using copy and paste tools, using basic arithmetic formula in a spreadsheet, compressing (or zipping) files, connecting and installing new devices, writing a computer program using a specialised programming language. Only those having ever used a computer were proposed the question.",
-      "url": "http://eurostat.linked-statistics.org/dic/indic_is",
       "display_order": 10
     }
   },
@@ -578,7 +567,6 @@
       "label": "Household Income in quartiles",
       "alt_label": "Household Income in quartiles",
       "definition": "breakdown by income quartile of the household: from 25% lowest to 25% highest among incomes observed (after grossing up)",
-      "url": "http://eurostat.linked-statistics.org/dic/ind_type",
       "display_order": 11
     }
   },
@@ -663,8 +651,7 @@
       "code": "sos_agg",
       "label": "Strategic Objectives Aggregated",
       "alt_label": "Strategic Objectives (27)",
-      "definition": "The research strategic objectives within FP7 ICT (Cooperation theme) are aggregated into 26 thematic research areas. In addition, there is one thematic area for projects funded under Capacities Programme for eInfrastructures",
-      "url": "https://ec.europa.eu/digital-agenda/en/news/ict-research-projects-under-eus-seventh-framework-programme-fp7"
+      "definition": "The research strategic objectives within FP7 ICT (Cooperation theme) are aggregated into 26 thematic research areas. In addition, there is one thematic area for projects funded under Capacities Programme for eInfrastructures"
     }
   },
   {

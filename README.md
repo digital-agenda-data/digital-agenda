@@ -48,13 +48,14 @@ The `core` app (`digital_agenda.apps.core`) provides fixtures for seeding:
 To import these fixtures (order matters):
 
 ```shell
-django-admin loaddata datasources
-django-admin loaddata indicatorgroups
-django-admin loaddata indicators
-django-admin loaddata indicatorgrouplinks
-django-admin loaddata breakdowngroups
-django-admin loaddata breakdowns
-django-admin loaddata breakdowngrouplinks
+django-admin loaddata \
+  datasources \
+  indicatorgroups \
+  indicators \
+  indicatorgrouplinks \
+  breakdowngroups \
+  breakdowns \
+  breakdowngrouplinks
 ```
 
 Alternative fixtures can be produced from Excel exports of code lists from the previous version:
