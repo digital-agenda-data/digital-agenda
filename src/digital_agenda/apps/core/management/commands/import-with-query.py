@@ -86,7 +86,7 @@ class Command(BaseCommand):
                 fact_objects = []
                 for row in results_batch:
                     (
-                        dataset,
+                        estat_dataset,
                         indicator,
                         breakdown,
                         unit,
@@ -96,7 +96,7 @@ class Command(BaseCommand):
                         flags,
                     ) = row
 
-                    dataset = f"estat_{dataset}"
+                    dataset = f"estat_{estat_dataset}"
 
                     # Datasets are kept as data source references
                     if dataset not in data_sources:
@@ -119,7 +119,7 @@ class Command(BaseCommand):
                     indicators[indicator][0].breakdowns.add(breakdowns[breakdown][0])
 
                     if dataset not in datasets:
-                        datasets[dataset] = Dataset.objects.get(code=dataset)
+                        datasets[dataset] = Dataset.objects.get(code=estat_dataset)
 
                     if unit not in units:
                         units[unit] = Unit.objects.get_or_create(code=unit)
