@@ -11,6 +11,7 @@ django-admin-sortable2
 django-cors-headers
 django-filter
 django-health-check
+django_json_widget
 django-model-utils
 django-postgres-extra
 django-redis
@@ -20,8 +21,10 @@ djangorestframework-simplejwt
 drf-nested-routers
 drf-spectacular
 httpx
+openpyxl
 orjson
 pandas
 psycopg2-binary
+python-magic
 rich
 xlrd

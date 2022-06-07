@@ -1,6 +1,14 @@
+from datetime import datetime
+from pathlib import Path
+
+from django.conf import settings
 from django.db import models
 from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
+from django.core.files.storage import get_storage_class
+from django.core.validators import FileExtensionValidator
+from django.utils.functional import cached_property
+import magic
 
 
 from digital_agenda.common.models import TimestampedModel
@@ -250,3 +258,75 @@ class Fact(TimestampedModel):
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
+
+
+def _import_files_storage():
+    storage_class = get_storage_class(settings.DEFAULT_STORAGE_CLASS)
+    return storage_class()
+
+
+def upload_path(instance, filename):
+    ts = (
+        datetime.now()
+        .isoformat()
+        .replace("-", "")
+        .replace(":", "")
+        .replace("T", "")
+        .split(".")[0]
+    )
+    filename = Path(settings.IMPORT_FILES_SUBDIR) / Path(filename).with_stem(
+        f"{Path(filename).stem}_{ts}"
+    )
+    return filename
+
+
+def validate_upload_mime_type(file):
+    mime_type = magic.from_buffer(file.read(), mime=True)
+    if mime_type not in settings.IMPORT_FILES_ALLOWED_MIME_TYPES:
+        raise ValidationError("File type not supported.")
+
+
+class DataFileImport(TimestampedModel):
+    class ImportStatusChoices(models.TextChoices):
+        PENDING = "pending"
+        IN_PROGRESS = "in_progress"
+        SUCCESS = "success"
+        FAILED = "failed"
+
+    file = models.FileField(
+        storage=_import_files_storage,
+        upload_to=upload_path,
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=settings.IMPORT_FILES_ALLOWED_EXTENSIONS,
+                message="File extension not supported.",
+            ),
+            validate_upload_mime_type,
+        ],
+    )
+    status = models.CharField(
+        max_length=20,
+        choices=ImportStatusChoices.choices,
+        default=ImportStatusChoices.PENDING,
+    )
+    description = models.TextField(null=True, blank=True)
+    user = models.ForeignKey("accounts.User", on_delete=models.CASCADE)
+    errors = models.JSONField(null=True, blank=True)
+
+    class Meta:
+        db_table = "data_file_imports"
+
+    @property
+    def path(self):
+        return Path(self.file.path)
+
+    def __str__(self):
+        return self.path.name
+
+    @property
+    def file_name(self):
+        return self.path.name
+
+    @cached_property
+    def mime_type(self):
+        return magic.from_buffer(self.file.read(), mime=True)

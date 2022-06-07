@@ -38,10 +38,11 @@ urlpatterns = [
     path("ws/ht/", include("health_check.urls", namespace="ws-ht")),
     path("dashboard/", include("django_sql_dashboard.urls")),
     path("admin/", admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 
 if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     try:
         import debug_toolbar
     except ImportError:

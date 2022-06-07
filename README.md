@@ -119,6 +119,7 @@ where the input file has a structure mapping dataset, dimension and values, e.g.
       "e_igov2rt"
     ]
   }
+}
 ```
 
 See the `examples` directory for sample input file.
@@ -146,14 +147,14 @@ Create a read-only user for dashboard usage, matching the values
 in the settings items `POSTGRES_DASHBOARD_USER` & `POSTGRES_DASHBOARD_PASSWORD`:
 
 ```postgresql
-CREATE ROLE digital_agenda_ro WITH
+CREATE ROLE da_ro WITH
     LOGIN
     NOSUPERUSER
     INHERIT
     NOCREATEDB
     NOCREATEROLE
     NOREPLICATION
-    PASSWORD 'digital_agenda_ro';
+    PASSWORD 'da_ro';
 ```
 
 Allow the read-only user to read the bulk tables:
@@ -184,3 +185,24 @@ Be aware that core facts must have unique indicator/breakdown/unit/country/perio
 Consequently, dashboard queries must either enforce this, or avoid data duplication, e.g. from 
 indicators that are present in multiple datasets. Otherwise, the `import-with-query` command will 
 terminate with data integrity errors, and the import must be re-run after fixing the query.
+
+
+## Excel Data Import
+
+Facts can be loaded from Excel files (`.xls` and `.xlsx` formats supported).
+
+Imports are started by creating a new record in the "Data file imports" admin site section.
+Once a file is uploaded and the record is saved, the import task will run asynchronously, and update the record status when completed.
+On failure, the `errors` JSON field is populated with the relevant details - e.g. the unknown dimension codes encountered in the file's data.
+
+Data structure requirements:
+- data is on the first sheet
+- data starts on second row (header row is skipped, contents are not relevant)
+- columns order is:
+  - year
+  - country	
+  - indicator (variable)	
+  - breakdown	
+  - unit	
+  - value	
+  - flag(s)

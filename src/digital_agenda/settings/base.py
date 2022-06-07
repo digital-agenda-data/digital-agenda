@@ -56,6 +56,7 @@ THIRD_PARTY_APPS = [
     "health_check.cache",
     "health_check.storage",
     "drf_spectacular",
+    "django_json_widget",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
@@ -251,6 +252,35 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+# Celery
+CELERY_BROKER_URL = get_env_var(
+    "CELERY_BROKER_URL", "pyamqp://guest:guest@localhost:5672"
+)
+
+
+BULK_DOWNLOAD_ROOT_URL = get_env_var(
+    "BULK_DOWNLOAD_ROOT_URL",
+    default="https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing",
+)
+BULK_DOWNLOAD_TIMEOUT = get_float_env_var("BULK_DOWNLOAD_TIMEOUT", default=5.0)
+BULK_DOWNLOAD_DIR = validate_dir(Path(get_env_var("BULK_DOWNLOAD_DIR")))
+
+DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = validate_dir(Path(get_env_var("MEDIA_ROOT")))
+
+IMPORT_FILES_SUBDIR = get_env_var("IMPORT_FILES_SUBDIR", "import_files")
+IMPORT_FILES_ALLOWED_EXTENSIONS = split_env_var(
+    "IMPORT_FILES_ALLOWED_EXTENSIONS",
+    default="xls,xlsx",
+)
+IMPORT_FILES_ALLOWED_MIME_TYPES = split_env_var(
+    "IMPORT_FILES_ALLOWED_MIME_TYPES",
+    default="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+)
+
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -289,11 +319,3 @@ LOGGING = {
         },
     },
 }
-
-
-BULK_DOWNLOAD_ROOT_URL = get_env_var(
-    "BULK_DOWNLOAD_ROOT_URL",
-    default="https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing",
-)
-BULK_DOWNLOAD_TIMEOUT = get_float_env_var("BULK_DOWNLOAD_TIMEOUT", default=5.0)
-BULK_DOWNLOAD_DIR = validate_dir(Path(get_env_var("BULK_DOWNLOAD_DIR")))
