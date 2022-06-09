@@ -139,15 +139,19 @@ class Command(BaseCommand):
                     if country not in countries:
                         countries[country] = Country.objects.get_or_create(code=country)
                         if countries[country][1]:
-                            if datasets[dataset].config.country:
-                                dim_val = datasets[dataset].config.country.values.get(
-                                    code=country
-                                )
-                            else:
-                                dim_val = datasets[dataset].config.country_surrogate
+                            try:
+                                if datasets[dataset].config.country:
+                                    dim_val = datasets[dataset].config.country.values.get(
+                                        code=country
+                                    )
+                                else:
+                                    dim_val = datasets[dataset].config.country_surrogate
 
-                            countries[country][0].label = dim_val.label
-                            countries[country][0].save()
+                                countries[country][0].label = dim_val.label
+                                countries[country][0].save()
+                            except DimensionValue.DoesNotExist:
+                                # Probably a code remapped from the SQL query
+                                pass
 
                     indicators[indicator][0].countries.add(countries[country][0])
 
