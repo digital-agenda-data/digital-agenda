@@ -165,7 +165,7 @@ GRANT SELECT ON TABLE
     public.estat_dimensions,
     public.estat_dim_values,
     public.estat_facts
-TO digital_agenda_ro;
+TO da_ro;
 ```
 
 Note: non-superuser application users must belong to the `Dashboard` group 
