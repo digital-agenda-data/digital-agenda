@@ -56,7 +56,7 @@ class DataSourceFilter(AutocompleteFilter):
 
 
 @admin.register(Indicator)
-class IndicatorAdmin(SortableDimensionAdmin):
+class IndicatorAdmin(DimensionAdmin):
     list_filter = [DataSourceFilter]
 
 
@@ -75,7 +75,7 @@ class BreakdownGroupAdmin(SortableDimensionAdmin):
     list_filter = [BreakdownsFilter]
 
 
-admin.site.register(Breakdown, SortableDimensionAdmin)
+admin.site.register(Breakdown, DimensionAdmin)
 
 admin.site.register(Unit, DimensionAdmin)
 

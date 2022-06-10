@@ -81,7 +81,7 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
         ordering = ["display_order", "code"]
 
 
-class Indicator(BaseDimensionModel, DisplayOrderModel):
+class Indicator(BaseDimensionModel):
     """Dimension model for indicators"""
 
     data_source = models.ForeignKey(
@@ -114,7 +114,7 @@ class Indicator(BaseDimensionModel, DisplayOrderModel):
 
     class Meta:
         db_table = "indicators"
-        ordering = ["display_order", "code"]
+        ordering = ["code"]
 
 
 class IndicatorGroupLinkManager(models.Manager):
@@ -158,12 +158,12 @@ class BreakdownGroup(BaseDimensionModel, DisplayOrderModel):
         ordering = ["display_order", "code"]
 
 
-class Breakdown(BaseDimensionModel, DisplayOrderModel):
+class Breakdown(BaseDimensionModel):
     """Dimension model for secondary dimensions, a.k.a. breakdowns."""
 
     class Meta:
         db_table = "breakdowns"
-        ordering = ["display_order", "code"]
+        ordering = ["code"]
 
 
 class BreakdownGroupLinkManager(models.Manager):
