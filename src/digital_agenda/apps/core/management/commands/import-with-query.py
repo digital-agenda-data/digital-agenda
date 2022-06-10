@@ -65,14 +65,19 @@ class Command(BaseCommand):
         # Caches of pairs of object instances and "created" flags, indexed by dimension values
         # in the query results
         data_sources = {}
-        indicators = {}
-        breakdowns = {}
-        units = {}
-        countries = {}
-        periods = {}
-
         datasets = {}
-
+        dims = ("indicator", "breakdown", "unit", "country", "period")
+        dim_plurals = {
+            dim: f"{dim}s" if dim != "country" else "countries" for dim in dims
+        }
+        dim_models = {
+            "indicator": Indicator,
+            "breakdown": Breakdown,
+            "unit": Unit,
+            "country": Country,
+            "period": Period,
+        }
+        dims_cache = {d: {} for d in dims}
         batches = math.ceil(len(query_results) / batch_size)
         imported_count = 0
 
@@ -84,14 +89,15 @@ class Command(BaseCommand):
             for i in range(0, len(query_results), batch_size):
                 results_batch = query_results[i : i + batch_size]
                 fact_objects = []
+                row_dims = {d: None for d in dims}
                 for row in results_batch:
                     (
                         estat_dataset,
-                        indicator,
-                        breakdown,
-                        unit,
-                        country,
-                        period,
+                        row_dims["indicator"],
+                        row_dims["breakdown"],
+                        row_dims["unit"],
+                        row_dims["country"],
+                        row_dims["period"],
                         value,
                         flags,
                     ) = row
@@ -104,70 +110,63 @@ class Command(BaseCommand):
                             code=dataset
                         )
 
-                    if indicator not in indicators:
-                        indicators[indicator] = Indicator.objects.update_or_create(
-                            code=indicator,
+                    # Indicator records need to be set up before the rest of the dimensions,
+                    # which are all M2M-related to indicators.
+                    if row_dims["indicator"] not in dims_cache["indicator"]:
+                        dims_cache["indicator"][
+                            row_dims["indicator"]
+                        ] = Indicator.objects.update_or_create(
+                            code=row_dims["indicator"],
                             defaults={
                                 "data_source": data_sources[dataset][0],
                             },
                         )
 
-                    if breakdown not in breakdowns:
-                        breakdowns[breakdown] = Breakdown.objects.get_or_create(
-                            code=breakdown
-                        )
-                    indicators[indicator][0].breakdowns.add(breakdowns[breakdown][0])
-
+                    # The Eurostat dataset will be used to dig for labels.
                     if dataset not in datasets:
                         datasets[dataset] = Dataset.objects.get(code=estat_dataset)
 
-                    if unit not in units:
-                        units[unit] = Unit.objects.get_or_create(code=unit)
-                        if units[unit][1]:
-                            if datasets[dataset].config.unit:
-                                dim_val = datasets[dataset].config.unit.values.get(
-                                    code=unit
-                                )
-                            else:
-                                dim_val = datasets[dataset].config.unit_surrogate
+                    # The rest of the dimensions
+                    for dim, dim_cache in dims_cache.items():
+                        if dim == "indicator":
+                            continue
 
-                            units[unit][0].label = dim_val.label
-                            units[unit][0].save()
+                        if row_dims[dim] not in dim_cache:
+                            dim_cache[row_dims[dim]] = dim_models[
+                                dim
+                            ].objects.get_or_create(code=row_dims[dim])
+                            # For new values, attempt to source label from ESTAT dimension values
+                            if dim_cache[row_dims[dim]][1]:
+                                try:
+                                    if getattr(datasets[dataset].config, dim):
+                                        dim_val = getattr(
+                                            datasets[dataset].config, dim
+                                        ).values.get(code=row_dims[dim])
+                                    else:
+                                        dim_val = getattr(
+                                            datasets[dataset].config, f"{dim}_surrogate"
+                                        )
 
-                    indicators[indicator][0].units.add(units[unit][0])
+                                    dim_cache[row_dims[dim]][0].label = dim_val.label
+                                    dim_cache[row_dims[dim]][0].save()
+                                except DimensionValue.DoesNotExist:
+                                    # Probably a code remapped from the SQL query
+                                    pass
 
-                    if country not in countries:
-                        countries[country] = Country.objects.get_or_create(code=country)
-                        if countries[country][1]:
-                            try:
-                                if datasets[dataset].config.country:
-                                    dim_val = datasets[dataset].config.country.values.get(
-                                        code=country
-                                    )
-                                else:
-                                    dim_val = datasets[dataset].config.country_surrogate
+                        # Perform M2M association with indicator
+                        getattr(
+                            dims_cache["indicator"][row_dims["indicator"]][0],
+                            dim_plurals[dim],  # Indicator has pluralized related name
+                        ).add(dim_cache[row_dims[dim]][0])
 
-                                countries[country][0].label = dim_val.label
-                                countries[country][0].save()
-                            except DimensionValue.DoesNotExist:
-                                # Probably a code remapped from the SQL query
-                                pass
-
-                    indicators[indicator][0].countries.add(countries[country][0])
-
-                    if period not in periods:
-                        periods[period] = Period.objects.get_or_create(code=period)
-                    indicators[indicator][0].periods.add(periods[period][0])
-
+                    dim_fields = {
+                        dim: dims_cache[dim][row_dims[dim]][0] for dim in dims
+                    }
                     fact_objects.append(
                         Fact(
                             value=value,
                             flags=flags,
-                            indicator=indicators[indicator][0],
-                            breakdown=breakdowns[breakdown][0],
-                            unit=units[unit][0],
-                            country=countries[country][0],
-                            period=periods[period][0],
+                            **dim_fields,
                         )
                     )
 
@@ -181,27 +180,15 @@ class Command(BaseCommand):
             f"Imported facts: {imported_count} / {len(query_results)}",
         )
 
-        new_data_sources = [k for k, v in data_sources.items() if v[1]]
-        new_indicators = [k for k, v in indicators.items() if v[1]]
-        new_breakdowns = [k for k, v in breakdowns.items() if v[1]]
-        new_units = [k for k, v in units.items() if v[1]]
-        new_countries = [k for k, v in countries.items() if v[1]]
-        new_periods = [k for k, v in periods.items() if v[1]]
+        # Report new instances based on the flag in the cached (<instance>, <created>) tuple.
 
+        new_data_sources = [k for k, v in data_sources.items() if v[1]]
         if new_data_sources:
             console.print(f"[bold]New data sources[/]: {new_data_sources}")
 
-        if new_indicators:
-            console.print(f"[bold]New indicators[/]: {new_indicators}")
-
-        if new_breakdowns:
-            console.print(f"[bold]New breakdowns[/]: {new_breakdowns}")
-
-        if new_units:
-            console.print(f"[bold]New units[/]: {new_units}")
-
-        if new_countries:
-            console.print(f"[bold]New countries[/]: {new_countries}")
-
-        if new_periods:
-            console.print(f"[bold]New periods[/]: {new_periods}")
+        new_dim_values = {
+            dim: [k for k, v in dims_cache[dim].items() if v[1]] for dim in dims
+        }
+        for dim in dims:
+            if new_dim_values[dim]:
+                console.print(f"[bold]New {dim} values[/]: {new_dim_values[dim]}")
