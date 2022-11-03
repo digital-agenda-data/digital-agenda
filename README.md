@@ -13,7 +13,8 @@ docker/build.sh
 Bring up the app and database:
 
 ```shell
-COMPOSE_FILE=docker/docker-compose.yml
+export COMPOSE_FILE=docker/docker-compose.yml
+export DOCKER_ENV_FILE=docker.env
 docker-compose up -d
 ```
 
