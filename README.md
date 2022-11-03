@@ -47,19 +47,30 @@ The `core` app (`digital_agenda.apps.core`) provides fixtures for seeding:
 - breakdowns
 - units of measure
 
-To import these fixtures (order matters):
+To import these fixtures:
 
-```shell
-django-admin loaddata \
-  datasources \
-  indicatorgroups \
-  indicators \
-  indicatorgrouplinks \
-  breakdowngroups \
-  breakdowns \
-  breakdowngrouplinks \
-  units
-```
+- Copy fixtures in the container:
+  ```shell
+  docker compose cp src/digital_agenda/apps/core/fixtures/ app-http:/fixtures/
+  docker compose exec app-http bash
+  cd fixtures/
+  ```
+- Run import command (order matters):
+  ```shell
+  django-admin loaddata \
+    datasources \
+    indicatorgroups \
+    indicators \
+    indicatorgrouplinks \
+    breakdowngroups \
+    breakdowns \
+    breakdowngrouplinks \
+    units
+  ```
+  
+---
+
+**XXX TODO** Missing steps for this to work with docker: 
 
 Alternative fixtures can be produced from Excel exports of code lists from the previous version:
 ```shell
