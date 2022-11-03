@@ -6,19 +6,15 @@ services:
     image: postgres:14.2
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=digital_agenda
-      - POSTGRES_USER=digital_agenda
-      - POSTGRES_PASSWORD=digital_agenda
+    env_file:
+      - "${DOCKER_ENV_FILE}"
     expose:
       - 5432
 
   broker:
     image: rabbitmq:3.10.5-management
-    environment:
-      - RABBITMQ_DEFAULT_VHOST=da
-      - RABBITMQ_DEFAULT_USER=da
-      - RABBITMQ_DEFAULT_PASS=da
+    env_file:
+      - "${DOCKER_ENV_FILE}"
 
   app-http:
     image: digital-agenda-app
