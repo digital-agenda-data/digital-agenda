@@ -9,6 +9,7 @@ django-admin-autocomplete-filter
 django-admin-env-notice
 django-admin-sortable2
 django-cors-headers
+django-environ
 django-filter
 django-health-check
 django_json_widget

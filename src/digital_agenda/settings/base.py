@@ -1,5 +1,8 @@
+import os
 from datetime import timedelta
 from pathlib import Path
+
+import environ
 
 from .utils import (
     validate_dir,
@@ -14,6 +17,13 @@ from .utils import (
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ROOT_DIR = BASE_DIR.parent
+
+env = environ.Env()
+
+if os.path.exists(str(BASE_DIR / ".env")):
+    env.read_env(str(BASE_DIR / ".env"))
+
+
 STATIC_ROOT = validate_dir(Path(get_env_var("STATIC_ROOT")))
 
 SECRET_KEY = get_env_var("SECRET_KEY")
