@@ -85,6 +85,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_EXPOSE_HEADERS = ["content-disposition"]
 CORS_ALLOWED_ORIGINS = split_env_var(
     "CORS_ALLOWED_ORIGINS", default="http://localhost:8000,http://127.0.0.1:8000"
 )

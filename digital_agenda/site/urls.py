@@ -13,15 +13,14 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-
 api_urlpatterns = [
     path("", include("digital_agenda.apps.core.urls")),
+    path("auth/", include("dj_rest_auth.urls")),
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 urlpatterns = [
-    path("api/auth/", include("dj_rest_auth.urls")),
     path("api/v1/", include((api_urlpatterns, "api"), namespace="v1")),
     path("api/v1/schema/", SpectacularAPIView.as_view(api_version="v1"), name="schema"),
     path(
