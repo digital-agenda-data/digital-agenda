@@ -49,8 +49,7 @@ def split_env_var(var_name, sep=",", default=None):
 
 
 def validate_dir(path):
-    if not path.exists():
-        raise FileNotFoundError(f"Missing required directory: {path}")
+    path.mkdir(parents=True, exist_ok=True)
 
     if not path.is_dir():
         raise FileNotFoundError(
