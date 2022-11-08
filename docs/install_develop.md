@@ -43,6 +43,17 @@ This document describes installation steps required to install locally for devel
   ```shell
   python manage.py load_initial_fixtures
   ```
+  
+## Installing Frontend for development
+
+- Change directory to the frontend directory
+  ```shell
+  cd frontend
+  ```
+- Install dependencies
+  ```shell
+  npm install
+  ```
 
 ## Running the application
 
@@ -50,7 +61,27 @@ This document describes installation steps required to install locally for devel
   ```shell
   python manage.py runserver
   ```
-- Start worker *(**NOTE** Celery does not have hot-reload, changes to the code will require a restart)*
+- Start the frontend with hot-reload
+  ```shell
+  npm run dev
+  ```  
+- _(optional)_ Start worker. _**NOTE** Celery does not have hot-reload, changes to the code will require a restart_
   ```shell
   celery -A digital_agenda worker -c 1 -l debug
+  ```
+  
+## Updating the application
+
+- Update the code with the latest version
+- Update third-party packages required at runtime.
+  ```shell
+  pip install -c requirements/constraints.txt -r requirements/dev.txt
+  ```
+- Update frontend dependencies
+  ```shell
+  cd frontend && npm install 
+  ```
+- Run migrations:
+  ```shell
+  python manage.py migrate
   ```
