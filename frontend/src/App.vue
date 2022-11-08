@@ -17,7 +17,7 @@ export default {
   async mounted() {
     try {
       this.loaded = false;
-      await Promise.all([this.loadInitialData, this.loadECL]);
+      await Promise.all([this.loadInitialData(), this.loadECL()]);
     } finally {
       this.loaded = true;
     }
