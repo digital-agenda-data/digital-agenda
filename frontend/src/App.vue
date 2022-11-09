@@ -1,9 +1,10 @@
 <template>
-  <div v-if="loaded">
+  <div v-if="loaded" class="ecl app-wrapper">
     <ecl-site-header />
-    <main>
+    <main class="ecl-container">
       <router-view />
     </main>
+    <ecl-site-footer />
   </div>
 </template>
 
@@ -16,10 +17,11 @@ import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 import userStore from "@/stores/userStore";
 import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
+import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
 
 export default {
   name: "App",
-  components: { EclSiteHeader },
+  components: { EclSiteFooter, EclSiteHeader },
   data() {
     return {
       loaded: false,

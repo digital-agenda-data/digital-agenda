@@ -5,8 +5,16 @@
 </template>
 
 <script>
-import spritesURL from "@ecl/preset-ec/dist/images/icons/sprites/icons.svg?url";
-import validIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
+import iconSpritesURL from "@ecl/preset-ec/dist/images/icons/sprites/icons.svg?url";
+import socialMediaSpritesURL from "@ecl/preset-ec/dist/images/icons-social-media/sprites/icons-social-media.svg";
+
+import spritesValidIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
+import socialMediaValidIcons from "@ecl/preset-ec/dist/images/icons-social-media/lists/social-media.json";
+
+const allIcons = Object.fromEntries([
+  ...spritesValidIcons.map((icon) => [icon, iconSpritesURL]),
+  ...socialMediaValidIcons.map((icon) => [icon, socialMediaSpritesURL]),
+]);
 
 /**
  * ECL icon component. See full documentation here:
@@ -29,7 +37,7 @@ export default {
       type: String,
       required: true,
       validator(value) {
-        return validIcons.includes(value);
+        return !!allIcons[value];
       },
     },
     size: {
@@ -71,7 +79,7 @@ export default {
   },
   computed: {
     href() {
-      return spritesURL + "#" + this.icon;
+      return allIcons[this.icon] + "#" + this.icon;
     },
     classList() {
       const result = [

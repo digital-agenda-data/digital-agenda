@@ -1,12 +1,23 @@
 <template>
-  <router-link :to="to" :class="classList">
+  <a :href="href" :class="classList" :target="target" :rel="rel">
+    <ecl-icon
+      v-if="icon && iconLeft"
+      :icon="icon"
+      size="fluid"
+      class="ecl-link__icon"
+    />
     <slot>
       <span v-if="label" class="ecl-link__label">
         {{ label }}
       </span>
     </slot>
-    <ecl-icon v-if="icon" :icon="icon" size="fluid" class="ecl-link__icon" />
-  </router-link>
+    <ecl-icon
+      v-if="icon && !iconLeft"
+      :icon="icon"
+      size="fluid"
+      class="ecl-link__icon"
+    />
+  </a>
 </template>
 
 <script>
@@ -48,10 +59,9 @@ export default {
     variant: {
       type: String,
       required: false,
-      default: "default",
+      default: "standalone",
       validator(value) {
         return [
-          "default",
           "standalone",
           "cta",
           "primary",
@@ -65,6 +75,11 @@ export default {
       required: false,
       default: null,
     },
+    iconLeft: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     classList() {
@@ -72,9 +87,30 @@ export default {
 
       if (this.icon) {
         result.push("ecl-link--icon");
-        result.push("ecl-link--icon-after");
+
+        if (this.iconLeft) {
+          result.push("ecl-link--icon-before");
+        } else {
+          result.push("ecl-link--icon-after");
+        }
       }
       return result;
+    },
+    isExternalLink() {
+      return (
+        typeof this.to === "string" &&
+        (this.to.startsWith("http://") || this.to.startsWith("https://"))
+      );
+    },
+    href() {
+      if (this.isExternalLink) return this.to;
+      return this.$router.resolve(this.to).fullPath;
+    },
+    target() {
+      return this.isExternalLink ? "_blank" : undefined;
+    },
+    rel() {
+      return this.isExternalLink ? "noreferrer noopener" : undefined;
     },
   },
 };

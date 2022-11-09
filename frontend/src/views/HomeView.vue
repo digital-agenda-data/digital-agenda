@@ -1,5 +1,8 @@
 <template>
-  <div>Current user {{ userStore.email }}</div>
+  <p>Home view</p>
+  <p>
+    Current user: <em>{{ userStore.email || "anonymous" }}</em>
+  </p>
 </template>
 
 <script>
