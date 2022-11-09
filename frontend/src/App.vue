@@ -1,10 +1,18 @@
 <template>
-  <div v-if="loaded" class="ecl app-wrapper">
-    <ecl-site-header />
-    <main class="ecl-container">
-      <router-view />
+  <div class="ecl app-wrapper">
+    <template v-if="loaded">
+      <ecl-site-header />
+      <main class="ecl-container">
+        <router-view />
+      </main>
+      <ecl-site-footer />
+    </template>
+    <main
+      v-else
+      class="ecl-u-d-flex ecl-u-align-items-center ecl-u-justify-content-center"
+    >
+      <ecl-spinner size="large" />
     </main>
-    <ecl-site-footer />
   </div>
 </template>
 
@@ -18,10 +26,11 @@ import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 import userStore from "@/stores/userStore";
 import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
 import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 export default {
   name: "App",
-  components: { EclSiteFooter, EclSiteHeader },
+  components: { EclSpinner, EclSiteFooter, EclSiteHeader },
   data() {
     return {
       loaded: false,
