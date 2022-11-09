@@ -13,6 +13,11 @@ import validIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
  *
  *  https://ec.europa.eu/component-library/ec/components/icon/usage/
  *
+ * Example usages:
+ *
+ *  <ecl-icon icon="rss" size="m" color="inverted" rotate="90" flip-vertical />
+ *  <ecl-icon icon="hamburger" size="l" color="primary" />
+ *
  */
 export default {
   name: "EclIcon",
