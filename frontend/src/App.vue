@@ -1,3 +1,12 @@
+<template>
+  <div v-if="loaded">
+    <ecl-site-header />
+    <main>
+      <router-view />
+    </main>
+  </div>
+</template>
+
 <script>
 import { mapActions } from "pinia";
 import { loadScript } from "vue-plugin-load-script";
@@ -6,9 +15,11 @@ import momentURL from "moment/min/moment.min.js?url";
 import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 import userStore from "@/stores/userStore";
+import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
 
 export default {
   name: "App",
+  components: { EclSiteHeader },
   data() {
     return {
       loaded: false,
@@ -43,18 +54,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div v-if="loaded">
-    <header>
-      <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-      </nav>
-    </header>
-    <router-view />
-  </div>
-</template>
 
 <style>
 @import "@ecl/preset-reset/dist/styles/optional/ecl-reset.css";
