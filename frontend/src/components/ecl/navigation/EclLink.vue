@@ -1,5 +1,9 @@
 <template>
-  <a :href="href" :class="classList" :target="target" :rel="rel">
+  <component
+    :is="isExternalLink ? 'a' : 'RouterLink'"
+    :class="classList"
+    v-bind="bindAttrs"
+  >
     <ecl-icon
       v-if="icon && iconLeft"
       :icon="icon"
@@ -17,7 +21,7 @@
       size="fluid"
       class="ecl-link__icon"
     />
-  </a>
+  </component>
 </template>
 
 <script>
@@ -80,6 +84,11 @@ export default {
       required: false,
       default: false,
     },
+    noVisited: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     classList() {
@@ -94,6 +103,11 @@ export default {
           result.push("ecl-link--icon-after");
         }
       }
+
+      if (this.noVisited) {
+        result.push("ecl-link--no-visited");
+      }
+
       return result;
     },
     isExternalLink() {
@@ -102,15 +116,18 @@ export default {
         (this.to.startsWith("http://") || this.to.startsWith("https://"))
       );
     },
-    href() {
-      if (this.isExternalLink) return this.to;
-      return this.$router.resolve(this.to).fullPath;
-    },
-    target() {
-      return this.isExternalLink ? "_blank" : undefined;
-    },
-    rel() {
-      return this.isExternalLink ? "noreferrer noopener" : undefined;
+    bindAttrs() {
+      if (this.isExternalLink) {
+        return {
+          target: "_blank",
+          rel: "noreferrer noopener",
+          href: this.to,
+        };
+      }
+
+      return {
+        to: this.to,
+      };
     },
   },
 };

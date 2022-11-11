@@ -14,28 +14,35 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
-      meta: {
-        name: "home",
-      },
     },
     {
       path: "/about",
       name: "about",
       component: AboutView,
       meta: {
-        name: "About data visualisation tool",
+        title: "About data visualisation tool",
+        breadcrumb: "About data visualisation tool",
       },
     },
     {
       path: "/datasets/:datasetId",
-      name: "datasets",
       component: DatasetView,
+      name: "datasets",
+      redirect: {
+        name: "home",
+      },
       meta: {
-        name() {
-          const datasetId = this.$route.params.datasetId;
+        title(route) {
           return datasetsStore().datasets.find(
-            (item) => item.code === datasetId
-          ).short_name;
+            (item) => item.code === route.params.datasetId
+          )?.name;
+        },
+        breadcrumb(route) {
+          return (
+            datasetsStore().datasets.find(
+              (item) => item.code === route.params.datasetId
+            )?.short_name || "Datasets"
+          );
         },
       },
       children: [
@@ -44,7 +51,7 @@ const router = createRouter({
           name: "charts",
           component: ChartListView,
           meta: {
-            name: "charts",
+            breadcrumb: "Charts",
           },
         },
         {
@@ -52,16 +59,15 @@ const router = createRouter({
           name: "indicators",
           component: IndicatorView,
           meta: {
-            name: "indicators",
+            breadcrumb: "Indicators",
           },
         },
         {
-          path: "",
-          alias: "metadata",
+          path: "metadata",
           name: "metadata",
           component: MetadataView,
           meta: {
-            name: "metadata",
+            breadcrumb: "Metadata",
           },
         },
       ],

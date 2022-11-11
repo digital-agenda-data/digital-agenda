@@ -3,6 +3,7 @@
     <template v-if="loaded">
       <ecl-site-header />
       <main class="ecl-container">
+        <ecl-page-header />
         <router-view />
       </main>
       <ecl-site-footer />
@@ -27,10 +28,11 @@ import userStore from "@/stores/userStore";
 import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
 import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
+import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
 
 export default {
   name: "App",
-  components: { EclSpinner, EclSiteFooter, EclSiteHeader },
+  components: { EclPageHeader, EclSpinner, EclSiteFooter, EclSiteHeader },
   data() {
     return {
       loaded: false,
