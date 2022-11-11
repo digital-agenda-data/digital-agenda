@@ -8,12 +8,11 @@
         Search
       </label>
       <input
+        v-model="value"
         :name="inputName"
         type="search"
         class="ecl-text-input ecl-text-input--m ecl-search-form__text-input"
         :placeholder="placeholder"
-        :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
       />
     </div>
 
@@ -72,6 +71,16 @@ export default {
     },
   },
   emits: ["update:modelValue"],
+  computed: {
+    value: {
+      get() {
+        return this.modelValue;
+      },
+      set(value) {
+        this.$emit("update:modelValue", value);
+      },
+    },
+  },
 };
 </script>
 
