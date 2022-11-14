@@ -58,7 +58,7 @@ function initComponent(el) {
   // Requires attribute data-ecl-auto-init="COMPONENT"
   const componentName = el.dataset.eclAutoInit;
 
-  if (el.dataset.eclAutoInitialized === "true") {
+  if (el[`ECL${componentName}`]) {
     console.warn("Component already initialized for:", el);
     return;
   }
@@ -77,11 +77,6 @@ function initComponent(el) {
 function destroyComponent(el) {
   // Requires attribute data-ecl-auto-init="COMPONENT"
   const componentName = el.dataset.eclAutoInit;
-
-  if (el.dataset.eclAutoInitialized !== "true") {
-    console.warn("Component not yet initialized for:", el);
-    return;
-  }
 
   if (!componentName || !window.ECL[componentName]) {
     console.warn(
