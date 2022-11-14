@@ -21,7 +21,7 @@ export default {
   components: { EclLink },
   computed: {
     navRoutes() {
-      return ["charts", "indicators", "metadata"];
+      return ["charts", "indicators", "metadata", "comments"];
     },
   },
 };

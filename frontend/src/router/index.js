@@ -7,6 +7,7 @@ import IndicatorView from "@/views/datasets/IndicatorView.vue";
 import MetadataView from "@/views/datasets/MetadataView.vue";
 import datasetsStore from "@/stores/datasetsStore";
 import SearchView from "@/views/SearchView.vue";
+import CommentsView from "@/views/datasets/CommentsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -80,6 +81,14 @@ const router = createRouter({
           component: MetadataView,
           meta: {
             breadcrumb: "Metadata",
+          },
+        },
+        {
+          path: "comments",
+          name: "comments",
+          component: CommentsView,
+          meta: {
+            breadcrumb: "Comments",
           },
         },
       ],

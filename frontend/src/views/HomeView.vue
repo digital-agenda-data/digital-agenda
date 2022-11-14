@@ -12,11 +12,12 @@
               datasetId: dataset.code,
             },
           }"
+          no-visited
         >
           {{ dataset.name }}
         </ecl-link>
         <p>
-        {{ dataset.description }}
+          {{ dataset.description }}
         </p>
       </li>
     </ol>
