@@ -18,4 +18,5 @@ body {
 
 #app .app-wrapper main {
   flex-grow: 1;
+  padding-bottom: 120px;
 }
