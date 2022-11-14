@@ -67,7 +67,7 @@ export default {
     inputName: {
       type: String,
       required: false,
-      default: "search",
+      default: "q",
     },
   },
   emits: ["update:modelValue"],

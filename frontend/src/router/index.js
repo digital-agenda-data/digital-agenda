@@ -6,6 +6,7 @@ import ChartListView from "@/views/datasets/ChartListView.vue";
 import IndicatorView from "@/views/datasets/IndicatorView.vue";
 import MetadataView from "@/views/datasets/MetadataView.vue";
 import datasetsStore from "@/stores/datasetsStore";
+import SearchView from "@/views/SearchView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,17 @@ const router = createRouter({
       meta: {
         title: "About data visualisation tool",
         breadcrumb: "About data visualisation tool",
+      },
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: SearchView,
+      meta: {
+        title(route) {
+          return `Search results for "${route.query.q || ""}"`;
+        },
+        breadcrumb: "Search",
       },
     },
     {

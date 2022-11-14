@@ -29,10 +29,12 @@
 
               <ecl-search-form
                 id="search-form-id"
+                v-model="searchQuery"
                 class="ecl-site-header__search"
                 data-ecl-search-form=""
                 placeholder="e.g. social media"
                 help-text="Search for indicators"
+                :action="searchAction"
               />
             </div>
           </div>
@@ -66,7 +68,18 @@ export default {
   data() {
     return {
       logoURL,
+      searchQuery: this.$route.query.q,
     };
+  },
+  computed: {
+    searchAction() {
+      return this.$router.resolve({ name: "search" }).fullPath;
+    },
+  },
+  watch: {
+    $route() {
+      this.searchQuery = this.$route.query.q;
+    },
   },
 };
 </script>
