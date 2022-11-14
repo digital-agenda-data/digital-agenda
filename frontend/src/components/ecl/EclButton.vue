@@ -2,7 +2,7 @@
   <button
     class="ecl-button"
     :class="`ecl-button--${variant}`"
-    :aria-label="label"
+    :aria-label="ariaLabel || label"
   >
     <span class="ecl-button__container">
       <slot>
@@ -55,6 +55,11 @@ export default {
       },
     },
     label: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    ariaLabel: {
       type: String,
       required: false,
       default: null,
