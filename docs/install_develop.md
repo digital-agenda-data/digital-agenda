@@ -25,7 +25,7 @@ This document describes installation steps required to install locally for devel
 
 - Configure local settings, starting from the dev example
   ```shell
-  cp .env.example .env
+  cp .env.develop.example .env
   ```
 - Install dependencies
   ```shell
@@ -61,7 +61,7 @@ This document describes installation steps required to install locally for devel
   ```shell
   python manage.py runserver
   ```
-- Start the frontend with hot-reload
+- Start the frontend with hot-reload (from frontend directory)
   ```shell
   npm run dev
   ```  
