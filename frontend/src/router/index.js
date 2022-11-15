@@ -1,13 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+
+import datasetsStore from "@/stores/datasetsStore";
+
+import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
+import SearchView from "@/views/SearchView.vue";
+
 import DatasetView from "@/views/DatasetView.vue";
+import CommentsView from "@/views/datasets/CommentsView.vue";
+import MetadataView from "@/views/datasets/MetadataView.vue";
 import ChartListView from "@/views/datasets/ChartListView.vue";
 import IndicatorView from "@/views/datasets/IndicatorView.vue";
-import MetadataView from "@/views/datasets/MetadataView.vue";
-import datasetsStore from "@/stores/datasetsStore";
-import SearchView from "@/views/SearchView.vue";
-import CommentsView from "@/views/datasets/CommentsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,8 +42,8 @@ const router = createRouter({
     },
     {
       path: "/datasets/:datasetId",
-      component: DatasetView,
       name: "datasets",
+      component: DatasetView,
       redirect: {
         name: "home",
       },

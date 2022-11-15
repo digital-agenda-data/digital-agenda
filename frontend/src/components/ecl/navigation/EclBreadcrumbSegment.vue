@@ -12,10 +12,10 @@
         :to="to"
         no-visited
         class="ecl-breadcrumb__link"
-        :label="label"
+        :label="text"
       />
       <template v-else>
-        {{ label }}
+        {{ text }}
       </template>
     </slot>
 
@@ -50,7 +50,7 @@ export default {
       required: false,
       default: null,
     },
-    label: {
+    text: {
       type: String,
       required: false,
       default: null,

@@ -1,7 +1,5 @@
 <template>
-  <p>
-    List of indicators
-  </p>
+  <p>List of indicators</p>
 </template>
 
 <script>

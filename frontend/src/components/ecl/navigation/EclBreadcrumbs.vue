@@ -12,7 +12,7 @@
     <ol class="ecl-breadcrumb__container">
       <ecl-breadcrumb-segment
         :to="firstItem.to"
-        :label="firstItem.label"
+        :text="firstItem.text"
         :current-page="breadcrumbs.length === 0"
       />
 
@@ -34,7 +34,7 @@
         v-for="(crumb, index) in breadcrumbs"
         :key="crumb.id"
         :to="crumb.to"
-        :label="crumb.label"
+        :text="crumb.text"
         :current-page="index === breadcrumbs.length - 1"
         :expandable="index < breadcrumbs.length - 1"
       />
@@ -61,8 +61,8 @@ export default {
      *
      *   {
      *     id: "",          // Unique ID for the item
-     *     label: "",       // Label for the item
      *     to: "",          // Link URL or Route Object (optional)
+     *     text: "",        // Label for the item
      *   }
      */
     items: {
