@@ -1,5 +1,5 @@
 <template>
-  <svg :class="classList" focusable="false" aria-hidden="true">
+  <svg :class="classList" focusable="false" aria-hidden="true" data-ecl-icon="">
     <use :href="href"></use>
   </svg>
 </template>

@@ -43,3 +43,15 @@ To add a new dependency:
   ```bash
   pip freeze > requirements/constraints.txt
   ``` 
+  
+## ECL Viewport Breakpoints
+
+See more details here: https://ec.europa.eu/component-library/ec/utilities/layout/grid/
+
+|     | Name        | Min Viewport Width |
+|-----|-------------|--------------------|
+| xs  | Extra small | ≥ 0px              |
+| s   | Small       | ≥ 480px            |
+| m   | Medium      | ≥ 768px            |
+| l   | Large       | ≥ 996px            |
+| xl  | Extra large | ≥ 1140px           |

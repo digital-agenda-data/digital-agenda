@@ -12,6 +12,7 @@
         <ecl-icon
           v-if="icon"
           :icon="icon"
+          :rotate="iconRotate"
           size="xs"
           class="ecl-button__icon"
           :class="{
@@ -68,6 +69,11 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    iconRotate: {
+      type: [String, Number],
+      required: false,
+      default: 0,
     },
   },
 };

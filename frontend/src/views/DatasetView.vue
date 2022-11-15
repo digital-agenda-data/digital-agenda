@@ -1,10 +1,22 @@
 <template>
+  <div
+    class="ecl-row ecl-u-pt-m ecl-u-d-flex"
+    :class="`ecl-u-d-${mobileBreakpoint}-none`"
+  >
+    <div class="ecl-col-12">
+      <ecl-tabs :items="navRoutes" />
+    </div>
+  </div>
+
   <div class="ecl-row">
-    <div class="ecl-col-8">
+    <div class="ecl-col-12" :class="`ecl-col-${mobileBreakpoint}-8`">
       <router-view />
     </div>
 
-    <div class="ecl-col-4">
+    <div
+      class="ecl-u-d-none ecl-col-4"
+      :class="`ecl-u-d-${mobileBreakpoint}-flex`"
+    >
       <div class="ecl-u-pa-xs">
         <h4>About this dataset</h4>
         <ecl-category-filter :items="navRoutes" />
@@ -15,10 +27,16 @@
 
 <script>
 import EclCategoryFilter from "@/components/ecl/EclCategoryFilter.vue";
+import EclTabs from "@/components/ecl/navigation/EclTabs.vue";
 
 export default {
   name: "DatasetView",
-  components: { EclCategoryFilter },
+  components: { EclTabs, EclCategoryFilter },
+  data() {
+    return {
+      mobileBreakpoint: "l",
+    };
+  },
   computed: {
     navRoutes() {
       const params = {
