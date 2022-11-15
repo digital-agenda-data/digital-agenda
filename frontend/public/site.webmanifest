@@ -1,0 +1,14 @@
+{
+    "name": "Digital Agenda",
+    "short_name": "Digital Agenda",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#034ea1",
+    "background_color": "#034ea1",
+    "display": "standalone"
+}
