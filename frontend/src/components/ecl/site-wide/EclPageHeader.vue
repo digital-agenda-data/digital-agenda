@@ -37,7 +37,7 @@ export default {
       const result = [
         {
           id: "home",
-          label: "Home",
+          text: "Home",
           to: { name: "home" },
         },
       ];
@@ -53,8 +53,8 @@ export default {
         }
 
         result.push({
-          label,
           id: match.name,
+          text: label,
           to: {
             name: match.name,
             params: this.$route.params,

@@ -28,22 +28,22 @@ export default {
       return [
         {
           id: "charts",
-          label: "Charts",
+          text: "Charts",
           to: { name: "charts", params },
         },
         {
           id: "indicators",
-          label: "Indicators",
+          text: "Indicators",
           to: { name: "indicators", params },
         },
         {
           id: "metadata",
-          label: "Metadata",
+          text: "Metadata",
           to: { name: "metadata", params },
         },
         {
           id: "comments",
-          label: "Comments",
+          text: "Comments",
           to: { name: "comments", params },
         },
       ];
