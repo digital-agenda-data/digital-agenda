@@ -15,6 +15,9 @@ class Command(BaseCommand):
         "breakdowns",
         "breakdowngrouplinks",
         "units",
+        "periods",
+        "chartgroups",
+        "chartgrouplinks",
     )
 
     def handle(self, *args, **options):

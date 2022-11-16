@@ -49,11 +49,13 @@ LOCAL_APPS = [
     "digital_agenda.apps.accounts.apps.Config",
     "digital_agenda.apps.core.apps.Config",
     "digital_agenda.apps.estat.apps.Config",
+    "digital_agenda.apps.charts.apps.Config",
 ]
 
 THIRD_PARTY_APPS = [
     "adminsortable2",
     "channels",
+    "ckeditor",
     "corsheaders",
     "django_filters",
     "admin_auto_filters",

@@ -1,0 +1,245 @@
+[
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 1,
+  "fields": {
+    "display_order": 1,
+    "indicator_group": 5,
+    "chart_group": 1
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 2,
+  "fields": {
+    "display_order": 2,
+    "indicator_group": 10,
+    "chart_group": 1
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 3,
+  "fields": {
+    "display_order": 3,
+    "indicator_group": 6,
+    "chart_group": 1
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 4,
+  "fields": {
+    "display_order": 4,
+    "indicator_group": 9,
+    "chart_group": 1
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 5,
+  "fields": {
+    "display_order": 5,
+    "indicator_group": 7,
+    "chart_group": 1
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 6,
+  "fields": {
+    "display_order": 6,
+    "indicator_group": 8,
+    "chart_group": 1
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 7,
+  "fields": {
+    "display_order": 1,
+    "indicator_group": 26,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 8,
+  "fields": {
+    "display_order": 2,
+    "indicator_group": 4,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 9,
+  "fields": {
+    "display_order": 3,
+    "indicator_group": 3,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 10,
+  "fields": {
+    "display_order": 4,
+    "indicator_group": 22,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 11,
+  "fields": {
+    "display_order": 5,
+    "indicator_group": 21,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 12,
+  "fields": {
+    "display_order": 6,
+    "indicator_group": 1,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 13,
+  "fields": {
+    "display_order": 7,
+    "indicator_group": 20,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 14,
+  "fields": {
+    "display_order": 8,
+    "indicator_group": 14,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 15,
+  "fields": {
+    "display_order": 9,
+    "indicator_group": 13,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 16,
+  "fields": {
+    "display_order": 10,
+    "indicator_group": 12,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 17,
+  "fields": {
+    "display_order": 11,
+    "indicator_group": 18,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 18,
+  "fields": {
+    "display_order": 12,
+    "indicator_group": 27,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 19,
+  "fields": {
+    "display_order": 13,
+    "indicator_group": 19,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 20,
+  "fields": {
+    "display_order": 14,
+    "indicator_group": 15,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 21,
+  "fields": {
+    "display_order": 15,
+    "indicator_group": 25,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 22,
+  "fields": {
+    "display_order": 16,
+    "indicator_group": 17,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 23,
+  "fields": {
+    "display_order": 17,
+    "indicator_group": 23,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 24,
+  "fields": {
+    "display_order": 18,
+    "indicator_group": 2,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 25,
+  "fields": {
+    "display_order": 19,
+    "indicator_group": 11,
+    "chart_group": 2
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 26,
+  "fields": {
+    "display_order": 1,
+    "indicator_group": 14,
+    "chart_group": 3
+  }
+},
+{
+  "model": "charts.chartgroupindicatorlink",
+  "pk": 27,
+  "fields": {
+    "display_order": 1,
+    "indicator_group": 14,
+    "chart_group": 4
+  }
+}
+]

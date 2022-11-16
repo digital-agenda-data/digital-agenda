@@ -8,6 +8,7 @@ dj-rest-auth
 django-admin-autocomplete-filter
 django-admin-env-notice
 django-admin-sortable2
+django-ckeditor
 django-cors-headers
 django-environ
 django-filter

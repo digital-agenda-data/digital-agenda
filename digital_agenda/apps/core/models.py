@@ -1,6 +1,8 @@
 from datetime import datetime
 from pathlib import Path
 
+import magic
+
 from django.conf import settings
 from django.db import models
 from django.contrib.postgres.fields import CICharField
@@ -8,9 +10,8 @@ from django.core.exceptions import ValidationError
 from django.core.files.storage import get_storage_class
 from django.core.validators import FileExtensionValidator
 from django.utils.functional import cached_property
-import magic
 
-
+from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import TimestampedModel
 
 
@@ -56,13 +57,6 @@ class DataSource(BaseDimensionModel):
     class Meta:
         db_table = "data_sources"
         ordering = ["code"]
-
-
-class DisplayOrderModel(models.Model):
-    display_order = models.PositiveIntegerField(default=100_000, db_index=True)
-
-    class Meta:
-        abstract = True
 
 
 class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):

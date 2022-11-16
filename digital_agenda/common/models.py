@@ -8,3 +8,10 @@ class TimestampedModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class DisplayOrderModel(models.Model):
+    display_order = models.PositiveIntegerField(default=100_000, db_index=True)
+
+    class Meta:
+        abstract = True
