@@ -1,37 +1,67 @@
 <template>
-  <div>
-    <p>
-      Current user: <em>{{ userStore.email || "anonymous" }}</em>
-    </p>
-    <ol>
-      <li v-for="dataset in chartGroupStore.chartGroups" :key="dataset.code">
-        <ecl-link
-          :to="{
-            name: 'charts',
-            params: {
-              chartGroupCode: dataset.code,
-            },
-          }"
-          no-visited
-        >
-          {{ dataset.name }}
-        </ecl-link>
-        <p v-html="dataset.description" />
-      </li>
-    </ol>
-  </div>
+  <ecl-list-illustration :items="items" zebra>
+    <template #description="{ item }">
+      <div v-html="item.description" />
+
+      <ul>
+        <li>
+          <ecl-link
+            no-visited
+            :to="{
+              name: 'indicators',
+              params: {
+                chartGroupCode: item.id,
+              },
+            }"
+          >
+            Consult the list of indicators, their definition and sources
+          </ecl-link>
+        </li>
+        <li>
+          <ecl-link
+            no-visited
+            :to="{
+              name: 'metadata',
+              params: {
+                chartGroupCode: item.id,
+              },
+            }"
+          >
+            Entire dataset metadata and download services
+          </ecl-link>
+        </li>
+      </ul>
+    </template>
+  </ecl-list-illustration>
 </template>
+
 <script>
-import userStore from "@/stores/userStore";
+import placeholderImageURL from "@/assets/placeholder.png?url";
 import chartGroupStore from "@/stores/chartGroupStore";
+import EclListIllustration from "@/components/ecl/EclListIllustration.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 
 export default {
   name: "HomeView",
-  components: { EclLink },
+  components: { EclLink, EclListIllustration },
   computed: {
-    userStore: () => userStore(),
     chartGroupStore: () => chartGroupStore(),
+    items() {
+      return this.chartGroupStore.chartGroups.map((chartGroup) => {
+        return {
+          id: chartGroup.code,
+          title: chartGroup.name,
+          image: chartGroup.image || placeholderImageURL,
+          description: chartGroup.description,
+          to: {
+            name: "charts",
+            params: {
+              chartGroupCode: chartGroup.code,
+            },
+          },
+        };
+      });
+    },
   },
 };
 </script>
