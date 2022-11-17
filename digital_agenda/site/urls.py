@@ -15,6 +15,7 @@ from drf_spectacular.views import (
 
 api_urlpatterns = [
     path("", include("digital_agenda.apps.core.urls")),
+    path("", include("digital_agenda.apps.charts.urls")),
     path("auth/", include("dj_rest_auth.urls")),
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
