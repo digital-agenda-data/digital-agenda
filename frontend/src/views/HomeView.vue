@@ -1,7 +1,7 @@
 <template>
   <ecl-list-illustration :items="items" zebra>
     <template #description="{ item }">
-      <div v-html="item.description" />
+      <div class="ecl-u-type-align-justify" v-html="item.description" />
 
       <ul>
         <li>
@@ -59,6 +59,8 @@ export default {
               chartGroupCode: chartGroup.code,
             },
           },
+          label: chartGroup.is_draft ? "draft" : null,
+          labelVariant: "high",
         };
       });
     },

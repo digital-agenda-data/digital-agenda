@@ -23,6 +23,13 @@
       />
 
       <div class="ecl-list-illustration__detail">
+        <ecl-label
+          v-if="item.label"
+          :text="item.label"
+          :variant="item.labelVariant || 'low'"
+          class="ecl-u-f-r"
+        />
+
         <div v-if="item.title" class="ecl-list-illustration__title-container">
           <div class="ecl-list-illustration__title">
             <ecl-icon
@@ -56,6 +63,7 @@
 <script>
 import EclIcon from "@/components/ecl/EclIcon.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import EclLabel from "@/components/ecl/EclLabel.vue";
 
 /**
  * ECL List with illustrations component, see documentation here:
@@ -65,7 +73,7 @@ import EclLink from "@/components/ecl/navigation/EclLink.vue";
  */
 export default {
   name: "EclListIllustration",
-  components: { EclLink, EclIcon },
+  components: { EclLabel, EclLink, EclIcon },
   props: {
     /**
      * Items must be in the following format:
@@ -77,6 +85,8 @@ export default {
      *     image: '',        // (optional) image url for this item
      *     icon: '',         // (optional) cannot be used with image
      *     to: {},           // (optional) router link for this item
+     *     label: '',        // (optional) add a label to the item
+     *     labelVariant: '', // (optional) default to 'low'
      *   }
      */
     items: {

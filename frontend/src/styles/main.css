@@ -20,3 +20,7 @@ body {
   flex-grow: 1;
   padding-bottom: 120px;
 }
+
+.ecl-u-type-align-justify {
+  text-align: justify;
+}
