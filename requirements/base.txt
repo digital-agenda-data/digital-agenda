@@ -26,6 +26,7 @@ httpx
 openpyxl
 orjson
 pandas
+pillow
 psycopg2-binary
 python-magic
 rich

@@ -39,6 +39,7 @@ class ChartGroup(TimestampedModel, DisplayOrderModel):
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
     description = RichTextField()
+    image = models.ImageField(blank=True)
 
     periods = models.ManyToManyField(
         "core.Period",
@@ -47,6 +48,7 @@ class ChartGroup(TimestampedModel, DisplayOrderModel):
             "Limit chart group to the specified periods. If none are specified ALL "
             "available periods are used instead."
         ),
+        blank=True,
     )
     indicator_groups = models.ManyToManyField(
         "core.IndicatorGroup", through="ChartGroupIndicatorLink"
