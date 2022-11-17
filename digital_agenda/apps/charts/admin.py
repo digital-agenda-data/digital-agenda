@@ -16,6 +16,7 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
     search_fields = ("code", "name", "short_name")
     list_display = (
         "code",
+        "is_draft",
         "name",
         "short_name",
         "display_order",

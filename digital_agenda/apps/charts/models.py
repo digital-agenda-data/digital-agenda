@@ -32,6 +32,9 @@ class ChartGroupIndicatorLink(DisplayOrderModel):
 
 
 class ChartGroup(TimestampedModel, DisplayOrderModel):
+    is_draft = models.BooleanField(
+        default=False, help_text="Draft items will only be visible for admins."
+    )
     code = CICharField(max_length=60, unique=True)
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
