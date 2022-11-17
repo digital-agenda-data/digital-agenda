@@ -1,22 +1,20 @@
 <template>
   <div>
-    <p>
-      {{ dataset.description }}
-    </p>
+    <div v-html="dataset.description" />
     <p>TODO List of charts</p>
   </div>
 </template>
 
 <script>
-import datasetsStore from "@/stores/datasetsStore";
+import chartGroupStore from "@/stores/chartGroupStore";
 
 export default {
   name: "ChartListView",
   computed: {
-    datasetsStore: () => datasetsStore(),
+    chartGroupStore: () => chartGroupStore(),
     dataset() {
-      return this.datasetsStore.datasets.find(
-        (item) => item.code === this.$route.params.datasetId
+      return this.chartGroupStore.chartGroups.find(
+        (item) => item.code === this.$route.params.chartGroupCode
       );
     },
   },

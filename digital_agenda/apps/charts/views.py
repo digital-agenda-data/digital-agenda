@@ -13,7 +13,7 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         queryset = ChartGroup.objects.all()
         if not self.request.user.is_authenticated:
-            queryset.filter(is_draft=False)
+            queryset = queryset.filter(is_draft=False)
         return queryset
 
     def get_serializer_class(self):

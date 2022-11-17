@@ -4,28 +4,26 @@
       Current user: <em>{{ userStore.email || "anonymous" }}</em>
     </p>
     <ol>
-      <li v-for="dataset in datasetsStore.datasets" :key="dataset.code">
+      <li v-for="dataset in chartGroupStore.chartGroups" :key="dataset.code">
         <ecl-link
           :to="{
             name: 'charts',
             params: {
-              datasetId: dataset.code,
+              chartGroupCode: dataset.code,
             },
           }"
           no-visited
         >
           {{ dataset.name }}
         </ecl-link>
-        <p>
-          {{ dataset.description }}
-        </p>
+        <p v-html="dataset.description" />
       </li>
     </ol>
   </div>
 </template>
 <script>
 import userStore from "@/stores/userStore";
-import datasetsStore from "@/stores/datasetsStore";
+import chartGroupStore from "@/stores/chartGroupStore";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 
 export default {
@@ -33,7 +31,7 @@ export default {
   components: { EclLink },
   computed: {
     userStore: () => userStore(),
-    datasetsStore: () => datasetsStore(),
+    chartGroupStore: () => chartGroupStore(),
   },
 };
 </script>

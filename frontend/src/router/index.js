@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import datasetsStore from "@/stores/datasetsStore";
+import chartGroupStore from "@/stores/chartGroupStore";
 
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
@@ -41,7 +41,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/datasets/:datasetId",
+      path: "/datasets/:chartGroupCode",
       name: "datasets",
       component: DatasetView,
       redirect: {
@@ -49,14 +49,14 @@ const router = createRouter({
       },
       meta: {
         title(route) {
-          return datasetsStore().datasets.find(
-            (item) => item.code === route.params.datasetId
+          return chartGroupStore().chartGroups.find(
+            (item) => item.code === route.params.chartGroupCode
           )?.name;
         },
         breadcrumb(route) {
           return (
-            datasetsStore().datasets.find(
-              (item) => item.code === route.params.datasetId
+            chartGroupStore().chartGroups.find(
+              (item) => item.code === route.params.chartGroupCode
             )?.short_name || "Datasets"
           );
         },

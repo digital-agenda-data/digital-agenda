@@ -40,7 +40,7 @@ export default {
   computed: {
     navRoutes() {
       const params = {
-        datasetId: this.$route.params.datasetId,
+        chartGroupCode: this.$route.params.chartGroupCode,
       };
 
       return [
