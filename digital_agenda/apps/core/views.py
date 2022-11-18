@@ -201,6 +201,7 @@ class DataSourceViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     queryset = DataSource.objects.all()
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = DataSourceCodeFilterSet
+    pagination_class = None
 
 
 class FactsPerCountryFilter(filters.FilterSet):

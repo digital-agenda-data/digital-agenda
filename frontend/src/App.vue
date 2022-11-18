@@ -24,12 +24,13 @@ import { loadScript } from "vue-plugin-load-script";
 import momentURL from "moment/min/moment.min.js?url";
 import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
-import userStore from "@/stores/userStore";
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
 import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
-import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
-import chartGroupStore from "@/stores/chartGroupStore";
+
+import { useUserStore } from "@/stores/userStore";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export default {
   name: "App",
@@ -48,8 +49,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions(userStore, ["getCurrentUser"]),
-    ...mapActions(chartGroupStore, ["getChartGroups"]),
+    ...mapActions(useUserStore, ["getCurrentUser"]),
+    ...mapActions(useChartGroupStore, ["getChartGroups"]),
     async loadInitialData() {
       await Promise.all([this.getCurrentUser(), this.getChartGroups()]);
     },

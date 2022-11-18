@@ -37,17 +37,18 @@
 
 <script>
 import placeholderImageURL from "@/assets/placeholder.png?url";
-import chartGroupStore from "@/stores/chartGroupStore";
 import EclListIllustration from "@/components/ecl/EclListIllustration.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { mapState } from "pinia";
 
 export default {
   name: "HomeView",
   components: { EclLink, EclListIllustration },
   computed: {
-    chartGroupStore: () => chartGroupStore(),
+    ...mapState(useChartGroupStore, ["chartGroups"]),
     items() {
-      return this.chartGroupStore.chartGroups.map((chartGroup) => {
+      return this.chartGroups.map((chartGroup) => {
         return {
           id: chartGroup.code,
           title: chartGroup.name,

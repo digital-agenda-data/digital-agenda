@@ -11,7 +11,13 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     pagination_class = None
 
     def get_queryset(self):
-        queryset = ChartGroup.objects.all()
+        queryset = ChartGroup.objects.all().prefetch_related(
+            "indicator_groups",
+            "indicator_groups__indicators",
+            "indicator_groups__indicators__periods",
+            "indicator_groups__indicators__data_source",
+        )
+
         if not self.request.user.is_authenticated:
             queryset = queryset.filter(is_draft=False)
         return queryset

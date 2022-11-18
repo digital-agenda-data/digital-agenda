@@ -1,19 +1,27 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import chartGroupStore from "@/stores/chartGroupStore";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import SearchView from "@/views/SearchView.vue";
 
 import DatasetView from "@/views/DatasetView.vue";
-import CommentsView from "@/views/datasets/CommentsView.vue";
-import MetadataView from "@/views/datasets/MetadataView.vue";
-import ChartListView from "@/views/datasets/ChartListView.vue";
-import IndicatorView from "@/views/datasets/IndicatorView.vue";
+import CommentsView from "@/views/chart-group/CommentsView.vue";
+import MetadataView from "@/views/chart-group/MetadataView.vue";
+import ChartListView from "@/views/chart-group/ChartListView.vue";
+import IndicatorView from "@/views/chart-group/IndicatorView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to) {
+    console.log(to);
+    if (to.hash) {
+      return {
+        el: to.hash,
+      };
+    }
+  },
   routes: [
     {
       path: "/",
@@ -41,21 +49,21 @@ const router = createRouter({
       },
     },
     {
-      path: "/datasets/:chartGroupCode",
-      name: "datasets",
+      path: "/chart-group/:chartGroupCode",
+      name: "chart-group",
       component: DatasetView,
       redirect: {
         name: "home",
       },
       meta: {
         title(route) {
-          return chartGroupStore().chartGroups.find(
+          return useChartGroupStore().chartGroups.find(
             (item) => item.code === route.params.chartGroupCode
           )?.name;
         },
         breadcrumb(route) {
           return (
-            chartGroupStore().chartGroups.find(
+            useChartGroupStore().chartGroups.find(
               (item) => item.code === route.params.chartGroupCode
             )?.short_name || "Datasets"
           );

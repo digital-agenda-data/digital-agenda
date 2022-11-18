@@ -12,3 +12,15 @@ export function arrayEquals(a1, a2) {
   }
   return true;
 }
+
+/**
+ * Scroll to the hash location in the URL
+ */
+export function scrollToHash() {
+  const el = document.querySelector(window.location.hash);
+  if (el) {
+    el.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}

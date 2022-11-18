@@ -60,9 +60,22 @@ class PeriodSerializer(BaseDimensionSerializer):
         model = Period
 
 
+class DataSourceSerializer(BaseDimensionSerializer):
+    class Meta(BaseDimensionSerializer.Meta):
+        model = DataSource
+        fields = BaseDimensionSerializer.Meta.fields + ["note", "url"]
+
+
 class IndicatorListSerializer(BaseDimensionSerializer):
+    periods = serializers.SlugRelatedField(many=True, slug_field="code", read_only=True)
+    data_source = serializers.SlugRelatedField(slug_field="code", read_only=True)
+
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
+        fields = BaseDimensionSerializer.Meta.fields + [
+            "periods",
+            "data_source",
+        ]
 
 
 class IndicatorDetailSerializer(IndicatorListSerializer):
@@ -71,16 +84,15 @@ class IndicatorDetailSerializer(IndicatorListSerializer):
     units = UnitSerializer(many=True, read_only=True)
     countries = CountrySerializer(many=True, read_only=True)
     periods = PeriodSerializer(many=True, read_only=True)
+    data_source = DataSourceSerializer(many=False, read_only=True)
 
     class Meta(IndicatorListSerializer.Meta):
         fields = IndicatorListSerializer.Meta.fields + [
             "definition",
             "note",
-            "data_source",
             "breakdowns",
             "units",
             "countries",
-            "periods",
         ]
 
 
@@ -104,12 +116,6 @@ class IndicatorGroupDetailSerializer(serializers.ModelSerializer):
             "alt_label",
             "indicators",
         )
-
-
-class DataSourceSerializer(BaseDimensionSerializer):
-    class Meta(BaseDimensionSerializer.Meta):
-        model = DataSource
-        fields = BaseDimensionSerializer.Meta.fields + ["note", "url"]
 
 
 ###################

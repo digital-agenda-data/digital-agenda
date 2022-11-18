@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.core.serializers import IndicatorGroupListSerializer
+from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
 from digital_agenda.apps.core.serializers import PeriodSerializer
 
 
@@ -21,7 +21,7 @@ class ChartGroupListSerializer(serializers.ModelSerializer):
 
 class ChartGroupDetailSerializer(serializers.ModelSerializer):
     periods = PeriodSerializer(many=True, read_only=True)
-    indicator_groups = IndicatorGroupListSerializer(many=True, read_only=True)
+    indicator_groups = IndicatorGroupDetailSerializer(many=True, read_only=True)
 
     class Meta:
         model = ChartGroup

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { apiCall } from "@/lib/api";
 
-export default defineStore("user", {
+export const useUserStore = defineStore("user", {
   state: () => {
     return {
       email: null,

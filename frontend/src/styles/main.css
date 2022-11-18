@@ -21,6 +21,10 @@ body {
   padding-bottom: 120px;
 }
 
+.break-word {
+  word-break: break-word;
+}
+
 .ecl-u-type-align-justify {
   text-align: justify;
 }

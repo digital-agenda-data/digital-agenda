@@ -1,11 +1,22 @@
 import { defineStore } from "pinia";
 import { apiCall } from "@/lib/api";
+import { useRoute } from "vue-router";
 
-export default defineStore("dataset", {
+export const useChartGroupStore = defineStore("chartGroupStore", {
   state: () => {
     return {
       chartGroups: [],
     };
+  },
+  getters: {
+    currentChartGroupCode() {
+      return useRoute().params.chartGroupCode;
+    },
+    currentChartGroup(state) {
+      return state.chartGroups.find(
+        (item) => item.code === this.currentChartGroupCode
+      );
+    },
   },
   actions: {
     async getChartGroups() {
