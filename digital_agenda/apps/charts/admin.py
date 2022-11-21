@@ -2,18 +2,41 @@ from adminsortable2.admin import SortableAdminMixin
 from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin
 
+from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 
 
-class IndicatorGroupTabularInline(SortableInlineAdminMixin, admin.TabularInline):
+@admin.register(Chart)
+class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
+    prepopulated_fields = {
+        "code": (
+            "chart_group",
+            "name",
+        ),
+    }
+    search_fields = ("code", "name", "description")
+    list_filter = ("chart_group", "chart_type")
+    list_select_related = ("chart_group",)
+    list_display = (
+        "code",
+        "chart_type",
+        "name",
+        "chart_group",
+        "display_order",
+    )
+    exclude = ("display_order",)
+    autocomplete_fields = ("chart_group",)
+
+
+class ChartInlineAdmin(SortableInlineAdminMixin, admin.StackedInline):
+    prepopulated_fields = {**ChartAdmin.prepopulated_fields}
+    model = Chart
     extra = 0
-    model = ChartGroup.indicator_groups.through
-    autocomplete_fields = ("indicator_group",)
 
 
 @admin.register(ChartGroup)
 class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
-    search_fields = ("code", "name", "short_name")
+    search_fields = ("code", "name", "short_name", "description")
     list_display = (
         "code",
         "is_draft",
@@ -21,6 +44,5 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
         "short_name",
         "display_order",
     )
-    autocomplete_fields = ("periods",)
-    inlines = (IndicatorGroupTabularInline,)
-
+    filter_horizontal = ("periods", "indicator_groups")
+    inlines = (ChartInlineAdmin,)

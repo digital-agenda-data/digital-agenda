@@ -17,7 +17,7 @@ class Command(BaseCommand):
         "units",
         "periods",
         "chartgroups",
-        "chartgrouplinks",
+        "charts",
     )
 
     def handle(self, *args, **options):
