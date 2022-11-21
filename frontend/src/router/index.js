@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 import HomeView from "@/views/HomeView.vue";
@@ -11,6 +12,7 @@ import CommentsView from "@/views/chart-group/CommentsView.vue";
 import MetadataView from "@/views/chart-group/MetadataView.vue";
 import ChartListView from "@/views/chart-group/ChartListView.vue";
 import IndicatorView from "@/views/chart-group/IndicatorView.vue";
+import ChartView from "@/views/chart-group/ChartView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,16 +58,12 @@ const router = createRouter({
         name: "home",
       },
       meta: {
-        title(route) {
-          return useChartGroupStore().chartGroups.find(
-            (item) => item.code === route.params.chartGroupCode
-          )?.name;
+        title() {
+          return useChartGroupStore().currentChartGroup?.name;
         },
-        breadcrumb(route) {
+        breadcrumb() {
           return (
-            useChartGroupStore().chartGroups.find(
-              (item) => item.code === route.params.chartGroupCode
-            )?.short_name || "Datasets"
+            useChartGroupStore().currentChartGroup?.short_name || "Datasets"
           );
         },
       },
@@ -77,6 +75,21 @@ const router = createRouter({
           meta: {
             breadcrumb: "Charts",
           },
+          children: [
+            {
+              path: ":chartCode",
+              name: "chart-view",
+              component: ChartView,
+              meta: {
+                title() {
+                  return useChartStore().currentChart?.name;
+                },
+                breadcrumb() {
+                  return useChartStore().currentChart?.name;
+                },
+              },
+            },
+          ],
         },
         {
           path: "indicators",

@@ -36,9 +36,7 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = ChartSerializer
 
     def get_queryset(self):
-        queryset = ChartGroup.objects.all().prefetch_related(
-            "chart_group",
-        )
+        queryset = Chart.objects.all().select_related("chart_group")
 
         if not self.request.user.is_authenticated:
             queryset = queryset.filter(is_draft=False)

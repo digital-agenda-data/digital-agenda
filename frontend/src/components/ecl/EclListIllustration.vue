@@ -23,7 +23,7 @@
         tabindex="-1"
       />
 
-      <div class="ecl-list-illustration__detail">
+      <div class="ecl-list-illustration__detail ecl-u-width-100">
         <ecl-label
           v-if="item.label"
           :text="item.label"

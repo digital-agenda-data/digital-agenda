@@ -31,6 +31,7 @@ import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
 
 import { useUserStore } from "@/stores/userStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useChartStore } from "@/stores/chartStore";
 
 export default {
   name: "App",
@@ -50,9 +51,14 @@ export default {
   },
   methods: {
     ...mapActions(useUserStore, ["getCurrentUser"]),
+    ...mapActions(useChartStore, ["getCharts"]),
     ...mapActions(useChartGroupStore, ["getChartGroups"]),
     async loadInitialData() {
-      await Promise.all([this.getCurrentUser(), this.getChartGroups()]);
+      await Promise.all([
+        this.getCurrentUser(),
+        this.getChartGroups(),
+        this.getCharts(),
+      ]);
     },
     /**
      * Load the ECL component library JavaScript by inserting script tags

@@ -47,7 +47,7 @@ export default {
         if (!match.meta.breadcrumb) {
           continue;
         } else if (typeof match.meta.breadcrumb === "function") {
-          label = match.meta.breadcrumb(this.$route);
+          label = match.meta.breadcrumb();
         } else {
           label = match.meta.breadcrumb;
         }
