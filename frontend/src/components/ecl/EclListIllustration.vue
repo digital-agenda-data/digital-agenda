@@ -20,6 +20,7 @@
         }"
         role="img"
         :style="`background-image: url(${item.image});`"
+        tabindex="-1"
       />
 
       <div class="ecl-list-illustration__detail">
