@@ -16,6 +16,7 @@
         :to="item.to"
         class="ecl-list-illustration__image"
         :class="{
+          'ecl-list-illustration__image--small': small,
           'ecl-list-illustration__image--square': square,
         }"
         role="img"
@@ -104,6 +105,11 @@ export default {
       required: false,
       default: false,
     },
+    small: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     col: {
       type: String,
       required: false,
@@ -116,4 +122,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+@media screen and (min-width: 768px) {
+  .ecl-list-illustration__image--small:not(.ecl-list-illustration__image--square) {
+    width: 9rem;
+  }
+}
+</style>

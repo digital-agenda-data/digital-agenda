@@ -6,7 +6,7 @@
 
     <hr class="ecl-u-border-color-primary" />
 
-    <ecl-list-illustration :items="items" square zebra>
+    <ecl-list-illustration :items="items" zebra small>
       <template #description="{ item }">
         <div v-html="item.description" />
       </template>
@@ -22,6 +22,7 @@ import ChartGroupNav from "@/components/ChartGroupNav.vue";
 import { useChartStore } from "@/stores/chartStore";
 import placeholderImageURL from "@/assets/placeholder.png?url";
 import EclListIllustration from "@/components/ecl/EclListIllustration.vue";
+import { CHARTS } from "@/lib/constants";
 
 export default {
   name: "ChartListView",
@@ -42,7 +43,10 @@ export default {
         return {
           id: chart.code,
           title: `${index + 1}. ${chart.name}`,
-          image: chart.image || placeholderImageURL,
+          image:
+            chart.image ||
+            CHARTS[chart.chart_type]?.image ||
+            placeholderImageURL,
           description: chart.description,
           to: {
             name: "chart-view",
