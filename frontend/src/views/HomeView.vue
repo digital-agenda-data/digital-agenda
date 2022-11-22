@@ -48,10 +48,10 @@ export default {
   computed: {
     ...mapState(useChartGroupStore, ["chartGroups"]),
     items() {
-      return this.chartGroups.map((chartGroup) => {
+      return this.chartGroups.map((chartGroup, index) => {
         return {
           id: chartGroup.code,
-          title: chartGroup.name,
+          title: `${index + 1}. ${chartGroup.name}`,
           image: chartGroup.image || placeholderImageURL,
           description: chartGroup.description,
           to: {

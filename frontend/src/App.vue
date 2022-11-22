@@ -1,5 +1,8 @@
 <template>
-  <div class="ecl app-wrapper">
+  <div
+    class="ecl app-wrapper"
+    :class="{ 'digital-agenda-embedded': $route.query.embed === 'true' }"
+  >
     <template v-if="loaded">
       <ecl-site-header />
       <main class="ecl-container">

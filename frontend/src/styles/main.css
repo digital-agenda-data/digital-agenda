@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#app .app-wrapper {
+#app .app-wrapper:not(.digital-agenda-embedded) {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -18,7 +18,7 @@ body {
   box-sizing: border-box;
 }
 
-#app .app-wrapper main {
+#app .app-wrapper:not(.digital-agenda-embedded) main {
   flex-grow: 1;
   padding-bottom: 120px;
 }
@@ -30,3 +30,12 @@ body {
 .ecl-u-type-align-justify {
   text-align: justify;
 }
+
+.digital-agenda-embedded .hide-embedded,
+.digital-agenda-embedded .ecl-page-header,
+.digital-agenda-embedded .ecl-site-footer,
+.digital-agenda-embedded .ecl-site-header {
+  display: none;
+}
+
+

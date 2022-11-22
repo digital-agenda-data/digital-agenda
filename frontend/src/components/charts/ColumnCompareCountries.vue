@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m chart-filters"
+    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m chart-filters hide-embedded"
   >
     <indicator-group-filter @change="indicatorGroup = $event" />
     <indicator-filter @change="indicator = $event" />
@@ -23,7 +23,7 @@
   </div>
 
   <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m"
+    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m hide-embedded"
   >
     <h2>Definition and scopes:</h2>
 
@@ -38,7 +38,7 @@
         <ecl-link label="Print page" to="" no-visited />
         <ecl-link label="Download image" to="" no-visited />
         <ecl-link label="Export data" to="" no-visited />
-        <ecl-link label="Embedded URL" to="" no-visited />
+        <ecl-link label="Embedded URL" :to="embedURL" no-visited />
         <ecl-link label="View comments" to="" no-visited />
         <ecl-link label="Submit comment" to="" no-visited />
         <ecl-social-media-share />
@@ -48,9 +48,12 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+
 import { Chart } from "highcharts-vue";
 
 import { apiCall } from "@/lib/api";
+import { useChartStore } from "@/stores/chartStore";
 
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
@@ -60,8 +63,7 @@ import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue"
 import BreakdownFilter from "@/components/filters/BreakdownFilter.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import CountryFilter from "@/components/filters/CountryFilter.vue";
-import { useChartStore } from "@/stores/chartStore";
-import { mapState } from "pinia";
+
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclSocialMediaShare from "@/components/ecl/EclSocialMediaShare.vue";
 
@@ -96,6 +98,11 @@ export default {
   },
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
+    embedURL() {
+      const url = new URL(this.$route.href, window.location);
+      url.searchParams.set("embed", "true");
+      return url.toString();
+    },
     endpointParams() {
       if (this.breakdown && this.period && this.indicator && this.unit) {
         return {
@@ -127,7 +134,9 @@ export default {
           enabled: false,
         },
         title: {
-          text: this.indicator?.label,
+          text: [this.indicator?.label, this.breakdown?.label]
+            .map((s) => s.trim())
+            .join(", "),
         },
         subtitle: {
           text: this.period && `Year: ${this.period.code}`,
@@ -173,9 +182,10 @@ export default {
     },
   },
   watch: {
-    endpointParams() {
-      this.loadData();
-      console.log(this.$route);
+    endpointParams(newValue, oldValue) {
+      if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
+        this.loadData();
+      }
     },
   },
   mounted() {
