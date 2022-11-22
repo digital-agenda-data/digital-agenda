@@ -7,6 +7,8 @@ from digital_agenda.apps.core.serializers import PeriodSerializer
 
 
 class ChartGroupListSerializer(serializers.ModelSerializer):
+    periods = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
+
     class Meta:
         model = ChartGroup
         fields = (
@@ -16,6 +18,7 @@ class ChartGroupListSerializer(serializers.ModelSerializer):
             "description",
             "image",
             "is_draft",
+            "periods",
         )
         read_only_fields = fields
 
@@ -26,10 +29,7 @@ class ChartGroupDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ChartGroup
-        fields = ChartGroupListSerializer.Meta.fields + (
-            "periods",
-            "indicator_groups",
-        )
+        fields = ChartGroupListSerializer.Meta.fields + ("indicator_groups",)
         read_only_fields = fields
 
 

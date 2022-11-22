@@ -1,3 +1,5 @@
+from django.db.models import Exists
+from django.db.models import OuterRef
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.mixins import ListModelMixin
@@ -61,8 +63,11 @@ class IndicatorGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 
 class IndicatorCodeFilterSet(BaseCodeFilterSet):
+    period_in = CodeInFilter(field_name="periods__code", lookup_expr="in")
+
     class Meta(BaseCodeFilterSet.Meta):
         model = Indicator
+        fields = BaseCodeFilterSet.Meta.fields + ["period_in"]
 
 
 class IndicatorViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
@@ -188,6 +193,34 @@ class PeriodViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 class IndicatorPeriodViewSet(IndicatorFilteredMixin, PeriodViewSet):
     pagination_class = None
+
+
+class IndicatorBreakdownViewSet(IndicatorFilteredMixin, BreakdownViewSet):
+    pagination_class = None
+
+
+class IndicatorBreakdownGroupViewSet(BreakdownGroupViewSet):
+    pagination_class = None
+
+    def get_queryset(self):
+        return self.model.objects.filter(
+            Exists(
+                Breakdown.objects.filter(
+                    groups__code__in=OuterRef("code"),
+                    indicators__code__in=[self.kwargs["indicator_code"]],
+                )
+            )
+        )
+
+
+class IndicatorBreakdownGroupBreakdownViewSet(IndicatorFilteredMixin, BreakdownViewSet):
+    pagination_class = None
+
+    def get_queryset(self):
+        return self.model.objects.filter(
+            groups__code__in=[self.kwargs["breakdown_group_code"]],
+            indicators__code__in=[self.kwargs["indicator_code"]],
+        )
 
 
 class DataSourceCodeFilterSet(BaseCodeFilterSet):

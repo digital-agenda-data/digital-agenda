@@ -52,12 +52,19 @@ export default {
           label = match.meta.breadcrumb;
         }
 
+        const newParams = {};
+        for (const paramsKey in this.$route.params) {
+          if (match.path.includes(`/:${paramsKey}`)) {
+            newParams[paramsKey] = this.$route.params[paramsKey];
+          }
+        }
+
         result.push({
           id: match.name,
           text: label,
           to: {
             name: match.name,
-            params: this.$route.params,
+            params: newParams,
           },
         });
       }

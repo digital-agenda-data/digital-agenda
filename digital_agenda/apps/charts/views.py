@@ -1,10 +1,13 @@
 from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.serializers import ChartGroupDetailSerializer
 from digital_agenda.apps.charts.serializers import ChartGroupListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
+from digital_agenda.apps.core.serializers import IndicatorGroupListSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 
 
@@ -28,6 +31,16 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         if self.action == "list":
             return ChartGroupListSerializer
         return ChartGroupDetailSerializer
+
+    @action(
+        methods=["GET"],
+        detail=True,
+        url_path="indicator-groups",
+        url_name="indicator-groups",
+    )
+    def indicator_groups(self, request, code=None):
+        queryset = self.get_object().indicator_groups.all()
+        return Response(IndicatorGroupListSerializer(queryset, many=True).data)
 
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):

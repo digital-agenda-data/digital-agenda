@@ -1,6 +1,6 @@
 <template>
-  <div v-html="currentChart.description" />
   <component :is="chartComponent" />
+  <div v-html="currentChart.description" />
 </template>
 
 <script>

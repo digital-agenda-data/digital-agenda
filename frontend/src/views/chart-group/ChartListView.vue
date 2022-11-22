@@ -12,7 +12,9 @@
       </template>
     </ecl-list-illustration>
   </chart-group-nav>
-  <router-view v-else />
+  <div v-else class="ecl-u-pt-m">
+    <router-view />
+  </div>
 </template>
 
 <script>

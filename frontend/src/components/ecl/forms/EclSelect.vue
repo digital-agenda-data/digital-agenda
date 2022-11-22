@@ -7,17 +7,21 @@
     <div v-if="helpText" class="ecl-help-block">
       {{ helpText }}
     </div>
-    <div :class="classList">
+
+    <div v-if="loading">
+      <ecl-spinner text="" />
+    </div>
+    <div v-else :class="classList">
       <select
         v-model="value"
-        v-ecl-init="multiple"
         class="ecl-select"
         :required="required"
         :multiple="multiple"
+        :name="inputName"
         v-bind="dataAttrs"
       >
         <option
-          v-if="placeholderText && !multiple"
+          v-if="placeholderText"
           value=""
           :disabled="required"
         >
@@ -58,6 +62,7 @@
 
 <script>
 import EclIcon from "@/components/ecl/EclIcon.vue";
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
 /**
  * ECL Select component, see documentation here:
  *
@@ -66,7 +71,7 @@ import EclIcon from "@/components/ecl/EclIcon.vue";
  */
 export default {
   name: "EclSelect",
-  components: { EclIcon },
+  components: { EclSpinner, EclIcon },
   props: {
     /**
      * Items must be in the following format:
@@ -86,6 +91,11 @@ export default {
       type: String,
       required: false,
       default: null,
+    },
+    inputName: {
+      type: String,
+      required: false,
+      default: "",
     },
     helpText: {
       type: String,
@@ -110,7 +120,7 @@ export default {
     size: {
       type: String,
       required: false,
-      default: "m",
+      default: null,
       validator(value) {
         return ["s", "m", "l"].includes(value);
       },
@@ -135,6 +145,11 @@ export default {
       required: false,
       default: "",
     },
+    loading: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   emits: ["update:modelValue"],
   computed: {
@@ -147,10 +162,11 @@ export default {
       },
     },
     classList() {
-      const result = [
-        "ecl-select__container",
-        `ecl-select__container--${this.size}`,
-      ];
+      const result = ["ecl-select__container"];
+
+      if (this.size) {
+        result.push(`ecl-select__container--${this.size}`);
+      }
       if (this.disabled) {
         result.push("ecl-select__container--disabled");
       }

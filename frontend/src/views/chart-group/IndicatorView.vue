@@ -47,7 +47,7 @@
             class="ecl-table__cell label-cell"
             data-ecl-table-header="Indicator"
           >
-            <strong>{{ indicator.label }}</strong>
+            {{ indicator.label }}
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Information">
             <div>

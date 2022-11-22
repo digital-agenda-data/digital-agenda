@@ -15,6 +15,8 @@ from .views import (
     IndicatorPeriodViewSet,
     DataSourceViewSet,
     FactsPerCountryViewSet,
+    IndicatorBreakdownGroupViewSet,
+    IndicatorBreakdownGroupBreakdownViewSet,
 )
 
 
@@ -87,6 +89,22 @@ indicator_periods_router.register(
     "periods", IndicatorPeriodViewSet, basename="indicator-periods"
 )
 
+indicator_breakdowns_groups_router = routers.NestedSimpleRouter(
+    indicators_router, "indicators", lookup="indicator"
+)
+indicator_breakdowns_groups_router.register(
+    "breakdown-groups",
+    IndicatorBreakdownGroupViewSet,
+    basename="indicator-breakdown-groups",
+)
+
+indicator_breakdowns_router = routers.NestedSimpleRouter(
+    indicator_breakdowns_groups_router, "breakdown-groups", lookup="breakdown_group"
+)
+indicator_breakdowns_router.register(
+    "breakdowns", IndicatorBreakdownGroupBreakdownViewSet, basename="indicator-breakdowns"
+)
+
 
 data_sources_router = routers.SimpleRouter()
 data_sources_router.register("data-sources", DataSourceViewSet, basename="data-source")
@@ -116,4 +134,6 @@ nested_routers = [
     indicator_units_router,
     indicator_countries_router,
     indicator_periods_router,
+    indicator_breakdowns_groups_router,
+    indicator_breakdowns_router,
 ]

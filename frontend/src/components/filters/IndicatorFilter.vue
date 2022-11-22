@@ -1,0 +1,33 @@
+<script>
+import BaseSelectFilter from "@/components/filters/BaseSelectFilter.vue";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { mapState } from "pinia";
+
+export default {
+  name: "IndicatorFilter",
+  extends: BaseSelectFilter,
+  computed: {
+    ...mapState(useChartGroupStore, ["currentChartGroup"]),
+    queryName() {
+      return "indicator";
+    },
+    endpoint() {
+      return (
+        this.$route.query.indicatorGroup &&
+        `/indicator-groups/${this.$route.query.indicatorGroup}/indicators/`
+      );
+    },
+    endpointParams() {
+      if (this.currentChartGroup.periods.length > 0) {
+        return {
+          period_in: this.currentChartGroup.periods.join(","),
+        };
+      }
+      return {};
+    },
+    label() {
+      return "Indicator";
+    },
+  },
+};
+</script>
