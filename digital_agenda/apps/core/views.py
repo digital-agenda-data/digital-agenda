@@ -268,7 +268,7 @@ class FactsPerCountryViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericVi
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = FactsPerCountryFilter
     queryset = (
-        Fact.objects.order_by("country__code")
+        Fact.objects.order_by("-value", "country__code")
         .select_related("country")
         .only("country__code", "value", "flags")
         .all()

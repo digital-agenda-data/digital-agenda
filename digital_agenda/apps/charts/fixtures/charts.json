@@ -10,7 +10,7 @@
     "chart_group": 2,
     "name": "Analyse one indicator and compare countries",
     "code": "1-analyse-one-indicator-and-compare-countries",
-    "chart_type": "BAR_COMPARE_COUNTRIES",
+    "chart_type": "COLUMN_COMPARE_COUNTRIES",
     "description": "<p>This bar-chart allows you to select one indicator, possibly one specific breakdown, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years using the time animation bar. Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>"
   }
 },
@@ -25,7 +25,7 @@
     "chart_group": 2,
     "name": "Analyse one indicator and compare breakdowns",
     "code": "2-analyse-one-indicator-and-compare-breakdowns",
-    "chart_type": "BAR_COMPARE_BREAKDOWNS",
+    "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
     "description": "<p>This bar-chart allows you to select one indicator, one year, and see different breakdowns for selected countries. Countries are ordered by the value of the first breakdown in the indicator. You can also select or de-select countries in order to visualise only those you are interested in.</p>"
   }
 }

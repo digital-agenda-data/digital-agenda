@@ -1,16 +1,16 @@
-import BarCompareCountries from "@/components/charts/BarCompareCountries.vue";
-import BarCompareBreakdowns from "@/components/charts/BarCompareBreakdowns.vue";
+import ColumnCompareCountries from "@/components/charts/ColumnCompareCountries.vue";
+import ColumnCompareBreakdowns from "@/components/charts/ColumnCompareBreakdowns.vue";
 
-import barChartUrl from "@/assets/chart-images/bar/bar-chart.png?url";
-import barChartMultipleUrl from "@/assets/chart-images/bar/bar-chart-multiple.png?url";
+import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
+import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
 
 export const CHARTS = {
-  BAR_COMPARE_COUNTRIES: {
-    component: BarCompareCountries,
-    image: barChartUrl,
+  COLUMN_COMPARE_COUNTRIES: {
+    component: ColumnCompareCountries,
+    image: columnChartUrl,
   },
-  BAR_COMPARE_BREAKDOWNS: {
-    component: BarCompareBreakdowns,
-    image: barChartMultipleUrl,
+  COLUMN_COMPARE_BREAKDOWNS: {
+    component: ColumnCompareBreakdowns,
+    image: columnChartMultipleUrl,
   },
 };

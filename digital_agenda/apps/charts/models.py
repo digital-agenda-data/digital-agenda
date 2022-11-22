@@ -48,10 +48,10 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
 class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     CHART_TYPE_CHOICES = [
         (
-            "Bar",
+            "Column",
             (
-                ("BAR_COMPARE_COUNTRIES", "Bar Chart: Compare Countries"),
-                ("BAR_COMPARE_BREAKDOWNS", "Bar Chart: Compare Breakdowns"),
+                ("COLUMN_COMPARE_COUNTRIES", "Column Chart: Compare Countries"),
+                ("COLUMN_COMPARE_BREAKDOWNS", "Column Chart: Compare Breakdowns"),
             ),
         ),
     ]
