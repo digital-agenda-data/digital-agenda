@@ -20,11 +20,7 @@
         :name="inputName"
         v-bind="dataAttrs"
       >
-        <option
-          v-if="placeholderText"
-          value=""
-          :disabled="required"
-        >
+        <option v-if="placeholderText" value="" :disabled="required">
           {{ placeholderText }}
         </option>
 

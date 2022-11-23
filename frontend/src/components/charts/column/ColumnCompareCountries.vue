@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m chart-filters hide-embedded"
+    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only hide-embedded chart-filters"
   >
     <indicator-group-filter @change="indicatorGroup = $event" />
     <indicator-filter @change="indicator = $event" />
@@ -16,7 +16,11 @@
     <div v-if="!loaded" class="ecl-u-type-align-center ecl-u-pa-2xl">
       <ecl-spinner />
     </div>
-    <chart v-else-if="apiData.length > 0" :options="chartOptions" />
+    <highcharts
+      v-else-if="apiData.length > 0"
+      :options="chartOptions"
+      :callback="highchartsCallback"
+    />
     <div v-else class="ecl-u-type-align-center ecl-u-pa-2xl">
       No data available
     </div>
@@ -30,30 +34,24 @@
     <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8">
         <div v-html="currentChart.description" />
+        <chart-definitions
+          :indicator="indicator"
+          :breakdown="breakdown"
+          :unit="unit"
+        />
       </div>
-      <div
-        class="ecl-col-12 ecl-col-l-4 ecl-u-d-flex ecl-u-flex-column chart-actions"
-      >
-        <ecl-link label="Print chart" to="" no-visited />
-        <ecl-link label="Print page" to="" no-visited />
-        <ecl-link label="Download image" to="" no-visited />
-        <ecl-link label="Export data" to="" no-visited />
-        <ecl-link label="Embedded URL" :to="embedURL" no-visited />
-        <ecl-link label="View comments" to="" no-visited />
-        <ecl-link label="Submit comment" to="" no-visited />
-        <ecl-social-media-share />
+
+      <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
+        <chart-actions :chart="chart" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "pinia";
-
 import { Chart } from "highcharts-vue";
 
 import { apiCall } from "@/lib/api";
-import { useChartStore } from "@/stores/chartStore";
 
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
@@ -64,15 +62,17 @@ import BreakdownFilter from "@/components/filters/BreakdownFilter.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import CountryFilter from "@/components/filters/CountryFilter.vue";
 
-import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import EclSocialMediaShare from "@/components/ecl/EclSocialMediaShare.vue";
+import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
+import { useChartStore } from "@/stores/chartStore";
+import { mapState } from "pinia";
+import ChartActions from "@/components/charts/ChartActions.vue";
 
 export default {
   name: "ColumnCompareCountries",
   components: {
-    EclSocialMediaShare,
-    EclLink,
-    Chart,
+    highcharts: Chart,
+    ChartActions,
+    ChartDefinitions,
     EclSpinner,
     CountryFilter,
     BreakdownFilter,
@@ -98,11 +98,6 @@ export default {
   },
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
-    embedURL() {
-      const url = new URL(this.$route.href, window.location);
-      url.searchParams.set("embed", "true");
-      return url.toString();
-    },
     endpointParams() {
       if (this.breakdown && this.period && this.indicator && this.unit) {
         return {
@@ -121,12 +116,17 @@ export default {
           type: "column",
           height: "600px",
         },
+        exporting: {
+          sourceWidth: 1024,
+          sourceHeight: 600,
+        },
         credits: {
           text: "European Commission, Digital Scoreboard",
           href: "https://digital-strategy.ec.europa.eu/",
         },
         series: [
           {
+            name: this.unit?.alt_label,
             data: this.chartData,
           },
         ],
@@ -143,6 +143,10 @@ export default {
         },
         xAxis: {
           categories: this.categories,
+          title: {
+            text: "Country",
+            enabled: false,
+          },
         },
         yAxis: {
           title: {
@@ -192,6 +196,9 @@ export default {
     this.loadData();
   },
   methods: {
+    highchartsCallback(chart) {
+      this.chart = chart;
+    },
     async loadData() {
       this.loaded = false;
       try {
@@ -224,9 +231,5 @@ export default {
   .chart-filters {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-.chart-actions > * {
-  margin-bottom: 1rem;
 }
 </style>

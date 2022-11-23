@@ -1,5 +1,5 @@
-import ColumnCompareCountries from "@/components/charts/ColumnCompareCountries.vue";
-import ColumnCompareBreakdowns from "@/components/charts/ColumnCompareBreakdowns.vue";
+import ColumnCompareCountries from "@/components/charts/column/ColumnCompareCountries.vue";
+import ColumnCompareBreakdowns from "@/components/charts/column/ColumnCompareBreakdowns.vue";
 
 import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
 import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
