@@ -24,3 +24,10 @@ export function scrollToHash() {
     });
   }
 }
+
+export function getRouteMeta(to, key) {
+  if (typeof to.meta[key] === "function") {
+    return to.meta[key]();
+  }
+  return to.meta[key];
+}

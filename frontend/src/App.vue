@@ -35,6 +35,9 @@ import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
 import { useUserStore } from "@/stores/userStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
+import { getRouteMeta } from "@/lib/utils";
+
+const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
 
 export default {
   name: "App",
@@ -44,6 +47,11 @@ export default {
       loaded: false,
     };
   },
+  watch: {
+    $route() {
+      this.setTitle();
+    },
+  },
   async mounted() {
     try {
       this.loaded = false;
@@ -51,6 +59,7 @@ export default {
     } finally {
       this.loaded = true;
     }
+    this.setTitle();
   },
   methods: {
     ...mapActions(useUserStore, ["getCurrentUser"]),
@@ -75,6 +84,18 @@ export default {
       // So we also load moment.js here in the same way before loading ECL.js
       await loadScript(momentURL);
       await loadScript(eclURL);
+    },
+    setTitle() {
+      if (!this.loaded) return;
+
+      this.$nextTick(() => {
+        const pageTitle = getRouteMeta(this.$route, "title");
+        if (pageTitle) {
+          document.title = `${pageTitle} - ${DEFAULT_TITLE}`;
+        } else {
+          document.title = DEFAULT_TITLE;
+        }
+      });
     },
   },
 };

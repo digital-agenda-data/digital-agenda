@@ -16,6 +16,8 @@
 
 <script>
 import EclBreadcrumbs from "@/components/ecl/navigation/EclBreadcrumbs.vue";
+import { getRouteMeta } from "@/lib/utils";
+
 
 /**
  * ECL Page Header component, see documentation here:
@@ -28,10 +30,7 @@ export default {
   components: { EclBreadcrumbs },
   computed: {
     pageTitle() {
-      if (typeof this.$route.meta.title === "function") {
-        return this.$route.meta.title(this.$route);
-      }
-      return this.$route.meta.title;
+      return getRouteMeta(this.$route, "title");
     },
     breadcrumbs() {
       const result = [
@@ -43,13 +42,9 @@ export default {
       ];
 
       for (const match of this.$route.matched) {
-        let label = "";
-        if (!match.meta.breadcrumb) {
+        let label = getRouteMeta(match, "breadcrumb");
+        if (!label) {
           continue;
-        } else if (typeof match.meta.breadcrumb === "function") {
-          label = match.meta.breadcrumb();
-        } else {
-          label = match.meta.breadcrumb;
         }
 
         const newParams = {};
