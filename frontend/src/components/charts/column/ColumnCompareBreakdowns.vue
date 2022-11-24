@@ -8,6 +8,7 @@ import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
 import { apiCall } from "@/lib/api";
 import { useFilterStore } from "@/stores/filterStore";
+import { colorForCountry } from "@/lib/utils";
 
 export default {
   name: "ColumnCompareBreakdowns",
@@ -37,24 +38,38 @@ export default {
     groupBy() {
       return ["breakdown", "country"];
     },
+    initialCountries() {
+      const result = ["EU"];
+      const another = this.countriesWithData.find((code) => code !== "EU");
+      if (another) {
+        result.push(another);
+      }
+
+      return result.sort();
+    },
     apiDataBreakdowns() {
       const codes = new Set(this.apiData.map((item) => item.breakdown));
       // Preserve the order from the API
       return this.breakdownList.filter((item) => codes.has(item.code));
     },
     series() {
-      return this.apiDataBreakdowns.map((breakdown) => {
+      return this.apiDataBreakdowns.map((breakdown, seriesIndex) => {
         return {
           name: breakdown.alt_label || breakdown.label,
-          data: this.countries.map(
-            (country) =>
-              this.apiValuesGrouped[breakdown.code][country.code] || 0
-          ),
+          data: this.countries.map((country) => {
+            return {
+              name: country.alt_label || country.label || country.code,
+              y: this.apiValuesGrouped[breakdown.code][country.code] || 0,
+              color: colorForCountry(country.code, seriesIndex),
+            };
+          }),
+          dataSorting: {
+            enabled: true,
+          },
         };
       });
     },
     chartOptions() {
-      const parent = this;
       return {
         chart: {
           type: "column",
@@ -66,10 +81,11 @@ export default {
         subtitle: {
           text: this.period && `Year: ${this.period.code}`,
         },
+        legend: {
+          enabled: this.apiDataBreakdowns.length > 1,
+        },
         xAxis: {
-          categories: this.countries.map(
-            (country) => country.alt_label || country.label || country.code
-          ),
+          type: "category",
           title: {
             text: "Country",
             enabled: false,
@@ -80,16 +96,7 @@ export default {
             text: this.unit?.alt_label,
           },
         },
-        tooltip: {
-          formatter() {
-            return [
-              `<b>${this.x}</b>`,
-              `${this.y}${parent.unit.alt_label}`,
-              `<b>Breakdown:</b> ${this.series.name}`,
-              `<b>Time Period:</b> Year: ${parent.period.code}`,
-            ].join("<br/>");
-          },
-        },
+        tooltip: this.defaultTooltip,
       };
     },
   },

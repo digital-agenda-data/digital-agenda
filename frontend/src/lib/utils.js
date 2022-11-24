@@ -1,3 +1,6 @@
+import Highcharts from "highcharts";
+import { SERIES_COLORS } from "@/lib/constants";
+
 /**
  * Check if two arrays are equal
  *
@@ -34,4 +37,16 @@ export function getRouteMeta(to, key) {
 
 export function camelToSnakeCase(text) {
   return text.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+}
+
+export function colorForCountry(countryCode, seriesIndex = 0) {
+  let color = new Highcharts.Color(
+    SERIES_COLORS[seriesIndex % SERIES_COLORS.length]
+  );
+
+  if (countryCode === "EU") {
+    color = color.brighten(-0.3);
+  }
+
+  return color.get();
 }

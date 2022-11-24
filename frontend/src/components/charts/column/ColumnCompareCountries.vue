@@ -7,6 +7,7 @@ import UnitFilter from "@/components/filters/UnitFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
+import { colorForCountry } from "@/lib/utils";
 
 export default {
   name: "ColumnCompareCountries",
@@ -33,18 +34,19 @@ export default {
       return ["country"];
     },
     chartOptions() {
-      const parent = this;
       return {
         chart: {
           type: "column",
         },
         series: [
           {
-            name: this.unit?.alt_label,
+            colorKey: "colorValue",
+            name: this.breakdown.alt_label || this.breakdown.label,
             data: this.countries.map((country) => {
               return {
                 y: this.apiValuesGrouped[country.code] || 0,
-                color: this.country.code === "EU" ? "#427baa" : "#63b8ff",
+                name: country.alt_label || country.label || country.code,
+                color: colorForCountry(country.code),
               };
             }),
             dataSorting: {
@@ -64,9 +66,7 @@ export default {
           text: this.period && `Year: ${this.period.code}`,
         },
         xAxis: {
-          categories: this.countries.map(
-            (country) => country.alt_label || country.label || country.code
-          ),
+          type: "category",
           title: {
             text: "Country",
             enabled: false,
@@ -77,15 +77,7 @@ export default {
             text: this.unit?.alt_label,
           },
         },
-        tooltip: {
-          formatter() {
-            return [
-              `<b>${this.x}</b>`,
-              `${this.y}${parent.unit.alt_label}`,
-              `<b>Time Period:</b> Year: ${parent.period.code}`,
-            ].join("<br/>");
-          },
-        },
+        tooltip: this.defaultTooltip,
       };
     },
   },

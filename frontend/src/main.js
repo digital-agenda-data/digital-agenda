@@ -13,6 +13,7 @@ import exportingInit from "highcharts/modules/exporting";
 import offlineExportingInit from "highcharts/modules/offline-exporting";
 import exportingDataInit from "highcharts/modules/export-data";
 import accessibilityInit from "highcharts/modules/accessibility";
+import { SERIES_COLORS } from "@/lib/constants";
 
 exportingInit(Highcharts);
 offlineExportingInit(Highcharts);
@@ -24,6 +25,7 @@ Highcharts.setOptions({
   chart: {
     height: "600px",
   },
+  colors: SERIES_COLORS,
   exporting: {
     sourceWidth: 1024,
     sourceHeight: 600,

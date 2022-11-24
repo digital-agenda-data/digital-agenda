@@ -143,6 +143,33 @@ export default {
       if (this.country) return [this.country];
       return [];
     },
+    countriesWithData() {
+      return Array.from(new Set(this.apiData.map((item) => item.country)));
+    },
+    initialCountries() {
+      return this.countriesWithData;
+    },
+    defaultTooltip() {
+      const parent = this;
+      return {
+        formatter() {
+          const result = [`<b>${this.key}</b>`];
+
+          if (parent.unit.alt_label.startsWith("%")) {
+            result.push(`${this.y}${parent.unit.alt_label}`);
+          } else {
+            result.push(`${this.y} ${parent.unit.alt_label}`);
+          }
+
+          result.push(
+            `<b>Breakdown:</b> ${this.series.name}`,
+            `<b>Time Period:</b> Year: ${parent.period.code}`
+          );
+
+          return result.join("<br/>");
+        },
+      };
+    },
   },
   watch: {
     endpointParams(newValue, oldValue) {
@@ -162,6 +189,7 @@ export default {
       this.loaded = false;
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
+        this.setInitialCountries();
       } finally {
         this.loaded = true;
       }
@@ -172,6 +200,20 @@ export default {
       this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
     },
     async loadExtra() {},
+    /**
+     * Set the country filter if it isn't set already. Otherwise no data will
+     * ever be displayed.
+     */
+    setInitialCountries() {
+      if (this.initialCountries.length > 0 && this.countries.length === 0) {
+        this.$router.replace({
+          query: {
+            ...this.$route.query,
+            country: this.initialCountries,
+          },
+        });
+      }
+    },
   },
 };
 </script>

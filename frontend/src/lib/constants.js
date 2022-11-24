@@ -1,16 +1,44 @@
-import ColumnCompareCountries from "@/components/charts/column/ColumnCompareCountries.vue";
-import ColumnCompareBreakdowns from "@/components/charts/column/ColumnCompareBreakdowns.vue";
-
-import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
-import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
-
-export const CHARTS = {
-  COLUMN_COMPARE_COUNTRIES: {
-    component: ColumnCompareCountries,
-    image: columnChartUrl,
-  },
-  COLUMN_COMPARE_BREAKDOWNS: {
-    component: ColumnCompareBreakdowns,
-    image: columnChartMultipleUrl,
-  },
-};
+export const SERIES_COLORS = [
+  "#63b8ff",
+  "#E41A1C",
+  "#4DAF4A",
+  "#984EA3",
+  "#FF7F00",
+  "#FFFF33",
+  "#A65628",
+  "#F781BF",
+  "#0d233a",
+  "#AABC66",
+  "#FD8245",
+  "#21FF00",
+  "#FF5400",
+  "#1C3FFD",
+  "#FFC600",
+  "#45BF55",
+  "#0EEAFF",
+  "#6A07B0",
+  "#044C29",
+  "#7FB2F0",
+  "#15A9FA",
+  "#33EED2",
+  "#D40D12",
+  "#ADF0F6",
+  "#662293",
+  "#19BC01",
+  "#9A24ED",
+  "#D50356",
+  "#D59AFE",
+  "#35478C",
+  "#FF40F4",
+  "#F70A9B",
+  "#FF1D23",
+  "#FFFC00",
+  "#1B76FF",
+  "#436B06",
+  "#648E23",
+  "#7DC30F",
+  "#9900AB",
+  "#D000C4",
+  "#D000C4",
+  "#0B4EA2",
+];

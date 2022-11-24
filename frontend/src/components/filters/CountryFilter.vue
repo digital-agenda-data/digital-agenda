@@ -21,8 +21,8 @@ export default {
       return true;
     },
     defaultValue() {
-      // Default to ALL
-      return this.items.map((item) => item.id);
+      // Default to none
+      return [];
     },
   },
 };

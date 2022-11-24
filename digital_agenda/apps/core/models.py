@@ -207,7 +207,7 @@ class Period(BaseDimensionModel):
 
     class Meta:
         db_table = "periods"
-        ordering = ["code"]
+        ordering = ["-code"]
 
 
 class Fact(TimestampedModel):
