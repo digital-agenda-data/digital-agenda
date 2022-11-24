@@ -27,6 +27,17 @@ Highcharts.setOptions({
   exporting: {
     sourceWidth: 1024,
     sourceHeight: 600,
+    buttons: {
+      contextButton: {
+        enabled: false,
+      },
+    },
+  },
+  legend: {
+    itemWidth: 190,
+    layout: "vertical",
+    align: "right",
+    verticalAlign: "top",
   },
   credits: {
     text: "European Commission, Digital Scoreboard",

@@ -125,8 +125,18 @@ class IndicatorGroupDetailSerializer(serializers.ModelSerializer):
 
 class CountryFactSerializer(serializers.ModelSerializer):
 
+    period = serializers.CharField(source="period.code", read_only=True)
     country = serializers.CharField(source="country.code", read_only=True)
+    indicator = serializers.CharField(source="indicator.code", read_only=True)
+    breakdown = serializers.CharField(source="breakdown.code", read_only=True)
 
     class Meta:
         model = Fact
-        fields = ["country", "value", "flags"]
+        fields = [
+            "country",
+            "value",
+            "flags",
+            "indicator",
+            "breakdown",
+            "period",
+        ]

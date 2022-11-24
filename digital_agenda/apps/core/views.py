@@ -1,5 +1,6 @@
 from django.db.models import Exists
 from django.db.models import OuterRef
+from django.db.models import Subquery
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.mixins import ListModelMixin
@@ -237,25 +238,40 @@ class DataSourceViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     pagination_class = None
 
 
-class FactsPerCountryFilter(filters.FilterSet):
+def filter_indicator_groups(queryset, name, value):
+    return queryset.filter(
+        indicator__id__in=Subquery(
+            Indicator.objects.filter(groups__code=value).only("id")
+        )
+    )
 
-    indicator = filters.CharFilter(
-        field_name="indicator__code", required=True  # lookup_expr="iexact",
+
+def filter_breakdown_groups(queryset, name, value):
+    return queryset.filter(
+        breakdown__id__in=Subquery(
+            Breakdown.objects.filter(groups__code=value).only("id")
+        )
     )
-    breakdown = filters.CharFilter(
-        field_name="breakdown__code", required=True  # lookup_expr="iexact",
+
+
+class FactsPerCountryFilter(filters.FilterSet):
+    indicator_group = filters.CharFilter(
+        field_name="indicator__code", method=filter_indicator_groups
     )
-    unit = filters.CharFilter(
-        field_name="unit__code", required=True  # lookup_expr="iexact",
+    indicator = filters.CharFilter(field_name="indicator__code")
+    breakdown_group = filters.CharFilter(
+        field_name="breakdown_code", method=filter_breakdown_groups
     )
-    period = filters.CharFilter(
-        field_name="period__code", required=True  # lookup_expr="iexact",
-    )
+    breakdown = filters.CharFilter(field_name="breakdown__code")
+    unit = filters.CharFilter(field_name="unit__code")
+    period = filters.CharFilter(field_name="period__code")
 
     class Meta:
         model = Fact
         fields = [
+            "indicator_group",
             "indicator",
+            "breakdown_group",
             "breakdown",
             "unit",
             "period",
@@ -268,9 +284,22 @@ class FactsPerCountryViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericVi
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = FactsPerCountryFilter
     queryset = (
-        Fact.objects.order_by("-value", "country__code")
-        .select_related("country")
-        .only("country__code", "value", "flags")
+        Fact.objects.order_by(
+            "period__code",
+            "country__code",
+            "indicator__code",
+            "breakdown__code",
+        )
+        .filter(value__isnull=False)
+        .select_related("country", "indicator", "breakdown", "period")
+        .only(
+            "country__code",
+            "indicator__code",
+            "breakdown__code",
+            "period__code",
+            "value",
+            "flags",
+        )
         .all()
     )
     pagination_class = None

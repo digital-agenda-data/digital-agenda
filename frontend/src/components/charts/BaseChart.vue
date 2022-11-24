@@ -55,6 +55,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
+import { camelToSnakeCase } from "@/lib/utils";
 
 export default {
   name: "BaseChart",
@@ -91,11 +92,17 @@ export default {
     endpointFilters() {
       return [];
     },
+    chartOptions() {
+      return {};
+    },
+    groupBy() {
+      return [];
+    },
     endpointParams() {
       const result = {};
 
       for (const key of this.endpointFilters) {
-        result[key] = this[key]?.code;
+        result[camelToSnakeCase(key)] = this[key]?.code;
       }
 
       if (!Object.values(result).every((val) => val)) {
@@ -106,37 +113,35 @@ export default {
 
       return result;
     },
-    chartOptions() {
-      return {};
+    apiValuesGrouped() {
+      if (!this.groupBy || this.groupBy.length === 0) return {};
+
+      const result = {};
+
+      for (const item of this.apiData) {
+        const lastKey = this.groupBy.slice(-1)[0];
+
+        let group = result;
+
+        for (const key of this.groupBy.slice(0, -1)) {
+          const itemValue = item[key];
+
+          if (!group[itemValue]) {
+            group[itemValue] = {};
+          }
+
+          group = group[itemValue];
+        }
+
+        group[item[lastKey]] = item.value;
+      }
+
+      return result;
     },
     countries() {
       if (Array.isArray(this.country)) return this.country;
       if (this.country) return [this.country];
       return [];
-    },
-    selectedCountriesMap() {
-      return new Map(
-        this.countries.map((item) => [item.code, item.alt_label || item.label])
-      );
-    },
-    chartData() {
-      return this.apiData.map((item) => {
-        return {
-          y: item.value,
-          color: item.country === "EU" ? "#427baa" : "#63b8ff",
-          data: item,
-        };
-      });
-    },
-    chartDataFilteredByCountry() {
-      return this.chartData.filter((item) =>
-        this.selectedCountriesMap.has(item.data.country)
-      );
-    },
-    categories() {
-      return this.apiData.map(
-        (item) => this.selectedCountriesMap.get(item.country) || item.country
-      );
     },
   },
   watch: {
@@ -156,7 +161,7 @@ export default {
     async loadData() {
       this.loaded = false;
       try {
-        await this.getFacts();
+        await Promise.all([this.getFacts(), this.loadExtra()]);
       } finally {
         this.loaded = true;
       }
@@ -166,6 +171,7 @@ export default {
 
       this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
     },
+    async loadExtra() {},
   },
 };
 </script>

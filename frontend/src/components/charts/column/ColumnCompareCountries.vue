@@ -29,6 +29,9 @@ export default {
     endpointFilters() {
       return ["breakdown", "period", "indicator", "unit"];
     },
+    groupBy() {
+      return ["country"];
+    },
     chartOptions() {
       const parent = this;
       return {
@@ -38,7 +41,15 @@ export default {
         series: [
           {
             name: this.unit?.alt_label,
-            data: this.chartDataFilteredByCountry,
+            data: this.countries.map((country) => {
+              return {
+                y: this.apiValuesGrouped[country.code] || 0,
+                color: this.country.code === "EU" ? "#427baa" : "#63b8ff",
+              };
+            }),
+            dataSorting: {
+              enabled: true,
+            },
           },
         ],
         legend: {
@@ -53,7 +64,9 @@ export default {
           text: this.period && `Year: ${this.period.code}`,
         },
         xAxis: {
-          categories: this.categories,
+          categories: this.countries.map(
+            (country) => country.alt_label || country.label || country.code
+          ),
           title: {
             text: "Country",
             enabled: false,

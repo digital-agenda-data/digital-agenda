@@ -31,3 +31,7 @@ export function getRouteMeta(to, key) {
   }
   return to.meta[key];
 }
+
+export function camelToSnakeCase(text) {
+  return text.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+}
