@@ -1,5 +1,6 @@
 <template>
   <ecl-select
+    v-show="isVisible"
     v-model="modelValue"
     :items="items"
     :loading="loading"
@@ -77,6 +78,9 @@ export default {
       return false;
     },
     required() {
+      return true;
+    },
+    isVisible() {
       return true;
     },
   },

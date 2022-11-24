@@ -17,6 +17,10 @@ export default {
     label() {
       return "Indicator Group";
     },
+    isVisible() {
+      // Only show this filter if there are more than one indicator group
+      return this.loading || this.items.length > 1;
+    },
   },
 };
 </script>
