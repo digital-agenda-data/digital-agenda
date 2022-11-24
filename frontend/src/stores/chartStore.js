@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { apiCall } from "@/lib/api";
 import { useRoute } from "vue-router";
 
-export const useChartStore = defineStore("chartStore", {
+export const useChartStore = defineStore("chart", {
   state: () => {
     return {
       charts: [],

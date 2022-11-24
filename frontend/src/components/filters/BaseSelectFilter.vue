@@ -14,6 +14,8 @@
 <script>
 import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { apiCall } from "@/lib/api";
+import { mapStores } from "pinia";
+import { useFilterStore } from "@/stores/filterStore";
 
 export default {
   name: "BaseFilter",
@@ -26,6 +28,7 @@ export default {
     };
   },
   computed: {
+    ...mapStores(useFilterStore),
     modelValue: {
       get() {
         return this.$route.query[this.queryName];
@@ -90,6 +93,7 @@ export default {
       this.load();
     },
     selected() {
+      this.filterStore[this.queryName] = this.selected;
       this.$emit("change", this.selected);
     },
   },
@@ -129,5 +133,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

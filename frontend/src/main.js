@@ -5,7 +5,7 @@ import HighchartsVue from "highcharts-vue";
 import App from "./App.vue";
 import router from "./router";
 
-import "./styles/main.css";
+import "./styles/main.scss";
 import ECLInit from "@/directives/ECLInit";
 
 import Highcharts from "highcharts";
@@ -19,6 +19,21 @@ offlineExportingInit(Highcharts);
 exportingDataInit(Highcharts);
 accessibilityInit(Highcharts);
 
+// Set defaults
+Highcharts.setOptions({
+  chart: {
+    height: "600px",
+  },
+  exporting: {
+    sourceWidth: 1024,
+    sourceHeight: 600,
+  },
+  credits: {
+    text: "European Commission, Digital Scoreboard",
+    href: "https://digital-strategy.ec.europa.eu/",
+  },
+});
+
 const app = createApp(App);
 
 app.use(router);
@@ -28,4 +43,4 @@ app.use(HighchartsVue);
 
 app.directive("ecl-init", ECLInit);
 
-app.mount("#app");
+app.mount("#digital-agenda-app");

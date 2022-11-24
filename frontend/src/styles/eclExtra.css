@@ -1,0 +1,23 @@
+/* Extra ECL classes or overrides */
+
+.ecl-u-break-word {
+  word-break: break-word;
+}
+
+/*
+    There is an align helper class for the other values but
+    not this one for some reason.
+*/
+.ecl-u-type-align-justify {
+  text-align: justify;
+}
+
+/*
+    The specificity of this is not enough to override,
+    patch it with !important
+*/
+@media screen {
+  .ecl-link--primary.ecl-link--no-visited:visited {
+    color: #fff !important;
+  }
+}

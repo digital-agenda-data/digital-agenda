@@ -71,27 +71,11 @@ import { useChartStore } from "@/stores/chartStore";
 import { apiCall } from "@/lib/api";
 import { arrayEquals } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useFilterStore } from "@/stores/filterStore";
 
 export default {
   name: "ChartDefinitions",
   components: { EclLink },
-  props: {
-    indicator: {
-      type: [Object, Array],
-      required: false,
-      default: null,
-    },
-    breakdown: {
-      type: [Object, Array],
-      required: false,
-      default: null,
-    },
-    unit: {
-      type: [Object, Array],
-      required: false,
-      default: null,
-    },
-  },
   data() {
     return {
       dataSources: new Map(),
@@ -100,6 +84,7 @@ export default {
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
+    ...mapState(useFilterStore, ["indicator", "breakdown", "unit"]),
     indicatorList() {
       if (!this.indicator) return [];
       if (Array.isArray(this.indicator)) return this.indicator;

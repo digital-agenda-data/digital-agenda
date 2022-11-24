@@ -1,0 +1,35 @@
+@import "chart.scss";
+@import "eclExtra.css";
+@import "transitions.css";
+
+#digital-agenda-app {
+  font-family: Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .app-wrapper:not(.digital-agenda-embedded) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+  }
+
+  .app-wrapper > * {
+    box-sizing: border-box;
+  }
+
+  .app-wrapper:not(.digital-agenda-embedded) main {
+    flex-grow: 1;
+    padding-bottom: 120px;
+  }
+
+  .digital-agenda-embedded {
+    .hide-embedded,
+    .ecl-page-header,
+    .ecl-site-footer,
+    .ecl-site-header {
+      display: none;
+    }
+  }
+}

@@ -18,7 +18,6 @@
 import EclBreadcrumbs from "@/components/ecl/navigation/EclBreadcrumbs.vue";
 import { getRouteMeta } from "@/lib/utils";
 
-
 /**
  * ECL Page Header component, see documentation here:
  *

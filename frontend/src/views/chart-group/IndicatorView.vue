@@ -21,7 +21,7 @@
   </div>
   <table
     v-else-if="indicatorGroups.length > 0"
-    class="ecl-table ecl-table--zebra break-word"
+    class="ecl-table ecl-table--zebra ecl-u-break-word"
   >
     <thead class="ecl-table__head">
       <tr class="ecl-table__row">
