@@ -7,7 +7,6 @@ import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
 import { apiCall } from "@/lib/api";
-import { useFilterStore } from "@/stores/filterStore";
 import { colorForCountry } from "@/lib/utils";
 
 export default {
@@ -63,9 +62,6 @@ export default {
               color: colorForCountry(country.code, seriesIndex),
             };
           }),
-          dataSorting: {
-            enabled: true,
-          },
         };
       });
     },
@@ -99,11 +95,13 @@ export default {
         tooltip: this.defaultTooltip,
       };
     },
-  },
-  watch: {
-    apiDataBreakdowns() {
+    defineEntries() {
       // Set the breakdowns to define them in the "Definitions and scopes"
-      useFilterStore().breakdown = this.apiDataBreakdowns;
+      return {
+        Indicator: this.indicator,
+        Breakdown: this.apiDataBreakdowns,
+        Unit: this.unit,
+      };
     },
   },
   methods: {
@@ -112,7 +110,7 @@ export default {
 
       this.breakdownList = await apiCall(
         "GET",
-        `/breakdown-groups/${this.breakdownGroup.code}/breakdowns`
+        `/breakdown-groups/${this.breakdownGroup.code}/breakdowns/`
       );
     },
   },

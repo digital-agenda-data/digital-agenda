@@ -32,7 +32,7 @@
     <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8">
         <div v-html="currentChart.description" />
-        <chart-definitions />
+        <chart-definitions :define="defineEntries" />
       </div>
 
       <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
@@ -67,7 +67,7 @@ export default {
   },
   data() {
     return {
-      loaded: false,
+      loaded: true,
       apiData: [],
       chart: null,
     };
@@ -83,6 +83,13 @@ export default {
       "unit",
       "country",
     ]),
+    defineEntries() {
+      return {
+        Indicator: this.indicator,
+        Breakdown: this.breakdown,
+        Unit: this.unit,
+      };
+    },
     filterComponents() {
       return [];
     },
@@ -186,6 +193,8 @@ export default {
       this.chart = chart;
     },
     async loadData() {
+      if (!this.endpointParams) return;
+
       this.loaded = false;
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
@@ -195,8 +204,6 @@ export default {
       }
     },
     async getFacts() {
-      if (!this.endpointParams) return;
-
       this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
     },
     async loadExtra() {},

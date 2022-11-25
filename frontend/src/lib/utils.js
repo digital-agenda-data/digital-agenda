@@ -17,6 +17,21 @@ export function arrayEquals(a1, a2) {
 }
 
 /**
+ * Check if two sets are equal
+ *
+ * @param s1 {Set}
+ * @param s2 {Set}
+ * @return {Boolean}
+ */
+export function setEquals(s1, s2) {
+  if (s1.size !== s2.size) return false;
+  for (const item of s1) {
+    if (!s1.has(item)) return false;
+  }
+  return true;
+}
+
+/**
  * Scroll to the hash location in the URL
  */
 export function scrollToHash() {
@@ -28,6 +43,13 @@ export function scrollToHash() {
   }
 }
 
+/**
+ * Get Meta value from route
+ *
+ * @param to {Object} RouterLocation
+ * @param key {String}
+ * @return {*}
+ */
 export function getRouteMeta(to, key) {
   if (typeof to.meta[key] === "function") {
     return to.meta[key]();
@@ -35,10 +57,20 @@ export function getRouteMeta(to, key) {
   return to.meta[key];
 }
 
+/**
+ * Convert text from camelCase to snake_case
+ */
 export function camelToSnakeCase(text) {
   return text.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
 }
 
+/**
+ * Get chart color for the specified country and series
+ *
+ * @param countryCode {String}
+ * @param seriesIndex {Number}
+ * @return {String} rgba
+ */
 export function colorForCountry(countryCode, seriesIndex = 0) {
   let color = new Highcharts.Color(
     SERIES_COLORS[seriesIndex % SERIES_COLORS.length]
