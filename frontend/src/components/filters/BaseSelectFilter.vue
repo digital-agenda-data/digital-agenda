@@ -72,10 +72,29 @@ export default {
       return this.apiData.filter((item) => values.has(item.code));
     },
     allowedValues() {
-      return new Set(this.items.map((item) => item.id));
+      const result = new Set();
+      for (const item of this.items) {
+        if (!item.children) {
+          result.add(item.id);
+          continue;
+        }
+
+        for (const child of item.children) {
+          result.add(child.id);
+        }
+      }
+      return result;
     },
     defaultValue() {
-      return this.items[0]?.id || "";
+      if (!this.items || this.items.length === 0) {
+        return "";
+      }
+
+      if (this.items[0].children && this.items[0].children.length > 0) {
+        return this.items[0].children[0].id;
+      }
+
+      return this.items[0].id;
     },
     multiple() {
       return false;
@@ -105,7 +124,9 @@ export default {
       this.loading = true;
 
       try {
-        await this.loadData();
+        if (this.endpoint) {
+          await Promise.all([this.loadApiData(), this.loadExtra()]);
+        }
         if (this.modelValue && !this.allowedValues.has(this.modelValue)) {
           // The current value set is not actually allowed. This will happen as the
           // allowed values change but the URL queries won't change automatically.
@@ -125,11 +146,10 @@ export default {
         this.loading = false;
       }
     },
-    async loadData() {
-      if (this.endpoint) {
-        this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
-      }
+    async loadApiData() {
+      this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
     },
+    async loadExtra() {},
   },
 };
 </script>

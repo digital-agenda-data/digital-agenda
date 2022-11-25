@@ -45,6 +45,14 @@ class BreakdownGroupDetailSerializer(BreakdownGroupListSerializer):
         ]
 
 
+class BreakdownWithGroupsSerializer(BaseDimensionSerializer):
+    groups = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
+
+    class Meta(BaseDimensionSerializer.Meta):
+        model = Breakdown
+        fields = BaseDimensionSerializer.Meta.fields + ["groups"]
+
+
 class UnitSerializer(BaseDimensionSerializer):
     class Meta(BaseDimensionSerializer.Meta):
         model = Unit

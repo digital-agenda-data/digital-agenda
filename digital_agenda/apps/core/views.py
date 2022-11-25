@@ -32,6 +32,7 @@ from .serializers import (
     PeriodSerializer,
     CountryFactSerializer,
     DataSourceSerializer,
+    BreakdownWithGroupsSerializer,
 )
 
 
@@ -197,6 +198,8 @@ class IndicatorPeriodViewSet(IndicatorFilteredMixin, PeriodViewSet):
 
 
 class IndicatorBreakdownViewSet(IndicatorFilteredMixin, BreakdownViewSet):
+    serializer_class = BreakdownWithGroupsSerializer
+    queryset = Breakdown.objects.all().prefetch_related("groups")
     pagination_class = None
 
 

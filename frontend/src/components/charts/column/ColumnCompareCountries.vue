@@ -1,12 +1,11 @@
 <script>
 import BaseChart from "@/components/charts/BaseChart.vue";
 import CountryFilter from "@/components/filters/CountryFilter.vue";
-import BreakdownFilter from "@/components/filters/BreakdownFilter.vue";
-import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
+import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsFilter.vue";
 import { colorForCountry } from "@/lib/utils";
 
 export default {
@@ -17,8 +16,7 @@ export default {
       return [
         IndicatorGroupFilter,
         IndicatorFilter,
-        BreakdownGroupFilter,
-        BreakdownFilter,
+        BreakdownWithGroupsFilter,
         PeriodFilter,
         UnitFilter,
         CountryFilter,
@@ -59,7 +57,7 @@ export default {
         },
         title: {
           text: [this.indicator?.label, this.breakdown?.label]
-            .map((s) => s.trim())
+            .map((s) => s?.trim())
             .join(", "),
         },
         subtitle: {
