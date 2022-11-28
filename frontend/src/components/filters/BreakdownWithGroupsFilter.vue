@@ -29,7 +29,7 @@ export default {
       for (const group of this.breakdownGroups) {
         groups.set(group.code, {
           id: group.code,
-          text: group.alt_label || group.label || group.code,
+          text: this.getDisplay(group),
           children: [],
         });
       }
@@ -44,7 +44,7 @@ export default {
 
           groupObject.children.push({
             id: item.code,
-            text: item.alt_label || item.label || item.code,
+            text: this.getDisplay(item),
           });
         }
       }

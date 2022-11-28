@@ -1,6 +1,6 @@
 <script>
 import BaseChart from "@/components/charts/BaseChart.vue";
-import CountryFilter from "@/components/filters/CountryFilter.vue";
+import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
@@ -19,7 +19,7 @@ export default {
         BreakdownWithGroupsFilter,
         PeriodFilter,
         UnitFilter,
-        CountryFilter,
+        CountryMultiFilter,
       ];
     },
     allInitialCountries() {
@@ -37,7 +37,7 @@ export default {
           data: this.countries.map((country) => {
             return {
               y: this.apiValuesGrouped[country.code] || 0,
-              name: country.alt_label || country.label || country.code,
+              name: this.getDisplay(country),
               color: colorForCountry(country.code),
             };
           }),
@@ -55,10 +55,6 @@ export default {
         series: this.series,
         xAxis: {
           type: "category",
-          title: {
-            text: "Country",
-            enabled: false,
-          },
         },
       };
     },

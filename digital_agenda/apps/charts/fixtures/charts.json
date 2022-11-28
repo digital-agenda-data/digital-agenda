@@ -43,5 +43,20 @@
     "chart_type": "SPLINE_COMPARE_COUNTRIES",
     "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one indicator, possibly one specific breakdown, one country and to compare it with some others countries, as well as with the European average trend.</p>"
   }
+},
+{
+  "model": "charts.chart",
+  "pk": 4,
+  "fields": {
+    "created_at": "2022-11-28T09:28:18.836Z",
+    "updated_at": "2022-11-28T09:28:18.836Z",
+    "display_order": 4,
+    "is_draft": false,
+    "chart_group": 2,
+    "name": "See the evolution of an indicator and compare breakdowns",
+    "code": "2-see-the-evolution-of-an-indicator-and-compare-br",
+    "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+    "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>"
+  }
 }
 ]

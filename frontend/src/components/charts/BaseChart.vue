@@ -55,7 +55,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
-import { camelToSnakeCase } from "@/lib/utils";
+import { camelToSnakeCase, getDisplay } from "@/lib/utils";
 
 export default {
   name: "BaseChart",
@@ -114,7 +114,7 @@ export default {
             .join(", "),
         },
         subtitle: {
-          text: this.period && `Year: ${this.period.code}`,
+          text: this.period?.code && `Year: ${this.period.code}`,
         },
         tooltip: this.defaultTooltip,
         yAxis: {
@@ -178,6 +178,14 @@ export default {
     countriesWithData() {
       return Array.from(new Set(this.apiData.map((item) => item.country)));
     },
+    apiDataPeriods() {
+      return Array.from(
+        new Set(this.apiData.map((item) => item.period))
+      ).sort();
+    },
+    lastPeriod() {
+      return parseInt(this.apiDataPeriods.slice(-1)[0]);
+    },
     initialCountries() {
       if (this.allInitialCountries) {
         return this.countriesWithData;
@@ -209,9 +217,7 @@ export default {
 
           if (parent.breakdown?.code) {
             result.push(
-              `<b>Breakdown:</b> ${
-                parent.breakdown.alt_label || parent.breakdown.label
-              }`
+              `<b>Breakdown:</b> ${parent.getDisplay(parent.breakdown)}`
             );
           }
 
@@ -235,6 +241,7 @@ export default {
     this.loadData();
   },
   methods: {
+    getDisplay,
     highchartsCallback(chart) {
       this.chart = chart;
     },

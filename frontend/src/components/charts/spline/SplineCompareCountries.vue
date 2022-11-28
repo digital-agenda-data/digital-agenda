@@ -1,6 +1,6 @@
 <script>
 import BaseChart from "@/components/charts/BaseChart.vue";
-import CountryFilter from "@/components/filters/CountryFilter.vue";
+import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
@@ -16,7 +16,7 @@ export default {
         IndicatorFilter,
         BreakdownWithGroupsFilter,
         UnitFilter,
-        CountryFilter,
+        CountryMultiFilter,
       ];
     },
     endpointFilters() {
@@ -25,20 +25,12 @@ export default {
     groupBy() {
       return ["country", "period"];
     },
-    periods() {
-      return Array.from(
-        new Set(this.apiData.map((item) => item.period))
-      ).sort();
-    },
-    lastPeriod() {
-      return parseInt(this.periods.slice(-1)[0]);
-    },
     series() {
       return this.countries.map((country) => {
         return {
-          name: country.alt_label || country.label || country.code,
+          name: this.getDisplay(country),
           color: country.color,
-          data: this.periods.map((periodCode) => {
+          data: this.apiDataPeriods.map((periodCode) => {
             return {
               y: this.apiValuesGrouped[country.code][periodCode] || 0,
               x: parseInt(periodCode),
@@ -55,13 +47,6 @@ export default {
           type: "spline",
         },
         series: this.series,
-        xAxis: {
-          allowDecimals: false,
-          title: {
-            text: "Period",
-            enabled: false,
-          },
-        },
         plotOptions: {
           series: {
             dataLabels: {

@@ -45,6 +45,16 @@ Highcharts.setOptions({
     text: "European Commission, Digital Scoreboard",
     href: "https://digital-strategy.ec.europa.eu/",
   },
+  yAxis: {
+    allowDecimals: false,
+    min: 0,
+  },
+  xAxis: {
+    allowDecimals: false,
+    title: {
+      enabled: false,
+    },
+  },
 });
 
 const app = createApp(App);

@@ -82,3 +82,13 @@ export function colorForCountry(countryCode, seriesIndex = 0) {
 
   return color.get();
 }
+
+/**
+ * Get a suitable display string for this backend object
+ *
+ * @param item {Object} Dimension object from backend
+ * @return {String}
+ */
+export function getDisplay(item) {
+  return item && (item.alt_label || item.label || item.code);
+}

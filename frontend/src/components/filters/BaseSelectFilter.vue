@@ -16,6 +16,7 @@ import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { apiCall } from "@/lib/api";
 import { mapStores } from "pinia";
 import { useFilterStore } from "@/stores/filterStore";
+import { getDisplay } from "@/lib/utils";
 
 export default {
   name: "BaseFilter",
@@ -58,7 +59,7 @@ export default {
       return this.apiData.map((item) => {
         return {
           id: item.code,
-          text: item.alt_label || item.label || item.code,
+          text: this.getDisplay(item),
           item,
         };
       });
@@ -120,6 +121,7 @@ export default {
     this.load();
   },
   methods: {
+    getDisplay,
     async load() {
       this.loading = true;
 

@@ -2,7 +2,7 @@
 import BaseSelectFilter from "@/components/filters/BaseSelectFilter.vue";
 
 export default {
-  name: "CountryFilter",
+  name: "CountryMultiFilter",
   extends: BaseSelectFilter,
   computed: {
     queryName() {
@@ -15,14 +15,13 @@ export default {
       );
     },
     label() {
-      return "Select the countries";
-    },
-    multiple() {
-      return true;
+      return "Country";
     },
     defaultValue() {
-      // Default to none
-      return [];
+      if (this.allowedValues.has("EU")) {
+        return "EU";
+      }
+      return this.items[0]?.id;
     },
   },
 };

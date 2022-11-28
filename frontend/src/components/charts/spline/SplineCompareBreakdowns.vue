@@ -1,15 +1,13 @@
 <script>
 import BaseCompareBreakdownChart from "@/components/charts/BaseCompareBreakdownChart.vue";
-import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
-import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
-import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
-import { colorForCountry } from "@/lib/utils";
+import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
+import CountryFilter from "@/components/filters/CountryFilter.vue";
 
 export default {
-  name: "ColumnCompareBreakdowns",
+  name: "SplineCompareBreakdowns",
   extends: BaseCompareBreakdownChart,
   computed: {
     filterComponents() {
@@ -17,26 +15,30 @@ export default {
         IndicatorGroupFilter,
         IndicatorFilter,
         BreakdownGroupFilter,
-        PeriodFilter,
         UnitFilter,
-        CountryMultiFilter,
+        CountryFilter,
       ];
     },
+    initialCountries() {
+      // No need to set initial countries since we are always filtering
+      // on a single country for this chart
+      return [];
+    },
     endpointFilters() {
-      return ["breakdownGroup", "period", "indicator", "unit"];
+      return ["breakdownGroup", "indicator", "unit", "country"];
     },
     groupBy() {
-      return ["breakdown", "country"];
+      return ["breakdown", "period"];
     },
     series() {
-      return this.apiDataBreakdowns.map((breakdown, seriesIndex) => {
+      return this.apiDataBreakdowns.map((breakdown) => {
         return {
           name: this.getDisplay(breakdown),
-          data: this.countries.map((country) => {
+          data: this.apiDataPeriods.map((periodCode) => {
             return {
-              name: this.getDisplay(country),
-              y: this.apiValuesGrouped[breakdown.code][country.code] || 0,
-              color: colorForCountry(country.code, seriesIndex),
+              y: this.apiValuesGrouped[breakdown.code][periodCode] || 0,
+              x: parseInt(periodCode),
+              name: periodCode,
             };
           }),
         };
@@ -45,14 +47,14 @@ export default {
     chartOptions() {
       return {
         chart: {
-          type: "column",
+          type: "spline",
         },
         series: this.series,
+        subtitle: {
+          text: this.getDisplay(this.country),
+        },
         legend: {
           enabled: this.apiDataBreakdowns.length > 1,
-        },
-        xAxis: {
-          type: "category",
         },
       };
     },

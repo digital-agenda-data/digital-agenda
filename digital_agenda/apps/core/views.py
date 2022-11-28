@@ -268,6 +268,7 @@ class FactsPerCountryFilter(filters.FilterSet):
     breakdown = filters.CharFilter(field_name="breakdown__code")
     unit = filters.CharFilter(field_name="unit__code")
     period = filters.CharFilter(field_name="period__code")
+    country = filters.CharFilter(field_name="country__code")
 
     class Meta:
         model = Fact
@@ -278,6 +279,7 @@ class FactsPerCountryFilter(filters.FilterSet):
             "breakdown",
             "unit",
             "period",
+            "country",
         ]
 
 

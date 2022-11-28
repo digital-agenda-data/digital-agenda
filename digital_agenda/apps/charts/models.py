@@ -58,6 +58,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             "Spline",
             (
                 ("SPLINE_COMPARE_COUNTRIES", "Spline Chart: Compare Countries"),
+                ("SPLINE_COMPARE_BREAKDOWNS", "Spline Chart: Compare Breakdowns"),
             ),
         )
     ]
