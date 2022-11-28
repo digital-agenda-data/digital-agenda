@@ -17,6 +17,10 @@ export default {
     label() {
       return "Period";
     },
+    defaultValue() {
+      // Default to the latest period instead of a random choice
+      return this.items[0]?.id;
+    },
   },
 };
 </script>

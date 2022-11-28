@@ -1,5 +1,6 @@
 <script>
 import BaseSelectFilter from "@/components/filters/BaseSelectFilter.vue";
+import { randomChoice } from "@/lib/utils";
 
 export default {
   name: "CountryMultiFilter",
@@ -21,7 +22,7 @@ export default {
       if (this.allowedValues.has("EU")) {
         return "EU";
       }
-      return this.items[0]?.id;
+      return randomChoice(this.items)?.id;
     },
   },
 };

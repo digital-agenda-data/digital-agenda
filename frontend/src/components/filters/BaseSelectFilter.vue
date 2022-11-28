@@ -16,7 +16,7 @@ import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { apiCall } from "@/lib/api";
 import { mapStores } from "pinia";
 import { useFilterStore } from "@/stores/filterStore";
-import { getDisplay } from "@/lib/utils";
+import { getDisplay, randomChoice } from "@/lib/utils";
 
 export default {
   name: "BaseFilter",
@@ -91,11 +91,9 @@ export default {
         return "";
       }
 
-      if (this.items[0].children && this.items[0].children.length > 0) {
-        return this.items[0].children[0].id;
-      }
+      const choice = randomChoice(this.items);
 
-      return this.items[0].id;
+      return randomChoice(choice.children)?.id || choice.id;
     },
     multiple() {
       return false;

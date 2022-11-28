@@ -55,7 +55,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
-import { camelToSnakeCase, getDisplay } from "@/lib/utils";
+import { camelToSnakeCase, getDisplay, randomChoice } from "@/lib/utils";
 
 export default {
   name: "BaseChart",
@@ -192,7 +192,9 @@ export default {
       }
 
       const result = ["EU"];
-      const another = this.countriesWithData.find((code) => code !== "EU");
+      const another = randomChoice(
+        this.countriesWithData.filter((code) => code !== "EU")
+      );
       if (another) {
         result.push(another);
       }

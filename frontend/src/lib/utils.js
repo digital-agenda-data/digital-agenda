@@ -92,3 +92,16 @@ export function colorForCountry(countryCode, seriesIndex = 0) {
 export function getDisplay(item) {
   return item && (item.alt_label || item.label || item.code);
 }
+
+/***
+ * Return a random item from an array
+ *
+ * @param items {Array}
+ * @return {*}
+ */
+export function randomChoice(items) {
+  if (!items || !Array.isArray(items) || items.length === 0) {
+    return undefined;
+  }
+  return items[Math.floor(Math.random() * items.length)];
+}
