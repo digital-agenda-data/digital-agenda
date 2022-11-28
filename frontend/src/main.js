@@ -57,6 +57,20 @@ Highcharts.setOptions({
       enabled: false,
     },
   },
+  plotOptions: {
+    series: {
+      dataLabels: {
+        enabled: true,
+        formatter() {
+          // Show "N/A" only if there is no value defined from the API.
+          // The X or Y coordinates still need to be actual values (usually 0)
+          // to avoid errors and to have an empty space for the missing
+          // values.
+          return this.point.options.apiValue === undefined ? "N/A" : null;
+        },
+      },
+    },
+  },
 });
 
 const app = createApp(App);

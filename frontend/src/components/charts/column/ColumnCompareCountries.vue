@@ -37,6 +37,7 @@ export default {
           data: this.countries.map((country) => {
             return {
               y: this.apiValuesGrouped[country.code] || 0,
+              apiValue: this.apiValuesGrouped[country.code],
               name: this.getDisplay(country),
               color: colorForCountry(country.code),
             };
@@ -52,7 +53,6 @@ export default {
         chart: {
           type: "column",
         },
-        series: this.series,
         xAxis: {
           type: "category",
         },

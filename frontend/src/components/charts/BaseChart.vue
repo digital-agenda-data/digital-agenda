@@ -94,11 +94,12 @@ export default {
     endpointFilters() {
       return [];
     },
+    series() {
+      return [];
+    },
     chartOptionsDefaults() {
       return {
-        legend: {
-          enabled: false,
-        },
+        series: this.series,
         title: {
           text: [this.indicator?.label, this.breakdown?.label]
             .filter((s) => !!s)
@@ -107,6 +108,9 @@ export default {
         },
         subtitle: {
           text: this.period?.code && `Year: ${this.period.code}`,
+        },
+        legend: {
+          enabled: false,
         },
         tooltip: this.defaultTooltip,
         yAxis: {

@@ -34,6 +34,7 @@ export default {
             return {
               y: this.apiValuesGrouped[country.code][periodCode] || 0,
               x: parseInt(periodCode),
+              apiValue: this.apiValuesGrouped[country.code][periodCode],
               name: periodCode,
             };
           }),
@@ -46,7 +47,6 @@ export default {
         chart: {
           type: "spline",
         },
-        series: this.series,
         plotOptions: {
           series: {
             dataLabels: {

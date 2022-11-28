@@ -34,8 +34,9 @@ export default {
           name: this.getDisplay(breakdown),
           data: this.countries.map((country) => {
             return {
-              name: this.getDisplay(country),
               y: this.apiValuesGrouped[breakdown.code][country.code] || 0,
+              apiValue: this.apiValuesGrouped[breakdown.code][country.code],
+              name: this.getDisplay(country),
               color: colorForCountry(country.code, seriesIndex),
             };
           }),
@@ -47,7 +48,6 @@ export default {
         chart: {
           type: "column",
         },
-        series: this.series,
         legend: {
           enabled: this.apiDataBreakdowns.length > 1,
         },
