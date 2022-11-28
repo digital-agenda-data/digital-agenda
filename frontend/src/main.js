@@ -13,12 +13,14 @@ import exportingInit from "highcharts/modules/exporting";
 import offlineExportingInit from "highcharts/modules/offline-exporting";
 import exportingDataInit from "highcharts/modules/export-data";
 import accessibilityInit from "highcharts/modules/accessibility";
+import noDataToDisplayInit from "highcharts/modules/no-data-to-display";
 import { SERIES_COLORS } from "@/lib/constants";
 
 exportingInit(Highcharts);
 offlineExportingInit(Highcharts);
 exportingDataInit(Highcharts);
 accessibilityInit(Highcharts);
+noDataToDisplayInit(Highcharts);
 
 // Set global defaults
 Highcharts.setOptions({

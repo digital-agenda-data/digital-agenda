@@ -11,17 +11,10 @@
   <div
     class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-grey-10"
   >
-    <div v-if="!loaded" class="ecl-u-type-align-center ecl-u-pa-2xl">
-      <ecl-spinner />
-    </div>
     <highcharts
-      v-else-if="apiData.length > 0"
       :options="{ ...chartOptionsDefaults, ...chartOptions }"
       :callback="highchartsCallback"
     />
-    <div v-else class="ecl-u-type-align-center ecl-u-pa-2xl">
-      No data available
-    </div>
   </div>
 
   <div
@@ -67,7 +60,6 @@ export default {
   },
   data() {
     return {
-      loaded: true,
       apiData: [],
       chart: null,
     };
@@ -251,10 +243,12 @@ export default {
       if (!this.endpointParams) return;
 
       this.loaded = false;
+      this.chart.showLoading();
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
         this.setInitialCountries();
       } finally {
+        this.chart.hideLoading();
         this.loaded = true;
       }
     },
