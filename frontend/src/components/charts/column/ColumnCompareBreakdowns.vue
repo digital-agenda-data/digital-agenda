@@ -28,23 +28,11 @@ export default {
         CountryFilter,
       ];
     },
-    endpoint() {
-      return "/facts/facts-per-country/";
-    },
     endpointFilters() {
       return ["breakdownGroup", "period", "indicator", "unit"];
     },
     groupBy() {
       return ["breakdown", "country"];
-    },
-    initialCountries() {
-      const result = ["EU"];
-      const another = this.countriesWithData.find((code) => code !== "EU");
-      if (another) {
-        result.push(another);
-      }
-
-      return result.sort();
     },
     apiDataBreakdowns() {
       const codes = new Set(this.apiData.map((item) => item.breakdown));
@@ -71,12 +59,6 @@ export default {
           type: "column",
         },
         series: this.series,
-        title: {
-          text: this.indicator?.label,
-        },
-        subtitle: {
-          text: this.period && `Year: ${this.period.code}`,
-        },
         legend: {
           enabled: this.apiDataBreakdowns.length > 1,
         },
@@ -87,12 +69,6 @@ export default {
             enabled: false,
           },
         },
-        yAxis: {
-          title: {
-            text: this.unit?.alt_label,
-          },
-        },
-        tooltip: this.defaultTooltip,
       };
     },
     defineEntries() {

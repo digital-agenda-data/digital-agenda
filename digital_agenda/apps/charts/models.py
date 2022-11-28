@@ -54,6 +54,12 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
                 ("COLUMN_COMPARE_BREAKDOWNS", "Column Chart: Compare Breakdowns"),
             ),
         ),
+        (
+            "Spline",
+            (
+                ("SPLINE_COMPARE_COUNTRIES", "Spline Chart: Compare Countries"),
+            ),
+        )
     ]
 
     chart_group = models.ForeignKey("ChartGroup", on_delete=models.CASCADE)

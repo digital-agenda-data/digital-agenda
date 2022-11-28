@@ -16,7 +16,7 @@
     </div>
     <highcharts
       v-else-if="apiData.length > 0"
-      :options="chartOptions"
+      :options="{ ...chartOptionsDefaults, ...chartOptions }"
       :callback="highchartsCallback"
     />
     <div v-else class="ecl-u-type-align-center ecl-u-pa-2xl">
@@ -83,6 +83,9 @@ export default {
       "unit",
       "country",
     ]),
+    allInitialCountries() {
+      return false;
+    },
     defineEntries() {
       return {
         Indicator: this.indicator,
@@ -94,10 +97,32 @@ export default {
       return [];
     },
     endpoint() {
-      return null;
+      return "/facts/facts-per-country/";
     },
     endpointFilters() {
       return [];
+    },
+    chartOptionsDefaults() {
+      return {
+        legend: {
+          enabled: false,
+        },
+        title: {
+          text: [this.indicator?.label, this.breakdown?.label]
+            .filter((s) => !!s)
+            .map((s) => s?.trim())
+            .join(", "),
+        },
+        subtitle: {
+          text: this.period && `Year: ${this.period.code}`,
+        },
+        tooltip: this.defaultTooltip,
+        yAxis: {
+          title: {
+            text: this.unit?.alt_label,
+          },
+        },
+      };
     },
     chartOptions() {
       return {};
@@ -154,7 +179,17 @@ export default {
       return Array.from(new Set(this.apiData.map((item) => item.country)));
     },
     initialCountries() {
-      return this.countriesWithData;
+      if (this.allInitialCountries) {
+        return this.countriesWithData;
+      }
+
+      const result = ["EU"];
+      const another = this.countriesWithData.find((code) => code !== "EU");
+      if (another) {
+        result.push(another);
+      }
+
+      return result.sort();
     },
     defaultTooltip() {
       const parent = this;
@@ -162,16 +197,27 @@ export default {
         formatter() {
           const result = [`<b>${this.key}</b>`];
 
+          if (this.series.userOptions.name) {
+            result.push(this.series.userOptions.name);
+          }
+
           if (parent.unit.alt_label.startsWith("%")) {
             result.push(`${this.y}${parent.unit.alt_label}`);
           } else {
             result.push(`${this.y} ${parent.unit.alt_label}`);
           }
 
-          result.push(
-            `<b>Breakdown:</b> ${this.series.name}`,
-            `<b>Time Period:</b> Year: ${parent.period.code}`
-          );
+          if (parent.breakdown?.code) {
+            result.push(
+              `<b>Breakdown:</b> ${
+                parent.breakdown.alt_label || parent.breakdown.label
+              }`
+            );
+          }
+
+          if (parent.period?.code) {
+            result.push(`<b>Time Period:</b> Year: ${parent.period.code}`);
+          }
 
           return result.join("<br/>");
         },
@@ -208,7 +254,7 @@ export default {
     },
     async loadExtra() {},
     /**
-     * Set the country filter if it isn't set already. Otherwise no data will
+     * Set the country filter if it isn't set already. Otherwise, no data will
      * ever be displayed.
      */
     setInitialCountries() {

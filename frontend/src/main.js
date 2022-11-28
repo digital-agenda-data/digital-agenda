@@ -20,7 +20,7 @@ offlineExportingInit(Highcharts);
 exportingDataInit(Highcharts);
 accessibilityInit(Highcharts);
 
-// Set defaults
+// Set global defaults
 Highcharts.setOptions({
   chart: {
     height: "600px",

@@ -22,8 +22,8 @@ export default {
         CountryFilter,
       ];
     },
-    endpoint() {
-      return "/facts/facts-per-country/";
+    allInitialCountries() {
+      return true;
     },
     endpointFilters() {
       return ["breakdown", "period", "indicator", "unit"];
@@ -31,38 +31,28 @@ export default {
     groupBy() {
       return ["country"];
     },
+    series() {
+      return [
+        {
+          data: this.countries.map((country) => {
+            return {
+              y: this.apiValuesGrouped[country.code] || 0,
+              name: country.alt_label || country.label || country.code,
+              color: colorForCountry(country.code),
+            };
+          }),
+          dataSorting: {
+            enabled: true,
+          },
+        },
+      ];
+    },
     chartOptions() {
       return {
         chart: {
           type: "column",
         },
-        series: [
-          {
-            colorKey: "colorValue",
-            name: this.breakdown.alt_label || this.breakdown.label,
-            data: this.countries.map((country) => {
-              return {
-                y: this.apiValuesGrouped[country.code] || 0,
-                name: country.alt_label || country.label || country.code,
-                color: colorForCountry(country.code),
-              };
-            }),
-            dataSorting: {
-              enabled: true,
-            },
-          },
-        ],
-        legend: {
-          enabled: false,
-        },
-        title: {
-          text: [this.indicator?.label, this.breakdown?.label]
-            .map((s) => s?.trim())
-            .join(", "),
-        },
-        subtitle: {
-          text: this.period && `Year: ${this.period.code}`,
-        },
+        series: this.series,
         xAxis: {
           type: "category",
           title: {
@@ -70,12 +60,6 @@ export default {
             enabled: false,
           },
         },
-        yAxis: {
-          title: {
-            text: this.unit?.alt_label,
-          },
-        },
-        tooltip: this.defaultTooltip,
       };
     },
   },
