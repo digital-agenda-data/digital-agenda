@@ -56,6 +56,7 @@ THIRD_PARTY_APPS = [
     "adminsortable2",
     "channels",
     "ckeditor",
+    "colorfield",
     "corsheaders",
     "django_filters",
     "admin_auto_filters",

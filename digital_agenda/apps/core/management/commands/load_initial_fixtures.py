@@ -16,6 +16,7 @@ class Command(BaseCommand):
         "breakdowngrouplinks",
         "units",
         "periods",
+        "countries",
         "chartgroups",
         "charts",
     )

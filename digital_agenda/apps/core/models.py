@@ -2,6 +2,7 @@ from datetime import datetime
 from pathlib import Path
 
 import magic
+from colorfield.fields import ColorField
 
 from django.conf import settings
 from django.db import models
@@ -195,6 +196,10 @@ class Unit(BaseDimensionModel):
 
 class Country(BaseDimensionModel):
     """Dimension model for countries / country group entities."""
+
+    color = ColorField(
+        help_text="Color used for this countries chart series", default="#CCCCCC"
+    )
 
     class Meta:
         db_table = "countries"

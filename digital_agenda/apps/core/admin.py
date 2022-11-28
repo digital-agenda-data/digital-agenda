@@ -85,9 +85,12 @@ admin.site.register(Breakdown, DimensionAdmin)
 
 admin.site.register(Unit, DimensionAdmin)
 
-admin.site.register(Country, DimensionAdmin)
-
 admin.site.register(Period, DimensionAdmin)
+
+
+@admin.register(Country)
+class CountryAdmin(DimensionAdmin):
+    list_display = ("code", "label", "alt_label", "color")
 
 
 class IndicatorFilter(AutocompleteFilter):

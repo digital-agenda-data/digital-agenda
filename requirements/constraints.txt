@@ -38,6 +38,7 @@ django-admin-autocomplete-filter==0.7.1
 django-admin-env-notice==0.4
 django-admin-sortable2==2.1.4
 django-ckeditor==6.5.1
+django-colorfield==0.7.2
 django-cors-headers==3.13.0
 django-debug-toolbar==3.7.0
 django-environ==0.9.0
