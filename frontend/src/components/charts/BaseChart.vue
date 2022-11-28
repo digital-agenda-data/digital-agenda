@@ -241,7 +241,10 @@ export default {
       this.chart.showLoading();
     },
     async loadData() {
-      if (!this.endpointParams) return;
+      if (!this.endpointParams) {
+        this.apiData = [];
+        return;
+      }
 
       this.loaded = false;
       this.chart.showLoading();
