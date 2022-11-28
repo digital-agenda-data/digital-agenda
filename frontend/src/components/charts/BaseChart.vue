@@ -9,7 +9,7 @@
     />
   </div>
   <div
-    class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-grey-10"
+    class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-grey-10 chart-container-digital-agenda"
   >
     <highcharts
       :options="{ ...chartOptionsDefaults, ...chartOptions }"
@@ -238,6 +238,7 @@ export default {
     getDisplay,
     highchartsCallback(chart) {
       this.chart = chart;
+      this.chart.showLoading();
     },
     async loadData() {
       if (!this.endpointParams) return;

@@ -29,7 +29,12 @@
     .ecl-page-header,
     .ecl-site-footer,
     .ecl-site-header {
-      display: none;
+      display: none !important;
+    }
+
+    .ecl-container {
+      width: initial !important;
+      max-width: initial !important;
     }
   }
 }
