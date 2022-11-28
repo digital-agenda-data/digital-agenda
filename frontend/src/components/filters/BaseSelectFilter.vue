@@ -102,7 +102,8 @@ export default {
       return true;
     },
     isVisible() {
-      return true;
+      // Only show this filter if there are more than one indicator group
+      return this.items.length > 1;
     },
   },
   watch: {
