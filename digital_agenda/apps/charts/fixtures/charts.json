@@ -58,5 +58,125 @@
     "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
     "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>"
   }
+},
+{
+  "model": "charts.chart",
+  "pk": 5,
+  "fields": {
+    "created_at": "2022-11-28T10:37:59.561Z",
+    "updated_at": "2022-11-28T10:37:59.561Z",
+    "display_order": 5,
+    "is_draft": false,
+    "chart_group": 3,
+    "name": "Analyse one indicator and compare countries",
+    "code": "3-analyse-one-indicator-and-compare-countries",
+    "chart_type": "COLUMN_COMPARE_COUNTRIES",
+    "description": "<p>This bar-chart allows you to select one indicator, possibly one specific breakdown, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years using the time animation bar. Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 6,
+  "fields": {
+    "created_at": "2022-11-28T10:38:19.520Z",
+    "updated_at": "2022-11-28T10:38:19.520Z",
+    "display_order": 6,
+    "is_draft": false,
+    "chart_group": 3,
+    "name": "Analyse one indicator (by life events)",
+    "code": "3-analyse-one-indicator-by-life-events",
+    "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
+    "description": "<p>This bar-chart allows you to select one indicator, one year, and see different breakdowns for selected countries. Countries are ordered by the value of the first breakdown in the indicator. You can also select or de-select countries in order to visualise only those you are interested in.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 7,
+  "fields": {
+    "created_at": "2022-11-28T10:39:02.631Z",
+    "updated_at": "2022-11-28T10:39:02.631Z",
+    "display_order": 7,
+    "is_draft": false,
+    "chart_group": 3,
+    "name": "See the evolution of an indicator and compare countries",
+    "code": "3-see-the-evolution-of-an-indicator-and-compare-co",
+    "chart_type": "SPLINE_COMPARE_COUNTRIES",
+    "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one indicator, possibly one specific breakdown, one country and to compare it with some others countries, as well as with the European average trend.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 8,
+  "fields": {
+    "created_at": "2022-11-28T10:39:18.867Z",
+    "updated_at": "2022-11-28T10:39:18.867Z",
+    "display_order": 8,
+    "is_draft": false,
+    "chart_group": 3,
+    "name": "See the evolution of an indicator (by life events)",
+    "code": "3-see-the-evolution-of-an-indicator-by-life-events",
+    "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+    "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 13,
+  "fields": {
+    "created_at": "2022-11-28T10:42:50.056Z",
+    "updated_at": "2022-11-28T10:42:50.056Z",
+    "display_order": 9,
+    "is_draft": false,
+    "chart_group": 4,
+    "name": "Analyse one indicator and compare countries",
+    "code": "4-analyse-one-indicator-and-compare-countries",
+    "chart_type": "COLUMN_COMPARE_COUNTRIES",
+    "description": "<p>This bar-chart allows you to select one indicator, possibly one specific breakdown, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years using the time animation bar. Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 14,
+  "fields": {
+    "created_at": "2022-11-28T10:43:05.665Z",
+    "updated_at": "2022-11-28T10:43:05.665Z",
+    "display_order": 10,
+    "is_draft": false,
+    "chart_group": 4,
+    "name": "Analyse one indicator (by life events)",
+    "code": "4-analyse-one-indicator-by-life-events",
+    "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
+    "description": "<p>This bar-chart allows you to select one indicator, one year, and see different breakdowns for selected countries. Countries are ordered by the value of the first breakdown in the indicator. You can also select or de-select countries in order to visualise only those you are interested in.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 15,
+  "fields": {
+    "created_at": "2022-11-28T10:43:19.652Z",
+    "updated_at": "2022-11-28T10:47:12.896Z",
+    "display_order": 11,
+    "is_draft": false,
+    "chart_group": 4,
+    "name": "See the evolution of an indicator and compare countries",
+    "code": "4-see-the-evolution-of-an-indicator-and-compare-co",
+    "chart_type": "SPLINE_COMPARE_COUNTRIES",
+    "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one indicator, possibly one specific breakdown, one country and to compare it with some others countries, as well as with the European average trend.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 16,
+  "fields": {
+    "created_at": "2022-11-28T10:43:37.396Z",
+    "updated_at": "2022-11-28T10:43:37.396Z",
+    "display_order": 12,
+    "is_draft": false,
+    "chart_group": 4,
+    "name": "See the evolution of an indicator (by life events)",
+    "code": "4-see-the-evolution-of-an-indicator-by-life-events",
+    "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+    "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>"
+  }
 }
 ]
