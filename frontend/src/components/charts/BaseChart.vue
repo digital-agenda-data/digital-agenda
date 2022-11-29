@@ -3,9 +3,10 @@
     class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only hide-embedded chart-filters"
   >
     <component
-      :is="filterComponent"
-      v-for="filterComponent in filterComponents"
-      :key="filterComponent.name"
+      :is="item.component"
+      v-for="item in normalizedComponents"
+      :key="item.key || item.component.name"
+      v-bind="item.attrs"
     />
   </div>
   <div
@@ -48,8 +49,12 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
-import { camelToSnakeCase, getDisplay, randomChoice } from "@/lib/utils";
+import { camelToSnakeCase, getDisplay, objectEquals } from "@/lib/utils";
 
+/**
+ * Base component use for charts. Extend this component and override various
+ * computed properties to create a chart.
+ */
 export default {
   name: "BaseChart",
   components: {
@@ -75,28 +80,80 @@ export default {
       "unit",
       "country",
     ]),
-    allInitialCountries() {
-      return false;
-    },
-    defineEntries() {
-      return {
-        Indicator: this.indicator,
-        Breakdown: this.breakdown,
-        Unit: this.unit,
-      };
-    },
+    /**
+     * List of components to display in the chart filter section of the page.
+     *
+     * Can also be Objects in the following format:
+     *
+     *   {
+     *     key: <unique id>,
+     *     component: <component>
+     *     attrs: {
+     *       <additional props for the component>
+     *     }
+     *   }
+     */
     filterComponents() {
       return [];
+    },
+    /**
+     * Normalize components to Objects with key, component
+     * and attrs attributes.
+     */
+    normalizedComponents() {
+      return this.filterComponents.map((item) => {
+        if (!item.component) {
+          return {
+            key: item.name,
+            component: item,
+            attrs: {},
+          };
+        }
+        return item;
+      });
     },
     endpoint() {
       return "/facts/facts-per-country/";
     },
+    /**
+     * Filters to be sent as query parameters to the API endpoint. E.g.
+     *
+     *   ["breakdown", "indicator", "period", "unit"]
+     *
+     * `camelCase` entries will be automatically converted to `snake_case`
+     * before sending to the API.
+     */
     endpointFilters() {
       return [];
     },
+    /**
+     * Compute API query params based on the endpointFilters property.
+     */
+    endpointParams() {
+      const result = {};
+
+      for (const key of this.endpointFilters) {
+        result[camelToSnakeCase(key)] = this[key]?.code;
+      }
+
+      if (!Object.values(result).every((val) => val)) {
+        // If there isn't a value selected for ALL filters
+        // don't load any data
+        return null;
+      }
+
+      return result;
+    },
+    /**
+     * Series used for the HighCharts
+     */
     series() {
       return [];
     },
+    /**
+     * Default chart options, (shallow) merged with the chartOptions
+     * and used for HighCharts.
+     */
     chartOptionsDefaults() {
       return {
         series: this.series,
@@ -120,27 +177,34 @@ export default {
         },
       };
     },
+    /**
+     * Chart options, (shallow) merged with the chartOptionsDefaults
+     * and used for HighCharts.
+     */
     chartOptions() {
       return {};
     },
+    /**
+     * Attribute key to use to group the API data values. E.g.
+     *
+     *  ["country", "period"]
+     */
     groupBy() {
       return [];
     },
-    endpointParams() {
-      const result = {};
-
-      for (const key of this.endpointFilters) {
-        result[camelToSnakeCase(key)] = this[key]?.code;
-      }
-
-      if (!Object.values(result).every((val) => val)) {
-        // If there isn't a value selected for ALL filters
-        // don't load any data
-        return null;
-      }
-
-      return result;
-    },
+    /**
+     * Group API data values by the specified keys in `groupBy`. E.g. for
+     * the ["country", "period"] groupBy the result would be:
+     *
+     * {
+     *   "EU": {
+     *     "2017": 42,
+     *     "2018": 156,
+     *     ...
+     *   },
+     *   ...
+     * }
+     */
     apiValuesGrouped() {
       if (!this.groupBy || this.groupBy.length === 0) return {};
 
@@ -166,14 +230,17 @@ export default {
 
       return result;
     },
+    /**
+     * Array of country objects currently selected in the filters.
+     */
     countries() {
       if (Array.isArray(this.country)) return this.country;
       if (this.country) return [this.country];
       return [];
     },
-    countriesWithData() {
-      return Array.from(new Set(this.apiData.map((item) => item.country)));
-    },
+    /**
+     * Sorted Array of all the unique period codes from the API data
+     */
     apiDataPeriods() {
       return Array.from(
         new Set(this.apiData.map((item) => item.period))
@@ -181,21 +248,6 @@ export default {
     },
     lastPeriod() {
       return parseInt(this.apiDataPeriods.slice(-1)[0]);
-    },
-    initialCountries() {
-      if (this.allInitialCountries) {
-        return this.countriesWithData;
-      }
-
-      const result = ["EU"];
-      const another = randomChoice(
-        this.countriesWithData.filter((code) => code !== "EU")
-      );
-      if (another) {
-        result.push(another);
-      }
-
-      return result.sort();
     },
     defaultTooltip() {
       const parent = this;
@@ -227,10 +279,20 @@ export default {
         },
       };
     },
+    /**
+     * Entries that will be defined in the page footer
+     */
+    defineEntries() {
+      return {
+        Indicator: this.indicator,
+        Breakdown: this.breakdown,
+        Unit: this.unit,
+      };
+    },
   },
   watch: {
     endpointParams(newValue, oldValue) {
-      if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
+      if (!objectEquals(newValue, oldValue)) {
         this.loadData();
       }
     },
@@ -254,7 +316,6 @@ export default {
       this.chart.showLoading();
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
-        this.setInitialCountries();
       } finally {
         this.chart.hideLoading();
         this.loaded = true;
@@ -264,20 +325,6 @@ export default {
       this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
     },
     async loadExtra() {},
-    /**
-     * Set the country filter if it isn't set already. Otherwise, no data will
-     * ever be displayed.
-     */
-    setInitialCountries() {
-      if (this.initialCountries.length > 0 && this.countries.length === 0) {
-        this.$router.replace({
-          query: {
-            ...this.$route.query,
-            country: this.initialCountries,
-          },
-        });
-      }
-    },
   },
 };
 </script>

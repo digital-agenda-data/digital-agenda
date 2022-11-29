@@ -17,6 +17,24 @@ export function arrayEquals(a1, a2) {
 }
 
 /**
+ * Check if two objects are equal
+ *
+ * @param o1 {Object}
+ * @param o2 {Object}
+ * @return {Boolean}
+ */
+export function objectEquals(o1, o2) {
+  const o1Keys = Object.keys(o1 || {});
+  const o2Keys = Object.keys(o2 || {});
+
+  if (o1Keys.length !== o2Keys.length) return false;
+  for (const key of o1Keys) {
+    if (o1[key] !== o2[key]) return false;
+  }
+  return true;
+}
+
+/**
  * Check if two sets are equal
  *
  * @param s1 {Set}

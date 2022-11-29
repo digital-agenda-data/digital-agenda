@@ -19,11 +19,13 @@ export default {
         BreakdownWithGroupsFilter,
         PeriodFilter,
         UnitFilter,
-        CountryMultiFilter,
+        {
+          component: CountryMultiFilter,
+          attrs: {
+            allInitialCountries: true,
+          },
+        },
       ];
-    },
-    allInitialCountries() {
-      return true;
     },
     endpointFilters() {
       return ["breakdown", "period", "indicator", "unit"];

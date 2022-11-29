@@ -19,11 +19,6 @@ export default {
         CountryFilter,
       ];
     },
-    initialCountries() {
-      // No need to set initial countries since we are always filtering
-      // on a single country for this chart
-      return [];
-    },
     endpointFilters() {
       return ["breakdownGroup", "indicator", "unit", "country"];
     },
