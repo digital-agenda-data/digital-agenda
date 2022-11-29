@@ -10,9 +10,9 @@ export default {
     },
     endpoint() {
       return (
-        this.$route.query.indicator &&
-        this.$route.query.breakdownGroup &&
-        `/indicators/${this.$route.query.indicator}/breakdown-groups/${this.$route.query.breakdownGroup}/breakdowns/`
+        this.filterStore.indicator &&
+        this.filterStore.breakdownGroup &&
+        `/indicators/${this.filterStore.indicator.code}/breakdown-groups/${this.filterStore.breakdownGroup.code}/breakdowns/`
       );
     },
     label() {

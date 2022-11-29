@@ -13,8 +13,8 @@ export default {
     },
     endpoint() {
       return (
-        this.$route.query.indicatorGroup &&
-        `/indicator-groups/${this.$route.query.indicatorGroup}/indicators/`
+        this.filterStore.indicatorGroup &&
+        `/indicator-groups/${this.filterStore.indicatorGroup.code}/indicators/`
       );
     },
     endpointParams() {

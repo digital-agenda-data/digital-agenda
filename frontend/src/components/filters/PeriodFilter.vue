@@ -10,8 +10,8 @@ export default {
     },
     endpoint() {
       return (
-        this.$route.query.indicator &&
-        `/indicators/${this.$route.query.indicator}/periods/`
+        this.filterStore.indicator &&
+        `/indicators/${this.filterStore.indicator.code}/periods/`
       );
     },
     label() {

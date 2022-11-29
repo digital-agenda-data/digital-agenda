@@ -1,5 +1,5 @@
 <script>
-import BaseCompareBreakdownChart from "@/components/charts/BaseCompareBreakdownChart.vue";
+import BaseCompareBreakdownChart from "@/components/charts/base/BaseCompareBreakdownChart.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";

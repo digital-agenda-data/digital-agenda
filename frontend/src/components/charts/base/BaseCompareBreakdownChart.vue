@@ -1,5 +1,5 @@
 <script>
-import BaseChart from "@/components/charts/BaseChart.vue";
+import BaseChart from "@/components/charts/base/BaseChart.vue";
 import { apiCall } from "@/lib/api";
 
 export default {

@@ -2,11 +2,13 @@ import ColumnCompareCountries from "@/components/charts/column/ColumnCompareCoun
 import ColumnCompareBreakdowns from "@/components/charts/column/ColumnCompareBreakdowns.vue";
 import SplineCompareCountries from "@/components/charts/spline/SplineCompareCountries.vue";
 import SplineCompareBreakdowns from "@/components/charts/spline/SplineCompareBreakdowns.vue";
+import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterCompareTwoIndicators.vue";
 
 import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
 import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
 import splineChartUrl from "@/assets/chart-images/spline/spline-chart.png";
 import splineChart2Url from "@/assets/chart-images/spline/spline-chart-2.png";
+import scatterChartUrl from "@/assets/chart-images/scatter/scatter-chart.png";
 
 // Map values from the backend to frontend components
 export default {
@@ -25,5 +27,9 @@ export default {
   SPLINE_COMPARE_BREAKDOWNS: {
     component: SplineCompareBreakdowns,
     image: splineChart2Url,
+  },
+  SCATTER_COMPARE_TWO_INDICATORS: {
+    component: ScatterCompareTwoIndicators,
+    image: scatterChartUrl,
   },
 };

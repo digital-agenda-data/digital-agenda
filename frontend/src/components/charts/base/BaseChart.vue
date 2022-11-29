@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
 import { apiCall } from "@/lib/api";
@@ -49,7 +49,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
-import { camelToSnakeCase, getDisplay, objectEquals } from "@/lib/utils";
+import { getDisplay, objectEquals, toAPIKey } from "@/lib/utils";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -70,6 +70,7 @@ export default {
     };
   },
   computed: {
+    ...mapStores(useFilterStore),
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useFilterStore, [
       "indicatorGroup",
@@ -101,16 +102,7 @@ export default {
      * and attrs attributes.
      */
     normalizedComponents() {
-      return this.filterComponents.map((item) => {
-        if (!item.component) {
-          return {
-            key: item.name,
-            component: item,
-            attrs: {},
-          };
-        }
-        return item;
-      });
+      return this.filterComponents.map((item) => this.normalizeComponent(item));
     },
     endpoint() {
       return "/facts/facts-per-country/";
@@ -119,6 +111,13 @@ export default {
      * Filters to be sent as query parameters to the API endpoint. E.g.
      *
      *   ["breakdown", "indicator", "period", "unit"]
+     *
+     *  Or, for multi axis loads:
+     *
+     *  {
+     *    "X": ["breakdownX", "indicatorX", "period"],
+     *    "Y": ["breakdownY", "indicatorY", "period"],
+     *  }
      *
      * `camelCase` entries will be automatically converted to `snake_case`
      * before sending to the API.
@@ -130,16 +129,30 @@ export default {
      * Compute API query params based on the endpointFilters property.
      */
     endpointParams() {
-      const result = {};
+      let filterKeys = null;
 
-      for (const key of this.endpointFilters) {
-        result[camelToSnakeCase(key)] = this[key]?.code;
+      if (Array.isArray(this.endpointFilters)) {
+        filterKeys = {
+          "": this.endpointFilters,
+        };
+      } else {
+        filterKeys = this.endpointFilters;
       }
 
-      if (!Object.values(result).every((val) => val)) {
-        // If there isn't a value selected for ALL filters
-        // don't load any data
-        return null;
+      const result = {};
+
+      for (const axis in filterKeys) {
+        result[axis] = {};
+
+        for (const key of filterKeys[axis]) {
+          result[axis][toAPIKey(key)] = this.filterStore[key]?.code;
+        }
+
+        if (!Object.values(result[axis]).every((val) => val)) {
+          // If there isn't a value selected for ALL filters
+          // don't load any data
+          return null;
+        }
       }
 
       return result;
@@ -158,10 +171,7 @@ export default {
       return {
         series: this.series,
         title: {
-          text: [this.indicator?.label, this.breakdown?.label]
-            .filter((s) => !!s)
-            .map((s) => s?.trim())
-            .join(", "),
+          text: this.makeTitle([this.indicator, this.breakdown]),
         },
         subtitle: {
           text: this.period?.code && `Year: ${this.period.code}`,
@@ -302,6 +312,28 @@ export default {
   },
   methods: {
     getDisplay,
+    makeTitle(items) {
+      return items
+        .map((s) => s?.label)
+        .filter((s) => !!s)
+        .map((s) => s?.trim())
+        .join(", ");
+    },
+    normalizeComponent(item, suffix = "", className = "chart-filter") {
+      let result = item;
+      if (!item.component) {
+        result = {
+          key: item.name,
+          component: item,
+          attrs: {},
+        };
+      }
+
+      result.attrs.suffix = suffix;
+      result.attrs.class = className;
+
+      return result;
+    },
     highchartsCallback(chart) {
       this.chart = chart;
       this.chart.showLoading();
@@ -322,7 +354,30 @@ export default {
       }
     },
     async getFacts() {
-      this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
+      const result = {};
+
+      await Promise.all(
+        Object.keys(this.endpointParams).map((axis) =>
+          this.getFactForAxis(axis, result)
+        )
+      );
+
+      this.apiData = Object.values(result).flat();
+    },
+    async getFactForAxis(axis, result) {
+      const resp = await apiCall(
+        "GET",
+        this.endpoint,
+        this.endpointParams[axis]
+      );
+
+      result[axis] = [];
+      for (const item of resp) {
+        result[axis].push({
+          ...item,
+          axis,
+        });
+      }
     },
     async loadExtra() {},
   },

@@ -16,8 +16,8 @@ export default {
     },
     endpoint() {
       return (
-        this.$route.query.indicator &&
-        `/indicators/${this.$route.query.indicator}/breakdowns/`
+        this.filterStore.indicator &&
+        `/indicators/${this.filterStore.indicator.code}/breakdowns/`
       );
     },
     label() {
@@ -55,11 +55,11 @@ export default {
   },
   methods: {
     async loadExtra() {
-      if (!this.$route.query.indicator) return;
+      if (!this.filterStore.indicator) return;
 
       this.breakdownGroups = await apiCall(
         "GET",
-        `/indicators/${this.$route.query.indicator}/breakdown-groups/`
+        `/indicators/${this.filterStore.indicator.code}/breakdown-groups/`
       );
     },
   },

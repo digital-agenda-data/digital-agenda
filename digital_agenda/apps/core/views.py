@@ -174,6 +174,7 @@ class CountryViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     queryset = Country.objects.all()
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = CountryCodeFilterSet
+    pagination_class = None
 
 
 class IndicatorCountryViewSet(IndicatorFilteredMixin, CountryViewSet):

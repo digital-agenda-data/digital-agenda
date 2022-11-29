@@ -11,8 +11,8 @@ export default {
     },
     endpoint() {
       return (
-        this.$route.query.indicator &&
-        `/indicators/${this.$route.query.indicator}/countries/`
+        this.filterStore.indicator &&
+        `/indicators/${this.filterStore.indicator.code}/countries/`
       );
     },
     label() {

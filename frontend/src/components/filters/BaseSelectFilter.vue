@@ -6,7 +6,7 @@
     :loading="loading"
     :multiple="multiple"
     :required="required"
-    :label="label"
+    :label="labelWithAxis"
     :input-name="queryName"
   />
 </template>
@@ -14,13 +14,19 @@
 <script>
 import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { apiCall } from "@/lib/api";
-import { mapStores } from "pinia";
 import { useFilterStore } from "@/stores/filterStore";
 import { getDisplay, randomChoice } from "@/lib/utils";
 
 export default {
   name: "BaseFilter",
   components: { EclSelect },
+  props: {
+    suffix: {
+      type: String,
+      required: false,
+      default: "",
+    },
+  },
   emits: ["change"],
   data() {
     return {
@@ -29,16 +35,18 @@ export default {
     };
   },
   computed: {
-    ...mapStores(useFilterStore),
+    filterStore() {
+      return useFilterStore()[this.suffix];
+    },
     modelValue: {
       get() {
-        return this.$route.query[this.queryName];
+        return this.$route.query[this.queryName + this.suffix];
       },
       set(value) {
         this.$router.replace({
           query: {
             ...this.$route.query,
-            [this.queryName]: value,
+            [this.queryName + this.suffix]: value,
           },
         });
       },
@@ -54,6 +62,11 @@ export default {
     },
     label() {
       return "";
+    },
+    labelWithAxis() {
+      if (!this.suffix) return this.label;
+
+      return `(${this.suffix}) ${this.label}`;
     },
     items() {
       return this.apiData.map((item) => {

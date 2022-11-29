@@ -1,5 +1,5 @@
 <script>
-import BaseChart from "@/components/charts/BaseChart.vue";
+import BaseChart from "@/components/charts/base/BaseChart.vue";
 import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";

@@ -60,7 +60,16 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
                 ("SPLINE_COMPARE_COUNTRIES", "Spline Chart: Compare Countries"),
                 ("SPLINE_COMPARE_BREAKDOWNS", "Spline Chart: Compare Breakdowns"),
             ),
-        )
+        ),
+        (
+            "Scatter",
+            (
+                (
+                    "SCATTER_COMPARE_TWO_INDICATORS",
+                    "Scatter Chart: Compare Two Indicators",
+                ),
+            ),
+        ),
     ]
 
     chart_group = models.ForeignKey("ChartGroup", on_delete=models.CASCADE)

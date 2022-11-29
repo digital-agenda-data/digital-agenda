@@ -83,6 +83,15 @@ export function camelToSnakeCase(text) {
 }
 
 /**
+ * Convert filter store key to api key:
+ *  - convert to snake case
+ *  - remove any _x or _y from the of the key
+ */
+export function toAPIKey(key) {
+  return camelToSnakeCase(key).replace(/_[x|y]$/i, "");
+}
+
+/**
  * Get chart color for the specified country and series
  *
  * @param countryCode {String}
