@@ -118,10 +118,21 @@ export default {
       // Only show this filter if there are more than one indicator group
       return this.items.length > 1;
     },
+    modelValueAllowed() {
+      const iter = Array.isArray(this.modelValue)
+        ? this.modelValue
+        : [this.modelValue];
+
+      for (const val of iter) {
+        if (!this.allowedValues.has(val)) {
+          return false;
+        }
+      }
+      return true;
+    },
   },
   watch: {
     endpoint() {
-      this.modelValue = "";
       this.load();
     },
     selected() {
@@ -135,13 +146,13 @@ export default {
   methods: {
     getDisplay,
     async load() {
+      if (!this.endpoint) return;
       this.loading = true;
 
       try {
-        if (this.endpoint) {
-          await Promise.all([this.loadApiData(), this.loadExtra()]);
-        }
-        if (this.modelValue && !this.allowedValues.has(this.modelValue)) {
+        await Promise.all([this.loadApiData(), this.loadExtra()]);
+
+        if (this.modelValue && !this.modelValueAllowed) {
           // The current value set is not actually allowed. This will happen as the
           // allowed values change but the URL queries won't change automatically.
           if (this.required) {
