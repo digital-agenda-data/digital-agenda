@@ -14,13 +14,18 @@
     <div v-else :class="classList">
       <select
         v-model="value"
+        v-ecl-init="multiple && items.length > 0"
         class="ecl-select"
         :required="required"
         :multiple="multiple"
         :name="inputName"
         v-bind="dataAttrs"
       >
-        <option v-if="placeholderText" value="" :disabled="required">
+        <option
+          v-if="placeholderText && !multiple"
+          value=""
+          :disabled="required"
+        >
           {{ placeholderText }}
         </option>
 
