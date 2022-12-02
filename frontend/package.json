@@ -8,27 +8,27 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@ecl/preset-ec": "^3.5.0",
-    "@ecl/preset-reset": "^3.5.0",
+    "@ecl/preset-ec": "^3.6.0",
+    "@ecl/preset-reset": "^3.6.0",
     "content-disposition": "^0.5.4",
-    "highcharts": "^10.3.1",
+    "highcharts": "^10.3.2",
     "highcharts-vue": "^1.4.0",
     "moment": "^2.29.4",
-    "pinia": "^2.0.23",
-    "vue": "^3.2.41",
+    "pinia": "^2.0.27",
+    "vue": "^3.2.45",
     "vue-plugin-load-script": "^2.1.1",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@vitejs/plugin-vue": "^3.1.2",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vitejs/plugin-vue": "^3.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "eslint": "^8.22.0",
+    "eslint": "^8.28.0",
     "eslint-plugin-compat": "^4.0.2",
-    "eslint-plugin-vue": "^9.3.0",
-    "prettier": "^2.7.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "prettier": "^2.8.0",
     "sass": "^1.56.1",
-    "vite": "^3.1.8"
+    "vite": "^3.2.4"
   },
   "browserslist": [
     "defaults",

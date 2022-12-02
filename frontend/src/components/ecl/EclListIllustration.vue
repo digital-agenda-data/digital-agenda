@@ -124,7 +124,9 @@ export default {
 
 <style scoped>
 @media screen and (min-width: 768px) {
-  .ecl-list-illustration__image--small:not(.ecl-list-illustration__image--square) {
+  .ecl-list-illustration__image--small:not(
+      .ecl-list-illustration__image--square
+    ) {
     width: 9rem;
   }
 }
