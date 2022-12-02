@@ -105,7 +105,7 @@ export default {
       return this.filterComponents.map((item) => this.normalizeComponent(item));
     },
     endpoint() {
-      return "/facts/facts-per-country/";
+      return "/facts/";
     },
     /**
      * Filters to be sent as query parameters to the API endpoint. E.g.
@@ -126,7 +126,23 @@ export default {
       return [];
     },
     /**
-     * Compute API query params based on the endpointFilters property.
+     * Compute API query params based on the endpointFilters property. Multiple
+     * API calls will be made for each property of the object. E.g:
+     *
+     * {
+     *   "": {
+     *     breakpoint: <code>,
+     *     unit: <code>,
+     *     ...
+     *   },
+     *   "X": {
+     *     ...
+     *   },
+     *   "Y": {
+     *     ...
+     *   }
+     * }
+     *
      */
     endpointParams() {
       let filterKeys = null;
@@ -302,7 +318,7 @@ export default {
   },
   watch: {
     endpointParams(newValue, oldValue) {
-      if (!objectEquals(newValue, oldValue)) {
+      if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
         this.loadData();
       }
     },
