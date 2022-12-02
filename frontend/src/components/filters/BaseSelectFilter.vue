@@ -40,7 +40,9 @@ export default {
     },
     modelValue: {
       get() {
-        return this.$route.query[this.queryName + this.suffix];
+        return (
+          this.$route.query[this.queryName + this.suffix] || this.emptyValue
+        );
       },
       set(value) {
         this.$router.replace({
@@ -99,9 +101,17 @@ export default {
       }
       return result;
     },
+    isModelEmpty() {
+      return this.multiple
+        ? this.modelValue.length === 0
+        : this.modelValue === "";
+    },
+    emptyValue() {
+      return this.multiple ? [] : "";
+    },
     defaultValue() {
       if (!this.items || this.items.length === 0) {
-        return "";
+        return this.emptyValue;
       }
 
       const choice = randomChoice(this.items);
@@ -152,17 +162,17 @@ export default {
       try {
         await Promise.all([this.loadApiData(), this.loadExtra()]);
 
-        if (this.modelValue && !this.modelValueAllowed) {
+        if (!this.isModelEmpty && !this.modelValueAllowed) {
           // The current value set is not actually allowed. This will happen as the
           // allowed values change but the URL queries won't change automatically.
           if (this.required) {
             this.modelValue = this.defaultValue;
           } else {
-            this.modelValue = "";
+            this.modelValue = this.emptyValue;
           }
         }
 
-        if (!this.modelValue && this.required && this.defaultValue) {
+        if (this.isModelEmpty && this.required && this.defaultValue) {
           // A value is required, but none is set. Set the default value
           // automatically to avoid ambiguity;
           this.modelValue = this.defaultValue;
