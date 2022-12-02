@@ -24,17 +24,6 @@ export default {
         ),
       ];
     },
-    defineEntries() {
-      // Set the breakdowns to define them in the "Definitions and scopes"
-      return {
-        "(X) Indicator": this.filterStore.indicatorX,
-        "(X) Breakdown": this.filterStore.breakdownX,
-        "(X) Unit": this.filterStore.unitX,
-        "(Y) Indicator": this.filterStore.indicatorY,
-        "(Y) Breakdown": this.filterStore.breakdownY,
-        "(Y) Unit": this.filterStore.unitY,
-      };
-    },
   },
 };
 </script>

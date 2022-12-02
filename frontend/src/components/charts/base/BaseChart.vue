@@ -285,10 +285,12 @@ export default {
             result.push(this.series.userOptions.name);
           }
 
-          if (parent.unit.alt_label.startsWith("%")) {
-            result.push(`${this.y}${parent.unit.alt_label}`);
-          } else {
-            result.push(`${this.y} ${parent.unit.alt_label}`);
+          if (parent.unit?.code) {
+            if (parent.unit.alt_label.startsWith("%")) {
+              result.push(`${this.y}${parent.unit.alt_label}`);
+            } else {
+              result.push(`${this.y} ${parent.unit.alt_label}`);
+            }
           }
 
           if (parent.breakdown?.code) {
@@ -309,11 +311,14 @@ export default {
      * Entries that will be defined in the page footer
      */
     defineEntries() {
-      return {
-        Indicator: this.indicator,
-        Breakdown: this.breakdown,
-        Unit: this.unit,
-      };
+      const result = {};
+      for (const axis of ["", "X", "Y"]) {
+        for (const label of ["Indicator", "Breakdown", "Unit"]) {
+          const display = axis ? `(${axis}) ${label}` : label;
+          result[display] = this.filterStore[axis][label.toLowerCase()];
+        }
+      }
+      return result;
     },
   },
   watch: {
