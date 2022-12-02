@@ -258,7 +258,7 @@ def filter_breakdown_groups(queryset, name, value):
     )
 
 
-class FactsPerCountryFilter(filters.FilterSet):
+class FactsFilter(filters.FilterSet):
     indicator_group = filters.CharFilter(
         field_name="indicator__code", method=filter_indicator_groups
     )
@@ -284,11 +284,11 @@ class FactsPerCountryFilter(filters.FilterSet):
         ]
 
 
-class FactsPerCountryViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericViewSet):
+class FactsViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericViewSet):
     model = Fact
     serializer_class = CountryFactSerializer
     filter_backends = [filters.DjangoFilterBackend]
-    filterset_class = FactsPerCountryFilter
+    filterset_class = FactsFilter
     queryset = (
         Fact.objects.order_by(
             "period__code",

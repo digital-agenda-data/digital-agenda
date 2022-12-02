@@ -14,7 +14,7 @@ from .views import (
     PeriodViewSet,
     IndicatorPeriodViewSet,
     DataSourceViewSet,
-    FactsPerCountryViewSet,
+    FactsViewSet,
     IndicatorBreakdownViewSet,
     IndicatorBreakdownGroupViewSet,
     IndicatorBreakdownGroupBreakdownViewSet,
@@ -124,9 +124,7 @@ data_sources_router.register("data-sources", DataSourceViewSet, basename="data-s
 
 # Fact routers
 facts_per_country_router = routers.SimpleRouter()
-facts_per_country_router.register(
-    "facts/facts-per-country", FactsPerCountryViewSet, basename="fact-per-country"
-)
+facts_per_country_router.register("facts", FactsViewSet, basename="fact")
 
 main_routers = [
     indicator_groups_router,
