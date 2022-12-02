@@ -1,6 +1,6 @@
 <template>
   <ecl-select
-    v-show="isVisible"
+    v-show="!hidden && isVisible"
     v-model="modelValue"
     :items="items"
     :loading="loading"
@@ -26,10 +26,21 @@ export default {
       required: false,
       default: "",
     },
+    hidden: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    syncRoute: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   emits: ["change"],
   data() {
     return {
+      internalValue: null,
       apiData: [],
       loading: false,
     };
@@ -40,17 +51,25 @@ export default {
     },
     modelValue: {
       get() {
+        if (!this.syncRoute) {
+          return this.internalValue || this.emptyValue;
+        }
+
         return (
           this.$route.query[this.queryName + this.suffix] || this.emptyValue
         );
       },
       set(value) {
-        this.$router.replace({
-          query: {
-            ...this.$route.query,
-            [this.queryName + this.suffix]: value,
-          },
-        });
+        this.internalValue = value;
+
+        if (this.syncRoute) {
+          this.$router.replace({
+            query: {
+              ...this.$route.query,
+              [this.queryName + this.suffix]: value,
+            },
+          });
+        }
       },
     },
     endpoint() {
@@ -87,19 +106,22 @@ export default {
       const values = new Set(this.modelValue);
       return this.apiData.filter((item) => values.has(item.code));
     },
-    allowedValues() {
-      const result = new Set();
+    allowedValuesArray() {
+      const result = [];
       for (const item of this.items) {
         if (!item.children) {
-          result.add(item.id);
+          result.push(item.id);
           continue;
         }
 
         for (const child of item.children) {
-          result.add(child.id);
+          result.push(child.id);
         }
       }
       return result;
+    },
+    allowedValues() {
+      return new Set(this.allowedValuesArray);
     },
     isModelEmpty() {
       return this.multiple
@@ -112,6 +134,10 @@ export default {
     defaultValue() {
       if (!this.items || this.items.length === 0) {
         return this.emptyValue;
+      }
+
+      if (this.multiple) {
+        return this.allowedValuesArray;
       }
 
       const choice = randomChoice(this.items);
@@ -162,7 +188,10 @@ export default {
       try {
         await Promise.all([this.loadApiData(), this.loadExtra()]);
 
-        if (!this.isModelEmpty && !this.modelValueAllowed) {
+        if (
+          (!this.isModelEmpty && !this.modelValueAllowed) ||
+          !this.syncRoute
+        ) {
           // The current value set is not actually allowed. This will happen as the
           // allowed values change but the URL queries won't change automatically.
           if (this.required) {

@@ -1,20 +1,25 @@
 <script>
-import BaseCompareBreakdownChart from "@/components/charts/base/BaseCompareBreakdownChart.vue";
+import BaseChart from "@/components/charts/base/BaseChart.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
 import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
 import CountryFilter from "@/components/filters/CountryFilter.vue";
+import BreakdownMultiFilter from "@/components/filters/BreakdownMultiFilter.vue";
 
 export default {
   name: "SplineCompareBreakdowns",
-  extends: BaseCompareBreakdownChart,
+  extends: BaseChart,
   computed: {
     filterComponents() {
       return [
         IndicatorGroupFilter,
         IndicatorFilter,
         BreakdownGroupFilter,
+        {
+          component: BreakdownMultiFilter,
+          attrs: { hidden: true, syncRoute: false },
+        },
         UnitFilter,
         CountryFilter,
       ];
@@ -26,13 +31,16 @@ export default {
       return ["breakdown", "period"];
     },
     series() {
-      return this.apiDataBreakdowns.map((breakdown) => {
+      return (this.breakdown || []).map((breakdown) => {
         return {
           name: this.getDisplay(breakdown),
           data: this.apiDataPeriods.map((periodCode) => {
+            const apiValue =
+              this.apiValuesGrouped[breakdown.code] &&
+              this.apiValuesGrouped[breakdown.code][periodCode];
+
             return {
-              y: this.apiValuesGrouped[breakdown.code][periodCode] || 0,
-              apiValue: this.apiValuesGrouped[breakdown.code][periodCode],
+              y: apiValue,
               x: parseInt(periodCode),
               name: periodCode,
             };
@@ -49,7 +57,15 @@ export default {
           text: this.getDisplay(this.country),
         },
         legend: {
-          enabled: this.apiDataBreakdowns.length > 1,
+          enabled: (this.breakdown || []).length > 1,
+        },
+        plotOptions: {
+          series: {
+            connectNulls: true,
+            dataLabels: {
+              enabled: false,
+            },
+          },
         },
       };
     },

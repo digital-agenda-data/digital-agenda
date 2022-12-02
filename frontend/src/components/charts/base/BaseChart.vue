@@ -49,7 +49,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
-import { getDisplay, objectEquals, toAPIKey } from "@/lib/utils";
+import { getDisplay, toAPIKey } from "@/lib/utils";
 
 /**
  * Base component use for charts. Extend this component and override various
