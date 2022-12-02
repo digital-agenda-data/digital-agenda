@@ -34,6 +34,7 @@ export const useFilterStore = defineStore("filter", {
       "": getInit(),
       X: getInit(),
       Y: getInit(),
+      Z: getInit(),
     };
   },
   getters: { ...makeGetters() },

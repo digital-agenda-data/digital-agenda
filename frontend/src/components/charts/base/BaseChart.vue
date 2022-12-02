@@ -49,7 +49,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
-import { getDisplay, toAPIKey } from "@/lib/utils";
+import { getDisplay, getUnitDisplay, toAPIKey } from "@/lib/utils";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -97,12 +97,27 @@ export default {
     filterComponents() {
       return [];
     },
+    filterXComponents() {
+      return [];
+    },
+    filterYComponents() {
+      return [];
+    },
+    filterZComponents() {
+      return [];
+    },
     /**
      * Normalize components to Objects with key, component
      * and attrs attributes.
      */
     normalizedComponents() {
-      return this.filterComponents.map((item) => this.normalizeComponent(item));
+      const result = [];
+      for (const axis of ["X", "Y", "Z", ""]) {
+        for (const item of this[`filter${axis}Components`]) {
+          result.push(this.normalizeComponent(item, axis));
+        }
+      }
+      return result;
     },
     endpoint() {
       return "/facts/";
@@ -286,11 +301,7 @@ export default {
           }
 
           if (parent.unit?.code) {
-            if (parent.unit.alt_label.startsWith("%")) {
-              result.push(`${this.y}${parent.unit.alt_label}`);
-            } else {
-              result.push(`${this.y} ${parent.unit.alt_label}`);
-            }
+            result.push(parent.getUnitDisplay(this.y, parent.unit));
           }
 
           if (parent.breakdown?.code) {
@@ -312,7 +323,7 @@ export default {
      */
     defineEntries() {
       const result = {};
-      for (const axis of ["", "X", "Y"]) {
+      for (const axis of ["", "X", "Y", "Z"]) {
         for (const label of ["Indicator", "Breakdown", "Unit"]) {
           const display = axis ? `(${axis}) ${label}` : label;
           result[display] = this.filterStore[axis][label.toLowerCase()];
@@ -333,6 +344,7 @@ export default {
   },
   methods: {
     getDisplay,
+    getUnitDisplay,
     makeTitle(items) {
       return items
         .map((s) => s?.label)
@@ -340,7 +352,7 @@ export default {
         .map((s) => s?.trim())
         .join(", ");
     },
-    normalizeComponent(item, suffix = "", className = "chart-filter") {
+    normalizeComponent(item, suffix = "") {
       let result = item;
       if (!item.component) {
         result = {
@@ -351,7 +363,7 @@ export default {
 
       result.key = result.key || result.component.name + suffix;
       result.attrs.suffix = suffix;
-      result.attrs.class = className;
+      result.attrs.class = `chart-filter${suffix}`;
 
       return result;
     },

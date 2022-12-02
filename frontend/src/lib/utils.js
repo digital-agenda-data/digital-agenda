@@ -120,6 +120,23 @@ export function getDisplay(item) {
   return item && (item.alt_label || item.label || item.code);
 }
 
+/**
+ * Get a suitable display string for this unit value
+ *
+ * @param value {Number} Unit value
+ * @param unit {Object} Unit object from the backend
+ * @return {string}
+ */
+export function getUnitDisplay(value, unit) {
+  if (!unit) return;
+
+  if (unit.alt_label.startsWith("%")) {
+    return `${value}${unit.alt_label}`;
+  } else {
+    return `${value} ${unit.alt_label}`;
+  }
+}
+
 /***
  * Return a random item from an array
  *

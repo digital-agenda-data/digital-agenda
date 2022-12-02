@@ -5,15 +5,15 @@
     grid-template-columns: 1fr;
     grid-auto-flow: dense;
 
-    .chart-filter-X {
+    .chart-filterX {
       grid-column: 1;
     }
 
-    .chart-filter-Y {
+    .chart-filterY {
       grid-column: 2;
     }
 
-    .chart-filter-both {
+    .chart-filterZ {
       grid-column: span 2;
     }
   }
