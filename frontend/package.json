@@ -14,6 +14,7 @@
     "highcharts": "^10.3.2",
     "highcharts-vue": "^1.4.0",
     "moment": "^2.29.4",
+    "path-browserify": "^1.0.1",
     "pinia": "^2.0.27",
     "vue": "^3.2.45",
     "vue-plugin-load-script": "^2.1.1",
