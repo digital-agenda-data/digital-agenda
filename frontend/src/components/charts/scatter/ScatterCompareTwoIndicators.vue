@@ -73,15 +73,22 @@ export default {
               name: countryCode,
               x: this.apiValuesGrouped[countryCode].X || 0,
               y: this.apiValuesGrouped[countryCode].Y || 0,
+              z: this.apiValuesGrouped[countryCode].Z || 0,
             },
           ],
         };
       });
     },
+    chartType() {
+      return "scatter";
+    },
+    chartSubtitle() {
+      return "";
+    },
     chartOptions() {
       return {
         chart: {
-          type: "scatter",
+          type: this.chartType,
         },
         legend: {
           enabled: true,
@@ -100,6 +107,10 @@ export default {
           text:
             this.filterStore.periodX?.code &&
             `Year: ${this.filterStore.periodX.code}`,
+        },
+        subtitle: {
+          enabled: !!this.chartSubtitle,
+          text: this.chartSubtitle,
         },
         xAxis: {
           title: {

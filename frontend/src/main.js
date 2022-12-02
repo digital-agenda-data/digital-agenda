@@ -9,6 +9,7 @@ import "./styles/main.scss";
 import ECLInit from "@/directives/ECLInit";
 
 import Highcharts from "highcharts";
+import highchartsMoreInit from "highcharts/highcharts-more";
 import exportingInit from "highcharts/modules/exporting";
 import offlineExportingInit from "highcharts/modules/offline-exporting";
 import exportingDataInit from "highcharts/modules/export-data";
@@ -21,6 +22,7 @@ offlineExportingInit(Highcharts);
 exportingDataInit(Highcharts);
 accessibilityInit(Highcharts);
 noDataToDisplayInit(Highcharts);
+highchartsMoreInit(Highcharts);
 
 // Set global defaults
 Highcharts.setOptions({
@@ -37,11 +39,18 @@ Highcharts.setOptions({
       },
     },
   },
+  title: {
+    widthAdjust: -400,
+  },
+  subtitle: {
+    widthAdjust: -400,
+  },
   legend: {
-    itemWidth: 190,
+    itemWidth: 150,
     layout: "vertical",
     align: "right",
     verticalAlign: "top",
+    y: 60,
   },
   credits: {
     text: "European Commission, Digital Scoreboard",

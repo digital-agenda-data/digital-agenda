@@ -8,6 +8,7 @@
     :required="required"
     :label="labelWithAxis"
     :input-name="queryName"
+    :size="size"
   />
 </template>
 
@@ -35,6 +36,11 @@ export default {
       type: Boolean,
       required: false,
       default: true,
+    },
+    size: {
+      type: String,
+      required: false,
+      default: null,
     },
   },
   emits: ["change"],

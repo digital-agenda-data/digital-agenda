@@ -46,6 +46,12 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
 
 
 class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
+    # !IMPORTANT WARNING!
+    #
+    # When adding an entry here a corresponding entry must be added in
+    #
+    #   frontend/src/lib/chartComponents.js
+    #
     CHART_TYPE_CHOICES = [
         (
             "Column",
@@ -67,6 +73,15 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
                 (
                     "SCATTER_COMPARE_TWO_INDICATORS",
                     "Scatter Chart: Compare Two Indicators",
+                ),
+            ),
+        ),
+        (
+            "Bubble",
+            (
+                (
+                    "BUBBLE_COMPARE_THREE_INDICATORS",
+                    "Bubble Chart: Compare Three Indicators",
                 ),
             ),
         ),

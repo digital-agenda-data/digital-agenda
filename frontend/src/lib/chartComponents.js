@@ -3,12 +3,14 @@ import ColumnCompareBreakdowns from "@/components/charts/column/ColumnCompareBre
 import SplineCompareCountries from "@/components/charts/spline/SplineCompareCountries.vue";
 import SplineCompareBreakdowns from "@/components/charts/spline/SplineCompareBreakdowns.vue";
 import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterCompareTwoIndicators.vue";
+import BubbleCompareThreeIndicators from "@/components/charts/bubble/BubbleCompareThreeIndicators.vue";
 
 import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
 import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
 import splineChartUrl from "@/assets/chart-images/spline/spline-chart.png";
 import splineChart2Url from "@/assets/chart-images/spline/spline-chart-2.png";
 import scatterChartUrl from "@/assets/chart-images/scatter/scatter-chart.png";
+import bubbleChartUrl from "@/assets/chart-images/bubble/bubble-chart.png";
 
 // Map values from the backend to frontend components
 export default {
@@ -31,5 +33,9 @@ export default {
   SCATTER_COMPARE_TWO_INDICATORS: {
     component: ScatterCompareTwoIndicators,
     image: scatterChartUrl,
+  },
+  BUBBLE_COMPARE_THREE_INDICATORS: {
+    component: BubbleCompareThreeIndicators,
+    image: bubbleChartUrl,
   },
 };

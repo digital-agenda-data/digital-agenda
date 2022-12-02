@@ -17,7 +17,7 @@ function getInit() {
 function makeGetters() {
   const result = {};
 
-  for (const suffix of ["", "X", "Y"]) {
+  for (const suffix of ["", "X", "Y", "Z"]) {
     for (const key of FILTER_KEYS) {
       result[key + suffix] = function (state) {
         return state[suffix][key];

@@ -11,9 +11,9 @@ export default {
         formatter() {
           const result = [
             `<b>${this.series.name}</b>`,
-            parent.getAxisValueDisplay(this.x, "X"),
-            parent.getAxisValueDisplay(this.y, "Y"),
-            parent.getAxisValueDisplay(this.z, "Z"),
+            parent.getAxisValueDisplay(this.point.x, "X"),
+            parent.getAxisValueDisplay(this.point.y, "Y"),
+            parent.getAxisValueDisplay(this.point.z, "Z"),
           ];
 
           return result.filter((value) => !!value).join("<br/>");
