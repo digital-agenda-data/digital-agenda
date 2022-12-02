@@ -32,9 +32,8 @@ export default {
           color: country.color,
           data: this.apiDataPeriods.map((periodCode) => {
             return {
-              y: this.apiValuesGrouped[country.code][periodCode] || 0,
+              y: this.apiValuesGrouped[country.code][periodCode] || null,
               x: parseInt(periodCode),
-              apiValue: this.apiValuesGrouped[country.code][periodCode],
               name: periodCode,
             };
           }),
@@ -49,6 +48,7 @@ export default {
         },
         plotOptions: {
           series: {
+            connectNulls: true,
             dataLabels: {
               // Add data label to the last entry
               enabled: true,
