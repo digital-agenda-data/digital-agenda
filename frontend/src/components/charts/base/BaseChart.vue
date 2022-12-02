@@ -339,12 +339,12 @@ export default {
       let result = item;
       if (!item.component) {
         result = {
-          key: item.name,
           component: item,
           attrs: {},
         };
       }
 
+      result.key = result.key || result.component.name + suffix;
       result.attrs.suffix = suffix;
       result.attrs.class = className;
 
