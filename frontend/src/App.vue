@@ -109,4 +109,6 @@ export default {
 
 @import "@ecl/preset-ec/dist/styles/optional/ecl-ec-default-print.css" print;
 @import "@ecl/preset-ec/dist/styles/ecl-ec-print.css" print;
+
+@import "vue-multiselect/dist/vue-multiselect.css";
 </style>

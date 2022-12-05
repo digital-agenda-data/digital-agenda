@@ -17,6 +17,7 @@
     "path-browserify": "^1.0.1",
     "pinia": "^2.0.27",
     "vue": "^3.2.45",
+    "vue-multiselect": "^3.0.0-alpha.2",
     "vue-plugin-load-script": "^2.1.1",
     "vue-router": "^4.1.6"
   },

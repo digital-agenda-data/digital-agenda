@@ -1,78 +1,66 @@
 <template>
-  <div class="ecl-form-group">
-    <label v-if="label" class="ecl-form-label">
-      {{ label }}
-      <span v-if="required" class="ecl-form-label__required">*</span>
-    </label>
-    <div v-if="helpText" class="ecl-help-block">
-      {{ helpText }}
-    </div>
-
-    <div v-if="loading">
-      <ecl-spinner text="" />
-    </div>
-    <div v-else :class="classList">
-      <select
+  <ecl-form-group v-bind="{ label, helpText, required }">
+    <div :class="classList">
+      <vue-multiselect
+        ref="multiselect"
         v-model="value"
-        v-ecl-init="multiple && items.length > 0"
-        class="ecl-select"
-        :required="required"
+        :options="items"
+        :limit="2"
+        :placeholder="placeholderText"
+        :loading="loading"
         :multiple="multiple"
-        :name="inputName"
-        v-bind="dataAttrs"
+        :disabled="disabled || loading"
+        :close-on-select="!multiple"
+        label="text"
+        track-by="id"
+        :group-label="hasGroups ? 'text' : undefined"
+        :group-values="hasGroups ? 'children' : undefined"
+        select-label=""
+        selected-label=""
+        deselect-label=""
       >
-        <option
-          v-if="placeholderText && !multiple"
-          value=""
-          :disabled="required"
-        >
-          {{ placeholderText }}
-        </option>
-
-        <template v-for="item in items" :key="item.id">
-          <optgroup
-            v-if="item.children"
-            :label="item.text"
-            :disabled="item.disabled"
-          >
-            <option
-              v-for="child in item.children"
-              :key="child.id"
-              :value="child.id"
-              :disabled="child.disabled"
-            >
-              {{ child.text }}
-            </option>
-          </optgroup>
-          <option v-else :value="item.id" :disabled="item.disabled">
-            {{ item.text }}
-          </option>
+        <template v-if="multiple" #beforeList>
+          <li class="multiselect__element" @click="toggleAll">
+            <span class="multiselect__option">
+              <ecl-checkbox
+                :label="`Select all (${itemsById.size})`"
+                :model-value="modelValueSet.size === itemsById.size"
+              />
+            </span>
+          </li>
         </template>
-      </select>
-      <div class="ecl-select__icon">
-        <ecl-icon
-          size="s"
-          icon="corner-arrow"
-          rotate="180"
-          class="ecl-select__icon-shape"
-        />
-      </div>
+
+        <template #option="{ option }">
+          <template v-if="option.$groupLabel">
+            {{ option.$groupLabel }}
+          </template>
+          <ecl-checkbox
+            v-else-if="multiple"
+            :label="option.text"
+            :model-value="modelValueSet.has(option.id)"
+          />
+          <template v-else>
+            {{ option.text }}
+          </template>
+        </template>
+      </vue-multiselect>
     </div>
-  </div>
+  </ecl-form-group>
 </template>
 
 <script>
-import EclIcon from "@/components/ecl/EclIcon.vue";
-import EclSpinner from "@/components/ecl/EclSpinner.vue";
+import VueMultiselect from "vue-multiselect";
+import EclFormGroup from "@/components/ecl/forms/EclFormGroup.vue";
+import EclCheckbox from "@/components/ecl/forms/EclCheckbox.vue";
+
 /**
- * ECL Select component, see documentation here:
- *
- *  https://ec.europa.eu/component-library/ec/components/forms/select/usage/
- *
+ * ECL Select adaptation based on vue-multiselect. The regular ECL select component
+ * doesn't play nice with Vue components, as it manually triggers native events
+ * confusing v-model bindings.
  */
 export default {
   name: "EclSelect",
-  components: { EclSpinner, EclIcon },
+  components: { EclCheckbox, EclFormGroup, VueMultiselect },
   props: {
     /**
      * Items must be in the following format:
@@ -80,7 +68,6 @@ export default {
      *   {
      *     id: "",          // Unique ID for the item or grop
      *     text: "",        // Label for the item or group
-     *     disabled: false, // Disable an item or a group
      *     children: [],    // If present will form an optgroup
      *   }
      */
@@ -131,18 +118,8 @@ export default {
       required: false,
       default: "Select an item",
     },
-    searchText: {
-      type: String,
-      required: false,
-      default: "Enter keyword",
-    },
-    noResultsText: {
-      type: String,
-      required: false,
-      default: "No results found",
-    },
     modelValue: {
-      type: [String, Array],
+      type: [String, Array, Object],
       required: false,
       default: "",
     },
@@ -154,13 +131,50 @@ export default {
   },
   emits: ["update:modelValue"],
   computed: {
+    hasGroups() {
+      return this.items.some((item) => !!item.children);
+    },
+    modelValueSet() {
+      if (Array.isArray(this.modelValue)) {
+        return new Set(this.modelValue);
+      } else if (!this.modelValue) {
+        return new Set();
+      } else {
+        return new Set([this.modelValue]);
+      }
+    },
     value: {
       get() {
-        return this.modelValue;
+        if (Array.isArray(this.modelValue)) {
+          return this.modelValue
+            .map((val) => this.itemsById.get(val))
+            .filter((item) => !!item);
+        } else {
+          return this.itemsById.get(this.modelValue);
+        }
       },
       set(value) {
-        this.$emit("update:modelValue", value);
+        if (!this.multiple) {
+          this.$emit("update:modelValue", value.id);
+        } else {
+          this.$emit(
+            "update:modelValue",
+            value.map((item) => item.id)
+          );
+        }
       },
+    },
+    itemsById() {
+      const result = new Map();
+
+      for (const item of this.items) {
+        for (const child of item.children || []) {
+          result.set(child.id, child);
+        }
+
+        result.set(item.id, item);
+      }
+      return result;
     },
     classList() {
       const result = ["ecl-select__container"];
@@ -171,21 +185,22 @@ export default {
       if (this.disabled) {
         result.push("ecl-select__container--disabled");
       }
+      if (this.multiple) {
+        result.push("ecl-select__container--multiple");
+      }
+      if (this.hasGroups) {
+        result.push("ecl-select__container--grouped");
+      }
       return result;
     },
-    dataAttrs() {
-      if (!this.multiple) return {};
-
-      // Only the multiselect requires all of these and requires init.
-      return {
-        "data-ecl-auto-init": "Select",
-        "data-ecl-select-default": this.placeholderText,
-        "data-ecl-select-search": this.searchText,
-        "data-ecl-select-no-results": this.noResultsText,
-        "data-ecl-select-all": "Select all",
-        "data-ecl-select-clear-all": "Clear all",
-        "data-ecl-select-close": "Close",
-      };
+  },
+  methods: {
+    toggleAll() {
+      if (this.modelValueSet.size === this.itemsById.size) {
+        this.$emit("update:modelValue", []);
+      } else {
+        this.$emit("update:modelValue", Array.from(this.itemsById.keys()));
+      }
     },
   },
 };
