@@ -11,6 +11,7 @@
         :multiple="multiple"
         :disabled="disabled || loading"
         :close-on-select="!multiple"
+        :allow-empty="!required || multiple"
         label="text"
         track-by="id"
         :group-label="hasGroups ? 'text' : undefined"
@@ -155,7 +156,7 @@ export default {
       },
       set(value) {
         if (!this.multiple) {
-          this.$emit("update:modelValue", value.id);
+          this.$emit("update:modelValue", value?.id);
         } else {
           this.$emit(
             "update:modelValue",
