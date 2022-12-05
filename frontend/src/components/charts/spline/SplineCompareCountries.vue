@@ -41,7 +41,6 @@ export default {
       });
     },
     chartOptions() {
-      const parent = this;
       return {
         chart: {
           type: "spline",
@@ -53,7 +52,11 @@ export default {
               // Add data label to the last entry
               enabled: true,
               formatter() {
-                return this.x === parent.lastPeriod ? this.series.name : null;
+                const lastIndex = this.series.yData.findLastIndex(
+                  (el) => el !== null
+                );
+
+                return this.point.index === lastIndex ? this.series.name : null;
               },
             },
           },

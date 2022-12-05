@@ -287,9 +287,6 @@ export default {
         new Set(this.apiData.map((item) => item.period))
       ).sort();
     },
-    lastPeriod() {
-      return parseInt(this.apiDataPeriods.slice(-1)[0]);
-    },
     defaultTooltip() {
       const parent = this;
       return {
