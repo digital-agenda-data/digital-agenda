@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 import { useRoute } from "vue-router";
 
 export const useChartStore = defineStore("chart", {
@@ -18,7 +18,7 @@ export const useChartStore = defineStore("chart", {
   },
   actions: {
     async getCharts() {
-      this.charts = await apiCall("GET", "/charts/");
+      this.charts = (await api.get("/charts/")).data;
     },
   },
 });

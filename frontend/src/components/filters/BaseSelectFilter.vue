@@ -14,7 +14,7 @@
 
 <script>
 import EclSelect from "@/components/ecl/forms/EclSelect.vue";
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 import { useFilterStore } from "@/stores/filterStore";
 import { getDisplay, randomChoice } from "@/lib/utils";
 
@@ -217,7 +217,11 @@ export default {
       }
     },
     async loadApiData() {
-      this.apiData = await apiCall("GET", this.endpoint, this.endpointParams);
+      this.apiData = (
+        await api.get(this.endpoint, {
+          params: this.endpointParams,
+        })
+      ).data;
     },
     async loadExtra() {},
   },

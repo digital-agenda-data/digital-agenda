@@ -10,11 +10,10 @@
   "dependencies": {
     "@ecl/preset-ec": "^3.6.0",
     "@ecl/preset-reset": "^3.6.0",
-    "content-disposition": "^0.5.4",
+    "axios": "^1.2.1",
     "highcharts": "^10.3.2",
     "highcharts-vue": "^1.4.0",
     "moment": "^2.29.4",
-    "path-browserify": "^1.0.1",
     "pinia": "^2.0.27",
     "vue": "^3.2.45",
     "vue-multiselect": "^3.0.0-alpha.2",

@@ -40,7 +40,7 @@
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
@@ -395,11 +395,11 @@ export default {
       this.apiData = Object.values(result).flat();
     },
     async getFactForAxis(axis, result) {
-      const resp = await apiCall(
-        "GET",
-        this.endpoint,
-        this.endpointParams[axis]
-      );
+      const resp = (
+        await api.get(this.endpoint, {
+          params: this.endpointParams[axis],
+        })
+      ).data;
 
       result[axis] = [];
       for (const item of resp) {

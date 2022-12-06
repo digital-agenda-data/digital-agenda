@@ -67,7 +67,7 @@ export default {
     ...mapActions(useChartGroupStore, ["getChartGroups"]),
     async loadInitialData() {
       await Promise.all([
-        // this.getCurrentUser(),
+        this.getCurrentUser(),
         this.getChartGroups(),
         this.getCharts(),
       ]);

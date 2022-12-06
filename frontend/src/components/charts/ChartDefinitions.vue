@@ -68,7 +68,7 @@
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { mapState } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 import { setEquals } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
@@ -131,9 +131,11 @@ export default {
     async loadDataSources() {
       if (this.dataSourceCodes.size === 0) return;
 
-      const resp = await apiCall("GET", "/data-sources/", {
-        code_in: Array.from(this.dataSourceCodes).join(","),
-      });
+      const resp = (
+        await api.get("/data-sources/", {
+          params: { code_in: Array.from(this.dataSourceCodes).join(",") },
+        })
+      ).data;
 
       const result = new Map();
       for (const item of resp) {

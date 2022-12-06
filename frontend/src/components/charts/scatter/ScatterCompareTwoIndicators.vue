@@ -6,7 +6,7 @@ import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsF
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 
 export default {
   name: "ScatterCompareTwoIndicators",
@@ -138,7 +138,7 @@ export default {
   methods: {
     async loadExtra() {
       if (this.countriesList.length === 0) {
-        this.countriesList = await apiCall("GET", `/countries/`);
+        this.countriesList = (await api.get(`/countries/`)).data;
       }
     },
   },

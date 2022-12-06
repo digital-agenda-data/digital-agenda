@@ -92,7 +92,7 @@
 
 <script>
 import { mapState } from "pinia";
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 import { scrollToHash } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
@@ -150,14 +150,13 @@ export default {
       this.$nextTick(scrollToHash);
     },
     async loadChartGroup() {
-      this.chartGroupDetails = await apiCall(
-        "GET",
-        `/chart-groups/${this.currentChartGroupCode}/`
-      );
+      this.chartGroupDetails = (
+        await api.get(`/chart-groups/${this.currentChartGroupCode}/`)
+      ).data;
     },
     async loadDataSources() {
       const result = {};
-      const response = await apiCall("GET", "/data-sources/");
+      const response = (await api.get("/data-sources/")).data;
       for (const dataSource of response) {
         result[dataSource.code] = dataSource;
       }

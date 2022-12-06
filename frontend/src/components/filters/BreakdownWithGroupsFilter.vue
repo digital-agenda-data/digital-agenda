@@ -1,6 +1,6 @@
 <script>
 import BaseSelectFilter from "@/components/filters/BaseSelectFilter.vue";
-import { apiCall } from "@/lib/api";
+import { api } from "@/lib/api";
 
 export default {
   name: "BreakdownWithGroupsFilter",
@@ -57,10 +57,11 @@ export default {
     async loadExtra() {
       if (!this.filterStore.indicator) return;
 
-      this.breakdownGroups = await apiCall(
-        "GET",
-        `/indicators/${this.filterStore.indicator.code}/breakdown-groups/`
-      );
+      this.breakdownGroups = (
+        await api.get(
+          `/indicators/${this.filterStore.indicator.code}/breakdown-groups/`
+        )
+      ).data;
     },
   },
 };
