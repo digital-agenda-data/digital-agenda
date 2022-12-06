@@ -2,10 +2,10 @@
 import BaseChart from "@/components/charts/base/BaseChart.vue";
 
 export default {
-  name: "BaseCompareMultiAxisChart",
+  name: "BaseMultiAxisChart",
   extends: BaseChart,
   computed: {
-    defaultTooltip() {
+    tooltip() {
       const parent = this;
       return {
         formatter() {

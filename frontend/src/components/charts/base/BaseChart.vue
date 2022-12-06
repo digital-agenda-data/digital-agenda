@@ -26,7 +26,7 @@
     <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8">
         <div v-html="currentChart.description" />
-        <chart-definitions :define="defineEntries" />
+        <chart-definitions :items="defineEntries" />
       </div>
 
       <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
@@ -81,6 +81,9 @@ export default {
       "unit",
       "country",
     ]),
+    showAxisLabels() {
+      return true;
+    },
     /**
      * List of components to display in the chart filter section of the page.
      *
@@ -210,7 +213,7 @@ export default {
         legend: {
           enabled: false,
         },
-        tooltip: this.defaultTooltip,
+        tooltip: this.tooltip,
         yAxis: {
           title: {
             text: this.unit?.alt_label,
@@ -287,7 +290,7 @@ export default {
         new Set(this.apiData.map((item) => item.period))
       ).sort();
     },
-    defaultTooltip() {
+    tooltip() {
       const parent = this;
       return {
         formatter() {
@@ -319,11 +322,32 @@ export default {
      * Entries that will be defined in the page footer
      */
     defineEntries() {
-      const result = {};
+      const result = [];
       for (const axis of ["", "X", "Y", "Z"]) {
-        for (const label of ["Indicator", "Breakdown", "Unit"]) {
-          const display = axis ? `(${axis}) ${label}` : label;
-          result[display] = this.filterStore[axis][label.toLowerCase()];
+        for (let itemType of ["Indicator", "Breakdown", "Unit"]) {
+          let items = null;
+          const val = this.filterStore[axis][itemType.toLowerCase()];
+
+          if (axis && this.showAxisLabels) {
+            itemType = `(${axis}) ${itemType}`;
+          }
+
+          // coerce all values to array if not already, to support
+          // multiple definitions of the same type
+          if (!val) {
+            items = [];
+          } else if (Array.isArray(val)) {
+            items = val;
+          } else {
+            items = [val];
+          }
+
+          for (const item of items) {
+            result.push({
+              itemType,
+              ...item,
+            });
+          }
         }
       }
       return result;
@@ -361,6 +385,7 @@ export default {
       result.key = result.key || result.component.name + suffix;
       result.attrs.suffix = suffix;
       result.attrs.class = `chart-filter${suffix}`;
+      result.attrs.showAxisLabel = this.showAxisLabels;
 
       return result;
     },

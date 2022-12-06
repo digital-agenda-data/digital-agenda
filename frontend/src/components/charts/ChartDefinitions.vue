@@ -1,41 +1,39 @@
 <template>
-  <template v-for="(itemList, label) in items" :key="label">
-    <div
-      v-for="item in itemList"
-      :key="label + item.code"
-      class="ecl-u-type-paragraph"
-    >
-      <div class="ecl-u-mt-m">
-        <b>{{ label }}:&nbsp;</b>
-        <span>{{ item.label || item.alt_label }}</span>
+  <div
+    v-for="item in items"
+    :key="item.itemType + item.code"
+    class="ecl-u-type-paragraph"
+  >
+    <div class="ecl-u-mt-m">
+      <b>{{ item.itemType }}:&nbsp;</b>
+      <span>{{ item.label || item.alt_label }}</span>
+    </div>
+    <div class="ecl-u-ml-m ecl-u-mt-m">
+      <div v-if="item.definition">
+        <b>Definition:&nbsp;</b>
+        <span>{{ item.definition }}</span>
       </div>
-      <div class="ecl-u-ml-m ecl-u-mt-m">
-        <div v-if="item.definition">
-          <b>Definition:&nbsp;</b>
-          <span>{{ item.definition }}</span>
-        </div>
 
-        <div v-if="item.note">
-          <b>Notes:&nbsp;</b>
-          <span>{{ item.note }}</span>
-        </div>
+      <div v-if="item.note">
+        <b>Notes:&nbsp;</b>
+        <span>{{ item.note }}</span>
+      </div>
 
-        <div v-if="item.data_source">
-          <b>Data Source:&nbsp;</b>
-          <span>
-            {{ dataSources.get(item.data_source)?.label || item.data_source }}
-          </span>
-          <span>&nbsp;</span>
-          <ecl-link
-            v-if="dataSources.get(item.data_source)?.url"
-            :to="dataSources.get(item.data_source)?.url"
-            label="[More information]"
-            no-visited
-          />
-        </div>
+      <div v-if="item.data_source">
+        <b>Data Source:&nbsp;</b>
+        <span>
+          {{ dataSources.get(item.data_source)?.label || item.data_source }}
+        </span>
+        <span>&nbsp;</span>
+        <ecl-link
+          v-if="dataSources.get(item.data_source)?.url"
+          :to="dataSources.get(item.data_source)?.url"
+          label="[More information]"
+          no-visited
+        />
       </div>
     </div>
-  </template>
+  </div>
 
   <p>
     <ecl-link
@@ -76,8 +74,8 @@ export default {
   name: "ChartDefinitions",
   components: { EclLink },
   props: {
-    define: {
-      type: Object,
+    items: {
+      type: Array,
       required: true,
     },
   },
@@ -89,32 +87,10 @@ export default {
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
-    items() {
-      const result = {};
-      for (const [label, val] of Object.entries(this.define)) {
-        // coerce all values to array if not already, to support
-        // multiple definitions of the same type
-        if (!val) {
-          result[label] = [];
-        } else if (Array.isArray(val)) {
-          result[label] = val;
-        } else {
-          result[label] = [val];
-        }
-      }
-      return result;
-    },
     dataSourceCodes() {
-      const result = new Set();
-
-      for (const itemList of Object.values(this.items)) {
-        for (const item of itemList) {
-          if (item.data_source) {
-            result.add(item.data_source);
-          }
-        }
-      }
-      return result;
+      return new Set(
+        this.items.map((item) => item.data_source).filter((code) => !!code)
+      );
     },
   },
   watch: {

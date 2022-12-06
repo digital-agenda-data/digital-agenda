@@ -11,6 +11,7 @@ import splineChartUrl from "@/assets/chart-images/spline/spline-chart.png";
 import splineChart2Url from "@/assets/chart-images/spline/spline-chart-2.png";
 import scatterChartUrl from "@/assets/chart-images/scatter/scatter-chart.png";
 import bubbleChartUrl from "@/assets/chart-images/bubble/bubble-chart.png";
+import SplineCompareTwoIndicators from "@/components/charts/spline/SplineCompareTwoIndicators.vue";
 
 // Map values from the backend to frontend components
 export default {
@@ -28,6 +29,10 @@ export default {
   },
   SPLINE_COMPARE_BREAKDOWNS: {
     component: SplineCompareBreakdowns,
+    image: splineChart2Url,
+  },
+  SPLINE_COMPARE_TWO_INDICATORS: {
+    component: SplineCompareTwoIndicators,
     image: splineChart2Url,
   },
   SCATTER_COMPARE_TWO_INDICATORS: {

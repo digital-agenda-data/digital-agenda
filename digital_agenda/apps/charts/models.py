@@ -23,6 +23,7 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     description = RichTextField()
     image = models.ImageField(blank=True)
 
+    indicator_groups = models.ManyToManyField("core.IndicatorGroup")
     periods = models.ManyToManyField(
         "core.Period",
         db_table="chart_group_periods",
@@ -32,7 +33,6 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
         ),
         blank=True,
     )
-    indicator_groups = models.ManyToManyField("core.IndicatorGroup")
 
     class Meta:
         db_table = "chart_groups"
@@ -65,6 +65,10 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             (
                 ("SPLINE_COMPARE_COUNTRIES", "Spline Chart: Compare Countries"),
                 ("SPLINE_COMPARE_BREAKDOWNS", "Spline Chart: Compare Breakdowns"),
+                (
+                    "SPLINE_COMPARE_TWO_INDICATORS",
+                    "Spline Chart: Compare Two Indicators",
+                ),
             ),
         ),
         (

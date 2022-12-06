@@ -65,7 +65,7 @@
   "fields": {
     "created_at": "2022-11-28T10:37:59.561Z",
     "updated_at": "2022-11-28T10:37:59.561Z",
-    "display_order": 7,
+    "display_order": 8,
     "is_draft": false,
     "chart_group": 3,
     "name": "Analyse one indicator and compare countries",
@@ -80,7 +80,7 @@
   "fields": {
     "created_at": "2022-11-28T10:38:19.520Z",
     "updated_at": "2022-11-28T10:38:19.520Z",
-    "display_order": 8,
+    "display_order": 9,
     "is_draft": false,
     "chart_group": 3,
     "name": "Analyse one indicator (by life events)",
@@ -95,7 +95,7 @@
   "fields": {
     "created_at": "2022-11-28T10:39:02.631Z",
     "updated_at": "2022-11-28T10:39:02.631Z",
-    "display_order": 9,
+    "display_order": 10,
     "is_draft": false,
     "chart_group": 3,
     "name": "See the evolution of an indicator and compare countries",
@@ -110,7 +110,7 @@
   "fields": {
     "created_at": "2022-11-28T10:39:18.867Z",
     "updated_at": "2022-11-28T10:39:18.867Z",
-    "display_order": 10,
+    "display_order": 11,
     "is_draft": false,
     "chart_group": 3,
     "name": "See the evolution of an indicator (by life events)",
@@ -125,7 +125,7 @@
   "fields": {
     "created_at": "2022-11-28T10:42:50.056Z",
     "updated_at": "2022-11-28T10:42:50.056Z",
-    "display_order": 11,
+    "display_order": 12,
     "is_draft": false,
     "chart_group": 4,
     "name": "Analyse one indicator and compare countries",
@@ -140,7 +140,7 @@
   "fields": {
     "created_at": "2022-11-28T10:43:05.665Z",
     "updated_at": "2022-11-28T10:43:05.665Z",
-    "display_order": 12,
+    "display_order": 13,
     "is_draft": false,
     "chart_group": 4,
     "name": "Analyse one indicator (by life events)",
@@ -155,7 +155,7 @@
   "fields": {
     "created_at": "2022-11-28T10:43:19.652Z",
     "updated_at": "2022-11-28T10:47:12.896Z",
-    "display_order": 13,
+    "display_order": 14,
     "is_draft": false,
     "chart_group": 4,
     "name": "See the evolution of an indicator and compare countries",
@@ -170,7 +170,7 @@
   "fields": {
     "created_at": "2022-11-28T10:43:37.396Z",
     "updated_at": "2022-11-28T10:43:37.396Z",
-    "display_order": 14,
+    "display_order": 15,
     "is_draft": false,
     "chart_group": 4,
     "name": "See the evolution of an indicator (by life events)",
@@ -207,6 +207,21 @@
     "code": "2-compare-two-indicators-using-country-bubbles-siz",
     "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
     "description": "<p>Bubble chart allows to compares two indicators as in a scatter-plot. Each country appears as a bubble whose coordinates are its values on the two selected indicators. The size of the bubble is proportional to a third indicator that could express the weight of the country (use for example the population or the GDP presented in the &quot;background&quot; group of indicators) or another characteristic. You can zoom inside the chart.</p>"
+  }
+},
+{
+  "model": "charts.chart",
+  "pk": 19,
+  "fields": {
+    "created_at": "2022-12-06T07:30:17.953Z",
+    "updated_at": "2022-12-06T07:30:17.953Z",
+    "display_order": 7,
+    "is_draft": false,
+    "chart_group": 2,
+    "name": "Compare the evolution of two indicators",
+    "code": "2-compare-the-evolution-of-two-indicators",
+    "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+    "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>"
   }
 }
 ]

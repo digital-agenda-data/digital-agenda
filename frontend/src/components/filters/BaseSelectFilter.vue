@@ -42,6 +42,11 @@ export default {
       required: false,
       default: null,
     },
+    showAxisLabel: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   emits: ["change"],
   data() {
@@ -91,7 +96,7 @@ export default {
       return "";
     },
     labelWithAxis() {
-      if (!this.suffix) return this.label;
+      if (!this.suffix || !this.showAxisLabel) return this.label;
 
       return `(${this.suffix}) ${this.label}`;
     },

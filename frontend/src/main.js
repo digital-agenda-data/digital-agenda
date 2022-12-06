@@ -40,7 +40,7 @@ Highcharts.setOptions({
     },
   },
   title: {
-    widthAdjust: -400,
+    widthAdjust: -200,
   },
   subtitle: {
     widthAdjust: -400,

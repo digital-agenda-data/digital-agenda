@@ -1,5 +1,5 @@
 <script>
-import BaseCompareMultiAxisChart from "@/components/charts/base/BaseCompareMultiAxisChart.vue";
+import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue";
 import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
 import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsFilter.vue";
@@ -10,7 +10,7 @@ import { api } from "@/lib/api";
 
 export default {
   name: "ScatterCompareTwoIndicators",
-  extends: BaseCompareMultiAxisChart,
+  extends: BaseMultiAxisChart,
   data() {
     return {
       countriesList: [],
