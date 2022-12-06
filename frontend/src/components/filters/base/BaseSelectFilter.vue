@@ -47,6 +47,11 @@ export default {
       required: false,
       default: true,
     },
+    allInitial: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   emits: ["change"],
   data() {
@@ -148,12 +153,20 @@ export default {
       }
 
       if (this.multiple) {
-        return this.allowedValuesArray;
+        return this.allInitial
+          ? this.allowedValuesArray
+          : this.defaultMultiValue;
+      } else {
+        return this.defaultSingleValue;
       }
+    },
+    defaultSingleValue() {
+      const choiceGroup = randomChoice(this.items);
 
-      const choice = randomChoice(this.items);
-
-      return randomChoice(choice.children)?.id || choice.id;
+      return randomChoice(choiceGroup.children)?.id || choiceGroup.id;
+    },
+    defaultMultiValue() {
+      return [randomChoice(this.items).id];
     },
     multiple() {
       return false;

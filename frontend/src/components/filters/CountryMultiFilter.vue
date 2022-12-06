@@ -5,13 +5,6 @@ import { randomChoice } from "@/lib/utils";
 export default {
   name: "CountryMultiFilter",
   extends: CountryFilter,
-  props: {
-    allInitialCountries: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-  },
   computed: {
     label() {
       return "Select the countries";
@@ -19,20 +12,14 @@ export default {
     multiple() {
       return true;
     },
-    defaultValue() {
-      const allCodesArray = Array.from(this.allowedValues);
-
-      if (this.allInitialCountries) {
-        return allCodesArray.sort();
-      }
-
+    defaultMultiValue() {
       const result = [];
       if (this.allowedValues.has("EU")) {
         result.push("EU");
       }
 
       const another = randomChoice(
-        allCodesArray.filter((code) => code !== "EU")
+        this.allowedValuesArray.filter((code) => code !== "EU")
       );
       if (another) {
         result.push(another);

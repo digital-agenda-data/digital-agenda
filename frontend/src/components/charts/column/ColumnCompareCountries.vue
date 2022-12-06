@@ -21,9 +21,7 @@ export default {
         UnitFilter,
         {
           component: CountryMultiFilter,
-          attrs: {
-            allInitialCountries: true,
-          },
+          attrs: { allInitial: true },
         },
       ];
     },

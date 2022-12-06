@@ -20,7 +20,7 @@ export default {
         BreakdownGroupFilter,
         {
           component: BreakdownMultiFilter,
-          attrs: { hidden: true, syncRoute: false },
+          attrs: { allInitial: true, hidden: true, syncRoute: false },
         },
         PeriodFilter,
         UnitFilter,

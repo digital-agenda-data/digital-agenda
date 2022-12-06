@@ -58,6 +58,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             (
                 ("COLUMN_COMPARE_COUNTRIES", "Column Chart: Compare Countries"),
                 ("COLUMN_COMPARE_BREAKDOWNS", "Column Chart: Compare Breakdowns"),
+                ("COLUMN_STACKED_COMPARE_BREAKDOWNS", "Column Chart Stacked: Compare Breakdowns"),
             ),
         ),
         (

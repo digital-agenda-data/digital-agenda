@@ -18,7 +18,7 @@ export default {
     label() {
       return "Country";
     },
-    defaultValue() {
+    defaultSingleValue() {
       if (this.allowedValues.has("EU")) {
         return "EU";
       }
