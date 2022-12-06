@@ -1,5 +1,5 @@
 <script>
-import BaseSelectFilter from "@/components/filters/BaseSelectFilter.vue";
+import BaseSelectFilter from "@/components/filters/base/BaseSelectFilter.vue";
 
 export default {
   name: "UnitFilter",

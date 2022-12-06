@@ -78,12 +78,14 @@ class DataSourceSerializer(BaseDimensionSerializer):
 class IndicatorListSerializer(BaseDimensionSerializer):
     periods = serializers.SlugRelatedField(many=True, slug_field="code", read_only=True)
     data_source = serializers.SlugRelatedField(slug_field="code", read_only=True)
+    groups = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
         fields = BaseDimensionSerializer.Meta.fields + [
             "periods",
             "data_source",
+            "groups",
         ]
 
 

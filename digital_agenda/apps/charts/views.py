@@ -7,8 +7,10 @@ from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.serializers import ChartGroupDetailSerializer
 from digital_agenda.apps.charts.serializers import ChartGroupListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
+from digital_agenda.apps.core.serializers import IndicatorListSerializer
 from digital_agenda.apps.core.serializers import IndicatorGroupListSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
+from digital_agenda.apps.core.views import IndicatorViewSet
 
 
 class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
@@ -41,6 +43,18 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     def indicator_groups(self, request, code=None):
         queryset = self.get_object().indicator_groups.all()
         return Response(IndicatorGroupListSerializer(queryset, many=True).data)
+
+    @action(methods=["GET"], detail=True)
+    def indicators(self, request, code=None):
+        obj = self.get_object()
+        group_ids = obj.indicator_groups.all().values_list("id", flat=True)
+        period_ids = obj.periods.all().values_list("id", flat=True)
+
+        queryset = IndicatorViewSet.queryset.filter(groups__id__in=group_ids)
+        if period_ids:
+            queryset = queryset.filter(periods__id__in=period_ids)
+
+        return Response(IndicatorListSerializer(queryset, many=True).data)
 
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
