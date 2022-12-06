@@ -36,6 +36,7 @@ import { useUserStore } from "@/stores/userStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
 import { getRouteMeta } from "@/lib/utils";
+import { useCountryStore } from "@/stores/countryStore";
 
 const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
 
@@ -63,13 +64,15 @@ export default {
   },
   methods: {
     ...mapActions(useUserStore, ["getCurrentUser"]),
+    ...mapActions(useCountryStore, ["getCountryList"]),
     ...mapActions(useChartStore, ["getCharts"]),
     ...mapActions(useChartGroupStore, ["getChartGroups"]),
     async loadInitialData() {
       await Promise.all([
-        this.getCurrentUser(),
+        // this.getCurrentUser(),
         this.getChartGroups(),
         this.getCharts(),
+        this.getCountryList(),
       ]);
     },
     /**

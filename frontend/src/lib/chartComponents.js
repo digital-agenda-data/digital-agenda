@@ -6,10 +6,11 @@ import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterComp
 import BubbleCompareThreeIndicators from "@/components/charts/bubble/BubbleCompareThreeIndicators.vue";
 import SplineCompareTwoIndicators from "@/components/charts/spline/SplineCompareTwoIndicators.vue";
 import ColumnStackedCompareBreakdowns from "@/components/charts/column/ColumnStackedCompareBreakdowns.vue";
+import TableDebugData from "@/components/charts/table/TableDebugData.vue";
 
 import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
 import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
-import columnChartStackedUrl from "@/assets/chart-images/column/column-chart-stacked.png";
+// import columnChartStackedUrl from "@/assets/chart-images/column/column-chart-stacked.png";
 import splineChartUrl from "@/assets/chart-images/spline/spline-chart.png";
 import splineChart2Url from "@/assets/chart-images/spline/spline-chart-2.png";
 import scatterChartUrl from "@/assets/chart-images/scatter/scatter-chart.png";
@@ -27,7 +28,7 @@ export default {
   },
   COLUMN_STACKED_COMPARE_BREAKDOWNS: {
     component: ColumnStackedCompareBreakdowns,
-    image: columnChartStackedUrl,
+    image: columnChartMultipleUrl,
   },
   SPLINE_COMPARE_COUNTRIES: {
     component: SplineCompareCountries,
@@ -48,5 +49,9 @@ export default {
   BUBBLE_COMPARE_THREE_INDICATORS: {
     component: BubbleCompareThreeIndicators,
     image: bubbleChartUrl,
+  },
+  TABLE_DEBUG_DATA: {
+    component: TableDebugData,
+    image: null,
   },
 };

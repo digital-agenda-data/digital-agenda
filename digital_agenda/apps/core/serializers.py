@@ -140,6 +140,7 @@ class CountryFactSerializer(serializers.ModelSerializer):
     country = serializers.CharField(source="country.code", read_only=True)
     indicator = serializers.CharField(source="indicator.code", read_only=True)
     breakdown = serializers.CharField(source="breakdown.code", read_only=True)
+    unit = serializers.CharField(source="unit.code", read_only=True)
 
     class Meta:
         model = Fact
@@ -150,4 +151,5 @@ class CountryFactSerializer(serializers.ModelSerializer):
             "indicator",
             "breakdown",
             "period",
+            "unit",
         ]

@@ -1,39 +1,8 @@
 <template>
-  <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only hide-embedded chart-filters"
-  >
-    <component
-      :is="item.component"
-      v-for="item in normalizedComponents"
-      :key="item.key || item.component.name"
-      v-bind="item.attrs"
-    />
-  </div>
-  <div
-    class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-grey-10 chart-container-digital-agenda"
-  >
-    <highcharts
-      :options="{ ...chartOptionsDefaults, ...chartOptions }"
-      :callback="highchartsCallback"
-    />
-  </div>
-
-  <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m hide-embedded"
-  >
-    <h2>Definition and scopes:</h2>
-
-    <div class="ecl-row">
-      <div class="ecl-col-12 ecl-col-l-8">
-        <div v-html="currentChart.description" />
-        <chart-definitions :items="defineEntries" />
-      </div>
-
-      <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
-        <chart-actions :chart="chart" />
-      </div>
-    </div>
-  </div>
+  <highcharts
+    :options="{ ...chartOptionsDefaults, ...chartOptions }"
+    :callback="highchartsCallback"
+  />
 </template>
 
 <script>
@@ -44,11 +13,8 @@ import { api } from "@/lib/api";
 
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
+import { useCountryStore } from "@/stores/countryStore";
 
-import EclSpinner from "@/components/ecl/EclSpinner.vue";
-
-import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
-import ChartActions from "@/components/charts/ChartActions.vue";
 import { getDisplay, getUnitDisplay, toAPIKey } from "@/lib/utils";
 
 /**
@@ -59,12 +25,10 @@ export default {
   name: "BaseChart",
   components: {
     highcharts: Chart,
-    ChartActions,
-    ChartDefinitions,
-    EclSpinner,
   },
   data() {
     return {
+      loading: false,
       apiData: [],
       chart: null,
     };
@@ -72,6 +36,7 @@ export default {
   computed: {
     ...mapStores(useFilterStore),
     ...mapState(useChartStore, ["currentChart"]),
+    ...mapState(useCountryStore, ["countryByCode"]),
     ...mapState(useFilterStore, [
       "indicatorGroup",
       "indicator",
@@ -81,7 +46,7 @@ export default {
       "unit",
       "country",
     ]),
-    showAxisLabels() {
+    showAxisLabel() {
       return true;
     },
     /**
@@ -108,19 +73,6 @@ export default {
     },
     filterZComponents() {
       return [];
-    },
-    /**
-     * Normalize components to Objects with key, component
-     * and attrs attributes.
-     */
-    normalizedComponents() {
-      const result = [];
-      for (const axis of ["X", "Y", "Z", ""]) {
-        for (const item of this[`filter${axis}Components`]) {
-          result.push(this.normalizeComponent(item, axis));
-        }
-      }
-      return result;
     },
     endpoint() {
       return "/facts/";
@@ -318,40 +270,6 @@ export default {
         },
       };
     },
-    /**
-     * Entries that will be defined in the page footer
-     */
-    defineEntries() {
-      const result = [];
-      for (const axis of ["", "X", "Y", "Z"]) {
-        for (let itemType of ["Indicator", "Breakdown", "Unit"]) {
-          let items = null;
-          const val = this.filterStore[axis][itemType.toLowerCase()];
-
-          if (axis && this.showAxisLabels) {
-            itemType = `(${axis}) ${itemType}`;
-          }
-
-          // coerce all values to array if not already, to support
-          // multiple definitions of the same type
-          if (!val) {
-            items = [];
-          } else if (Array.isArray(val)) {
-            items = val;
-          } else {
-            items = [val];
-          }
-
-          for (const item of items) {
-            result.push({
-              itemType,
-              ...item,
-            });
-          }
-        }
-      }
-      return result;
-    },
   },
   watch: {
     endpointParams(newValue, oldValue) {
@@ -399,13 +317,13 @@ export default {
         return;
       }
 
-      this.loaded = false;
-      this.chart.showLoading();
+      this.loading = true;
+      this.chart?.showLoading();
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
       } finally {
-        this.chart.hideLoading();
-        this.loaded = true;
+        this.chart?.hideLoading();
+        this.loading = false;
       }
     },
     async getFacts() {

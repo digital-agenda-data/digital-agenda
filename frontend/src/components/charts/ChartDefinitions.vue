@@ -64,19 +64,21 @@
 
 <script>
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import { mapState } from "pinia";
+import { mapState, mapStores } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
 import { api } from "@/lib/api";
 import { setEquals } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useFilterStore } from "@/stores/filterStore";
 
 export default {
   name: "ChartDefinitions",
   components: { EclLink },
   props: {
-    items: {
-      type: Array,
-      required: true,
+    showAxisLabel: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
   data() {
@@ -85,12 +87,44 @@ export default {
     };
   },
   computed: {
+    ...mapStores(useFilterStore),
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
     dataSourceCodes() {
       return new Set(
         this.items.map((item) => item.data_source).filter((code) => !!code)
       );
+    },
+    items() {
+      const result = [];
+      for (const axis of ["", "X", "Y", "Z"]) {
+        for (let itemType of ["Indicator", "Breakdown", "Unit"]) {
+          let items = null;
+          const val = this.filterStore[axis][itemType.toLowerCase()];
+
+          if (axis && this.showAxisLabels) {
+            itemType = `(${axis}) ${itemType}`;
+          }
+
+          // coerce all values to array if not already, to support
+          // multiple definitions of the same type
+          if (!val) {
+            items = [];
+          } else if (Array.isArray(val)) {
+            items = val;
+          } else {
+            items = [val];
+          }
+
+          for (const item of items) {
+            result.push({
+              itemType,
+              ...item,
+            });
+          }
+        }
+      }
+      return result;
     },
   },
   watch: {

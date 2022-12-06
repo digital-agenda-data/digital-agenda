@@ -297,14 +297,16 @@ class FactsViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericViewSet):
             "country__code",
             "indicator__code",
             "breakdown__code",
+            "unit__code",
         )
         .filter(value__isnull=False)
-        .select_related("country", "indicator", "breakdown", "period")
+        .select_related("country", "indicator", "breakdown", "period", "unit")
         .only(
             "country__code",
             "indicator__code",
             "breakdown__code",
             "period__code",
+            "unit__code",
             "value",
             "flags",
         )

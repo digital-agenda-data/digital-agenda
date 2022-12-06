@@ -11,11 +11,6 @@ import { api } from "@/lib/api";
 export default {
   name: "ScatterCompareTwoIndicators",
   extends: BaseMultiAxisChart,
-  data() {
-    return {
-      countriesList: [],
-    };
-  },
   computed: {
     filterXComponents() {
       return [
@@ -52,13 +47,6 @@ export default {
     },
     groupBy() {
       return ["country", "axis"];
-    },
-    countryByCode() {
-      const result = new Map();
-      for (const country of this.countriesList) {
-        result.set(country.code, country);
-      }
-      return result;
     },
     series() {
       return Object.keys(this.apiValuesGrouped).map((countryCode) => {
@@ -133,13 +121,6 @@ export default {
           },
         },
       };
-    },
-  },
-  methods: {
-    async loadExtra() {
-      if (this.countriesList.length === 0) {
-        this.countriesList = (await api.get(`/countries/`)).data;
-      }
     },
   },
 };

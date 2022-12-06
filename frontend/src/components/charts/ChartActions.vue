@@ -55,7 +55,7 @@ import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export default {
-  name: "ChartAction",
+  name: "ChartActions",
   components: { EclLink, EclSocialMediaShare },
   props: {
     chart: {

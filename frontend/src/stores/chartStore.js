@@ -13,7 +13,9 @@ export const useChartStore = defineStore("chart", {
       return useRoute().params.chartCode;
     },
     currentChart(state) {
-      return state.charts.find((item) => item.code === this.currentChartCode);
+      return (
+        state.charts.find((item) => item.code === this.currentChartCode) || {}
+      );
     },
   },
   actions: {

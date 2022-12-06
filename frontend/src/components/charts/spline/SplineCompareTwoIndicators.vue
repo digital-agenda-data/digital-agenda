@@ -10,7 +10,7 @@ export default {
   name: "SplineCompareTwoIndicators",
   extends: BaseMultiAxisChart,
   computed: {
-    showAxisLabels() {
+    showAxisLabel() {
       return false;
     },
     filterXComponents() {

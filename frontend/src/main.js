@@ -1,4 +1,4 @@
-import { createApp } from "vue";
+import { createApp, reactive } from "vue";
 import { createPinia } from "pinia";
 import HighchartsVue from "highcharts-vue";
 
@@ -88,6 +88,13 @@ app.use(router);
 app.use(createPinia());
 
 app.use(HighchartsVue);
+
+// Makes this.$refs reactive
+app.mixin({
+  beforeCreate() {
+    this.$.refs = reactive({});
+  },
+});
 
 app.directive("ecl-init", ECLInit);
 
