@@ -17,6 +17,8 @@ import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { api } from "@/lib/api";
 import { useFilterStore } from "@/stores/filterStore";
 import { getDisplay, randomChoice } from "@/lib/utils";
+import { mapState } from "pinia";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export default {
   name: "BaseFilter",
@@ -53,7 +55,6 @@ export default {
       default: false,
     },
   },
-  emits: ["change"],
   data() {
     return {
       internalValue: null,
@@ -62,6 +63,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(useChartGroupStore, ["currentLabels"]),
     filterStore() {
       return useFilterStore()[this.suffix];
     },
@@ -98,7 +100,7 @@ export default {
       return "";
     },
     label() {
-      return "";
+      return this.currentLabels[this.queryName] || this.queryName;
     },
     labelWithAxis() {
       if (!this.suffix || !this.showAxisLabel) return this.label;
@@ -197,7 +199,6 @@ export default {
     },
     selected() {
       this.filterStore[this.queryName] = this.selected;
-      this.$emit("change", this.selected);
     },
   },
   mounted() {

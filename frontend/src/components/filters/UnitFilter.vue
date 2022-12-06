@@ -14,9 +14,6 @@ export default {
         `/indicators/${this.filterStore.indicator.code}/units/`
       );
     },
-    label() {
-      return "Unit of measure";
-    },
   },
 };
 </script>

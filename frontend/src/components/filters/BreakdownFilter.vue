@@ -15,9 +15,6 @@ export default {
         `/indicators/${this.filterStore.indicator.code}/breakdown-groups/${this.filterStore.breakdownGroup.code}/breakdowns/`
       );
     },
-    label() {
-      return "Breakdown";
-    },
   },
 };
 </script>

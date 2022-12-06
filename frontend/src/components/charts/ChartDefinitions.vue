@@ -5,7 +5,7 @@
     class="ecl-u-type-paragraph"
   >
     <div class="ecl-u-mt-m">
-      <b>{{ item.itemType }}:&nbsp;</b>
+      <b>{{ item.display }}:&nbsp;</b>
       <span>{{ item.label || item.alt_label }}</span>
     </div>
     <div class="ecl-u-ml-m ecl-u-mt-m">
@@ -89,7 +89,7 @@ export default {
   computed: {
     ...mapStores(useFilterStore),
     ...mapState(useChartStore, ["currentChart"]),
-    ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
+    ...mapState(useChartGroupStore, ["currentLabels", "currentChartGroupCode"]),
     dataSourceCodes() {
       return new Set(
         this.items.map((item) => item.data_source).filter((code) => !!code)
@@ -98,12 +98,13 @@ export default {
     items() {
       const result = [];
       for (const axis of ["", "X", "Y", "Z"]) {
-        for (let itemType of ["Indicator", "Breakdown", "Unit"]) {
+        for (const itemType of ["indicator", "breakdown", "unit"]) {
           let items = null;
-          const val = this.filterStore[axis][itemType.toLowerCase()];
+          let display = this.currentLabels[itemType] || itemType;
+          const val = this.filterStore[axis][itemType];
 
           if (axis && this.showAxisLabels) {
-            itemType = `(${axis}) ${itemType}`;
+            display = `(${axis}) ${display}`;
           }
 
           // coerce all values to array if not already, to support
@@ -118,6 +119,7 @@ export default {
 
           for (const item of items) {
             result.push({
+              display,
               itemType,
               ...item,
             });

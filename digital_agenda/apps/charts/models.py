@@ -23,6 +23,13 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     description = RichTextField()
     image = models.ImageField(blank=True)
 
+    indicator_group_label = models.CharField(max_length=60, default="Indicator group")
+    indicator_label = models.CharField(max_length=60, default="Indicator")
+    breakdown_group_label = models.CharField(max_length=60, default="Breakdown group")
+    breakdown_label = models.CharField(max_length=60, default="Breakdown")
+    period_label = models.CharField(max_length=60, default="Period")
+    unit_label = models.CharField(max_length=60, default="Unit of measure")
+
     indicator_groups = models.ManyToManyField("core.IndicatorGroup")
     periods = models.ManyToManyField(
         "core.Period",

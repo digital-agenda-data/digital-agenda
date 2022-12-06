@@ -20,9 +20,6 @@ export default {
         `/chart-groups/${this.$route.params.chartGroupCode}/indicator-groups/`
       );
     },
-    label() {
-      return "Indicator";
-    },
   },
 };
 </script>

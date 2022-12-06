@@ -14,9 +14,6 @@ export default {
         `/indicators/${this.filterStore.indicator.code}/periods/`
       );
     },
-    label() {
-      return "Period";
-    },
     defaultSingleValue() {
       // Default to the latest period instead of a random choice
       return this.items[0]?.id;

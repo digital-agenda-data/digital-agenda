@@ -25,9 +25,6 @@ export default {
       }
       return {};
     },
-    label() {
-      return "Indicator";
-    },
   },
 };
 </script>

@@ -19,6 +19,13 @@ class ChartGroupListSerializer(serializers.ModelSerializer):
             "image",
             "is_draft",
             "periods",
+            # Custom labels
+            "indicator_group_label",
+            "indicator_label",
+            "breakdown_group_label",
+            "breakdown_label",
+            "period_label",
+            "unit_label",
         )
         read_only_fields = fields
 

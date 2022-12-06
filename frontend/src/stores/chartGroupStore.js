@@ -17,6 +17,16 @@ export const useChartGroupStore = defineStore("chartGroup", {
         (item) => item.code === this.currentChartGroupCode
       );
     },
+    currentLabels() {
+      return {
+        indicatorGroup: this.currentChartGroup.indicator_group_label,
+        indicator: this.currentChartGroup.indicator_label,
+        breakdownGroup: this.currentChartGroup.breakdown_group_label,
+        breakdown: this.currentChartGroup.breakdown_label,
+        period: this.currentChartGroup.period_label,
+        unit: this.currentChartGroup.unit_label,
+      };
+    },
   },
   actions: {
     async getChartGroups() {
