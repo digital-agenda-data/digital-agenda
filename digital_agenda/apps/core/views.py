@@ -143,8 +143,12 @@ class IndicatorFilteredMixin:
     """
 
     def get_queryset(self):
-        return self.model.objects.filter(  # noqa
-            indicators__code__in=[self.kwargs["indicator_code"]]  # noqa
+        return (
+            super()
+            .get_queryset()
+            .filter(  # noqa
+                indicators__code__in=[self.kwargs["indicator_code"]]  # noqa
+            )
         )
 
 

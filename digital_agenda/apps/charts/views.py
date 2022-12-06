@@ -19,9 +19,11 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         queryset = ChartGroup.objects.all().prefetch_related(
+            "periods",
             "indicator_groups",
             "indicator_groups__indicators",
             "indicator_groups__indicators__periods",
+            "indicator_groups__indicators__groups",
             "indicator_groups__indicators__data_source",
         )
 
