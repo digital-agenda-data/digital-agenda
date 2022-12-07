@@ -11,7 +11,7 @@
     <div class="ecl-u-ml-m ecl-u-mt-m">
       <div v-if="item.definition">
         <b>Definition:&nbsp;</b>
-        <span>{{ item.definition }}</span>
+        <span v-html="item.definition" />
       </div>
 
       <div v-if="item.note">

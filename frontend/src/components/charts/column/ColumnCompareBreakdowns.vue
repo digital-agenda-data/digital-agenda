@@ -42,9 +42,11 @@ export default {
               this.apiValuesGrouped[breakdown.code] &&
               this.apiValuesGrouped[breakdown.code][country.code];
 
+            const weight = this.getWeight(breakdown);
+
             return {
               apiValue,
-              y: apiValue || 0,
+              y: apiValue * weight || 0,
               name: this.getDisplay(country),
               color: colorForCountry(country.code, seriesIndex),
             };
@@ -64,6 +66,11 @@ export default {
           type: "category",
         },
       };
+    },
+  },
+  methods: {
+    getWeight() {
+      return 1;
     },
   },
 };

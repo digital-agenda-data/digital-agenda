@@ -1,5 +1,20 @@
 /* Extra ECL classes or overrides */
 
+/*
+    Make the range input fill available space by default if no
+    size has been specified.
+*/
+.ecl-range {
+  width: 100%;
+}
+
+/*
+    I'm not sure why this has extra margin here, just remove it  :/
+ */
+.ecl-form-group .ecl-range {
+  margin-top: 0;
+}
+
 .ecl-u-break-word {
   word-break: break-word;
 }

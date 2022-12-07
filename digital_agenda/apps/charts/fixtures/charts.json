@@ -19,7 +19,7 @@
   "pk": 2,
   "fields": {
     "created_at": "2022-11-21T08:56:56.665Z",
-    "updated_at": "2022-11-21T09:05:22.534Z",
+    "updated_at": "2022-12-07T07:17:37.441Z",
     "display_order": 6,
     "is_draft": false,
     "chart_group": 2,
@@ -334,13 +334,13 @@
   "pk": 27,
   "fields": {
     "created_at": "2022-12-06T12:49:06.975Z",
-    "updated_at": "2022-12-06T12:49:06.975Z",
+    "updated_at": "2022-12-07T07:16:55.475Z",
     "display_order": 1,
     "is_draft": true,
     "chart_group": 1,
     "name": "DESI composite index",
     "code": "1-desi-composite-index",
-    "chart_type": "TABLE_DEBUG_DATA",
+    "chart_type": "COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED",
     "description": "<p>This chart shows the structure of the composite index based on a weighted sum of its five components. The chart allows users to change the weighting of the components and see how countries&#39; ranking is modified.</p>"
   }
 },

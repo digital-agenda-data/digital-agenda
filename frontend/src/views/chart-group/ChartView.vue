@@ -36,7 +36,7 @@
 <script>
 import { mapState } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
-import chartComponents from "@/lib/chartComponents";
+import chartRegistry from "@/lib/chartRegistry";
 import ChartActions from "@/components/charts/ChartActions.vue";
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import EclIcon from "@/components/ecl/EclIcon.vue";
@@ -47,7 +47,7 @@ export default {
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
     chartComponent() {
-      return chartComponents[this.currentChart.chart_type]?.component;
+      return chartRegistry[this.currentChart.chart_type]?.component;
     },
     /**
      * Normalize components to Objects with key, component
@@ -79,7 +79,11 @@ export default {
 
       result.key = result.key || result.component.name + suffix;
       result.attrs.suffix = suffix;
-      result.attrs.class = `chart-filter${suffix}`;
+      result.attrs.class = [
+        ...(result.attrs.class || []),
+        "chart-filter",
+        `chart-filter${suffix}`,
+      ];
       result.attrs.showAxisLabel = this.$refs.chart.showAxisLabel;
 
       return result;

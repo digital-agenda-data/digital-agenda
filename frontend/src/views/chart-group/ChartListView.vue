@@ -24,7 +24,7 @@ import ChartGroupNav from "@/components/ChartGroupNav.vue";
 import { useChartStore } from "@/stores/chartStore";
 import placeholderImageURL from "@/assets/placeholder.png?url";
 import EclListIllustration from "@/components/ecl/EclListIllustration.vue";
-import chartComponents from "@/lib/chartComponents";
+import chartRegistry from "@/lib/chartRegistry";
 
 export default {
   name: "ChartListView",
@@ -47,7 +47,7 @@ export default {
           title: `${index + 1}. ${chart.name}`,
           image:
             chart.image ||
-            chartComponents[chart.chart_type]?.image ||
+            chartRegistry[chart.chart_type]?.image ||
             placeholderImageURL,
           description: chart.description,
           to: {

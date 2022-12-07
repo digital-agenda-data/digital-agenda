@@ -291,22 +291,6 @@ export default {
         .map((s) => s?.trim())
         .join(", ");
     },
-    normalizeComponent(item, suffix = "") {
-      let result = item;
-      if (!item.component) {
-        result = {
-          component: item,
-          attrs: {},
-        };
-      }
-
-      result.key = result.key || result.component.name + suffix;
-      result.attrs.suffix = suffix;
-      result.attrs.class = `chart-filter${suffix}`;
-      result.attrs.showAxisLabel = this.showAxisLabels;
-
-      return result;
-    },
     highchartsCallback(chart) {
       this.chart = chart;
       this.chart.showLoading();

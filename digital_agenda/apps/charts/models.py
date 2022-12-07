@@ -57,7 +57,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     #
     # When adding an entry here a corresponding entry must be added in
     #
-    #   frontend/src/lib/chartComponents.js
+    #   frontend/src/lib/chartRegistry.js
     #
     CHART_TYPE_CHOICES = [
         (
@@ -68,6 +68,10 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
                 (
                     "COLUMN_STACKED_COMPARE_BREAKDOWNS",
                     "Column Chart Stacked: Compare Breakdowns",
+                ),
+                (
+                    "COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED",
+                    "Column Chart Stacked: Compare Breakdowns Weighted",
                 ),
             ),
         ),
