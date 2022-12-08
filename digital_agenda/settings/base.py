@@ -133,7 +133,6 @@ POSTGRES_USER = get_env_var("POSTGRES_USER")
 POSTGRES_PASSWORD = get_env_var("POSTGRES_PASSWORD")
 POSTGRES_DASHBOARD_USER = get_env_var("POSTGRES_DASHBOARD_USER")
 POSTGRES_DASHBOARD_PASSWORD = get_env_var("POSTGRES_DASHBOARD_PASSWORD")
-POSTGRES_CONN_MAX_AGE = get_int_env_var("CONN_MAX_AGE", 500)
 
 DATABASES = {
     "default": {
@@ -144,7 +143,8 @@ DATABASES = {
         "USER": POSTGRES_USER,
         "PASSWORD": POSTGRES_PASSWORD,
         "OPTIONS": {"sslmode": "disable"},
-        "CONN_MAX_AGE": POSTGRES_CONN_MAX_AGE,
+        "CONN_MAX_AGE": None,
+        "CONN_HEALTH_CHECKS": True,
     },
     "dashboard": {
         "ENGINE": "psqlextra.backend",
@@ -156,7 +156,8 @@ DATABASES = {
         "OPTIONS": {
             "options": "-c default_transaction_read_only=on -c statement_timeout=5000"
         },
-        "CONN_MAX_AGE": POSTGRES_CONN_MAX_AGE,
+        "CONN_MAX_AGE": None,
+        "CONN_HEALTH_CHECKS": True,
     },
 }
 
@@ -206,7 +207,9 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticatedOrReadOnly",),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+    ),
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 25,
