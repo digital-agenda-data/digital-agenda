@@ -67,12 +67,6 @@ Highcharts.setOptions({
       enabled: false,
     },
   },
-  mapNavigation: {
-    enabled: false,
-    buttonOptions: {
-      verticalAlign: "bottom",
-    },
-  },
   plotOptions: {
     series: {
       dataLabels: {
