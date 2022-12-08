@@ -5,7 +5,11 @@ import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
-import topology from "@/assets/nuts/NUTS_RG_10M_2021_3857_LEVL_0.json";
+import topologyAllCountries from "@/assets/topology.json";
+import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
+
+const valueNotAvailableColor = "#E3E3E3";
+const hoverCountryColor = "#467A39";
 
 export default {
   name: "MapCompareCountries",
@@ -21,25 +25,33 @@ export default {
         BreakdownWithGroupsFilter,
         PeriodFilter,
         UnitFilter,
+        { component: CountryMultiFilter, attrs: { allInitial: true } },
       ];
     },
     endpointFilters() {
       return ["breakdown", "period", "indicator", "unit"];
     },
+    groupBy() {
+      return ["country"];
+    },
     series() {
       return [
         {
-          name: this.getDisplay(this.unit),
-          data: this.apiData.map((item) => {
+          data: this.countries.map((country) => {
+            const apiValue = this.apiValuesGrouped[country.code];
+
             return {
-              code: item.country,
-              value: item.value,
+              key: this.getDisplay(this.countryByCode.get(country.code)),
+              code: country.code,
+              value: apiValue,
+              color:
+                apiValue === undefined ? valueNotAvailableColor : undefined,
             };
           }),
-          joinBy: ["NUTS_ID", "code"],
+          joinBy: ["CNTR_ID", "code"],
           states: {
             hover: {
-              color: "#a4edba",
+              color: hoverCountryColor,
             },
           },
         },
@@ -51,7 +63,7 @@ export default {
     chartOptions() {
       return {
         chart: {
-          map: topology,
+          map: topologyAllCountries,
         },
         legend: {
           enabled: true,
@@ -66,11 +78,8 @@ export default {
           // projection: {
           //   name: "WebMercator",
           // },
-          // center: [10, 58],
-          // zoom: 1.5,
-        },
-        tooltip: {
-          valueSuffix: this.getDisplay(this.unit),
+          center: [-52668.06327497485, 7321748.004313275],
+          zoom: -13.009736538516464,
         },
         colorAxis: {
           min: 0,
