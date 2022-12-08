@@ -105,6 +105,15 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             ),
         ),
         (
+            "Map",
+            (
+                (
+                    "MAP_COMPARE_COUNTRIES",
+                    "Map Chart: Compare Countries",
+                ),
+            ),
+        ),
+        (
             "Table",
             (
                 (

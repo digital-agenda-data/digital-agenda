@@ -10,6 +10,7 @@ import SplineCompareTwoIndicators from "@/components/charts/spline/SplineCompare
 import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterCompareTwoIndicators.vue";
 import BubbleCompareThreeIndicators from "@/components/charts/bubble/BubbleCompareThreeIndicators.vue";
 
+import MapCompareCountries from "@/components/charts/map/MapCompareCountries.vue";
 import TableDebugData from "@/components/charts/table/TableDebugData.vue";
 
 import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
@@ -19,6 +20,7 @@ import splineChartUrl from "@/assets/chart-images/spline/spline-chart.png";
 import splineChart2Url from "@/assets/chart-images/spline/spline-chart-2.png";
 import scatterChartUrl from "@/assets/chart-images/scatter/scatter-chart.png";
 import bubbleChartUrl from "@/assets/chart-images/bubble/bubble-chart.png";
+import mapChartUrl from "@/assets/chart-images/map/map-chart.png";
 
 // Map values from the backend to frontend components
 export default {
@@ -57,6 +59,10 @@ export default {
   BUBBLE_COMPARE_THREE_INDICATORS: {
     component: BubbleCompareThreeIndicators,
     image: bubbleChartUrl,
+  },
+  MAP_COMPARE_COUNTRIES: {
+    component: MapCompareCountries,
+    image: mapChartUrl,
   },
   TABLE_DEBUG_DATA: {
     component: TableDebugData,

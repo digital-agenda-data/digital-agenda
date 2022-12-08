@@ -1,5 +1,6 @@
 <template>
   <highcharts
+    :constructor-type="constructorType"
     :options="{ ...chartOptionsDefaults, ...chartOptions }"
     :callback="highchartsCallback"
   />
@@ -46,6 +47,9 @@ export default {
       "unit",
       "country",
     ]),
+    constructorType() {
+      return "chart";
+    },
     showAxisLabel() {
       return true;
     },
@@ -93,7 +97,7 @@ export default {
      * before sending to the API.
      */
     endpointFilters() {
-      return [];
+      return ["breakdown", "period", "indicator", "unit", "country"];
     },
     /**
      * Compute API query params based on the endpointFilters property. Multiple
