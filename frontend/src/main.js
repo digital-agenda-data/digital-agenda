@@ -19,6 +19,13 @@ app.mixin({
     // Makes this.$refs reactive
     this.$.refs = reactive({});
   },
+  methods: {
+    errorMustImplement(propName) {
+      throw Error(
+        `Component "${this.$options.name}" must implement the "${propName}" property to work correctly.`
+      );
+    },
+  },
 });
 
 app.directive("ecl-init", ECLInit);

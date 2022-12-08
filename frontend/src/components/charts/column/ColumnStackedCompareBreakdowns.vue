@@ -29,9 +29,6 @@ export default {
     },
     chartOptions() {
       return {
-        chart: {
-          type: "column",
-        },
         legend: {
           enabled: (this.breakdown || []).length > 1,
         },

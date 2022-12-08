@@ -47,9 +47,24 @@ export default {
       "unit",
       "country",
     ]),
+    /**
+     * Default chart type for the series. See docs upstream:
+     *
+     *  https://api.highcharts.com/highcharts/chart.type
+     */
+    chartType() {
+      return "";
+    },
+    /**
+     * The Highchart constructor used to initialize the chart. Possible
+     * values include: chart, mapChart, stockChart, ganttChart
+     */
     constructorType() {
       return "chart";
     },
+    /**
+     * Show axis labels in filters and definitions.
+     */
     showAxisLabel() {
       return true;
     },
@@ -97,7 +112,7 @@ export default {
      * before sending to the API.
      */
     endpointFilters() {
-      return ["breakdown", "period", "indicator", "unit", "country"];
+      return this.errorMustImplement("endpointFilters");
     },
     /**
      * Compute API query params based on the endpointFilters property. Multiple
@@ -159,6 +174,9 @@ export default {
      */
     chartOptionsDefaults() {
       return {
+        chart: {
+          type: this.chartType,
+        },
         series: this.series,
         title: {
           text: this.makeTitle([this.indicator, this.breakdown]),
@@ -246,6 +264,11 @@ export default {
         new Set(this.apiData.map((item) => item.period))
       ).sort();
     },
+    /**
+     * Default tooltip used. See documentation upstream here
+     *
+     *  https://api.highcharts.com/highcharts/tooltip
+     */
     tooltip() {
       const parent = this;
       return {
@@ -293,11 +316,17 @@ export default {
   methods: {
     getDisplay,
     getUnitDisplay,
+    /**
+     * Join objects from the backend or strings to make a title
+     *
+     * @param items {*[]}
+     * @return {String}
+     */
     makeTitle(items) {
       return items
         .map((s) => s?.label)
-        .filter((s) => !!s)
         .map((s) => s?.trim())
+        .filter((s) => !!s)
         .join(", ");
     },
     highchartsCallback(chart) {

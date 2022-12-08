@@ -11,6 +11,9 @@ export default {
   name: "SplineCompareBreakdowns",
   extends: BaseChart,
   computed: {
+    chartType() {
+      return "spline";
+    },
     filterComponents() {
       return [
         IndicatorGroupFilter,
@@ -36,8 +39,7 @@ export default {
           name: this.getDisplay(breakdown),
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue =
-              this.apiValuesGrouped[breakdown.code] &&
-              this.apiValuesGrouped[breakdown.code][periodCode];
+              this.apiValuesGrouped[breakdown.code]?.[periodCode];
 
             return {
               y: apiValue,
@@ -50,9 +52,6 @@ export default {
     },
     chartOptions() {
       return {
-        chart: {
-          type: "spline",
-        },
         subtitle: {
           text: this.getDisplay(this.country),
         },

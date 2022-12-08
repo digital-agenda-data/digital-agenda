@@ -10,6 +10,9 @@ export default {
   name: "BubbleCompareThreeIndicators",
   extends: ScatterCompareTwoIndicators,
   computed: {
+    chartType() {
+      return "bubble";
+    },
     filterZComponents() {
       return [
         {
@@ -32,9 +35,6 @@ export default {
     },
     groupBy() {
       return ["country", "axis"];
-    },
-    chartType() {
-      return "bubble";
     },
     chartSubtitle() {
       return (

@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     groupEndpoint() {
-      return "";
+      return this.errorMustImplement("groupEndpoint");
     },
     items() {
       const groups = new Map();

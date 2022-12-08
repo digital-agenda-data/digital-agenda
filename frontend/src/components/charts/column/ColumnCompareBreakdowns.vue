@@ -13,6 +13,9 @@ export default {
   name: "ColumnCompareBreakdowns",
   extends: BaseChart,
   computed: {
+    chartType() {
+      return "column";
+    },
     filterComponents() {
       return [
         IndicatorGroupFilter,
@@ -39,8 +42,7 @@ export default {
           name: this.getDisplay(breakdown),
           data: this.countries.map((country) => {
             const apiValue =
-              this.apiValuesGrouped[breakdown.code] &&
-              this.apiValuesGrouped[breakdown.code][country.code];
+              this.apiValuesGrouped[breakdown.code]?.[country.code];
 
             const weight = this.getWeight(breakdown);
 
@@ -56,9 +58,6 @@ export default {
     },
     chartOptions() {
       return {
-        chart: {
-          type: "column",
-        },
         legend: {
           enabled: (this.breakdown || []).length > 1,
         },

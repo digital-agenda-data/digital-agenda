@@ -10,6 +10,9 @@ export default {
   name: "SplineCompareCountries",
   extends: BaseChart,
   computed: {
+    chartType() {
+      return "spline";
+    },
     filterComponents() {
       return [
         IndicatorGroupFilter,
@@ -42,9 +45,6 @@ export default {
     },
     chartOptions() {
       return {
-        chart: {
-          type: "spline",
-        },
         plotOptions: {
           series: {
             connectNulls: true,

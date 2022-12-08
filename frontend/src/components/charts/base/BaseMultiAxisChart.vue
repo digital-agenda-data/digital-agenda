@@ -1,6 +1,9 @@
 <script>
 import BaseChart from "@/components/charts/base/BaseChart.vue";
 
+/**
+ * Base chart for multi data loads for different axis.
+ */
 export default {
   name: "BaseMultiAxisChart",
   extends: BaseChart,

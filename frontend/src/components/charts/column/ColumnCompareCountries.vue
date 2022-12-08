@@ -12,6 +12,9 @@ export default {
   name: "ColumnCompareCountries",
   extends: BaseChart,
   computed: {
+    chartType() {
+      return "column";
+    },
     filterComponents() {
       return [
         IndicatorGroupFilter,
@@ -50,9 +53,6 @@ export default {
     },
     chartOptions() {
       return {
-        chart: {
-          type: "column",
-        },
         xAxis: {
           type: "category",
         },

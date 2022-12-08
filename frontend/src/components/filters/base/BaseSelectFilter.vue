@@ -20,35 +20,69 @@ import { getDisplay, randomChoice } from "@/lib/utils";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
+/**
+ * Base component for all filters. Extend this component and
+ * override various computed properties to create a new filter.
+ */
 export default {
   name: "BaseFilter",
   components: { EclSelect },
   props: {
-    suffix: {
+    /**
+     * The axis used for:
+     *  - storing data in the filterStore
+     *  - getting data from the filterStore
+     *  - appending to the query parameter name in the Route
+     *    (e.g. "period", becomes "periodX" if specified)
+     */
+    axis: {
       type: String,
       required: false,
       default: "",
+      validator(value) {
+        return ["", "X", "Y", "Z"].includes(value);
+      },
     },
+    /**
+     * Set "display: none" on the component. Useful for loading
+     * extra data that doesn't require the user to select.
+     */
     hidden: {
       type: Boolean,
       required: false,
       default: false,
     },
+    /**
+     * If true syncs the selected value to the query parameter in
+     * the Route. (Two way binding)
+     */
     syncRoute: {
       type: Boolean,
       required: false,
       default: true,
     },
+    /**
+     * Size passed directly to EclSelect (see docs there)
+     */
     size: {
       type: String,
       required: false,
       default: null,
     },
+    /**
+     * If True includes the axis name in the input's label.
+     *
+     *  E.g (X) Period
+     */
     showAxisLabel: {
       type: Boolean,
       required: false,
       default: true,
     },
+    /**
+     * When using a multi-choice select filter, set the default to
+     * ALL possible values.
+     */
     allInitial: {
       type: Boolean,
       required: false,
@@ -65,7 +99,7 @@ export default {
   computed: {
     ...mapState(useChartGroupStore, ["currentLabels"]),
     filterStore() {
-      return useFilterStore()[this.suffix];
+      return useFilterStore()[this.axis];
     },
     modelValue: {
       get() {
@@ -73,9 +107,7 @@ export default {
           return this.internalValue || this.emptyValue;
         }
 
-        return (
-          this.$route.query[this.queryName + this.suffix] || this.emptyValue
-        );
+        return this.$route.query[this.queryName + this.axis] || this.emptyValue;
       },
       set(value) {
         this.internalValue = value;
@@ -84,28 +116,28 @@ export default {
           this.$router.replace({
             query: {
               ...this.$route.query,
-              [this.queryName + this.suffix]: value,
+              [this.queryName + this.axis]: value,
             },
           });
         }
       },
     },
+    queryName() {
+      return this.errorMustImplement("queryName");
+    },
     endpoint() {
-      return "";
+      return this.errorMustImplement("endpoint");
     },
     endpointParams() {
       return {};
-    },
-    queryName() {
-      return "";
     },
     label() {
       return this.currentLabels[this.queryName] || this.queryName;
     },
     labelWithAxis() {
-      if (!this.suffix || !this.showAxisLabel) return this.label;
+      if (!this.axis || !this.showAxisLabel) return this.label;
 
-      return `(${this.suffix}) ${this.label}`;
+      return `(${this.axis}) ${this.label}`;
     },
     items() {
       return this.apiData.map((item) => {

@@ -10,6 +10,9 @@ export default {
   name: "SplineCompareTwoIndicators",
   extends: BaseMultiAxisChart,
   computed: {
+    chartType() {
+      return "spline";
+    },
     showAxisLabel() {
       return false;
     },
@@ -49,9 +52,7 @@ export default {
           yAxis: index,
           name: this.getDisplay(indicator),
           data: this.apiDataPeriods.map((periodCode) => {
-            const apiValue =
-              this.apiValuesGrouped[axis] &&
-              this.apiValuesGrouped[axis][periodCode];
+            const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
 
             return {
               y: apiValue,
@@ -66,9 +67,6 @@ export default {
     },
     chartOptions() {
       return {
-        chart: {
-          type: "spline",
-        },
         title: {
           text:
             this.makeTitle([

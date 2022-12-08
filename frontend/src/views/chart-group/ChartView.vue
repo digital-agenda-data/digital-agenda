@@ -56,9 +56,7 @@ export default {
     normalizedFilterComponents() {
       const result = [];
       for (const axis of ["X", "Y", "Z", ""]) {
-        const items =
-          (this.$refs.chart && this.$refs.chart[`filter${axis}Components`]) ||
-          [];
+        const items = this.$refs.chart?.[`filter${axis}Components`] ?? [];
 
         for (const item of items) {
           result.push(this.normalizeFilterComponent(item, axis));
@@ -77,14 +75,15 @@ export default {
         };
       }
 
-      result.key = result.key || result.component.name + suffix;
-      result.attrs.suffix = suffix;
+      result.key ??= result.component.name + suffix;
+      result.attrs.axis ??= suffix;
+      result.attrs.showAxisLabel ??= this.$refs.chart.showAxisLabel;
+
       result.attrs.class = [
         ...(result.attrs.class || []),
         "chart-filter",
         `chart-filter${suffix}`,
       ];
-      result.attrs.showAxisLabel = this.$refs.chart.showAxisLabel;
 
       return result;
     },

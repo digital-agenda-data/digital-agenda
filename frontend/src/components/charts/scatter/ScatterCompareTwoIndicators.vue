@@ -6,12 +6,14 @@ import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsF
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
-import { api } from "@/lib/api";
 
 export default {
   name: "ScatterCompareTwoIndicators",
   extends: BaseMultiAxisChart,
   computed: {
+    chartType() {
+      return "scatter";
+    },
     filterXComponents() {
       return [
         {
@@ -66,9 +68,6 @@ export default {
           ],
         };
       });
-    },
-    chartType() {
-      return "scatter";
     },
     chartSubtitle() {
       return "";
