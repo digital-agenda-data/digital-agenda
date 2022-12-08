@@ -65,6 +65,8 @@ export default {
         chart: {
           map: topologyAllCountries,
           height: "848px",
+          // Animations for maps are really janky, disable them completely.
+          animation: false,
         },
         // Uncomment this to change the mapView center/zoom manually,
         // and then inspect and update the zoom/center below

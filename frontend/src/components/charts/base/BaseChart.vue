@@ -29,7 +29,6 @@ export default {
   },
   data() {
     return {
-      loading: false,
       apiData: [],
       chart: null,
     };
@@ -331,7 +330,6 @@ export default {
     },
     highchartsCallback(chart) {
       this.chart = chart;
-      this.chart.showLoading();
     },
     async loadData() {
       if (!this.endpointParams) {
@@ -339,13 +337,11 @@ export default {
         return;
       }
 
-      this.loading = true;
       this.chart?.showLoading();
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
       } finally {
         this.chart?.hideLoading();
-        this.loading = false;
       }
     },
     async getFacts() {
