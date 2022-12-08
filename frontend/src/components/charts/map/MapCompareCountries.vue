@@ -5,8 +5,8 @@ import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsFilter.vue";
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
-import topologyAllCountries from "@/assets/topology.json";
 import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
+import topologyAllCountries from "@/assets/topology.json";
 
 const valueNotAvailableColor = "#E3E3E3";
 const hoverCountryColor = "#467A39";
@@ -64,27 +64,28 @@ export default {
       return {
         chart: {
           map: topologyAllCountries,
+          height: "848px",
         },
-        legend: {
-          enabled: true,
-        },
-        mapNavigation: {
-          enabled: true,
-          buttonOptions: {
-            verticalAlign: "bottom",
-          },
-        },
+        // Uncomment this to change the mapView center/zoom manually,
+        // and then inspect and update the zoom/center below
+        // mapNavigation: {
+        //   enabled: true,
+        // },
         mapView: {
-          // projection: {
-          //   name: "WebMercator",
-          // },
-          center: [-52668.06327497485, 7321748.004313275],
-          zoom: -13.009736538516464,
+          center: [501241.73, 7271660.43],
+          zoom: -12.4,
         },
         colorAxis: {
           min: 0,
           max: this.maxValue,
           type: "linear",
+        },
+        legend: {
+          x: 16,
+          enabled: true,
+          floating: true,
+          align: "left",
+          verticalAlign: "middle",
         },
         plotOptions: {
           series: {

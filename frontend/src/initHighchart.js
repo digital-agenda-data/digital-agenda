@@ -34,7 +34,6 @@ Highcharts.setOptions({
   colors: SERIES_COLORS,
   exporting: {
     sourceWidth: 1024,
-    sourceHeight: 600,
     buttons: {
       contextButton: {
         enabled: false,
@@ -66,6 +65,12 @@ Highcharts.setOptions({
     allowDecimals: false,
     title: {
       enabled: false,
+    },
+  },
+  mapNavigation: {
+    enabled: false,
+    buttonOptions: {
+      verticalAlign: "bottom",
     },
   },
   plotOptions: {
