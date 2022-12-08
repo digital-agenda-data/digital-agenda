@@ -130,7 +130,9 @@ export function getDisplay(item) {
 export function getUnitDisplay(value, unit) {
   if (!unit) return;
 
-  if (unit.alt_label.startsWith("%")) {
+  if (value === null || value === undefined) {
+    return `N/A ${unit.alt_label}`;
+  } else if (unit.alt_label.startsWith("%")) {
     return `${value}${unit.alt_label}`;
   } else {
     return `${value} ${unit.alt_label}`;

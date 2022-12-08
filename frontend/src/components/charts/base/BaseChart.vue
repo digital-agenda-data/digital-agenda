@@ -250,14 +250,19 @@ export default {
       const parent = this;
       return {
         formatter() {
-          const result = [`<b>${this.key}</b>`];
+          const result = [`<b>${this.point.options.key ?? this.key}</b>`];
 
           if (this.series.userOptions.name) {
             result.push(this.series.userOptions.name);
           }
 
           if (parent.unit?.code) {
-            result.push(parent.getUnitDisplay(this.y, parent.unit));
+            result.push(
+              parent.getUnitDisplay(
+                this.point.options.value ?? this.point.options.y,
+                parent.unit
+              )
+            );
           }
 
           if (parent.breakdown?.code) {
