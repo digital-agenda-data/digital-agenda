@@ -28,6 +28,13 @@
     }
   }
 
+  .chart-container-digital-agenda {
+    display: flex;
+    min-height: 600px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .digital-agenda-embedded .chart-container-digital-agenda {
     border: none !important;
     margin: 0 !important;

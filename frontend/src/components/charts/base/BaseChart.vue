@@ -1,22 +1,26 @@
 <template>
   <highcharts
+    v-if="ready"
+    class="ecl-u-flex-grow-1"
     :constructor-type="constructorType"
     :options="{ ...chartOptionsDefaults, ...chartOptions }"
     :callback="highchartsCallback"
   />
+  <ecl-spinner v-else size="large" />
 </template>
 
 <script>
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
+
 import { api } from "@/lib/api";
+import { getDisplay, getUnitDisplay, toAPIKey } from "@/lib/utils";
 
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useCountryStore } from "@/stores/countryStore";
-
-import { getDisplay, getUnitDisplay, toAPIKey } from "@/lib/utils";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -25,10 +29,12 @@ import { getDisplay, getUnitDisplay, toAPIKey } from "@/lib/utils";
 export default {
   name: "BaseChart",
   components: {
+    EclSpinner,
     highcharts: Chart,
   },
   data() {
     return {
+      ready: false,
       apiData: [],
       chart: null,
     };
@@ -342,6 +348,9 @@ export default {
         await Promise.all([this.getFacts(), this.loadExtra()]);
       } finally {
         this.chart?.hideLoading();
+        // Don't show the chart until data is ready to avoid unnecessary
+        // layout shifts
+        this.ready = true;
       }
     },
     async getFacts() {

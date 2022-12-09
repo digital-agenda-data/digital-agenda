@@ -16,11 +16,12 @@
   </div>
 
   <div
+    v-if="$refs.chart?.ready"
     class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m hide-embedded"
   >
     <h2>Definition and scopes:</h2>
 
-    <div v-if="$refs.chart" class="ecl-row">
+    <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8">
         <div v-html="currentChart.description" />
         <chart-definitions :show-axis-label="$refs.chart.showAxisLabel" />
