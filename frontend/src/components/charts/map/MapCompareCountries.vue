@@ -77,8 +77,8 @@ export default {
           enabled: false,
         },
         mapView: {
-          center: [501241.73, 7271660.43],
-          zoom: -12.4,
+          center: [348227.6471561784, 7743167.912180269],
+          zoom: -12.65,
         },
         colorAxis: {
           min: 0,
