@@ -22,7 +22,7 @@
 
 <script>
 import { mapActions } from "pinia";
-import { loadScript } from "vue-plugin-load-script";
+import { useScriptTag } from "@vueuse/core";
 
 import momentURL from "moment/min/moment.min.js?url";
 import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
@@ -85,8 +85,8 @@ export default {
     async loadECL() {
       // ECL.js also requires moment loaded in the global scope. (i.e. window)
       // So we also load moment.js here in the same way before loading ECL.js
-      await loadScript(momentURL);
-      await loadScript(eclURL);
+      await useScriptTag(momentURL).load();
+      await useScriptTag(eclURL).load();
     },
     setTitle() {
       if (!this.loaded) return;
