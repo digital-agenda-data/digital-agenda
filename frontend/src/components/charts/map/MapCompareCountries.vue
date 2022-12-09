@@ -30,7 +30,10 @@ export default {
         BreakdownWithGroupsFilter,
         PeriodFilter,
         UnitFilter,
-        { component: CountryMultiFilter, attrs: { allInitial: true } },
+        {
+          component: CountryMultiFilter,
+          attrs: { allInitial: true, ignoreCountryGroups: true },
+        },
       ];
     },
     endpointFilters() {

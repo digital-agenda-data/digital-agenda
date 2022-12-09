@@ -144,7 +144,7 @@ export default {
         return {
           id: item.code,
           text: this.getDisplay(item),
-          item,
+          apiProps: item,
         };
       });
     },
