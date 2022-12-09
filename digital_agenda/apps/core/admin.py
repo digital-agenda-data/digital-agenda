@@ -90,7 +90,8 @@ admin.site.register(Period, DimensionAdmin)
 
 @admin.register(Country)
 class CountryAdmin(DimensionAdmin):
-    list_display = ("code", "label", "alt_label", "color")
+    list_display = ("code", "is_group", "label", "alt_label", "color")
+    list_filter = ("is_group",)
 
 
 class IndicatorFilter(AutocompleteFilter):

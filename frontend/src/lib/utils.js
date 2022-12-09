@@ -94,16 +94,18 @@ export function toAPIKey(key) {
 /**
  * Get chart color for the specified country and series
  *
- * @param countryCode {String}
+ * @param country {Object} Country object from the backend
  * @param seriesIndex {Number}
  * @return {String} rgba
  */
-export function colorForCountry(countryCode, seriesIndex = 0) {
+export function colorForCountry(country, seriesIndex = 0) {
   let color = new Highcharts.Color(
     SERIES_COLORS[seriesIndex % SERIES_COLORS.length]
   );
 
-  if (countryCode === "EU") {
+  // Highlight any "group" countries like: EU/EU27/EU28 by
+  // darkening the color used for their series
+  if (country.is_group) {
     color = color.brighten(-0.3);
   }
 

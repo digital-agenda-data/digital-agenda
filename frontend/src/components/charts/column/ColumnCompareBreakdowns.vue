@@ -50,7 +50,7 @@ export default {
               apiValue,
               y: apiValue * weight || 0,
               name: this.getDisplay(country),
-              color: colorForCountry(country.code, seriesIndex),
+              color: colorForCountry(country, seriesIndex),
             };
           }),
         };

@@ -9,7 +9,8 @@
     "label": "Austria",
     "alt_label": null,
     "definition": null,
-    "color": "#AABC66"
+    "color": "#AABC66",
+    "is_group": false
   }
 },
 {
@@ -22,7 +23,8 @@
     "label": "Belgium",
     "alt_label": null,
     "definition": null,
-    "color": "#FD8245"
+    "color": "#FD8245",
+    "is_group": false
   }
 },
 {
@@ -35,7 +37,8 @@
     "label": "Bulgaria",
     "alt_label": null,
     "definition": null,
-    "color": "#21FF00"
+    "color": "#21FF00",
+    "is_group": false
   }
 },
 {
@@ -48,7 +51,8 @@
     "label": "Cyprus",
     "alt_label": null,
     "definition": null,
-    "color": "#FF5400"
+    "color": "#FF5400",
+    "is_group": false
   }
 },
 {
@@ -61,7 +65,8 @@
     "label": "Czechia",
     "alt_label": "Czech Republic",
     "definition": null,
-    "color": "#1C3FFD"
+    "color": "#1C3FFD",
+    "is_group": false
   }
 },
 {
@@ -74,7 +79,8 @@
     "label": "Germany (until 1990 former territory of the FRG)",
     "alt_label": "Germany",
     "definition": "",
-    "color": "#FFC600"
+    "color": "#FFC600",
+    "is_group": false
   }
 },
 {
@@ -87,7 +93,8 @@
     "label": "Denmark",
     "alt_label": null,
     "definition": null,
-    "color": "#45BF55"
+    "color": "#45BF55",
+    "is_group": false
   }
 },
 {
@@ -100,7 +107,8 @@
     "label": "Estonia",
     "alt_label": null,
     "definition": null,
-    "color": "#0EEAFF"
+    "color": "#0EEAFF",
+    "is_group": false
   }
 },
 {
@@ -113,7 +121,8 @@
     "label": "Greece",
     "alt_label": null,
     "definition": null,
-    "color": "#6A07B0"
+    "color": "#6A07B0",
+    "is_group": false
   }
 },
 {
@@ -126,7 +135,8 @@
     "label": "Spain",
     "alt_label": null,
     "definition": null,
-    "color": "#044C29"
+    "color": "#044C29",
+    "is_group": false
   }
 },
 {
@@ -139,7 +149,8 @@
     "label": "European Union",
     "alt_label": null,
     "definition": null,
-    "color": "#63b8ff"
+    "color": "#63b8ff",
+    "is_group": true
   }
 },
 {
@@ -152,7 +163,8 @@
     "label": "Finland",
     "alt_label": null,
     "definition": null,
-    "color": "#7FB2F0"
+    "color": "#7FB2F0",
+    "is_group": false
   }
 },
 {
@@ -165,7 +177,8 @@
     "label": "France",
     "alt_label": null,
     "definition": null,
-    "color": "#15A9FA"
+    "color": "#15A9FA",
+    "is_group": false
   }
 },
 {
@@ -178,7 +191,8 @@
     "label": "Croatia",
     "alt_label": null,
     "definition": null,
-    "color": "#33EED2"
+    "color": "#33EED2",
+    "is_group": false
   }
 },
 {
@@ -191,7 +205,8 @@
     "label": "Hungary",
     "alt_label": null,
     "definition": null,
-    "color": "#D40D12"
+    "color": "#D40D12",
+    "is_group": false
   }
 },
 {
@@ -204,7 +219,8 @@
     "label": "Ireland",
     "alt_label": null,
     "definition": null,
-    "color": "#ADF0F6"
+    "color": "#ADF0F6",
+    "is_group": false
   }
 },
 {
@@ -217,7 +233,8 @@
     "label": "Iceland",
     "alt_label": null,
     "definition": null,
-    "color": "#662293"
+    "color": "#662293",
+    "is_group": false
   }
 },
 {
@@ -230,7 +247,8 @@
     "label": "Italy",
     "alt_label": null,
     "definition": null,
-    "color": "#19BC01"
+    "color": "#19BC01",
+    "is_group": false
   }
 },
 {
@@ -243,7 +261,8 @@
     "label": "Lithuania",
     "alt_label": null,
     "definition": null,
-    "color": "#9A24ED"
+    "color": "#9A24ED",
+    "is_group": false
   }
 },
 {
@@ -256,7 +275,8 @@
     "label": "Luxembourg",
     "alt_label": null,
     "definition": null,
-    "color": "#D50356"
+    "color": "#D50356",
+    "is_group": false
   }
 },
 {
@@ -269,7 +289,8 @@
     "label": "Latvia",
     "alt_label": null,
     "definition": null,
-    "color": "#D59AFE"
+    "color": "#D59AFE",
+    "is_group": false
   }
 },
 {
@@ -282,7 +303,8 @@
     "label": "Malta",
     "alt_label": null,
     "definition": null,
-    "color": "#35478C"
+    "color": "#35478C",
+    "is_group": false
   }
 },
 {
@@ -295,7 +317,8 @@
     "label": "Netherlands",
     "alt_label": null,
     "definition": null,
-    "color": "#FF40F4"
+    "color": "#FF40F4",
+    "is_group": false
   }
 },
 {
@@ -308,7 +331,8 @@
     "label": "Norway",
     "alt_label": null,
     "definition": null,
-    "color": "#F70A9B"
+    "color": "#F70A9B",
+    "is_group": false
   }
 },
 {
@@ -321,7 +345,8 @@
     "label": "Poland",
     "alt_label": null,
     "definition": null,
-    "color": "#FF1D23"
+    "color": "#FF1D23",
+    "is_group": false
   }
 },
 {
@@ -334,7 +359,8 @@
     "label": "Portugal",
     "alt_label": null,
     "definition": null,
-    "color": "#FFFC00"
+    "color": "#FFFC00",
+    "is_group": false
   }
 },
 {
@@ -347,7 +373,8 @@
     "label": "Romania",
     "alt_label": null,
     "definition": null,
-    "color": "#1B76FF"
+    "color": "#1B76FF",
+    "is_group": false
   }
 },
 {
@@ -360,7 +387,8 @@
     "label": "Sweden",
     "alt_label": null,
     "definition": null,
-    "color": "#436B06"
+    "color": "#436B06",
+    "is_group": false
   }
 },
 {
@@ -373,7 +401,8 @@
     "label": "Slovenia",
     "alt_label": null,
     "definition": null,
-    "color": "#648E23"
+    "color": "#648E23",
+    "is_group": false
   }
 },
 {
@@ -386,7 +415,8 @@
     "label": "Slovakia",
     "alt_label": "Slovak Republic",
     "definition": null,
-    "color": "#7DC30F"
+    "color": "#7DC30F",
+    "is_group": false
   }
 },
 {
@@ -399,7 +429,8 @@
     "label": "United Kingdom",
     "alt_label": null,
     "definition": null,
-    "color": "#D000C4"
+    "color": "#D000C4",
+    "is_group": false
   }
 },
 {
@@ -412,7 +443,8 @@
     "label": "Greece",
     "alt_label": null,
     "definition": null,
-    "color": "#6A07B0"
+    "color": "#6A07B0",
+    "is_group": false
   }
 },
 {
@@ -425,7 +457,8 @@
     "label": "Turkey",
     "alt_label": null,
     "definition": null,
-    "color": "#9900AB"
+    "color": "#9900AB",
+    "is_group": false
   }
 },
 {
@@ -438,7 +471,8 @@
     "label": "United Kingdom",
     "alt_label": null,
     "definition": null,
-    "color": "#D000C4"
+    "color": "#D000C4",
+    "is_group": false
   }
 },
 {
@@ -451,7 +485,8 @@
     "label": "European Union",
     "alt_label": null,
     "definition": null,
-    "color": "#63b8ff"
+    "color": "#63b8ff",
+    "is_group": true
   }
 },
 {
@@ -464,7 +499,8 @@
     "label": "European Union 28",
     "alt_label": null,
     "definition": null,
-    "color": "#63b8ff"
+    "color": "#63b8ff",
+    "is_group": true
   }
 }
 ]

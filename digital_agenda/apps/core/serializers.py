@@ -61,7 +61,7 @@ class UnitSerializer(BaseDimensionSerializer):
 class CountrySerializer(BaseDimensionSerializer):
     class Meta(BaseDimensionSerializer.Meta):
         model = Country
-        fields = BaseDimensionSerializer.Meta.fields + ["color"]
+        fields = BaseDimensionSerializer.Meta.fields + ["color", "is_group"]
 
 
 class PeriodSerializer(BaseDimensionSerializer):

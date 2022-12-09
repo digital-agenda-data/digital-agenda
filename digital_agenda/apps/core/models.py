@@ -200,6 +200,7 @@ class Country(BaseDimensionModel):
     color = ColorField(
         help_text="Color used for this countries chart series", default="#CCCCCC"
     )
+    is_group = models.BooleanField(default=False)
 
     class Meta:
         db_table = "countries"

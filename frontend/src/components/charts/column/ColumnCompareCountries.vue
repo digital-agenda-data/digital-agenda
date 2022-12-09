@@ -42,7 +42,7 @@ export default {
               y: this.apiValuesGrouped[country.code] || 0,
               apiValue: this.apiValuesGrouped[country.code],
               name: this.getDisplay(country),
-              color: colorForCountry(country.code),
+              color: colorForCountry(country),
             };
           }),
           dataSorting: {
