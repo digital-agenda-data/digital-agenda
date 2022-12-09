@@ -37,6 +37,7 @@ export default {
     series() {
       return [
         {
+          borderColor: "#9F9F9F",
           data: this.countries.map((country) => {
             const apiValue = this.apiValuesGrouped[country.code];
 
