@@ -6,7 +6,7 @@ import BreakdownWithGroupsFilter from "@/components/filters/BreakdownWithGroupsF
 import PeriodFilter from "@/components/filters/PeriodFilter.vue";
 import UnitFilter from "@/components/filters/UnitFilter.vue";
 import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
-import topologyAllCountries from "@/assets/topology.json";
+import topologyUrl from "@/assets/topology.json?url";
 
 const valueNotAvailableColor = "#E3E3E3";
 const hoverCountryColor = "#467A39";
@@ -14,6 +14,11 @@ const hoverCountryColor = "#467A39";
 export default {
   name: "MapCompareCountries",
   extends: BaseChart,
+  data() {
+    return {
+      mapData: null,
+    };
+  },
   computed: {
     constructorType() {
       return "mapChart";
@@ -64,7 +69,7 @@ export default {
     chartOptions() {
       return {
         chart: {
-          map: topologyAllCountries,
+          map: this.mapData,
           height: "848px",
           // Animations for maps are extremely JANKY,
           // so disable them completely.
@@ -100,6 +105,13 @@ export default {
           },
         },
       };
+    },
+  },
+  methods: {
+    async loadExtra() {
+      if (!this.mapData) {
+        this.mapData = await (await fetch(topologyUrl)).json();
+      }
     },
   },
 };

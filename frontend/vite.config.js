@@ -2,10 +2,17 @@ import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import visualizer from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    visualizer({
+      // File will be created after "npm run build"
+      filename: "bundle.stats.html",
+    }),
+  ],
   server: {
     port: 8080,
   },
@@ -17,18 +24,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          topology: ["./src/assets/topology.json"],
-          highcharts: [
-            "node_modules/highcharts/highcharts.js",
-            "node_modules/highcharts/highcharts-more.js",
-            "node_modules/highcharts/modules/map.js",
-            "node_modules/highcharts/modules/exporting.js",
-            "node_modules/highcharts/modules/export-data.js",
-            "node_modules/highcharts/modules/offline-exporting.js",
-            "node_modules/highcharts/modules/accessibility.js",
-            "node_modules/highcharts/modules/no-data-to-display.js",
-          ],
+        manualChunks(id) {
+          if (id.includes("node_modules/highcharts/")) {
+            return "highcharts";
+          }
+          if (id.includes("node_modules/")) {
+            return "vendor";
+          }
         },
       },
     },
