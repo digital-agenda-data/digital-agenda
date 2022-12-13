@@ -5,13 +5,14 @@
         ref="multiselect"
         v-model="value"
         :options="items"
-        :limit="2"
+        :limit="limitDisplaySelected"
         :placeholder="placeholderText"
         :loading="loading"
         :multiple="multiple"
         :disabled="disabled || loading"
         :close-on-select="!multiple"
         :allow-empty="!required || multiple"
+        :name="inputName"
         label="text"
         track-by="id"
         :group-label="hasGroups ? 'text' : undefined"
@@ -19,7 +20,15 @@
         select-label=""
         selected-label=""
         deselect-label=""
+        select-group-label=""
+        deselect-group-label=""
       >
+        <template #limit>
+          <strong class="multiselect__strong">
+            {{ modelValueSet.size }} out of {{ itemsById.size }} selected
+          </strong>
+        </template>
+
         <template v-if="multiple" #beforeList>
           <li class="multiselect__element" @click="toggleAll">
             <span class="multiselect__option">
@@ -193,6 +202,20 @@ export default {
         result.push("ecl-select__container--grouped");
       }
       return result;
+    },
+    // Controls how many selected items are displayed
+    limitDisplaySelected() {
+      if (!this.multiple) {
+        return 1;
+      }
+
+      if (this.value.length > 2) {
+        // Don't show any and have the #limit slot
+        // take over to show the count out of text
+        return 0;
+      }
+
+      return 2;
     },
   },
   methods: {
