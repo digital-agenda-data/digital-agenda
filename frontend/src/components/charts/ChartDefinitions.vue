@@ -103,7 +103,7 @@ export default {
           let display = this.currentLabels[itemType] || itemType;
           const val = this.filterStore[axis][itemType];
 
-          if (axis && this.showAxisLabels) {
+          if (axis && this.showAxisLabel) {
             display = `(${axis}) ${display}`;
           }
 
