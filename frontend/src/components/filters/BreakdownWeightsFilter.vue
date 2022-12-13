@@ -39,7 +39,7 @@ export default {
     },
   },
   watch: {
-    apiData(newValue, oldValue) {
+    apiDataRaw(newValue, oldValue) {
       const newQuery = { ...this.$route.query };
 
       // Delete old values (if any)
@@ -63,7 +63,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .breakdown-weights {
   display: grid;
   align-items: center;

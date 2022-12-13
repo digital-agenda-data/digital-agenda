@@ -30,7 +30,7 @@ export default {
     chartOptions() {
       return {
         legend: {
-          enabled: (this.breakdown || []).length > 1,
+          enabled: this.breakdownList.length > 1,
         },
         xAxis: {
           type: "category",

@@ -12,7 +12,7 @@
     I'm not sure why this has extra margin here, just remove it  :/
  */
 .ecl-form-group .ecl-range {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .ecl-u-break-word {

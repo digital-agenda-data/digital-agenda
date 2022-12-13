@@ -34,10 +34,25 @@ export default {
         },
       ];
     },
+    weights() {
+      const result = {};
+
+      for (const breakdown of this.breakdownList) {
+        result[breakdown.code] = parseInt(
+          this.$route.query[breakdown.code] ?? 5
+        );
+      }
+      return result;
+    },
+    totalWeights() {
+      return Object.values(this.weights).reduce((a, b) => a + b, 0);
+    },
   },
   methods: {
     getWeight(breakdown) {
-      return parseInt(this.$route.query[breakdown.code] ?? 5);
+      // Normalize the weights as a percentage of the total, so
+      // we don't change the scale of the chart.
+      return this.weights[breakdown.code] / this.totalWeights;
     },
   },
 };
