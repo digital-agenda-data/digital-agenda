@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -38,6 +39,7 @@ urlpatterns = [
     path("ws/ht/", include("health_check.urls", namespace="ws-ht")),
     path("dashboard/", include("django_sql_dashboard.urls")),
     path("admin/", admin.site.urls),
+    path("", RedirectView.as_view(pattern_name="admin:index")),
 ]
 
 
