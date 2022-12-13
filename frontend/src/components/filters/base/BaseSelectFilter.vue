@@ -19,6 +19,7 @@ import { useFilterStore } from "@/stores/filterStore";
 import { getDisplay, randomChoice } from "@/lib/utils";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useChartStore } from "@/stores/chartStore";
 
 /**
  * Base component for all filters. Extend this component and
@@ -92,12 +93,13 @@ export default {
   data() {
     return {
       internalValue: null,
-      apiData: [],
+      apiDataRaw: [],
       loading: false,
     };
   },
   computed: {
     ...mapState(useChartGroupStore, ["currentLabels"]),
+    ...mapState(useChartStore, ["currentFilterOptions"]),
     filterStore() {
       return useFilterStore()[this.axis];
     },
@@ -138,6 +140,14 @@ export default {
       if (!this.axis || !this.showAxisLabel) return this.label;
 
       return `(${this.axis}) ${this.label}`;
+    },
+    ignoredCodes() {
+      return new Set(this.currentFilterOptions.ignored[this.queryName]);
+    },
+    apiData() {
+      return this.apiDataRaw.filter(
+        (apiItem) => !this.ignoredCodes.has(apiItem.code)
+      );
     },
     items() {
       return this.apiData.map((item) => {
@@ -187,17 +197,35 @@ export default {
       }
 
       if (this.multiple) {
-        return this.allInitial
-          ? this.allowedValuesArray
-          : this.defaultMultiValue;
+        if (this.defaultBackendMultiValue.length > 0) {
+          return this.defaultBackendMultiValue;
+        } else if (this.allInitial) {
+          return this.allowedValuesArray;
+        } else {
+          return this.defaultMultiValue;
+        }
       } else {
-        return this.defaultSingleValue;
+        if (this.defaultBackendSingleValue) {
+          return this.defaultBackendSingleValue;
+        } else {
+          return this.defaultSingleValue;
+        }
       }
+    },
+    defaultBackendSingleValue() {
+      return this.currentFilterOptions.defaults[this.queryName].find((code) =>
+        this.allowedValues.has(code)
+      );
     },
     defaultSingleValue() {
       const choiceGroup = randomChoice(this.items);
 
       return randomChoice(choiceGroup.children)?.id || choiceGroup.id;
+    },
+    defaultBackendMultiValue() {
+      return this.currentFilterOptions.defaults[this.queryName].filter((code) =>
+        this.allowedValues.has(code)
+      );
     },
     defaultMultiValue() {
       return [randomChoice(this.items).id];
@@ -209,8 +237,11 @@ export default {
       return true;
     },
     isVisible() {
-      // Only show this filter if there are more than one indicator group
-      return this.items.length > 1;
+      if (this.currentFilterOptions.hidden[this.queryName]) {
+        // Forced hidden from the backend options
+        return false;
+      }
+      return true;
     },
     modelValueAllowed() {
       const iter = Array.isArray(this.modelValue)
@@ -268,7 +299,7 @@ export default {
       }
     },
     async loadApiData() {
-      this.apiData = (
+      this.apiDataRaw = (
         await api.get(this.endpoint, {
           params: this.endpointParams,
         })

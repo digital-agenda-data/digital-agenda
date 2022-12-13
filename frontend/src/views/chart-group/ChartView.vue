@@ -16,7 +16,6 @@
   </div>
 
   <div
-    v-if="$refs.chart?.ready"
     class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m hide-embedded"
   >
     <h2>Definition and scopes:</h2>
@@ -24,11 +23,11 @@
     <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8">
         <div v-html="currentChart.description" />
-        <chart-definitions :show-axis-label="$refs.chart.showAxisLabel" />
+        <chart-definitions :show-axis-label="$refs.chart?.showAxisLabel" />
       </div>
 
       <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
-        <chart-actions :chart="$refs.chart.chart" />
+        <chart-actions :chart="$refs.chart?.chart" />
       </div>
     </div>
   </div>

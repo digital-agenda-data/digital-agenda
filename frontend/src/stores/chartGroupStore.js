@@ -1,31 +1,30 @@
 import { defineStore } from "pinia";
+import { useRouteParams } from "@vueuse/router";
+
 import { api } from "@/lib/api";
-import { useRoute } from "vue-router";
+import { FILTERS } from "@/lib/constants";
+import { camelToSnakeCase } from "@/lib/utils";
 
 export const useChartGroupStore = defineStore("chartGroup", {
   state: () => {
     return {
       chartGroups: [],
+      currentChartGroupCode: useRouteParams("chartGroupCode"),
     };
   },
   getters: {
-    currentChartGroupCode() {
-      return useRoute().params.chartGroupCode;
-    },
     currentChartGroup(state) {
       return state.chartGroups.find(
         (item) => item.code === this.currentChartGroupCode
       );
     },
     currentLabels() {
-      return {
-        indicatorGroup: this.currentChartGroup.indicator_group_label,
-        indicator: this.currentChartGroup.indicator_label,
-        breakdownGroup: this.currentChartGroup.breakdown_group_label,
-        breakdown: this.currentChartGroup.breakdown_label,
-        period: this.currentChartGroup.period_label,
-        unit: this.currentChartGroup.unit_label,
-      };
+      const result = {};
+      for (const filterName of FILTERS) {
+        result[filterName] =
+          this.currentChartGroup[camelToSnakeCase(filterName) + "_label"];
+      }
+      return result;
     },
   },
   actions: {

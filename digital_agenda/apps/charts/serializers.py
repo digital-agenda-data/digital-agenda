@@ -6,8 +6,16 @@ from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
 from digital_agenda.apps.core.serializers import PeriodSerializer
 
 
+class CodeRelatedField(serializers.SlugRelatedField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("slug_field", "code")
+        kwargs.setdefault("read_only", True)
+
+        super().__init__(*args, **kwargs)
+
+
 class ChartGroupListSerializer(serializers.ModelSerializer):
-    periods = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
+    periods = CodeRelatedField(many=True)
 
     class Meta:
         model = ChartGroup
@@ -41,9 +49,27 @@ class ChartGroupDetailSerializer(serializers.ModelSerializer):
 
 
 class ChartSerializer(serializers.ModelSerializer):
-    chart_group = serializers.SlugRelatedField(
-        slug_field="code", read_only=True, many=False
-    )
+    chart_group = CodeRelatedField()
+    indicator_group_filter_defaults = CodeRelatedField(many=True)
+    indicator_group_filter_ignored = CodeRelatedField(many=True)
+
+    indicator_filter_defaults = CodeRelatedField(many=True)
+    indicator_filter_ignored = CodeRelatedField(many=True)
+
+    breakdown_group_filter_defaults = CodeRelatedField(many=True)
+    breakdown_group_filter_ignored = CodeRelatedField(many=True)
+
+    breakdown_filter_defaults = CodeRelatedField(many=True)
+    breakdown_filter_ignored = CodeRelatedField(many=True)
+
+    period_filter_defaults = CodeRelatedField(many=True)
+    period_filter_ignored = CodeRelatedField(many=True)
+
+    unit_filter_defaults = CodeRelatedField(many=True)
+    unit_filter_ignored = CodeRelatedField(many=True)
+
+    country_filter_defaults = CodeRelatedField(many=True)
+    country_filter_ignored = CodeRelatedField(many=True)
 
     class Meta:
         model = Chart
@@ -54,5 +80,6 @@ class ChartSerializer(serializers.ModelSerializer):
             "description",
             "chart_group",
             "is_draft",
+            *Chart.filter_options,
         )
         read_only_fields = fields

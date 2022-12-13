@@ -1,3 +1,13 @@
+export const FILTERS = [
+  "indicatorGroup",
+  "indicator",
+  "breakdownGroup",
+  "breakdown",
+  "period",
+  "unit",
+  "country",
+];
+
 export const SERIES_COLORS = [
   "#63b8ff",
   "#E41A1C",

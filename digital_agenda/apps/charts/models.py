@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from composite_field import CompositeField
 from django.contrib.postgres.fields import CICharField
 from django.db import models
 
@@ -50,6 +51,30 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
 
     def __str__(self):
         return f"[{self.code}] {self.short_name}"
+
+
+def filter_option_field(rel_model):
+    class FilterOptionField(CompositeField):
+        hidden = models.BooleanField(
+            default=False, help_text="Force hide the filter for this chart."
+        )
+        defaults = models.ManyToManyField(
+            rel_model,
+            related_name="default_charts",
+            blank=True,
+            help_text=(
+                "Multiple defaults can be specified, however only valid choices depending on the other filters "
+                "will be used."
+            ),
+        )
+        ignored = models.ManyToManyField(
+            rel_model,
+            related_name="ignored_charts",
+            blank=True,
+            help_text="Values specified here will be hidden and not available for selection.",
+        )
+
+    return FilterOptionField()
 
 
 class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
@@ -131,6 +156,14 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     chart_type = models.CharField(max_length=50, choices=CHART_TYPE_CHOICES)
     description = RichTextField()
 
+    indicator_group_filter = filter_option_field("core.IndicatorGroup")
+    indicator_filter = filter_option_field("core.Indicator")
+    breakdown_group_filter = filter_option_field("core.BreakdownGroup")
+    breakdown_filter = filter_option_field("core.Breakdown")
+    period_filter = filter_option_field("core.Period")
+    unit_filter = filter_option_field("core.Unit")
+    country_filter = filter_option_field("core.Country")
+
     class Meta:
         db_table = "charts"
         ordering = ["display_order", "code"]
@@ -140,3 +173,22 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
 
     def __str__(self):
         return self.name
+
+    @classmethod
+    @property
+    def m2m_filter_options(cls):
+        return tuple(
+            subfield.name
+            for private_field in Chart._meta.private_fields
+            for subfield in private_field.subfields.values()
+            if isinstance(subfield, models.ManyToManyField)
+        )
+
+    @classmethod
+    @property
+    def filter_options(cls):
+        return tuple(
+            subfield.name
+            for private_field in Chart._meta.private_fields
+            for subfield in private_field.subfields.values()
+        )

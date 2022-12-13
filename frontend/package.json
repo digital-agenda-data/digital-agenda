@@ -11,6 +11,7 @@
     "@ecl/preset-ec": "^3.6.0",
     "@ecl/preset-reset": "^3.6.0",
     "@vueuse/core": "^9.6.0",
+    "@vueuse/router": "^9.6.0",
     "axios": "^1.2.1",
     "highcharts": "^10.3.2",
     "highcharts-vue": "^1.4.0",

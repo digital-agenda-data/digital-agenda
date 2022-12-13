@@ -1,5 +1,4 @@
 from adminsortable2.admin import SortableAdminMixin
-from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin
 
 from digital_agenda.apps.charts.models import Chart
@@ -26,13 +25,44 @@ class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
         "display_order",
     )
     exclude = ("display_order",)
-    autocomplete_fields = ("chart_group",)
+    autocomplete_fields = (
+        "chart_group",
+        *Chart.m2m_filter_options,
+    )
 
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        result = super().formfield_for_manytomany(db_field, request, **kwargs)
+        result.widget.attrs["style"] = "width: 580px;"
+        return result
 
-class ChartInlineAdmin(SortableInlineAdminMixin, admin.StackedInline):
-    prepopulated_fields = {**ChartAdmin.prepopulated_fields}
-    model = Chart
-    extra = 0
+    def get_fieldsets(self, request, obj=None):
+        result = [
+            (
+                None,
+                {
+                    "fields": (
+                        "is_draft",
+                        "chart_group",
+                        "name",
+                        "code",
+                        "chart_type",
+                    )
+                },
+            )
+        ]
+        for private_field in Chart._meta.private_fields:
+            subfields = [subfield.name for subfield in private_field.subfields.values()]
+            result.append(
+                (
+                    private_field.verbose_name.title(),
+                    {
+                        "classes": ("wide",),
+                        "fields": subfields,
+                    },
+                )
+            )
+
+        return result
 
 
 @admin.register(ChartGroup)
@@ -46,4 +76,3 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
         "display_order",
     )
     filter_horizontal = ("periods", "indicator_groups")
-    inlines = (ChartInlineAdmin,)
