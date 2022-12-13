@@ -24,7 +24,12 @@ export default {
             class: ["chart-filter-full"],
           },
         },
-        IndicatorWithGroupsFilter,
+        {
+          component: IndicatorWithGroupsFilter,
+          attrs: {
+            hidden: this.$route.query.noWeights !== "true",
+          },
+        },
         BreakdownGroupFilter,
         PeriodFilter,
         UnitFilter,

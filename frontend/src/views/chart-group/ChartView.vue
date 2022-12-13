@@ -59,6 +59,10 @@ export default {
         const items = this.$refs.chart?.[`filter${axis}Components`] ?? [];
 
         for (const item of items) {
+          if (!item) {
+            continue;
+          }
+
           result.push(this.normalizeFilterComponent(item, axis));
         }
       }

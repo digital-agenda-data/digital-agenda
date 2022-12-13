@@ -1,13 +1,24 @@
 <template>
-  <div v-if="apiData.length > 1" class="breakdown-weights ecl-u-mb-m">
+  <div v-if="isVisible" class="breakdown-weights ecl-u-mb-m">
     <b class="ecl-u-type-color-grey-75">Click to drill down</b>
     <span></span>
     <b class="ecl-u-type-color-grey-75">Normalized</b>
 
     <template v-for="item in apiData" :key="item.code">
-      <span>
+      <ecl-link
+        :to="{
+          name: $route.name,
+          params: $route.params,
+          query: {
+            indicator: item.code,
+            period: $route.query.period,
+            noWeights: 'true',
+          },
+        }"
+        no-visited
+      >
         {{ getDisplay(item) }}
-      </span>
+      </ecl-link>
       <range-filter :query-name="item.code" />
       <span class="ecl-u-type-align-center">
         {{ getNormalized(item.code) }}%
@@ -19,10 +30,11 @@
 <script>
 import BreakdownMultiFilter from "@/components/filters/BreakdownMultiFilter.vue";
 import RangeFilter from "@/components/filters/base/RangeFilter.vue";
+import EclLink from "@/components/ecl/navigation/EclLink.vue";
 
 export default {
   name: "BreakdownWeightsFilter",
-  components: { RangeFilter },
+  components: { EclLink, RangeFilter },
   extends: BreakdownMultiFilter,
   computed: {
     rawValues() {
@@ -36,6 +48,9 @@ export default {
     },
     total() {
       return Object.values(this.rawValues).reduce((a, b) => a + b, 0);
+    },
+    isVisible() {
+      return this.apiData.length > 1 && this.$route.query.noWeights !== "true";
     },
   },
   watch: {
