@@ -36,11 +36,35 @@ export default {
     groupBy() {
       return ["breakdown", "country"];
     },
+    breakdownList() {
+      return this.breakdown || [];
+    },
+    totalsByCountry() {
+      const result = {};
+
+      for (const country of this.countries) {
+        result[country.code] = this.breakdownList
+          .map(
+            (breakdown) =>
+              this.apiValuesGrouped[breakdown.code]?.[country.code] ?? 0
+          )
+          .reduce((a, b) => a + b, 0);
+      }
+      return result;
+    },
+    sortedCountries() {
+      return Array.from(this.countries).sort((country1, country2) => {
+        return (
+          this.totalsByCountry[country2.code] -
+          this.totalsByCountry[country1.code]
+        );
+      });
+    },
     series() {
-      return (this.breakdown || []).map((breakdown, seriesIndex) => {
+      return this.breakdownList.map((breakdown, seriesIndex) => {
         return {
           name: this.getDisplay(breakdown),
-          data: this.countries.map((country) => {
+          data: this.sortedCountries.map((country) => {
             const apiValue =
               this.apiValuesGrouped[breakdown.code]?.[country.code];
 
@@ -59,7 +83,7 @@ export default {
     chartOptions() {
       return {
         legend: {
-          enabled: (this.breakdown || []).length > 1,
+          enabled: this.breakdownList.length > 1,
         },
         xAxis: {
           type: "category",

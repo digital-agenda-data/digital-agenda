@@ -34,10 +34,17 @@ export default {
     groupBy() {
       return ["country"];
     },
+    sortedCountries() {
+      return Array.from(this.countries).sort(
+        (country1, country2) =>
+          (this.apiValuesGrouped[country2.code] ?? 0) -
+          (this.apiValuesGrouped[country1.code] ?? 0)
+      );
+    },
     series() {
       return [
         {
-          data: this.countries.map((country) => {
+          data: this.sortedCountries.map((country) => {
             return {
               y: this.apiValuesGrouped[country.code] || 0,
               apiValue: this.apiValuesGrouped[country.code],
@@ -45,9 +52,6 @@ export default {
               color: colorForCountry(country),
             };
           }),
-          dataSorting: {
-            enabled: true,
-          },
         },
       ];
     },
