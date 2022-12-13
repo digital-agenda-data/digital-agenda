@@ -1,5 +1,8 @@
 from django.core.management import BaseCommand
 from django.core.management import call_command
+from rich.console import Console
+
+console = Console()
 
 
 class Command(BaseCommand):
@@ -17,10 +20,12 @@ class Command(BaseCommand):
         "units",
         "periods",
         "countries",
+        # Charts
         "chartgroups",
         "charts",
     )
 
     def handle(self, *args, **options):
         for name in self.FIXTURES:
+            console.print(f"Loading from fixture: '{name}'")
             call_command("loaddata", f"{name}.json")

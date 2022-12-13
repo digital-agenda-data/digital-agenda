@@ -74,10 +74,10 @@
   "pk": 6,
   "fields": {
     "created_at": "2022-11-16T13:46:43.661Z",
-    "updated_at": "2022-11-28T08:46:11.334Z",
+    "updated_at": "2022-12-13T08:23:51.599Z",
     "code": "DE",
-    "label": "Germany (until 1990 former territory of the FRG)",
-    "alt_label": "Germany",
+    "label": "Germany",
+    "alt_label": "",
     "definition": "",
     "color": "#FFC600",
     "is_group": false
@@ -501,6 +501,230 @@
     "definition": null,
     "color": "#63b8ff",
     "is_group": true
+  }
+},
+{
+  "model": "core.country",
+  "pk": 37,
+  "fields": {
+    "created_at": "2022-12-13T08:19:03.289Z",
+    "updated_at": "2022-12-13T08:19:03.289Z",
+    "code": "LI",
+    "label": "Liechtenstein",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 38,
+  "fields": {
+    "created_at": "2022-12-13T08:19:38.222Z",
+    "updated_at": "2022-12-13T08:19:38.222Z",
+    "code": "AL",
+    "label": "Albania",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 39,
+  "fields": {
+    "created_at": "2022-12-13T08:20:03.034Z",
+    "updated_at": "2022-12-13T08:20:03.034Z",
+    "code": "CH",
+    "label": "Switzerland",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 40,
+  "fields": {
+    "created_at": "2022-12-13T08:20:32.196Z",
+    "updated_at": "2022-12-13T08:20:32.196Z",
+    "code": "ME",
+    "label": "Montenegro",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 41,
+  "fields": {
+    "created_at": "2022-12-13T08:20:50.096Z",
+    "updated_at": "2022-12-13T08:20:50.096Z",
+    "code": "MK",
+    "label": "North Macedonia",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 42,
+  "fields": {
+    "created_at": "2022-12-13T08:21:10.297Z",
+    "updated_at": "2022-12-13T08:21:10.297Z",
+    "code": "RS",
+    "label": "Serbia",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 43,
+  "fields": {
+    "created_at": "2022-12-13T08:33:35.573Z",
+    "updated_at": "2022-12-13T08:33:35.573Z",
+    "code": "BA",
+    "label": "Bosnia and Herzegovina",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 44,
+  "fields": {
+    "created_at": "2022-12-13T08:33:44.271Z",
+    "updated_at": "2022-12-13T08:33:44.272Z",
+    "code": "BIH",
+    "label": "Bosnia and Herzegovina",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 45,
+  "fields": {
+    "created_at": "2022-12-13T08:34:45.802Z",
+    "updated_at": "2022-12-13T08:34:45.802Z",
+    "code": "IL",
+    "label": "Israel",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 46,
+  "fields": {
+    "created_at": "2022-12-13T08:34:55.074Z",
+    "updated_at": "2022-12-13T08:34:55.074Z",
+    "code": "JP",
+    "label": "Japan",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 47,
+  "fields": {
+    "created_at": "2022-12-13T08:35:04.709Z",
+    "updated_at": "2022-12-13T08:35:04.709Z",
+    "code": "MD",
+    "label": "Moldova",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 48,
+  "fields": {
+    "created_at": "2022-12-13T08:35:23.723Z",
+    "updated_at": "2022-12-13T08:35:23.723Z",
+    "code": "OTHER",
+    "label": "Other",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 49,
+  "fields": {
+    "created_at": "2022-12-13T08:35:42.886Z",
+    "updated_at": "2022-12-13T08:35:42.886Z",
+    "code": "SL",
+    "label": "Sierra Leone",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 50,
+  "fields": {
+    "created_at": "2022-12-13T08:36:21.770Z",
+    "updated_at": "2022-12-13T08:36:21.770Z",
+    "code": "SP",
+    "label": "Serbia",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 51,
+  "fields": {
+    "created_at": "2022-12-13T08:36:57.606Z",
+    "updated_at": "2022-12-13T08:36:57.606Z",
+    "code": "US",
+    "label": "United States",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
+  }
+},
+{
+  "model": "core.country",
+  "pk": 52,
+  "fields": {
+    "created_at": "2022-12-13T08:37:23.994Z",
+    "updated_at": "2022-12-13T08:37:23.994Z",
+    "code": "XK",
+    "label": "Kosovo",
+    "alt_label": "",
+    "definition": "",
+    "color": "#CCCCCC",
+    "is_group": false
   }
 }
 ]
