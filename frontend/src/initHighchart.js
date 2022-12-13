@@ -59,7 +59,6 @@ Highcharts.setOptions({
   },
   yAxis: {
     allowDecimals: false,
-    min: 0,
   },
   xAxis: {
     allowDecimals: false,

@@ -58,6 +58,9 @@ export default {
         legend: {
           enabled: (this.breakdown || []).length > 1,
         },
+        yAxis: {
+          min: 0,
+        },
         plotOptions: {
           series: {
             connectNulls: true,

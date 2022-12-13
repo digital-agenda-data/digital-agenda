@@ -45,6 +45,9 @@ export default {
     },
     chartOptions() {
       return {
+        yAxis: {
+          min: 0,
+        },
         plotOptions: {
           series: {
             connectNulls: true,

@@ -98,13 +98,14 @@ export default {
             title: {
               text: this.getDisplay(this.filterStore.unitX),
             },
+            min: 0,
           },
           {
-            // lineWidth: 1,
             opposite: true,
             title: {
               text: this.getDisplay(this.filterStore.unitY),
             },
+            min: 0,
           },
         ],
       };
