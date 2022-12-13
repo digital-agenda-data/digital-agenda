@@ -105,7 +105,15 @@ ROOT_URLCONF = "digital_agenda.site.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            # Django doesn't expect the apps to be packaged one at this level
+            # So we need to manually specify the path(s).
+            BASE_DIR
+            / "digital_agenda"
+            / "apps"
+            / "charts"
+            / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
