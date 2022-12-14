@@ -1,3 +1,4 @@
+from django import forms
 from django.db.models import Exists
 from django.db.models import OuterRef
 from django.db.models import Subquery
@@ -287,9 +288,35 @@ class FactsFilter(filters.FilterSet):
         field_name="breakdown_code", method=filter_breakdown_groups
     )
     breakdown = filters.CharFilter(field_name="breakdown__code")
-    unit = filters.CharFilter(field_name="unit__code")
+    unit = filters.CharFilter(field_name="unit__code", required=True)
     period = filters.CharFilter(field_name="period__code")
     country = filters.CharFilter(field_name="country__code")
+
+    def get_form_class(self):
+        # Ensure that at least one indicator and one breakdown filter
+        # has been used to avoid accidentally making huge queries.
+
+        def clean_indicator(form):
+            data = form.cleaned_data
+            if not data["indicator_group"] and not data["indicator"]:
+                raise forms.ValidationError(
+                    "Either indicator or indicator_group is required"
+                )
+            return data["indicator"]
+
+        def clean_breakdown(form):
+            data = form.cleaned_data
+            if not data["breakdown_group"] and not data["breakdown"]:
+                raise forms.ValidationError(
+                    "Either breakdown or breakdown_group is required"
+                )
+            return data["breakdown"]
+
+        form_class = super().get_form_class()
+        form_class.clean_indicator = clean_indicator
+        form_class.clean_breakdown = clean_breakdown
+
+        return form_class
 
     class Meta:
         model = Fact
