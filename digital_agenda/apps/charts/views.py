@@ -21,11 +21,15 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         queryset = ChartGroup.objects.all().prefetch_related(
             "periods",
             "indicator_groups",
-            "indicator_groups__indicators",
-            "indicator_groups__indicators__periods",
-            "indicator_groups__indicators__groups",
-            "indicator_groups__indicators__data_source",
         )
+
+        if self.action == "retrieve":
+            queryset = queryset.prefetch_related(
+                "indicator_groups__indicators",
+                "indicator_groups__indicators__periods",
+                "indicator_groups__indicators__groups",
+                "indicator_groups__indicators__data_source",
+            )
 
         if not self.request.user.is_authenticated:
             queryset = queryset.filter(is_draft=False)
@@ -68,22 +72,7 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         queryset = (
             Chart.objects.all()
             .select_related("chart_group")
-            .prefetch_related(
-                "indicator_group_filter_defaults",
-                "indicator_group_filter_ignored",
-                "indicator_filter_defaults",
-                "indicator_filter_ignored",
-                "breakdown_group_filter_defaults",
-                "breakdown_group_filter_ignored",
-                "breakdown_filter_defaults",
-                "breakdown_filter_ignored",
-                "period_filter_defaults",
-                "period_filter_ignored",
-                "unit_filter_defaults",
-                "unit_filter_ignored",
-                "country_filter_defaults",
-                "country_filter_ignored",
-            )
+            .prefetch_related(*Chart.m2m_filter_options)
         )
 
         if not self.request.user.is_authenticated:

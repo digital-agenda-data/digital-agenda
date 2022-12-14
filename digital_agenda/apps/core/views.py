@@ -91,9 +91,12 @@ class IndicatorGroupIndicatorViewSet(IndicatorViewSet):
     pagination_class = None
 
     def get_queryset(self):
-        return self.model.objects.filter(
-            groups__code__in=[self.kwargs["indicator_group_code"]]
-        ).all()
+        return (
+            super()
+            .get_queryset()
+            .filter(groups__code__in=[self.kwargs["indicator_group_code"]])
+            .all()
+        )
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -131,9 +134,12 @@ class BreakdownGroupBreakdownViewSet(BreakdownViewSet):
     pagination_class = None
 
     def get_queryset(self):
-        return self.model.objects.filter(
-            groups__code__in=[self.kwargs["breakdown_group_code"]]
-        ).all()
+        return (
+            super()
+            .get_queryset()
+            .filter(groups__code__in=[self.kwargs["breakdown_group_code"]])
+            .all()
+        )
 
 
 class IndicatorFilteredMixin:
@@ -214,11 +220,15 @@ class IndicatorBreakdownGroupViewSet(BreakdownGroupViewSet):
     pagination_class = None
 
     def get_queryset(self):
-        return self.model.objects.filter(
-            Exists(
-                Breakdown.objects.filter(
-                    groups__code__in=OuterRef("code"),
-                    indicators__code__in=[self.kwargs["indicator_code"]],
+        return (
+            super()
+            .get_queryset()
+            .filter(
+                Exists(
+                    Breakdown.objects.filter(
+                        groups__code__in=OuterRef("code"),
+                        indicators__code__in=[self.kwargs["indicator_code"]],
+                    )
                 )
             )
         )
@@ -228,9 +238,13 @@ class IndicatorBreakdownGroupBreakdownViewSet(IndicatorFilteredMixin, BreakdownV
     pagination_class = None
 
     def get_queryset(self):
-        return self.model.objects.filter(
-            groups__code__in=[self.kwargs["breakdown_group_code"]],
-            indicators__code__in=[self.kwargs["indicator_code"]],
+        return (
+            super()
+            .get_queryset()
+            .filter(
+                groups__code__in=[self.kwargs["breakdown_group_code"]],
+                indicators__code__in=[self.kwargs["indicator_code"]],
+            )
         )
 
 

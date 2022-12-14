@@ -16,6 +16,7 @@ class CodeRelatedField(serializers.SlugRelatedField):
 
 class ChartGroupListSerializer(serializers.ModelSerializer):
     periods = CodeRelatedField(many=True)
+    indicator_groups = CodeRelatedField(many=True)
 
     class Meta:
         model = ChartGroup
@@ -27,6 +28,7 @@ class ChartGroupListSerializer(serializers.ModelSerializer):
             "image",
             "is_draft",
             "periods",
+            "indicator_groups",
             # Custom labels
             "indicator_group_label",
             "indicator_label",
@@ -44,7 +46,7 @@ class ChartGroupDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ChartGroup
-        fields = ChartGroupListSerializer.Meta.fields + ("indicator_groups",)
+        fields = ChartGroupListSerializer.Meta.fields
         read_only_fields = fields
 
 
