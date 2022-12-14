@@ -5,16 +5,6 @@ from pathlib import Path
 
 import environ
 
-from .utils import (
-    validate_dir,
-    get_env_var,
-    get_bool_env_var,
-    get_int_env_var,
-    get_float_env_var,
-    split_env_var,
-)
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ROOT_DIR = BASE_DIR.parent
@@ -25,11 +15,11 @@ if os.path.exists(str(BASE_DIR / ".env")):
     env.read_env(str(BASE_DIR / ".env"))
 
 
-STATIC_ROOT = validate_dir(Path(get_env_var("STATIC_ROOT")))
+STATIC_ROOT = env.path("STATIC_ROOT")
 
-SECRET_KEY = get_env_var("SECRET_KEY")
-DEBUG = get_bool_env_var("DEBUG", "no")
-ALLOWED_HOSTS = split_env_var("ALLOWED_HOSTS")
+SECRET_KEY = env.str("SECRET_KEY")
+DEBUG = env.bool("DEBUG", default=False)
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -92,15 +82,23 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_EXPOSE_HEADERS = ["content-disposition"]
-CORS_ALLOWED_ORIGINS = split_env_var(
-    "CORS_ALLOWED_ORIGINS", default="http://localhost:8000,http://127.0.0.1:8000"
+CORS_ALLOWED_ORIGINS = env.list(
+    "CORS_ALLOWED_ORIGINS",
+    default=[
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],
 )
 # CORS_EXPOSE_HEADERS = ["Correlation-ID", "Content-Disposition"]
-CSRF_TRUSTED_ORIGINS = split_env_var(
-    "CSRF_TRUSTED_ORIGINS", default="http://localhost:8000,http://127.0.0.1:8000"
+CSRF_TRUSTED_ORIGINS = env.list(
+    "CSRF_TRUSTED_ORIGINS",
+    default=[
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],
 )
-CSRF_COOKIE_DOMAIN = get_env_var("CSRF_COOKIE_DOMAIN")
-CSRF_COOKIE_SECURE = get_bool_env_var("CSRF_COOKIE_SECURE", "no")
+CSRF_COOKIE_DOMAIN = env.str("CSRF_COOKIE_DOMAIN")
+CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", default=False)
 
 
 ROOT_URLCONF = "digital_agenda.site.urls"
@@ -137,13 +135,13 @@ ASGI_APPLICATION = "digital_agenda.site.asgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
-POSTGRES_HOST = get_env_var("POSTGRES_HOST")
-POSTGRES_PORT = get_int_env_var("POSTGRES_PORT", 5432)
-POSTGRES_DB = get_env_var("POSTGRES_DB")
-POSTGRES_USER = get_env_var("POSTGRES_USER")
-POSTGRES_PASSWORD = get_env_var("POSTGRES_PASSWORD")
-POSTGRES_DASHBOARD_USER = get_env_var("POSTGRES_DASHBOARD_USER")
-POSTGRES_DASHBOARD_PASSWORD = get_env_var("POSTGRES_DASHBOARD_PASSWORD")
+POSTGRES_HOST = env.str("POSTGRES_HOST")
+POSTGRES_PORT = env.int("POSTGRES_PORT", default=5432)
+POSTGRES_DB = env.str("POSTGRES_DB")
+POSTGRES_USER = env.str("POSTGRES_USER")
+POSTGRES_PASSWORD = env.str("POSTGRES_PASSWORD")
+POSTGRES_DASHBOARD_USER = env.str("POSTGRES_DASHBOARD_USER")
+POSTGRES_DASHBOARD_PASSWORD = env.str("POSTGRES_DASHBOARD_PASSWORD")
 
 DATABASES = {
     "default": {
@@ -176,15 +174,15 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": get_env_var("REDIS_LOCATION"),
+        "LOCATION": env.str("REDIS_LOCATION"),
         "OPTIONS": {
             "SOCKET_TIMEOUT": 5,
             "SOCKET_CONNECT_TIMEOUT": 5,
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
         "KEY_PREFIX": "digital_agenda",
-        # Cache never expires
-        "TIMEOUT": None,
+        # Cache never expires by default
+        "TIMEOUT": env.int("CACHE_TIMEOUT", default=None),
     }
 }
 
@@ -284,31 +282,34 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Celery
-CELERY_BROKER_URL = get_env_var(
-    "CELERY_BROKER_URL", "pyamqp://guest:guest@localhost:5672"
+CELERY_BROKER_URL = env.str(
+    "CELERY_BROKER_URL", default="pyamqp://guest:guest@localhost:5672"
 )
 
 
-BULK_DOWNLOAD_ROOT_URL = get_env_var(
+BULK_DOWNLOAD_ROOT_URL = env.str(
     "BULK_DOWNLOAD_ROOT_URL",
     default="https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing",
 )
-BULK_DOWNLOAD_TIMEOUT = get_float_env_var("BULK_DOWNLOAD_TIMEOUT", default=5.0)
-BULK_DOWNLOAD_DIR = validate_dir(Path(get_env_var("BULK_DOWNLOAD_DIR")))
+BULK_DOWNLOAD_TIMEOUT = env.float("BULK_DOWNLOAD_TIMEOUT", default=5.0)
+BULK_DOWNLOAD_DIR = env.path("BULK_DOWNLOAD_DIR")
 
 DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = validate_dir(Path(get_env_var("MEDIA_ROOT")))
+MEDIA_ROOT = env.path("MEDIA_ROOT")
 
-IMPORT_FILES_SUBDIR = get_env_var("IMPORT_FILES_SUBDIR", "import_files")
-IMPORT_FILES_ALLOWED_EXTENSIONS = split_env_var(
+IMPORT_FILES_SUBDIR = env.str("IMPORT_FILES_SUBDIR", default="import_files")
+IMPORT_FILES_ALLOWED_EXTENSIONS = env.list(
     "IMPORT_FILES_ALLOWED_EXTENSIONS",
-    default="xls,xlsx",
+    default=["xls", "xlsx"],
 )
-IMPORT_FILES_ALLOWED_MIME_TYPES = split_env_var(
+IMPORT_FILES_ALLOWED_MIME_TYPES = env.list(
     "IMPORT_FILES_ALLOWED_MIME_TYPES",
-    default="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    default=[
+        "application/vnd.ms-excel",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    ],
 )
 
 
@@ -337,7 +338,7 @@ LOGGING = {
     "loggers": {
         "django.request": {
             "handlers": ["console"],
-            "level": "DEBUG" if get_bool_env_var("LOG_REQUESTS", "no") else "ERROR",
+            "level": "DEBUG" if env.bool("LOG_REQUESTS", default=False) else "ERROR",
             "propagate": False,
         },
         "django": {"handlers": ["console"]},
@@ -353,7 +354,7 @@ LOGGING = {
 
 
 if DEBUG:
-    DJANGO_DEBUG_TOOLBAR = get_bool_env_var("DJANGO_DEBUG_TOOLBAR", "yes")
+    DJANGO_DEBUG_TOOLBAR = env.bool("DJANGO_DEBUG_TOOLBAR", default=True)
 
     INTERNAL_IPS = ["127.0.0.1"]
 

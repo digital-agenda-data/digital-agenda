@@ -9,3 +9,9 @@ There may however be scenarios where manually clearing the cache is required. (E
 ```shell
 python manage.py clear_cache
 ```
+
+To disable caching altogether set the env variable to 0:
+
+```dotenv
+CACHE_TIMEOUT=0
+```
