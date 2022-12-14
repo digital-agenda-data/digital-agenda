@@ -1,13 +1,20 @@
 from contextlib import suppress
 
+from django.core.cache import caches
 from django.core.files.storage import default_storage
 from django.db import transaction
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
-
 from .models import DataFileImport
 from . import tasks
+
+
+@receiver(post_save)
+def auto_clear_cache(sender, **kwargs):
+    if getattr(sender._meta.app_config, "auto_clear_cache", False):
+        for cache in caches.values():
+            cache.clear()
 
 
 @receiver(post_save, sender=DataFileImport)

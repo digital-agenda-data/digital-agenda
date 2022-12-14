@@ -4,6 +4,7 @@ Docs:
 
  - [Install Docker](docs/install_docker.md)
  - [Import data](docs/import.md)
+ - [Maintenance](docs/maintenance.md)
 
 Dev:
 

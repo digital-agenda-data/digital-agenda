@@ -71,6 +71,7 @@ THIRD_PARTY_APPS = [
     "health_check.storage",
     "drf_spectacular",
     "django_json_widget",
+    "django_extensions",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
@@ -79,7 +80,9 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "django.middleware.cache.FetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -180,6 +183,8 @@ CACHES = {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
         "KEY_PREFIX": "digital_agenda",
+        # Cache never expires
+        "TIMEOUT": None,
     }
 }
 
@@ -352,7 +357,6 @@ if DEBUG:
 
     INTERNAL_IPS = ["127.0.0.1"]
 
-    INSTALLED_APPS += ["django_extensions"]
     if DJANGO_DEBUG_TOOLBAR:
         INSTALLED_APPS += ["debug_toolbar"]
 
