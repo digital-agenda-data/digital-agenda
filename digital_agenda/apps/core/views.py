@@ -2,6 +2,8 @@ from django import forms
 from django.db.models import Exists
 from django.db.models import OuterRef
 from django.db.models import Subquery
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.mixins import ListModelMixin
@@ -358,3 +360,8 @@ class FactsViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericViewSet):
         .all()
     )
     pagination_class = None
+
+    @method_decorator(never_cache)
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
