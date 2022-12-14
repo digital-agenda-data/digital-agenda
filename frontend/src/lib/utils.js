@@ -88,7 +88,7 @@ export function camelToSnakeCase(text) {
  *  - remove any _x or _y from the of the key
  */
 export function toAPIKey(key) {
-  return camelToSnakeCase(key).replace(/_[x|y]$/i, "");
+  return camelToSnakeCase(key).replace(/_[xyz]$/i, "");
 }
 
 /**
