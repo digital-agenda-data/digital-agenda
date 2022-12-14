@@ -1,3 +1,5 @@
+from django.utils.decorators import method_decorator
+from django.views.decorators.vary import vary_on_cookie
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -40,6 +42,16 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             return ChartGroupListSerializer
         return ChartGroupDetailSerializer
 
+    # Must Vary on cookies since the list changes if the user
+    # is logged in or not
+    @method_decorator(vary_on_cookie)
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
+    @method_decorator(vary_on_cookie)
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
+
     @action(
         methods=["GET"],
         detail=True,
@@ -67,6 +79,16 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Chart
     pagination_class = None
     serializer_class = ChartSerializer
+
+    # Must Vary on cookies since the list changes if the user
+    # is logged in or not
+    @method_decorator(vary_on_cookie)
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
+
+    @method_decorator(vary_on_cookie)
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
 
     def get_queryset(self):
         queryset = (
