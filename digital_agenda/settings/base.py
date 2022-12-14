@@ -336,6 +336,11 @@ LOGGING = {
         "null": {"class": "logging.NullHandler"},
     },
     "loggers": {
+        "digital_agenda": {
+            "handlers": ["console"],
+            "level": "DEBUG" if DEBUG else "INFO",
+            "propagate": False,
+        },
         "django.request": {
             "handlers": ["console"],
             "level": "DEBUG" if env.bool("LOG_REQUESTS", default=False) else "ERROR",
