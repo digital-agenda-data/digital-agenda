@@ -1,5 +1,7 @@
 from django.apps import AppConfig
 
+from digital_agenda.apps.core.cache import clear_all_caches
+
 
 class Config(AppConfig):
     name = "digital_agenda.apps.core"
@@ -8,3 +10,6 @@ class Config(AppConfig):
 
     def ready(self):
         import digital_agenda.apps.core.signals  # noqa
+
+        # Auto clear caches when app starts
+        clear_all_caches()
