@@ -1,11 +1,6 @@
 <template>
-  <div
-    v-if="loading"
-    class="ecl-u-d-flex ecl-u-justify-content-center ecl-u-pa-2xl"
-  >
-    <ecl-spinner size="large" />
-  </div>
-  <table>
+  <ecl-spinner v-if="loading" size="large" centered class="ecl-u-pa-2xl" />
+  <table v-else>
     <thead>
       <tr>
         <th>Country</th>

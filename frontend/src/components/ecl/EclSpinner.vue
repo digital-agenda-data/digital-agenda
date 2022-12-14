@@ -49,15 +49,25 @@ export default {
       required: false,
       default: "Loading...",
     },
+    centered: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     classList() {
-      return [
+      const result = [
         "ecl-spinner",
         `ecl-spinner--${this.color}`,
         `ecl-spinner--${this.size}`,
         "ecl-spinner--visible",
       ];
+
+      if (this.centered) {
+        result.push("ecl-spinner--centered");
+      }
+      return result;
     },
   },
 };

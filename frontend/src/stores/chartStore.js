@@ -4,18 +4,25 @@ import { useRouteParams } from "@vueuse/router";
 import { api } from "@/lib/api";
 import { FILTERS } from "@/lib/constants";
 import { camelToSnakeCase } from "@/lib/utils";
+import { useAsyncState } from "@vueuse/core";
 
 export const useChartStore = defineStore("chart", {
   state: () => {
     return {
-      charts: [],
+      ...useAsyncState(
+        api.get("/charts/").then((r) => r.data),
+        []
+      ),
       currentChartCode: useRouteParams("chartCode"),
     };
   },
   getters: {
-    currentChart(state) {
+    chartList() {
+      return this.state;
+    },
+    currentChart() {
       return (
-        state.charts.find((item) => item.code === this.currentChartCode) || {}
+        this.chartList.find((item) => item.code === this.currentChartCode) ?? {}
       );
     },
     currentFilterOptions() {
@@ -32,11 +39,6 @@ export const useChartStore = defineStore("chart", {
         }
       }
       return result;
-    },
-  },
-  actions: {
-    async getCharts() {
-      this.charts = (await api.get("/charts/")).data;
     },
   },
 });

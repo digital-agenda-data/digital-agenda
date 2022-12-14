@@ -6,8 +6,10 @@
       [`ecl-list-illustration--col-${col}`]: col !== '1',
     }"
   >
+    <ecl-spinner v-if="loading" size="large" centered class="ecl-u-ma-2xl" />
     <div
       v-for="item in items"
+      v-else
       :key="item.id"
       class="ecl-list-illustration__item"
     >
@@ -66,6 +68,7 @@
 import EclIcon from "@/components/ecl/EclIcon.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclLabel from "@/components/ecl/EclLabel.vue";
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 /**
  * ECL List with illustrations component, see documentation here:
@@ -75,7 +78,7 @@ import EclLabel from "@/components/ecl/EclLabel.vue";
  */
 export default {
   name: "EclListIllustration",
-  components: { EclLabel, EclLink, EclIcon },
+  components: { EclSpinner, EclLabel, EclLink, EclIcon },
   props: {
     /**
      * Items must be in the following format:
@@ -117,6 +120,11 @@ export default {
       validator(value) {
         return ["1", "2", "3", "4"].includes(value);
       },
+    },
+    loading: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 };

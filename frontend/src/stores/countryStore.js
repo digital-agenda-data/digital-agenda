@@ -1,21 +1,23 @@
 import { defineStore } from "pinia";
 import { api } from "@/lib/api";
+import { useAsyncState } from "@vueuse/core";
 
 export const useCountryStore = defineStore("country", {
-  state() {
+  state: () => {
     return {
-      countryList: [],
+      ...useAsyncState(
+        api.get("/countries/").then((r) => r.data),
+        []
+      ),
     };
   },
-  actions: {
-    async getCountryList() {
-      this.countryList = (await api.get("/countries/")).data;
-    },
-  },
   getters: {
-    countryByCode(state) {
+    countryList() {
+      return this.state;
+    },
+    countryByCode() {
       const result = new Map();
-      for (const country of state.countryList) {
+      for (const country of this.countryList) {
         result.set(country.code, country);
       }
       return result;

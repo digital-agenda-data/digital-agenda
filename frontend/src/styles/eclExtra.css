@@ -1,6 +1,20 @@
 /* Extra ECL classes or overrides */
 
 /*
+    This uses position absolute in the upstream ECL library. Use
+    modern flex instead.
+ */
+.ecl-spinner--centered {
+  top: auto !important;
+  left: auto !important;
+
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/*
     Make the range input fill available space by default if no
     size has been specified.
 */

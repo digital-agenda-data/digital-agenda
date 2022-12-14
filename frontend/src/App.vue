@@ -11,17 +11,11 @@
       </main>
       <ecl-site-footer />
     </template>
-    <main
-      v-else
-      class="ecl-u-d-flex ecl-u-align-items-center ecl-u-justify-content-center"
-    >
-      <ecl-spinner size="large" />
-    </main>
+    <ecl-spinner v-else size="large" centered />
   </div>
 </template>
 
 <script>
-import { mapActions } from "pinia";
 import { useScriptTag } from "@vueuse/core";
 
 import momentURL from "moment/min/moment.min.js?url";
@@ -32,11 +26,7 @@ import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
 import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
 import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
 
-import { useUserStore } from "@/stores/userStore";
-import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { useChartStore } from "@/stores/chartStore";
 import { getRouteMeta } from "@/lib/utils";
-import { useCountryStore } from "@/stores/countryStore";
 
 const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
 
@@ -56,25 +46,13 @@ export default {
   async mounted() {
     try {
       this.loaded = false;
-      await Promise.allSettled([this.loadECL(), this.loadInitialData()]);
+      await this.loadECL();
     } finally {
       this.loaded = true;
     }
     this.setTitle();
   },
   methods: {
-    ...mapActions(useUserStore, ["getCurrentUser"]),
-    ...mapActions(useCountryStore, ["getCountryList"]),
-    ...mapActions(useChartStore, ["getCharts"]),
-    ...mapActions(useChartGroupStore, ["getChartGroups"]),
-    async loadInitialData() {
-      await Promise.all([
-        // this.getCurrentUser(),
-        this.getChartGroups(),
-        this.getCharts(),
-        this.getCountryList(),
-      ]);
-    },
     /**
      * Load the ECL component library JavaScript by inserting script tags
      * into the document.

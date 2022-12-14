@@ -13,12 +13,7 @@
     </ul>
   </chart-group-nav>
 
-  <div
-    v-if="!loaded"
-    class="ecl-u-d-flex ecl-u-justify-content-center ecl-u-ma-2xl"
-  >
-    <ecl-spinner size="large" />
-  </div>
+  <ecl-spinner v-if="!loaded" size="large" class="ecl-u-ma-2xl" centered />
   <table
     v-else-if="indicatorGroups.length > 0"
     class="ecl-table ecl-table--zebra ecl-u-break-word"

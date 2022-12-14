@@ -18,7 +18,7 @@ export default {
       );
     },
     endpointParams() {
-      if (this.currentChartGroup.periods.length > 0) {
+      if (this.currentChartGroup.periods?.length > 0) {
         return {
           period_in: this.currentChartGroup.periods.join(","),
         };

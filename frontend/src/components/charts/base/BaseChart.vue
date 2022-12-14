@@ -6,7 +6,7 @@
     :options="{ ...chartOptionsDefaults, ...chartOptions }"
     :callback="highchartsCallback"
   />
-  <ecl-spinner v-else size="large" />
+  <ecl-spinner v-else size="large" centered />
 </template>
 
 <script>
@@ -34,6 +34,7 @@ export default {
   },
   data() {
     return {
+      loading: true,
       ready: false,
       apiData: [],
       chart: null,
@@ -343,10 +344,12 @@ export default {
         return;
       }
 
+      this.loading = true;
       this.chart?.showLoading();
       try {
         await Promise.all([this.getFacts(), this.loadExtra()]);
       } finally {
+        this.loading = false;
         this.chart?.hideLoading();
         // Don't show the chart until data is ready to avoid unnecessary
         // layout shifts

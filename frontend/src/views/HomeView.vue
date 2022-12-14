@@ -1,5 +1,9 @@
 <template>
-  <ecl-list-illustration :items="items" zebra>
+  <ecl-list-illustration
+    :items="items"
+    :loading="chartGroupStore.isLoading"
+    zebra
+  >
     <template #description="{ item }">
       <div class="ecl-u-type-align-justify" v-html="item.description" />
 
@@ -40,15 +44,15 @@ import placeholderImageURL from "@/assets/placeholder.png?url";
 import EclListIllustration from "@/components/ecl/EclListIllustration.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { mapState } from "pinia";
+import { mapStores } from "pinia";
 
 export default {
   name: "HomeView",
   components: { EclLink, EclListIllustration },
   computed: {
-    ...mapState(useChartGroupStore, ["chartGroups"]),
+    ...mapStores(useChartGroupStore),
     items() {
-      return this.chartGroups.map((chartGroup, index) => {
+      return this.chartGroupStore.chartGroupList.map((chartGroup, index) => {
         return {
           id: chartGroup.code,
           title: `${index + 1}. ${chartGroup.name}`,
