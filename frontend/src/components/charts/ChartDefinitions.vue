@@ -22,12 +22,14 @@
       <div v-if="item.data_source">
         <b>Data Source:&nbsp;</b>
         <span>
-          {{ dataSources.get(item.data_source)?.label || item.data_source }}
+          {{
+            dataSourceByCode.get(item.data_source)?.label || item.data_source
+          }}
         </span>
         <span>&nbsp;</span>
         <ecl-link
-          v-if="dataSources.get(item.data_source)?.url"
-          :to="dataSources.get(item.data_source)?.url"
+          v-if="dataSourceByCode.get(item.data_source)?.url"
+          :to="dataSourceByCode.get(item.data_source)?.url"
           label="[More information]"
           no-visited
         />
@@ -66,10 +68,9 @@
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { mapState, mapStores } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
-import { api } from "@/lib/api";
-import { setEquals } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useFilterStore } from "@/stores/filterStore";
+import { useDataSourceStore } from "@/stores/dataSourceStore";
 
 export default {
   name: "ChartDefinitions",
@@ -81,20 +82,11 @@ export default {
       default: true,
     },
   },
-  data() {
-    return {
-      dataSources: new Map(),
-    };
-  },
   computed: {
     ...mapStores(useFilterStore),
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentLabels", "currentChartGroupCode"]),
-    dataSourceCodes() {
-      return new Set(
-        this.items.map((item) => item.data_source).filter((code) => !!code)
-      );
-    },
+    ...mapState(useDataSourceStore, ["dataSourceByCode"]),
     items() {
       const result = [];
       for (const axis of ["", "X", "Y", "Z"]) {
@@ -127,34 +119,6 @@ export default {
         }
       }
       return result;
-    },
-  },
-  watch: {
-    dataSourceCodes(newValue, oldValue) {
-      if (!setEquals(newValue, oldValue)) {
-        this.loadDataSources();
-      }
-    },
-  },
-  mounted() {
-    this.loadDataSources();
-  },
-  methods: {
-    async loadDataSources() {
-      if (this.dataSourceCodes.size === 0) return;
-
-      const resp = (
-        await api.get("/data-sources/", {
-          params: { code_in: Array.from(this.dataSourceCodes).join(",") },
-        })
-      ).data;
-
-      const result = new Map();
-      for (const item of resp) {
-        result.set(item.code, item);
-      }
-
-      this.dataSources = result;
     },
   },
 };

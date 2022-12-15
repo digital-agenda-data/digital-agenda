@@ -67,13 +67,13 @@
               <p v-if="indicator.data_source">
                 <strong>Source:&nbsp;</strong>
                 <ecl-link
-                  v-if="dataSources[indicator.data_source]?.url"
-                  :to="dataSources[indicator.data_source]?.url"
-                  :label="dataSources[indicator.data_source]?.label"
+                  v-if="dataSourceByCode.get(indicator.data_source)?.url"
+                  :to="dataSourceByCode.get(indicator.data_source)?.url"
+                  :label="dataSourceByCode.get(indicator.data_source)?.label"
                   no-visited
                 />
                 <span v-else>
-                  {{ dataSources[indicator.data_source]?.label }}
+                  {{ dataSourceByCode.get(indicator.data_source)?.label }}
                 </span>
               </p>
             </div>
@@ -90,6 +90,7 @@ import { mapState } from "pinia";
 import { api } from "@/lib/api";
 import { scrollToHash } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useDataSourceStore } from "@/stores/dataSourceStore";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import ChartGroupNav from "@/components/ChartGroupNav.vue";
@@ -101,7 +102,6 @@ export default {
     return {
       loaded: false,
       chartGroupDetails: null,
-      dataSources: {},
     };
   },
   computed: {
@@ -109,6 +109,7 @@ export default {
       "currentChartGroup",
       "currentChartGroupCode",
     ]),
+    ...mapState(useDataSourceStore, ["dataSourceByCode"]),
     indicatorGroups() {
       return this.chartGroupDetails?.indicator_groups || [];
     },
@@ -138,7 +139,7 @@ export default {
     async loadData() {
       try {
         this.loaded = false;
-        await Promise.all([this.loadChartGroup(), this.loadDataSources()]);
+        await this.loadChartGroup();
       } finally {
         this.loaded = true;
       }
@@ -148,15 +149,6 @@ export default {
       this.chartGroupDetails = (
         await api.get(`/chart-groups/${this.currentChartGroupCode}/`)
       ).data;
-    },
-    async loadDataSources() {
-      const result = {};
-      const response = (await api.get("/data-sources/")).data;
-      for (const dataSource of response) {
-        result[dataSource.code] = dataSource;
-      }
-
-      this.dataSources = result;
     },
   },
 };
