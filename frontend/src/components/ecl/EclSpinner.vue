@@ -1,21 +1,23 @@
 <template>
-  <div :class="classList">
-    <svg class="ecl-spinner__loader" viewBox="25 25 50 50">
-      <circle
-        class="ecl-spinner__circle"
-        cx="50"
-        cy="50"
-        r="20"
-        fill="none"
-        stroke-width="4px"
-        stroke-miterlimit="10"
-        vector-effect="non-scaling-stroke"
-      ></circle>
-    </svg>
-    <div class="ecl-spinner__text">
-      {{ text }}
+  <transition name="fade-delayed" appear>
+    <div :class="classList">
+      <svg class="ecl-spinner__loader" viewBox="25 25 50 50">
+        <circle
+          class="ecl-spinner__circle"
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
+          stroke-width="4px"
+          stroke-miterlimit="10"
+          vector-effect="non-scaling-stroke"
+        ></circle>
+      </svg>
+      <div class="ecl-spinner__text">
+        {{ text }}
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>

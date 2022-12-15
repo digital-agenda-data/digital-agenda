@@ -8,3 +8,18 @@
 .v-leave-to {
   opacity: 0;
 }
+
+/*
+  Delayed fade transition used to NOT display a loading indicator if the
+  loading time is fast enough.
+*/
+.fade-delayed-enter-active,
+.fade-delayed-leave-active {
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.fade-delayed-enter-from,
+.fade-delayed-leave-to {
+  opacity: 0;
+}
