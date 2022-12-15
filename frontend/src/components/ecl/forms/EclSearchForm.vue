@@ -13,6 +13,7 @@
         type="search"
         class="ecl-text-input ecl-text-input--m ecl-search-form__text-input"
         :placeholder="placeholder"
+        aria-label="Search"
       />
     </div>
 

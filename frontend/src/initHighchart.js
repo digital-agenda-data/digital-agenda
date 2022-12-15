@@ -1,3 +1,11 @@
+/**
+ * Init Highcharts:
+ *
+ *  - init extra Highcharts modules required
+ *  - set global option defaults
+ *  - export the Chart component from highcharts-vue
+ */
+
 import HighchartsVue from "highcharts-vue";
 
 import Highcharts from "highcharts";

@@ -24,6 +24,7 @@
         role="img"
         :style="`background-image: url(${item.image});`"
         tabindex="-1"
+        alt=""
       />
 
       <div class="ecl-list-illustration__detail ecl-u-width-100">

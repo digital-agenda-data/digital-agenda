@@ -5,7 +5,7 @@
     zebra
   >
     <template #description="{ item }">
-      <div class="ecl-u-type-align-justify" v-html="item.description" />
+      <div v-html="item.description" />
 
       <ul>
         <li>
