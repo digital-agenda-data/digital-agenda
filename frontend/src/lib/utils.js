@@ -53,6 +53,8 @@ export function setEquals(s1, s2) {
  * Scroll to the hash location in the URL
  */
 export function scrollToHash() {
+  if (!window.location.hash) return;
+
   const el = document.querySelector(window.location.hash);
   if (el) {
     el.scrollIntoView({
