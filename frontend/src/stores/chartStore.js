@@ -2,9 +2,11 @@ import { defineStore } from "pinia";
 import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
-import { FILTERS } from "@/lib/constants";
+import { FILTERS, placeholderImageURL } from "@/lib/constants";
 import { camelToSnakeCase } from "@/lib/utils";
 import { useAsyncState } from "@vueuse/core";
+import chartDefaultImages from "@/lib/chartDefaultImages";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export const useChartStore = defineStore("chart", {
   state: () => {
@@ -39,6 +41,34 @@ export const useChartStore = defineStore("chart", {
         }
       }
       return result;
+    },
+    chartNavItems() {
+      return this.chartList.map((chart) => {
+        return {
+          id: chart.code,
+          code: chart.code,
+          title: chart.name,
+          image:
+            chart.image ||
+            chartDefaultImages[chart.chart_type] ||
+            placeholderImageURL,
+          description: chart.description,
+          to: {
+            name: "chart-view",
+            params: {
+              chartGroupCode: chart.chart_group,
+              chartCode: chart.code,
+            },
+          },
+          label: chart.is_draft ? { text: "draft", variant: "high" } : null,
+          chartGroupCode: chart.chart_group,
+        };
+      });
+    },
+    chartNavForCurrentGroup() {
+      const code = useChartGroupStore().currentChartGroupCode;
+
+      return this.chartNavItems.filter((item) => item.chartGroupCode === code);
     },
   },
 });

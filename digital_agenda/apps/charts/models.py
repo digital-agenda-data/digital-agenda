@@ -82,7 +82,8 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     #
     # When adding an entry here a corresponding entry must be added in
     #
-    #   frontend/src/lib/chartRegistry.js
+    #  - frontend/src/lib/chartRegistry.js
+    #  - frontend/src/lib/chartDefaultImages.js
     #
     CHART_TYPE_CHOICES = [
         (

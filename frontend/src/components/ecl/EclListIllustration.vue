@@ -8,7 +8,7 @@
   >
     <ecl-spinner v-if="loading" size="large" centered class="ecl-u-ma-2xl" />
     <div
-      v-for="item in items"
+      v-for="(item, index) in items"
       v-else
       :key="item.id"
       class="ecl-list-illustration__item"
@@ -30,8 +30,8 @@
       <div class="ecl-list-illustration__detail ecl-u-width-100">
         <ecl-label
           v-if="item.label"
-          :text="item.label"
-          :variant="item.labelVariant || 'low'"
+          :text="item.label.text"
+          :variant="item.label.variant || 'low'"
           class="ecl-u-f-r"
         />
 
@@ -47,11 +47,11 @@
             <ecl-link
               v-if="item.to"
               :to="item.to"
-              :label="item.title"
+              :label="getTitle(item, index)"
               no-visited
             />
             <template v-else>
-              {{ item.title }}
+              {{ getTitle(item, index) }}
             </template>
           </div>
         </div>
@@ -92,7 +92,6 @@ export default {
      *     icon: '',         // (optional) cannot be used with image
      *     to: {},           // (optional) router link for this item
      *     label: '',        // (optional) add a label to the item
-     *     labelVariant: '', // (optional) default to 'low'
      *   }
      */
     items: {
@@ -114,6 +113,11 @@ export default {
       required: false,
       default: false,
     },
+    showIndex: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     col: {
       type: String,
       required: false,
@@ -126,6 +130,15 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+  },
+  methods: {
+    getTitle(item, index) {
+      if (!this.showIndex) {
+        return item.title;
+      }
+
+      return `${index + 1}. ${item.title}`;
     },
   },
 };

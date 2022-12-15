@@ -13,59 +13,18 @@ import BubbleCompareThreeIndicators from "@/components/charts/bubble/BubbleCompa
 import MapCompareCountries from "@/components/charts/map/MapCompareCountries.vue";
 import TableDebugData from "@/components/charts/table/TableDebugData.vue";
 
-import columnChartUrl from "@/assets/chart-images/column/column-chart.png";
-import columnChartMultipleUrl from "@/assets/chart-images/column/column-chart-multiple.png";
-import columnChartStackedUrl from "@/assets/chart-images/column/column-chart-stacked.png";
-import splineChartUrl from "@/assets/chart-images/spline/spline-chart.png";
-import splineChart2Url from "@/assets/chart-images/spline/spline-chart-2.png";
-import scatterChartUrl from "@/assets/chart-images/scatter/scatter-chart.png";
-import bubbleChartUrl from "@/assets/chart-images/bubble/bubble-chart.png";
-import mapChartUrl from "@/assets/chart-images/map/map-chart.png";
-
 // Map values from the backend to frontend components
 export default {
-  COLUMN_COMPARE_COUNTRIES: {
-    component: ColumnCompareCountries,
-    image: columnChartUrl,
-  },
-  COLUMN_COMPARE_BREAKDOWNS: {
-    component: ColumnCompareBreakdowns,
-    image: columnChartMultipleUrl,
-  },
-  COLUMN_STACKED_COMPARE_BREAKDOWNS: {
-    component: ColumnStackedCompareBreakdowns,
-    image: columnChartMultipleUrl,
-  },
-  COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED: {
-    component: ColumnStackedCompareBreakdownsWeighted,
-    image: columnChartStackedUrl,
-  },
-  SPLINE_COMPARE_COUNTRIES: {
-    component: SplineCompareCountries,
-    image: splineChartUrl,
-  },
-  SPLINE_COMPARE_BREAKDOWNS: {
-    component: SplineCompareBreakdowns,
-    image: splineChart2Url,
-  },
-  SPLINE_COMPARE_TWO_INDICATORS: {
-    component: SplineCompareTwoIndicators,
-    image: splineChart2Url,
-  },
-  SCATTER_COMPARE_TWO_INDICATORS: {
-    component: ScatterCompareTwoIndicators,
-    image: scatterChartUrl,
-  },
-  BUBBLE_COMPARE_THREE_INDICATORS: {
-    component: BubbleCompareThreeIndicators,
-    image: bubbleChartUrl,
-  },
-  MAP_COMPARE_COUNTRIES: {
-    component: MapCompareCountries,
-    image: mapChartUrl,
-  },
-  TABLE_DEBUG_DATA: {
-    component: TableDebugData,
-    image: null,
-  },
+  COLUMN_COMPARE_COUNTRIES: ColumnCompareCountries,
+  COLUMN_COMPARE_BREAKDOWNS: ColumnCompareBreakdowns,
+  COLUMN_STACKED_COMPARE_BREAKDOWNS: ColumnStackedCompareBreakdowns,
+  COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED:
+    ColumnStackedCompareBreakdownsWeighted,
+  SPLINE_COMPARE_COUNTRIES: SplineCompareCountries,
+  SPLINE_COMPARE_BREAKDOWNS: SplineCompareBreakdowns,
+  SPLINE_COMPARE_TWO_INDICATORS: SplineCompareTwoIndicators,
+  SCATTER_COMPARE_TWO_INDICATORS: ScatterCompareTwoIndicators,
+  BUBBLE_COMPARE_THREE_INDICATORS: BubbleCompareThreeIndicators,
+  MAP_COMPARE_COUNTRIES: MapCompareCountries,
+  TABLE_DEBUG_DATA: TableDebugData,
 };

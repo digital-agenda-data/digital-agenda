@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
-import { FILTERS } from "@/lib/constants";
+import { FILTERS, placeholderImageURL } from "@/lib/constants";
 import { camelToSnakeCase } from "@/lib/utils";
 import { useAsyncState } from "@vueuse/core";
 
@@ -34,6 +34,25 @@ export const useChartGroupStore = defineStore("chartGroup", {
           this.currentChartGroup?.[camelToSnakeCase(filterName) + "_label"];
       }
       return result;
+    },
+    chartGroupNavItems() {
+      return this.chartGroupList.map((chartGroup) => {
+        return {
+          id: chartGroup.code,
+          title: chartGroup.name,
+          image: chartGroup.image || placeholderImageURL,
+          description: chartGroup.description,
+          to: {
+            name: "charts",
+            params: {
+              chartGroupCode: chartGroup.code,
+            },
+          },
+          label: chartGroup.is_draft
+            ? { text: "draft", variant: "high" }
+            : null,
+        };
+      });
     },
   },
 });

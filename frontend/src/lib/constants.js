@@ -1,3 +1,6 @@
+import imgURL from "@/assets/placeholder.png?url";
+
+export const placeholderImageURL = imgURL;
 export const FILTERS = [
   "indicatorGroup",
   "indicator",

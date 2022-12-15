@@ -1,9 +1,9 @@
-/* Extra ECL classes or overrides */
-
 /*
-    This uses position absolute in the upstream ECL library. Use
-    modern flex instead.
- */
+ Extra ECL classes or overrides
+*/
+
+// This uses position absolute in the upstream ECL library. Use
+// modern flex instead.
 .ecl-spinner--centered {
   top: auto !important;
   left: auto !important;
@@ -14,17 +14,13 @@
   justify-content: center !important;
 }
 
-/*
-    Make the range input fill available space by default if no
-    size has been specified.
-*/
+// Make the range input fill available space by default if no
+// size has been specified.
 .ecl-range {
   width: 100%;
 }
 
-/*
-    I'm not sure why this has extra margin here, just remove it  :/
- */
+// I'm not sure why this has extra margin here, just remove it  :/
 .ecl-form-group .ecl-range {
   margin-top: 0 !important;
 }
@@ -33,18 +29,14 @@
   word-break: break-word;
 }
 
-/*
-    There is an align helper class for the other values but
-    not this one for some reason.
-*/
+// There is an align helper class for the other values but
+// not this one for some reason.
 .ecl-u-type-align-justify {
   text-align: justify;
 }
 
-/*
-    The specificity of this is not enough to override,
-    patch it with !important
-*/
+// The specificity of this is not enough to override,
+// patch it with !important
 @media screen {
   .ecl-link--primary.ecl-link--no-visited:visited {
     color: #fff !important;

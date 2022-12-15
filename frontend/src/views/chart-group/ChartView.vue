@@ -31,6 +31,11 @@
       </div>
     </div>
   </div>
+
+  <div>
+    <h4>See more charts for the same data</h4>
+    <card-nav :items="chartNavForCurrentGroup" />
+  </div>
 </template>
 
 <script>
@@ -40,14 +45,15 @@ import chartRegistry from "@/lib/chartRegistry";
 import ChartActions from "@/components/charts/ChartActions.vue";
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import EclIcon from "@/components/ecl/EclIcon.vue";
+import CardNav from "@/components/CardNav.vue";
 
 export default {
   name: "ChartView",
-  components: { EclIcon, ChartDefinitions, ChartActions },
+  components: { CardNav, EclIcon, ChartDefinitions, ChartActions },
   computed: {
-    ...mapState(useChartStore, ["currentChart"]),
+    ...mapState(useChartStore, ["currentChart", "chartNavForCurrentGroup"]),
     chartComponent() {
-      return chartRegistry[this.currentChart.chart_type]?.component;
+      return chartRegistry[this.currentChart.chart_type];
     },
     /**
      * Normalize components to Objects with key, component
