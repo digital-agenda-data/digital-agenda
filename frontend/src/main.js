@@ -6,6 +6,7 @@ import { createPinia } from "pinia";
 import App from "@/App.vue";
 import router from "@/router";
 import ECLInit from "@/directives/ECLInit";
+import visible from "@/directives/visible";
 import HighchartsVue from "./initHighchart";
 
 const app = createApp(App);
@@ -50,5 +51,6 @@ app.mixin({
 });
 
 app.directive("ecl-init", ECLInit);
+app.directive("visible", visible);
 
 app.mount("#digital-agenda-app");
