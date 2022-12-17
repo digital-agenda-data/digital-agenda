@@ -8,6 +8,7 @@ from digital_agenda.apps.core.wsurls import ws_urlpatterns
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "digital_agenda.settings")
+os.environ.setdefault("SERVER_GATEWAY", "asgi")
 
 django.setup()
 
