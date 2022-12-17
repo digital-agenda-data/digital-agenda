@@ -117,14 +117,19 @@ class ChartGroupIndicatorSearchViewSet(
 
     def get_queryset(self):
         # Intentional cartesian product. An indicator can have many
-        # groups that can belong to many chart groups
-        queryset = Indicator.objects.values(
-            "code",
-            "label",
-            "alt_label",
-            "definition",
-            "groups__code",
-            "groups__chartgroup__code",
+        # groups that can belong to many chart groups.
+        # Any orphaned indicators are excluded from the search.
+        queryset = (
+            Indicator.objects.values(
+                "code",
+                "label",
+                "alt_label",
+                "definition",
+                "groups__code",
+                "groups__chartgroup__code",
+            )
+            .filter(groups__code__isnull=False)
+            .filter(groups__chartgroup__code__isnull=False)
         )
         if not self.request.user.is_authenticated:
             queryset = queryset.filter(groups__chartgroup__is_draft=False)
