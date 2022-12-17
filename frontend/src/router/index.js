@@ -53,7 +53,8 @@ const router = createRouter({
       name: "chart-group",
       component: DatasetView,
       redirect: {
-        name: "home",
+        // Default view for chart-groups
+        name: "charts",
       },
       meta: {
         title() {

@@ -42,7 +42,7 @@ export const useChartGroupStore = defineStore("chartGroup", {
           image: chartGroup.image || placeholderImageURL,
           description: chartGroup.description,
           to: {
-            name: "charts",
+            name: "chart-group",
             params: {
               chartGroupCode: chartGroup.code,
             },
