@@ -22,7 +22,10 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
     description = RichTextField()
-    image = models.ImageField(blank=True)
+    image = models.ImageField(
+        blank=True,
+        help_text="Thumbnail image for this Chart Group. A placeholder will be used if this is not configured.",
+    )
 
     indicator_group_label = models.CharField(max_length=60, default="Indicator group")
     indicator_label = models.CharField(max_length=60, default="Indicator")
@@ -156,6 +159,13 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
 
     chart_type = models.CharField(max_length=50, choices=CHART_TYPE_CHOICES)
     description = RichTextField()
+    image = models.ImageField(
+        blank=True,
+        help_text=(
+            "Custom thumbnail image to use for this chart. If not set, a default one will be used "
+            "depending on the chart type."
+        ),
+    )
 
     indicator_group_filter = filter_option_field("core.IndicatorGroup")
     indicator_filter = filter_option_field("core.Indicator")

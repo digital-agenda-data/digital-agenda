@@ -83,6 +83,7 @@ class ChartSerializer(serializers.ModelSerializer):
             "description",
             "chart_group",
             "is_draft",
+            "image",
             *Chart.filter_options,
         )
         read_only_fields = fields

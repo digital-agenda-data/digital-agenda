@@ -17,12 +17,12 @@ class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_filter = ("chart_group", "is_draft", "chart_type")
     list_select_related = ("chart_group",)
     list_display = (
+        "display_order",
         "code",
+        "chart_group",
+        "name",
         "chart_type",
         "is_draft",
-        "name",
-        "chart_group",
-        "display_order",
     )
     exclude = ("display_order",)
     autocomplete_fields = (
@@ -46,6 +46,8 @@ class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
                         "name",
                         "code",
                         "chart_type",
+                        "description",
+                        "image",
                     )
                 },
             )
@@ -69,10 +71,10 @@ class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
 class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
     search_fields = ("code", "name", "short_name", "description")
     list_display = (
+        "display_order",
         "code",
-        "is_draft",
         "name",
         "short_name",
-        "display_order",
+        "is_draft",
     )
     filter_horizontal = ("periods", "indicator_groups")
