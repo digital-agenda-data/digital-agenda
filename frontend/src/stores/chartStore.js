@@ -3,7 +3,7 @@ import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
 import { FILTERS, placeholderImageURL } from "@/lib/constants";
-import { camelToSnakeCase } from "@/lib/utils";
+import { camelToSnakeCase, groupBy, groupByUnique } from "@/lib/utils";
 import { useAsyncState } from "@vueuse/core";
 import chartDefaultImages from "@/lib/chartDefaultImages";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
@@ -22,10 +22,11 @@ export const useChartStore = defineStore("chart", {
     chartList() {
       return this.state;
     },
+    chartByCode() {
+      return groupByUnique(this.chartList);
+    },
     currentChart() {
-      return (
-        this.chartList.find((item) => item.code === this.currentChartCode) ?? {}
-      );
+      return this.chartByCode.get(this.currentChartCode) ?? {};
     },
     currentFilterOptions() {
       const result = {};
@@ -46,7 +47,6 @@ export const useChartStore = defineStore("chart", {
       return this.chartList.map((chart) => {
         return {
           id: chart.code,
-          code: chart.code,
           title: chart.name,
           image:
             chart.image ||
@@ -69,6 +69,22 @@ export const useChartStore = defineStore("chart", {
       const code = useChartGroupStore().currentChartGroupCode;
 
       return this.chartNavItems.filter((item) => item.chartGroupCode === code);
+    },
+    chartsPerGroup() {
+      return groupBy(this.chartList, "chart_group");
+    },
+    defaultChartForGroup() {
+      const result = {};
+
+      for (const chartGroupCode in this.chartsPerGroup) {
+        // Assume the first chart that has the indicator filter available
+        // is the one we want to display as a link in the search results:
+        result[chartGroupCode] = this.chartsPerGroup[chartGroupCode].find(
+          (chart) => !chart.indicator_filter_hidden
+        );
+      }
+
+      return result;
     },
   },
 });

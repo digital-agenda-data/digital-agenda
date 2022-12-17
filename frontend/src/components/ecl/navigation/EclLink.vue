@@ -7,6 +7,7 @@
     <ecl-icon
       v-if="icon && iconLeft"
       :icon="icon"
+      :rotate="iconRotate"
       size="fluid"
       class="ecl-link__icon"
     />
@@ -18,6 +19,7 @@
     <ecl-icon
       v-if="icon && !iconLeft"
       :icon="icon"
+      :rotate="iconRotate"
       size="fluid"
       class="ecl-link__icon"
     />
@@ -83,6 +85,11 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    iconRotate: {
+      type: [String, Number],
+      required: false,
+      default: "0",
     },
     noVisited: {
       type: Boolean,

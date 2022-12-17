@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
+from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
 from digital_agenda.apps.core.serializers import PeriodSerializer
 
@@ -85,3 +86,21 @@ class ChartSerializer(serializers.ModelSerializer):
             *Chart.filter_options,
         )
         read_only_fields = fields
+
+
+class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):
+    group = serializers.CharField(source="groups__code", read_only=True)
+    chart_group = serializers.CharField(
+        source="groups__chartgroup__code", read_only=True
+    )
+
+    class Meta:
+        model = Indicator
+        fields = [
+            "code",
+            "label",
+            "alt_label",
+            "definition",
+            "group",
+            "chart_group",
+        ]

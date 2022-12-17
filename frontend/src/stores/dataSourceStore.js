@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { api } from "@/lib/api";
 import { useAsyncState } from "@vueuse/core";
+import { groupByUnique } from "@/lib/utils";
 
 export const useDataSourceStore = defineStore("dataSource", {
   state: () => {
@@ -16,11 +17,7 @@ export const useDataSourceStore = defineStore("dataSource", {
       return this.state;
     },
     dataSourceByCode() {
-      const result = new Map();
-      for (const item of this.dataSourceList) {
-        result.set(item.code, item);
-      }
-      return result;
+      return groupByUnique(this.dataSourceList);
     },
   },
 });

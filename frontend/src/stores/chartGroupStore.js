@@ -3,7 +3,7 @@ import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
 import { FILTERS, placeholderImageURL } from "@/lib/constants";
-import { camelToSnakeCase } from "@/lib/utils";
+import { camelToSnakeCase, groupByUnique } from "@/lib/utils";
 import { useAsyncState } from "@vueuse/core";
 
 export const useChartGroupStore = defineStore("chartGroup", {
@@ -20,12 +20,11 @@ export const useChartGroupStore = defineStore("chartGroup", {
     chartGroupList() {
       return this.state;
     },
+    chartGroupByCode() {
+      return groupByUnique(this.chartGroupList);
+    },
     currentChartGroup() {
-      return (
-        this.chartGroupList.find(
-          (item) => item.code === this.currentChartGroupCode
-        ) ?? {}
-      );
+      return this.chartGroupByCode.get(this.currentChartGroupCode) ?? {};
     },
     currentLabels() {
       const result = {};

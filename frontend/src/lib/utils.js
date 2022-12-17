@@ -155,3 +155,63 @@ export function randomChoice(items) {
   }
   return items[Math.floor(Math.random() * items.length)];
 }
+
+/**
+ * Generate a sequence of numbers
+ *
+ * @param start {Number} value to start the range at
+ * @param stop {Number} value to stop the range at (not included)
+ * @param step {Number} value to increment by
+ * @return {Number[]}
+ */
+export function range(start, stop, step = 1) {
+  // Based on:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#sequence_generator_range
+  return Array.from(
+    { length: (stop - start) / step },
+    (_, i) => start + i * step
+  );
+}
+
+/**
+ * Clamp a value between two other values.
+ *
+ * @param i {Number}
+ * @param min {Number}
+ * @param max {Number}
+ * @return {Number}
+ */
+export function clamp(i, min, max) {
+  return Math.min(max, Math.max(min, i));
+}
+
+/**
+ * Group an Array of Objects by one unique property.
+ *
+ * @param items {Object[]}
+ * @param key {String}
+ * @return {Map}
+ */
+export function groupByUnique(items, key = "code") {
+  const result = new Map();
+  for (const item of items) {
+    result.set(item[key], item);
+  }
+  return result;
+}
+
+/**
+ * Group an Array of Objects by one property
+ *
+ * @param items {Object[]}
+ * @param key {String}
+ * @return {{String: Array}}
+ */
+export function groupBy(items, key) {
+  const result = {};
+  for (const item of items) {
+    result[item[key]] ??= [];
+    result[item[key]].push(item);
+  }
+  return result;
+}

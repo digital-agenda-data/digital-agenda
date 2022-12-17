@@ -56,6 +56,11 @@ export default {
       required: false,
       default: false,
     },
+    absolute: {
+      type: Boolean,
+      require: false,
+      default: false,
+    },
   },
   computed: {
     classList() {
@@ -68,6 +73,9 @@ export default {
 
       if (this.centered) {
         result.push("ecl-spinner--centered");
+      }
+      if (this.absolute) {
+        result.push("ecl-spinner--absolute");
       }
       return result;
     },

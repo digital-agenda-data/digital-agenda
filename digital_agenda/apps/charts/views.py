@@ -1,14 +1,18 @@
 from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.serializers import ChartGroupDetailSerializer
+from digital_agenda.apps.charts.serializers import ChartGroupIndicatorSearchSerializer
 from digital_agenda.apps.charts.serializers import ChartGroupListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
+from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.serializers import IndicatorListSerializer
 from digital_agenda.apps.core.serializers import IndicatorGroupListSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
@@ -101,3 +105,32 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             queryset = queryset.filter(is_draft=False)
 
         return queryset
+
+
+class ChartGroupIndicatorSearchViewSet(
+    viewsets.mixins.ListModelMixin, viewsets.GenericViewSet
+):
+    model = Indicator
+    serializer_class = ChartGroupIndicatorSearchSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ("code", "label", "alt_label", "definition")
+
+    def get_queryset(self):
+        # Intentional cartesian product. An indicator can have many
+        # groups that can belong to many chart groups
+        queryset = Indicator.objects.values(
+            "code",
+            "label",
+            "alt_label",
+            "definition",
+            "groups__code",
+            "groups__chartgroup__code",
+        )
+        if not self.request.user.is_authenticated:
+            queryset = queryset.filter(groups__chartgroup__is_draft=False)
+        return queryset
+
+    # Likely to have a lot of cache misses, does not seem worth caching.
+    @method_decorator(never_cache)
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
