@@ -29,7 +29,7 @@
 
               <ecl-search-form
                 id="search-form-id"
-                v-model="searchQuery"
+                :model-value="searchQuery"
                 class="ecl-site-header__search"
                 data-ecl-search-form=""
                 placeholder="e.g. social media"
@@ -50,11 +50,13 @@
     </div>
   </header>
 </template>
+
 <script>
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclSearchForm from "@/components/ecl/forms/EclSearchForm.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import { useRouteQuery } from "@vueuse/router";
 
 /**
  * ECL Site Header component, see documentation here:
@@ -68,17 +70,12 @@ export default {
   data() {
     return {
       logoURL,
-      searchQuery: this.$route.query.q,
+      searchQuery: useRouteQuery("q"),
     };
   },
   computed: {
     searchAction() {
       return this.$router.resolve({ name: "search" }).fullPath;
-    },
-  },
-  watch: {
-    $route() {
-      this.searchQuery = this.$route.query.q;
     },
   },
 };
