@@ -1176,7 +1176,7 @@
   "pk": 27,
   "fields": {
     "created_at": "2022-12-06T12:49:06.975Z",
-    "updated_at": "2022-12-13T10:59:09.860Z",
+    "updated_at": "2022-12-16T08:45:20.730Z",
     "display_order": 1,
     "is_draft": false,
     "chart_group": 1,
@@ -1185,7 +1185,7 @@
     "chart_type": "COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED",
     "description": "<p>This chart shows the structure of the composite index based on a weighted sum of its five components. The chart allows users to change the weighting of the components and see how countries&#39; ranking is modified.</p>",
     "indicator_group_filter_hidden": false,
-    "indicator_filter_hidden": false,
+    "indicator_filter_hidden": true,
     "breakdown_group_filter_hidden": true,
     "breakdown_filter_hidden": true,
     "period_filter_hidden": false,

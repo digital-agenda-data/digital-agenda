@@ -4,6 +4,7 @@
 
 <script>
 import EclRange from "@/components/ecl/forms/EclRange.vue";
+import { useRouteQuery } from "@vueuse/router";
 
 export default {
   name: "RangeFilter",
@@ -14,17 +15,18 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      model: useRouteQuery(this.queryName),
+    };
+  },
   computed: {
     modelValue: {
       get() {
-        return parseInt(this.$route.query[this.queryName]);
+        return parseInt(this.model);
       },
       set(value) {
-        const query = {
-          ...this.$route.query,
-          [this.queryName]: value.toString(),
-        };
-        this.$router.replace({ query });
+        this.model = value;
       },
     },
   },

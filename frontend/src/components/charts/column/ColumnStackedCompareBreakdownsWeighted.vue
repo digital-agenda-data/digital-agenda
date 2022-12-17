@@ -7,9 +7,6 @@ import UnitFilter from "@/components/filters/UnitFilter.vue";
 import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
 import BreakdownWeightsFilter from "@/components/filters/BreakdownWeightsFilter.vue";
 
-// XXX THIS IS NOT COMPLETE
-// XXX Still needs the "drill-down" figured out and implemented
-
 export default {
   name: "ColumnStackedCompareBreakdownsWeighted",
   extends: ColumnStackedCompareBreakdowns,
@@ -24,12 +21,7 @@ export default {
             class: ["chart-filter-full"],
           },
         },
-        {
-          component: IndicatorWithGroupsFilter,
-          attrs: {
-            hidden: this.$route.query.noWeights !== "true",
-          },
-        },
+        IndicatorWithGroupsFilter,
         BreakdownGroupFilter,
         PeriodFilter,
         UnitFilter,

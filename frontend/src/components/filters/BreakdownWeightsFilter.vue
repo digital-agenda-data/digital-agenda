@@ -5,18 +5,7 @@
     <b class="ecl-u-type-color-grey-75">Normalized</b>
 
     <template v-for="item in apiData" :key="item.code">
-      <ecl-link
-        :to="{
-          name: $route.name,
-          params: $route.params,
-          query: {
-            indicator: item.code,
-            period: $route.query.period,
-            noWeights: 'true',
-          },
-        }"
-        no-visited
-      >
+      <ecl-link :to="getDefaultChartRoute(item)" no-visited>
         {{ getDisplay(item) }}
       </ecl-link>
       <range-filter :query-name="item.code" />
@@ -31,12 +20,17 @@
 import BreakdownMultiFilter from "@/components/filters/BreakdownMultiFilter.vue";
 import RangeFilter from "@/components/filters/base/RangeFilter.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import { mapState } from "pinia";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useChartStore } from "@/stores/chartStore";
 
 export default {
   name: "BreakdownWeightsFilter",
   components: { EclLink, RangeFilter },
   extends: BreakdownMultiFilter,
   computed: {
+    ...mapState(useChartGroupStore, ["currentChartGroup"]),
+    ...mapState(useChartStore, ["defaultChartForGroup"]),
     rawValues() {
       const result = {};
 
@@ -50,7 +44,7 @@ export default {
       return Object.values(this.rawValues).reduce((a, b) => a + b, 0);
     },
     isVisible() {
-      return this.apiData.length > 1 && this.$route.query.noWeights !== "true";
+      return this.apiData.length > 1;
     },
   },
   watch: {
@@ -73,6 +67,21 @@ export default {
   methods: {
     getNormalized(code) {
       return ((this.rawValues[code] / this.total) * 100).toFixed(2);
+    },
+    getDefaultChartRoute(item) {
+      const chart = this.defaultChartForGroup[this.currentChartGroup.code];
+      return {
+        name: "chart-view",
+        params: {
+          chartCode: chart.code,
+          chartGroupCode: this.currentChartGroup.code,
+        },
+        query: {
+          period: this.$route.query.period,
+          indicator: item.code,
+          indicatorGroup: item.group,
+        },
+      };
     },
   },
 };
