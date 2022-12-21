@@ -52,7 +52,7 @@
 import { ref } from "vue";
 import { mapState } from "pinia";
 import { useRouteQuery } from "@vueuse/router";
-import { asyncComputed } from "@vueuse/core";
+import { computedAsync } from "@vueuse/core";
 
 import { api } from "@/lib/api";
 
@@ -72,7 +72,7 @@ export default {
       page: useRouteQuery("page"),
       pageSize: 10,
       searchQuery: useRouteQuery("q"),
-      apiData: asyncComputed(this.getItems, null, {
+      apiData: computedAsync(this.getItems, null, {
         lazy: true,
         evaluating: this.loading,
       }),
