@@ -67,15 +67,14 @@ export default {
   name: "SearchView",
   components: { EclPagination, EclLink, EclSpinner },
   data() {
-    const loading = ref(false);
     return {
-      loading,
+      loading: ref(false),
       page: useRouteQuery("page"),
       pageSize: 10,
       searchQuery: useRouteQuery("q"),
       apiData: asyncComputed(this.getItems, null, {
         lazy: true,
-        evaluating: loading,
+        evaluating: this.loading,
       }),
     };
   },

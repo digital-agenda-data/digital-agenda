@@ -18,7 +18,7 @@
 
 <script>
 import BreakdownMultiFilter from "@/components/filters/BreakdownMultiFilter.vue";
-import RangeFilter from "@/components/filters/base/RangeFilter.vue";
+import RangeFilter from "@/components/filters/RangeFilter.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";

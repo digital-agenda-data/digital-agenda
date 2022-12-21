@@ -20,6 +20,8 @@ import { getDisplay, randomChoice } from "@/lib/utils";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
+import { useRouteQuery } from "@vueuse/router";
+import { ref } from "vue";
 
 /**
  * Base component for all filters. Extend this component and
@@ -92,7 +94,6 @@ export default {
   },
   data() {
     return {
-      internalValue: null,
       apiDataRaw: [],
       loading: false,
     };
@@ -103,25 +104,19 @@ export default {
     filterStore() {
       return useFilterStore()[this.axis];
     },
+    model() {
+      if (this.syncRoute) {
+        return useRouteQuery(this.queryName, this.emptyValue);
+      }
+
+      return ref(this.emptyValue);
+    },
     modelValue: {
       get() {
-        if (!this.syncRoute) {
-          return this.internalValue || this.emptyValue;
-        }
-
-        return this.$route.query[this.queryName + this.axis] || this.emptyValue;
+        return this.model.value;
       },
       set(value) {
-        this.internalValue = value;
-
-        if (this.syncRoute) {
-          this.$router.replace({
-            query: {
-              ...this.$route.query,
-              [this.queryName + this.axis]: value,
-            },
-          });
-        }
+        this.model.value = value;
       },
     },
     queryName() {
