@@ -345,7 +345,6 @@ class FactsViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericViewSet):
             "breakdown__code",
             "unit__code",
         )
-        .filter(value__isnull=False)
         .select_related("country", "indicator", "breakdown", "period", "unit")
         .only(
             "country__code",
