@@ -78,12 +78,14 @@ export default {
     series() {
       return [
         {
-          data: this.apiData.map((item) => {
+          data: this.apiData.map((fact) => {
             return {
-              y: item.value || 0,
-              name: item.country,
-              // Custom option to determine when to display the "N/A" label
-              apiValue: item.value,
+              y: fact.value || 0,
+              name: fact.country,
+              // Include the fact in the series as may be needed for some 
+              // tooltip/labels. E.g. to determine when to display the "N/A" 
+              // data label if there is no data available.
+              fact,
             };
           }),
         },

@@ -16,7 +16,12 @@ import { Chart } from "highcharts-vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import { api } from "@/lib/api";
-import { getDisplay, getUnitDisplay, toAPIKey } from "@/lib/utils";
+import {
+  getDisplay,
+  getUnitDisplay,
+  groupByMulti,
+  toAPIKey,
+} from "@/lib/utils";
 
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
@@ -230,29 +235,14 @@ export default {
      * }
      */
     apiValuesGrouped() {
-      if (!this.groupBy || this.groupBy.length === 0) return {};
-
-      const result = {};
-
-      for (const item of this.apiData) {
-        const lastKey = this.groupBy.slice(-1)[0];
-
-        let group = result;
-
-        for (const key of this.groupBy.slice(0, -1)) {
-          const itemValue = item[key];
-
-          if (!group[itemValue]) {
-            group[itemValue] = {};
-          }
-
-          group = group[itemValue];
-        }
-
-        group[item[lastKey]] = item.value;
-      }
-
-      return result;
+      return groupByMulti(this.apiData, this.groupBy, "value");
+    },
+    /**
+     * Same as `apiValuesGrouped` but has the original "fact" Object from
+     * the api for the final group, instead of only the value.
+     */
+    apiDataGrouped() {
+      return groupByMulti(this.apiData, this.groupBy);
     },
     /**
      * Array of country objects currently selected in the filters.

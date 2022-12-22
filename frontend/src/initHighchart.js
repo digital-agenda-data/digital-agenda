@@ -83,7 +83,7 @@ Highcharts.setOptions({
           // The X or Y coordinates still need to be actual values (usually 0)
           // to avoid errors and to have an empty space for the missing
           // values.
-          return this.point.options.apiValue === undefined ? "N/A" : null;
+          return this.point.options.fact?.value === undefined ? "N/A" : null;
         },
       },
     },

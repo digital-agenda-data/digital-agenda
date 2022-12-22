@@ -190,12 +190,14 @@ export function clamp(i, min, max) {
  *
  * @param items {Object[]}
  * @param key {String}
+ * @param valueKey {String} if specified use the value of this key for the map
+ *  instead of the actual object
  * @return {Map}
  */
-export function groupByUnique(items, key = "code") {
+export function groupByUnique(items, key = "code", valueKey = null) {
   const result = new Map();
   for (const item of items) {
-    result.set(item[key], item);
+    result.set(item[key], valueKey ? item[valueKey] : item);
   }
   return result;
 }
@@ -212,6 +214,43 @@ export function groupBy(items, key) {
   for (const item of items) {
     result[item[key]] ??= [];
     result[item[key]].push(item);
+  }
+  return result;
+}
+
+/**
+ * Group array of objects by the specified keys. All values for the keys
+ * must also be strings for this to work. Results in an Object structure like:
+ *
+ * {
+ *   "<value for key1>": {
+ *     "<value for key2>": <item>,
+ *     "<value for key2>": <item>
+ *     ...
+ *   },
+ *   ...
+ * }
+ *
+ * @param items {Object[]}
+ * @param keys {String[]}
+ * @param valueKey {String} if specified use the value of this key for the final
+ *  group instead of the actual item
+ * @return {{}}
+ */
+export function groupByMulti(items, keys, valueKey = null) {
+  if (!items || !keys || keys.length === 0) {
+    return {};
+  }
+
+  if (keys.length === 1) {
+    return Object.fromEntries(groupByUnique(items, keys[0], valueKey));
+  }
+
+  const otherKeys = keys.slice(1);
+  const result = groupBy(items, keys[0]);
+
+  for (const resultKey in result) {
+    result[resultKey] = groupByMulti(result[resultKey], otherKeys, valueKey);
   }
   return result;
 }

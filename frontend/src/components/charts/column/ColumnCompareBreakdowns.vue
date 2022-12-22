@@ -65,14 +65,12 @@ export default {
         return {
           name: this.getDisplay(breakdown),
           data: this.sortedCountries.map((country) => {
-            const apiValue =
-              this.apiValuesGrouped[breakdown.code]?.[country.code];
-
             const weight = this.getWeight(breakdown);
+            const fact = this.apiDataGrouped[breakdown.code]?.[country.code];
 
             return {
-              apiValue,
-              y: apiValue * weight || 0,
+              fact,
+              y: fact?.value * weight || 0,
               name: this.getDisplay(country),
               color: colorForCountry(country, seriesIndex),
             };

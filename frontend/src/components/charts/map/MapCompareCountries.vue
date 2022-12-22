@@ -47,16 +47,18 @@ export default {
         {
           borderColor: "#9F9F9F",
           data: this.countries.map((country) => {
-            const apiValue = this.apiValuesGrouped[country.code];
+            const fact = this.apiDataGrouped[country.code];
+            const value = fact?.value;
 
             return {
+              fact,
+              value,
               key: this.getDisplay(this.countryByCode.get(country.code)),
               code: country.code,
-              value: apiValue,
-              color:
-                apiValue === undefined ? valueNotAvailableColor : undefined,
+              color: value === undefined ? valueNotAvailableColor : undefined,
             };
           }),
+          // Join CNTR_ID from the topology to the code from the backend
           joinBy: ["CNTR_ID", "code"],
           states: {
             hover: {

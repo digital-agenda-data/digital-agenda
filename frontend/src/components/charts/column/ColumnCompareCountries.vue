@@ -45,9 +45,11 @@ export default {
       return [
         {
           data: this.sortedCountries.map((country) => {
+            const fact = this.apiDataGrouped[country.code];
+
             return {
-              y: this.apiValuesGrouped[country.code] || 0,
-              apiValue: this.apiValuesGrouped[country.code],
+              fact,
+              y: fact?.value || 0,
               name: this.getDisplay(country),
               color: colorForCountry(country),
             };

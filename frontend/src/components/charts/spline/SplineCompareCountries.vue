@@ -34,8 +34,11 @@ export default {
           name: this.getDisplay(country),
           color: country.color,
           data: this.apiDataPeriods.map((periodCode) => {
+            const fact = this.apiDataGrouped[country.code][periodCode];
+
             return {
-              y: this.apiValuesGrouped[country.code][periodCode] || null,
+              fact,
+              y: fact?.value || null,
               x: parseInt(periodCode),
               name: periodCode,
             };

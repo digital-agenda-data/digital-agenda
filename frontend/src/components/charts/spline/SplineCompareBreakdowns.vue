@@ -38,11 +38,11 @@ export default {
         return {
           name: this.getDisplay(breakdown),
           data: this.apiDataPeriods.map((periodCode) => {
-            const apiValue =
-              this.apiValuesGrouped[breakdown.code]?.[periodCode];
+            const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
 
             return {
-              y: apiValue,
+              fact,
+              y: fact?.value || null,
               x: parseInt(periodCode),
               name: periodCode,
             };
