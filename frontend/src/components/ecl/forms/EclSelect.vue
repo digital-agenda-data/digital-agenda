@@ -209,7 +209,7 @@ export default {
         return 1;
       }
 
-      if (this.value.length > 2) {
+      if (this.value && this.value.length > 2) {
         // Don't show any and have the #limit slot
         // take over to show the count out of text
         return 0;

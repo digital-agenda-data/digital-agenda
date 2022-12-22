@@ -113,9 +113,17 @@ export default {
     },
     modelValue: {
       get() {
+        if (this.multiple && !Array.isArray(this.model.value)) {
+          return [this.model.value];
+        }
+
         return this.model.value;
       },
       set(value) {
+        if (this.multiple && !Array.isArray(value)) {
+          value = [value];
+        }
+
         this.model.value = value;
       },
     },
