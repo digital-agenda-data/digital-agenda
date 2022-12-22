@@ -135,7 +135,7 @@ export function getUnitDisplay(value, unit) {
   if (!unit) return;
 
   if (value === null || value === undefined) {
-    return `N/A ${unit.alt_label}`;
+    return "<b>Data not available</b>";
   } else if (unit.alt_label.startsWith("%")) {
     return `${value}${unit.alt_label}`;
   } else {

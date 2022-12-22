@@ -11,6 +11,21 @@ export const FILTERS = [
   "country",
 ];
 
+// Taken from https://ec.europa.eu/eurostat/data/database/information
+export const EUROSTAT_FLAGS = {
+  b: "break in time series",
+  c: "confidential",
+  d: "definition differs, see metadata",
+  e: "estimated",
+  f: "forecast",
+  n: "not significant",
+  p: "provisional",
+  r: "revised",
+  s: "Eurostat estimate",
+  u: "low reliability",
+  z: "not applicable",
+};
+
 export const SERIES_COLORS = [
   "#63b8ff",
   "#E41A1C",

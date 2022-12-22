@@ -26,6 +26,7 @@ import {
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useCountryStore } from "@/stores/countryStore";
+import { EUROSTAT_FLAGS } from "@/lib/constants";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -269,6 +270,7 @@ export default {
       const parent = this;
       return {
         formatter() {
+          const fact = this.point.options.fact;
           const result = [`<b>${this.point.options.key ?? this.key}</b>`];
 
           if (this.series.userOptions.name) {
@@ -276,12 +278,11 @@ export default {
           }
 
           if (parent.unit?.code) {
-            result.push(
-              parent.getUnitDisplay(
-                this.point.options.value ?? this.point.options.y,
-                parent.unit
-              )
-            );
+            result.push(parent.getUnitDisplay(fact?.value, parent.unit));
+          }
+
+          for (const flag of fact?.flags || "") {
+            result.push("<b>Flag:</b> " + (EUROSTAT_FLAGS[flag] ?? flag));
           }
 
           if (parent.breakdown?.code) {
