@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th>Country</th>
-        <th>Value</th>
+        <th>{{ getDisplay(unit) }}</th>
       </tr>
     </thead>
 
