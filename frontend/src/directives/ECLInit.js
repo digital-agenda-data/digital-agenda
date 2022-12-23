@@ -17,13 +17,6 @@
  * Makes it much easier to manage components as they are dynamically added/removed
  * from the app.
  *
- * A boolean value can also be bound to determine whether the component
- * should initialized:
- *
- * <div v-ecl-init="shouldInit" data-ecl-auto-init="Message">
- *   ... Message component ...
- * </div>
- *
  * See also documentation for the ECL component library here:
  *
  *   https://ec.europa.eu/component-library/ec/getting-started/
@@ -32,25 +25,12 @@
 export default {
   // called when the bound element's parent component
   // and all its children are mounted.
-  mounted(el, binding) {
-    if (binding.value || binding.value === undefined) {
-      initComponent(el);
-    }
+  mounted(el) {
+    initComponent(el);
   },
   // called when the parent component is unmounted
-  unmounted(el, binding) {
-    if (binding.value || binding.value === undefined) {
-      destroyComponent(el);
-    }
-  },
-  // called after the parent component and
-  // all of its children have updated
-  updated(el, binding) {
-    if (!binding.value && binding.oldValue) {
-      destroyComponent(el);
-    } else if (binding.value && !binding.oldValue) {
-      initComponent(el);
-    }
+  unmounted(el) {
+    destroyComponent(el);
   },
 };
 
