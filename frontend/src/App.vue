@@ -16,9 +16,9 @@
 </template>
 
 <script>
+import { mapStores } from "pinia";
 import { useScriptTag } from "@vueuse/core";
 
-import momentURL from "moment/min/moment.min.js?url";
 import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
@@ -27,9 +27,8 @@ import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
 import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
 
 import { getRouteMeta } from "@/lib/utils";
-import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { mapStores } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
 
@@ -72,9 +71,10 @@ export default {
      */
     async loadECL() {
       try {
-        // ECL.js also requires moment loaded in the global scope. (i.e. window)
-        // So we also load moment.js here in the same way before loading ECL.js
-        await useScriptTag(momentURL).load();
+        // ECL.js also requires moment loaded in the global scope.
+        // However, it's only used for the DatePicker component which we have
+        // no need for, so simply mock it here to prevent failure.
+        window.moment = { "": "Moment JS mock" };
         await useScriptTag(eclURL).load();
       } finally {
         this.eclIsReady = true;
