@@ -34,7 +34,7 @@
 
   <div>
     <h4>See more charts for the same data</h4>
-    <card-nav :items="chartNavForCurrentGroup" />
+    <card-nav :items="chartNavKeepFilters" />
   </div>
 </template>
 
@@ -73,6 +73,27 @@ export default {
         }
       }
       return result;
+    },
+    chartNavKeepFilters() {
+      return this.chartNavForCurrentGroup.map((item) => {
+        const newRoute = {
+          ...item.to,
+          query: {
+            ...item.to.query,
+            // This is slightly problematic as it will include:
+            //  - extra filters that are not used in the other chart
+            //    will be incorrectly kept in the URL
+            //  - multi-axis charts are completely incompatible with single
+            //  - if a filter changes from multi to single, only one
+            //    value will be used from the list in the other chart
+            ...this.$route.query,
+          },
+        };
+        return {
+          ...item,
+          to: newRoute,
+        };
+      });
     },
   },
   methods: {

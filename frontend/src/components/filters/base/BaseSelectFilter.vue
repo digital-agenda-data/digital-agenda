@@ -112,16 +112,22 @@ export default {
       return ref(this.emptyValue);
     },
     modelValue: {
+      // Makes sure that the model is an array if this is a multiselect
+      // and a single value otherwise.
       get() {
         if (this.multiple) {
           return forceArray(this.model.value);
+        } else if (Array.isArray(this.model.value)) {
+          return this.model.value[0];
+        } else {
+          return this.model.value;
         }
-
-        return this.model.value;
       },
       set(value) {
         if (this.multiple) {
           value = forceArray(value);
+        } else if (Array.isArray(value)) {
+          value = value[0];
         }
 
         this.model.value = value;
