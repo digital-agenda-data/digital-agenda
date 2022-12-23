@@ -35,6 +35,7 @@
 <script>
 import EclLabel from "@/components/ecl/EclLabel.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import { forceArray } from "@/lib/utils";
 
 /**
  * ECL Card component, see documentation here:
@@ -76,9 +77,8 @@ export default {
   computed: {
     normalizedLabels() {
       const result = [];
-      let iter = Array.isArray(this.labels) ? this.labels : [this.labels];
 
-      for (let item of iter) {
+      for (let item of forceArray(this.labels)) {
         if (!item) {
           continue;
         }

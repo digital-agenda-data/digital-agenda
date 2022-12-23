@@ -87,7 +87,7 @@ export function camelToSnakeCase(text) {
 /**
  * Convert filter store key to api key:
  *  - convert to snake case
- *  - remove any _x or _y from the of the key
+ *  - remove any axis reference (_x, _y, _z) from the end of the key
  */
 export function toAPIKey(key) {
   return camelToSnakeCase(key).replace(/_[xyz]$/i, "");
@@ -231,6 +231,8 @@ export function groupBy(items, key) {
  *   ...
  * }
  *
+ * The combination of keys must be unique, otherwise items will be lost
+ *
  * @param items {Object[]}
  * @param keys {String[]}
  * @param valueKey {String} if specified use the value of this key for the final
@@ -253,4 +255,16 @@ export function groupByMulti(items, keys, valueKey = null) {
     result[resultKey] = groupByMulti(result[resultKey], otherKeys, valueKey);
   }
   return result;
+}
+
+/**
+ * Force the item to an Array.
+ *
+ * @param item {*}
+ * @return {[]}
+ */
+export function forceArray(item) {
+  if (!item) return [];
+  if (Array.isArray(item)) return item;
+  return [item];
 }

@@ -71,6 +71,7 @@ import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useDataSourceStore } from "@/stores/dataSourceStore";
+import { forceArray } from "@/lib/utils";
 
 export default {
   name: "ChartDefinitions",
@@ -91,25 +92,15 @@ export default {
       const result = [];
       for (const axis of ["", "X", "Y", "Z"]) {
         for (const itemType of ["indicator", "breakdown", "unit"]) {
-          let items = null;
           let display = this.currentLabels[itemType] || itemType;
-          const val = this.filterStore[axis][itemType];
+          const items = this.filterStore[axis][itemType];
 
           if (axis && this.showAxisLabel) {
             display = `(${axis}) ${display}`;
           }
-
           // coerce all values to array if not already, to support
           // multiple definitions of the same type
-          if (!val) {
-            items = [];
-          } else if (Array.isArray(val)) {
-            items = val;
-          } else {
-            items = [val];
-          }
-
-          for (const item of items) {
+          for (const item of forceArray(items)) {
             result.push({
               display,
               itemType,

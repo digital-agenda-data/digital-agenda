@@ -17,6 +17,7 @@ import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 import { api } from "@/lib/api";
 import {
+  forceArray,
   getDisplay,
   getUnitDisplay,
   groupByMulti,
@@ -249,9 +250,7 @@ export default {
      * Array of country objects currently selected in the filters.
      */
     countries() {
-      if (Array.isArray(this.country)) return this.country;
-      if (this.country) return [this.country];
-      return [];
+      return forceArray(this.filterStore.country);
     },
     /**
      * Sorted Array of all the unique period codes from the API data

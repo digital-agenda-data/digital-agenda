@@ -16,7 +16,7 @@
 import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { api } from "@/lib/api";
 import { useFilterStore } from "@/stores/filterStore";
-import { getDisplay, randomChoice } from "@/lib/utils";
+import { forceArray, getDisplay, randomChoice } from "@/lib/utils";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
@@ -113,15 +113,15 @@ export default {
     },
     modelValue: {
       get() {
-        if (this.multiple && !Array.isArray(this.model.value)) {
-          return [this.model.value];
+        if (this.multiple) {
+          return forceArray(this.model.value);
         }
 
         return this.model.value;
       },
       set(value) {
-        if (this.multiple && !Array.isArray(value)) {
-          value = [value];
+        if (this.multiple) {
+          value = forceArray(value);
         }
 
         this.model.value = value;
@@ -247,11 +247,7 @@ export default {
       return true;
     },
     modelValueAllowed() {
-      const iter = Array.isArray(this.modelValue)
-        ? this.modelValue
-        : [this.modelValue];
-
-      for (const val of iter) {
+      for (const val of forceArray(this.modelValue)) {
         if (!this.allowedValues.has(val)) {
           return false;
         }

@@ -62,6 +62,7 @@
 import VueMultiselect from "vue-multiselect";
 import EclFormGroup from "@/components/ecl/forms/EclFormGroup.vue";
 import EclCheckbox from "@/components/ecl/forms/EclCheckbox.vue";
+import { forceArray } from "@/lib/utils";
 
 /**
  * ECL Select adaptation based on vue-multiselect. The regular ECL select component
@@ -145,13 +146,7 @@ export default {
       return this.items.some((item) => !!item.children);
     },
     modelValueSet() {
-      if (Array.isArray(this.modelValue)) {
-        return new Set(this.modelValue);
-      } else if (!this.modelValue) {
-        return new Set();
-      } else {
-        return new Set([this.modelValue]);
-      }
+      return new Set(forceArray(this.modelValue));
     },
     value: {
       get() {
