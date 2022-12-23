@@ -268,3 +268,15 @@ export function forceArray(item) {
   if (Array.isArray(item)) return item;
   return [item];
 }
+
+/**
+ * Convert an HTML string to plaintext
+ *
+ * @param html {String}
+ * @return {string}
+ */
+export function htmlToText(html) {
+  const el = document.createElement("div");
+  el.innerHTML = html;
+  return el.textContent;
+}

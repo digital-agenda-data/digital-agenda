@@ -3,7 +3,12 @@ import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
 import { FILTERS, placeholderImageURL } from "@/lib/constants";
-import { camelToSnakeCase, groupBy, groupByUnique } from "@/lib/utils";
+import {
+  camelToSnakeCase,
+  groupBy,
+  groupByUnique,
+  htmlToText,
+} from "@/lib/utils";
 import { useAsyncState } from "@vueuse/core";
 import chartDefaultImages from "@/lib/chartDefaultImages";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
@@ -53,6 +58,7 @@ export const useChartStore = defineStore("chart", {
             chartDefaultImages[chart.chart_type] ||
             placeholderImageURL,
           description: chart.description,
+          plaintextDescription: htmlToText(chart.description),
           to: {
             name: "chart-view",
             params: {

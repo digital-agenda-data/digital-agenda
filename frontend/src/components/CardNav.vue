@@ -7,6 +7,8 @@
       class="card-nav-item"
       active-class="card-nav-item-active"
       :aria-label="item.title"
+      :aria-description="item.plaintextDescription"
+      :title="item.plaintextDescription"
     >
       <ecl-card :image="item.image" :title="item.title" :labels="item.label" />
     </router-link>
@@ -16,6 +18,9 @@
 <script>
 import EclCard from "@/components/ecl/EclCard.vue";
 
+/**
+ * Grid navigation using EclCard components.
+ */
 export default {
   name: "CardNav",
   components: { EclCard },
@@ -24,11 +29,12 @@ export default {
      * Items must be in the following format:
      *
      *   {
-     *     id: '',           // unique ID for this item
-     *     title: '',        // text to use in the title
-     *     to: {},           // router link for this item
-     *     image: '',        // image url for this item
-     *     label: '',        // (optional) add a label to the item
+     *     id: '',                    // unique ID for this item
+     *     title: '',                 // text to use in the title
+     *     to: {},                    // router link for this item
+     *     image: '',                 // image url for this item
+     *     label: '',                 // (optional) add a label to the item
+     *     plaintextDescription: '',  // (optional) add a tooltip for the item
      *   }
      */
     items: {
