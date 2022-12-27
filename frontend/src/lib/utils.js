@@ -134,15 +134,17 @@ export function getDisplay(item) {
 export function getUnitDisplay(value, unit) {
   if (!unit) return;
 
+  const label = unit.alt_label || unit.label || unit.code;
+
   if (value === null || value === undefined) {
     return "<b>Data not available</b>";
   }
 
-  if (unit.alt_label.startsWith("%")) {
-    return `${value.toFixed(1)}${unit.alt_label}`;
+  if (label.startsWith("%")) {
+    return `${value.toFixed(1)}${label}`;
   }
 
-  return `${value.toFixed(2)} ${unit.alt_label}`;
+  return `${value.toFixed(2)} ${label}`;
 }
 
 /***
