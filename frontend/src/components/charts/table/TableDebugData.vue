@@ -22,12 +22,12 @@
 
 <script>
 import BaseChart from "@/components/charts/base/BaseChart.vue";
-import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
-import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
-import PeriodFilter from "@/components/filters/PeriodFilter.vue";
-import UnitFilter from "@/components/filters/UnitFilter.vue";
-import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
-import BreakdownFilter from "@/components/filters/BreakdownFilter.vue";
+import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
+import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
+import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
+import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
+import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
+import BreakdownFilter from "@/components/chart-filters/BreakdownFilter.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 
 export default {

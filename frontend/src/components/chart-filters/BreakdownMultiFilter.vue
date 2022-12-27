@@ -1,5 +1,5 @@
 <script>
-import BreakdownFilter from "@/components/filters/BreakdownFilter.vue";
+import BreakdownFilter from "@/components/chart-filters/BreakdownFilter.vue";
 
 export default {
   name: "BreakdownMultiFilter",

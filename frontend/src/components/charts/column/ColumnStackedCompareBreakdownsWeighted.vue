@@ -1,11 +1,11 @@
 <script>
 import ColumnStackedCompareBreakdowns from "@/components/charts/column/ColumnStackedCompareBreakdowns.vue";
-import IndicatorWithGroupsFilter from "@/components/filters/IndicatorWithGroupsFilter.vue";
-import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
-import PeriodFilter from "@/components/filters/PeriodFilter.vue";
-import UnitFilter from "@/components/filters/UnitFilter.vue";
-import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
-import BreakdownWeightsFilter from "@/components/filters/BreakdownWeightsFilter.vue";
+import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
+import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
+import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
+import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
+import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
+import BreakdownWeightsFilter from "@/components/chart-filters/BreakdownWeightsFilter.vue";
 
 export default {
   name: "ColumnStackedCompareBreakdownsWeighted",

@@ -1,11 +1,11 @@
 <script>
 import BaseChart from "@/components/charts/base/BaseChart.vue";
-import UnitFilter from "@/components/filters/UnitFilter.vue";
-import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
-import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
-import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
-import CountryFilter from "@/components/filters/CountryFilter.vue";
-import BreakdownMultiFilter from "@/components/filters/BreakdownMultiFilter.vue";
+import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
+import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
+import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
+import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
+import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
+import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
 
 export default {
   name: "SplineCompareBreakdowns",

@@ -1,5 +1,5 @@
 <script>
-import BaseSelectFilter from "@/components/filters/base/BaseSelectFilter.vue";
+import BaseSelectFilter from "@/components/chart-filters/base/BaseSelectFilter.vue";
 import { api } from "@/lib/api";
 
 export default {

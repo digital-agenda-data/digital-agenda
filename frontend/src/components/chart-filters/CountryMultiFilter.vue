@@ -1,5 +1,5 @@
 <script>
-import CountryFilter from "@/components/filters/CountryFilter.vue";
+import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import { randomChoice } from "@/lib/utils";
 
 export default {

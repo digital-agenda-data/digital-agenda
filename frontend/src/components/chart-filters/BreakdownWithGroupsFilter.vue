@@ -1,5 +1,5 @@
 <script>
-import BaseSelectWithGroupFilter from "@/components/filters/base/BaseSelectWithGroupFilter.vue";
+import BaseSelectWithGroupFilter from "@/components/chart-filters/base/BaseSelectWithGroupFilter.vue";
 
 export default {
   name: "BreakdownWithGroupsFilter",

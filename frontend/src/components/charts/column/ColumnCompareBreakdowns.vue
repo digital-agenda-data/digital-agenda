@@ -1,12 +1,12 @@
 <script>
 import BaseChart from "@/components/charts/base/BaseChart.vue";
-import CountryMultiFilter from "@/components/filters/CountryMultiFilter.vue";
-import BreakdownGroupFilter from "@/components/filters/BreakdownGroupFilter.vue";
-import UnitFilter from "@/components/filters/UnitFilter.vue";
-import PeriodFilter from "@/components/filters/PeriodFilter.vue";
-import IndicatorFilter from "@/components/filters/IndicatorFilter.vue";
-import IndicatorGroupFilter from "@/components/filters/IndicatorGroupFilter.vue";
-import BreakdownMultiFilter from "@/components/filters/BreakdownMultiFilter.vue";
+import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
+import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
+import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
+import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
+import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
+import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
+import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
 import { colorForCountry } from "@/lib/utils";
 
 export default {
