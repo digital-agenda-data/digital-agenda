@@ -1,10 +1,13 @@
 fieldset.wide .selector {
-    width: 1000px;
+  width: 1000px;
 }
 
 fieldset.wide .selector select,
 fieldset.wide .selector-chosen,
 fieldset.wide .selector-available {
-    width: 480px;
+  width: 480px;
 }
 
+fieldset.has-changes h2 {
+  font-weight: bold;
+}
