@@ -98,6 +98,7 @@ class IndicatorGroupIndicatorViewSet(IndicatorViewSet):
             .get_queryset()
             .filter(groups__code__in=[self.kwargs["indicator_group_code"]])
             .order_by("indicatorgrouplink__display_order")
+            .distinct("indicatorgrouplink__display_order", "code")
         )
 
     def get_serializer_class(self):
@@ -141,6 +142,7 @@ class BreakdownGroupBreakdownViewSet(BreakdownViewSet):
             .get_queryset()
             .filter(groups__code__in=[self.kwargs["breakdown_group_code"]])
             .order_by("breakdowngrouplink__display_order")
+            .distinct("breakdowngrouplink__display_order", "code")
         )
 
 
@@ -248,6 +250,7 @@ class IndicatorBreakdownGroupBreakdownViewSet(IndicatorFilteredMixin, BreakdownV
                 indicators__code__in=[self.kwargs["indicator_code"]],
             )
             .order_by("breakdowngrouplink__display_order")
+            .distinct("breakdowngrouplink__display_order", "code")
         )
 
 
