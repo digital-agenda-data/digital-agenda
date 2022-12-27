@@ -76,7 +76,7 @@ class IndicatorCodeFilterSet(BaseCodeFilterSet):
 
 class IndicatorViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Indicator
-    queryset = Indicator.objects.all().prefetch_related(
+    queryset = Indicator.objects.exclude(facts__isnull=True).prefetch_related(
         "groups", "periods", "data_source"
     )
     filter_backends = [filters.DjangoFilterBackend]
@@ -367,4 +367,3 @@ class FactsViewSet(CodeLookupMixin, ListModelMixin, viewsets.GenericViewSet):
     @method_decorator(never_cache)
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
-
