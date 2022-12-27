@@ -7,7 +7,6 @@ export default {
   name: "IndicatorFilter",
   extends: BaseSelectFilter,
   computed: {
-    ...mapState(useChartGroupStore, ["currentChartGroup"]),
     queryName() {
       return "indicator";
     },

@@ -99,7 +99,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useChartGroupStore, ["currentLabels"]),
+    ...mapState(useChartGroupStore, ["currentLabels", "currentChartGroup"]),
     ...mapState(useChartStore, ["currentFilterOptions"]),
     filterStore() {
       return useFilterStore()[this.axis];
