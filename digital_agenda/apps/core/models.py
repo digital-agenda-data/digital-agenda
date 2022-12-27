@@ -246,13 +246,13 @@ class Fact(TimestampedModel):
         ]
 
     def clean(self):
-        if self.indicator not in self.breakdown.indicators:
+        if self.indicator not in self.breakdown.indicators.all():
             raise ValidationError("Indicator does not match breakdown")
-        elif self.indicator not in self.unit.indicators:
+        elif self.indicator not in self.unit.indicators.all():
             raise ValidationError("Indicator does not match unit")
-        elif self.indicator not in self.country.indicators:
+        elif self.indicator not in self.country.indicators.all():
             raise ValidationError("Indicator does not match country")
-        elif self.indicator not in self.period.indicators:
+        elif self.indicator not in self.period.indicators.all():
             raise ValidationError("Indicator does not match period")
 
     def save(self, *args, **kwargs):
