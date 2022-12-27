@@ -136,11 +136,13 @@ export function getUnitDisplay(value, unit) {
 
   if (value === null || value === undefined) {
     return "<b>Data not available</b>";
-  } else if (unit.alt_label.startsWith("%")) {
-    return `${value}${unit.alt_label}`;
-  } else {
-    return `${value} ${unit.alt_label}`;
   }
+
+  if (unit.alt_label.startsWith("%")) {
+    return `${value.toFixed(1)}${unit.alt_label}`;
+  }
+
+  return `${value.toFixed(2)} ${unit.alt_label}`;
 }
 
 /***
