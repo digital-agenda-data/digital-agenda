@@ -222,7 +222,7 @@ class Fact(TimestampedModel):
     """
 
     value = models.FloatField(null=True, blank=True)
-    flags = models.CharField(max_length=2, blank=True)
+    flags = models.CharField(max_length=12, blank=True)
     indicator = models.ForeignKey(
         "Indicator", on_delete=models.CASCADE, related_name="facts"
     )

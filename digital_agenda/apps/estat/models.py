@@ -240,7 +240,7 @@ class DatasetConfig(TimestampedModel):
 
 class Fact(TimestampedModel):
     value = models.FloatField(null=True, blank=True)
-    flags = models.CharField(max_length=2, blank=True)
+    flags = models.CharField(max_length=12, blank=True)
     dataset = models.ForeignKey(
         "Dataset", on_delete=models.CASCADE, related_name="facts"
     )
