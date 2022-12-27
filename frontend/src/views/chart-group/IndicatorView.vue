@@ -24,7 +24,7 @@
         <th class="ecl-table__header">Information</th>
       </tr>
     </thead>
-    <template v-for="group in indicatorGroups" :key="group.code">
+    <template v-for="group in indicatorGroupsFiltered" :key="group.code">
       <thead class="ecl-table__head">
         <tr :id="group.code" class="ecl-table__row">
           <th colspan="2" class="ecl-table__header">
