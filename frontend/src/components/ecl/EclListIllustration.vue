@@ -144,7 +144,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+// Hide images on small screens
+.ecl-list-illustration__image {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+// Add extra class "small" that keeps the image ratio, but
+// makes it smaller.
 @media screen and (min-width: 768px) {
   .ecl-list-illustration__image--small:not(
       .ecl-list-illustration__image--square

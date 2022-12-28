@@ -4,11 +4,6 @@ import BaseSelectWithGroupFilter from "@/components/chart-filters/base/BaseSelec
 export default {
   name: "BreakdownWithGroupsFilter",
   extends: BaseSelectWithGroupFilter,
-  data() {
-    return {
-      groups: [],
-    };
-  },
   computed: {
     queryName() {
       return "breakdown";

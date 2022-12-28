@@ -8,7 +8,10 @@
     <template #description="{ item }">
       <div v-html="item.description" />
 
-      <chart-group-extra-links :chart-group-code="item.id" />
+      <chart-group-extra-links
+        :chart-group-code="item.id"
+        class="ecl-u-d-none ecl-u-d-m-block"
+      />
     </template>
   </ecl-list-illustration>
 </template>
