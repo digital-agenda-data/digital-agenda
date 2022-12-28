@@ -37,7 +37,10 @@ highchartsMoreInit(Highcharts);
 // Set global defaults
 Highcharts.setOptions({
   chart: {
-    height: "600px",
+    height: "700px",
+    zooming: {
+      pinchType: "x",
+    },
   },
   colors: SERIES_COLORS,
   exporting: {
@@ -48,22 +51,10 @@ Highcharts.setOptions({
       },
     },
   },
-  title: {
-    widthAdjust: -200,
-  },
-  subtitle: {
-    widthAdjust: -400,
-  },
-  legend: {
-    itemWidth: 150,
-    layout: "vertical",
-    align: "right",
-    verticalAlign: "top",
-    y: 60,
-  },
   credits: {
     text: "European Commission, Digital Scoreboard",
-    href: "https://digital-strategy.ec.europa.eu/",
+    // Disable credit link on small screens
+    href: null,
   },
   yAxis: {
     allowDecimals: false,
@@ -76,6 +67,12 @@ Highcharts.setOptions({
   },
   plotOptions: {
     series: {
+      events: {
+        // Disable selecting series from the legend on small screen
+        legendItemClick() {
+          return false;
+        },
+      },
       dataLabels: {
         enabled: true,
         formatter() {
@@ -90,6 +87,40 @@ Highcharts.setOptions({
         },
       },
     },
+  },
+  responsive: {
+    rules: [
+      {
+        condition: { minWidth: 768 },
+        chartOptions: {
+          chart: {
+            // Slightly less height is needed on larger screens as we move
+            // the legend to the right of the chart instead of the bottom
+            height: "600px",
+          },
+          legend: {
+            itemWidth: 150,
+            layout: "vertical",
+            align: "right",
+            verticalAlign: "middle",
+          },
+          credits: {
+            // Enable credit links on larger screens.
+            href: "https://digital-strategy.ec.europa.eu/",
+          },
+          plotOptions: {
+            series: {
+              events: {
+                // Enable selecting series from the legend on large screens
+                legendItemClick() {
+                  return true;
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
   },
 });
 

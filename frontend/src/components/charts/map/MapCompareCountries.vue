@@ -100,6 +100,7 @@ export default {
           enabled: true,
           floating: true,
           align: "left",
+          layout: "vertical",
           verticalAlign: "middle",
         },
         plotOptions: {
@@ -108,6 +109,18 @@ export default {
               enabled: false,
             },
           },
+        },
+        responsive: {
+          rules: [
+            {
+              condition: { minWidth: 768 },
+              chartOptions: {
+                legend: {
+                  align: "left",
+                },
+              },
+            },
+          ],
         },
       };
     },
