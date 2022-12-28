@@ -166,5 +166,77 @@
     "alt_label": null,
     "definition": null
   }
+},
+{
+  "model": "core.period",
+  "pk": 15,
+  "fields": {
+    "created_at": "2022-12-28T10:59:16.533Z",
+    "updated_at": "2022-12-28T10:59:16.533Z",
+    "code": "2003",
+    "label": null,
+    "alt_label": null,
+    "definition": null
+  }
+},
+{
+  "model": "core.period",
+  "pk": 16,
+  "fields": {
+    "created_at": "2022-12-28T10:59:16.550Z",
+    "updated_at": "2022-12-28T10:59:16.550Z",
+    "code": "2004",
+    "label": null,
+    "alt_label": null,
+    "definition": null
+  }
+},
+{
+  "model": "core.period",
+  "pk": 17,
+  "fields": {
+    "created_at": "2022-12-28T10:59:16.554Z",
+    "updated_at": "2022-12-28T10:59:16.554Z",
+    "code": "2005",
+    "label": null,
+    "alt_label": null,
+    "definition": null
+  }
+},
+{
+  "model": "core.period",
+  "pk": 18,
+  "fields": {
+    "created_at": "2022-12-28T10:59:16.558Z",
+    "updated_at": "2022-12-28T10:59:16.558Z",
+    "code": "2006",
+    "label": null,
+    "alt_label": null,
+    "definition": null
+  }
+},
+{
+  "model": "core.period",
+  "pk": 19,
+  "fields": {
+    "created_at": "2022-12-28T10:59:16.562Z",
+    "updated_at": "2022-12-28T10:59:16.562Z",
+    "code": "2007",
+    "label": null,
+    "alt_label": null,
+    "definition": null
+  }
+},
+{
+  "model": "core.period",
+  "pk": 20,
+  "fields": {
+    "created_at": "2022-12-28T10:59:16.566Z",
+    "updated_at": "2022-12-28T10:59:16.566Z",
+    "code": "2008",
+    "label": null,
+    "alt_label": null,
+    "definition": null
+  }
 }
 ]
