@@ -112,28 +112,57 @@ class ChartGroupIndicatorSearchViewSet(
 ):
     model = Indicator
     serializer_class = ChartGroupIndicatorSearchSerializer
-    filter_backends = [SearchFilter]
-    search_fields = ("code", "label", "alt_label", "definition")
 
     def get_queryset(self):
+        # XXX A braver soul than I can attempt to use the ORM to write a similar
+        # XXX query that correctly creates a cartesian product and handles full text
+        # XXX search AND ranking results. Good luck!
         # Intentional cartesian product. An indicator can have many
         # groups that can belong to many chart groups.
         # Any orphaned indicators are excluded from the search.
-        queryset = (
-            Indicator.objects.values(
-                "code",
-                "label",
-                "alt_label",
-                "definition",
-                "groups__code",
-                "groups__chartgroup__code",
-            )
-            .filter(groups__code__isnull=False)
-            .filter(groups__chartgroup__code__isnull=False)
+        query = """
+            SELECT indicators.id            AS id,
+                   indicators.code          AS code,
+                   indicators.label         AS label,
+                   indicators.alt_label     AS alt_label,
+                   indicators.definition    AS definition,
+                   indicator_groups.code    AS group_code,
+                   chart_groups.code        AS chart_group_code,
+                   highlight::json          AS highlight,
+                   ts_rank(vector, query)   AS rank
+            FROM indicators
+                 INNER JOIN indicators_groups AS group_link
+                            ON indicators.id = group_link.indicator_id
+                 INNER JOIN indicator_groups
+                            ON indicator_groups.id = group_link.group_id
+                 INNER JOIN chart_groups_indicator_groups AS chart_group_link
+                            ON indicator_groups.id = chart_group_link.indicatorgroup_id
+                 INNER JOIN chart_groups
+                            ON chart_group_link.chartgroup_id = chart_groups.id,
+                 json_build_object(
+                     'label', indicators.label,
+                     'alt_label', indicators.alt_label,
+                     'definition', indicators.definition
+                 ) doc,
+                 to_tsvector(%(config)s, doc) vector,
+                 websearch_to_tsquery(%(config)s, %(query)s) query,
+                 ts_headline(%(config)s, doc, query, %(options)s) highlight
+             WHERE vector @@ query AND 
+                   (%(is_auth)s OR chart_groups.is_draft = False)
+             ORDER BY rank DESC
+        """
+
+        return Indicator.objects.raw(
+            query,
+            params={
+                "config": "english",
+                "query": self.request.GET.get("search"),
+                "is_auth": self.request.user.is_authenticated,
+                # See available options here
+                # https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+                "options": "HighlightAll=true",
+            },
         )
-        if not self.request.user.is_authenticated:
-            queryset = queryset.filter(groups__chartgroup__is_draft=False)
-        return queryset
 
     # Likely to have a lot of cache misses, does not seem worth caching.
     @method_decorator(never_cache)

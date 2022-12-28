@@ -90,10 +90,10 @@ class ChartSerializer(serializers.ModelSerializer):
 
 
 class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):
-    group = serializers.CharField(source="groups__code", read_only=True)
-    chart_group = serializers.CharField(
-        source="groups__chartgroup__code", read_only=True
-    )
+    group = serializers.CharField(source="group_code", read_only=True)
+    chart_group = serializers.CharField(source="chart_group_code", read_only=True)
+    highlight = serializers.JSONField(read_only=True)
+    rank = serializers.FloatField(read_only=True)
 
     class Meta:
         model = Indicator
@@ -104,4 +104,6 @@ class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):
             "definition",
             "group",
             "chart_group",
+            "highlight",
+            "rank",
         ]

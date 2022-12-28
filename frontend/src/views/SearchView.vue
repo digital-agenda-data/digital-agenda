@@ -16,14 +16,10 @@
         <tr v-for="item in items" :key="item.id" class="ecl-table__row">
           <td class="ecl-table__cell" data-ecl-table-header="Indicator">
             <div>
-              <strong>
-                <ecl-link
-                  :to="item.to"
-                  :label="item.indicator.label"
-                  no-visited
-                />
-              </strong>
-              <div class="ecl-u-mt-2xs" v-html="item.indicator.definition" />
+              <ecl-link :to="item.to" no-visited>
+                <span v-html="item.label" />
+              </ecl-link>
+              <div class="ecl-u-mt-2xs" v-html="item.definition" />
             </div>
           </td>
           <td
@@ -89,7 +85,8 @@ export default {
         return {
           id: [item.code, item.group, item.chart_group].join("-"),
           chartGroup,
-          indicator: item,
+          label: item.highlight?.label || item.label,
+          definition: item.highlight?.definition || item.definition,
           to: {
             name: "chart-view",
             params: {
