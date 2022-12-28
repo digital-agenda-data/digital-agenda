@@ -1,11 +1,15 @@
 <template>
   <div v-if="isVisible" class="breakdown-weights ecl-u-mb-m">
-    <b class="ecl-u-type-color-grey-75">Click to drill down</b>
-    <span></span>
-    <b class="ecl-u-type-color-grey-75">Normalized</b>
+    <b class="ecl-u-type-color-grey-75"> Click to drill down </b>
+    <b class="breakdown-weights-extra-header"></b>
+    <b class="ecl-u-type-color-grey-75 ecl-u-type-align-center"> Normalized </b>
 
     <template v-for="item in apiData" :key="item.code">
-      <ecl-link :to="getDefaultChartRoute(item)" no-visited>
+      <ecl-link
+        class="breakdown-weights-drill-down"
+        :to="getDefaultChartRoute(item)"
+        no-visited
+      >
         {{ getDisplay(item) }}
       </ecl-link>
       <range-filter :query-name="item.code" />
@@ -88,10 +92,33 @@ export default {
 </script>
 
 <style scoped>
+.breakdown-weights-extra-header {
+  display: none;
+}
+
 .breakdown-weights {
   display: grid;
   align-items: center;
   grid-gap: 1rem;
-  grid-template-columns: 180px auto 100px;
+  grid-template-columns: 1fr auto;
+}
+
+.breakdown-weights-drill-down {
+  grid-column: span 2;
+}
+
+@media (min-width: 768px) {
+  .breakdown-weights-extra-header {
+    display: inline;
+  }
+
+  .breakdown-weights {
+    grid-auto-rows: 2.15em;
+    grid-template-columns: 12rem auto 12rem;
+  }
+
+  .breakdown-weights-drill-down {
+    grid-column: auto;
+  }
 }
 </style>
