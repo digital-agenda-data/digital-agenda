@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="ecl-u-screen-only">
     <h4>See more charts for the same data</h4>
     <card-nav :items="chartNavKeepFilters" />
   </div>

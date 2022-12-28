@@ -51,10 +51,10 @@
   text-align: justify;
 }
 
-// The specificity of this is not enough to override,
-// patch it with !important
-@media screen {
-  .ecl-link--primary.ecl-link--no-visited:visited {
-    color: #fff !important;
+@media print {
+  // Upstream this keeps the font white for print, but removes the background
+  // making the text illegible. Fix it forcing the font be the primary color.
+  .ecl-link--primary {
+    color: #004494 !important;
   }
 }

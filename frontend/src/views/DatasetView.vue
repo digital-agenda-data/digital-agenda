@@ -1,8 +1,10 @@
 <template>
   <router-view />
 
-  <h4>Browse other datasets</h4>
-  <card-nav :items="chartGroupNavItems" />
+  <div class="ecl-u-screen-only">
+    <h4>Browse other datasets</h4>
+    <card-nav :items="chartGroupNavItems" />
+  </div>
 </template>
 
 <script>
