@@ -7,7 +7,7 @@ import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
-import { colorForCountry } from "@/lib/utils";
+import { colorForCountry, forceArray } from "@/lib/utils";
 
 export default {
   name: "ColumnCompareBreakdowns",
@@ -37,7 +37,7 @@ export default {
       return ["breakdown", "country"];
     },
     breakdownList() {
-      return this.breakdown || [];
+      return forceArray(this.breakdown);
     },
     totalsByCountry() {
       const result = {};

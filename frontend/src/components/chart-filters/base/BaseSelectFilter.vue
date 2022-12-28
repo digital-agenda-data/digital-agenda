@@ -1,6 +1,6 @@
 <template>
   <ecl-select
-    v-show="!hidden && isVisible"
+    v-show="isVisible"
     v-model="modelValue"
     :items="items"
     :loading="loading"
@@ -250,7 +250,7 @@ export default {
         // Forced hidden from the backend options
         return false;
       }
-      return true;
+      return !this.hidden;
     },
     modelValueAllowed() {
       for (const val of forceArray(this.modelValue)) {
