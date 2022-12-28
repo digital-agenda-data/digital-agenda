@@ -76,6 +76,9 @@ export default {
       return {
         chart: {
           type: this.chartType,
+          zooming: {
+            type: "xy",
+          },
         },
         legend: {
           enabled: true,
