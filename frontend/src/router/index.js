@@ -1,5 +1,6 @@
-import { createRouter, createWebHistory, useRoute } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
+import { useRoute } from "@/stores/routeStore";
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
@@ -50,7 +51,7 @@ const router = createRouter({
       component: SearchView,
       meta: {
         title() {
-          return `Search results for "${useRoute()?.query?.q || ""}"`;
+          return `Search results for: ${useRoute().query?.q || ""}`;
         },
         breadcrumb: "Search",
       },

@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
 import { FILTERS, placeholderImageURL } from "@/lib/constants";
@@ -20,7 +19,6 @@ export const useChartStore = defineStore("chart", {
         api.get("/charts/").then((r) => r.data),
         []
       ),
-      currentChartCode: useRouteParams("chartCode"),
     };
   },
   getters: {
@@ -29,6 +27,9 @@ export const useChartStore = defineStore("chart", {
     },
     chartByCode() {
       return groupByUnique(this.chartList);
+    },
+    currentChartCode() {
+      return this.$route.params?.chartCode;
     },
     currentChart() {
       return this.chartByCode.get(this.currentChartCode) ?? {};

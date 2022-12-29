@@ -22,6 +22,7 @@
     <h4>Further information</h4>
 
     <chart-group-extra-links
+      v-if="chartGroupStore.currentChartGroupCode"
       :chart-group-code="chartGroupStore.currentChartGroupCode"
     />
   </chart-group-nav>

@@ -51,15 +51,24 @@ export default {
         this.chartStore.isReady
       );
     },
+    pageTitle() {
+      return getRouteMeta(this.$route, "title");
+    },
+    docTitle() {
+      if (this.pageTitle) {
+        return `${this.pageTitle} - ${DEFAULT_TITLE}`;
+      } else {
+        return DEFAULT_TITLE;
+      }
+    },
   },
   watch: {
-    $route() {
-      this.setTitle();
+    docTitle() {
+      document.title = this.docTitle;
     },
   },
   async mounted() {
     await this.loadECL();
-    this.setTitle();
   },
   methods: {
     /**
@@ -79,18 +88,6 @@ export default {
       } finally {
         this.eclIsReady = true;
       }
-    },
-    setTitle() {
-      if (!this.isReady) return;
-
-      this.$nextTick(() => {
-        const pageTitle = getRouteMeta(this.$route, "title");
-        if (pageTitle) {
-          document.title = `${pageTitle} - ${DEFAULT_TITLE}`;
-        } else {
-          document.title = DEFAULT_TITLE;
-        }
-      });
     },
   },
 };

@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { useRouteParams } from "@vueuse/router";
 
 import { api } from "@/lib/api";
 import { FILTERS, placeholderImageURL } from "@/lib/constants";
@@ -13,7 +12,6 @@ export const useChartGroupStore = defineStore("chartGroup", {
         api.get("/chart-groups/").then((r) => r.data),
         []
       ),
-      currentChartGroupCode: useRouteParams("chartGroupCode"),
     };
   },
   getters: {
@@ -22,6 +20,9 @@ export const useChartGroupStore = defineStore("chartGroup", {
     },
     chartGroupByCode() {
       return groupByUnique(this.chartGroupList);
+    },
+    currentChartGroupCode() {
+      return this.$route.params?.chartGroupCode;
     },
     currentChartGroup() {
       return this.chartGroupByCode.get(this.currentChartGroupCode) ?? {};
