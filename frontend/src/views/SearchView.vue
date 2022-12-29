@@ -47,7 +47,7 @@
 <script>
 import { ref } from "vue";
 import { mapState } from "pinia";
-import { useRouteQuery } from "@vueuse/router";
+import { useRouteParams, useRouteQuery } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 
 import { api } from "@/lib/api";
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       loading: ref(false),
-      page: useRouteQuery("page"),
+      page: useRouteParams("page"),
       pageSize: 10,
       searchQuery: useRouteQuery("q"),
       apiData: computedAsync(this.getItems, null, {
@@ -111,7 +111,7 @@ export default {
   methods: {
     async getItems(onCancel) {
       const abortController = new AbortController();
-      const pageNr = parseInt(this.page ?? "1");
+      const pageNr = parseInt(this.page);
 
       onCancel(() => abortController.abort());
 

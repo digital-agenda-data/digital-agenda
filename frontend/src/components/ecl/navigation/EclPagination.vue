@@ -60,7 +60,7 @@
 
 <script>
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import { useRouteQuery } from "@vueuse/router";
+import { useRouteParams, useRouteQuery } from "@vueuse/router";
 import { clamp, range } from "@/lib/utils";
 
 /**
@@ -91,7 +91,7 @@ export default {
         return value > 0;
       },
     },
-    queryName: {
+    paramName: {
       type: String,
       required: false,
       default: "page",
@@ -99,12 +99,12 @@ export default {
   },
   data() {
     return {
-      page: useRouteQuery(this.queryName),
+      page: useRouteParams(this.paramName),
     };
   },
   computed: {
     currentPage() {
-      return parseInt(this.page ?? "1");
+      return parseInt(this.page || "1");
     },
     totalPages() {
       return Math.ceil(this.total / this.pageSize);
@@ -138,10 +138,11 @@ export default {
   methods: {
     getRoute(page) {
       return {
-        query: {
-          ...this.$route.query,
-          page,
+        params: {
+          ...this.$route.params,
+          [this.paramName]: page,
         },
+        query: { ...this.$route.query },
       };
     },
   },

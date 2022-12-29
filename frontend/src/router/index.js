@@ -16,11 +16,18 @@ import ChartView from "@/views/chart-group/ChartView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to) {
+  scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return { el: to.hash };
     }
-    return { top: 0 };
+
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    if (to.path !== from.path) {
+      return { top: 0 };
+    }
   },
   routes: [
     {
@@ -38,7 +45,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/search",
+      path: "/search/:page?",
       name: "search",
       component: SearchView,
       meta: {
