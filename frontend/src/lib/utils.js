@@ -55,12 +55,9 @@ export function setEquals(s1, s2) {
 export function scrollToHash() {
   if (!window.location.hash) return;
 
-  const el = document.querySelector(window.location.hash);
-  if (el) {
-    el.scrollIntoView({
-      behavior: "smooth",
-    });
-  }
+  document.querySelector(window.location.hash)?.scrollIntoView({
+    behavior: "smooth",
+  });
 }
 
 /**

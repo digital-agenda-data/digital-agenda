@@ -222,7 +222,7 @@ export default {
       }
     },
     defaultBackendSingleValue() {
-      return this.currentFilterOptions.defaults[this.queryName].find((code) =>
+      return this.currentFilterOptions.defaults[this.queryName]?.find((code) =>
         this.allowedValues.has(code)
       );
     },
@@ -232,8 +232,8 @@ export default {
       return randomChoice(choiceGroup.children)?.id || choiceGroup.id;
     },
     defaultBackendMultiValue() {
-      return this.currentFilterOptions.defaults[this.queryName].filter((code) =>
-        this.allowedValues.has(code)
+      return (this.currentFilterOptions.defaults[this.queryName] ?? []).filter(
+        (code) => this.allowedValues.has(code)
       );
     },
     defaultMultiValue() {
