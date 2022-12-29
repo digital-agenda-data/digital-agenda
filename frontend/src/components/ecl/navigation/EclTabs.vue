@@ -36,7 +36,7 @@
         </li>
       </ul>
     </div>
-    <div class="ecl-tabs__controls">
+    <div v-show="!hideControls" class="ecl-tabs__controls">
       <button class="ecl-tabs__prev" aria-hidden="true">
         <ecl-icon
           icon="corner-arrow"
@@ -87,6 +87,11 @@ export default {
         // The breadcrumbs list must not be empty
         return value.length > 0;
       },
+    },
+    hideControls: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 };

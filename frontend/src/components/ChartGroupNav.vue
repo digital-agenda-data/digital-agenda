@@ -4,7 +4,7 @@
     :class="`ecl-u-d-${mobileBreakpoint}-none`"
   >
     <div class="ecl-col-12">
-      <ecl-tabs :items="navRoutes" />
+      <ecl-tabs :items="navRoutes" hide-controls />
     </div>
   </div>
 
