@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div class="ecl-u-screen-only">
+  <div class="ecl-u-screen-only hide-embedded">
     <h4>See more charts for the same data</h4>
     <card-nav :items="chartNavKeepFilters" />
   </div>

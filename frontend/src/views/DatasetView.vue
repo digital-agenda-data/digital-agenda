@@ -1,7 +1,7 @@
 <template>
   <router-view />
 
-  <div class="ecl-u-screen-only">
+  <div class="ecl-u-screen-only hide-embedded">
     <h4>Browse other datasets</h4>
     <card-nav :items="chartGroupNavItems" />
   </div>
