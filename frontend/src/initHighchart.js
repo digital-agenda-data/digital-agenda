@@ -80,8 +80,8 @@ Highcharts.setOptions({
           // The X or Y coordinates still need to be actual values (usually 0)
           // to avoid errors and to have an empty space for the missing
           // values.
-          const value = this.point.options.fact?.value;
-          if (value === undefined || value === null) {
+          const fact = this.point.options.fact;
+          if (fact && (fact.value === undefined || fact.value === null)) {
             return "N/A";
           }
         },
