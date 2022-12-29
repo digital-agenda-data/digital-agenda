@@ -284,3 +284,21 @@ export function htmlToText(html) {
   el.innerHTML = html;
   return el.textContent;
 }
+
+/**
+ * Create a copy of the array, and sort it based on numeric comparison
+ *
+ * @param array {Array}
+ * @param reverse {Boolean} reverse the order if set to true
+ * @param keyFunc {Function} function used to get the number from an array item;
+ *  if not specified the item itself is expected to be a valid number
+ * @return {Array} the new sorted array
+ */
+export function sortNumeric(array, { reverse = false, keyFunc = (i) => i }) {
+  return Array.from(array).sort((item1, item2) => {
+    const val1 = keyFunc(item1);
+    const val2 = keyFunc(item2);
+
+    return reverse ? val2 - val1 : val1 - val2;
+  });
+}

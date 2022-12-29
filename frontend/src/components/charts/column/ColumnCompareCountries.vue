@@ -6,7 +6,7 @@ import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
 import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
-import { colorForCountry } from "@/lib/utils";
+import { colorForCountry, sortNumeric } from "@/lib/utils";
 
 export default {
   name: "ColumnCompareCountries",
@@ -35,11 +35,10 @@ export default {
       return ["country"];
     },
     sortedCountries() {
-      return Array.from(this.countries).sort(
-        (country1, country2) =>
-          (this.apiValuesGrouped[country2.code] ?? 0) -
-          (this.apiValuesGrouped[country1.code] ?? 0)
-      );
+      return sortNumeric(this.countries, {
+        reverse: true,
+        keyFunc: (country) => this.apiValuesGrouped[country.code] ?? 0,
+      });
     },
     series() {
       return [
