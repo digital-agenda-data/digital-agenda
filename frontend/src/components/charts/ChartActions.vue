@@ -1,5 +1,5 @@
 <template>
-  <div class="ecl-u-d-flex ecl-u-flex-column chart-actions">
+  <div class="chart-actions">
     <ecl-link
       v-if="chart"
       no-visited
@@ -44,7 +44,10 @@
         params: { chartGroupCode: currentChartGroupCode },
       }"
     />
-    <ecl-social-media-share :text="currentChart.name" />
+    <ecl-social-media-share
+      :text="currentChart.name"
+      class="ecl-u-d-none ecl-u-d-l-block"
+    />
   </div>
 </template>
 <script>
@@ -89,8 +92,22 @@ export default {
   },
 };
 </script>
-<style scoped>
-.chart-actions > * {
-  margin-bottom: 1rem;
+<style scoped lang="scss">
+.chart-actions {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 360px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 996px) {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

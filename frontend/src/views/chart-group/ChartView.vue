@@ -26,6 +26,10 @@
         <chart-definitions :show-axis-label="$refs.chart?.showAxisLabel" />
       </div>
 
+      <hr
+        class="actions-separator ecl-u-border-color-grey-50 ecl-u-d-block ecl-u-d-l-none"
+      />
+
       <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
         <chart-actions :chart="$refs.chart?.chart" />
       </div>
@@ -122,4 +126,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.actions-separator {
+  width: 100%;
+  margin: 0.5rem 1rem 1.5rem 1rem;
+}
+</style>
