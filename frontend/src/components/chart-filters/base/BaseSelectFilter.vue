@@ -272,6 +272,9 @@ export default {
   mounted() {
     this.load();
   },
+  unmounted() {
+    this.filterStore[this.queryName] = null;
+  },
   methods: {
     getDisplay,
     async load() {
