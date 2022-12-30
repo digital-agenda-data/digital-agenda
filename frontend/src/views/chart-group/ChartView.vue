@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { FILTER_SUFFIXES } from "@/lib/constants";
 import { mapState } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
 import chartRegistry from "@/lib/chartRegistry";
@@ -65,7 +66,7 @@ export default {
      */
     normalizedFilterComponents() {
       const result = [];
-      for (const axis of ["X", "Y", "Z", ""]) {
+      for (const axis of FILTER_SUFFIXES) {
         const items = this.$refs.chart?.[`filter${axis}Components`] ?? [];
 
         for (const item of items) {

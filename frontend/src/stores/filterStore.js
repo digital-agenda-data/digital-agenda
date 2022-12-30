@@ -1,8 +1,10 @@
 import { defineStore } from "pinia";
-import { FILTERS } from "@/lib/constants";
+import { FILTER_SUFFIXES, FILTERS } from "@/lib/constants";
 
 function getInit() {
-  return Object.fromEntries(FILTERS.map((key) => [key, null]));
+  const result = Object.fromEntries(FILTERS.map((key) => [key, null]));
+  result.loadingCounter = 0;
+  return result;
 }
 
 /**
@@ -13,7 +15,7 @@ function getInit() {
 function makeGetters() {
   const result = {};
 
-  for (const suffix of ["", "X", "Y", "Z"]) {
+  for (const suffix of FILTER_SUFFIXES) {
     for (const key of FILTERS) {
       result[key + suffix] = function (state) {
         return state[suffix][key];
@@ -41,5 +43,15 @@ export const useFilterStore = defineStore("filter", {
       Z: getInit(),
     };
   },
-  getters: { ...makeGetters() },
+  getters: {
+    ...makeGetters(),
+    totalLoadingCounter(state) {
+      return FILTER_SUFFIXES.map(
+        (suffix) => state[suffix].loadingCounter
+      ).reduce((a, b) => a + b, 0);
+    },
+    allFiltersLoaded() {
+      return this.totalLoadingCounter === 0;
+    },
+  },
 });

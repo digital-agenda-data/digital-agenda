@@ -66,6 +66,7 @@
 
 <script>
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import { FILTER_SUFFIXES } from "@/lib/constants";
 import { mapState, mapStores } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
@@ -90,7 +91,7 @@ export default {
     ...mapState(useDataSourceStore, ["dataSourceByCode"]),
     items() {
       const result = [];
-      for (const axis of ["", "X", "Y", "Z"]) {
+      for (const axis of FILTER_SUFFIXES) {
         for (const itemType of ["indicator", "breakdown", "unit"]) {
           let display = this.currentLabels[itemType] || itemType;
           const items = this.filterStore[axis][itemType];

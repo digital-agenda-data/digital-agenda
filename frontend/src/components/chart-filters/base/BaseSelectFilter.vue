@@ -15,6 +15,7 @@
 <script>
 import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { api } from "@/lib/api";
+import { FILTER_SUFFIXES } from "@/lib/constants";
 import { useFilterStore } from "@/stores/filterStore";
 import { forceArray, getDisplay, randomChoice } from "@/lib/utils";
 import { mapState } from "pinia";
@@ -43,7 +44,7 @@ export default {
       required: false,
       default: "",
       validator(value) {
-        return ["", "X", "Y", "Z"].includes(value);
+        return FILTER_SUFFIXES.includes(value);
       },
     },
     /**
@@ -280,6 +281,7 @@ export default {
     async load() {
       if (!this.endpoint) return;
       this.loading = true;
+      this.filterStore.loadingCounter += 1;
 
       try {
         await Promise.all([this.loadApiData(), this.loadExtra()]);
@@ -304,6 +306,7 @@ export default {
         }
       } finally {
         this.loading = false;
+        this.filterStore.loadingCounter -= 1;
       }
     },
     async loadApiData() {

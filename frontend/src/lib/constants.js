@@ -11,6 +11,8 @@ export const FILTERS = [
   "country",
 ];
 
+export const FILTER_SUFFIXES = ["X", "Y", "Z", ""];
+
 // Taken from https://ec.europa.eu/eurostat/data/database/information
 export const EUROSTAT_FLAGS = {
   b: "break in time series",

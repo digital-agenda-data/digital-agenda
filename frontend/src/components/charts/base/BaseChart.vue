@@ -147,6 +147,12 @@ export default {
      *
      */
     endpointParams() {
+      if (!this.filterStore.allFiltersLoaded) {
+        // Filters are still loading, don't load facts since the filters
+        // will change shortly, discarding the loaded data immediately.
+        return null;
+      }
+
       let filterKeys = null;
 
       if (Array.isArray(this.endpointFilters)) {
