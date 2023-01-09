@@ -3,17 +3,11 @@
 black
 coverage
 django-debug-toolbar
-django-extensions
 django-request-logging
-flake8
 ipdb
 ipython
 ipython-autotime
-jupyterlab
 pytest
 pytest-cov
 pytest-django
-pytest-mock
 pytest-subtests
-pytest-timeout
-pytest-freezegun

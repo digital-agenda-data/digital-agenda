@@ -4,10 +4,6 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.views.generic import RedirectView
 
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -18,8 +14,6 @@ api_urlpatterns = [
     path("", include("digital_agenda.apps.core.urls")),
     path("", include("digital_agenda.apps.charts.urls")),
     path("auth/", include("dj_rest_auth.urls")),
-    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 urlpatterns = [
@@ -36,7 +30,6 @@ urlpatterns = [
         name="redoc",
     ),
     path("ht/", include("health_check.urls")),
-    path("ws/ht/", include("health_check.urls", namespace="ws-ht")),
     path("dashboard/", include("django_sql_dashboard.urls")),
     path("admin/", admin.site.urls),
     path("", RedirectView.as_view(pattern_name="admin:index")),

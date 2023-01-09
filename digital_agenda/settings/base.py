@@ -14,13 +14,33 @@ env = environ.Env()
 if os.path.exists(str(BASE_DIR / ".env")):
     env.read_env(str(BASE_DIR / ".env"))
 
+HAS_HTTPS = env.bool("HAS_HTTPS", default=False)
+PROTOCOL = "https://" if HAS_HTTPS else "http://"
 
-STATIC_ROOT = env.path("STATIC_ROOT")
+BACKEND_HOST = env.list("BACKEND_HOST")
+FRONTEND_HOST = env.list("FRONTEND_HOST")
 
-SECRET_KEY = env.str("SECRET_KEY")
+REDIS_HOST = env.str("REDIS_HOST")
+REDIS_CACHE_DB = 0
+REDIS_CELERY_DB = 1
+
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-DEBUG
 DEBUG = env.bool("DEBUG", default=False)
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-SECRET_KEY
+SECRET_KEY = env.str("SECRET_KEY")
+
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-CSRF_COOKIE_SECURE
+CSRF_COOKIE_SECURE = HAS_HTTPS
+
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-SECURE_SSL_REDIRECT
+SECURE_SSL_REDIRECT = HAS_HTTPS
+
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-SESSION_COOKIE_SECURE
+SESSION_COOKIE_SECURE = HAS_HTTPS
+
+# https://docs.djangoproject.com/en/4.1/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = [_host.rsplit(":", 1)[0] for _host in BACKEND_HOST]
 
 # Application definition
 
@@ -44,7 +64,6 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     "adminsortable2",
-    "channels",
     "ckeditor",
     "colorfield",
     "corsheaders",
@@ -82,23 +101,9 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_EXPOSE_HEADERS = ["content-disposition"]
-CORS_ALLOWED_ORIGINS = env.list(
-    "CORS_ALLOWED_ORIGINS",
-    default=[
-        "http://localhost:8000",
-        "http://127.0.0.1:8000",
-    ],
-)
-# CORS_EXPOSE_HEADERS = ["Correlation-ID", "Content-Disposition"]
-CSRF_TRUSTED_ORIGINS = env.list(
-    "CSRF_TRUSTED_ORIGINS",
-    default=[
-        "http://localhost:8000",
-        "http://127.0.0.1:8000",
-    ],
-)
-CSRF_COOKIE_DOMAIN = env.str("CSRF_COOKIE_DOMAIN")
-CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", default=False)
+CORS_ALLOWED_ORIGINS = [PROTOCOL + _host for _host in FRONTEND_HOST]
+
+CSRF_TRUSTED_ORIGINS = [PROTOCOL + _host for _host in (FRONTEND_HOST + BACKEND_HOST)]
 
 
 ROOT_URLCONF = "digital_agenda.site.urls"
@@ -174,7 +179,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": env.str("REDIS_LOCATION"),
+        "LOCATION": f"redis://{REDIS_HOST}/{REDIS_CACHE_DB}",
         "OPTIONS": {
             "SOCKET_TIMEOUT": 5,
             "SOCKET_CONNECT_TIMEOUT": 5,
@@ -215,7 +220,6 @@ REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "digital_agenda.common.exceptions.core_exception_handler",
     "NON_FIELD_ERRORS_KEY": "error",
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": (
@@ -237,27 +241,6 @@ SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,
 }
 
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "ROTATE_REFRESH_TOKENS": False,
-    "BLACKLIST_AFTER_ROTATION": True,
-    "ALGORITHM": "HS256",
-    "SIGNING_KEY": SECRET_KEY,
-    "VERIFYING_KEY": None,
-    "AUDIENCE": None,
-    "ISSUER": None,
-    "AUTH_HEADER_TYPES": ("Bearer",),
-    "USER_ID_FIELD": "id",
-    "USER_ID_CLAIM": "user_id",
-    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
-    "TOKEN_TYPE_CLAIM": "token_type",
-    "JTI_CLAIM": "jti",
-    "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
-    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=5),
-    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
-}
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -274,17 +257,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = env.path("STATIC_ROOT")
+
+# Media files / user uploads
+# https://docs.djangoproject.com/en/4.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development
+MEDIA_URL = "/media/"
+MEDIA_ROOT = env.path("MEDIA_ROOT")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
 # Celery
-CELERY_BROKER_URL = env.str(
-    "CELERY_BROKER_URL", default="pyamqp://guest:guest@localhost:5672"
-)
+CELERY_BROKER_URL = f"redis://{REDIS_HOST}/{REDIS_CELERY_DB}"
 
 
 BULK_DOWNLOAD_ROOT_URL = env.str(
@@ -295,9 +281,6 @@ BULK_DOWNLOAD_TIMEOUT = env.float("BULK_DOWNLOAD_TIMEOUT", default=5.0)
 BULK_DOWNLOAD_DIR = env.path("BULK_DOWNLOAD_DIR")
 
 DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
-
-MEDIA_URL = "/media/"
-MEDIA_ROOT = env.path("MEDIA_ROOT")
 
 IMPORT_FILES_SUBDIR = env.str("IMPORT_FILES_SUBDIR", default="import_files")
 IMPORT_FILES_ALLOWED_EXTENSIONS = env.list(
