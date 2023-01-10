@@ -22,10 +22,7 @@ services:
     restart: always
 
   app:
-    image: digital-agenda-app:latest
-    build:
-      context: .
-      dockerfile: docker/app.docker
+    image: ghcr.io/digital-agenda-data/digital-agenda-app:${DOCKER_TAG:-master}
     env_file:
       - .env
     environment:
@@ -40,10 +37,7 @@ services:
     restart: always
 
   celery:
-    image: digital-agenda-app:latest
-    build:
-      context: .
-      dockerfile: docker/app.docker
+    image: ghcr.io/digital-agenda-data/digital-agenda-app:${DOCKER_TAG:-master}
     env_file:
       - .env
     volumes:
@@ -55,10 +49,7 @@ services:
     command: ["celery", "-A", "digital_agenda", "worker", "-l", "info", "--concurrency=1"]
 
   nginx:
-    image: digital-agenda-nginx:latest
-    build:
-      context: .
-      dockerfile: docker/nginx.docker
+    image: ghcr.io/digital-agenda-data/digital-agenda-nginx:${DOCKER_TAG:-master}
     volumes:
       - app_data:/.fs
     depends_on:

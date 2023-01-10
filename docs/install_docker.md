@@ -4,7 +4,7 @@ This is the backend for the Digital Agenda **Data Visualisation Tool**.
 
 ## Docker Setup
  
-- Clone the repository
+- Clone the repository (or just download the relevant files)
 - Make sure docker and docker-compose-plugin is installed 
 - Copy override example and adjust as necessary:
   ```shell
@@ -15,9 +15,8 @@ This is the backend for the Digital Agenda **Data Visualisation Tool**.
   ```shell
   cp .env.example .env
   ```
-- Build and start services
+- Start services
   ```shell
-  docker compose build --pull
   docker compose up -d 
   ```
 - Load initial fixtures
@@ -32,8 +31,7 @@ This is the backend for the Digital Agenda **Data Visualisation Tool**.
 ## Updating 
 
 - Update the git repo
-- Rebuild and restart services
+- Restart services
   ```shell
-  docker compose build --pull
   docker compose up -d
   ```
