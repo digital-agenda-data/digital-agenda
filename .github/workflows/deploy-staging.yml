@@ -17,9 +17,8 @@ jobs:
       - name: Update docker-compose.yml
         run: |
           cp docker-compose.yml /home/digital-agenda/
-      - name: Set version
-        run: |
-          sed -i "/^DOCKER_TAG=/c\DOCKER_TAG=$GITHUB_REF_NAME" .env
       - name: Update services
         run: |
+          cd /home/digital-agenda/
+          sed -i "/^DOCKER_TAG=/c\DOCKER_TAG=$GITHUB_REF_NAME" .env
           docker compose up -d --pull always
