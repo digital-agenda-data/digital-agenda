@@ -4,7 +4,12 @@ name: Deploy Staging
 concurrency: staging_deployment
 
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Create and publish a Docker images"]
+    types:
+      - completed
+    branches:
+      - master
 
 jobs:
   deploy:
