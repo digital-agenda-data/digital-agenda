@@ -1,0 +1,25 @@
+name: Deploy Staging
+
+# Ensure that only one job works on this at a time
+concurrency: staging_deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on:
+      - self-hosted
+      - ci
+      - digital-agenda-staging
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update docker-compose.yml
+        run: |
+          cp docker-compose.yml /home/digital-agenda/
+      - name: Set version
+        run: |
+          sed -i "/^DOCKER_TAG=/c\DOCKER_TAG=$GITHUB_REF_NAME" .env
+      - name: Update services
+        run: |
+          docker compose up -d --pull always
