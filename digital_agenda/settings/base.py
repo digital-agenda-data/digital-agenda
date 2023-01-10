@@ -37,6 +37,9 @@ CSRF_COOKIE_SECURE = HAS_HTTPS
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-SECURE_SSL_REDIRECT
 SECURE_SSL_REDIRECT = HAS_HTTPS
 
+# https://docs.djangoproject.com/en/4.1/ref/settings/#secure-proxy-ssl-header
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-SESSION_COOKIE_SECURE
 SESSION_COOKIE_SECURE = HAS_HTTPS
 
