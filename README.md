@@ -1,5 +1,7 @@
 # Digital Agenda Data Visualization Tool
 
+[![Create and publish a Docker images](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/docker-build.yml/badge.svg)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/docker-build.yml)
+
 Docs:
 
  - [Install Docker](docs/install_docker.md)
