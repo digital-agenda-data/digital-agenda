@@ -5,7 +5,7 @@
 Import Eurostat bulk metadata for each source dataset, e.g.:
 
 ```shell
-django-admin estat-import-bulk-meta isoc_bde15dec \
+./manage.py estat-import-bulk-meta isoc_bde15dec \
 --indicator=indic_is \
 --breakdown=sizen_r2 \
 --unit=unit \
@@ -19,7 +19,7 @@ to avoid accidentally loading large amounts of unwanted facts.
 Enable the appropriate values using the command:
 
 ```shell
-django-admin estat-enable-dim-values <JSON file>
+./manage.py estat-enable-dim-values <JSON file>
 ```
 
 where the input file has a structure mapping dataset, dimension and values, e.g.:
@@ -57,7 +57,7 @@ queries section below).
 Once the metadata is in place, load the bulk metadata for each dataset, e.g.:
 
 ```shell
-django-admin estat-import-bulk-data isoc_bde15dec
+./manage.py estat-import-bulk-data isoc_bde15dec
 ```
 
 ### Dashboard Queries
@@ -102,7 +102,7 @@ multiple queries, only the first is used during the final import stage, by speci
 dashboard's slug as the parameter:
 
 ```shell
-django-admin import-with-query ent2_after_2009
+./manage.py import-with-query ent2_after_2009
 ```
 
 Be aware that core facts must have unique indicator/breakdown/unit/country/period combinations. 
@@ -130,3 +130,21 @@ Data structure requirements:
   - unit	
   - value	
   - flag(s)
+
+
+## Creating fixtures
+
+Alternative fixtures can be produced from Excel exports of code lists from the previous version:
+```shell
+python scripts/mk_data_sources_fixture.py source.xls
+python scripts/mk_units_fixture.py unit-measure.xls
+python scripts/mk_indicator_groups_fixture.py indicator-group.xls
+python scripts/mk_indicators_fixture.py indicator.xls --groups-excel-file=indicator-group.xls --sources-excel-file=source.xls
+python scripts/mk_breakdown_groups_fixture.py breakdown-group.xls 
+python scripts/mk_breakdowns_fixture.py breakdown.xls --groups-excel-file=breakdown-group.xls
+```
+The scripts for the indicators and breakdowns fixtures also produce the "links" fixtures with their respective groups.
+For indicators, integrity checks can be performed against the indicator groups and data sources Excel files. 
+For breakdowns, validation of the group can be done versus the breakdown groups Excel file.  
+In both cases, warnings are issued for unknown references, and those association records are **not** included in the links fixture.
+

@@ -21,6 +21,7 @@ BACKEND_HOST = env.list("BACKEND_HOST")
 FRONTEND_HOST = env.list("FRONTEND_HOST")
 
 REDIS_HOST = env.str("REDIS_HOST")
+REDIS_PORT = env.int("REDIS_PORT", default=6379)
 REDIS_CACHE_DB = 0
 REDIS_CELERY_DB = 1
 
@@ -179,7 +180,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f"redis://{REDIS_HOST}/{REDIS_CACHE_DB}",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CACHE_DB}",
         "OPTIONS": {
             "SOCKET_TIMEOUT": 5,
             "SOCKET_CONNECT_TIMEOUT": 5,
@@ -256,13 +257,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+FS_DIR = BASE_DIR / ".fs"
+
 STATIC_URL = "static/"
-STATIC_ROOT = env.path("STATIC_ROOT")
+STATIC_ROOT = FS_DIR / "static"
 
 # Media files / user uploads
 # https://docs.djangoproject.com/en/4.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development
 MEDIA_URL = "/media/"
-MEDIA_ROOT = env.path("MEDIA_ROOT")
+MEDIA_ROOT = FS_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -270,7 +273,7 @@ MEDIA_ROOT = env.path("MEDIA_ROOT")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Celery
-CELERY_BROKER_URL = f"redis://{REDIS_HOST}/{REDIS_CELERY_DB}"
+CELERY_BROKER_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CELERY_DB}"
 
 
 BULK_DOWNLOAD_ROOT_URL = env.str(
@@ -278,7 +281,7 @@ BULK_DOWNLOAD_ROOT_URL = env.str(
     default="https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing",
 )
 BULK_DOWNLOAD_TIMEOUT = env.float("BULK_DOWNLOAD_TIMEOUT", default=5.0)
-BULK_DOWNLOAD_DIR = env.path("BULK_DOWNLOAD_DIR")
+BULK_DOWNLOAD_DIR = FS_DIR / "bulk_downloads"
 
 DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
 

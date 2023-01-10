@@ -68,3 +68,5 @@ docs/_build/
 
 docker/wheels/
 .idea/
+
+docker-compose.override.yml

@@ -12,7 +12,7 @@ This document describes installation steps required to install locally for devel
 - Install and start redis (>=6)
 - Install required packages for building dependencies:
   ```
-  gettext build-essential gcc
+  gettext build-essential gcc libmagic1
   ```
 - Create a postgresql database and user:
   ```shell
@@ -33,15 +33,15 @@ This document describes installation steps required to install locally for devel
   ```
 - Run migrations
   ```shell
-  python manage.py migrate
+  ./manage.py migrate
   ```
 - Create superuser
   ```shell
-  python manage.py createsuperuser
+  ./manage.py createsuperuser
   ```
 - Load initial fixtures
   ```shell
-  python manage.py load_initial_fixtures
+  ./manage.py load_initial_fixtures
   ```
   
 ## Installing Frontend for development
@@ -59,7 +59,7 @@ This document describes installation steps required to install locally for devel
 
 - Start the backend with hot-reload
   ```shell
-  python manage.py runserver
+  ./manage.py runserver
   ```
 - Start the frontend with hot-reload (from frontend directory)
   ```shell
@@ -83,5 +83,5 @@ This document describes installation steps required to install locally for devel
   ```
 - Run migrations:
   ```shell
-  python manage.py migrate
+  ./manage.py migrate
   ```

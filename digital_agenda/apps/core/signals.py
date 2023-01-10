@@ -17,7 +17,6 @@ logger = logging.getLogger(__name__)
 @receiver([post_save, post_delete], dispatch_uid="auto_clear_cache_receiver")
 def auto_clear_cache(sender, instance=None, **kwargs):
     if getattr(sender._meta.app_config, "auto_clear_cache", False):
-        logger.debug("Change detected for %r", instance)
         clear_all_caches()
 
 
