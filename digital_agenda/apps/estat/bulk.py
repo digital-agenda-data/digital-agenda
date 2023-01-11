@@ -197,7 +197,7 @@ class BulkTSVDataset(BulkFile):
         with open(METABASE_FILE.path, newline="") as f:
             reader = csv.reader(f, delimiter="\t")
             for row in reader:
-                if row[0] == self.name:
+                if row[0].lower() == self.name.lower():
                     meta[row[1]].add(row[2])
 
         return meta
