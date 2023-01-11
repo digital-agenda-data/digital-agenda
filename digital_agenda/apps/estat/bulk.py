@@ -1,7 +1,7 @@
 """
 Helpers for using the Eurostat bulk download facilities
 """
-
+from functools import cached_property
 from collections import defaultdict
 import csv
 import io
@@ -12,7 +12,6 @@ from typing import Dict, List, Optional, Tuple, Union, Any
 
 from attrs import define
 from django.conf import settings
-from django.utils.functional import cached_property
 import httpx
 import pandas as pd
 
@@ -127,7 +126,8 @@ class BulkTSVDataset(BulkFile):
             or f"{settings.BULK_DOWNLOAD_ROOT_URL}?sort=1&downfile=data/{self.name.lower()}.tsv.gz"
         )
 
-    def get_label(self):
+    @cached_property
+    def label(self):
         """
         Obtain the dataset label from the datasets/tables bulk file.
         If not present locally, the file is downloaded first.
@@ -146,9 +146,8 @@ class BulkTSVDataset(BulkFile):
 
         return label
 
-    label = cached_property(get_label)
-
-    def get_dimensions(self):
+    @cached_property
+    def dimensions(self):
         """
         Read the dimensions from the dataset's header.
         """
@@ -169,8 +168,6 @@ class BulkTSVDataset(BulkFile):
                 for di, d in enumerate(dimensions)
             }
 
-    dimensions = cached_property(get_dimensions)
-
     @cached_property
     def dimension_codes(self):
         return list(self.dimensions.keys())
@@ -183,7 +180,8 @@ class BulkTSVDataset(BulkFile):
 
         return None
 
-    def get_metadata(self):
+    @cached_property
+    def metadata(self):
         """
         Read the dimension codes used in the dataset, from the metabase bulk file.
         If not present locally, the file is downloaded first.
@@ -203,8 +201,6 @@ class BulkTSVDataset(BulkFile):
                     meta[row[1]].add(row[2])
 
         return meta
-
-    metadata = cached_property(get_metadata)
 
     def populate_dimension_labels(self):
         if not DIMENSIONS_FILE.path.exists():
