@@ -141,7 +141,7 @@ class BulkTSVDataset(BulkFile):
         with open(DATASETS_FILE.path, newline="") as f:
             reader = csv.reader(f, delimiter="\t")
             for row in reader:
-                if row[0].lower() == self.name:
+                if row[0].lower() == self.name.lower():
                     return row[1]
 
         return label
