@@ -111,7 +111,7 @@ export default {
   methods: {
     async getItems(onCancel) {
       const abortController = new AbortController();
-      const pageNr = parseInt(this.page);
+      const pageNr = parseInt(this.page || "1");
 
       onCancel(() => abortController.abort());
 
