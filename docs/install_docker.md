@@ -4,7 +4,10 @@ This is the backend for the Digital Agenda **Data Visualisation Tool**.
 
 ## Docker Setup
  
-- Clone the repository (or just download the relevant files)
+- Clone the repository, or just download the relevant files:
+  - [.env.example](https://raw.githubusercontent.com/digital-agenda-data/digital-agenda/master/.env.example) 
+  - [docker-compose.yml](https://raw.githubusercontent.com/digital-agenda-data/digital-agenda/master/docker-compose.yml) 
+  - [docker-compose.override.example.yml](https://raw.githubusercontent.com/digital-agenda-data/digital-agenda/master/docker-compose.override.example.yml)
 - Make sure docker and docker-compose-plugin is installed 
 - Copy override example and adjust as necessary:
   ```shell
@@ -22,10 +25,14 @@ This is the backend for the Digital Agenda **Data Visualisation Tool**.
 - Load initial fixtures
   ```shell
   docker compose exec app ./manage.py load_initial_fixtures
-  ```
+  ``` 
 - Create a super user 
   ```shell
   docker compose exec app ./manage.py createsuperuser
+  ```
+- Import data from ESTAT  
+  ```shell
+  docker compose exec app ./manage.py estat_import
   ```
   
 ## Updating 

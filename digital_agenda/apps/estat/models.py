@@ -53,8 +53,23 @@ def default_mappings():
 
 class ImportConfig(models.Model):
     code = CICharField(max_length=60)
-    title = models.CharField(max_length=1024, blank=True, null=True)
-    last_import_time = models.TimeField(null=True)
+    title = models.CharField(
+        max_length=1024,
+        blank=True,
+        null=True,
+        help_text=(
+            "Human readable title for logging and differentiating from multiple configs for the same dataset"
+        ),
+    )
+    last_import_time = models.TimeField(
+        null=True,
+        help_text=(
+            "Time when the last import was completed, regardless if it was successful or not."
+        ),
+    )
+    status = models.TextField(
+        help_text="Status of the import from config task or the error message if it failed"
+    )
 
     indicator = CICharField(max_length=60)
     indicator_is_surrogate = models.BooleanField(default=False)
@@ -90,9 +105,16 @@ class ImportConfig(models.Model):
         on_delete=models.CASCADE,
         help_text="Only include datapoints for countries in this group OR the group itself",
     )
-    filters = models.JSONField(default=dict, blank=True)
-    mappings = models.JSONField(default=default_mappings, blank=True)
-    status = models.TextField()
+    filters = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Object with ESTAT dimension keys and an Array of accepted codes as values.",
+    )
+    mappings = models.JSONField(
+        default=default_mappings,
+        blank=True,
+        help_text="Define how ESTAT codes are transformed before inserting into the DB",
+    )
 
     def clean(self):
         for attr in ("code", "indicator", "breakdown", "country", "unit", "period"):
@@ -115,6 +137,12 @@ class ImportConfig(models.Model):
 
         if not isinstance(self.filters, dict):
             raise ValidationError({"filters": "Must be a valid JSON object"})
+
+        for key, values in self.filters.items():
+            if len(values) != len(set(values)):
+                raise ValidationError(
+                    {"filters": f"Duplicate values detected for the {key!r} dimension"}
+                )
 
         if not isinstance(self.mappings, dict):
             raise ValidationError({"mappings": "Must be a valid JSON object"})

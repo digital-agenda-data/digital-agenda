@@ -19,6 +19,40 @@ class GeoGroupAdmin(admin.ModelAdmin):
     search_fields = ("code",)
 
 
+DIMENSION_DESCRIPTION = """
+Choose what dimension from the ESTAT dataset to take values from. Notes:
+<dl>
+    <li>Surrogate fields will be taken as hardcoded values instead.</li>
+    <li>Non-existing values are automatically created on import.</li>
+</dl>
+"""
+FILTERS_DESCRIPTION = """
+All datapoints must pass ALL of the defined filters, there is no support for logical 
+'OR' combinations between the filters. For such cases multiple similar configurations 
+must be defined instead. Example filter:
+
+<pre>
+{
+  "isced11": ["ED35", "ED5-8"],
+  "iscedf13": ["F06"]
+}
+</pre>
+"""
+MAPPING_DESCRIPTION = """
+Transform ESTAT codes before inserting into DB. Values not specified here are 
+taken as they are instead. Example:
+
+<pre>
+{
+  "country": {
+    "EU28": "EU",
+    "EU27_2020": "EU"
+  }
+}
+</pre>
+"""
+
+
 @admin.register(ImportConfig)
 class ImportConfigAdmin(admin.ModelAdmin):
     formfield_overrides = {
@@ -36,7 +70,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "title",
         "status_short",
     )
-    search_fields = ("estat_code", "note")
+    search_fields = ("code", "title")
     readonly_fields = (
         "last_import_time",
         "num_facts",
@@ -53,35 +87,43 @@ class ImportConfigAdmin(admin.ModelAdmin):
                     "code",
                     "title",
                     "last_import_time",
-                    "num_facts",
                     "status",
+                    "num_facts",
                 ]
             },
         ),
         (
             "Dimensions",
             {
+                "description": DIMENSION_DESCRIPTION,
                 "fields": [
                     ("indicator", "indicator_is_surrogate"),
                     ("breakdown", "breakdown_is_surrogate"),
                     ("country", "country_is_surrogate"),
                     ("period", "period_is_surrogate"),
                     ("unit", "unit_is_surrogate"),
-                ]
+                ],
             },
         ),
         (
             "Filters",
             {
+                "description": FILTERS_DESCRIPTION,
                 "fields": [
                     "country_group",
                     "period_start",
                     "period_end",
                     "filters",
-                ]
+                ],
             },
         ),
-        ("Mappings", {"fields": ["mappings"]}),
+        (
+            "Mappings",
+            {
+                "description": MAPPING_DESCRIPTION,
+                "fields": ["mappings"],
+            },
+        ),
     )
 
     @admin.action(description="Trigger import for selected configs")

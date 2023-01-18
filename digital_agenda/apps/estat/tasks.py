@@ -1,6 +1,7 @@
 import logging
 
 from celery import shared_task
+from django.utils import timezone
 
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
@@ -26,7 +27,8 @@ def import_from_config(config_pk, force_download=False, delete_existing=False):
         importer.config.status = "Completed"
     except Exception as e:
         logger.exception("Unable to finish import: %s", e)
-        importer.config.status = str(e)
+        importer.config.status = str(e) or "Unknown Error"
     finally:
+        importer.config.last_import_time = timezone.now()
         importer.config.save()
         clear_all_caches(force=True)

@@ -1,6 +1,29 @@
 ## Eurostat data import
 
-XXX TODO
+### Triggering import config
+
+Import can be triggered via de Django admin interface. With one or more config selected choose the "import" action from the dropdown above the table and click on "Go". The tasks are executed asynchronously and the "status" field will show the status of the task, and can be:
+
+ - Queued, task is still waiting for a worker to run it
+ - Running, task is currently being executed by a worker
+ - Completed, task has been executed and finished successfully; the timestamp of completion is saved in "Last Import Time"
+ - (error details) in case of any errors the error details are instead saved in this field
+
+Imports can also be triggered via cmd line using the `estat_import` management command. Destructive actions will require user interactive confirmation unless the `--no-input` argument is given. Example:
+
+```shell
+[digital-agenda@digital-agenda-data ~]$ docker compose exec app ./manage.py estat_import --code educ_uoe_grad03 --delete-existing --force-download
+Warning! This will remove 654 facts from 1 import configurations. Continue? [Y/n] Y
+[2023-01-18 14:05:22] INFO digital_agenda.apps.estat.tasks: Processing config: <ImportConfig: educ_uoe_grad03 (1)> (tasks.py:15)
+[2023-01-18 14:05:22] INFO digital_agenda.apps.estat.tasks: Deleted Facts: (654, {'core.Fact': 654}) (tasks.py:23)
+[2023-01-18 14:05:22] INFO digital_agenda.apps.estat.estat_import: Downloading from: https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/educ_uoe_grad03?compressed=true&format=JSON&lang=en (estat_import.py:78)
+[2023-01-18 14:05:23] INFO digital_agenda.apps.estat.estat_import: Decompressing JSON: educ_uoe_grad03 (estat_import.py:85)
+[2023-01-18 14:05:23] INFO digital_agenda.apps.estat.estat_import: Processing dataset: /.fs/estat/educ_uoe_grad03.json (estat_import.py:65)
+[2023-01-18 14:05:25] INFO digital_agenda.apps.estat.estat_import: Importing with <ImportConfig: educ_uoe_grad03 (1)> (estat_import.py:267)
+[2023-01-18 14:05:40] INFO digital_agenda.apps.estat.estat_import: Batch processed <ImportConfig: educ_uoe_grad03 (1)>; fact objs created 654 / 1533168 (estat_import.py:272)
+[2023-01-18 14:05:40] INFO digital_agenda.apps.estat.estat_import: Assigning indicator datasource (estat_import.py:279)
+[2023-01-18 14:05:40] INFO digital_agenda.apps.core.cache: Clearing cache 'default' (cache.py:17)
+```
 
 ## Excel Data Import
 

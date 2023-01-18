@@ -43,6 +43,10 @@ This document describes installation steps required to install locally for devel
   ```shell
   ./manage.py load_initial_fixtures
   ```
+- _(optional)_ Import data from ESTAT
+  ```shell
+  ./manage.py estat_import
+  ```
   
 ## Installing Frontend for development
 

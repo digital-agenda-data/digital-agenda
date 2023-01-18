@@ -1,5 +1,4 @@
 import gzip
-import io
 import itertools
 import shutil
 import logging
@@ -7,7 +6,6 @@ from functools import cached_property
 from collections import defaultdict
 
 import httpx
-from django.utils import timezone
 from django.conf import settings
 
 from digital_agenda.apps.core.models import Breakdown
@@ -281,7 +279,3 @@ class EstatImporter:
         for indicator in self.cache["indicator"].values():
             indicator.data_source = self.data_source
             indicator.save()
-
-        self.config.last_import_time = timezone.now()
-        self.config.save()
-        self.config.refresh_from_db()
