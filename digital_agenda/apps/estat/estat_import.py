@@ -56,6 +56,7 @@ class EstatImporter:
         self.config = ImportConfig.objects.get(pk=config_id)
         self.force_download = force_download
         self.cache = defaultdict(dict)
+        self.unique = set()
 
     @cached_property
     def dataset(self):
@@ -187,8 +188,18 @@ class EstatImporter:
             flags=obs["status"] or "",
             import_config_id=self.config.id,
         )
+        unique_key = []
         for attr in MODELS:
-            setattr(fact, attr, self.get_dimension_obj(attr, obs))
+            obj = self.get_dimension_obj(attr, obs)
+            unique_key.append(obj)
+            setattr(fact, attr, obj)
+
+        key = tuple(unique_key)
+        assert key not in self.unique, (
+            f"Duplicate key detected in the dataset "
+            f"(mapping or filter may not be correct?): {key}"
+        )
+        self.unique.add(key)
 
         return fact
 
