@@ -1,3 +1,5 @@
+import textwrap
+
 from django.contrib import admin, messages
 from django.db.models import Count
 from django.urls import reverse
@@ -32,7 +34,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "last_import_time",
         "num_facts",
         "title",
-        "status",
+        "status_short",
     )
     search_fields = ("estat_code", "note")
     readonly_fields = (
@@ -119,3 +121,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
             + f"?import_config__pk__exact={obj.pk}"
         )
         return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
+
+    @admin.display(description="Status", ordering="status")
+    def status_short(self, obj):
+        return textwrap.shorten(obj.status, 50)
