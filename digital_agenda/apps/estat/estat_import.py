@@ -67,8 +67,8 @@ class EstatImporter:
             return JSONStat(f)
 
     def download(self):
-        # XXX This download the whole dataset if this proves to be too large
-        # XXX in practice we can instead:
+        # XXX This downloads the whole dataset; if this proves to be too large
+        # XXX in practice (e.g. because of too much memory used) we can instead:
         # XXX   - split the download per years using the start/endPeriod filter
         # XXX   - filter the download using the provided keys filters
         if not self.force_download and self.json_path.is_file():
@@ -97,6 +97,7 @@ class EstatImporter:
 
     @property
     def download_url(self):
+        # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query
         return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/{self.config.code}?compressed=true&format=JSON&lang=en"
 
     @cached_property
