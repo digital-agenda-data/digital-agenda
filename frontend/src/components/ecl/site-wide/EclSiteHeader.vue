@@ -16,6 +16,19 @@
             />
           </ecl-link>
           <div class="ecl-site-header__action">
+            <div class="ecl-site-header__login-container">
+              <a
+                class="ecl-button ecl-button--ghost ecl-site-header__login-toggle"
+                :href="loginLink"
+              >
+                <ecl-icon
+                  icon="log-in"
+                  size="s"
+                  class="ecl-site-header__icon"
+                />
+                Log in
+              </a>
+            </div>
             <div class="ecl-site-header__search-container">
               <ecl-button
                 variant="ghost"
@@ -52,6 +65,8 @@
 </template>
 
 <script>
+import EclIcon from "@/components/ecl/EclIcon.vue";
+import { loginLink } from "@/lib/api";
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclSearchForm from "@/components/ecl/forms/EclSearchForm.vue";
@@ -66,10 +81,11 @@ import { useRouteQuery } from "@vueuse/router";
  */
 export default {
   name: "EclSiteHeader",
-  components: { EclLink, EclButton, EclSearchForm },
+  components: { EclIcon, EclLink, EclButton, EclSearchForm },
   data() {
     return {
       logoURL,
+      loginLink,
       searchQuery: useRouteQuery("q"),
     };
   },

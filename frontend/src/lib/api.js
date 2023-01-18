@@ -18,6 +18,8 @@ if (import.meta.env.VITE_APP_API_HOST) {
   apiBase = `${window.location.protocol}//${apiHost}`;
 }
 
+export const loginLink = `${apiBase}/admin/`;
+
 export const api = axios.create({
   baseURL: apiURL,
   withCredentials: true,

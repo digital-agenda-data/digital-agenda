@@ -220,7 +220,7 @@
 import logoURL from "@ecl/preset-ec/dist/images/logo/negative/logo-ec--en.svg?url";
 
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import { apiBase } from "@/lib/api";
+import { loginLink } from "@/lib/api";
 /**
  * ECL Site Footer component, see documentation here:
  *
@@ -233,12 +233,8 @@ export default {
   data() {
     return {
       logoURL,
+      loginLink,
     };
-  },
-  computed: {
-    loginLink() {
-      return `${apiBase}/admin/`;
-    },
   },
 };
 </script>
