@@ -2,6 +2,7 @@ import logging
 
 from celery import shared_task
 
+from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.estat.estat_import import EstatImporter
 
@@ -28,3 +29,4 @@ def import_from_config(config_pk, force_download=False, delete_existing=False):
         importer.config.status = str(e)
     finally:
         importer.config.save()
+        clear_all_caches(force=True)
