@@ -31,7 +31,8 @@
       "unit": {
         "PC": "PC_GRAD"
       },
-      "period": {
+      "country": {
+        "EU28": "EU",
         "EU27_2020": "EU"
       },
       "breakdown": {
