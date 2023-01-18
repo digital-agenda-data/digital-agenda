@@ -225,7 +225,7 @@ class EstatImporter:
         return Fact.objects.bulk_create(
             facts,
             update_conflicts=True,
-            update_fields=("value", "flags"),
+            update_fields=("value", "flags", "import_config"),
             unique_fields=("indicator", "breakdown", "unit", "country", "period"),
         )
 
