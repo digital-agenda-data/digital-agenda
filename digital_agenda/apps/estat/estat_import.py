@@ -87,15 +87,15 @@ class EstatImporter:
             with self.json_path.open("wb") as f_out:
                 shutil.copyfileobj(f_in, f_out)
 
-    @property
+    @cached_property
     def json_path(self):
         return settings.ESTAT_DOWNLOAD_DIR / f"{self.config.code}.json"
 
-    @property
+    @cached_property
     def download_gz_path(self):
         return settings.ESTAT_DOWNLOAD_DIR / f"{self.config.code}.json.gz"
 
-    @property
+    @cached_property
     def download_url(self):
         # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query
         return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/{self.config.code}?compressed=true&format=JSON&lang=en"
