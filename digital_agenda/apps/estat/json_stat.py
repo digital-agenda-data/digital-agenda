@@ -51,6 +51,10 @@ class JSONStat:
     def dimension_ids(self):
         return [d.id for d in self.dimensions]
 
+    @functools.cached_property
+    def dimension_dict(self):
+        return {d.id: {cat.id: cat for cat in d.categories} for d in self.dimensions}
+
     def _get(self, key, index):
         try:
             if isinstance(self.dataset[key], list):
