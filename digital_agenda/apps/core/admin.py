@@ -99,6 +99,11 @@ class IndicatorFilter(AutocompleteFilter):
     field_name = "indicator"
 
 
+class ImportConfigFilter(AutocompleteFilter):
+    title = "Import Config"
+    field_name = "import_config"
+
+
 class FactAdmin(admin.ModelAdmin):
     list_display = (
         "indicator",
@@ -108,9 +113,14 @@ class FactAdmin(admin.ModelAdmin):
         "period",
         "value",
         "flags",
+        "import_config",
     )
-    list_filter = [IndicatorFilter]
+    list_filter = [IndicatorFilter, ImportConfigFilter]
     list_per_page = 50
+    readonly_fields = ("import_config",)
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).prefetch_related("import_config")
 
 
 admin.site.register(Fact, FactAdmin)

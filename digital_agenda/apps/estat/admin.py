@@ -1,173 +1,121 @@
-from django.contrib import admin
-from django.db.models.functions import Lower
-from django.forms import ModelForm
-from django.urls import resolve
+from django.contrib import admin, messages
+from django.db.models import Count
+from django.urls import reverse
+from django.utils.safestring import mark_safe
+from django_json_widget.widgets import JSONEditorWidget
 
-from admin_auto_filters.filters import AutocompleteFilter, AutocompleteFilterFactory
-
-from .models import (
-    Dataset,
-    Dimension,
-    DimensionValue,
-    DatasetConfig,
-    Fact,
-)
+from digital_agenda.apps.estat.models import *
+from digital_agenda.apps.estat.tasks import import_from_config
 
 
-class DatasetConfigInline(admin.StackedInline):
-    model = DatasetConfig
-    verbose_name = "Configuration"
-
-    def formfield_for_foreignkey(self, db_field, request=None, **kwargs):
-        """Filter choices for fields that are FK to Dimension"""
-        field = super().formfield_for_foreignkey(db_field, request, **kwargs)
-        if db_field.name in ("indicator", "breakdown", "unit", "country", "period"):
-            dataset_id = resolve(request.path_info).kwargs.get("object_id")
-            if dataset_id is not None:
-                field.queryset = field.queryset.filter(dataset_id=dataset_id)
-        if db_field.name in (
-            "indicator_surrogate",
-            "breakdown_surrogate",
-            "unit_surrogate",
-            "country_surrogate",
-            "period_surrogate",
-        ):
-            dataset_id = resolve(request.path_info).kwargs.get("object_id")
-            if dataset_id is not None:
-                field.queryset = field.queryset.filter(
-                    dimension__dataset_id=dataset_id,
-                    dimension__code=Dimension.SURROGATE_CODE,
-                )
-
-        return field
+@admin.register(GeoGroup)
+class GeoGroupAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.JSONField: {"widget": JSONEditorWidget},
+    }
+    list_display = ("code", "size", "note", "geo_codes")
+    search_fields = ("code",)
 
 
-class DatasetAdmin(admin.ModelAdmin):
-    list_display = ("code", "label")
-    search_fields = ("code", "label")
-    inlines = [DatasetConfigInline]
-    list_per_page = 30
-
-    def get_ordering(self, request):
-        return [Lower("code")]
-
-
-admin.site.register(Dataset, DatasetAdmin)
-
-
-class DatasetFilter(AutocompleteFilter):
-    title = "Dataset"
-    field_name = "dataset"
-
-
-class DimensionAdmin(admin.ModelAdmin):
-    list_display = ("code", "label", "dataset")
-    search_fields = ("code", "label")
-    list_filter = [DatasetFilter]
-    list_per_page = 30
-
-
-admin.site.register(Dimension, DimensionAdmin)
-
-
-class DimensionAdminFilter(admin.SimpleListFilter):
-    title = "Dimension"
-    parameter_name = "dimension"
-
-    def lookups(self, request, model_admin):
-        dataset = request.GET.get("dimension__dataset", "")
-        if dataset:
-            dimensions = Dimension.objects.filter(dataset_id=dataset)
-        else:
-            dimensions = Dimension.objects.none()
-
-        return dimensions.values_list("id", "code")
-
-    def queryset(self, request, queryset):
-        if self.value():
-            return queryset.filter(dimension=self.value())
-
-        return queryset
-
-
-class FilterKwargsMixin:
-    """Mixin for extracting kwargs from `_changelist_filters` params."""
-
-    @staticmethod
-    def parse_filter_kwargs(**kwargs):
-        if "initial" in kwargs:
-            if "_changelist_filters" in kwargs["initial"]:
-                filters = kwargs["initial"].pop("_changelist_filters")
-                for key, value in [p.split("=") for p in filters.split("&")]:
-                    kwargs["initial"][key] = value
-        return kwargs
-
-
-class DimensionValueForm(ModelForm, FilterKwargsMixin):
-    class Meta:
-        model = DimensionValue
-        fields = "__all__"
-
-    def __init__(self, *args, **kwargs):
-        kwargs = self.parse_filter_kwargs(**kwargs)
-        super().__init__(*args, **kwargs)
-
-
-class DimensionValueAdmin(admin.ModelAdmin):
-    list_display = ("code", "label", "enabled", "dimension", "dimension_dataset")
-    search_fields = ("code", "label")
-    list_filter = [
-        AutocompleteFilterFactory("Dataset", "dimension__dataset"),
-        DimensionAdminFilter,
-        "enabled",
-    ]
-    autocomplete_fields = ("dimension",)
-    list_per_page = 30
-    actions = ["enable", "disable"]
-    form = DimensionValueForm
-
-    def get_ordering(self, request):
-        return ["dimension__dataset", Lower("code")]
-
-    @admin.display(description="Dataset")
-    def dimension_dataset(self, obj):
-        return obj.dimension.dataset.code
-
-    @admin.action(description="Enable selected codes")
-    def enable(self, request, queryset):
-        queryset.update(enabled=True)
-
-    @admin.action(description="Disable selected codes")
-    def disable(self, request, queryset):
-        queryset.update(enabled=False)
-
-    def formfield_for_foreignkey(self, db_field, request=None, **kwargs):
-        """Filter choices for dimension"""
-        field = super().formfield_for_foreignkey(db_field, request, **kwargs)
-        if db_field.name == "dimension":
-            dimension_id = resolve(request.path_info).kwargs.get("dimension")
-            if dimension_id is not None:
-                field.queryset = field.queryset.filter(dimension_id=dimension_id)
-
-        return field
-
-
-admin.site.register(DimensionValue, DimensionValueAdmin)
-
-
-class FactAdmin(admin.ModelAdmin):
+@admin.register(ImportConfig)
+class ImportConfigAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.JSONField: {"widget": JSONEditorWidget},
+    }
     list_display = (
-        "dataset",
+        "code",
         "indicator",
         "breakdown",
-        "unit",
-        "country",
-        "period",
-        "value",
-        "flags",
+        "country_group",
+        "period_start",
+        "period_end",
+        "last_import_time",
+        "num_facts",
+        "title",
+        "status",
     )
-    list_per_page = 50
-    list_filter = [DatasetFilter]
+    search_fields = ("estat_code", "note")
+    readonly_fields = (
+        "last_import_time",
+        "num_facts",
+        "status",
+    )
+    autocomplete_fields = ("country_group",)
+    actions = ("trigger_import", "trigger_import_destructive")
 
+    fieldsets = (
+        (
+            None,
+            {
+                "fields": [
+                    "code",
+                    "title",
+                    "last_import_time",
+                    "num_facts",
+                    "status",
+                ]
+            },
+        ),
+        (
+            "Dimensions",
+            {
+                "fields": [
+                    ("indicator", "indicator_is_surrogate"),
+                    ("breakdown", "breakdown_is_surrogate"),
+                    ("country", "country_is_surrogate"),
+                    ("period", "period_is_surrogate"),
+                    ("unit", "unit_is_surrogate"),
+                ]
+            },
+        ),
+        (
+            "Filters",
+            {
+                "fields": [
+                    "country_group",
+                    "period_start",
+                    "period_end",
+                    "filters",
+                ]
+            },
+        ),
+        ("Mappings", {"fields": ["mappings"]}),
+    )
 
-admin.site.register(Fact, FactAdmin)
+    @admin.action(description="Trigger import for selected configs")
+    def trigger_import(self, request, queryset):
+        self._trigger_import(request, queryset)
+
+    @admin.action(
+        description="Delete existing facts and trigger import for selected configs"
+    )
+    def trigger_import_destructive(self, request, queryset):
+        self._trigger_import(
+            request, queryset, force_download=True, delete_existing=True
+        )
+
+    def _trigger_import(
+        self, request, queryset, force_download=False, delete_existing=False
+    ):
+        queryset.update(status="Queued")
+        for obj in queryset:
+            import_from_config.delay(
+                obj.id, force_download=force_download, delete_existing=delete_existing
+            )
+
+        self.message_user(
+            request,
+            "Import tasks have been queued for the selected configurations",
+            level=messages.SUCCESS,
+        )
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(num_facts=Count("facts"))
+
+    @admin.display(description="Facts Count", ordering="num_facts")
+    def num_facts(self, obj):
+        url = (
+            reverse("admin:core_fact_changelist")
+            + f"?import_config__pk__exact={obj.pk}"
+        )
+        return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")

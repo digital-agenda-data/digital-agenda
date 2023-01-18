@@ -278,13 +278,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Celery
 CELERY_BROKER_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CELERY_DB}"
 
-
-BULK_DOWNLOAD_ROOT_URL = env.str(
-    "BULK_DOWNLOAD_ROOT_URL",
-    default="https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing",
-)
-BULK_DOWNLOAD_TIMEOUT = env.float("BULK_DOWNLOAD_TIMEOUT", default=5.0)
-BULK_DOWNLOAD_DIR = FS_DIR / "bulk_downloads"
+ESTAT_DOWNLOAD_BASE_URL = env.str(
+    "ESTAT_DOWNLOAD_BASE_URL",
+    default="https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data",
+).strip("/")
+ESTAT_DOWNLOAD_TIMEOUT = env.float("ESTAT_DOWNLOAD_TIMEOUT", default=30.0)
+ESTAT_DOWNLOAD_DIR = FS_DIR / "estat"
+ESTAT_DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
 

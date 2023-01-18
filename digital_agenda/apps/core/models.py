@@ -234,6 +234,12 @@ class Fact(TimestampedModel):
         "Country", on_delete=models.CASCADE, related_name="facts"
     )
     period = models.ForeignKey("Period", on_delete=models.CASCADE, related_name="facts")
+    import_config = models.ForeignKey(
+        "estat.ImportConfig",
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="facts",
+    )
 
     class Meta:
         db_table = "facts"

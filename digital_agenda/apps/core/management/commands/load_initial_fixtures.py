@@ -20,6 +20,9 @@ class Command(BaseCommand):
         "units",
         "periods",
         "countries",
+        # Imports
+        "geogroups",
+        "importconfigs",
         # Charts
         "chartgroups",
         "charts",

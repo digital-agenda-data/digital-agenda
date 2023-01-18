@@ -1,4 +1,3 @@
-attrs
 celery
 Django
 django-admin-autocomplete-filter
@@ -23,8 +22,6 @@ drf-nested-routers
 drf-spectacular
 httpx
 openpyxl
-orjson
-pandas
 pillow
 psycopg2-binary
 python-magic

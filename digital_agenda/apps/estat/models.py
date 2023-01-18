@@ -1,278 +1,134 @@
-from django.db import models
 from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
-from django.utils.functional import cached_property
+from django.core.validators import MinValueValidator
+
+from django.db import models
+
+MIN_YEAR = 1990
 
 
-from digital_agenda.common.models import TimestampedModel
-
-
-class BaseLabeledModel(TimestampedModel):
-    label = models.CharField(max_length=300, null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
-
-    class Meta:
-        abstract = True
-
-
-class DatasetManager(models.Manager):
-    def get_by_natural_key(self, code):
-        return self.get(code__iexact=code)
-
-
-class Dataset(BaseLabeledModel):
-
+class GeoGroup(models.Model):
     code = CICharField(max_length=60, unique=True)
-
-    objects = DatasetManager()
-
-    class Meta:
-        db_table = "estat_datasets"
-
-    def natural_key(self):
-        return (self.code,)  # noqa
+    size = models.PositiveIntegerField()
+    note = models.CharField(max_length=1024, blank=True, null=True)
+    geo_codes = models.JSONField(default=list)
 
     def __str__(self):
         return self.code
-
-    def dimension(self, code):
-        try:
-            return self.dimensions.get(code=code)
-        except Dimension.DoesNotExist:
-            return None
-
-    @cached_property
-    def single_valued_dimensions(self):
-        return [dim for dim in self.dimensions.all() if dim.single_valued]
-
-
-class DimensionManager(models.Manager):
-    def get_by_natural_key(self, dataset_code, code):
-        return self.get(dataset__code=dataset_code, code=code)
-
-
-class Dimension(BaseLabeledModel):
-
-    SURROGATE_CODE = "~SURROGATE~"
-
-    dataset = models.ForeignKey(
-        "Dataset", on_delete=models.CASCADE, related_name="dimensions"
-    )
-    code = CICharField(max_length=60)
-
-    objects = DimensionManager()
-
-    class Meta:
-        db_table = "estat_dimensions"
-
-    def __str__(self):
-        return self.code
-
-    def natural_key(self):
-        return (self.code,) + self.dataset.natural_key()
-
-    @cached_property
-    def single_filtered_value(self):
-        if self.values.count() > self.values.filter(enabled=True).count() == 1:
-            return self.values.get(enabled=True)
-
-        return None
-
-
-class DimensionValueManager(models.Manager):
-    def get_by_natural_key(self, dataset_code, dimension_code, code):
-        return self.get(
-            dataset__dimension__code=dataset_code,
-            dimension__code=dimension_code,
-            code=code,
-        )
-
-
-class DimensionValue(BaseLabeledModel):
-
-    dimension = models.ForeignKey(
-        "Dimension", on_delete=models.CASCADE, related_name="values"
-    )
-    code = CICharField(max_length=60)
-    enabled = models.BooleanField(default=True)
-
-    objects = DimensionValueManager()
-
-    class Meta:
-        db_table = "estat_dim_values"
-        unique_together = ("dimension", "code")
-
-    def __str__(self):
-        return self.code
-
-    def natural_key(self):
-        return (self.code,) + self.dimension.natural_key()
-
-
-class DatasetConfigManager(models.Manager):
-    def get_by_natural_key(self, dataset_code):
-        return self.get(dataset__code=dataset_code)
-
-
-class DatasetConfig(TimestampedModel):
-
-    dataset = models.OneToOneField(
-        "Dataset", on_delete=models.CASCADE, primary_key=True, related_name="config"
-    )
-    indicator = models.ForeignKey(
-        "Dimension",
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-    )
-    indicator_surrogate = models.ForeignKey(
-        "DimensionValue",
-        on_delete=models.CASCADE,
-        related_name="+",
-        null=True,
-        blank=True,
-    )
-
-    breakdown = models.ForeignKey(
-        "Dimension",
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-    )
-    breakdown_surrogate = models.ForeignKey(
-        "DimensionValue",
-        on_delete=models.CASCADE,
-        related_name="+",
-        null=True,
-        blank=True,
-    )
-
-    unit = models.ForeignKey(
-        "Dimension",
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-    )
-    unit_surrogate = models.ForeignKey(
-        "DimensionValue",
-        on_delete=models.CASCADE,
-        related_name="+",
-        null=True,
-        blank=True,
-    )
-
-    country = models.ForeignKey(
-        "Dimension",
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-    )
-    country_surrogate = models.ForeignKey(
-        "DimensionValue",
-        on_delete=models.CASCADE,
-        related_name="+",
-        null=True,
-        blank=True,
-    )
-
-    period = models.ForeignKey(
-        "Dimension",
-        related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-    )
-    period_surrogate = models.ForeignKey(
-        "DimensionValue",
-        on_delete=models.CASCADE,
-        related_name="+",
-        null=True,
-        blank=True,
-    )
-
-    objects = DatasetConfigManager()
-
-    class Meta:
-        db_table = "estat_dataset_configs"
-
-    def __str__(self):
-        return self.dataset.code
-
-    def natural_key(self):
-        return (self.dataset.code,)  # noqa
 
     def clean(self):
-        for dimension in ("indicator", "breakdown", "unit", "country", "period"):
-            if (
-                getattr(self, dimension)
-                and getattr(self, dimension).code == Dimension.SURROGATE_CODE
-                and not getattr(self, f"{dimension}_surrogate")
-            ):
+        try:
+            assert isinstance(self.geo_codes, list)
+            assert len(self.geo_codes) > 0
+            assert all(isinstance(code, str) for code in self.geo_codes)
+        except AssertionError:
+            raise ValidationError(
+                {"geo_codes": ValidationError("Must be a non-empty Array of strings")}
+            )
+
+        if len(set(self.geo_codes)) != len(self.geo_codes):
+            raise ValidationError(
+                {"geo_codes": ValidationError("No duplicate codes allowed")}
+            )
+
+        if len(self.geo_codes) != self.size:
+            raise ValidationError(
+                {
+                    "size": ValidationError(
+                        f"Size mismatch; geo codes has {len(self.geo_codes)} codes"
+                    )
+                }
+            )
+
+
+def default_mappings():
+    return {
+        "indicator": {},
+        "breakdown": {},
+        "country": {},
+        "unit": {},
+        "period": {},
+    }
+
+
+class ImportConfig(models.Model):
+    code = CICharField(max_length=60)
+    title = models.CharField(max_length=1024, blank=True, null=True)
+    last_import_time = models.TimeField(null=True)
+
+    indicator = CICharField(max_length=60)
+    indicator_is_surrogate = models.BooleanField(default=False)
+
+    breakdown = CICharField(max_length=60)
+    breakdown_is_surrogate = models.BooleanField(default=False)
+
+    country = CICharField(max_length=60, default="geo")
+    country_is_surrogate = models.BooleanField(default=False)
+
+    unit = CICharField(max_length=60, default="unit")
+    unit_is_surrogate = models.BooleanField(default=False)
+
+    period = CICharField(max_length=60, default="time")
+    period_is_surrogate = models.BooleanField(default=False)
+
+    period_start = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="Only include datapoints for periods greater than or equal to this year",
+        validators=[MinValueValidator(MIN_YEAR)],
+    )
+    period_end = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="Only include datapoints for periods less than or equal to this year",
+        validators=[MinValueValidator(MIN_YEAR)],
+    )
+    country_group = models.ForeignKey(
+        GeoGroup,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        help_text="Only include datapoints for countries in this group OR the group itself",
+    )
+    filters = models.JSONField(default=dict, blank=True)
+    mappings = models.JSONField(default=default_mappings, blank=True)
+    status = models.TextField()
+
+    def clean(self):
+        for attr in ("code", "indicator", "breakdown", "country", "unit", "period"):
+            setattr(self, attr, getattr(self, attr).lower())
+
+        if (
+            self.period_start
+            and self.period_end
+            and self.period_start > self.period_end
+        ):
+            error = ValidationError(
+                "Start period must be less than or equal to the end period"
+            )
+            raise ValidationError(
+                {
+                    "period_start": error,
+                    "period_end": error,
+                }
+            )
+
+        if not isinstance(self.filters, dict):
+            raise ValidationError({"filters": "Must be a valid JSON object"})
+
+        if not isinstance(self.mappings, dict):
+            raise ValidationError({"mappings": "Must be a valid JSON object"})
+
+        if invalid := set(self.mappings).difference(set(default_mappings())):
+            raise ValidationError({"mappings": f"Invalid mappings: {tuple(invalid)}"})
+
+        for key, value in self.mappings.items():
+            if not isinstance(value, dict):
                 raise ValidationError(
-                    f"Must provide a surrogate value for {dimension}."
-                )
-            elif (
-                getattr(self, dimension)
-                and getattr(self, dimension).code != Dimension.SURROGATE_CODE
-                and getattr(self, f"{dimension}_surrogate")
-            ):
-                raise ValidationError(
-                    f"Cannot set a surrogate value for {dimension} when dimension is not surrogate."
+                    {"mappings": f"Invalid mapping {key!r}: must be a JSON object"}
                 )
 
-    def save(self, *args, **kwargs):
-        self.clean()
-        super().save(*args, **kwargs)
-
-    def has_dimension(self, dimension):
-        return (
-            self.indicator == dimension
-            or self.breakdown == dimension
-            or self.unit == dimension
-            or self.country == dimension
-            or self.period == dimension
-        )
-
-
-class Fact(TimestampedModel):
-    value = models.FloatField(null=True, blank=True)
-    flags = models.CharField(max_length=12, blank=True)
-    dataset = models.ForeignKey(
-        "Dataset", on_delete=models.CASCADE, related_name="facts"
-    )
-    indicator = models.ForeignKey(
-        "DimensionValue", on_delete=models.CASCADE, related_name="+"
-    )
-    breakdown = models.ForeignKey(
-        "DimensionValue", on_delete=models.CASCADE, related_name="+"
-    )
-    unit = models.ForeignKey(
-        "DimensionValue", on_delete=models.CASCADE, related_name="+"
-    )
-    country = models.ForeignKey(
-        "DimensionValue", on_delete=models.CASCADE, related_name="+"
-    )
-    period = models.ForeignKey(
-        "DimensionValue", on_delete=models.CASCADE, related_name="+"
-    )
-
-    class Meta:
-        db_table = "estat_facts"
-        unique_together = (
-            "dataset",
-            "indicator",
-            "breakdown",
-            "unit",
-            "country",
-            "period",
-        )
-        constraints = [
-            models.CheckConstraint(
-                check=models.Q(value__isnull=False) | ~models.Q(flags=""),
-                name="estat_fact_either_val_or_flags",
-            ),
-        ]
+    def __str__(self):
+        if self.title:
+            return f"{self.code} ({self.pk}) {self.title}"
+        return f"{self.code} ({self.pk})"
