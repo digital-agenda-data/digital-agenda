@@ -18,7 +18,7 @@
     "period_is_surrogate": false,
     "period_start": null,
     "period_end": null,
-    "country_group": 1,
+    "country_group": 9,
     "filters": {
       "isced11": [
         "ED5-8"
@@ -32,7 +32,6 @@
         "PC": "PC_GRAD"
       },
       "country": {
-        "EU28": "EU",
         "EU27_2020": "EU"
       },
       "breakdown": {
