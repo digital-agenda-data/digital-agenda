@@ -26,8 +26,9 @@ def import_from_config(config_pk, force_download=False, delete_existing=False):
         importer.run()
         importer.config.status = "Completed"
     except Exception as e:
-        logger.exception("Unable to finish import: %s", e)
+        logger.error("Unable to finish import: %s", e)
         importer.config.status = str(e) or "Unknown Error"
+        raise e
     finally:
         importer.config.last_import_time = timezone.now()
         importer.config.save()
