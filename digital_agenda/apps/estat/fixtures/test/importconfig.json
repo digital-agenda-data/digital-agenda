@@ -1,0 +1,40 @@
+[
+{
+  "model": "estat.importconfig",
+  "pk": 1,
+  "fields": {
+    "code": "isoc_ci_cm_h",
+    "title": null,
+    "last_import_time": null,
+    "status": "",
+    "indicator": "indic_is",
+    "indicator_is_surrogate": false,
+    "breakdown": "hhtyp",
+    "breakdown_is_surrogate": false,
+    "country": "geo",
+    "country_is_surrogate": false,
+    "unit": "unit",
+    "unit_is_surrogate": false,
+    "period": "time",
+    "period_is_surrogate": false,
+    "period_start": 2010,
+    "period_end": 2013,
+    "country_group": 9,
+    "filters": {
+      "hhtyp": [
+        "A1",
+        "A1_DCH"
+      ]
+    },
+    "mappings": {
+      "unit": {},
+      "period": {},
+      "country": {
+        "EU27_2020": "EU"
+      },
+      "breakdown": {},
+      "indicator": {}
+    }
+  }
+}
+]
