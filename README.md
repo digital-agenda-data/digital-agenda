@@ -11,8 +11,9 @@ Docs:
 DEV docs/guides:
 
  - [Install for development](docs/install_develop.md)
- - [Local Docker build](docs/local_docker_build.md)
  - [Development Guide](./docs/development_guide.md)
+ - [Running automated tests](./docs/tests.md)
+ - [Local Docker build](docs/local_docker_build.md)
  - [Adding a new chart type](./docs/adding_new_chart.md)
  - [NUTS topology](./docs/nuts.md)
 
