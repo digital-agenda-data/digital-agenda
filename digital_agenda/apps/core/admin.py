@@ -99,6 +99,16 @@ class IndicatorFilter(AutocompleteFilter):
     field_name = "indicator"
 
 
+class CountryFilter(AutocompleteFilter):
+    title = "Country"
+    field_name = "country"
+
+
+class PeriodFilter(AutocompleteFilter):
+    title = "Period"
+    field_name = "period"
+
+
 class ImportConfigFilter(AutocompleteFilter):
     title = "Import Config"
     field_name = "import_config"
@@ -115,7 +125,12 @@ class FactAdmin(admin.ModelAdmin):
         "flags",
         "import_config",
     )
-    list_filter = [IndicatorFilter, ImportConfigFilter]
+    list_filter = [
+        IndicatorFilter,
+        CountryFilter,
+        PeriodFilter,
+        ImportConfigFilter,
+    ]
     list_per_page = 50
     readonly_fields = ("import_config",)
 
