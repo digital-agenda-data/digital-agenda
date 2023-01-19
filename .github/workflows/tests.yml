@@ -2,6 +2,10 @@ name: "Test Suite"
 
 on:
   workflow_call:
+  pull_request:
+    branches:
+      - master
+      - develop
 
 jobs:
   suite:
@@ -11,7 +15,7 @@ jobs:
       - name: "Configure env"
         run: |
           cp .env.test .env
-          sed -i "/^DOCKER_TAG=/c\DOCKER_TAG=$GITHUB_REF_NAME" .env
+          sed -i "/^DOCKER_TAG=/c\DOCKER_TAG=${{ github.base_ref || github.ref_name }}" .env
           cp docker-compose.override.test.yml docker-compose.override.yml
       - name: "Start services"
         run: |
