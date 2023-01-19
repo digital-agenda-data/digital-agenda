@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: "Configure env"
         run: |
           cp .env.test .env
@@ -24,10 +27,19 @@ jobs:
           docker compose exec -T app wait_for_services.sh
       - name: "Top"
         run: |
-          docker compose top            
+          docker compose top
       - name: "Install dev dependencies"
         run: |
           docker compose exec -T app pip install -c requirements/constraints.txt -r requirements/dev.txt
+          cd frontend
+          npm install
       - name: "Backend tests"
         run: |
           docker compose exec -T app pytest --cov
+      - name: "Seed DB"
+        run: |
+          docker compose exec -T app ./manage.py seed_db --noinput
+      - name: "E2E tests"
+        run: |
+          cd frontend
+          npm run test

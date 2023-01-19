@@ -13,6 +13,7 @@ module.exports = {
     "@vue/eslint-config-prettier",
     "plugin:prettier/recommended",
     "plugin:compat/recommended",
+    "plugin:cypress/recommended",
   ],
   parserOptions: {
     ecmaVersion: "latest",

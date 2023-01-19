@@ -13,6 +13,7 @@
         :close-on-select="!multiple"
         :allow-empty="!required || multiple"
         :name="inputName"
+        :data-name="inputName"
         label="text"
         track-by="id"
         :group-label="hasGroups ? 'text' : undefined"
