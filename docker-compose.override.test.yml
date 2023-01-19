@@ -1,0 +1,10 @@
+services:
+  app:
+    environment:
+      - GUNICORN_CMD_ARGS=--workers=1 --threads=1
+
+  nginx:
+    environment:
+      - NGINX_WORKER_PROCESSES=1
+    ports:
+      - 8080:80

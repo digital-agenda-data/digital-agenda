@@ -4,7 +4,8 @@ ENV PYTHONUNBUFFERED 1
 ENV PIP_NO_CACHE_DIR=1
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 
-RUN mkdir /.fs
+RUN mkdir /.fs /app
+WORKDIR /app
 VOLUME ["/.fs"]
 
 RUN apt-get update -y && \
@@ -17,6 +18,8 @@ RUN pip install -c requirements/constraints.txt -r requirements/prod.txt
 
 COPY digital_agenda/ digital_agenda/
 COPY manage.py manage.py
+COPY pytest.ini pytest.ini
+COPY .coveragerc .coveragerc
 
 COPY docker/wait_for_services.sh /usr/local/bin/wait_for_services.sh
 COPY docker/entrypoint.sh /usr/local/bin/

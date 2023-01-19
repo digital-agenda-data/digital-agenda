@@ -4,13 +4,7 @@ name: Deploy Staging
 concurrency: staging_deployment
 
 on:
-  # Run after new images are deployed
-  workflow_run:
-    workflows: ["Create and publish a Docker images"]
-    types:
-      - completed
-    branches:
-      - master
+  workflow_call:
 
 jobs:
   deploy:

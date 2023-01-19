@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - 'master'
+      - 'develop'
+    tags:
+      - '*'
+
+jobs:
+  docker-build:
+    uses: ./.github/workflows/docker-build.yml
+  deploy-staging:
+    needs: docker-build
+    uses: ./.github/workflows/deploy-staging.yml
+  tests:
+    needs: docker-build
+    uses: ./.github/workflows/tests.yml
