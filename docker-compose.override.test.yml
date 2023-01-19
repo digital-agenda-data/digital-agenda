@@ -1,9 +1,20 @@
 services:
   app:
+    build:
+      context: .
+      dockerfile: docker/app.docker
     environment:
       - GUNICORN_CMD_ARGS=--workers=1 --threads=1
 
+  celery:
+    build:
+      context: .
+      dockerfile: docker/app.docker
+
   nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx.docker
     environment:
       - NGINX_WORKER_PROCESSES=1
     ports:
