@@ -25,4 +25,5 @@ jobs:
         run: |
           docker compose exec -T app pip install -c requirements/constraints.txt -r requirements/dev.txt
       - name: "Backend tests"
+        run: |
           docker compose exec -T app pytest --cov
