@@ -7,6 +7,7 @@ from collections import defaultdict
 
 import httpx
 from django.conf import settings
+from django.core.exceptions import ValidationError
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
@@ -194,10 +195,11 @@ class EstatImporter:
             setattr(fact, attr, obj)
 
         key = tuple(unique_key)
-        assert key not in self.unique, (
-            f"Duplicate key detected in the dataset "
-            f"(mapping or filter may not be correct?): {key}"
-        )
+        if key in self.unique:
+            raise ValidationError(
+                f"Duplicate key detected in the dataset "
+                f"(mapping or filter may not be correct?): {key}"
+            )
         self.unique.add(key)
 
         return fact
@@ -228,40 +230,9 @@ class EstatImporter:
             unique_fields=("indicator", "breakdown", "unit", "country", "period"),
         )
 
-    def validate_config(self):
-        """Simple sanity checks to validate the data matches the given config."""
-        for key, values in self.config.filters.items():
-            assert key in self.dataset.dimension_ids, (
-                f"Invalid filter {key!r}, no dimensions with that id found in: "
-                f"{self.dataset.dimension_ids}"
-            )
-
-            categories = self.dataset.dimension_dict[key]
-            for val in values:
-                assert val in categories, f"Filter value for {key!r} not found: {val!r}"
-
-        for dimension in MODELS:
-            config_dim = getattr(self.config, dimension)
-            is_surrogate = getattr(self.config, f"{dimension}_is_surrogate")
-
-            if is_surrogate:
-                # No point in checking surrogates since they are hardcoded values
-                continue
-
-            assert config_dim in self.dataset.dimension_ids, (
-                f"Invalid dimension {config_dim!r}, no dimensions with that id found in: "
-                f"{self.dataset.dimension_ids}"
-            )
-
-            mappings = self.config.mappings.get(dimension, {})
-            categories = self.dataset.dimension_dict[config_dim]
-            for val in mappings.keys():
-                assert (
-                    val in categories
-                ), f"Mapped value for {dimension!r} not found: {val!r}"
-
     def run(self, batch_size=10_000):
-        self.validate_config()
+        self.config.clean()
+        self.config.clean_with_dataset(self.dataset)
 
         logger.info("Importing with %r", self.config)
 

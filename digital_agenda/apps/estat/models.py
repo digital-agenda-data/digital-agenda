@@ -153,8 +153,45 @@ class ImportConfig(models.Model):
         for key, value in self.mappings.items():
             if not isinstance(value, dict):
                 raise ValidationError(
-                    {"mappings": f"Invalid mapping {key!r}: must be a JSON object"}
+                    {"mappings": f"Invalid mapping {key!r}: Must be a valid JSON object"}
                 )
+
+    def clean_with_dataset(self, dataset):
+        """Simple sanity checks to validate the data matches the given config."""
+        for key, values in self.filters.items():
+            if key not in dataset.dimension_ids:
+                raise ValidationError(
+                    f"Invalid filter {key!r}, no dimensions with that id found in: "
+                    f"{dataset.dimension_ids}"
+                )
+
+            categories = dataset.dimension_dict[key]
+            for val in values:
+                if val not in categories:
+                    raise ValidationError(
+                        f"Filter value for {key!r} not found: {val!r}"
+                    )
+        for dimension in ("indicator", "breakdown", "country", "unit", "period"):
+            config_dim = getattr(self, dimension)
+            is_surrogate = getattr(self, f"{dimension}_is_surrogate")
+
+            if is_surrogate:
+                # No point in checking surrogates since they are hardcoded values
+                continue
+
+            if config_dim not in dataset.dimension_ids:
+                raise ValidationError(
+                    f"Invalid dimension {config_dim!r}, no dimensions with that id found in: "
+                    f"{dataset.dimension_ids}"
+                )
+
+            mappings = self.mappings.get(dimension, {})
+            categories = dataset.dimension_dict[config_dim]
+            for val in mappings.keys():
+                if val not in categories:
+                    raise ValidationError(
+                        f"Mapped value for {dimension!r} not found: {val!r}"
+                    )
 
     def __str__(self):
         if self.title:
