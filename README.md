@@ -1,7 +1,6 @@
 # Digital Agenda Data Visualization Tool
 
-[![Create and publish a Docker images](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/docker-build.yml/badge.svg)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/docker-build.yml)
-[![Deploy Staging](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/deploy-staging.yml/badge.svg)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/deploy-staging.yml)
+[![.github/workflows/ci.yml](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/ci.yml/badge.svg)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/ci.yml)
 
 Docs:
 
