@@ -1,3 +1,5 @@
+import sys
+
 from django.core.management import BaseCommand
 
 from digital_agenda.apps.core.models import Fact
@@ -48,6 +50,10 @@ class Command(BaseCommand):
             qs = qs.filter(code=code)
         ids = qs.values_list("id", flat=True)
 
+        if not ids:
+            print("No import configurations found", file=sys.stderr)
+            sys.exit(1)
+
         if not noinput and delete_existing:
             nr_facts = Fact.objects.filter(import_config_id__in=ids).count()
             print(
@@ -56,7 +62,7 @@ class Command(BaseCommand):
                 end=" ",
             )
             if input("[Y/n] ") != "Y":
-                return
+                sys.exit(1)
 
         for config_id in ids:
             tasks.import_from_config(
