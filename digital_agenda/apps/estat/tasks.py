@@ -5,7 +5,7 @@ from django.utils import timezone
 
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.estat.estat_import import EstatImporter
+from digital_agenda.apps.estat.importer import EstatImporter
 
 logger = logging.getLogger(__name__)
 
