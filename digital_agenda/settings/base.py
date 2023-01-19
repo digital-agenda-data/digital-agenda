@@ -301,6 +301,11 @@ IMPORT_FILES_ALLOWED_MIME_TYPES = env.list(
     ],
 )
 
+# https://pypi.org/project/django-admin-env-notice/
+ENVIRONMENT_NAME = env.str("ENVIRONMENT_NAME", default="")
+ENVIRONMENT_COLOR = env.str("ENVIRONMENT_COLOR", default="")
+ENVIRONMENT_TEXT_COLOR = env.str("ENVIRONMENT_TEXT_COLOR", default="#ffffff")
+
 
 LOGGING = {
     "version": 1,
