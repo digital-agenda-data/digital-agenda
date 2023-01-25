@@ -43,12 +43,19 @@ Prepare env:
   npm install
   ```
 
-Running options:
+Interactive running options:
 
 - Open interactive Cypress test runner and manually run specs from there 
   ```shell
   npm run test:open
   ```
+- Manually change checked viewports
+  ```shell
+  npm run test:open -- -e "viewport=1920x1080;360x640"
+  ```
+
+Headless running options:
+
 - Run the FULL suite headless 
   ```shell
   npm run test
@@ -56,4 +63,8 @@ Running options:
 - Run single spec headless 
   ```shell
   npm run test -- -s cypress/e2e/chart.cy.js
+  ```
+- Change checked viewports
+  ```shell
+  npm run test -- -e "viewport=1920x1080;360x640"
   ```

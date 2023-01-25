@@ -1,18 +1,3 @@
-const sizes = [
-  [1920, 1080],
-  [1440, 900],
-  [1366, 768],
-  [1280, 800],
-  [1024, 768],
-  [768, 1024],
-  [800, 1280],
-  [600, 960],
-  [480, 853],
-  [414, 896],
-  [375, 667],
-  [360, 640],
-];
-
 /**
  * Dynamically generate tests for a range of common viewports sizes.
  *
@@ -22,7 +7,15 @@ const sizes = [
  * @param fn {Function}
  */
 export default function (title, fn) {
-  for (const size of sizes) {
+  let viewports = Cypress.config("viewports");
+
+  if (Cypress.env("viewport")) {
+    viewports = Cypress.env("viewport")
+      .split(";")
+      .map((viewport) => viewport.split("x").map((i) => parseInt(i)));
+  }
+
+  for (const size of viewports) {
     describe(`${title} (${size.join("x")})`, () => {
       beforeEach(() => {
         cy.viewport(...size);
