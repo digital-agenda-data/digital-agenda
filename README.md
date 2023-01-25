@@ -1,5 +1,6 @@
 # Digital Agenda Data Visualization Tool
 
+[![Test Suite](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/tests.yml)
 [![.github/workflows/ci.yml](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/ci.yml/badge.svg)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/ci.yml)
 
 Docs:
