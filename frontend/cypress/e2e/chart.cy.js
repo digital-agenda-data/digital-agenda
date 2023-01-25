@@ -21,6 +21,12 @@ describeResponsive("Check App Navigation", () => {
       .get(".highcharts-root")
       .contains("ICT graduates, Total")
       .get(".highcharts-root")
-      .contains("Year: 2020");
+      .contains("Year: 2020")
+      .get(".highcharts-point[aria-label='European Union, 3.9.']")
+      .should("be.visible")
+      .trigger("mouseover")
+      .get(".highcharts-tooltip")
+      .should("contain", "European Union")
+      .should("contain", "3.9% of graduates");
   });
 });
