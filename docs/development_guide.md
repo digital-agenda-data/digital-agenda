@@ -17,11 +17,14 @@
     - [django](https://docs.djangoproject.com//)
     - [django-rest-framework](https://www.django-rest-framework.org/)
     - [celery](https://docs.celeryq.dev/en/stable/)
+    - [pytest](https://docs.pytest.org/)
 - Frontend:
     - [vue](https://vuejs.org/guide/introduction.html)
+    - [vueuse](https://vueuse.org/functions.html)
     - [pinia](https://pinia.vuejs.org/)
     - [vue-router](https://router.vuejs.org/)
     - [vite](https://vitejs.dev/)
+    - [Cypress testing](https://docs.cypress.io/)
     - [Europa Component Library](https://ec.europa.eu/component-library/)
 
 ## Adding a new backend dependency
