@@ -61,7 +61,7 @@ class ImportConfig(models.Model):
             "Human readable title for logging and differentiating from multiple configs for the same dataset"
         ),
     )
-    last_import_time = models.TimeField(
+    last_import_time = models.DateTimeField(
         null=True,
         help_text=(
             "Time when the last import was completed, regardless if it was successful or not."
