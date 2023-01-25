@@ -20,7 +20,11 @@ class Migration(migrations.Migration):
                 help_text="Object with ESTAT dimension keys and an Array of accepted codes as values.",
             ),
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name="importconfig",
+            name="last_import_time"
+        ),
+        migrations.AddField(
             model_name="importconfig",
             name="last_import_time",
             field=models.DateTimeField(
