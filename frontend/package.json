@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "test": "cypress run",
-    "test:open": "cypress open"
+    "test:open": "cypress open --e2e"
   },
   "dependencies": {
     "@ecl/preset-ec": "^3.6.0",

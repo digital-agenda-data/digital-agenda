@@ -1,4 +1,6 @@
-describe("Check App Navigation", () => {
+import describeResponsive from "../describeResponsive";
+
+describeResponsive("Check App Navigation", () => {
   it("Check ColumnCompareCountries", () => {
     cy.visit(
       "/chart-group/key-indicators/charts/2-analyse-one-indicator-and-compare-countries?indicatorGroup=telecom"

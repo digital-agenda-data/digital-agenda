@@ -1,4 +1,6 @@
-describe("Check App Navigation", () => {
+import describeResponsive from "../describeResponsive";
+
+describeResponsive("Check App Navigation", (viewportWidth) => {
   it("Navigate in between charts and groups", () => {
     cy.visit("/")
       .get(".ecl-list-illustration__item")
@@ -43,16 +45,20 @@ describe("Check App Navigation", () => {
   });
   it("Navigate in between indicator groups", () => {
     cy.visit("/")
-      .get(".ecl-list-illustration__item")
+      .get(".ecl-list-illustration a")
       .contains("2. Key Indicators")
-      .click()
-      .get(".ecl-category-filter__list-item")
-      .contains("Indicators")
-      .click()
-      .get(".ecl-link")
+      .click();
+
+    if (viewportWidth >= 996) {
+      cy.get(".ecl-category-filter a").contains("Indicators").click();
+    } else {
+      cy.get(".ecl-tabs a").contains("Indicators").click();
+    }
+
+    cy.get(".ecl-link")
       .contains("Digital Skills")
       .click()
-      .get(".ecl-table__cell")
+      .get(".ecl-table td")
       .contains("ict_grad")
       .should("be.visible");
   });
