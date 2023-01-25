@@ -1,7 +1,5 @@
 <script>
 import BaseSelectFilter from "@/components/chart-filters/base/BaseSelectFilter.vue";
-import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { mapState } from "pinia";
 
 export default {
   name: "IndicatorFilter",

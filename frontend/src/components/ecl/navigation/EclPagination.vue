@@ -60,7 +60,7 @@
 
 <script>
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import { useRouteParams, useRouteQuery } from "@vueuse/router";
+import { useRouteParams } from "@vueuse/router";
 import { clamp, range } from "@/lib/utils";
 
 /**
