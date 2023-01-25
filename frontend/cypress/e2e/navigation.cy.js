@@ -3,44 +3,44 @@ import describeResponsive from "../describeResponsive";
 describeResponsive("Check App Navigation", (viewportWidth) => {
   it("Navigate in between charts and groups", () => {
     cy.visit("/")
-      .get(".ecl-list-illustration__item")
+      .get(".ecl-list-illustration a")
       .contains("2. Key Indicators")
       .click()
-      .get(".ecl-page-header__title")
+      .get("h1")
       .contains("Key Indicators")
-      .get(".ecl-list-illustration__item")
+      .get(".ecl-list-illustration a")
       .contains("1. Analyse one indicator and compare countries")
       .click()
-      .get(".ecl-page-header__title")
+      .get("h1")
       .contains("Analyse one indicator and compare countries")
       .get(".ecl-card")
       .contains("Analyse one indicator and compare breakdowns")
       .click()
-      .get(".ecl-page-header__title")
+      .get("h1")
       .contains("Analyse one indicator and compare breakdowns")
       .get(".ecl-card")
       .contains("Digital Economy and Society Index")
       .click()
-      .get(".ecl-page-header__title")
+      .get("h1")
       .contains("Digital Economy and Society Index");
   });
   it("Navigate breadcrumbs", () => {
     cy.visit("/")
-      .get(".ecl-list-illustration__item")
+      .get(".ecl-list-illustration a")
       .contains("2. Key Indicators")
       .click()
-      .get(".ecl-list-illustration__item")
+      .get(".ecl-list-illustration a")
       .contains("1. Analyse one indicator and compare countries")
       .click()
-      .get(".ecl-breadcrumb .ecl-link")
+      .get(".ecl-breadcrumb a")
       .contains("Charts")
       .click()
-      .get(".ecl-page-header__title")
+      .get("h1")
       .contains("Key Indicators")
-      .get(".ecl-breadcrumb .ecl-link")
+      .get(".ecl-breadcrumb a")
       .contains("Home")
       .click()
-      .get(".ecl-list-illustration__item")
+      .get(".ecl-list-illustration a")
       .contains("2. Key Indicators");
   });
   it("Navigate in between indicator groups", () => {
@@ -55,7 +55,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       cy.get(".ecl-tabs a").contains("Indicators").click();
     }
 
-    cy.get(".ecl-link")
+    cy.get("a")
       .contains("Digital Skills")
       .click()
       .get(".ecl-table td")
