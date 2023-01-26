@@ -19,11 +19,11 @@
             <ecl-label :text="label.text" :variant="label.variant" />
           </li>
         </ul>
-        <h1 v-if="title" class="ecl-content-block__title">
+        <div v-if="title" class="ecl-content-block__title">
           <component :is="to ? 'EclLink' : 'span'" :to="to" no-visited>
             {{ title }}
           </component>
-        </h1>
+        </div>
         <div v-if="description" class="ecl-content-block__description">
           {{ description }}
         </div>
