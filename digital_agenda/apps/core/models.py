@@ -46,7 +46,7 @@ class BaseDimensionModel(TimestampedModel):
         elif self.alt_label:
             return f"[{self.code}] {self.alt_label}"
         else:
-            return self.code
+            return str(self.code)
 
 
 class DataSource(BaseDimensionModel):
