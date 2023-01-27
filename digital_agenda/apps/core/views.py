@@ -67,17 +67,15 @@ class IndicatorGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 
 class IndicatorCodeFilterSet(BaseCodeFilterSet):
-    period_in = CodeInFilter(field_name="periods__code", lookup_expr="in")
-
     class Meta(BaseCodeFilterSet.Meta):
         model = Indicator
-        fields = BaseCodeFilterSet.Meta.fields + ["period_in"]
+        fields = BaseCodeFilterSet.Meta.fields
 
 
 class IndicatorViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Indicator
     queryset = Indicator.objects.exclude(facts__isnull=True).prefetch_related(
-        "groups", "periods", "data_source"
+        "groups", "data_source"
     )
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = IndicatorCodeFilterSet
@@ -152,12 +150,20 @@ class IndicatorFilteredMixin:
     Used for units/countries/periods.
     """
 
+    filter_by = None
+
     def get_queryset(self):
+        assert self.filter_by, "'filter_by' not provided"
+
         return (
             super()
             .get_queryset()
-            .filter(  # noqa
-                indicators__code__in=[self.kwargs["indicator_code"]]  # noqa
+            .filter(
+                id__in=Subquery(
+                    Fact.objects.filter(indicator__code=self.kwargs["indicator_code"])
+                    .distinct(self.filter_by)
+                    .values_list(self.filter_by, flat=True)
+                )
             )
         )
 
@@ -177,6 +183,7 @@ class UnitViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 class IndicatorUnitViewSet(IndicatorFilteredMixin, UnitViewSet):
     pagination_class = None
+    filter_by = "unit_id"
 
 
 class CountryCodeFilterSet(BaseCodeFilterSet):
@@ -195,6 +202,7 @@ class CountryViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 class IndicatorCountryViewSet(IndicatorFilteredMixin, CountryViewSet):
     pagination_class = None
+    filter_by = "country_id"
 
 
 class PeriodCodeFilterSet(BaseCodeFilterSet):
@@ -212,26 +220,31 @@ class PeriodViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 class IndicatorPeriodViewSet(IndicatorFilteredMixin, PeriodViewSet):
     pagination_class = None
+    filter_by = "period_id"
 
 
 class IndicatorBreakdownViewSet(IndicatorFilteredMixin, BreakdownViewSet):
     serializer_class = BreakdownWithGroupsSerializer
     queryset = Breakdown.objects.all().prefetch_related("groups")
     pagination_class = None
+    filter_by = "breakdown_id"
 
 
 class IndicatorBreakdownGroupViewSet(BreakdownGroupViewSet):
     pagination_class = None
 
     def get_queryset(self):
+        breakdowns_for_indicator = Fact.objects.filter(
+            indicator__code=self.kwargs["indicator_code"]
+        ).values_list("breakdown_id", flat=True)
         return (
             super()
             .get_queryset()
             .filter(
                 Exists(
                     Breakdown.objects.filter(
+                        id__in=breakdowns_for_indicator,
                         groups__code__in=OuterRef("code"),
-                        indicators__code__in=[self.kwargs["indicator_code"]],
                     )
                 )
             )
@@ -240,6 +253,7 @@ class IndicatorBreakdownGroupViewSet(BreakdownGroupViewSet):
 
 class IndicatorBreakdownGroupBreakdownViewSet(IndicatorFilteredMixin, BreakdownViewSet):
     pagination_class = None
+    filter_by = "breakdown_id"
 
     def get_queryset(self):
         return (
@@ -247,7 +261,6 @@ class IndicatorBreakdownGroupBreakdownViewSet(IndicatorFilteredMixin, BreakdownV
             .get_queryset()
             .filter(
                 groups__code__in=[self.kwargs["breakdown_group_code"]],
-                indicators__code__in=[self.kwargs["indicator_code"]],
             )
             .order_by("breakdowngrouplink__display_order")
             .distinct("breakdowngrouplink__display_order", "code")

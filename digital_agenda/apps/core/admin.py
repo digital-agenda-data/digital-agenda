@@ -58,12 +58,6 @@ class DataSourceFilter(AutocompleteFilter):
 @admin.register(Indicator)
 class IndicatorAdmin(DimensionAdmin):
     list_filter = [DataSourceFilter]
-    autocomplete_fields = (
-        "breakdowns",
-        "units",
-        "periods",
-        "countries",
-    )
 
 
 class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):

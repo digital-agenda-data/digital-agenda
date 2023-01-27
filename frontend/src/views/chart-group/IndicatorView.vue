@@ -24,7 +24,7 @@
         <th class="ecl-table__header">Information</th>
       </tr>
     </thead>
-    <template v-for="group in indicatorGroupsFiltered" :key="group.code">
+    <template v-for="group in indicatorGroups" :key="group.code">
       <thead class="ecl-table__head">
         <tr :id="group.code" class="ecl-table__row">
           <th colspan="2" class="ecl-table__header">
@@ -34,7 +34,7 @@
       </thead>
       <tbody class="ecl-table__body">
         <tr
-          v-for="indicator in group.indicators"
+          v-for="indicator in indicatorsForGroup(group)"
           :key="indicator.code"
           class="ecl-table__row"
         >
@@ -56,11 +56,11 @@
                 <span v-html="indicator.definition" />
               </p>
 
-              <p v-if="indicator.periods.length > 0">
+              <p>
                 <strong>Time coverage:&nbsp;</strong>
                 <span>
-                  {{ indicator.periods[0] }} -
-                  {{ indicator.periods.slice(-1)[0] }}
+                  {{ indicator.min_period }} -
+                  {{ indicator.max_period }}
                 </span>
               </p>
 
@@ -86,14 +86,14 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
-import { api } from "@/lib/api";
-import { scrollToHash } from "@/lib/utils";
-import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { useDataSourceStore } from "@/stores/dataSourceStore";
+import ChartGroupNav from "@/components/ChartGroupNav.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import ChartGroupNav from "@/components/ChartGroupNav.vue";
+import { api } from "@/lib/api";
+import { groupByUnique, scrollToHash } from "@/lib/utils";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useDataSourceStore } from "@/stores/dataSourceStore";
+import { mapState } from "pinia";
 
 export default {
   name: "IndicatorView",
@@ -102,6 +102,8 @@ export default {
     return {
       loaded: false,
       chartGroupDetails: null,
+      indicatorGroups: [],
+      indicators: [],
     };
   },
   computed: {
@@ -110,36 +112,27 @@ export default {
       "currentChartGroupCode",
     ]),
     ...mapState(useDataSourceStore, ["dataSourceByCode"]),
-    indicatorGroups() {
-      return this.chartGroupDetails?.indicator_groups || [];
-    },
-    indicatorGroupsFiltered() {
-      const allowedPeriods = new Set(
-        this.chartGroupDetails.periods.map((period) => period.code)
-      );
-
-      return this.indicatorGroups
-        .map((group) => {
-          return {
-            ...group,
-            indicators: group.indicators.filter(
-              (indicator) =>
-                allowedPeriods.size === 0 ||
-                indicator.periods.some((period) => allowedPeriods.has(period))
-            ),
-          };
-        })
-        .filter((group) => group.indicators.length > 0);
+    indicatorsByCode() {
+      return groupByUnique(this.indicators);
     },
   },
   mounted() {
     this.loadData();
   },
   methods: {
+    indicatorsForGroup(group) {
+      return group.indicators
+        .map((indicatorCode) => this.indicatorsByCode.get(indicatorCode))
+        .filter((i) => !!i);
+    },
     async loadData() {
       try {
         this.loaded = false;
-        await this.loadChartGroup();
+        await Promise.all([
+          this.loadChartGroup(),
+          this.loadIndicatorGroups(),
+          this.loadIndicators(),
+        ]);
       } finally {
         this.loaded = true;
       }
@@ -148,6 +141,18 @@ export default {
     async loadChartGroup() {
       this.chartGroupDetails = (
         await api.get(`/chart-groups/${this.currentChartGroupCode}/`)
+      ).data;
+    },
+    async loadIndicatorGroups() {
+      this.indicatorGroups = (
+        await api.get(
+          `/chart-groups/${this.currentChartGroupCode}/indicator-groups/`
+        )
+      ).data;
+    },
+    async loadIndicators() {
+      this.indicators = (
+        await api.get(`/chart-groups/${this.currentChartGroupCode}/indicators/`)
       ).data;
     },
   },

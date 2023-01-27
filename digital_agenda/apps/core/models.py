@@ -88,25 +88,6 @@ class Indicator(BaseDimensionModel):
     )
     note = models.TextField(null=True, blank=True)
 
-    breakdowns = models.ManyToManyField(
-        "Breakdown",
-        related_name="indicators",
-        db_table="indicators_breakdowns",
-        blank=True,
-    )
-    units = models.ManyToManyField(
-        "Unit", related_name="indicators", db_table="indicators_units", blank=True
-    )
-    countries = models.ManyToManyField(
-        "Country",
-        related_name="indicators",
-        db_table="indicators_countries",
-        blank=True,
-    )
-    periods = models.ManyToManyField(
-        "Period", related_name="indicators", db_table="indicators_periods", blank=True
-    )
-
     class Meta:
         db_table = "indicators"
         ordering = ["code"]
@@ -210,6 +191,7 @@ class Country(BaseDimensionModel):
 
 class Period(BaseDimensionModel):
     """Dimension model for time periods"""
+    code = models.PositiveIntegerField(unique=True)
 
     class Meta:
         db_table = "periods"
@@ -250,16 +232,6 @@ class Fact(TimestampedModel):
                 name="core_fact_either_val_or_flags",
             )
         ]
-
-    def clean(self):
-        if self.indicator not in self.breakdown.indicators.all():
-            raise ValidationError("Indicator does not match breakdown")
-        elif self.indicator not in self.unit.indicators.all():
-            raise ValidationError("Indicator does not match unit")
-        elif self.indicator not in self.country.indicators.all():
-            raise ValidationError("Indicator does not match country")
-        elif self.indicator not in self.period.indicators.all():
-            raise ValidationError("Indicator does not match period")
 
     def save(self, *args, **kwargs):
         self.clean()

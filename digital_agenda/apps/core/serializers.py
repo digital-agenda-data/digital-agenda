@@ -18,6 +18,8 @@ from .models import (
 
 
 class BaseDimensionSerializer(serializers.ModelSerializer):
+    code = serializers.CharField()
+
     class Meta:
         fields = ["code", "label", "alt_label", "definition"]
 
@@ -76,34 +78,24 @@ class DataSourceSerializer(BaseDimensionSerializer):
 
 
 class IndicatorListSerializer(BaseDimensionSerializer):
-    periods = serializers.SlugRelatedField(many=True, slug_field="code", read_only=True)
     data_source = serializers.SlugRelatedField(slug_field="code", read_only=True)
     groups = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
         fields = BaseDimensionSerializer.Meta.fields + [
-            "periods",
             "data_source",
             "groups",
         ]
 
 
 class IndicatorDetailSerializer(IndicatorListSerializer):
-
-    breakdowns = BreakdownSerializer(many=True, read_only=True)
-    units = UnitSerializer(many=True, read_only=True)
-    countries = CountrySerializer(many=True, read_only=True)
-    periods = PeriodSerializer(many=True, read_only=True)
     data_source = DataSourceSerializer(many=False, read_only=True)
 
     class Meta(IndicatorListSerializer.Meta):
         fields = IndicatorListSerializer.Meta.fields + [
             "definition",
             "note",
-            "breakdowns",
-            "units",
-            "countries",
         ]
 
 
@@ -113,10 +105,8 @@ class IndicatorGroupListSerializer(BaseDimensionSerializer):
 
 
 class IndicatorGroupDetailSerializer(serializers.ModelSerializer):
-
-    indicators = IndicatorListSerializer(
-        many=True,
-        read_only=True,
+    indicators = serializers.SlugRelatedField(
+        slug_field="code", many=True, read_only=True
     )
 
     class Meta:

@@ -1,4 +1,3 @@
-import collections
 import csv
 import os.path
 import shutil
@@ -56,14 +55,6 @@ class Command(BaseCommand):
                 new_fn = os.path.join(tmpdirname, old.split("/")[-1].rsplit(".", 1)[0])
 
                 facts = []
-                indicator_m2m = collections.defaultdict(
-                    lambda: {
-                        "units": set(),
-                        "periods": set(),
-                        "countries": set(),
-                        "breakdowns": set(),
-                    }
-                )
 
                 # "observation","time_period","ref_area","indicator","breakdown","unit_measure","value","flag","note"
                 for row in csv.DictReader(open(new_fn)):
@@ -115,11 +106,6 @@ class Command(BaseCommand):
                         # No point in storing this info
                         continue
 
-                    indicator_m2m[indicator]["units"].add(unit)
-                    indicator_m2m[indicator]["periods"].add(period)
-                    indicator_m2m[indicator]["countries"].add(country)
-                    indicator_m2m[indicator]["breakdowns"].add(breakdown)
-
                     facts.append(
                         Fact(
                             period=period,
@@ -131,10 +117,6 @@ class Command(BaseCommand):
                             flags=flags,
                         )
                     )
-
-                for indicator, rels in indicator_m2m.items():
-                    for rel, rel_set in rels.items():
-                        getattr(indicator, rel).add(*rel_set)
 
                 objs = Fact.objects.bulk_create(
                     facts, ignore_conflicts=True, batch_size=10_000

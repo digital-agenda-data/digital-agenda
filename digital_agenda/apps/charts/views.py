@@ -1,27 +1,28 @@
+from django.db.models import Max
+from django.db.models import Min
+from django.db.models import Prefetch
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.charts.serializers import ChartGroupDetailSerializer
 from digital_agenda.apps.charts.serializers import ChartGroupIndicatorSearchSerializer
 from digital_agenda.apps.charts.serializers import ChartGroupListSerializer
+from digital_agenda.apps.charts.serializers import ChartIndicatorListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
 from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.serializers import IndicatorListSerializer
-from digital_agenda.apps.core.serializers import IndicatorGroupListSerializer
+from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
-from digital_agenda.apps.core.views import IndicatorViewSet
 
 
 class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = ChartGroup
     pagination_class = None
+    serializer_class = ChartGroupListSerializer
 
     def get_queryset(self):
         queryset = ChartGroup.objects.all().prefetch_related(
@@ -29,22 +30,9 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             "indicator_groups",
         )
 
-        if self.action == "retrieve":
-            queryset = queryset.prefetch_related(
-                "indicator_groups__indicators",
-                "indicator_groups__indicators__periods",
-                "indicator_groups__indicators__groups",
-                "indicator_groups__indicators__data_source",
-            )
-
         if not self.request.user.is_authenticated:
             queryset = queryset.filter(is_draft=False)
         return queryset
-
-    def get_serializer_class(self):
-        if self.action == "list":
-            return ChartGroupListSerializer
-        return ChartGroupDetailSerializer
 
     # Must Vary on cookies since the list changes if the user
     # is logged in or not
@@ -63,20 +51,44 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         url_name="indicator-groups",
     )
     def indicator_groups(self, request, code=None):
-        queryset = self.get_object().indicator_groups.all()
-        return Response(IndicatorGroupListSerializer(queryset, many=True).data)
+        queryset = (
+            self.get_object()
+            .indicator_groups.all()
+            .prefetch_related(
+                Prefetch(
+                    "indicators",
+                    Indicator.objects.order_by("indicatorgrouplink__display_order"),
+                ),
+                "indicators__groups",
+                "indicators__data_source",
+            )
+        )
+        return Response(IndicatorGroupDetailSerializer(queryset, many=True).data)
 
     @action(methods=["GET"], detail=True)
     def indicators(self, request, code=None):
         obj = self.get_object()
         group_ids = obj.indicator_groups.all().values_list("id", flat=True)
-        period_ids = obj.periods.all().values_list("id", flat=True)
+        period_codes = list(obj.periods.order_by("code").values_list("code", flat=True))
 
-        queryset = IndicatorViewSet.queryset.filter(groups__id__in=group_ids)
-        if period_ids:
-            queryset = queryset.filter(periods__id__in=period_ids)
+        queryset = (
+            Indicator.objects.filter(facts__period__isnull=False)
+            .annotate(
+                min_period=Min("facts__period__code"),
+                max_period=Max("facts__period__code"),
+            )
+            .filter(groups__id__in=group_ids)
+            .prefetch_related("groups", "data_source")
+        )
 
-        return Response(IndicatorListSerializer(queryset, many=True).data)
+        if period_codes:
+            min_period_def = period_codes[0]
+            max_period_def = period_codes[-1]
+            queryset = queryset.exclude(
+                max_period__lt=min_period_def, min_period__gt=max_period_def
+            )
+
+        return Response(ChartIndicatorListSerializer(queryset, many=True).data)
 
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):

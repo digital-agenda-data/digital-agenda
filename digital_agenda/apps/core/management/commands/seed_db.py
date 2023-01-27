@@ -3,7 +3,7 @@ import sys
 from django.core.management import BaseCommand
 from django.core.management import call_command
 
-from digital_agenda.apps.core.models import Fact
+from digital_agenda.apps.core.cache import clear_all_caches
 
 
 class Command(BaseCommand):
@@ -30,10 +30,4 @@ class Command(BaseCommand):
 
         call_command("flush", "--noinput")
         call_command("load_initial_fixtures", "--test")
-
-        for fact in Fact.objects.all():
-            fact.indicator.units.add(fact.unit)
-            fact.indicator.periods.add(fact.period)
-            fact.indicator.countries.add(fact.country)
-            fact.indicator.breakdowns.add(fact.breakdown)
-            fact.indicator.save()
+        clear_all_caches(force=True)

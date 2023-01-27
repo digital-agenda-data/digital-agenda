@@ -4,6 +4,7 @@ from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
+from digital_agenda.apps.core.serializers import IndicatorListSerializer
 from digital_agenda.apps.core.serializers import PeriodSerializer
 
 
@@ -87,6 +88,19 @@ class ChartSerializer(serializers.ModelSerializer):
             *Chart.filter_options,
         )
         read_only_fields = fields
+
+
+class ChartIndicatorListSerializer(IndicatorListSerializer):
+    min_period = serializers.CharField(read_only=True)
+    max_period = serializers.CharField(read_only=True)
+
+    class Meta(IndicatorListSerializer.Meta):
+        fields = IndicatorListSerializer.Meta.fields + [
+            "min_period",
+            "max_period",
+            "definition",
+            "note",
+        ]
 
 
 class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):

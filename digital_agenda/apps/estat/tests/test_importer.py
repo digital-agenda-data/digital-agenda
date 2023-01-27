@@ -108,12 +108,12 @@ class TestImporterSuccess(TestCase):
         )
 
     def test_period(self):
-        expected = ["2010", "2011", "2012", "2013"]
+        expected = [2010, 2011, 2012, 2013]
         codes = Period.objects.order_by("code").values_list("code", flat=True)
         labels = Period.objects.order_by("label").values_list("label", flat=True)
 
         self.assertEqual(expected, list(codes))
-        self.assertEqual(expected, list(labels))
+        self.assertEqual(expected, list(map(int, labels)))
 
     def test_country(self):
         codes = Country.objects.order_by("code").values_list("code", flat=True)

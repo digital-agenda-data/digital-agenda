@@ -29,13 +29,6 @@ MODELS = {
     "period": Period,
 }
 
-INDICATOR_REL = {
-    "breakdown": "breakdowns",
-    "country": "countries",
-    "unit": "units",
-    "period": "periods",
-}
-
 
 def batched(iterable, n):
     """Batch data into tuples of length n. The last batch may be shorter.
@@ -212,17 +205,6 @@ class EstatImporter:
             yield self.get_fact(obs)
 
     def create_batch(self, facts):
-        # First add indicator relationships in bulk
-        indicator_rel_objects = defaultdict(lambda: defaultdict(set))
-        for fact in facts:
-            for dim in INDICATOR_REL:
-                indicator_rel_objects[fact.indicator][dim].add(getattr(fact, dim))
-
-        for indicator, rels in indicator_rel_objects.items():
-            for dim, rel_set in rels.items():
-                getattr(indicator, INDICATOR_REL[dim]).add(*rel_set)
-
-        # Then create the facts with upsert for value and flags
         return Fact.objects.bulk_create(
             facts,
             update_conflicts=True,
