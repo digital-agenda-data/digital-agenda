@@ -133,34 +133,34 @@ class ChartGroupIndicatorSearchViewSet(
         # groups that can belong to many chart groups.
         # Any orphaned indicators are excluded from the search.
         query = """
-            SELECT indicators.id            AS id,
-                   indicators.code          AS code,
-                   indicators.label         AS label,
-                   indicators.alt_label     AS alt_label,
-                   indicators.definition    AS definition,
-                   indicator_groups.code    AS group_code,
-                   chart_groups.code        AS chart_group_code,
-                   highlight::json          AS highlight,
-                   ts_rank(vector, query)   AS rank
-            FROM indicators
-                 INNER JOIN indicators_groups AS group_link
-                            ON indicators.id = group_link.indicator_id
-                 INNER JOIN indicator_groups
-                            ON indicator_groups.id = group_link.group_id
-                 INNER JOIN chart_groups_indicator_groups AS chart_group_link
-                            ON indicator_groups.id = chart_group_link.indicatorgroup_id
-                 INNER JOIN chart_groups
-                            ON chart_group_link.chartgroup_id = chart_groups.id,
+            SELECT core_indicator.id            AS id,
+                   core_indicator.code          AS code,
+                   core_indicator.label         AS label,
+                   core_indicator.alt_label     AS alt_label,
+                   core_indicator.definition    AS definition,
+                   core_indicatorgroup.code     AS group_code,
+                   charts_chartgroup.code       AS chart_group_code,
+                   highlight::json              AS highlight,
+                   ts_rank(vector, query)       AS rank
+            FROM core_indicator
+                 INNER JOIN core_indicatorgrouplink
+                            ON core_indicator.id = core_indicatorgrouplink.indicator_id
+                 INNER JOIN core_indicatorgroup
+                            ON core_indicatorgroup.id = core_indicatorgrouplink.group_id
+                 INNER JOIN charts_chartgroup_indicator_groups
+                            ON core_indicatorgroup.id = charts_chartgroup_indicator_groups.indicatorgroup_id
+                 INNER JOIN charts_chartgroup
+                            ON charts_chartgroup_indicator_groups.chartgroup_id = charts_chartgroup.id,
                  json_build_object(
-                     'label', indicators.label,
-                     'alt_label', indicators.alt_label,
-                     'definition', indicators.definition
+                     'label', core_indicator.label,
+                     'alt_label', core_indicator.alt_label,
+                     'definition', core_indicator.definition
                  ) doc,
                  to_tsvector(%(config)s, doc) vector,
                  websearch_to_tsquery(%(config)s, %(query)s) query,
                  ts_headline(%(config)s, doc, query, %(options)s) highlight
              WHERE vector @@ query AND 
-                   (%(is_auth)s OR chart_groups.is_draft = False)
+                   (%(is_auth)s OR charts_chartgroup.is_draft = False)
              ORDER BY rank DESC
         """
 

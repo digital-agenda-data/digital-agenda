@@ -56,7 +56,6 @@ class DataSource(BaseDimensionModel):
     note = models.TextField(null=True, blank=True)
 
     class Meta:
-        db_table = "data_sources"
         ordering = ["code"]
 
 
@@ -72,7 +71,6 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
     )
 
     class Meta:
-        db_table = "indicator_groups"
         ordering = ["display_order", "code"]
 
 
@@ -89,7 +87,6 @@ class Indicator(BaseDimensionModel):
     note = models.TextField(null=True, blank=True)
 
     class Meta:
-        db_table = "indicators"
         ordering = ["code"]
 
 
@@ -105,7 +102,6 @@ class IndicatorGroupLink(DisplayOrderModel):
     objects = IndicatorGroupLinkManager()
 
     class Meta:
-        db_table = "indicators_groups"
         unique_together = ("indicator", "group")
         ordering = ["display_order"]
         verbose_name = "indicator"
@@ -119,7 +115,6 @@ class IndicatorGroupLink(DisplayOrderModel):
 
 
 class BreakdownGroup(BaseDimensionModel, DisplayOrderModel):
-
     """
     Model for groups of breakdowns. Groups are not referenced directly by facts,
     and function as a hierarchical dimension table.
@@ -130,7 +125,6 @@ class BreakdownGroup(BaseDimensionModel, DisplayOrderModel):
     )
 
     class Meta:
-        db_table = "breakdown_groups"
         ordering = ["display_order", "code"]
 
 
@@ -138,7 +132,6 @@ class Breakdown(BaseDimensionModel):
     """Dimension model for secondary dimensions, a.k.a. breakdowns."""
 
     class Meta:
-        db_table = "breakdowns"
         ordering = ["code"]
 
 
@@ -154,7 +147,6 @@ class BreakdownGroupLink(DisplayOrderModel):
     objects = BreakdownGroupLinkManager()
 
     class Meta:
-        db_table = "breakdowns_groups"
         unique_together = ("breakdown", "group")
         ordering = ["display_order"]
         verbose_name = "breakdown"
@@ -171,7 +163,6 @@ class Unit(BaseDimensionModel):
     """Dimension model for measure units"""
 
     class Meta:
-        db_table = "units"
         ordering = ["code"]
 
 
@@ -184,17 +175,16 @@ class Country(BaseDimensionModel):
     is_group = models.BooleanField(default=False)
 
     class Meta:
-        db_table = "countries"
         verbose_name_plural = "Countries"
         ordering = ["code"]
 
 
 class Period(BaseDimensionModel):
     """Dimension model for time periods"""
+
     code = models.PositiveIntegerField(unique=True)
 
     class Meta:
-        db_table = "periods"
         ordering = ["-code"]
 
 
@@ -224,7 +214,6 @@ class Fact(TimestampedModel):
     )
 
     class Meta:
-        db_table = "facts"
         unique_together = ("indicator", "breakdown", "unit", "country", "period")
         constraints = [
             models.CheckConstraint(
@@ -290,9 +279,6 @@ class DataFileImport(TimestampedModel):
     description = models.TextField(null=True, blank=True)
     user = models.ForeignKey("accounts.User", on_delete=models.CASCADE)
     errors = models.JSONField(null=True, blank=True)
-
-    class Meta:
-        db_table = "data_file_imports"
 
     @property
     def path(self):

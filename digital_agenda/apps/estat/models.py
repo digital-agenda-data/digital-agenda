@@ -153,7 +153,9 @@ class ImportConfig(models.Model):
         for key, value in self.mappings.items():
             if not isinstance(value, dict):
                 raise ValidationError(
-                    {"mappings": f"Invalid mapping {key!r}: Must be a valid JSON object"}
+                    {
+                        "mappings": f"Invalid mapping {key!r}: Must be a valid JSON object"
+                    }
                 )
 
     def clean_with_dataset(self, dataset):

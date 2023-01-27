@@ -37,7 +37,6 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     indicator_groups = models.ManyToManyField("core.IndicatorGroup")
     periods = models.ManyToManyField(
         "core.Period",
-        db_table="chart_group_periods",
         help_text=(
             "Limit chart group to the specified periods. If none are specified ALL "
             "available periods are used instead."
@@ -46,7 +45,6 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     )
 
     class Meta:
-        db_table = "chart_groups"
         ordering = ["display_order", "code"]
 
     def natural_key(self):
@@ -176,7 +174,6 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     country_filter = filter_option_field("core.Country")
 
     class Meta:
-        db_table = "charts"
         ordering = ["display_order", "code"]
 
     def natural_key(self):
