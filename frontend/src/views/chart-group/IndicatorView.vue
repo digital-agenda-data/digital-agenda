@@ -42,7 +42,11 @@
             class="ecl-table__cell label-cell"
             data-ecl-table-header="Indicator"
           >
-            {{ indicator.label }}
+            <ecl-link
+              :to="getChartLink(group, indicator)"
+              :label="indicator.label"
+              no-visited
+            />
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Information">
             <div>
@@ -95,6 +99,7 @@ import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { api } from "@/lib/api";
 import { groupByUnique, scrollToHash } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useChartStore } from "@/stores/chartStore";
 import { useDataSourceStore } from "@/stores/dataSourceStore";
 import { mapState } from "pinia";
 
@@ -114,6 +119,7 @@ export default {
       "currentChartGroup",
       "currentChartGroupCode",
     ]),
+    ...mapState(useChartStore, ["defaultChartForCurrentGroup"]),
     ...mapState(useDataSourceStore, ["dataSourceByCode"]),
     indicatorsByCode() {
       return groupByUnique(this.indicators);
@@ -135,6 +141,19 @@ export default {
     this.loadData();
   },
   methods: {
+    getChartLink(group, indicator) {
+      return {
+        name: "chart-view",
+        params: {
+          chartCode: this.defaultChartForCurrentGroup.code,
+          chartGroupCode: this.currentChartGroup.code,
+        },
+        query: {
+          indicator: indicator.code,
+          indicatorGroup: group.code,
+        },
+      };
+    },
     async loadData() {
       try {
         this.loaded = false;

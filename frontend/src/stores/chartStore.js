@@ -93,5 +93,10 @@ export const useChartStore = defineStore("chart", {
 
       return result;
     },
+    defaultChartForCurrentGroup() {
+      return this.defaultChartForGroup[
+        useChartGroupStore().currentChartGroupCode
+      ];
+    },
   },
 });
