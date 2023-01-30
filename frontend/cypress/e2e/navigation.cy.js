@@ -58,8 +58,10 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
     cy.get("a")
       .contains("Digital Skills")
       .click()
-      .get(".ecl-table td")
+      .get(".ecl-table td span")
       .contains("ict_grad")
-      .should("be.visible");
+      .should("be.visible")
+      .parents("td")
+      .should("contain", "2012 - 2020");
   });
 });
