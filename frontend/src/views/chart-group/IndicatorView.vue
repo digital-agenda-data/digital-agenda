@@ -7,7 +7,7 @@
       the links in the table or explore the whole database.
     </p>
     <ul v-if="chartGroupDetails" class="ecl-u-mb-l">
-      <li v-for="group in indicatorGroups" :key="group.code">
+      <li v-for="group in indicatorGroupsFiltered" :key="group.code">
         <ecl-link :to="`#${group.code}`" :label="group.label" no-visited />
       </li>
     </ul>
@@ -15,7 +15,7 @@
 
   <ecl-spinner v-if="!loaded" size="large" class="ecl-u-ma-2xl" centered />
   <table
-    v-else-if="indicatorGroups.length > 0"
+    v-else-if="indicatorGroupsFiltered.length > 0"
     class="ecl-table ecl-table--zebra ecl-u-break-word"
   >
     <thead class="ecl-table__head">
@@ -24,7 +24,7 @@
         <th class="ecl-table__header">Information</th>
       </tr>
     </thead>
-    <template v-for="group in indicatorGroups" :key="group.code">
+    <template v-for="group in indicatorGroupsFiltered" :key="group.code">
       <thead class="ecl-table__head">
         <tr :id="group.code" class="ecl-table__row">
           <th colspan="2" class="ecl-table__header">
@@ -34,7 +34,7 @@
       </thead>
       <tbody class="ecl-table__body">
         <tr
-          v-for="indicator in indicatorsForGroup(group)"
+          v-for="indicator in group.indicators"
           :key="indicator.code"
           class="ecl-table__row"
         >
@@ -115,16 +115,23 @@ export default {
     indicatorsByCode() {
       return groupByUnique(this.indicators);
     },
+    indicatorGroupsFiltered() {
+      return this.indicatorGroups
+        .map((group) => {
+          return {
+            ...group,
+            indicators: group.indicators
+              .map((indicatorCode) => this.indicatorsByCode.get(indicatorCode))
+              .filter((i) => !!i),
+          };
+        })
+        .filter((group) => group.indicators.length > 0);
+    },
   },
   mounted() {
     this.loadData();
   },
   methods: {
-    indicatorsForGroup(group) {
-      return group.indicators
-        .map((indicatorCode) => this.indicatorsByCode.get(indicatorCode))
-        .filter((i) => !!i);
-    },
     async loadData() {
       try {
         this.loaded = false;
