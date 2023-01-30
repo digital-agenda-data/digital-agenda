@@ -20,6 +20,8 @@ class Command(BaseCommand):
             "2",
             "-o",
             str(fixtures_dir / (filename + ".json")),
+            "--natural-foreign",
+            "--natural-primary",
             model,
             **options,
         )

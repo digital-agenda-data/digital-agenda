@@ -15,3 +15,8 @@ class DisplayOrderModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class NaturalCodeManger(models.Manager):
+    def get_by_natural_key(self, code):
+        return self.get(code=code)

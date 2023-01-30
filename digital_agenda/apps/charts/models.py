@@ -6,6 +6,7 @@ from django.core.validators import MinValueValidator
 from django.db import models
 
 from digital_agenda.common.models import DisplayOrderModel
+from digital_agenda.common.models import NaturalCodeManger
 from digital_agenda.common.models import TimestampedModel
 
 
@@ -19,6 +20,7 @@ class DraftModel(models.Model):
 
 
 class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
+    objects = NaturalCodeManger()
 
     code = CICharField(max_length=60, unique=True)
     name = models.CharField(max_length=255)
@@ -85,6 +87,7 @@ def filter_option_field(rel_model):
 
 
 class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
+    objects = NaturalCodeManger()
     # !IMPORTANT WARNING!
     #
     # When adding an entry here a corresponding entry must be added in

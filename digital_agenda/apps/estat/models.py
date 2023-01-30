@@ -5,12 +5,16 @@ from django.core.validators import MinValueValidator
 
 from django.db import models
 
+from digital_agenda.common.models import NaturalCodeManger
+
 
 class GeoGroup(models.Model):
     code = CICharField(max_length=60, unique=True)
     size = models.PositiveIntegerField()
     note = models.CharField(max_length=1024, blank=True, null=True)
     geo_codes = models.JSONField(default=list)
+
+    objects = NaturalCodeManger()
 
     def __str__(self):
         return self.code
@@ -38,6 +42,9 @@ class GeoGroup(models.Model):
                     )
                 }
             )
+
+    def natural_key(self):
+        return (self.code,)  # noqa
 
 
 def default_mappings():

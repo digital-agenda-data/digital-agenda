@@ -6,6 +6,7 @@
     "code": "educ_uoe_grad03",
     "title": null,
     "last_import_time": null,
+    "status": "",
     "indicator": "ict_grad",
     "indicator_is_surrogate": true,
     "breakdown": "sex",
@@ -18,7 +19,9 @@
     "period_is_surrogate": false,
     "period_start": null,
     "period_end": null,
-    "country_group": 9,
+    "country_group": [
+      "EU27_2020"
+    ],
     "filters": {
       "isced11": [
         "ED5-8"
@@ -37,8 +40,7 @@
       "breakdown": {
         "T": "TOTAL"
       }
-    },
-    "status": ""
+    }
   }
 }
 ]
