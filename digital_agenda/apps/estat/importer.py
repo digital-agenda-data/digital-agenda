@@ -43,20 +43,15 @@ def batched(iterable, n):
         yield batch
 
 
-class EstatImporter:
-    def __init__(self, config_id, force_download=False):
-        self.config = ImportConfig.objects.get(pk=config_id)
+class EstatDataset(JSONStat):
+    def __init__(self, code, force_download=False):
+        self.code = code
         self.force_download = force_download
-        self.cache = defaultdict(dict)
-        self.unique = set()
-
-    @cached_property
-    def dataset(self):
         self.download()
 
         logger.info("Processing dataset: %s", self.json_path)
         with self.json_path.open() as f:
-            return JSONStat(f)
+            super().__init__(f)
 
     def download(self):
         # XXX This downloads the whole dataset; if this proves to be too large
@@ -74,23 +69,35 @@ class EstatImporter:
                     f_out.write(chunk)
                 resp.raise_for_status()
 
-        logger.info("Decompressing JSON: %s", self.config.code)
+        logger.info("Decompressing JSON: %s", self.code)
         with gzip.open(self.download_gz_path, "rb") as f_in:
             with self.json_path.open("wb") as f_out:
                 shutil.copyfileobj(f_in, f_out)
 
     @cached_property
     def json_path(self):
-        return settings.ESTAT_DOWNLOAD_DIR / f"{self.config.code}.json"
+        return settings.ESTAT_DOWNLOAD_DIR / f"{self.code}.json"
 
     @cached_property
     def download_gz_path(self):
-        return settings.ESTAT_DOWNLOAD_DIR / f"{self.config.code}.json.gz"
+        return settings.ESTAT_DOWNLOAD_DIR / f"{self.code}.json.gz"
 
     @cached_property
     def download_url(self):
         # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query
-        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/{self.config.code}?compressed=true&format=JSON&lang=en"
+        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/{self.code}?compressed=true&format=JSON&lang=en"
+
+
+class EstatImporter:
+    def __init__(self, config_id, force_download=False):
+        self.config = ImportConfig.objects.get(pk=config_id)
+        self.force_download = force_download
+        self.cache = defaultdict(dict)
+        self.unique = set()
+
+    @cached_property
+    def dataset(self):
+        return EstatDataset(self.config.code, force_download=self.force_download)
 
     @cached_property
     def data_source(self):
