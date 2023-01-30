@@ -237,5 +237,4 @@ class EstatImporter:
 
         logger.info("Assigning indicator datasource")
         for indicator in self.cache["indicator"].values():
-            indicator.data_source = self.data_source
-            indicator.save()
+            indicator.data_sources.add(self.data_source)

@@ -4,6 +4,7 @@ from django.test import TestCase
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
+from digital_agenda.apps.core.models import DataSource
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
@@ -87,6 +88,17 @@ class TestImporterSuccess(TestCase):
             indicator.label,
             "Households having access to, via one of its members, a computer",
         )
+
+    def test_data_source(self):
+        indicator = Indicator.objects.first()
+
+        self.assertEqual(DataSource.objects.count(), 1)
+        self.assertEqual(indicator.data_sources.count(), 1)
+
+        data_source = DataSource.objects.first()
+        self.assertEqual(data_source.code.lower(), "estat_isoc_ci_cm_h")
+        self.assertEqual(data_source.label, "Households - availability of computers")
+        self.assertEqual(data_source.url, "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_cm_h")
 
     def test_breakdown(self):
         self.assertEqual(Breakdown.objects.count(), 2)
