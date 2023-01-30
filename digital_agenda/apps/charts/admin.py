@@ -94,6 +94,8 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
         "code",
         "name",
         "short_name",
+        "period_start",
+        "period_end",
         "is_draft",
     )
-    filter_horizontal = ("periods", "indicator_groups")
+    filter_horizontal = ("indicator_groups",)

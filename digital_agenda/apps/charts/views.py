@@ -26,7 +26,6 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         queryset = ChartGroup.objects.all().prefetch_related(
-            "periods",
             "indicator_groups",
         )
 
@@ -69,7 +68,6 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     def indicators(self, request, code=None):
         obj = self.get_object()
         group_ids = obj.indicator_groups.all().values_list("id", flat=True)
-        period_codes = list(obj.periods.order_by("code").values_list("code", flat=True))
 
         queryset = (
             Indicator.objects.filter(facts__period__isnull=False)
@@ -81,12 +79,10 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             .prefetch_related("groups", "data_source")
         )
 
-        if period_codes:
-            min_period_def = period_codes[0]
-            max_period_def = period_codes[-1]
-            queryset = queryset.exclude(
-                max_period__lt=min_period_def, min_period__gt=max_period_def
-            )
+        if obj.period_start:
+            queryset = queryset.exclude(max_period__lt=obj.period_start)
+        if obj.period_end:
+            queryset = queryset.exclude(min_period__gt=obj.period_end)
 
         return Response(ChartIndicatorListSerializer(queryset, many=True).data)
 

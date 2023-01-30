@@ -1,10 +1,9 @@
+from django.conf import settings
 from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 
 from django.db import models
-
-MIN_YEAR = 1990
 
 
 class GeoGroup(models.Model):
@@ -90,13 +89,13 @@ class ImportConfig(models.Model):
         null=True,
         blank=True,
         help_text="Only include datapoints for periods greater than or equal to this year",
-        validators=[MinValueValidator(MIN_YEAR)],
+        validators=[MinValueValidator(settings.MIN_YEAR)],
     )
     period_end = models.PositiveIntegerField(
         null=True,
         blank=True,
         help_text="Only include datapoints for periods less than or equal to this year",
-        validators=[MinValueValidator(MIN_YEAR)],
+        validators=[MinValueValidator(settings.MIN_YEAR)],
     )
     country_group = models.ForeignKey(
         GeoGroup,

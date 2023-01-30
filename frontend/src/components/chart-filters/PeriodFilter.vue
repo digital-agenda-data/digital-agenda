@@ -15,14 +15,12 @@ export default {
       );
     },
     apiData() {
-      let result = this.super(BaseSelectFilter).apiData();
+      const periodStart = this.currentChartGroup.period_start ?? -Infinity;
+      const periodEnd = this.currentChartGroup.period_end ?? Infinity;
 
-      if (this.currentChartGroup.periods?.length > 0) {
-        const allowedPeriods = new Set(this.currentChartGroup.periods);
-        result = result.filter((item) => allowedPeriods.has(item.code));
-      }
-
-      return result;
+      return this.super(BaseSelectFilter)
+        .apiData()
+        .filter((item) => periodStart <= parseInt(item.code) <= periodEnd);
     },
     defaultSingleValue() {
       // Default to the latest period instead of a random choice

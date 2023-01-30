@@ -14,6 +14,9 @@ env = environ.Env()
 if os.path.exists(str(BASE_DIR / ".env")):
     env.read_env(str(BASE_DIR / ".env"))
 
+# Min year for various period settings in the app
+MIN_YEAR = 1990
+
 HAS_HTTPS = env.bool("HAS_HTTPS", default=False)
 PROTOCOL = "https://" if HAS_HTTPS else "http://"
 

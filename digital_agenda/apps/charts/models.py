@@ -1,6 +1,8 @@
 from ckeditor.fields import RichTextField
 from composite_field import CompositeField
+from django.conf import settings
 from django.contrib.postgres.fields import CICharField
+from django.core.validators import MinValueValidator
 from django.db import models
 
 from digital_agenda.common.models import DisplayOrderModel
@@ -34,15 +36,19 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     period_label = models.CharField(max_length=60, default="Period")
     unit_label = models.CharField(max_length=60, default="Unit of measure")
 
-    indicator_groups = models.ManyToManyField("core.IndicatorGroup")
-    periods = models.ManyToManyField(
-        "core.Period",
-        help_text=(
-            "Limit chart group to the specified periods. If none are specified ALL "
-            "available periods are used instead."
-        ),
+    period_start = models.PositiveIntegerField(
+        null=True,
         blank=True,
+        help_text="Limit chart group to the specific periods greater than or equal to this year",
+        validators=[MinValueValidator(settings.MIN_YEAR)],
     )
+    period_end = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="Limit chart group to the specific periods less than or equal to this year",
+        validators=[MinValueValidator(settings.MIN_YEAR)],
+    )
+    indicator_groups = models.ManyToManyField("core.IndicatorGroup")
 
     class Meta:
         ordering = ["display_order", "code"]

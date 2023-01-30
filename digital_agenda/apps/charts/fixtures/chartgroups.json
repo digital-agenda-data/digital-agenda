@@ -18,6 +18,8 @@
     "breakdown_label": "Breakdown",
     "period_label": "DESI Period",
     "unit_label": "Unit of measure",
+    "period_start": null,
+    "period_end": null,
     "indicator_groups": [
       5,
       10,
@@ -25,8 +27,7 @@
       9,
       7,
       8
-    ],
-    "periods": []
+    ]
   }
 },
 {
@@ -48,6 +49,8 @@
     "breakdown_label": "Breakdown",
     "period_label": "Period",
     "unit_label": "Unit of measure",
+    "period_start": null,
+    "period_end": null,
     "indicator_groups": [
       26,
       4,
@@ -68,8 +71,7 @@
       23,
       2,
       11
-    ],
-    "periods": []
+    ]
   }
 },
 {
@@ -91,13 +93,10 @@
     "breakdown_label": "Life event",
     "period_label": "Period",
     "unit_label": "Unit of measure",
+    "period_start": 2020,
+    "period_end": null,
     "indicator_groups": [
       14
-    ],
-    "periods": [
-      14,
-      13,
-      12
     ]
   }
 },
@@ -120,17 +119,10 @@
     "breakdown_label": "Life event",
     "period_label": "Period",
     "unit_label": "Unit of measure",
+    "period_start": 2013,
+    "period_end": 2019,
     "indicator_groups": [
       14
-    ],
-    "periods": [
-      11,
-      10,
-      9,
-      8,
-      7,
-      6,
-      5
     ]
   }
 }

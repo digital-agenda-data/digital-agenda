@@ -14,14 +14,6 @@ export default {
         `/indicator-groups/${this.filterStore.indicatorGroup.code}/indicators/`
       );
     },
-    endpointParams() {
-      if (this.currentChartGroup.periods?.length > 0) {
-        return {
-          period_in: this.currentChartGroup.periods.join(","),
-        };
-      }
-      return {};
-    },
   },
 };
 </script>
