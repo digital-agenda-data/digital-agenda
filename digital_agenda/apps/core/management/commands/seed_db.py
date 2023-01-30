@@ -1,8 +1,11 @@
 import sys
 
+from django.conf import settings
+from django.core.files import File
 from django.core.management import BaseCommand
 from django.core.management import call_command
 
+from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.core.cache import clear_all_caches
 
 
@@ -30,4 +33,19 @@ class Command(BaseCommand):
 
         call_command("flush", "--noinput")
         call_command("load_initial_fixtures", "--test")
+
+        dir_path = (
+            settings.BASE_DIR
+            / "digital_agenda"
+            / "apps"
+            / "charts"
+            / "fixtures"
+            / "test"
+        )
+        for group in ChartGroup.objects.all():
+            img_path = dir_path / f"{group.code}.png"
+            with img_path.open("rb") as f:
+                group.image = File(f, name=img_path.name)
+                group.save()
+
         clear_all_caches(force=True)
