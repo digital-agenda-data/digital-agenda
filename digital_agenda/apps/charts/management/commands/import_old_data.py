@@ -31,7 +31,7 @@ class Command(BaseCommand):
         return "".join(flags)
 
     def by_code(self, model):
-        return {item.code: item for item in model.objects.all()}
+        return {str(item.code): item for item in model.objects.all()}
 
     def handle(self, *args, **options):
         units = self.by_code(Unit)
