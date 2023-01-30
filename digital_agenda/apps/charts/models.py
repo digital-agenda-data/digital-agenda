@@ -2,6 +2,7 @@ from ckeditor.fields import RichTextField
 from composite_field import CompositeField
 from django.conf import settings
 from django.contrib.postgres.fields import CICharField
+from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
 
@@ -60,6 +61,22 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
 
     def __str__(self):
         return f"[{self.code}] {self.short_name}"
+
+    def clean(self):
+        if (
+            self.period_start
+            and self.period_end
+            and self.period_start > self.period_end
+        ):
+            error = ValidationError(
+                "Start period must be less than or equal to the end period"
+            )
+            raise ValidationError(
+                {
+                    "period_start": error,
+                    "period_end": error,
+                }
+            )
 
 
 def filter_option_field(rel_model):
