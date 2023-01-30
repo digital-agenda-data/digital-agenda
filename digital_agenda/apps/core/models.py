@@ -74,14 +74,33 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
         ordering = ["display_order", "code"]
 
 
+class IndicatorDataSourceLinkManager(models.Manager):
+    def get_by_natural_key(self, indicator_code, data_source_code):
+        return self.get(
+            indicator__code=indicator_code, data_source__code=data_source_code
+        )
+
+
+class IndicatorDataSourceLink(models.Model):
+    indicator = models.ForeignKey("Indicator", on_delete=models.CASCADE)
+    data_source = models.ForeignKey("DataSource", on_delete=models.CASCADE)
+
+    objects = IndicatorDataSourceLinkManager()
+
+    class Meta:
+        unique_together = ("indicator", "data_source")
+
+    def natural_key(self):
+        return self.indicator.code, self.data_source.code
+
+
 class Indicator(BaseDimensionModel):
     """Dimension model for indicators"""
 
-    data_source = models.ForeignKey(
+    data_sources = models.ManyToManyField(
         "DataSource",
-        on_delete=models.CASCADE,
+        through=IndicatorDataSourceLink,
         related_name="indicators",
-        null=True,
         blank=True,
     )
     note = models.TextField(null=True, blank=True)

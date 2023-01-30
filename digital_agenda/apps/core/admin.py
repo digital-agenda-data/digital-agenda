@@ -52,12 +52,18 @@ class IndicatorGroupAdmin(SortableDimensionAdmin):
 
 class DataSourceFilter(AutocompleteFilter):
     title = "Data Source"
-    field_name = "data_source"
+    field_name = "data_sources"
+
+
+class DataSourceInline(admin.TabularInline):
+    model = Indicator.data_sources.through
+    extra = 0
 
 
 @admin.register(Indicator)
 class IndicatorAdmin(DimensionAdmin):
     list_filter = [DataSourceFilter]
+    inlines = (DataSourceInline,)
 
 
 class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):

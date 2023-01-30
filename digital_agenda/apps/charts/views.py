@@ -64,7 +64,7 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
                     Indicator.objects.order_by("indicatorgrouplink__display_order"),
                 ),
                 "indicators__groups",
-                "indicators__data_source",
+                "indicators__data_sources",
             )
         )
         return Response(IndicatorGroupDetailSerializer(queryset, many=True).data)
@@ -81,7 +81,7 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
                 max_period=Max("facts__period__code"),
             )
             .filter(groups__id__in=group_ids)
-            .prefetch_related("groups", "data_source")
+            .prefetch_related("groups", "data_sources")
         )
 
         if obj.period_start:

@@ -75,7 +75,7 @@ class IndicatorCodeFilterSet(BaseCodeFilterSet):
 class IndicatorViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Indicator
     queryset = Indicator.objects.exclude(facts__isnull=True).prefetch_related(
-        "groups", "data_source"
+        "groups", "data_sources"
     )
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = IndicatorCodeFilterSet

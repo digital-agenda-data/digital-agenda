@@ -17,6 +17,7 @@ class Command(BaseCommand):
         "breakdowngroups",
         "breakdowns",
         "breakdowngrouplinks",
+        "datasourcelinks",
         "units",
         "periods",
         "countries",

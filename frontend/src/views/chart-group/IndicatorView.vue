@@ -64,16 +64,19 @@
                 </span>
               </p>
 
-              <p v-if="indicator.data_source">
+              <p
+                v-for="data_source in indicator.data_sources"
+                :key="indicator.code + data_source"
+              >
                 <strong>Source:&nbsp;</strong>
                 <ecl-link
-                  v-if="dataSourceByCode.get(indicator.data_source)?.url"
-                  :to="dataSourceByCode.get(indicator.data_source)?.url"
-                  :label="dataSourceByCode.get(indicator.data_source)?.label"
+                  v-if="dataSourceByCode.get(data_source)?.url"
+                  :to="dataSourceByCode.get(data_source)?.url"
+                  :label="dataSourceByCode.get(data_source)?.label"
                   no-visited
                 />
                 <span v-else>
-                  {{ dataSourceByCode.get(indicator.data_source)?.label }}
+                  {{ dataSourceByCode.get(data_source)?.label }}
                 </span>
               </p>
             </div>

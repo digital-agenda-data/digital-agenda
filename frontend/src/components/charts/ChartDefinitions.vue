@@ -19,17 +19,18 @@
         <span>{{ item.note }}</span>
       </div>
 
-      <div v-if="item.data_source">
+      <div
+        v-for="data_source in item.data_sources"
+        :key="item.code + data_source"
+      >
         <b>Data Source:&nbsp;</b>
         <span>
-          {{
-            dataSourceByCode.get(item.data_source)?.label || item.data_source
-          }}
+          {{ dataSourceByCode.get(data_source)?.label || data_source }}
         </span>
         <span>&nbsp;</span>
         <ecl-link
-          v-if="dataSourceByCode.get(item.data_source)?.url"
-          :to="dataSourceByCode.get(item.data_source)?.url"
+          v-if="dataSourceByCode.get(data_source)?.url"
+          :to="dataSourceByCode.get(data_source)?.url"
           label="[More information]"
           no-visited
         />
