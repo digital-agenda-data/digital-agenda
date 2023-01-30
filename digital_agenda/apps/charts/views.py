@@ -1,6 +1,9 @@
+from django.db.models import Exists
 from django.db.models import Max
 from django.db.models import Min
+from django.db.models import OuterRef
 from django.db.models import Prefetch
+from django.db.models import Subquery
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -14,6 +17,7 @@ from digital_agenda.apps.charts.serializers import ChartGroupIndicatorSearchSeri
 from digital_agenda.apps.charts.serializers import ChartGroupListSerializer
 from digital_agenda.apps.charts.serializers import ChartIndicatorListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
+from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
@@ -53,6 +57,7 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         queryset = (
             self.get_object()
             .indicator_groups.all()
+            .filter(Exists(Fact.objects.filter(indicator__groups__id=OuterRef("id"))))
             .prefetch_related(
                 Prefetch(
                     "indicators",
