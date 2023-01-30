@@ -172,4 +172,8 @@ export default {
     width: 33%;
   }
 }
+
+.ecl-table__cell:before {
+  max-width: 90px;
+}
 </style>
