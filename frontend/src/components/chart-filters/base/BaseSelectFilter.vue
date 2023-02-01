@@ -117,7 +117,7 @@ export default {
       // and a single value otherwise.
       get() {
         if (this.multiple) {
-          return forceArray(this.model.value);
+          return forceArray(this.model.value.split(","));
         } else if (Array.isArray(this.model.value)) {
           return this.model.value[0];
         } else {
@@ -126,7 +126,7 @@ export default {
       },
       set(value) {
         if (this.multiple) {
-          value = forceArray(value);
+          value = forceArray(value).join(",");
         } else if (Array.isArray(value)) {
           value = value[0];
         }
@@ -199,7 +199,7 @@ export default {
         : this.modelValue === "";
     },
     emptyValue() {
-      return this.multiple ? [] : "";
+      return "";
     },
     defaultValue() {
       if (!this.items || this.items.length === 0) {
