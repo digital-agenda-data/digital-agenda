@@ -7,7 +7,7 @@
     :multiple="multiple"
     :required="required"
     :label="labelWithAxis"
-    :input-name="queryName"
+    :input-name="queryName + axis"
     :size="size"
   />
 </template>

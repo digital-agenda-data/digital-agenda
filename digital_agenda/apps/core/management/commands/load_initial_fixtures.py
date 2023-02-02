@@ -29,7 +29,6 @@ class Command(BaseCommand):
         "charts",
     )
     TEST_FIXTURES = (
-        "test/facts",
         "test/users",
     )
 
@@ -37,12 +36,21 @@ class Command(BaseCommand):
         parser.add_argument(
             "--test", action="store_true", help="Also load test fixtures"
         )
+        parser.add_argument(
+            "-e",
+            "--exclude",
+            action="append",
+            default=[],
+            help="Exclude fixtures from the list",
+        )
 
-    def handle(self, *args, test=False, **options):
+    def handle(self, *args, exclude, test=False, **options):
         fixtures = self.FIXTURES
         if test:
             fixtures += self.TEST_FIXTURES
 
         for name in fixtures:
+            if name in exclude:
+                continue
             console.print(f"Loading from fixture: '{name}'")
             call_command("loaddata", f"{name}.json")

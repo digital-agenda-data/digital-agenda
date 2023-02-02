@@ -62,7 +62,7 @@ Headless running options:
   ```
 - Run single spec headless 
   ```shell
-  npm run test -- -s cypress/e2e/chart.cy.js
+  npm run test -- -s cypress/e2e/search.cy.js
   ```
 - Change checked viewports
   ```shell

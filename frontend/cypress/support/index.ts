@@ -15,6 +15,11 @@ declare global {
        * @example cy.searchIndicators("social media")
        */
       searchIndicators(searchQuery: string): Chainable<JQuery<HTMLElement>>
+
+      /**
+       *
+       */
+      checkChart(config: { filters, title, point, tooltip }): Chainable<undefined>
     }
   }
 }

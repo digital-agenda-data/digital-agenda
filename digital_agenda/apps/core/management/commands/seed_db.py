@@ -32,7 +32,11 @@ class Command(BaseCommand):
                 sys.exit(1)
 
         call_command("flush", "--noinput")
-        call_command("load_initial_fixtures", "--test")
+        call_command("load_initial_fixtures", "--test", "--exclude", "importconfigs")
+
+        # Import some facts from some small configs
+        call_command("loaddata", "test/seed_importconfigs")
+        call_command("estat_import")
 
         dir_path = (
             settings.BASE_DIR

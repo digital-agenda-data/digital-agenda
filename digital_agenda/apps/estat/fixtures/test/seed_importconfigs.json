@@ -1,0 +1,87 @@
+[
+{
+  "model": "estat.importconfig",
+  "fields": {
+    "code": "educ_uoe_grad03",
+    "title": null,
+    "last_import_time": null,
+    "status": "",
+    "indicator": "ict_grad",
+    "indicator_is_surrogate": true,
+    "breakdown": "sex",
+    "breakdown_is_surrogate": false,
+    "country": "geo",
+    "country_is_surrogate": false,
+    "unit": "unit",
+    "unit_is_surrogate": false,
+    "period": "time",
+    "period_is_surrogate": false,
+    "period_start": 2015,
+    "period_end": 2020,
+    "country_group": [
+      "EU27_2020"
+    ],
+    "filters": {
+      "isced11": [
+        "ED5-8"
+      ],
+      "iscedf13": [
+        "F06"
+      ]
+    },
+    "mappings": {
+      "unit": {
+        "PC": "PC_GRAD"
+      },
+      "country": {
+        "EU27_2020": "EU"
+      },
+      "breakdown": {
+        "T": "TOTAL"
+      }
+    }
+  }
+},
+{
+  "model": "estat.importconfig",
+  "fields": {
+    "code": "isoc_bde15b_h",
+    "title": null,
+    "last_import_time": null,
+    "status": "",
+    "indicator": "indic_is",
+    "indicator_is_surrogate": false,
+    "breakdown": "hhtyp",
+    "breakdown_is_surrogate": false,
+    "country": "geo",
+    "country_is_surrogate": false,
+    "unit": "unit",
+    "unit_is_surrogate": false,
+    "period": "time",
+    "period_is_surrogate": false,
+    "period_start": 2012,
+    "period_end": 2013,
+    "country_group": [
+      "EU27_2020"
+    ],
+    "filters": {
+      "hhtyp": [
+        "ALL_NDCH",
+        "ALL_DCH"
+      ],
+      "indic_is": [
+        "h_broad"
+      ]
+    },
+    "mappings": {
+      "unit": {},
+      "period": {},
+      "country": {
+        "EU27_2020": "EU"
+      },
+      "breakdown": {},
+      "indicator": {}
+    }
+  }
+}
+]

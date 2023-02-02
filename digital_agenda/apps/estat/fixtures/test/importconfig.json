@@ -19,7 +19,9 @@
     "period_is_surrogate": false,
     "period_start": 2010,
     "period_end": 2013,
-    "country_group": 9,
+    "country_group": [
+      "EU27_2020"
+    ],
     "filters": {
       "hhtyp": [
         "A1",

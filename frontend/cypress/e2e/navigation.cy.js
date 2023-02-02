@@ -62,6 +62,6 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       .contains("ict_grad")
       .should("be.visible")
       .parents("td")
-      .should("contain", "2012 - 2020");
+      .should("contain", "2015 - 2020");
   });
 });
