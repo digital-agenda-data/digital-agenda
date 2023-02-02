@@ -7,6 +7,7 @@ const { defineConfig } = require("cypress");
 const frontendHost = process.env.FRONTEND_HOST.split(",")[0];
 
 module.exports = defineConfig({
+  scrollBehavior: "center",
   e2e: {
     baseUrl: `http://${frontendHost}`,
     viewports: [
