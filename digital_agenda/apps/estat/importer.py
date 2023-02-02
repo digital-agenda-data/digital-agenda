@@ -109,31 +109,6 @@ class EstatImporter:
             },
         )[0]
 
-    @cached_property
-    def ci_filters(self):
-        """Convert the filters specified in the import config into lower-cased
-        sets, to be used for case insensitive checks.
-        """
-        result = {}
-
-        for key, values in self.config.filters.items():
-            result[key] = set([val.lower() for val in values])
-
-        # Update the "country" dimension filter (usually geo) with
-        # the configured country group filter if available.
-        if self.config.country_group:
-            if self.config.country not in result:
-                result[self.config.country] = set()
-
-            result[self.config.country].update(
-                set(
-                    [val.lower() for val in self.config.country_group.geo_codes]
-                    + [self.config.country_group.code.lower()]
-                )
-            )
-
-        return result
-
     def should_store_observation(self, obs):
         # Skip empty facts with no flags
         if obs["value"] is None and not obs["status"]:
@@ -147,7 +122,7 @@ class EstatImporter:
             return False
 
         # Apply all the other filters
-        for filter_key, filter_values in self.ci_filters.items():
+        for filter_key, filter_values in self.config.ci_filters.items():
             if obs[filter_key].id.lower() not in filter_values:
                 return False
 
@@ -166,7 +141,7 @@ class EstatImporter:
 
             # Apply mapping if available, otherwise keep the original
             try:
-                category_id = self.config.mappings[dimension][category_id]
+                category_id = self.config.ci_mappings[dimension][category_id]
             except KeyError:
                 pass
 

@@ -1,3 +1,6 @@
+import collections
+from functools import cached_property
+
 from django.conf import settings
 from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
@@ -55,6 +58,10 @@ def default_mappings():
         "unit": {},
         "period": {},
     }
+
+
+def is_unique(values):
+    return len(values) == len(set(v.lower() for v in values))
 
 
 class ImportConfig(models.Model):
@@ -122,6 +129,35 @@ class ImportConfig(models.Model):
         help_text="Define how ESTAT codes are transformed before inserting into the DB",
     )
 
+    @cached_property
+    def ci_filters(self):
+        """Convert the filters specified in the import config into lower-cased
+        sets, to be used for case insensitive checks.
+        """
+        result = collections.defaultdict(set)
+
+        for key, values in self.filters.items():
+            result[key.lower()].update([val.lower() for val in values])
+
+        # Update the "country" dimension filter (usually geo) with
+        # the configured country group filter if available.
+        if self.country_group:
+            result[self.country.lower()].update(
+                val.lower() for val in self.country_group.geo_codes
+            )
+            result[self.country.lower()].add(self.country_group.code.lower())
+
+        return result
+
+    @cached_property
+    def ci_mappings(self):
+        result = collections.defaultdict(dict)
+
+        for dimension, mapping in self.mappings.items():
+            for original, new_value in mapping.items():
+                result[dimension.lower()][original.lower()] = new_value.lower()
+        return result
+
     def clean(self):
         for attr in ("code", "indicator", "breakdown", "country", "unit", "period"):
             setattr(self, attr, getattr(self, attr).lower())
@@ -144,8 +180,11 @@ class ImportConfig(models.Model):
         if not isinstance(self.filters, dict):
             raise ValidationError({"filters": "Must be a valid JSON object"})
 
+        if not is_unique(self.filters):
+            raise ValidationError({"filters": "Duplicate keys detected"})
+
         for key, values in self.filters.items():
-            if len(values) != len(set(values)):
+            if not is_unique(values):
                 raise ValidationError(
                     {"filters": f"Duplicate values detected for the {key!r} dimension"}
                 )
@@ -153,20 +192,29 @@ class ImportConfig(models.Model):
         if not isinstance(self.mappings, dict):
             raise ValidationError({"mappings": "Must be a valid JSON object"})
 
-        if invalid := set(self.mappings).difference(set(default_mappings())):
-            raise ValidationError({"mappings": f"Invalid mappings: {tuple(invalid)}"})
-
-        for key, value in self.mappings.items():
-            if not isinstance(value, dict):
+        for key, values in self.mappings.items():
+            if not isinstance(values, dict):
                 raise ValidationError(
                     {
                         "mappings": f"Invalid mapping {key!r}: Must be a valid JSON object"
                     }
                 )
 
+        if not is_unique(self.mappings):
+            raise ValidationError({"mappings": "Duplicate keys detected"})
+
+        if invalid := set(self.mappings).difference(set(default_mappings())):
+            raise ValidationError({"mappings": f"Invalid mappings: {tuple(invalid)}"})
+
+        for key, values in self.mappings.items():
+            if not is_unique(values):
+                raise ValidationError(
+                    {"mappings": f"Duplicate values detected for the {key!r} dimension"}
+                )
+
     def clean_with_dataset(self, dataset):
         """Simple sanity checks to validate the data matches the given config."""
-        for key, values in self.filters.items():
+        for key, values in self.ci_filters.items():
             if key not in dataset.dimension_ids:
                 raise ValidationError(
                     f"Invalid filter {key!r}, no dimensions with that id found in: "
@@ -193,7 +241,7 @@ class ImportConfig(models.Model):
                     f"{dataset.dimension_ids}"
                 )
 
-            mappings = self.mappings.get(dimension, {})
+            mappings = self.ci_mappings.get(dimension, {})
             categories = dataset.dimension_dict[config_dim]
             for val in mappings.keys():
                 if val not in categories:

@@ -13,34 +13,34 @@ from digital_agenda.apps.estat.models import ImportConfig
 from digital_agenda.apps.estat.tasks import import_from_config
 
 EU27_2020 = [
-    "AT",
-    "BE",
-    "BG",
-    "CY",
-    "CZ",
-    "DE",
-    "DK",
-    "EE",
-    "EL",
-    "ES",
-    "EU",
-    "FI",
-    "FR",
-    "HR",
-    "HU",
-    "IE",
-    "IT",
-    "LT",
-    "LU",
-    "LV",
-    "MT",
-    "NL",
-    "PL",
-    "PT",
-    "RO",
-    "SE",
-    "SI",
-    "SK",
+    "at",
+    "be",
+    "bg",
+    "cy",
+    "cz",
+    "de",
+    "dk",
+    "ee",
+    "el",
+    "es",
+    "eu",
+    "fi",
+    "fr",
+    "hr",
+    "hu",
+    "ie",
+    "it",
+    "lt",
+    "lu",
+    "lv",
+    "mt",
+    "nl",
+    "pl",
+    "pt",
+    "ro",
+    "se",
+    "si",
+    "sk",
 ]
 
 
@@ -98,7 +98,10 @@ class TestImporterSuccess(TestCase):
         data_source = DataSource.objects.first()
         self.assertEqual(data_source.code.lower(), "estat_isoc_ci_cm_h")
         self.assertEqual(data_source.label, "Households - availability of computers")
-        self.assertEqual(data_source.url, "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_cm_h")
+        self.assertEqual(
+            data_source.url,
+            "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_cm_h",
+        )
 
     def test_breakdown(self):
         self.assertEqual(Breakdown.objects.count(), 2)
@@ -173,11 +176,11 @@ class TestImporter(TestCase):
         breakdown_codes = Fact.objects.values_list(
             "breakdown__code", flat=True
         ).distinct()
-        self.assertEqual(["A2"], list(breakdown_codes))
+        self.assertEqual(["a2"], list(breakdown_codes))
 
         # The old breakdowns should not be removed, only the facts
         breakdowns = Breakdown.objects.order_by("code").values_list("code", flat=True)
-        self.assertEqual(["A1", "A1_DCH", "A2"], list(breakdowns))
+        self.assertEqual(["a1", "a1_dch", "a2"], list(breakdowns))
 
     def test_keep_existing(self):
         config = ImportConfig.objects.first()
@@ -194,7 +197,7 @@ class TestImporter(TestCase):
             .values_list("breakdown__code", flat=True)
             .distinct()
         )
-        self.assertEqual(["A1", "A1_DCH", "A2"], list(breakdown_codes))
+        self.assertEqual(["a1", "a1_dch", "a2"], list(breakdown_codes))
 
     def test_update_existing(self):
         config = ImportConfig.objects.first()
@@ -236,9 +239,17 @@ class TestImporterErrors(TestCase):
         self.config.filters = {"geoX": ["EU"]}
         self.check_error("no dimensions with that id found")
 
+    def test_invalid_filter_key_duplicate(self):
+        self.config.filters = {"geo": ["EU"], "GEO": ["EU"]}
+        self.check_error("Duplicate keys detected")
+
     def test_invalid_filter_value(self):
         self.config.filters = {"geo": ["EUROVISION"]}
         self.check_error("value for 'geo' not found")
+
+    def test_invalid_filter_value_duplicate(self):
+        self.config.filters = {"geo": ["EU", "eu"]}
+        self.check_error("Duplicate values detected")
 
     def test_invalid_dimension_indicator(self):
         self.config.indicator = "mrhouse"
@@ -256,11 +267,22 @@ class TestImporterErrors(TestCase):
         self.config.mappings = {"countryX": {"EU27_2020": "EU"}}
         self.check_error("Invalid mappings")
 
+    def test_invalid_mapping_key_duplicate(self):
+        self.config.mappings = {
+            "country": {"EU27_2020": "EU"},
+            "CountrY": {"EU27_2020": "EU"},
+        }
+        self.check_error("Duplicate keys detected")
+
     def test_invalid_mapping_value(self):
         self.config.mappings = {"country": {"EUROVISION": "EU"}}
         self.check_error("value for 'country' not found")
 
-    def test_duplicate_key(self):
+    def test_invalid_mapping_value_duplicate(self):
+        self.config.mappings = {"country": {"EU27_2020": "EU", "eu27_2020": "EU"}}
+        self.check_error("Duplicate values detected")
+
+    def test_duplicate_observations(self):
         self.config.mappings = {"period": {"2013": "2010"}}
         self.check_error("Duplicate key detected in the dataset")
 

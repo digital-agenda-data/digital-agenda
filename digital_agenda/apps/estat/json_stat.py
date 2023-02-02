@@ -33,11 +33,11 @@ class JSONStat:
 
             result.append(
                 Dimension(
-                    id=dim_id,
+                    id=dim_id.lower(),
                     label=self.dataset["dimension"][dim_id].get("label"),
                     categories=[
                         Category(
-                            id=cat_id,
+                            id=cat_id.lower(),
                             label=cat_labels[cat_id],
                         )
                         for cat_id in cat_ids
