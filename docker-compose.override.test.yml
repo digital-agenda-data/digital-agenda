@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: docker/app.docker
     environment:
-      - GUNICORN_CMD_ARGS=--workers=1 --threads=1
+      - GUNICORN_CMD_ARGS=--workers=2 --threads=2
 
   celery:
     build:
@@ -16,6 +16,6 @@ services:
       context: .
       dockerfile: docker/nginx.docker
     environment:
-      - NGINX_WORKER_PROCESSES=1
+      - NGINX_WORKER_PROCESSES=2
     ports:
       - 8080:80
