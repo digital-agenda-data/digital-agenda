@@ -11,7 +11,7 @@
         :multiple="multiple"
         :disabled="disabled || loading"
         :close-on-select="!multiple"
-        :allow-empty="!required || multiple"
+        :allow-empty="allowedEmpty"
         :name="inputName"
         :data-name="inputName"
         label="text"
@@ -143,6 +143,9 @@ export default {
   },
   emits: ["update:modelValue"],
   computed: {
+    allowedEmpty() {
+      return this.multiple || this.required === false;
+    },
     hasGroups() {
       return this.items.some((item) => !!item.children);
     },
