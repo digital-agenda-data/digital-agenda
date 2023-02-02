@@ -32,9 +32,15 @@ Cypress.Commands.add(
       cy.selectFilter(filtersKey, filters[filtersKey]);
     }
 
-    for (const txt of title) {
-      cy.get(".highcharts-root").should("contain", txt);
-    }
+    cy.get(".highcharts-title, .highcharts-subtitle")
+      .invoke("text")
+      .then((text) => {
+        for (const txt of title) {
+          // Highcharts adds ZeroWidthSpaces in the text, so we can't
+          // check normally
+          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+        }
+      });
 
     if (point) {
       cy.get(`.highcharts-point[aria-label='${point}']`)
