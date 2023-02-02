@@ -1,10 +1,12 @@
 #digital-agenda-app {
   .ecl-select__container {
     background: transparent;
+    margin-top: 0.25rem;
   }
 
   .multiselect {
     border: 2px solid transparent;
+    margin: -2px;
     color: #404040 !important;
 
     .multiselect__tags {
