@@ -5,7 +5,6 @@
     :items="items"
     :loading="loading"
     :multiple="multiple"
-    :required="required"
     :label="labelWithAxis"
     :input-name="queryName + axis"
     :size="size"
@@ -243,9 +242,6 @@ export default {
     multiple() {
       return false;
     },
-    required() {
-      return true;
-    },
     isVisible() {
       if (this.currentFilterOptions.hidden[this.queryName]) {
         // Forced hidden from the backend options
@@ -290,16 +286,10 @@ export default {
           (!this.isModelEmpty && !this.modelValueAllowed) ||
           !this.syncRoute
         ) {
-          // The current value set is not actually allowed. This will happen as the
-          // allowed values change but the URL queries won't change automatically.
-          if (this.required) {
-            this.modelValue = this.defaultValue;
-          } else {
-            this.modelValue = this.emptyValue;
-          }
+          this.modelValue = this.defaultValue;
         }
 
-        if (this.isModelEmpty && this.required && this.defaultValue) {
+        if (this.isModelEmpty && this.defaultValue) {
           // A value is required, but none is set. Set the default value
           // automatically to avoid ambiguity;
           this.modelValue = this.defaultValue;

@@ -2,8 +2,10 @@
   <div class="ecl-form-group">
     <label v-if="label" class="ecl-form-label">
       {{ label }}
-      <span v-if="required" class="ecl-form-label__required">*</span>
-      <span v-else class="ecl-form-label__optional">(optional)</span>
+      <span v-if="required === true" class="ecl-form-label__required">*</span>
+      <span v-else-if="required === false" class="ecl-form-label__optional">
+        (optional)
+      </span>
     </label>
     <div v-if="helpText" class="ecl-help-block">
       {{ helpText }}
@@ -29,7 +31,7 @@ export default {
     required: {
       type: Boolean,
       required: false,
-      default: false,
+      default: null,
     },
   },
 };

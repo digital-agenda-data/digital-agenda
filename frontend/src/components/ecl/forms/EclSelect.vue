@@ -105,7 +105,7 @@ export default {
     required: {
       type: Boolean,
       required: false,
-      default: false,
+      default: null,
     },
     multiple: {
       type: Boolean,
