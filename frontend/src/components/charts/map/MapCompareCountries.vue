@@ -77,7 +77,7 @@ export default {
       return {
         chart: {
           map: this.mapData,
-          height: "848px",
+          height: "600px",
           // Animations for maps are extremely JANKY,
           // so disable them completely.
           animation: false,
@@ -89,8 +89,8 @@ export default {
           enabled: false,
         },
         mapView: {
-          center: [348227.6471561784, 7743167.912180269],
-          zoom: -12.65,
+          center: [1164133.0400299034, 7610148.079491587],
+          zoom: -13.35,
         },
         colorAxis: {
           min: 0,
@@ -101,9 +101,9 @@ export default {
           x: 16,
           enabled: true,
           floating: true,
-          align: "left",
-          layout: "vertical",
-          verticalAlign: "middle",
+          align: "center",
+          layout: "horizontal",
+          verticalAlign: "bottom",
         },
         plotOptions: {
           series: {
@@ -117,6 +117,13 @@ export default {
             {
               condition: { minWidth: 768 },
               chartOptions: {
+                chart: {
+                  height: "848px",
+                },
+                mapView: {
+                  center: [348227.6471561784, 7743167.912180269],
+                  zoom: -12.65,
+                },
                 legend: {
                   align: "left",
                 },
