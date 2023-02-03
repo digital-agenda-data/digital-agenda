@@ -18,7 +18,10 @@ from .models import (
 
 
 class BaseDimensionSerializer(serializers.ModelSerializer):
-    code = serializers.CharField()
+    code = serializers.CharField(label="Code")
+    label = serializers.CharField(label="Label")
+    alt_label = serializers.CharField(label="Alt. label")
+    definition = serializers.CharField(label="Definition")
 
     class Meta:
         fields = ["code", "label", "alt_label", "definition"]
