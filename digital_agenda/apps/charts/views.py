@@ -161,7 +161,14 @@ class ChartGroupIndicatorSearchViewSet(
                  websearch_to_tsquery(%(config)s, %(query)s) query,
                  ts_headline(%(config)s, doc, query, %(options)s) highlight
              WHERE vector @@ query AND 
-                   (%(is_auth)s OR charts_chartgroup.is_draft = False)
+                   -- Hide draft chart groups for non-auth users 
+                   (%(is_auth)s OR charts_chartgroup.is_draft = False) AND 
+                   -- Only show indicators that have data
+                   EXISTS(
+                        SELECT 1 
+                        FROM core_fact 
+                        WHERE core_fact.indicator_id = core_indicator.id
+                   )
              ORDER BY rank DESC
         """
 
