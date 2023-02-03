@@ -1,25 +1,7 @@
 from rest_framework_nested import routers
 
-from .views import (
-    IndicatorGroupViewSet,
-    IndicatorViewSet,
-    IndicatorGroupIndicatorViewSet,
-    BreakdownGroupViewSet,
-    BreakdownViewSet,
-    BreakdownGroupBreakdownViewSet,
-    UnitViewSet,
-    IndicatorUnitViewSet,
-    CountryViewSet,
-    IndicatorCountryViewSet,
-    PeriodViewSet,
-    IndicatorPeriodViewSet,
-    DataSourceViewSet,
-    FactsViewSet,
-    IndicatorBreakdownViewSet,
-    IndicatorBreakdownGroupViewSet,
-    IndicatorBreakdownGroupBreakdownViewSet,
-)
-
+from .views.facts import *
+from .views.dimensions import *
 
 indicator_groups_router = routers.SimpleRouter()
 indicator_groups_router.register(
