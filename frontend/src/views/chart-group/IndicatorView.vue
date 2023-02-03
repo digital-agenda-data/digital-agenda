@@ -50,27 +50,28 @@
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Information">
             <div>
-              <p>
+              <div class="ecl-u-type-paragraph-m">
                 <strong>Notation:&nbsp;</strong>
                 <span>{{ indicator.code }}</span>
-              </p>
+              </div>
 
-              <p v-if="indicator.definition">
+              <div v-if="indicator.definition" class="ecl-u-type-paragraph-m">
                 <strong>Definition:&nbsp;</strong>
                 <span v-html="indicator.definition" />
-              </p>
+              </div>
 
-              <p>
+              <div class="ecl-u-type-paragraph-m">
                 <strong>Time coverage:&nbsp;</strong>
                 <span>
                   {{ indicator.min_period }} -
                   {{ indicator.max_period }}
                 </span>
-              </p>
+              </div>
 
-              <p
+              <div
                 v-for="data_source in indicator.data_sources"
                 :key="indicator.code + data_source"
+                class="ecl-u-type-paragraph-m"
               >
                 <strong>Source:&nbsp;</strong>
                 <ecl-link
@@ -82,7 +83,28 @@
                 <span v-else>
                   {{ dataSourceByCode.get(data_source)?.label }}
                 </span>
-              </p>
+              </div>
+
+              <div class="ecl-u-type-paragraph-m">
+                <strong>Export:&nbsp;</strong>
+                <ecl-link
+                  :to="`${apiURL}/indicators/${indicator.code}/countries/?format=xlsx`"
+                  no-visited
+                  label="countries"
+                />
+                <span>,&nbsp;</span>
+                <ecl-link
+                  :to="`${apiURL}/indicators/${indicator.code}/breakdowns/?format=xlsx`"
+                  no-visited
+                  label="breakdowns"
+                />
+                <span>,&nbsp;</span>
+                <ecl-link
+                  :to="`${apiURL}/indicators/${indicator.code}/units/?format=xlsx`"
+                  no-visited
+                  label="units"
+                />
+              </div>
             </div>
           </td>
         </tr>
@@ -96,7 +118,7 @@
 import ChartGroupNav from "@/components/ChartGroupNav.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
-import { api } from "@/lib/api";
+import { api, apiURL } from "@/lib/api";
 import { groupByUnique, scrollToHash } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
@@ -108,6 +130,7 @@ export default {
   components: { ChartGroupNav, EclLink, EclSpinner },
   data() {
     return {
+      apiURL,
       loaded: false,
       chartGroupDetails: null,
       indicatorGroups: [],
@@ -197,5 +220,9 @@ export default {
 
 .ecl-table__cell:before {
   max-width: 90px;
+}
+
+[data-ecl-table-header="Information"] div + div {
+  margin-top: 0.25rem;
 }
 </style>
