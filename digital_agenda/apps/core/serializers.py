@@ -137,11 +137,11 @@ class CountryFactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fact
         fields = [
+            "period",
+            "indicator",
+            "breakdown",
+            "unit",
             "country",
             "value",
             "flags",
-            "indicator",
-            "breakdown",
-            "period",
-            "unit",
         ]
