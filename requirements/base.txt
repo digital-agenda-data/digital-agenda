@@ -18,6 +18,7 @@ django-redis
 djangorestframework
 django-sql-dashboard
 dj-rest-auth
+drf-excel
 drf-nested-routers
 drf-spectacular
 httpx
