@@ -29,6 +29,7 @@ class Command(BaseCommand):
         "charts",
     )
     TEST_FIXTURES = (
+        "test/facts",
         "test/users",
     )
 

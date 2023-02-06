@@ -1,0 +1,327 @@
+[
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T06:55:50.025Z",
+    "updated_at": "2023-02-06T06:55:50.025Z",
+    "value": 1.0,
+    "flags": "",
+    "indicator": [
+      "desi_idt_socmed"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.840Z",
+    "updated_at": "2023-02-06T07:05:32.000Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_sm_any"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.845Z",
+    "updated_at": "2023-02-06T07:05:32.004Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_di_vlo"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.849Z",
+    "updated_at": "2023-02-06T07:05:32.007Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_cc1_si"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.853Z",
+    "updated_at": "2023-02-06T07:05:32.011Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_sm_ge2"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.856Z",
+    "updated_at": "2023-02-06T07:05:32.014Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_di_hivhi"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.860Z",
+    "updated_at": "2023-02-06T07:05:32.018Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_it_mext"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.864Z",
+    "updated_at": "2023-02-06T07:05:32.021Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_inv4s_ap"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.868Z",
+    "updated_at": "2023-02-06T07:05:32.025Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_itspvac2"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.872Z",
+    "updated_at": "2023-02-06T07:05:32.028Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_empmd_gt20"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.876Z",
+    "updated_at": "2023-02-06T07:05:32.032Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_di3_vlo"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:03:51.879Z",
+    "updated_at": "2023-02-06T07:05:32.036Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_di3_vhi"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2023-02-06T07:05:32.041Z",
+    "updated_at": "2023-02-06T07:05:32.041Z",
+    "value": 0.5,
+    "flags": "",
+    "indicator": [
+      "e_broad"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+}
+]
