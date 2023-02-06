@@ -228,6 +228,7 @@ class Fact(TimestampedModel):
     import_config = models.ForeignKey(
         "estat.ImportConfig",
         null=True,
+        blank=True,
         on_delete=models.CASCADE,
         related_name="facts",
     )

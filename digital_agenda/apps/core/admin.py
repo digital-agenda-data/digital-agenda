@@ -132,7 +132,14 @@ class FactAdmin(admin.ModelAdmin):
         ImportConfigFilter,
     ]
     list_per_page = 50
-    readonly_fields = ("import_config",)
+    autocomplete_fields = (
+        "indicator",
+        "breakdown",
+        "unit",
+        "country",
+        "period",
+        "import_config",
+    )
 
     def get_queryset(self, request):
         return super().get_queryset(request).prefetch_related("import_config")
