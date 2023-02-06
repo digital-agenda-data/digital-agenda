@@ -27,8 +27,15 @@
     <template v-for="group in indicatorGroupsFiltered" :key="group.code">
       <thead class="ecl-table__head">
         <tr :id="group.code" class="ecl-table__row">
-          <th colspan="2" class="ecl-table__header">
+          <th class="ecl-table__header">
             {{ group.label }}
+          </th>
+          <th>
+            <ecl-link
+              :to="`${apiURL}/indicator-groups/${group.code}/facts/`"
+              no-visited
+              label="Export CSV"
+            />
           </th>
         </tr>
       </thead>
@@ -87,6 +94,12 @@
 
               <div class="ecl-u-type-paragraph-m">
                 <strong>Export:&nbsp;</strong>
+                <ecl-link
+                  :to="`${apiURL}/indicators/${indicator.code}/facts/`"
+                  no-visited
+                  label="data"
+                />
+                <span>,&nbsp;</span>
                 <ecl-link
                   :to="`${apiURL}/indicators/${indicator.code}/countries/?format=xlsx`"
                   no-visited

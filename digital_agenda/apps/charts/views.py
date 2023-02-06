@@ -3,7 +3,6 @@ from django.db.models import Max
 from django.db.models import Min
 from django.db.models import OuterRef
 from django.db.models import Prefetch
-from django.db.models import Subquery
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -21,6 +20,7 @@ from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
+from digital_agenda.common.export import export_facts_csv
 
 
 class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
@@ -91,6 +91,15 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
         return Response(ChartIndicatorListSerializer(queryset, many=True).data)
 
+    @action(methods=["GET"], detail=True)
+    @method_decorator(never_cache)
+    def facts(self, request, code=None):
+        obj = self.get_object()
+        return export_facts_csv(
+            obj.short_name + "-data.csv",
+            chart_group_id=obj.id,
+        )
+
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Chart
@@ -118,6 +127,8 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             queryset = queryset.filter(is_draft=False)
 
         return queryset
+
+
 
 
 class ChartGroupIndicatorSearchViewSet(

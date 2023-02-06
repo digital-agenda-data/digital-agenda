@@ -1,8 +1,11 @@
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
 from rest_framework import viewsets
 from django.db.models import Exists
 from django.db.models import OuterRef
 from django.db.models import Subquery
 from django_filters import rest_framework as filters
+from rest_framework.decorators import action
 
 from digital_agenda.apps.core.models import (
     Breakdown,
@@ -31,6 +34,7 @@ from digital_agenda.apps.core.serializers import (
 )
 from digital_agenda.apps.core.views import CodeInFilter, CodeLookupMixin
 from digital_agenda.apps.core.views import CustomXLSXFileMixin
+from digital_agenda.common.export import export_facts_csv
 
 
 class BaseCodeFilterSet(filters.FilterSet):
@@ -50,6 +54,15 @@ class IndicatorGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             return IndicatorGroupListSerializer
 
         return IndicatorGroupDetailSerializer
+
+    @action(methods=["GET"], detail=True)
+    @method_decorator(never_cache)
+    def facts(self, request, code=None):
+        obj = self.get_object()
+        return export_facts_csv(
+            obj.code + "-data.csv",
+            indicator_group_id=obj.id,
+        )
 
 
 class IndicatorCodeFilterSet(BaseCodeFilterSet):
@@ -71,6 +84,15 @@ class IndicatorViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             return IndicatorListSerializer
 
         return IndicatorDetailSerializer
+
+    @action(methods=["GET"], detail=True)
+    @method_decorator(never_cache)
+    def facts(self, request, code=None):
+        obj = self.get_object()
+        return export_facts_csv(
+            obj.code + "-data.csv",
+            indicator_id=obj.id,
+        )
 
 
 class IndicatorGroupIndicatorViewSet(IndicatorViewSet):
