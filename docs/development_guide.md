@@ -39,7 +39,7 @@ To add a new dependency:
   ```
 - Install all dependencies
   ```bash
-  pip install -c requirements/constraints.txt -r requirements/base.txt -r requirements/dev.txt
+  pip install -r requirements/dev.txt -r requirements/prod.txt -c requirements/constraints.txt
   ```
 - Resolve any dependency problems, if any
 - Freeze the new constraints
