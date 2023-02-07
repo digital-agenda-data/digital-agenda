@@ -1,5 +1,6 @@
 from django.db.models import Exists
 from django.db.models import OuterRef
+from django.utils.encoding import force_str
 from django_filters import rest_framework as filters
 
 from digital_agenda.apps.core.models import Fact
@@ -86,7 +87,7 @@ class FactFilterFilenameMixin(FilenameExportMixin):
         filters = []
         for key in ExistingFactFilterSet.base_filters:
             if value := request.GET.get(key):
-                filters.append(value)
-        filters.append(self.model._meta.verbose_name_plural)
+                filters.append(force_str(value))
+        filters.append(force_str(self.model._meta.verbose_name_plural))
 
         return "-".join(filters) + ".csv"
