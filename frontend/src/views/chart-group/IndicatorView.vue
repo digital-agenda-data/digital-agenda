@@ -31,10 +31,29 @@
             {{ group.label }}
           </th>
           <th>
+            <span>Export:&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/indicator-groups/${group.code}/facts/`"
               no-visited
-              label="Export CSV"
+              label="data"
+            />
+            <span>,&nbsp;</span>
+            <ecl-link
+              :to="`${apiURL}/countries/?indicatorGroup=${group.code}&format=csv`"
+              no-visited
+              label="countries"
+            />
+            <span>,&nbsp;</span>
+            <ecl-link
+              :to="`${apiURL}/breakdowns/?indicatorGroup=${group.code}&format=csv`"
+              no-visited
+              label="breakdowns"
+            />
+            <span>,&nbsp;</span>
+            <ecl-link
+              :to="`${apiURL}/units/?indicatorGroup=${group.code}&format=csv`"
+              no-visited
+              label="units"
             />
           </th>
         </tr>
@@ -101,19 +120,19 @@
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
-                  :to="`${apiURL}/indicators/${indicator.code}/countries/?format=csv`"
+                  :to="`${apiURL}/countries/?indicator=${indicator.code}&format=csv`"
                   no-visited
                   label="countries"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
-                  :to="`${apiURL}/indicators/${indicator.code}/breakdowns/?format=csv`"
+                  :to="`${apiURL}/breakdowns/?indicator=${indicator.code}&format=csv`"
                   no-visited
                   label="breakdowns"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
-                  :to="`${apiURL}/indicators/${indicator.code}/units/?format=csv`"
+                  :to="`${apiURL}/units/?indicator=${indicator.code}&format=csv`"
                   no-visited
                   label="units"
                 />
@@ -165,7 +184,7 @@ export default {
         .map((group) => {
           return {
             ...group,
-            indicators: group.indicators
+            indicators: group.members
               .map((indicatorCode) => this.indicatorsByCode.get(indicatorCode))
               .filter((i) => !!i),
           };

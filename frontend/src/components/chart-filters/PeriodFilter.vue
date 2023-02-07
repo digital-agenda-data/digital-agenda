@@ -9,10 +9,12 @@ export default {
       return "period";
     },
     endpoint() {
-      return (
-        this.filterStore.indicator &&
-        `/indicators/${this.filterStore.indicator.code}/periods/`
-      );
+      return "/periods/";
+    },
+    endpointParams() {
+      return {
+        indicator: this.filterStore.indicator?.code,
+      };
     },
     apiData() {
       const periodStart = this.currentChartGroup.period_start ?? -Infinity;

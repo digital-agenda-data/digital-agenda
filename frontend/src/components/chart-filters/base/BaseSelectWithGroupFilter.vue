@@ -1,6 +1,7 @@
 <script>
 import BaseSelectFilter from "@/components/chart-filters/base/BaseSelectFilter.vue";
 import { api } from "@/lib/api";
+import { groupByUnique } from "@/lib/utils";
 
 export default {
   name: "BaseSelectWithGroupFilter",
@@ -14,41 +15,42 @@ export default {
     groupEndpoint() {
       return this.errorMustImplement("groupEndpoint");
     },
+    apiDataByCode() {
+      return groupByUnique(this.apiData);
+    },
     items() {
-      const groups = new Map();
+      const result = [];
 
-      for (const group of this.groups) {
-        groups.set(group.code, {
+      for (const group of this.groups ?? []) {
+        const children = [];
+
+        for (const code of group.members) {
+          const item = this.apiDataByCode.get(code);
+          if (item) {
+            children.push({
+              id: item.code,
+              text: this.getDisplay(item),
+            });
+          }
+        }
+
+        result.push({
           id: group.code,
           text: this.getDisplay(group),
-          children: [],
+          children,
         });
       }
 
-      for (const item of this.apiData) {
-        for (const groupCode of item.groups) {
-          const groupObject = groups.get(groupCode);
-
-          if (!groupObject) {
-            continue;
-          }
-
-          groupObject.children.push({
-            id: item.code,
-            text: this.getDisplay(item),
-          });
-        }
-      }
-
-      // Maps preserve order, so no sorting is required.
-      return Array.from(groups.values());
+      return result;
     },
   },
   methods: {
     async loadExtra() {
-      if (!this.groupEndpoint) return;
-
-      this.groups = (await api.get(this.groupEndpoint)).data;
+      this.groups = (
+        await api.get(this.groupEndpoint, {
+          params: this.endpointParams,
+        })
+      ).data;
     },
   },
 };

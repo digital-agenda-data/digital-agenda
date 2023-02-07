@@ -10,10 +10,10 @@ class FilenameExportMixin:
 
     def finalize_response(self, request, response, *args, **kwargs):
         response = super().finalize_response(request, response, *args, **kwargs)
-        filename = escape_uri_path(self.get_filename(request, *args, **kwargs))
         if (
             isinstance(response, Response)
             and response.accepted_renderer.format == "csv"
         ):
+            filename = escape_uri_path(self.get_filename(request, *args, **kwargs))
             response["content-disposition"] = f"attachment; filename={filename}"
         return response

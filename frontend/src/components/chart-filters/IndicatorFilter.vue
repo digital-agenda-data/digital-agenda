@@ -9,10 +9,12 @@ export default {
       return "indicator";
     },
     endpoint() {
-      return (
-        this.filterStore.indicatorGroup &&
-        `/indicator-groups/${this.filterStore.indicatorGroup.code}/indicators/`
-      );
+      return "/indicators/";
+    },
+    endpointParams() {
+      return {
+        indicator_group: this.filterStore.indicatorGroup?.code,
+      };
     },
   },
 };

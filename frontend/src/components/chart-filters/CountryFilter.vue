@@ -17,10 +17,12 @@ export default {
       return "country";
     },
     endpoint() {
-      return (
-        this.filterStore.indicator &&
-        `/indicators/${this.filterStore.indicator.code}/countries/`
-      );
+      return "/countries/";
+    },
+    endpointParams() {
+      return {
+        indicator: this.filterStore.indicator?.code,
+      };
     },
     label() {
       return "Country";

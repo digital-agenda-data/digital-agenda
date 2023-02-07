@@ -32,32 +32,6 @@ class BreakdownSerializer(BaseDimensionSerializer):
         model = Breakdown
 
 
-class BreakdownGroupListSerializer(BaseDimensionSerializer):
-    class Meta(BaseDimensionSerializer.Meta):
-        model = BreakdownGroup
-
-
-class BreakdownGroupDetailSerializer(BreakdownGroupListSerializer):
-
-    breakdowns = BreakdownSerializer(
-        many=True,
-        read_only=True,
-    )
-
-    class Meta(BreakdownGroupListSerializer.Meta):
-        fields = BreakdownGroupListSerializer.Meta.fields + [
-            "breakdowns",
-        ]
-
-
-class BreakdownWithGroupsSerializer(BaseDimensionSerializer):
-    groups = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
-
-    class Meta(BaseDimensionSerializer.Meta):
-        model = Breakdown
-        fields = BaseDimensionSerializer.Meta.fields + ["groups"]
-
-
 class UnitSerializer(BaseDimensionSerializer):
     class Meta(BaseDimensionSerializer.Meta):
         model = Unit
@@ -84,44 +58,30 @@ class IndicatorListSerializer(BaseDimensionSerializer):
     data_sources = serializers.SlugRelatedField(
         slug_field="code", read_only=True, many=True
     )
-    groups = serializers.SlugRelatedField(slug_field="code", many=True, read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
-        fields = BaseDimensionSerializer.Meta.fields + [
-            "data_sources",
-            "groups",
-        ]
+        fields = BaseDimensionSerializer.Meta.fields + ["data_sources", "note"]
 
 
-class IndicatorDetailSerializer(IndicatorListSerializer):
-    data_sources = DataSourceSerializer(many=True, read_only=True)
-
-    class Meta(IndicatorListSerializer.Meta):
-        fields = IndicatorListSerializer.Meta.fields + [
-            "definition",
-            "note",
-        ]
-
-
-class IndicatorGroupListSerializer(BaseDimensionSerializer):
-    class Meta(BaseDimensionSerializer.Meta):
-        model = IndicatorGroup
-
-
-class IndicatorGroupDetailSerializer(serializers.ModelSerializer):
-    indicators = serializers.SlugRelatedField(
-        slug_field="code", many=True, read_only=True
+class IndicatorGroupSerializer(BaseDimensionSerializer):
+    members = serializers.SlugRelatedField(
+        source="indicators", slug_field="code", many=True, read_only=True
     )
 
-    class Meta:
+    class Meta(BaseDimensionSerializer.Meta):
         model = IndicatorGroup
-        fields = (
-            "code",
-            "label",
-            "alt_label",
-            "indicators",
-        )
+        fields = BaseDimensionSerializer.Meta.fields + ["members"]
+
+
+class BreakdownGroupSerializer(BaseDimensionSerializer):
+    members = serializers.SlugRelatedField(
+        source="breakdowns", slug_field="code", many=True, read_only=True
+    )
+
+    class Meta(BaseDimensionSerializer.Meta):
+        model = BreakdownGroup
+        fields = BaseDimensionSerializer.Meta.fields + ["members"]
 
 
 ###################

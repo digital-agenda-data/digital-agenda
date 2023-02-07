@@ -9,16 +9,15 @@ export default {
       return "indicator";
     },
     endpoint() {
-      return (
-        this.$route.params.chartGroupCode &&
-        `/chart-groups/${this.$route.params.chartGroupCode}/indicators/`
-      );
+      return "/indicators/";
     },
     groupEndpoint() {
-      return (
-        this.$route.params.chartGroupCode &&
-        `/chart-groups/${this.$route.params.chartGroupCode}/indicator-groups/`
-      );
+      return "/indicator-groups/";
+    },
+    endpointParams() {
+      return {
+        chart_group: this.$route.params.chartGroupCode,
+      };
     },
   },
 };

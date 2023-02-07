@@ -8,6 +8,7 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 
 from digital_agenda.apps.charts.models import Chart
@@ -18,14 +19,13 @@ from digital_agenda.apps.charts.serializers import ChartIndicatorListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.serializers import IndicatorGroupDetailSerializer
+from digital_agenda.apps.core.serializers import IndicatorGroupSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.common.export import export_facts_csv
 
 
 class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = ChartGroup
-    pagination_class = None
     serializer_class = ChartGroupListSerializer
 
     def get_queryset(self):
@@ -67,7 +67,7 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
                 "indicators__data_sources",
             )
         )
-        return Response(IndicatorGroupDetailSerializer(queryset, many=True).data)
+        return Response(IndicatorGroupSerializer(queryset, many=True).data)
 
     @action(methods=["GET"], detail=True)
     def indicators(self, request, code=None):
@@ -103,7 +103,6 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Chart
-    pagination_class = None
     serializer_class = ChartSerializer
 
     # Must Vary on cookies since the list changes if the user
@@ -129,13 +128,12 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         return queryset
 
 
-
-
 class ChartGroupIndicatorSearchViewSet(
     viewsets.mixins.ListModelMixin, viewsets.GenericViewSet
 ):
     model = Indicator
     serializer_class = ChartGroupIndicatorSearchSerializer
+    pagination_class = LimitOffsetPagination
 
     def get_queryset(self):
         # XXX A braver soul than I can attempt to use the ORM to write a similar

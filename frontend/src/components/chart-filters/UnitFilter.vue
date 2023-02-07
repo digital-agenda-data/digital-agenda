@@ -9,10 +9,12 @@ export default {
       return "unit";
     },
     endpoint() {
-      return (
-        this.filterStore.indicator &&
-        `/indicators/${this.filterStore.indicator.code}/units/`
-      );
+      return "/units/";
+    },
+    endpointParams() {
+      return {
+        indicator: this.filterStore.indicator?.code,
+      };
     },
   },
 };

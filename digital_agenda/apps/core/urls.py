@@ -1,12 +1,27 @@
-from digital_agenda.common.routers import DefaultExtendableRouter
+from django.urls import path, include
+from rest_framework import routers
 
-from .routers import main_routers, nested_routers
+from .views.facts import FactsViewSet
+from .views.unit import UnitViewSet
+from .views.period import PeriodViewSet
+from .views.country import CountryViewSet
+from .views.breakdown import BreakdownViewSet
+from .views.indicator import IndicatorViewSet
+from .views.data_source import DataSourceViewSet
+from .views.breakdown_group import BreakdownGroupViewSet
+from .views.indicator_group import IndicatorGroupViewSet
 
+router = routers.DefaultRouter()
+router.register("facts", FactsViewSet)
+router.register("units", UnitViewSet)
+router.register("periods", PeriodViewSet)
+router.register("countries", CountryViewSet)
+router.register("breakdowns", BreakdownViewSet)
+router.register("indicators", IndicatorViewSet)
+router.register("data-sources", DataSourceViewSet)
+router.register("breakdown-groups", BreakdownGroupViewSet)
+router.register("indicator-groups", IndicatorGroupViewSet)
 
-root = DefaultExtendableRouter()
-
-for router in main_routers:
-    root.extend(router)
-
-
-urlpatterns = root.urls + [url for router in nested_routers for url in router.urls]
+urlpatterns = [
+    path("", include(router.urls)),
+]

@@ -9,10 +9,12 @@ export default {
       return "breakdownGroup";
     },
     endpoint() {
-      return (
-        this.filterStore.indicator &&
-        `/indicators/${this.filterStore.indicator.code}/breakdown-groups/`
-      );
+      return "/breakdown-groups/";
+    },
+    endpointParams() {
+      return {
+        indicator: this.filterStore.indicator?.code,
+      };
     },
     defaultSingleValue() {
       // Default to the first item, as that will likely be the "total"

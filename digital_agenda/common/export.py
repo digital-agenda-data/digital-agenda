@@ -7,6 +7,10 @@ from django.http import FileResponse
 def export_facts_csv(
     filename, chart_group_id=None, indicator_group_id=None, indicator_id=None
 ):
+    """Optimized fact export for large dataset. MUCH faster as it bypasses
+    python altogether.
+    """
+
     params = {
         "core_indicator": indicator_id,
         "core_indicatorgroup": indicator_group_id,

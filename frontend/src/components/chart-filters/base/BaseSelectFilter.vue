@@ -259,8 +259,10 @@ export default {
     },
   },
   watch: {
-    endpoint() {
-      this.load();
+    endpointParams(newValue, oldValue) {
+      if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
+        this.load();
+      }
     },
     selected() {
       this.filterStore[this.queryName] = this.selected;
@@ -276,6 +278,8 @@ export default {
     getDisplay,
     async load() {
       if (!this.endpoint) return;
+      if (!Object.values(this.endpointParams).every((item) => !!item)) return;
+
       this.loading = true;
       this.filterStore.loadingCounter += 1;
 

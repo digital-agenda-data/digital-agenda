@@ -19,7 +19,6 @@ djangorestframework
 djangorestframework-csv
 django-sql-dashboard
 dj-rest-auth
-drf-nested-routers
 drf-spectacular
 httpx
 openpyxl
