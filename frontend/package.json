@@ -10,35 +10,35 @@
     "test:open": "cypress open --e2e"
   },
   "dependencies": {
-    "@ecl/preset-ec": "^3.6.0",
-    "@ecl/preset-reset": "^3.6.0",
-    "@vueuse/core": "^9.9.0",
-    "@vueuse/router": "^9.9.0",
-    "axios": "^1.2.1",
-    "highcharts": "^10.3.2",
-    "highcharts-vue": "^1.4.0",
-    "pinia": "^2.0.27",
-    "vue": "^3.2.45",
-    "vue-multiselect": "^3.0.0-alpha.2",
-    "vue-router": "^4.1.6"
+    "@ecl/preset-ec": "3.6.0",
+    "@ecl/preset-reset": "3.6.0",
+    "@vueuse/core": "9.9.0",
+    "@vueuse/router": "9.9.0",
+    "axios": "1.2.1",
+    "highcharts": "10.3.2",
+    "highcharts-vue": "1.4.0",
+    "pinia": "2.0.27",
+    "vue": "3.2.45",
+    "vue-multiselect": "3.0.0-alpha.2",
+    "vue-router": "4.1.6"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.2.0",
-    "rollup-plugin-visualizer": "^5.8.3",
-    "sass": "^1.57.1",
-    "vite": "^3.2.4"
+    "@vitejs/plugin-vue": "3.2.0",
+    "rollup-plugin-visualizer": "5.8.3",
+    "sass": "1.57.1",
+    "vite": "3.2.4"
   },
   "optionalDependencies": {
-    "@rushstack/eslint-patch": "^1.2.0",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "cypress": "^12.3.0",
-    "dotenv": "^16.0.3",
-    "eslint": "^8.30.0",
-    "eslint-plugin-compat": "^4.0.2",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-vue": "^9.8.0",
-    "prettier": "^2.8.1",
-    "typescript": "^4.9.4"
+    "@rushstack/eslint-patch": "1.2.0",
+    "@vue/eslint-config-prettier": "7.0.0",
+    "cypress": "12.3.0",
+    "dotenv": "16.0.3",
+    "eslint": "8.30.0",
+    "eslint-plugin-compat": "4.0.2",
+    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-vue": "9.8.0",
+    "prettier": "2.8.1",
+    "typescript": "4.9.4"
   },
   "browserslist": [
     "defaults",
