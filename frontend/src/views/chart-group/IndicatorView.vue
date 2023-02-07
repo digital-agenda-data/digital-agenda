@@ -39,6 +39,18 @@
             />
             <span>,&nbsp;</span>
             <ecl-link
+              :to="`${apiURL}/indicators/?indicator_group=${group.code}&format=csv`"
+              no-visited
+              label="indicators"
+            />
+            <span>,&nbsp;</span>
+            <ecl-link
+              :to="`${apiURL}/data-sources/?indicator_group=${group.code}&format=csv`"
+              no-visited
+              label="data sources"
+            />
+            <span>,&nbsp;</span>
+            <ecl-link
               :to="`${apiURL}/countries/?indicator_group=${group.code}&format=csv`"
               no-visited
               label="countries"
