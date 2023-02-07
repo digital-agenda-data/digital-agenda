@@ -16,9 +16,9 @@ django-model-utils
 django-postgres-extra
 django-redis
 djangorestframework
+djangorestframework-csv
 django-sql-dashboard
 dj-rest-auth
-drf-excel
 drf-nested-routers
 drf-spectacular
 httpx

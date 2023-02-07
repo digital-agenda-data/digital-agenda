@@ -39,7 +39,7 @@ django-request-logging==0.7.5
 django-sql-dashboard==1.1
 django_debug_toolbar==3.8.1
 djangorestframework==3.14.0
-drf-excel==2.2.0
+djangorestframework-csv==2.1.1
 drf-nested-routers==0.93.4
 drf-spectacular==0.25.1
 et-xmlfile==1.1.0
@@ -94,6 +94,7 @@ sqlparse==0.4.3
 stack-data==0.6.2
 tomli==2.0.1
 traitlets==5.8.0
+unicodecsv==0.14.1
 uritemplate==4.1.1
 vine==5.0.0
 wcwidth==0.2.5

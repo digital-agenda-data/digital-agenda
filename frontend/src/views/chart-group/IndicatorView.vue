@@ -101,19 +101,19 @@
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
-                  :to="`${apiURL}/indicators/${indicator.code}/countries/?format=xlsx`"
+                  :to="`${apiURL}/indicators/${indicator.code}/countries/?format=csv`"
                   no-visited
                   label="countries"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
-                  :to="`${apiURL}/indicators/${indicator.code}/breakdowns/?format=xlsx`"
+                  :to="`${apiURL}/indicators/${indicator.code}/breakdowns/?format=csv`"
                   no-visited
                   label="breakdowns"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
-                  :to="`${apiURL}/indicators/${indicator.code}/units/?format=xlsx`"
+                  :to="`${apiURL}/indicators/${indicator.code}/units/?format=csv`"
                   no-visited
                   label="units"
                 />

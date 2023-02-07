@@ -33,8 +33,8 @@ from digital_agenda.apps.core.serializers import (
     UnitSerializer,
 )
 from digital_agenda.apps.core.views import CodeInFilter, CodeLookupMixin
-from digital_agenda.apps.core.views import CustomXLSXFileMixin
 from digital_agenda.common.export import export_facts_csv
+from digital_agenda.common.viewset import FilenameExportMixin
 
 
 class BaseCodeFilterSet(filters.FilterSet):
@@ -152,7 +152,7 @@ class BreakdownGroupBreakdownViewSet(BreakdownViewSet):
         )
 
 
-class IndicatorFilteredMixin(CustomXLSXFileMixin):
+class IndicatorFilteredMixin(FilenameExportMixin):
     """
     Mixin for queryset filtering based on indicator code URL param.
     Used for units/countries/periods.
@@ -175,11 +175,22 @@ class IndicatorFilteredMixin(CustomXLSXFileMixin):
             )
         )
 
-    def get_filename(self, request=None, *args, **kwargs):
+    def get_renderer_context(self):
+        return {
+            **super().get_renderer_context(),
+            "header": [
+                "code",
+                "label",
+                "alt_label",
+                "definition",
+            ]
+        }
+
+    def get_filename(self, request, *args, **kwargs):
         name = self.filter_by
         if self.filter_by.endswith("_id"):
             name = name[:-3]
-        return self.kwargs["indicator_code"] + "_" + name + ".xlsx"
+        return self.kwargs["indicator_code"] + "_" + name + ".csv"
 
 
 class UnitCodeFilterSet(BaseCodeFilterSet):
