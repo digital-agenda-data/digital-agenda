@@ -2,7 +2,7 @@
   <chart-group-nav>
     <h4>Dataset Metadata</h4>
     <div
-      class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m hide-embedded"
+      class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-break-word"
     >
       <dl class="ecl-description-list">
         <dt class="ecl-description-list__term">Dataset</dt>
@@ -53,6 +53,7 @@
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Comment">
             Values from
+            <span>&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/${endpoint}/?chart_group=${currentChartGroup.code}&format=csv`"
               label="codelist"
@@ -80,6 +81,7 @@
           <td class="ecl-table__cell" data-ecl-table-header="Label">Flags</td>
           <td class="ecl-table__cell" data-ecl-table-header="Comment">
             Values from
+            <span>&nbsp;</span>
             <ecl-link
               to="https://ec.europa.eu/eurostat/data/database/information"
               label="Eurostat"
