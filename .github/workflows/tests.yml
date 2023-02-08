@@ -38,12 +38,19 @@ jobs:
           cd frontend
           npm install
       - name: "Backend tests"
+        id: "backendTests"
         run: |
           docker compose exec -T app pytest --cov
       - name: "Seed DB"
         run: |
           docker compose exec -T app ./manage.py seed_db --noinput
       - name: "E2E tests"
+        id: "frontendTests"
         run: |
           cd frontend
           npm run test
+      - uses: actions/upload-artifact@v3
+        if: ${{ failure() && steps.frontendTests.conclusion == 'failure' }}
+        with:
+          name: cypress-screenshots
+          path: frontend/cypress/screenshots/
