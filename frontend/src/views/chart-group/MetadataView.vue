@@ -87,6 +87,13 @@
             />
           </td>
         </tr>
+        <tr class="ecl-table__row">
+          <td class="ecl-table__cell" data-ecl-table-header="Notation">note</td>
+          <td class="ecl-table__cell" data-ecl-table-header="Label">Note</td>
+          <td class="ecl-table__cell" data-ecl-table-header="Comment">
+            Free text, optional
+          </td>
+        </tr>
       </tbody>
     </table>
 
@@ -170,6 +177,10 @@ export default {
         {
           notation: "breakdown_group",
           endpoint: "breakdown-groups",
+        },
+        {
+          notation: "data_sources",
+          endpoint: "data-sources",
         },
       ];
     },
