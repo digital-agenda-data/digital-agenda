@@ -2,18 +2,19 @@ import describeResponsive from "../../../describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.visit("/chart-group/key-indicators/charts/2-maps-by-country").checkChart(
+    cy.checkChart(
+      "Key Indicators",
+      "See the evolution of an indicator and compare breakdowns",
       {
         filters: {
           indicatorGroup: "Digital Skills",
           indicator: "ICT graduates",
-          breakdown: "Females",
-          period: "2019",
+          breakdownGroup: "Gender",
           unit: "% of graduates",
+          country: "European Union",
         },
-        title: ["ICT graduates, Females", "Year: 2019"],
-        point: "x, RO, value: 2.2.",
-        tooltip: ["Romania", "Females", "2.2% of graduates"],
+        title: ["ICT graduates", "European Union"],
+        point: "2019, 0.8. Females.",
       }
     );
   });

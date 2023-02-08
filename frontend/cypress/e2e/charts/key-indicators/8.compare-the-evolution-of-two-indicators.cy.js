@@ -2,9 +2,7 @@ import describeResponsive from "../../../describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.visit(
-      "/chart-group/key-indicators/charts/2-compare-the-evolution-of-two-indicators"
-    ).checkChart({
+    cy.checkChart("Key Indicators", "Compare the evolution of two indicators", {
       filters: {
         indicatorGroupX: "Digital Skills",
         indicatorX: "ICT graduates",

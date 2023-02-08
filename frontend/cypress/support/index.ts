@@ -16,10 +16,7 @@ declare global {
        */
       searchIndicators(searchQuery: string): Chainable<JQuery<HTMLElement>>
 
-      /**
-       *
-       */
-      checkChart(config: { filters, title, point, tooltip }): Chainable<undefined>
+      checkChart(chartGroup: string, chart: string, config: { filters, title, point, tooltip }): Chainable<undefined>
     }
   }
 }

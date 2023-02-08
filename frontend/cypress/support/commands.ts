@@ -27,7 +27,19 @@ Cypress.Commands.add("searchIndicators", (searchQuery) => {
 
 Cypress.Commands.add(
   "checkChart",
-  ({ filters = {}, title = [], point = null, tooltip = [] }) => {
+  (
+    chartGroup,
+    chart,
+    { filters = {}, title = [], point = null, tooltip = [] }
+  ) => {
+    cy.visit("/")
+      .get(".ecl-list-illustration a")
+      .contains(chartGroup)
+      .click()
+      .get(".ecl-list-illustration a")
+      .contains(chart)
+      .click();
+
     for (const filtersKey in filters) {
       cy.selectFilter(filtersKey, filters[filtersKey]);
     }
