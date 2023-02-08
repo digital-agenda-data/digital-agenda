@@ -5,11 +5,11 @@ from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.core.serializers import UnitSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import FactFilterFilenameMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 
 class UnitViewSet(
-    CodeLookupMixin, FactFilterFilenameMixin, viewsets.ReadOnlyModelViewSet
+    CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet
 ):
     model = Unit
     serializer_class = UnitSerializer

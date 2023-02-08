@@ -5,10 +5,10 @@ from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.serializers import PeriodSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import FactFilterFilenameMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 
-class PeriodViewSet(CodeLookupMixin, FactFilterFilenameMixin, viewsets.ReadOnlyModelViewSet):
+class PeriodViewSet(CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet):
     model = Period
     serializer_class = PeriodSerializer
     queryset = Period.objects.all()

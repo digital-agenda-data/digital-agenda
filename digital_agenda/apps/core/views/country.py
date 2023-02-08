@@ -5,11 +5,11 @@ from digital_agenda.apps.core.models import Country
 from digital_agenda.apps.core.serializers import CountrySerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import FactFilterFilenameMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 
 class CountryViewSet(
-    CodeLookupMixin, FactFilterFilenameMixin, viewsets.ReadOnlyModelViewSet
+    CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet
 ):
     model = Country
     serializer_class = CountrySerializer

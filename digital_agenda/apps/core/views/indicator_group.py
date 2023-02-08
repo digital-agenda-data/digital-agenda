@@ -10,7 +10,7 @@ from digital_agenda.apps.core.models import IndicatorGroup
 from digital_agenda.apps.core.serializers import IndicatorGroupSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import FactFilterFilenameMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin
 from digital_agenda.common.export import export_facts_csv
 
 
@@ -19,7 +19,7 @@ class IndicatorGroupFilterSet(ExistingFactFilterSet):
 
 
 class IndicatorGroupViewSet(
-    CodeLookupMixin, FactFilterFilenameMixin, viewsets.ReadOnlyModelViewSet
+    CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet
 ):
     model = IndicatorGroup
     queryset = IndicatorGroup.objects.all().prefetch_related(

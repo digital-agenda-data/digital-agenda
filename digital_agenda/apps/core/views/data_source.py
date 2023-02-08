@@ -5,7 +5,7 @@ from digital_agenda.apps.core.models import DataSource
 from digital_agenda.apps.core.serializers import DataSourceSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import FactFilterFilenameMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 
 class DataSourceFilterSet(ExistingFactFilterSet):
@@ -13,10 +13,11 @@ class DataSourceFilterSet(ExistingFactFilterSet):
 
 
 class DataSourceViewSet(
-    CodeLookupMixin, FactFilterFilenameMixin, viewsets.ReadOnlyModelViewSet
+    CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet
 ):
     model = DataSource
     serializer_class = DataSourceSerializer
     queryset = DataSource.objects.all()
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = DataSourceFilterSet
+    extra_headers = ["note", "url"]

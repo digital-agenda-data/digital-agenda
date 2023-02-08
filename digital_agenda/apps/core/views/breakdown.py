@@ -5,11 +5,11 @@ from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.serializers import BreakdownSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import FactFilterFilenameMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 
 class BreakdownViewSet(
-    CodeLookupMixin, FactFilterFilenameMixin, viewsets.ReadOnlyModelViewSet
+    CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet
 ):
     model = Breakdown
     serializer_class = BreakdownSerializer

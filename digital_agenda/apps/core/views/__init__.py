@@ -82,7 +82,15 @@ class ExistingFactFilterSet(filters.FilterSet):
         )
 
 
-class FactFilterFilenameMixin(FilenameExportMixin):
+class DimensionViewSetMixin(FilenameExportMixin):
+    extra_headers = []
+
+    def get_renderer_context(self):
+        return {
+            **super().get_renderer_context(),
+            # "header": ["code", "label", "alt_label", "definition"] + self.extra_headers,
+        }
+
     def get_filename(self, request, *args, **kwargs):
         filters = []
         for key in ExistingFactFilterSet.base_filters:
