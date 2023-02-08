@@ -57,7 +57,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/chart-group/:chartGroupCode",
+      path: "/datasets/:chartGroupCode",
       name: "chart-group",
       component: DatasetView,
       redirect: {
