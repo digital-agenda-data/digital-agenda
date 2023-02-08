@@ -26,6 +26,7 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     code = CICharField(max_length=60, unique=True)
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
+    license = RichTextField()
     description = RichTextField()
     image = models.ImageField(
         blank=True,

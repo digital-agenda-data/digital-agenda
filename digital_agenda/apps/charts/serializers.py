@@ -25,6 +25,7 @@ class ChartGroupListSerializer(serializers.ModelSerializer):
             "code",
             "name",
             "short_name",
+            "license",
             "description",
             "image",
             "is_draft",
