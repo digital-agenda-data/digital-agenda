@@ -58,3 +58,8 @@
     color: #004494 !important;
   }
 }
+
+// This takes WAY too much space by default, limit it here
+.ecl-table__cell:before {
+  max-width: 90px;
+}

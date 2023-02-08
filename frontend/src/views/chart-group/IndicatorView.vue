@@ -262,10 +262,6 @@ export default {
   }
 }
 
-.ecl-table__cell:before {
-  max-width: 90px;
-}
-
 [data-ecl-table-header="Information"] div + div {
   margin-top: 0.25rem;
 }
