@@ -6,7 +6,7 @@
       the scope and the definition of each indicator. For more details, click on
       the links in the table or explore the whole database.
     </p>
-    <ul v-if="chartGroupDetails" class="ecl-u-mb-l">
+    <ul class="ecl-u-mb-l">
       <li v-for="group in indicatorGroupsFiltered" :key="group.code">
         <ecl-link :to="`#${group.code}`" :label="group.label" no-visited />
       </li>
@@ -176,16 +176,12 @@ export default {
     return {
       apiURL,
       loaded: false,
-      chartGroupDetails: null,
       indicatorGroups: [],
       indicators: [],
     };
   },
   computed: {
-    ...mapState(useChartGroupStore, [
-      "currentChartGroup",
-      "currentChartGroupCode",
-    ]),
+    ...mapState(useChartGroupStore, ["currentChartGroup"]),
     ...mapState(useChartStore, ["defaultChartForCurrentGroup"]),
     ...mapState(useDataSourceStore, ["dataSourceByCode"]),
     indicatorsByCode() {
@@ -224,31 +220,26 @@ export default {
     async loadData() {
       try {
         this.loaded = false;
-        await Promise.all([
-          this.loadChartGroup(),
-          this.loadIndicatorGroups(),
-          this.loadIndicators(),
-        ]);
+        await Promise.all([this.loadIndicatorGroups(), this.loadIndicators()]);
       } finally {
         this.loaded = true;
       }
       this.$nextTick(scrollToHash);
     },
-    async loadChartGroup() {
-      this.chartGroupDetails = (
-        await api.get(`/chart-groups/${this.currentChartGroupCode}/`)
-      ).data;
-    },
     async loadIndicatorGroups() {
       this.indicatorGroups = (
-        await api.get(
-          `/chart-groups/${this.currentChartGroupCode}/indicator-groups/`
-        )
+        await api.get(`/indicator-groups/`, {
+          params: {
+            chart_group: this.currentChartGroup.code,
+          },
+        })
       ).data;
     },
     async loadIndicators() {
       this.indicators = (
-        await api.get(`/chart-groups/${this.currentChartGroupCode}/indicators/`)
+        await api.get(
+          `/chart-groups/${this.currentChartGroup.code}/indicators/`
+        )
       ).data;
     },
   },

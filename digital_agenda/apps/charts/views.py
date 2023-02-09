@@ -1,8 +1,5 @@
-from django.db.models import Exists
 from django.db.models import Max
 from django.db.models import Min
-from django.db.models import OuterRef
-from django.db.models import Prefetch
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -19,9 +16,7 @@ from digital_agenda.apps.charts.serializers import ChartGroupIndicatorSearchSeri
 from digital_agenda.apps.charts.serializers import ChartGroupSerializer
 from digital_agenda.apps.charts.serializers import ChartIndicatorListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
-from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.serializers import IndicatorGroupSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.common.export import FactExportMixin
 
@@ -51,8 +46,6 @@ class ChartGroupViewSet(
         return super().retrieve(request, *args, **kwargs)
 
     def get_serializer_class(self):
-        if self.action == "indicator-groups":
-            return IndicatorGroupSerializer
         if self.action == "indicators":
             return ChartIndicatorListSerializer
         return ChartGroupSerializer
@@ -62,30 +55,9 @@ class ChartGroupViewSet(
             return [CSVRenderer]
         return super().get_renderers()
 
-    @action(
-        methods=["GET"],
-        detail=True,
-        url_path="indicator-groups",
-        url_name="indicator-groups",
-    )
-    def indicator_groups(self, request, code=None):
-        queryset = (
-            self.get_object()
-            .indicator_groups.all()
-            .filter(Exists(Fact.objects.filter(indicator__groups__id=OuterRef("id"))))
-            .prefetch_related(
-                Prefetch(
-                    "indicators",
-                    Indicator.objects.order_by("indicatorgrouplink__display_order"),
-                ),
-                "indicators__groups",
-                "indicators__data_sources",
-            )
-        )
-        return Response(IndicatorGroupSerializer(queryset, many=True).data)
-
     @action(methods=["GET"], detail=True)
     def indicators(self, request, code=None):
+        """Get indicators and min/max periods for this chart group"""
         obj = self.get_object()
         group_ids = obj.indicator_groups.all().values_list("id", flat=True)
 
@@ -96,7 +68,6 @@ class ChartGroupViewSet(
                 max_period=Max("facts__period__code"),
             )
             .filter(groups__id__in=group_ids)
-            .prefetch_related("groups", "data_sources")
         )
 
         if obj.period_start:
