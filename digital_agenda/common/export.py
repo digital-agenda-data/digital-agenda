@@ -2,19 +2,45 @@ import tempfile
 
 from django.db import connection
 from django.http import FileResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
+from rest_framework.decorators import action
+from rest_framework_csv.renderers import CSVRenderer
+
+from digital_agenda.apps.core.serializers import FactSerializer
 
 
-def export_facts_csv(
-    filename, chart_group_id=None, indicator_group_id=None, indicator_id=None
-):
+class FactExportMixin:
+    def get_serializer_class(self):
+        if self.action == "facts":
+            return FactSerializer
+        return super().get_serializer_class()
+
+    def get_renderers(self):
+        if self.action == "facts":
+            return [CSVRenderer]
+        return super().get_renderers()
+
+    @action(methods=["GET"], detail=True)
+    @method_decorator(never_cache)
+    def facts(self, request, code=None):
+        """Optimized bulk export for facts. Only support CSV format."""
+        return export_facts_csv(
+            code + "-data.csv",
+            **{
+                self.model._meta.model_name: self.get_object().id,
+            },
+        )
+
+
+def export_facts_csv(filename, chartgroup=None, indicatorgroup=None, indicator=None):
     """Optimized fact export for large dataset. MUCH faster as it bypasses
     python altogether.
     """
-
     params = {
-        "core_indicator": indicator_id,
-        "core_indicatorgroup": indicator_group_id,
-        "charts_chartgroup": chart_group_id,
+        "core_indicator": indicator,
+        "core_indicatorgroup": indicatorgroup,
+        "charts_chartgroup": chartgroup,
     }
 
     filters = []
@@ -26,11 +52,11 @@ def export_facts_csv(
     assert filters, "At least one filter must be provided for export"
 
     query = f"""
-        SELECT core_period.code    AS "period_code",
-               core_indicator.code AS "indicator_code",
-               core_breakdown.code AS "breakdown_code",
-               core_unit.code      AS "unit_code",
-               core_country.code   AS "country_code",
+        SELECT core_period.code    AS "period",
+               core_indicator.code AS "indicator",
+               core_breakdown.code AS "breakdown",
+               core_unit.code      AS "unit",
+               core_country.code   AS "country",
                core_fact.value     AS "value",
                core_fact.flags     AS "flags"
         FROM core_fact

@@ -24,7 +24,7 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import IndicatorGroup
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
-from digital_agenda.apps.core.serializers import CountryFactSerializer
+from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 EUROSTAT_FLAGS = {
@@ -260,7 +260,7 @@ class FactsXLSXRenderer(BaseRenderer):
 
 class FactsViewSet(DimensionViewSetMixin, ListModelMixin, viewsets.GenericViewSet):
     model = Fact
-    serializer_class = CountryFactSerializer
+    serializer_class = FactSerializer
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = FactsFilter
     queryset = (

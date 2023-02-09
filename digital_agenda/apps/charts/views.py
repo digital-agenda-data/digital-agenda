@@ -6,27 +6,30 @@ from django.db.models import Prefetch
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
+from rest_framework import filters
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
+from rest_framework_csv.renderers import CSVRenderer
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.serializers import ChartGroupIndicatorSearchSerializer
-from digital_agenda.apps.charts.serializers import ChartGroupListSerializer
+from digital_agenda.apps.charts.serializers import ChartGroupSerializer
 from digital_agenda.apps.charts.serializers import ChartIndicatorListSerializer
 from digital_agenda.apps.charts.serializers import ChartSerializer
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.serializers import IndicatorGroupSerializer
 from digital_agenda.apps.core.views import CodeLookupMixin
-from digital_agenda.common.export import export_facts_csv
+from digital_agenda.common.export import FactExportMixin
 
 
-class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
+class ChartGroupViewSet(
+    FactExportMixin, CodeLookupMixin, viewsets.ReadOnlyModelViewSet
+):
     model = ChartGroup
-    serializer_class = ChartGroupListSerializer
 
     def get_queryset(self):
         queryset = ChartGroup.objects.all().prefetch_related(
@@ -46,6 +49,18 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     @method_decorator(vary_on_cookie)
     def retrieve(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
+
+    def get_serializer_class(self):
+        if self.action == "indicator-groups":
+            return IndicatorGroupSerializer
+        if self.action == "indicators":
+            return ChartIndicatorListSerializer
+        return ChartGroupSerializer
+
+    def get_renderers(self):
+        if self.action == "facts":
+            return [CSVRenderer]
+        return super().get_renderers()
 
     @action(
         methods=["GET"],
@@ -91,15 +106,6 @@ class ChartGroupViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
 
         return Response(ChartIndicatorListSerializer(queryset, many=True).data)
 
-    @action(methods=["GET"], detail=True)
-    @method_decorator(never_cache)
-    def facts(self, request, code=None):
-        obj = self.get_object()
-        return export_facts_csv(
-            obj.short_name + "-data.csv",
-            chart_group_id=obj.id,
-        )
-
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
     model = Chart
@@ -134,6 +140,7 @@ class ChartGroupIndicatorSearchViewSet(
     model = Indicator
     serializer_class = ChartGroupIndicatorSearchSerializer
     pagination_class = LimitOffsetPagination
+    filter_backends = [filters.SearchFilter]
 
     def get_queryset(self):
         # XXX A braver soul than I can attempt to use the ORM to write a similar

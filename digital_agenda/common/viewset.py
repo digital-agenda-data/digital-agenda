@@ -2,6 +2,7 @@ from django.utils.encoding import escape_uri_path
 from rest_framework.response import Response
 
 
+
 class FilenameExportMixin:
     filename = "download"
 
@@ -22,3 +23,4 @@ class FilenameExportMixin:
             )
             response["content-disposition"] = f"attachment; filename={filename}"
         return response
+

@@ -89,7 +89,7 @@ class BreakdownGroupSerializer(BaseDimensionSerializer):
 ###################
 
 
-class CountryFactSerializer(serializers.ModelSerializer):
+class FactSerializer(serializers.ModelSerializer):
 
     period = serializers.CharField(source="period.code", read_only=True)
     country = serializers.CharField(source="country.code", read_only=True)
