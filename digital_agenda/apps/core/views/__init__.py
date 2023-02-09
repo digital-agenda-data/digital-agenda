@@ -82,7 +82,7 @@ class ExistingFactFilterSet(filters.FilterSet):
         )
 
 
-class DimensionViewSetMixin(FilenameExportMixin):
+class DimensionViewSetMixin(CodeLookupMixin, FilenameExportMixin):
     extra_headers = []
 
     def get_renderer_context(self):
@@ -93,9 +93,9 @@ class DimensionViewSetMixin(FilenameExportMixin):
 
     def get_filename(self, request, *args, **kwargs):
         filters = []
-        for key in ExistingFactFilterSet.base_filters:
+        for key in self.filterset_class.base_filters:
             if value := request.GET.get(key):
                 filters.append(force_str(value))
         filters.append(force_str(self.model._meta.verbose_name_plural))
 
-        return "-".join(filters) + ".csv"
+        return "-".join(filters)

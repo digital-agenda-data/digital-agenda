@@ -3,12 +3,11 @@ from django_filters import rest_framework as filters
 
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.serializers import PeriodSerializer
-from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views import ExistingFactFilterSet
 from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 
-class PeriodViewSet(CodeLookupMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet):
+class PeriodViewSet(DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet):
     model = Period
     serializer_class = PeriodSerializer
     queryset = Period.objects.all()
