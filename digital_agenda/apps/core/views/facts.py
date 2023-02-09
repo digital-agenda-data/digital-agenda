@@ -43,13 +43,44 @@ EUROSTAT_FLAGS = {
 
 
 class FactsFilter(filters.FilterSet):
-    indicator = filters.CharFilter(field_name="indicator__code")
-    breakdown = filters.CharFilter(field_name="breakdown__code")
-    unit = filters.CharFilter(field_name="unit__code", required=True)
-    period = filters.CharFilter(field_name="period__code")
-    country = filters.CharFilter(field_name="country__code")
-    indicator_group = filters.CharFilter(field_name="indicator", method="filter_group")
-    breakdown_group = filters.CharFilter(field_name="breakdown", method="filter_group")
+    unit = filters.CharFilter(
+        field_name="unit__code",
+        label="unit.code",
+        help_text="Filter results by unit code",
+        required=True,
+    )
+    period = filters.CharFilter(
+        field_name="period__code",
+        label="period.code",
+        help_text="Filter results by period " "code",
+    )
+    country = filters.CharFilter(
+        field_name="country__code",
+        label="country.code",
+        help_text="Filter results by " "country code",
+    )
+    indicator = filters.CharFilter(
+        field_name="indicator__code",
+        label="indicator.code",
+        help_text="Filter results by indicator code",
+    )
+    breakdown = filters.CharFilter(
+        field_name="breakdown__code",
+        label="breakdown.code",
+        help_text="Filter results by breakdown code",
+    )
+    indicator_group = filters.CharFilter(
+        field_name="indicator",
+        label="indicator_group.code",
+        help_text="Filter result by indicator_group code",
+        method="filter_group",
+    )
+    breakdown_group = filters.CharFilter(
+        field_name="breakdown",
+        label="breakdown_group.code",
+        help_text="Filter result by breakdown_group code",
+        method="filter_group",
+    )
 
     def filter_group(self, queryset, name, value):
         rel_model = getattr(queryset.model, name).field.related_model
@@ -288,6 +319,16 @@ class FactsViewSet(DimensionViewSetMixin, ListModelMixin, viewsets.GenericViewSe
     # Likely to have a lot of cache misses, does not seem worth caching.
     @method_decorator(never_cache)
     def list(self, request, *args, **kwargs):
+        """List observation values for the specified filters.
+        Following filters are required:
+
+         - `indicator_group` OR `indicator`
+         - `breakdown_group` OR `breakdown`
+         - `unit`
+
+        XLSX format will also include sheets with the relevant metadata.
+
+        """
         return super().list(request, *args, **kwargs)
 
     def get_renderer_context(self):

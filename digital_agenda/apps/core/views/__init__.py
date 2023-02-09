@@ -20,47 +20,56 @@ class ExistingFactFilterSet(filters.FilterSet):
     fact_rel_name = None
     unit = filters.CharFilter(
         field_name="unit__code",
-        label="unit",
+        label="unit.code",
+        help_text="Filter results by unit code",
         method="filter_existing_fact",
     )
     period = filters.CharFilter(
         field_name="period__code",
-        label="period",
+        label="period.code",
+        help_text="Filter results by period code",
         method="filter_existing_fact",
     )
     country = filters.CharFilter(
         field_name="country__code",
-        label="country",
+        label="country.code",
+        help_text="Filter results by country code",
         method="filter_existing_fact",
     )
     indicator = filters.CharFilter(
         field_name="indicator__code",
-        label="indicator",
+        label="indicator.code",
+        help_text="Filter results by indicator code",
         method="filter_existing_fact",
     )
     breakdown = filters.CharFilter(
         field_name="breakdown__code",
-        label="breakdown",
+        label="breakdown.code",
+        help_text="Filter results by breakdown code",
         method="filter_existing_fact",
     )
     data_source = filters.CharFilter(
         field_name="indicator__data_sources__code",
-        label="data_source",
+        label="data_source.code",
+        help_text="Filter results by data_source code",
         method="filter_existing_fact",
     )
     indicator_group = filters.CharFilter(
         field_name="indicator__groups__code",
-        label="indicator_group",
+        label="indicator_group.code",
+        help_text="Filter results by indicator_group code",
         method="filter_existing_fact",
     )
     breakdown_group = filters.CharFilter(
         field_name="breakdown__groups__code",
-        label="breakdown_group",
+        label="breakdown_group.code",
+        help_text="Filter results by breakdown_group code",
         method="filter_existing_fact",
     )
     chart_group = filters.CharFilter(
         field_name="indicator__groups__chartgroup__code",
-        label="chart_group",
+        label="chart_group.code",
+        help_text="Filter results by chart_group code",
         method="filter_existing_fact",
     )
 

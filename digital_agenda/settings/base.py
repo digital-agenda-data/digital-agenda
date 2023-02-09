@@ -243,7 +243,7 @@ REST_FRAMEWORK = {
 SPECTACULAR_SETTINGS = {
     "TITLE": "Digital Agenda Data Visualization Tool API",
     "VERSION": "",
-    "SERVE_INCLUDE_SCHEMA": False,
+    "SORT_OPERATION_PARAMETERS": False,
 }
 
 # Internationalization
