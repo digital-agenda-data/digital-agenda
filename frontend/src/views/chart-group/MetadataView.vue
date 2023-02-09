@@ -130,6 +130,9 @@
       <li>
         <ecl-link :to="exportLink" no-visited label="Export CSV" />
       </li>
+      <li>
+        <ecl-link :to="redocLink" no-visited label="API documentation" />
+      </li>
     </ul>
   </chart-group-nav>
 </template>
@@ -202,6 +205,9 @@ export default {
     },
     exportLink() {
       return `${apiURL}/chart-groups/${this.currentChartGroup.code}/facts/`;
+    },
+    redocLink() {
+      return `${apiURL}/schema/redoc/`;
     },
   },
 };
