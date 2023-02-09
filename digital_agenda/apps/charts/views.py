@@ -50,11 +50,6 @@ class ChartGroupViewSet(
             return ChartIndicatorListSerializer
         return ChartGroupSerializer
 
-    def get_renderers(self):
-        if self.action == "facts":
-            return [CSVRenderer]
-        return super().get_renderers()
-
     @action(methods=["GET"], detail=True)
     def indicators(self, request, code=None):
         """Get indicators and min/max periods for this chart group"""
