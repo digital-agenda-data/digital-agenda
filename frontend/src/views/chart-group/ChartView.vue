@@ -31,7 +31,7 @@
       />
 
       <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
-        <chart-actions :chart="$refs.chart?.chart" />
+        <chart-actions :chart-ref="$refs.chart" />
       </div>
     </div>
   </div>

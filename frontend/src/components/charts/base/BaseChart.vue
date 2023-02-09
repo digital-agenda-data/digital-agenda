@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
@@ -50,6 +51,7 @@ export default {
   computed: {
     ...mapStores(useFilterStore),
     ...mapState(useChartStore, ["currentChart"]),
+    ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
     ...mapState(useCountryStore, ["countryByCode"]),
     ...mapState(useFilterStore, [
       "indicatorGroup",
@@ -303,6 +305,20 @@ export default {
           return result.join("<br/>");
         },
       };
+    },
+    exportLinks() {
+      const result = {};
+      for (const axis in this.endpointParams) {
+        result[axis] = api.getUri({
+          url: "/facts/",
+          params: {
+            ...this.endpointParams[axis],
+            chart_group: this.currentChartGroupCode,
+            format: "xlsx",
+          },
+        });
+      }
+      return result;
     },
   },
   watch: {

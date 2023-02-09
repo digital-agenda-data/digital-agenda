@@ -1,7 +1,7 @@
 <template>
   <div class="chart-actions">
     <ecl-link
-      v-if="chart"
+      v-if="highchartInstance"
       no-visited
       label="Print chart"
       to="#print-chart"
@@ -14,18 +14,18 @@
       @click.capture.prevent="printPage"
     />
     <ecl-link
-      v-if="chart"
+      v-if="highchartInstance"
       no-visited
       label="Download image"
       to="#download-chart"
       @click.capture.prevent="downloadChart"
     />
     <ecl-link
-      v-if="chart"
+      v-for="(exportLink, axis) in chartRef?.exportLinks ?? {}"
+      :key="'export' + axis"
       no-visited
-      label="Export data"
-      to="#export-chart"
-      @click.capture.prevent="exportChart"
+      :to="exportLink"
+      :label="'Export data ' + axis"
     />
     <ecl-link no-visited label="Embedded URL" :to="embedURL" />
     <ecl-link
@@ -61,7 +61,7 @@ export default {
   name: "ChartActions",
   components: { EclLink, EclSocialMediaShare },
   props: {
-    chart: {
+    chartRef: {
       type: Object,
       required: false,
       default: null,
@@ -75,19 +75,22 @@ export default {
       url.searchParams.set("embed", "true");
       return url.toString();
     },
+    highchartInstance() {
+      return this.chartRef?.chart;
+    },
   },
   methods: {
     printPage() {
       window.print();
     },
     printChart() {
-      this.chart.print();
+      this.highchartInstance.print();
     },
     downloadChart() {
-      this.chart.exportChartLocal();
+      this.highchartInstance.exportChartLocal();
     },
     exportChart() {
-      this.chart.downloadXLS();
+      this.highchartInstance.downloadXLS();
     },
   },
 };
