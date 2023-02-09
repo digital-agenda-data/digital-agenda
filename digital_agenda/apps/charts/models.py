@@ -79,6 +79,9 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
                 }
             )
 
+    def get_label(self, dimension):
+        return getattr(self, dimension + "_label", dimension.title())
+
 
 def filter_option_field(rel_model):
     class FilterOptionField(CompositeField):
