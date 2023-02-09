@@ -41,7 +41,7 @@
       </thead>
       <tbody class="ecl-table__body">
         <tr
-          v-for="{ notation, endpoint } in dimensions"
+          v-for="{ notation, label, endpoint } in dimensions"
           :key="notation"
           class="ecl-table__row"
         >
@@ -49,7 +49,7 @@
             {{ notation }}
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Label">
-            {{ currentChartGroup[notation + "_label"] }}
+            {{ label ?? currentChartGroup[notation + "_label"] }}
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Comment">
             Values from
@@ -167,6 +167,7 @@ export default {
         {
           notation: "country",
           endpoint: "countries",
+          label: "Country",
         },
         {
           notation: "period",
@@ -183,6 +184,7 @@ export default {
         {
           notation: "data_sources",
           endpoint: "data-sources",
+          label: "Data Sources",
         },
       ];
     },
