@@ -13,7 +13,6 @@ from drf_spectacular.views import (
 api_urlpatterns = [
     path("", include("digital_agenda.apps.core.urls")),
     path("", include("digital_agenda.apps.charts.urls")),
-    path("auth/", include("dj_rest_auth.urls")),
 ]
 
 urlpatterns = [

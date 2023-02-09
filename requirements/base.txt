@@ -18,7 +18,6 @@ django-redis
 djangorestframework
 djangorestframework-csv
 django-sql-dashboard
-dj-rest-auth
 drf-spectacular
 httpx
 openpyxl

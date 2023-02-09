@@ -79,7 +79,6 @@ THIRD_PARTY_APPS = [
     "psqlextra",
     "rest_framework",
     "rest_framework.authtoken",
-    "dj_rest_auth",
     "django_sql_dashboard",
     "health_check",
     "health_check.db",

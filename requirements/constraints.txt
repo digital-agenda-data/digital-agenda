@@ -17,7 +17,6 @@ click-repl==0.2.0
 commonmark==0.9.1
 coverage==7.0.1
 decorator==5.1.1
-dj-rest-auth==2.2.5
 Django==4.1.6
 django-admin-autocomplete-filter==0.7.1
 django-admin-env-notice==0.4
