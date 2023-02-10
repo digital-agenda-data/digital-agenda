@@ -48,7 +48,8 @@ jobs:
         id: "frontendTests"
         run: |
           cd frontend
-          npm run test
+          # Don't record videos since we don't upload them
+          npm run test -- -c 'video=false'
       - uses: actions/upload-artifact@v3
         if: ${{ failure() && steps.frontendTests.conclusion == 'failure' }}
         with:
