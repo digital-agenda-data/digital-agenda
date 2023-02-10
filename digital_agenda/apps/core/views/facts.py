@@ -11,6 +11,9 @@ from django.db.models import OuterRef
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django_filters import rest_framework as filters
+from openpyxl.cell import WriteOnlyCell
+from openpyxl.styles import Font
+from openpyxl.utils import get_column_letter
 from rest_framework import viewsets
 from rest_framework.mixins import ListModelMixin
 from rest_framework.renderers import BaseRenderer
@@ -180,10 +183,23 @@ class FactXLSXSerializer:
             result[filter_key] = value
         return result
 
+    def set_dimensions(self, sheet, dimensions):
+        for i, width in enumerate(dimensions, start=1):
+            sheet.column_dimensions[get_column_letter(i)].width = width
+
+    def write_headers(self, sheet, headers):
+        cells = []
+        for value in headers:
+            cell = WriteOnlyCell(sheet, value)
+            cell.font = Font(bold=True)
+            cells.append(cell)
+        sheet.append(cells)
+
     def render_info_sheet(self):
         host = settings.FRONTEND_HOST[0]
 
         sheet = self.wb.create_sheet("General Information")
+        self.set_dimensions(sheet, [30, 100])
         sheet.append(["Extraction Date", str(datetime.date.today())])
 
         if not self.chart_group:
@@ -216,16 +232,18 @@ class FactXLSXSerializer:
 
     def render_filters_sheet(self):
         sheet = self.wb.create_sheet("Applied Filters")
-
-        sheet.append(
+        self.set_dimensions(sheet, [15, 15, 40, 40, 40])
+        self.write_headers(
+            sheet,
             [
                 "Dimension",
                 "Code",
                 "Label",
                 "Alt. Label",
                 "Definition",
-            ]
+            ],
         )
+
         for filter_key, value in self.filter_args.items():
             obj = MODELS[filter_key].objects.get(code=value)
 
@@ -262,20 +280,25 @@ class FactXLSXSerializer:
             model = MODELS[dim]
 
             sheet = self.wb.create_sheet(self.chart_group.get_label(dim))
-            sheet.append(getattr(model, h).field.verbose_name.title() for h in headers)
+            self.set_dimensions(sheet, [15, 40, 40, 40])
+            self.write_headers(
+                sheet, [getattr(model, h).field.verbose_name.title() for h in headers]
+            )
 
             for obj in model.objects.filter(code__in=codes):
                 sheet.append(getattr(obj, key) for key in headers)
 
         sheet = self.wb.create_sheet("Flags")
-        sheet.append(["Flag", "Label"])
+        self.set_dimensions(sheet, [10, 40])
+        self.write_headers(sheet, ["Flag", "Label"])
 
         for key, value in EUROSTAT_FLAGS.items():
             sheet.append([key, value])
 
     def render_data_sheet(self):
         sheet = self.wb.create_sheet("Data")
-        sheet.append(self.chart_group.get_label(h) for h in self.headers)
+        self.set_dimensions(sheet, [15 for _ in self.headers])
+        self.write_headers(sheet, [self.chart_group.get_label(h) for h in self.headers])
 
         for row in self.data:
             sheet.append(row[header] for header in self.headers)
