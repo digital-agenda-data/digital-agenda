@@ -1,5 +1,6 @@
 require("dotenv").config({ path: "../.env" });
 
+const { rmSync } = require("fs");
 const { defineConfig } = require("cypress");
 
 // XXX We don't actually know which one we should use
@@ -24,5 +25,20 @@ module.exports = defineConfig({
       [375, 667],
       [360, 640],
     ],
+    setupNodeEvents(on, config) {
+      on("task", {
+        log(message) {
+          console.log(message);
+          return null;
+        },
+        cleanDownloadsFolder() {
+          rmSync(config.downloadsFolder, {
+            recursive: true,
+            force: true,
+          });
+          return null;
+        },
+      });
+    },
   },
 });

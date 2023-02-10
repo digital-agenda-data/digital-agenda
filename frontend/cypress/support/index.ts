@@ -16,7 +16,16 @@ declare global {
        */
       searchIndicators(searchQuery: string): Chainable<JQuery<HTMLElement>>
 
-      checkChart(chartGroup: string, chart: string, config: { filters, title, point, tooltip }): Chainable<undefined>
+      /**
+       * Check if the file has been downloaded and has the expected mime-type
+       * @example cy.checkDownload("test.png", "image/png")
+       */
+      checkDownload(fn: string, expectedMime: string): Chainable<void>
+
+      /**
+       * Perform checks for a chart page
+       */
+      checkChart(chartGroup: string, chart: string, config: { filters, title, point, tooltip,  }): Chainable<undefined>
     }
   }
 }

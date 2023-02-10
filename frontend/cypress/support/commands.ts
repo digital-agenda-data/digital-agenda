@@ -1,38 +1,47 @@
-Cypress.Commands.add("selectFilter", (inputName, label) => {
-  return cy
-    .get(`[data-name='${inputName}']`)
-    .click()
-    .get(`[data-name='${inputName}'] [role='option']`)
-    .contains(label)
-    .click();
-});
+const path = require("path");
+import { filetypemime } from "magic-bytes.js";
 
-Cypress.Commands.add("searchIndicators", (searchQuery) => {
-  cy.visit("/")
-    .window()
-    .then((remoteWindow) => {
-      if (remoteWindow.innerWidth < 996) {
-        // Search input is hidden on mobile, and needs to be toggled
-        cy.get(".ecl-site-header__search-toggle").click();
-      }
-    });
+Cypress.Commands.addAll({
+  selectFilter(inputName, label) {
+    return cy
+      .get(`[data-name='${inputName}']`)
+      .click()
+      .get(`[data-name='${inputName}'] [role='option']`)
+      .contains(label)
+      .click();
+  },
+  searchIndicators(searchQuery) {
+    cy.visit("/")
+      .window()
+      .then((remoteWindow) => {
+        if (remoteWindow.innerWidth < 996) {
+          // Search input is hidden on mobile, and needs to be toggled
+          cy.get(".ecl-site-header__search-toggle").click();
+        }
+      });
 
-  cy.get("form.ecl-search-form input[type=search]")
-    .type(searchQuery)
-    .get("form.ecl-search-form [type=submit]")
-    .click()
-    .get("h1")
-    .contains("Search results for");
-});
+    cy.get("form.ecl-search-form input[type=search]")
+      .type(searchQuery)
+      .get("form.ecl-search-form [type=submit]")
+      .click()
+      .get("h1")
+      .contains("Search results for");
+  },
+  checkDownload(fn, expectedMime) {
+    const downloadsFolder = Cypress.config("downloadsFolder");
+    const fullPath = path.join(downloadsFolder, fn);
 
-Cypress.Commands.add(
-  "checkChart",
-  (
+    cy.readFile(fullPath, null).then((buffer) =>
+      expect(expectedMime).to.be.oneOf(filetypemime(buffer))
+    );
+  },
+  checkChart(
     chartGroup,
     chart,
     { filters = {}, title = [], point = null, tooltip = [] }
-  ) => {
-    cy.visit("/")
+  ) {
+    cy.task("cleanDownloadsFolder")
+      .visit("/")
       .get(".ecl-list-illustration a")
       .contains(chartGroup)
       .click()
@@ -64,6 +73,20 @@ Cypress.Commands.add(
       }
     }
 
+    if (title.length > 0) {
+      cy.get("a")
+        .contains("Download image")
+        .click()
+        .checkDownload(
+          title[0]
+            .toLowerCase()
+            .replace(/[,:]/g, "")
+            .replace(/ /g, "-")
+            .slice(0, 24) + ".png",
+          "image/png"
+        );
+    }
+
     return cy;
-  }
-);
+  },
+});
