@@ -52,7 +52,7 @@
             {{ label ?? currentChartGroup[notation + "_label"] }}
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Comment">
-            Values from
+            <span>Values from</span>
             <span>&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/${endpoint}/?chart_group=${currentChartGroup.code}&format=csv`"
@@ -80,7 +80,7 @@
           </td>
           <td class="ecl-table__cell" data-ecl-table-header="Label">Flags</td>
           <td class="ecl-table__cell" data-ecl-table-header="Comment">
-            Values from
+            <span>Values from</span>
             <span>&nbsp;</span>
             <ecl-link
               to="https://ec.europa.eu/eurostat/data/database/information"
