@@ -28,16 +28,26 @@ export default {
       .contains("Search results for");
   },
   checkDownload(pattern, expectedMime) {
-    cy.task("downloads").then((downloads: Array<string>) => {
-      const files = downloads.filter((fn) => fn.match(pattern));
-      expect(files).have.length(1);
+    cy.waitUntil(() =>
+      cy
+        .task("downloads")
+        .then(
+          (files: Array<string>) =>
+            files.filter((fn) => fn.match(pattern)).length === 1
+        )
+    )
+      .task("downloads")
+      .then((files: Array<string>) => {
+        const downloadsFolder = Cypress.config("downloadsFolder");
+        const fullPath = path.join(
+          downloadsFolder,
+          files.find((fn) => fn.match(pattern))
+        );
 
-      const downloadsFolder = Cypress.config("downloadsFolder");
-      const fullPath = path.join(downloadsFolder, files[0]);
-      cy.readFile(fullPath, null).then((buffer) => {
-        expect(expectedMime).to.be.oneOf(filetypemime(buffer));
+        cy.readFile(fullPath, null).then((buffer) => {
+          expect(expectedMime).to.be.oneOf(filetypemime(buffer));
+        });
       });
-    });
   },
   checkChart(
     chartGroup,
@@ -89,7 +99,7 @@ export default {
       cy.get("a")
         .contains("Download image")
         .click()
-        .checkDownload(/.*\.png/, "image/png");
+        .checkDownload(/png$/, "image/png");
     }
 
     // Check the chart again in embedded mode
