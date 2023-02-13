@@ -1,4 +1,4 @@
-import describeResponsive from "../describeResponsive";
+import describeResponsive from "../support/describeResponsive";
 
 describeResponsive("Check Search Page", () => {
   it("Check search results and links", () => {

@@ -1,4 +1,4 @@
-import describeResponsive from "../describeResponsive";
+import describeResponsive from "../support/describeResponsive";
 
 describeResponsive("Check App Navigation", (viewportWidth) => {
   it("Navigate in between charts and groups", () => {
