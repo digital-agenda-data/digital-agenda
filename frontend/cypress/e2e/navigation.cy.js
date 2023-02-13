@@ -63,5 +63,11 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       .should("be.visible")
       .parents("td")
       .should("contain", "2015 - 2020");
+
+    cy.get("a")
+      .contains("ICT graduates")
+      .click()
+      .get("h1")
+      .contains("Analyse one indicator and compare countries");
   });
 });
