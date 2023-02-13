@@ -8,29 +8,23 @@ describeResponsive("Check Metadata Page", () => {
       .click()
       .get("a")
       .contains("Entire dataset metadata and download services")
-      .click()
-      .get("[data-ecl-table-header=Comment] a")
-      .each(($el) => {
-        if (!$el.text().match(/codelist/)) {
-          return;
-        }
+      .click();
 
-        cy.request($el.attr("href"))
-          .its("body")
-          .should("match", /^code,label,alt_label,definition/);
-      });
+    // Check downloading ALL codelists
+    cy.get("[data-ecl-table-header=Comment] a").each(($el) => {
+      if (!$el.text().match(/codelist/)) {
+        return;
+      }
+      cy.wrap($el)
+        .downloadLink()
+        .should("contain", "code,label,alt_label,definition");
+    });
 
+    // Check bulk export all data for the chart group
     cy.get("a")
       .contains("Export CSV")
       .parent("a")
-      .invoke("attr", "href")
-      .then((url) => {
-        cy.request(url)
-          .its("body")
-          .should(
-            "match",
-            /^period,indicator,breakdown,unit,country,value,flags/
-          );
-      });
+      .downloadLink()
+      .should("contain", "period,indicator,breakdown,unit,country,value,flags");
   });
 });

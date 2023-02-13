@@ -21,6 +21,12 @@ declare global {
       searchIndicators(searchQuery: string): Chainable<JQuery<HTMLElement>>;
 
       /**
+       * Download a link and pass the response to the chain
+       * @example cy.get("a").contains("Export data").downloadLink().should("contain", "foo.bar")
+       */
+      downloadLink(): Chainable<string>;
+
+      /**
        * Check if the file has been downloaded and verify magic numbers to
        * match the specified type.
        * @example cy.checkDownload(/.*\.png/, "png")

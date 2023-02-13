@@ -1,7 +1,22 @@
 import path from "path";
 import { filetypeinfo } from "magic-bytes.js";
 
-export default {
+Cypress.Commands.addAll(
+  {
+    prevSubject: true,
+  },
+  {
+    downloadLink(prevSubject) {
+      return cy
+        .wrap(prevSubject)
+        .invoke("attr", "href")
+        .then((url) => cy.request(url))
+        .its("body");
+    },
+  }
+);
+
+Cypress.Commands.addAll({
   selectFilter(inputName, label) {
     return cy
       .get(`[data-name='${inputName}']`)
@@ -27,6 +42,7 @@ export default {
       .get("h1")
       .contains("Search results for");
   },
+
   checkExportLink(linkText, expectedType) {
     return cy
       .get("a")
@@ -147,4 +163,4 @@ export default {
 
     return cy;
   },
-};
+});
