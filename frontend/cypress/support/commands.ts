@@ -53,25 +53,29 @@ export default {
       cy.selectFilter(filtersKey, filters[filtersKey]);
     }
 
-    cy.get(".highcharts-title, .highcharts-subtitle")
-      .invoke("text")
-      .then((text) => {
-        for (const txt of title) {
-          // Highcharts adds ZeroWidthSpaces in the text, so we can't
-          // check normally
-          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+    const checkChartInstance = () => {
+      cy.get(".highcharts-title, .highcharts-subtitle")
+        .invoke("text")
+        .then((text) => {
+          for (const txt of title) {
+            // Highcharts adds ZeroWidthSpaces in the text, so we can't
+            // check normally
+            expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+          }
+        });
+
+      if (point) {
+        cy.get(`.highcharts-point[aria-label='${point}']`)
+          .should("be.visible")
+          .trigger("mouseover", { force: true });
+
+        for (const txt of tooltip) {
+          cy.get(".highcharts-tooltip").should("contain", txt);
         }
-      });
-
-    if (point) {
-      cy.get(`.highcharts-point[aria-label='${point}']`)
-        .should("be.visible")
-        .trigger("mouseover", { force: true });
-
-      for (const txt of tooltip) {
-        cy.get(".highcharts-tooltip").should("contain", txt);
       }
-    }
+    };
+
+    checkChartInstance();
 
     for (const txt of definitions) {
       cy.get(".chart-definitions").contains(txt);
@@ -90,6 +94,17 @@ export default {
           "image/png"
         );
     }
+
+    // Check the chart again in embedded mode
+    cy.get("a")
+      .contains("Embedded URL")
+      .parent("a")
+      .invoke("attr", "href")
+      .then((href) => {
+        // Can't click on in since it opens in a new tab
+        cy.visit(href);
+        checkChartInstance();
+      });
 
     return cy;
   },
