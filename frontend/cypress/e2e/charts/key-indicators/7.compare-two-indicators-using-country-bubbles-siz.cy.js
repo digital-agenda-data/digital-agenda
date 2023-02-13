@@ -29,6 +29,18 @@ describeResponsive("Check Chart", () => {
           "3.1% of graduates",
           "3.9% of graduates",
         ],
+        definitions: [
+          "(X) Indicator: ICT graduates",
+          "(X) Breakdown: Females",
+          "(X) Unit of measure: Percentage of graduates",
+          "(Y) Indicator: ICT graduates",
+          "(Y) Breakdown: Males",
+          "(Y) Unit of measure: Percentage of graduates",
+          "(Z) Indicator: ICT graduates",
+          "(Z) Breakdown: Total",
+          "(Z) Unit of measure: Percentage of graduates",
+          "Definition: Individuals with a degree in ICT",
+        ],
       }
     );
   });

@@ -16,6 +16,15 @@ describeResponsive("Check Chart", () => {
       },
       title: ["ICT graduates, Females and ICT graduates, Males"],
       point: "2019, 0.8. ICT graduates.",
+      definitions: [
+        "Indicator: ICT graduates",
+        "Breakdown: Females",
+        "Unit of measure: Percentage of graduates",
+        "Indicator: ICT graduates",
+        "Breakdown: Males",
+        "Unit of measure: Percentage of graduates",
+        "Definition: Individuals with a degree in ICT",
+      ],
     });
   });
 });

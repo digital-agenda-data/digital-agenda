@@ -25,7 +25,7 @@ declare global {
       /**
        * Perform checks for a chart page
        */
-      checkChart(chartGroup: string, chart: string, config: { filters, title, point, tooltip,  }): Chainable<undefined>
+      checkChart(chartGroup: string, chart: string, config: { filters, title, point, tooltip, definitions }): Chainable<undefined>
     }
   }
 }

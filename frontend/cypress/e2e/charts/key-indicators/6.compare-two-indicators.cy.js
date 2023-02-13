@@ -17,6 +17,15 @@ describeResponsive("Check Chart", () => {
       title: ["Year: 2019"],
       point: "EU, 3.1. European Union.",
       tooltip: ["European Union", "0.8% of graduates", "3.1% of graduates"],
+      definitions: [
+        "(X) Indicator: ICT graduates",
+        "(X) Breakdown: Females",
+        "(X) Unit of measure: Percentage of graduates",
+        "(Y) Indicator: ICT graduates",
+        "(Y) Breakdown: Males",
+        "(Y) Unit of measure: Percentage of graduates",
+        "Definition: Individuals with a degree in ICT",
+      ],
     });
   });
 });

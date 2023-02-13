@@ -21,7 +21,7 @@
     <h2>Definition and scopes:</h2>
 
     <div class="ecl-row">
-      <div class="ecl-col-12 ecl-col-l-8">
+      <div class="ecl-col-12 ecl-col-l-8 chart-definitions">
         <div v-html="currentChart.description" />
         <chart-definitions :show-axis-label="$refs.chart?.showAxisLabel" />
       </div>

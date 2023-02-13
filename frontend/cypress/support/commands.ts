@@ -1,7 +1,7 @@
 const path = require("path");
 import { filetypemime } from "magic-bytes.js";
 
-Cypress.Commands.addAll({
+export default {
   selectFilter(inputName, label) {
     return cy
       .get(`[data-name='${inputName}']`)
@@ -38,7 +38,7 @@ Cypress.Commands.addAll({
   checkChart(
     chartGroup,
     chart,
-    { filters = {}, title = [], point = null, tooltip = [] }
+    { filters = {}, title = [], point = null, tooltip = [], definitions = [] }
   ) {
     cy.task("cleanDownloadsFolder")
       .visit("/")
@@ -73,6 +73,10 @@ Cypress.Commands.addAll({
       }
     }
 
+    for (const txt of definitions) {
+      cy.get(".chart-definitions").contains(txt);
+    }
+
     if (title.length > 0) {
       cy.get("a")
         .contains("Download image")
@@ -89,4 +93,4 @@ Cypress.Commands.addAll({
 
     return cy;
   },
-});
+};
