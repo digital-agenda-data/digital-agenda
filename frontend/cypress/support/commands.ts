@@ -1,5 +1,5 @@
 import path from "path";
-import { filetypemime } from "magic-bytes.js";
+import { filetypeinfo } from "magic-bytes.js";
 
 export default {
   selectFilter(inputName, label) {
@@ -27,7 +27,26 @@ export default {
       .get("h1")
       .contains("Search results for");
   },
-  checkDownload(pattern, expectedMime) {
+  checkExportLink(linkText, expectedType) {
+    return cy
+      .get("a")
+      .contains(linkText)
+      .parent("a")
+      .invoke("attr", "href")
+      .then((url) => {
+        cy.request({
+          url,
+          encoding: null,
+        }).then((response) => {
+          const detectedTypes = filetypeinfo(new Uint8Array(response.body)).map(
+            (info) => info.typename
+          );
+
+          expect(expectedType).to.be.oneOf(detectedTypes);
+        });
+      });
+  },
+  checkDownload(pattern, expectedType) {
     cy.waitUntil(() =>
       cy
         .task("downloads")
@@ -45,7 +64,11 @@ export default {
         );
 
         cy.readFile(fullPath, null).then((buffer) => {
-          expect(expectedMime).to.be.oneOf(filetypemime(buffer));
+          const detectedTypes = filetypeinfo(buffer).map(
+            (info) => info.typename
+          );
+
+          expect(expectedType).to.be.oneOf(detectedTypes);
         });
       });
   },
@@ -54,6 +77,7 @@ export default {
     chart,
     { filters = {}, title = [], point = null, tooltip = [], definitions = [] }
   ) {
+    // Navigate to the chart
     cy.task("cleanDownloadsFolder")
       .visit("/")
       .get(".ecl-list-illustration a")
@@ -63,11 +87,13 @@ export default {
       .contains(chart)
       .click();
 
+    // Set the filters
     for (const filtersKey in filters) {
       cy.selectFilter(filtersKey, filters[filtersKey]);
     }
 
     const checkChartInstance = () => {
+      // Check chart title/subtitle
       cy.get(".highcharts-title, .highcharts-subtitle")
         .invoke("text")
         .then((text) => {
@@ -78,6 +104,7 @@ export default {
           }
         });
 
+      // Check a point in the chart and the tooltip
       if (point) {
         cy.get(`.highcharts-point[aria-label='${point}']`)
           .should("be.visible")
@@ -91,16 +118,21 @@ export default {
 
     checkChartInstance();
 
+    // Check chart definitions
     for (const txt of definitions) {
       cy.get(".chart-definitions").contains(txt);
     }
 
+    // Check downloading the chart as a png
     if (title.length > 0) {
       cy.get("a")
         .contains("Download image")
         .click()
-        .checkDownload(/png$/, "image/png");
+        .checkDownload(/png$/, "png");
     }
+
+    // Check the export data link
+    cy.checkExportLink("Export data", "xlsx");
 
     // Check the chart again in embedded mode
     cy.get("a")

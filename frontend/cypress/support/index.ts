@@ -21,10 +21,21 @@ declare global {
       searchIndicators(searchQuery: string): Chainable<JQuery<HTMLElement>>;
 
       /**
-       * Check if the file has been downloaded and has the expected mime-type
-       * @example cy.checkDownload(/.*\.png/, "image/png")
+       * Check if the file has been downloaded and verify magic numbers to
+       * match the specified type.
+       * @example cy.checkDownload(/.*\.png/, "png")
        */
-      checkDownload(pattern: RegExp, expectedMime: string): Chainable<void>;
+      checkDownload(pattern: RegExp, expectedType: string): Chainable<void>;
+
+      /**
+       * Check if an export link and verify magic numbers to match the
+       * specified type.
+       * @example cy.checkExportLink("Export data", "xlsx")
+       */
+      checkExportLink(
+        linkText: string,
+        expectedType: string
+      ): Chainable<string>;
 
       /**
        * Perform checks for a chart page
