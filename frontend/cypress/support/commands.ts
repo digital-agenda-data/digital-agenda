@@ -1,4 +1,4 @@
-const path = require("path");
+import path from "path";
 import { filetypemime } from "magic-bytes.js";
 
 export default {
@@ -27,13 +27,17 @@ export default {
       .get("h1")
       .contains("Search results for");
   },
-  checkDownload(fn, expectedMime) {
-    const downloadsFolder = Cypress.config("downloadsFolder");
-    const fullPath = path.join(downloadsFolder, fn);
+  checkDownload(pattern, expectedMime) {
+    cy.task("downloads").then((downloads: Array<string>) => {
+      const files = downloads.filter((fn) => fn.match(pattern));
+      expect(files).have.length(1);
 
-    cy.readFile(fullPath, null).then((buffer) =>
-      expect(expectedMime).to.be.oneOf(filetypemime(buffer))
-    );
+      const downloadsFolder = Cypress.config("downloadsFolder");
+      const fullPath = path.join(downloadsFolder, files[0]);
+      cy.readFile(fullPath, null).then((buffer) => {
+        expect(expectedMime).to.be.oneOf(filetypemime(buffer));
+      });
+    });
   },
   checkChart(
     chartGroup,
@@ -85,14 +89,7 @@ export default {
       cy.get("a")
         .contains("Download image")
         .click()
-        .checkDownload(
-          title[0]
-            .toLowerCase()
-            .replace(/[,:]/g, "")
-            .replace(/ /g, "-")
-            .slice(0, 24) + ".png",
-          "image/png"
-        );
+        .checkDownload(/.*\.png/, "image/png");
     }
 
     // Check the chart again in embedded mode

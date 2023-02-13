@@ -1,6 +1,6 @@
 require("dotenv").config({ path: "../.env" });
 
-const { rmSync } = require("fs");
+const { rmSync, readdirSync } = require("fs");
 const { defineConfig } = require("cypress");
 
 // XXX We don't actually know which one we should use
@@ -37,6 +37,9 @@ module.exports = defineConfig({
             force: true,
           });
           return null;
+        },
+        downloads() {
+          return readdirSync(config.downloadsFolder);
         },
       });
     },
