@@ -55,7 +55,7 @@ export default {
               value,
               x: country.code,
               y: value,
-              key: this.getDisplay(this.countryByCode.get(country.code)),
+              key: this.getDisplay(country),
               code: country.code,
               color: value === undefined ? valueNotAvailableColor : undefined,
             };
