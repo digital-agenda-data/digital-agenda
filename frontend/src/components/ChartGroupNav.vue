@@ -59,11 +59,6 @@ export default {
           text: "Metadata",
           to: { name: "metadata", params },
         },
-        {
-          id: "comments",
-          text: "Comments",
-          to: { name: "comments", params },
-        },
       ];
     },
   },

@@ -40,6 +40,16 @@ export default {
       required: false,
       default: "",
     },
+    minLength: {
+      type: [Number, String],
+      required: false,
+      default: null,
+    },
+    maxLength: {
+      type: [Number, String],
+      required: false,
+      default: null,
+    },
     size: {
       type: String,
       required: false,

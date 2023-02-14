@@ -30,18 +30,9 @@
     <ecl-link no-visited label="Embedded URL" :to="embedURL" />
     <ecl-link
       no-visited
-      label="View comments"
+      label="Submit feedback"
       :to="{
-        name: 'comments',
-        params: { chartGroupCode: currentChartGroupCode },
-      }"
-    />
-    <ecl-link
-      no-visited
-      label="Submit comments"
-      :to="{
-        name: 'comments',
-        params: { chartGroupCode: currentChartGroupCode },
+        name: 'feedback',
       }"
     />
     <ecl-social-media-share

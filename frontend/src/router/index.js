@@ -1,3 +1,4 @@
+import FeedbackView from "@/views/FeedbackView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 import { useRoute } from "@/stores/routeStore";
@@ -9,7 +10,6 @@ import AboutView from "@/views/AboutView.vue";
 import SearchView from "@/views/SearchView.vue";
 
 import DatasetView from "@/views/DatasetView.vue";
-import CommentsView from "@/views/chart-group/CommentsView.vue";
 import MetadataView from "@/views/chart-group/MetadataView.vue";
 import ChartListView from "@/views/chart-group/ChartListView.vue";
 import IndicatorView from "@/views/chart-group/IndicatorView.vue";
@@ -114,15 +114,16 @@ const router = createRouter({
             breadcrumb: "Metadata",
           },
         },
-        {
-          path: "comments",
-          name: "comments",
-          component: CommentsView,
-          meta: {
-            breadcrumb: "Comments",
-          },
-        },
       ],
+    },
+    {
+      path: "/feedback",
+      name: "feedback",
+      component: FeedbackView,
+      meta: {
+        title: "Feedback Form",
+        breadcrumb: "Feedback",
+      },
     },
   ],
 });

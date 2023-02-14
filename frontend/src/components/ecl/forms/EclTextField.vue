@@ -7,6 +7,9 @@
       :class="classList"
       :placeholder="placeholderText"
       :disabled="disabled"
+      :required="required"
+      :minlength="minLength"
+      :maxlength="maxLength"
     />
   </ecl-form-group>
 </template>

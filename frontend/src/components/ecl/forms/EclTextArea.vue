@@ -7,6 +7,9 @@
       :class="classList"
       :placeholder="placeholderText"
       :disabled="disabled"
+      :required="required"
+      :minlength="minLength"
+      :maxlength="maxLength"
     />
   </ecl-form-group>
 </template>
@@ -27,7 +30,7 @@ export default {
   extends: BaseInputField,
   props: {
     rows: {
-      type: Number,
+      type: [Number, String],
       required: false,
       default: 5,
     },

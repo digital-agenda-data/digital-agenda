@@ -106,6 +106,14 @@
               <li class="ecl-site-footer__list-item">
                 <ecl-link
                   class="ecl-site-footer__link"
+                  :to="{ name: 'feedback' }"
+                  aria-label="Link to Submit feedback"
+                  label="Submit feedback"
+                />
+              </li>
+              <li class="ecl-site-footer__list-item">
+                <ecl-link
+                  class="ecl-site-footer__link"
                   to="https://ec.europa.eu/info/about-european-commission/contact_en"
                   aria-label="Link to Contact the European Commission"
                   label="Contact us"
