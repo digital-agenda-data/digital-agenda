@@ -23,6 +23,8 @@ export const useMessagesStore = defineStore("messages", {
      * @param message.description {string} Message body
      */
     addMessage(message) {
+      window.scrollTo(0, 0);
+
       if (message.id) {
         for (let i = 0; i < this.messages.length; i++) {
           if (this.messages[i].id === message.id) {
