@@ -88,6 +88,8 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "django_json_widget",
     "django_extensions",
+    "constance",
+    "constance.backends.database",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
@@ -298,6 +300,16 @@ MEDIA_ROOT = FS_DIR / "media"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Constance
+CONSTANCE_BACKEND = "constance.backends.database.DatabaseBackend"
+CONSTANCE_CONFIG = {
+    "FEEDBACK_EMAIL": (
+        "feedback@example.com",
+        "Email address where feedback messages are sent to",
+    ),
+}
+
 
 # Celery
 CELERY_BROKER_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CELERY_DB}"

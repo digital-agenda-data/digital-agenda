@@ -6,6 +6,7 @@ django-admin-sortable2
 django-ckeditor
 django-colorfield
 django-composite-field
+django-constance[database]
 django-cors-headers
 django-environ
 django-extensions

@@ -1,3 +1,4 @@
+from constance import config
 from django.core.mail import send_mail
 from rest_framework import mixins
 from rest_framework import viewsets
@@ -25,5 +26,5 @@ class FeedbackViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             "[Digital Agenda Data] New feedback received",
             EMAIL_TEMPLATE % serializer.validated_data,
             None,
-            ["test@example.com"],
+            [config.FEEDBACK_EMAIL],
         )
