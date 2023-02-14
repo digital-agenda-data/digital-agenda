@@ -1,5 +1,6 @@
-import logging
 import os
+import socket
+import logging
 from datetime import timedelta
 from pathlib import Path
 
@@ -196,6 +197,28 @@ CACHES = {
         "TIMEOUT": env.int("CACHE_TIMEOUT", default=None),
     }
 }
+
+# EMAIL
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email-backend
+EMAIL_BACKEND = env.str(
+    "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
+)
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email-host
+EMAIL_HOST = env.str("EMAIL_HOST", default="localhost")
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email-port
+EMAIL_PORT = env.str("EMAIL_PORT", default="25")
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email-host-user
+EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", default="")
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email-host-password
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", default="")
+# https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-email-use-tls
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=False)
+# https://docs.djangoproject.com/en/4.0/ref/settings/#email-timeout
+EMAIL_TIMEOUT = env.int("EMAIL_TIMEOUT", default=30)
+# https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-DEFAULT_FROM_EMAIL
+DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="") or (
+    "noreply@" + socket.gethostname()
+)
 
 
 AUTH_USER_MODEL = "accounts.User"
