@@ -80,9 +80,6 @@ export default {
     downloadChart() {
       this.highchartInstance.exportChartLocal();
     },
-    exportChart() {
-      this.highchartInstance.downloadXLS();
-    },
   },
 };
 </script>
