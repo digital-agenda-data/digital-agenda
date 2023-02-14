@@ -219,7 +219,13 @@ class FactXLSXSerializer:
         )
         sheet.append(
             [
-                "Dataset metadata and download",
+                "Charts",
+                f"https://{host}/datasets/{self.chart_group.code}/charts",
+            ]
+        )
+        sheet.append(
+            [
+                "List of available indicators",
                 f"https://{host}/datasets/{self.chart_group.code}/indicators",
             ]
         )
