@@ -30,6 +30,7 @@
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclTextArea from "@/components/ecl/forms/EclTextArea.vue";
 import EclTextField from "@/components/ecl/forms/EclTextField.vue";
+import { api } from "@/lib/api";
 
 export default {
   name: "FeedbackView",
@@ -41,13 +42,17 @@ export default {
     };
   },
   methods: {
-    submitFeedback() {
+    async submitFeedback() {
       const previousURL = new URL(
         this.$router.options.history.state.back,
         window.location
       ).href;
 
-      console.log(this.email, this.message, previousURL);
+      await api.post("/feedback/", {
+        url: previousURL,
+        email: this.email,
+        message: this.message,
+      });
     },
   },
 };

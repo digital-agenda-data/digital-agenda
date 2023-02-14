@@ -108,3 +108,19 @@ class FactSerializer(serializers.ModelSerializer):
             "value",
             "flags",
         ]
+
+
+########################
+# Feedback serializers
+########################
+
+
+class FeedbackSerializer(serializers.Serializer):
+    url = serializers.URLField(write_only=True, required=True)
+    email = serializers.EmailField(write_only=True, required=False, allow_blank=True)
+    message = serializers.CharField(
+        write_only=True, required=True, min_length=10, max_length=10_000
+    )
+
+    class Meta:
+        fields = ["url", "email", "message"]

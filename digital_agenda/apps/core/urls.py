@@ -2,6 +2,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from .views.facts import FactsViewSet
+from .views.feedback import FeedbackViewSet
 from .views.unit import UnitViewSet
 from .views.period import PeriodViewSet
 from .views.country import CountryViewSet
@@ -21,6 +22,7 @@ router.register("indicators", IndicatorViewSet)
 router.register("data-sources", DataSourceViewSet)
 router.register("breakdown-groups", BreakdownGroupViewSet)
 router.register("indicator-groups", IndicatorGroupViewSet)
+router.register("feedback", FeedbackViewSet, "feedback")
 
 urlpatterns = [
     path("", include(router.urls)),
