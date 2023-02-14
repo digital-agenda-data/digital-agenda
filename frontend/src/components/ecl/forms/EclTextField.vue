@@ -19,7 +19,7 @@ import BaseInputField from "@/components/ecl/forms/BaseInputField.vue";
 import EclFormGroup from "@/components/ecl/forms/EclFormGroup.vue";
 
 /**
- * ECL Range component, see documentation here:
+ * ECL Text Field component, see documentation here:
  *
  *  https://ec.europa.eu/component-library/ec/components/forms/text-field/usage/
  *
