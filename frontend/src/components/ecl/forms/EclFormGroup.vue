@@ -10,9 +10,13 @@
     <div v-if="helpText" class="ecl-help-block">
       {{ helpText }}
     </div>
-    <div v-if="error" class="ecl-feedback-message">
+    <div
+      v-for="(msg, index) in errors ?? []"
+      :key="index"
+      class="ecl-feedback-message"
+    >
       <ecl-icon icon="error" size="m" class="ecl-feedback-message__icon" />
-      {{ error }}
+      {{ msg }}
     </div>
     <slot></slot>
   </div>
@@ -40,10 +44,10 @@ export default {
       required: false,
       default: null,
     },
-    error: {
-      type: String,
+    errors: {
+      type: Array,
       required: false,
-      default: "",
+      default: null,
     },
   },
 };
