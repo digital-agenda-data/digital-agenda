@@ -1,3 +1,8 @@
+import logging
+
+import httpx
+from django.core.exceptions import ValidationError
+from django.utils.deconstruct import deconstructible
 from rest_framework import serializers
 
 from .models import (
@@ -11,6 +16,8 @@ from .models import (
     Period,
     Fact,
 )
+
+logger = logging.getLogger(__name__)
 
 ########################
 # Dimensions serializers
@@ -115,12 +122,64 @@ class FactSerializer(serializers.ModelSerializer):
 ########################
 
 
+@deconstructible
+class CaptchaValidator:
+    """Validate EU Captcha response
+
+    See https://wikis.ec.europa.eu/display/WEBGUIDE/09.+EU+CAPTCHA for details.
+    """
+
+    code = "invalid_captcha"
+
+    def __init__(self, code=None):
+        if code is not None:
+            self.code = code
+
+    def __call__(self, value):
+        if missing := {"id", "answer", "token"}.difference(set(value.keys())):
+            raise ValidationError(
+                f"Missing values for: {', '.join(missing)}", code=self.code
+            )
+
+        try:
+            resp = httpx.post(
+                f"https://api.eucaptcha.eu/api/validateCaptcha/{value['id']}",
+                headers={
+                    "x-jwtString": value["token"],
+                },
+                data={
+                    "captchaAnswer": value["answer"],
+                    "useAudio": "false",
+                    "captchaType": "WHATS_UP",
+                },
+                timeout=30,
+            )
+            resp.raise_for_status()
+            resp = resp.json()
+            logger.debug("Captcha validation response: %s", resp)
+
+            assert resp["responseCaptcha"] == "success", "incorrect answer"
+        except (httpx.HTTPError, AssertionError) as e:
+            logger.debug("Captcha validation failed: %s", e)
+            raise ValidationError(f"Unable to verify captcha: {e}", code=self.code)
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.code == other.code
+
+
+class CaptchaField(serializers.JSONField):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.validators.append(CaptchaValidator())
+
+
 class FeedbackSerializer(serializers.Serializer):
     url = serializers.URLField(write_only=True, required=True)
     email = serializers.EmailField(write_only=True, required=False, allow_blank=True)
     message = serializers.CharField(
         write_only=True, required=True, min_length=10, max_length=10_000
     )
+    captcha = CaptchaField(write_only=True, required=True)
 
     class Meta:
-        fields = ["url", "email", "message"]
+        fields = ["url", "email", "message", "captcha"]

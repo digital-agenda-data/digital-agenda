@@ -24,11 +24,17 @@
       placeholder-text="Type in your message"
       :errors="errors.message"
     />
+    <captcha-field
+      ref="captchaField"
+      v-model="captcha"
+      :errors="errors.captcha"
+    />
     <ecl-button label="Submit" type="submit" />
   </form>
 </template>
 
 <script>
+import CaptchaField from "@/components/CaptchaField.vue";
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclTextArea from "@/components/ecl/forms/EclTextArea.vue";
 import EclTextField from "@/components/ecl/forms/EclTextField.vue";
@@ -38,16 +44,18 @@ import { mapActions } from "pinia";
 
 export default {
   name: "FeedbackView",
-  components: { EclButton, EclTextArea, EclTextField },
+  components: { CaptchaField, EclButton, EclTextArea, EclTextField },
   data() {
     return {
       errors: {
         email: [],
         message: [],
+        captcha: [],
         error: "",
       },
       email: "",
       message: "",
+      captcha: null,
     };
   },
   computed: {
@@ -59,6 +67,7 @@ export default {
         ).href,
         email: this.email,
         message: this.message,
+        captcha: this.captcha,
       };
     },
   },
@@ -84,6 +93,10 @@ export default {
           title: "Unable to send feedback",
           description: (this.errors.error ?? []).join(","),
         });
+      } finally {
+        // Regardless of result reload the captcha, as the image
+        // should have already been invalidated server side
+        await this.$refs.captchaField.reloadCaptchaImg();
       }
     },
     resetForm() {

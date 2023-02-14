@@ -27,7 +27,7 @@ export default {
   components: { EclFormGroup },
   props: {
     modelValue: {
-      type: Number,
+      type: [Number, String],
       required: false,
       default: 0,
     },
