@@ -10,13 +10,20 @@
     <div v-if="helpText" class="ecl-help-block">
       {{ helpText }}
     </div>
+    <div v-if="error" class="ecl-feedback-message">
+      <ecl-icon icon="error" size="m" class="ecl-feedback-message__icon" />
+      {{ error }}
+    </div>
     <slot></slot>
   </div>
 </template>
 
 <script>
+import EclIcon from "@/components/ecl/EclIcon.vue";
+
 export default {
   name: "EclFormGroup",
+  components: { EclIcon },
   props: {
     label: {
       type: String,
@@ -32,6 +39,11 @@ export default {
       type: Boolean,
       required: false,
       default: null,
+    },
+    error: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
 };
