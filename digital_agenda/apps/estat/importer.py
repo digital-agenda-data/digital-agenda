@@ -63,7 +63,11 @@ class EstatDataset(JSONStat):
             return
 
         logger.info("Downloading from: %s", self.download_url)
-        with httpx.stream("GET", self.download_url) as resp:
+        with httpx.stream(
+            "GET",
+            self.download_url,
+            timeout=settings.ESTAT_DOWNLOAD_TIMEOUT,
+        ) as resp:
             with self.download_gz_path.open("wb") as f_out:
                 for chunk in resp.iter_raw():
                     f_out.write(chunk)
