@@ -1,5 +1,5 @@
 <template>
-  <ecl-form-group v-bind="{ label, helpText, required, error }">
+  <ecl-form-group v-bind="{ label, helpText, required, errors }">
     <textarea
       v-model="value"
       :rows="rows"

@@ -35,10 +35,10 @@ export default {
       required: false,
       default: false,
     },
-    error: {
-      type: String,
+    errors: {
+      type: Array,
       required: false,
-      default: "",
+      default: null,
     },
     minLength: {
       type: [Number, String],
@@ -83,7 +83,7 @@ export default {
       if (this.disabled) {
         result.push(`${this.className}--disabled`);
       }
-      if (this.error) {
+      if (this.errors && this.errors.length > 0) {
         result.push(`${this.className}--invalid`);
       }
 
