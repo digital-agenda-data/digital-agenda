@@ -61,17 +61,30 @@
         </div>
       </div>
     </div>
+    <div class="ecl-site-header__message">
+      <div class="ecl-container ecl-u-mt-m">
+        <ecl-message
+          v-for="(message, index) in messagesStore.messageList"
+          v-bind="message"
+          :key="'message' + index"
+          @close="messagesStore.removeMessage(index)"
+        />
+      </div>
+    </div>
   </header>
 </template>
 
 <script>
 import EclIcon from "@/components/ecl/EclIcon.vue";
+import EclMessage from "@/components/ecl/EclMessage.vue";
 import { loginLink } from "@/lib/api";
+import { useMessagesStore } from "@/stores/messagesStore";
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclSearchForm from "@/components/ecl/forms/EclSearchForm.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { useRouteQuery } from "@vueuse/router";
+import { mapStores } from "pinia";
 
 /**
  * ECL Site Header component, see documentation here:
@@ -81,7 +94,7 @@ import { useRouteQuery } from "@vueuse/router";
  */
 export default {
   name: "EclSiteHeader",
-  components: { EclIcon, EclLink, EclButton, EclSearchForm },
+  components: { EclMessage, EclIcon, EclLink, EclButton, EclSearchForm },
   data() {
     return {
       logoURL,
@@ -90,6 +103,7 @@ export default {
     };
   },
   computed: {
+    ...mapStores(useMessagesStore),
     searchAction() {
       return this.$router.resolve({ name: "search" }).fullPath;
     },
