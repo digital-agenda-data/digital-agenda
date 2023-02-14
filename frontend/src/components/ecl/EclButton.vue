@@ -13,7 +13,7 @@
           v-if="icon"
           :icon="icon"
           :rotate="iconRotate"
-          size="xs"
+          :size="iconSize"
           class="ecl-button__icon"
           :class="{
             // Sets extra space if there is a label before
@@ -74,6 +74,16 @@ export default {
       type: [String, Number],
       required: false,
       default: 0,
+    },
+    iconSize: {
+      type: String,
+      required: false,
+      default: "xs",
+      validator(value) {
+        return ["2xs", "xs", "s", "m", "l", "xl", "2xl", "fluid"].includes(
+          value
+        );
+      },
     },
   },
 };
