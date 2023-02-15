@@ -100,10 +100,11 @@
 
               <div class="ecl-u-type-paragraph-m">
                 <strong>Time coverage:&nbsp;</strong>
-                <span>
+                <span v-if="indicator.min_period !== indicator.max_period">
                   {{ indicator.min_period }} -
                   {{ indicator.max_period }}
                 </span>
+                <span v-else>{{ indicator.min_period }}</span>
               </div>
 
               <div
