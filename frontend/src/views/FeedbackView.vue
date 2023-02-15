@@ -1,5 +1,6 @@
 <template>
   <form class="feedback-form" @submit.prevent="submitFeedback">
+    <ecl-spinner v-if="loading" absolute centered />
     <ecl-text-field
       v-model="email"
       type="email"
@@ -34,6 +35,7 @@
 </template>
 
 <script>
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import CaptchaField from "@/components/CaptchaField.vue";
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclTextArea from "@/components/ecl/forms/EclTextArea.vue";
@@ -44,9 +46,16 @@ import { mapActions } from "pinia";
 
 export default {
   name: "FeedbackView",
-  components: { CaptchaField, EclButton, EclTextArea, EclTextField },
+  components: {
+    EclSpinner,
+    CaptchaField,
+    EclButton,
+    EclTextArea,
+    EclTextField,
+  },
   data() {
     return {
+      loading: false,
       errors: {
         email: [],
         message: [],
@@ -75,6 +84,7 @@ export default {
     ...mapActions(useMessagesStore, ["addMessage"]),
     async submitFeedback() {
       try {
+        this.loading = true;
         this.resetErrors();
         await api.post("/feedback/", this.postData);
         this.addMessage({
@@ -94,6 +104,7 @@ export default {
           description: (this.errors.error ?? []).join(","),
         });
       } finally {
+        this.loading = false;
         // Regardless of result reload the captcha, as the image
         // should have already been invalidated server side
         await this.$refs.captchaField.reloadCaptchaImg();
