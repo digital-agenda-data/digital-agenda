@@ -1,4 +1,5 @@
 <template>
+  <ecl-search-form class="ecl-u-mt-l" placeholder="search for indicators" />
   <div v-if="apiData" class="ecl-u-mt-2xl">
     <table
       class="ecl-table ecl-table--zebra ecl-u-break-word ecl-u-position-relative"
@@ -45,6 +46,7 @@
 </template>
 
 <script>
+import EclSearchForm from "@/components/ecl/forms/EclSearchForm.vue";
 import { ref } from "vue";
 import { mapState } from "pinia";
 import { useRouteParams, useRouteQuery } from "@vueuse/router";
@@ -61,7 +63,7 @@ import EclPagination from "@/components/ecl/navigation/EclPagination.vue";
 
 export default {
   name: "SearchView",
-  components: { EclPagination, EclLink, EclSpinner },
+  components: { EclSearchForm, EclPagination, EclLink, EclSpinner },
   data() {
     return {
       loading: ref(false),

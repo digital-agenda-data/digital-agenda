@@ -47,7 +47,6 @@
                 data-ecl-search-form=""
                 placeholder="e.g. social media"
                 help-text="Search for indicators"
-                :action="searchAction"
               />
             </div>
           </div>
@@ -104,9 +103,6 @@ export default {
   },
   computed: {
     ...mapStores(useMessagesStore),
-    searchAction() {
-      return this.$router.resolve({ name: "search" }).fullPath;
-    },
   },
 };
 </script>

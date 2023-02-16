@@ -1,5 +1,10 @@
 <template>
-  <form class="ecl-search-form" role="search" :action="action" :method="method">
+  <form
+    class="ecl-search-form"
+    role="search"
+    :action="searchAction"
+    :method="method"
+  >
     <div class="ecl-form-group">
       <div v-if="helpText" class="ecl-help-block">
         {{ helpText }}
@@ -55,11 +60,6 @@ export default {
       required: false,
       default: null,
     },
-    action: {
-      type: String,
-      required: false,
-      default: ".",
-    },
     method: {
       type: String,
       required: false,
@@ -80,6 +80,9 @@ export default {
       set(value) {
         this.$emit("update:modelValue", value);
       },
+    },
+    searchAction() {
+      return this.$router.resolve({ name: "search" }).fullPath;
     },
   },
 };

@@ -1,7 +1,7 @@
 import FeedbackView from "@/views/FeedbackView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
-import { useRoute } from "@/stores/routeStore";
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
@@ -50,9 +50,7 @@ const router = createRouter({
       name: "search",
       component: SearchView,
       meta: {
-        title() {
-          return `Search results for: ${useRoute().query?.q || ""}`;
-        },
+        title: "Search for indicators",
         breadcrumb: "Search",
       },
     },
@@ -123,6 +121,15 @@ const router = createRouter({
       meta: {
         title: "Feedback Form",
         breadcrumb: "Feedback",
+      },
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "not-found",
+      component: NotFoundView,
+      meta: {
+        title: "Not Found",
+        breadcrumb: "Not Found",
       },
     },
   ],
