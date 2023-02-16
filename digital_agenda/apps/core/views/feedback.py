@@ -2,6 +2,7 @@ from constance import config
 from django.core.mail import send_mail
 from rest_framework import mixins
 from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
 
 from digital_agenda.apps.core.serializers import FeedbackSerializer
 
@@ -20,6 +21,7 @@ Feedback message:
 class FeedbackViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     hide_not_auth = True
     serializer_class = FeedbackSerializer
+    permission_classes = (AllowAny,)
 
     def perform_create(self, serializer):
         send_mail(
