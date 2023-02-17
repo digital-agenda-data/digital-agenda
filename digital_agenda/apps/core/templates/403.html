@@ -1,0 +1,40 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n %}
+
+
+{% block header %}
+<div id="header">
+    <div id="branding">
+    {% block branding %}{% endblock %}
+    </div>
+    {% block usertools %}
+    {% if user.is_authenticated %}
+    <div id="user-tools">
+        {% block welcome-msg %}
+            {% translate 'Welcome,' %}
+            <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+        {% endblock %}
+        {% block userlinks %}
+            {% if site_url %}
+                <a href="{{ site_url }}">{% translate 'View site' %}</a> /
+            {% endif %}
+
+            {% if user.has_usable_password %}
+            <a href="{% url 'admin:password_change' %}">{% translate 'Change password' %}</a> /
+            {% endif %}
+            <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+                {% csrf_token %}
+                <button type="submit">{% translate 'Log out' %}</button>
+            </form>
+        {% endblock %}
+    </div>
+    {% endif %}
+    {% endblock usertools %}
+</div>
+{% endblock header %}
+
+{% block content %}
+  You do not have access to access this page. Please contact the admin in order to get access to your account.
+{% endblock content %}
+
