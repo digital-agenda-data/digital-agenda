@@ -3,6 +3,7 @@ Django
 django-admin-autocomplete-filter
 django-admin-env-notice
 django-admin-sortable2
+django-cas-ng
 django-ckeditor
 django-colorfield
 django-composite-field

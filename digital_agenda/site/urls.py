@@ -1,3 +1,4 @@
+import django_cas_ng.views
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -31,6 +32,16 @@ urlpatterns = [
     ),
     path("ht/", include("health_check.urls")),
     path("dashboard/", include("django_sql_dashboard.urls")),
+    path(
+        "admin/cas/login",
+        django_cas_ng.views.LoginView.as_view(),
+        name="cas_ng_login",
+    ),
+    path(
+        "admin/cas/logout",
+        django_cas_ng.views.LogoutView.as_view(),
+        name="cas_ng_logout",
+    ),
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),

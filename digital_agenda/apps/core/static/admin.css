@@ -22,3 +22,26 @@ form .aligned label + div.help {
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
+
+.sso-logins {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e3e3e3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sso-logins .sso-login-button {
+  display: block;
+  width: 4rem;
+  height: 3rem;
+  text-align: center;
+}
+
+.sso-logins .sso-login-button img {
+  max-width: 100%;
+  max-height: 100%;
+}

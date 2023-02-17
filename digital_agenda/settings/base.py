@@ -90,6 +90,7 @@ THIRD_PARTY_APPS = [
     "django_extensions",
     "constance",
     "constance.backends.database",
+    "django_cas_ng",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
@@ -105,8 +106,19 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # "django_cas_ng.middleware.CASMiddleware",
 ]
 
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "django_cas_ng.backends.CASBackend",
+)
+
+
+# https://djangocas.dev/docs/latest/configuration.html#
+CAS_SERVER_URL = "https://ecas.ec.europa.eu/cas/"
+CAS_VERSION = "3"
+CAS_USERNAME_ATTRIBUTE = "email"
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_EXPOSE_HEADERS = ["content-disposition"]
@@ -120,15 +132,6 @@ ROOT_URLCONF = "digital_agenda.site.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            # Django doesn't expect the apps to be packaged one at this level
-            # So we need to manually specify the path(s).
-            BASE_DIR
-            / "digital_agenda"
-            / "apps"
-            / "charts"
-            / "templates",
-        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
