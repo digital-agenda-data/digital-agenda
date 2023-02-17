@@ -40,7 +40,7 @@ Cypress.Commands.addAll({
       .get("form.ecl-search-form [type=submit]")
       .click()
       .get("h1")
-      .contains("Search results for");
+      .contains("Search for indicators");
   },
 
   checkExportLink(linkText, expectedType) {
