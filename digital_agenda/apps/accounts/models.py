@@ -3,6 +3,7 @@ from django.contrib.auth.models import (
     BaseUserManager,
     PermissionsMixin,
 )
+from django.contrib.postgres.fields import CIEmailField
 from django.db import models
 
 from digital_agenda.common.models import TimestampedModel
@@ -31,7 +32,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
-    email = models.EmailField(unique=True)
+    email = CIEmailField(unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
