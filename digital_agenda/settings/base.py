@@ -106,7 +106,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # "django_cas_ng.middleware.CASMiddleware",
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -119,6 +118,7 @@ AUTHENTICATION_BACKENDS = (
 CAS_SERVER_URL = "https://ecas.ec.europa.eu/cas/"
 CAS_VERSION = "3"
 CAS_USERNAME_ATTRIBUTE = "email"
+CAS_CREATE_USER = False
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_EXPOSE_HEADERS = ["content-disposition"]
