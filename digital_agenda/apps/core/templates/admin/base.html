@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block extrahead %}
+  <script defer src="https://europa.eu/webtools/load.js?globan=1110" type="text/javascript"></script>
+{% endblock %}
+
 {% block extrastyle %}
   {{ block.super }}
   <link rel="stylesheet" href="{% static "admin.css" %}">
