@@ -66,6 +66,12 @@ export default {
     docTitle() {
       document.title = this.docTitle;
     },
+    $route(to, from) {
+      if (window._paq && to.path !== from.path) {
+        // Log a new view manually when the route changes.
+        window._paq.push(["trackPageView"]);
+      }
+    },
   },
   async mounted() {
     await this.loadECL();
