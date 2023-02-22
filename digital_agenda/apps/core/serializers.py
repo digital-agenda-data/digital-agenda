@@ -142,13 +142,19 @@ class CaptchaValidator:
             )
 
         try:
+            # answer must be in [0, 360) deg range
+            answer = int(value["answer"]) % 360
+        except (TypeError, ValueError):
+            raise ValidationError({"answer": "invalid answer"})
+
+        try:
             resp = httpx.post(
                 f"https://api.eucaptcha.eu/api/validateCaptcha/{value['id']}",
                 headers={
                     "x-jwtString": value["token"],
                 },
                 data={
-                    "captchaAnswer": value["answer"],
+                    "captchaAnswer": answer,
                     "useAudio": "false",
                     "captchaType": "WHATS_UP",
                 },
