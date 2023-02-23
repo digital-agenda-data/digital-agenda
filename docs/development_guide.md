@@ -29,6 +29,7 @@
 - [European Commission WebTools](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Webtools+documentation+-+Homepage), 
   documentation requires an account to view (with 2FA active) 
     - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner)
+    - [Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)
 - Misc:
     - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA) 
 
