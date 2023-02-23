@@ -1,4 +1,5 @@
 import "./styles/main.scss";
+import ECWebTool from "@/directives/ECWebTool";
 
 import { createApp, reactive } from "vue";
 
@@ -50,7 +51,8 @@ app.mixin({
   },
 });
 
-app.directive("ecl-init", ECLInit);
 app.directive("visible", visible);
+app.directive("ecl-init", ECLInit);
+app.directive("ec-wt-render", ECWebTool);
 
 app.mount("#digital-agenda-app");
