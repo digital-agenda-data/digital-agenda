@@ -35,10 +35,7 @@
         name: 'feedback',
       }"
     />
-    <ecl-social-media-share
-      :text="currentChart.name"
-      class="ecl-u-d-none ecl-u-d-l-block"
-    />
+    <ecl-social-media-share :text="currentChart.name" />
   </div>
 </template>
 <script>
