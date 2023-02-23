@@ -80,7 +80,6 @@ THIRD_PARTY_APPS = [
     "admin_auto_filters",
     "psqlextra",
     "rest_framework",
-    "rest_framework.authtoken",
     "django_sql_dashboard",
     "health_check",
     "health_check.db",
