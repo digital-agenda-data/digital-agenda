@@ -36,7 +36,7 @@ export default {
           type: "category",
         },
         plotOptions: {
-          column: {
+          [this.chartType]: {
             stacking: "normal",
           },
         },

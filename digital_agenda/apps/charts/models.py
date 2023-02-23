@@ -133,6 +133,21 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             ),
         ),
         (
+            "Bar",
+            (
+                ("BAR_COMPARE_COUNTRIES", "Bar Chart: Compare Countries"),
+                ("BAR_COMPARE_BREAKDOWNS", "Bar Chart: Compare Breakdowns"),
+                (
+                    "BAR_STACKED_COMPARE_BREAKDOWNS",
+                    "Bar Chart Stacked: Compare Breakdowns",
+                ),
+                (
+                    "BAR_STACKED_COMPARE_BREAKDOWNS_WEIGHTED",
+                    "Bar Chart Stacked: Compare Breakdowns Weighted",
+                ),
+            ),
+        ),
+        (
             "Spline",
             (
                 ("SPLINE_COMPARE_COUNTRIES", "Spline Chart: Compare Countries"),
