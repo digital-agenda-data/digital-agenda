@@ -3,6 +3,10 @@
 @import "transitions";
 @import "multiselect";
 
+body.digital-agenda-embedded .globan {
+  display: none;
+}
+
 #digital-agenda-app {
   font-family: Arial, sans-serif;
   text-rendering: optimizeLegibility;

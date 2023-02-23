@@ -75,6 +75,10 @@ export default {
   },
   async mounted() {
     await this.loadECL();
+    await this.$router.isReady();
+    if (this.$route.query.embed) {
+      document.body.classList.add("digital-agenda-embedded");
+    }
   },
   methods: {
     /**
