@@ -12,7 +12,7 @@
 
 - API documentation can be explored with [redocs](http://localhost:8000/api/v1/schema/redoc/) 
   or [swagger](http://localhost:8000/api/v1/schema/swagger-ui/#/) while running locally 
-- API calls can be made from the frontend using the libray in [lib/api.js](../frontend/src/lib/api.js)
+- API calls can be made from the frontend using the axios instance from [lib/api.js](../frontend/src/lib/api.js)
 - Backend:
     - [django](https://docs.djangoproject.com//)
     - [django-rest-framework](https://www.django-rest-framework.org/)
@@ -26,6 +26,11 @@
     - [vite](https://vitejs.dev/)
     - [Cypress testing](https://docs.cypress.io/)
     - [Europa Component Library](https://ec.europa.eu/component-library/)
+- [European Commission WebTools](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Webtools+documentation+-+Homepage), 
+  documentation requires an account to view (with 2FA active) 
+    - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner)
+- Misc:
+    - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA) 
 
 ## Adding a new backend dependency
 
