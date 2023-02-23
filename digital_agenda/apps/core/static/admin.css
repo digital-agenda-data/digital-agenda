@@ -1,3 +1,63 @@
+/* Use palette from https://ec.europa.eu/component-library/ec/guidelines/colours/ */
+:root {
+  --primary: #004494;
+  --secondary: #002F67;
+  --accent: #FFF4BB;
+  --primary-fg: #fff;
+
+  --body-fg: #404040;
+  --body-bg: #fff;
+  --body-quiet-color: #707070;
+  --body-loud-color: #000;
+
+  --header-color: #FFF4BB;
+  --header-branding-color: var(--accent);
+  --header-bg: var(--secondary);
+  --header-link-color: var(--primary-fg);
+
+  --breadcrumbs-fg: #BFD0E4;
+  --breadcrumbs-link-fg: var(--body-bg);
+  --breadcrumbs-bg: var(--primary);
+
+  --link-fg: var(--primary);
+  --link-hover-color: var(--secondary);
+  --link-selected-fg: var(--accent);
+
+  --hairline-color: #E3E3E3;
+  --border-color: #CFCFCF;
+
+  --error-fg: #DA2131;
+
+  --message-success-bg: #d6e9d1;
+  --message-warning-bg: #FFF4BB;
+  --message-error-bg: #f8d2d5;
+
+  --darkened-bg: #F9F9F9;
+  --selected-bg: #E3E3E3; /* E.g. selected table cells */
+  --selected-row: #FFF4BB;
+
+  --button-fg: #fff;
+  --button-bg: var(--primary);
+  --button-hover-bg: var(--secondary);
+  --default-button-bg: #003776;
+  --default-button-hover-bg: var(--secondary);
+  --close-button-bg: #9F9F9F;
+  --close-button-hover-bg: #707070;
+  --delete-button-bg: #DA2131;
+  --delete-button-hover-bg: #981722;
+
+  --object-tools-fg: var(--button-fg);
+  --object-tools-bg: var(--close-button-bg);
+  --object-tools-hover-bg: var(--close-button-hover-bg);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 fieldset.wide .selector {
   width: 1000px;
 }
