@@ -5,7 +5,7 @@
 {% block extrahead %}
   <script
     defer
-    src="https://europa.eu/webtools/load.js"
+    src="https://europa.eu/webtools/load.js?globan=1110"
     type="text/javascript"
   ></script>
 {% endblock %}
@@ -13,20 +13,4 @@
 {% block extrastyle %}
   {{ block.super }}
   <link rel="stylesheet" href="{% static "admin.css" %}">
-{% endblock %}
-
-{% block header %}
-  <script type="application/json">
-  {
-    "utility": "globan",
-    "theme": "dark",
-    "logo": true,
-    "link": true,
-    "lang": "en",
-    "mode": false,
-    "zindex": 40
-  }
-  </script>
-
-  {{ block.super }}
 {% endblock %}

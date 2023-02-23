@@ -54,7 +54,8 @@ ALLOWED_HOSTS = [_host.rsplit(":", 1)[0] for _host in BACKEND_HOST]
 
 DJANGO_APPS = [
     "django_admin_env_notice",
-    "django.contrib.admin",
+    # "django.contrib.admin",
+    "digital_agenda.site.admin.DigitalAgendaAdminConfig",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.postgres",
