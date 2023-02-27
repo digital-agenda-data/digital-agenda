@@ -103,6 +103,9 @@ export default {
           text: this.chartSubtitle,
         },
         xAxis: {
+          lineWidth: 1,
+          gridLineWidth: 1,
+          plotLines: this.getPlotLineValue("X"),
           title: {
             text: this.makeTitle([
               this.filterStore.indicatorX,
@@ -113,6 +116,9 @@ export default {
           },
         },
         yAxis: {
+          lineWidth: 1,
+          gridLineWidth: 1,
+          plotLines: this.getPlotLineValue("Y"),
           title: {
             text: this.makeTitle([
               this.filterStore.indicatorY,
@@ -123,6 +129,22 @@ export default {
           },
         },
       };
+    },
+  },
+  methods: {
+    getPlotLineValue(axis) {
+      const values = this.apiData
+        .filter((item) => item.axis === axis)
+        .map((item) => item.value);
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+
+      return [
+        {
+          color: "#000000",
+          value: (max - min) / 2 + min,
+        },
+      ];
     },
   },
 };
