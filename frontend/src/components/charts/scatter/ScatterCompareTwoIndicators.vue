@@ -25,7 +25,10 @@ export default {
         IndicatorFilter,
         BreakdownWithGroupsFilter,
         UnitFilter,
-        PeriodFilter,
+        {
+          component: PeriodFilter,
+          attrs: { showAxisLabel: false },
+        },
       ];
     },
     filterYComponents() {
