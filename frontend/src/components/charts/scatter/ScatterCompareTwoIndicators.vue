@@ -52,15 +52,17 @@ export default {
     },
     series() {
       return Object.keys(this.apiValuesGrouped).map((countryCode) => {
+        const country = this.countryByCode.get(countryCode);
+        const name = this.getDisplay(country);
         return {
-          name: this.getDisplay(this.countryByCode.get(countryCode)),
-          color: this.countryByCode.get(countryCode)?.color,
+          name,
+          color: country?.color,
           marker: {
             symbol: "circle",
           },
           data: [
             {
-              name: countryCode,
+              name,
               x: this.apiValuesGrouped[countryCode].X || 0,
               y: this.apiValuesGrouped[countryCode].Y || 0,
               z: this.apiValuesGrouped[countryCode].Z || 0,
