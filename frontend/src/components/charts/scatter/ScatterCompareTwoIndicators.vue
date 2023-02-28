@@ -110,7 +110,7 @@ export default {
         xAxis: {
           lineWidth: 1,
           gridLineWidth: 1,
-          plotLines: this.getPlotLineValue("X"),
+          plotLines: this.getMidPlotLine("X"),
           title: {
             text: this.makeTitle([
               this.filterStore.indicatorX,
@@ -123,7 +123,7 @@ export default {
         yAxis: {
           lineWidth: 1,
           gridLineWidth: 1,
-          plotLines: this.getPlotLineValue("Y"),
+          plotLines: this.getMidPlotLine("Y"),
           title: {
             text: this.makeTitle([
               this.filterStore.indicatorY,
@@ -137,7 +137,12 @@ export default {
     },
   },
   methods: {
-    getPlotLineValue(axis) {
+    /**
+     * Get the middle plot line for this axis
+     *
+     * @return {[{color: string, value: number}]}
+     */
+    getMidPlotLine(axis) {
       const values = this.apiData
         .filter((item) => item.axis === axis)
         .map((item) => item.value);
