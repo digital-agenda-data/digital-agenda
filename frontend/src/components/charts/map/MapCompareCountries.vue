@@ -77,7 +77,6 @@ export default {
       return {
         chart: {
           map: this.mapData,
-          height: "600px",
           // Animations for maps are extremely JANKY,
           // so disable them completely.
           animation: false,
@@ -117,9 +116,6 @@ export default {
             {
               condition: { minWidth: 768 },
               chartOptions: {
-                chart: {
-                  height: "848px",
-                },
                 mapView: {
                   center: [348227.6471561784, 7743167.912180269],
                   zoom: -12.65,

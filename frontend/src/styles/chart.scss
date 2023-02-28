@@ -32,7 +32,6 @@
     position: relative;
   }
 
-  .chart-container-digital-agenda,
   .chart-container-digital-agenda > * {
     height: 700px;
 
@@ -40,6 +39,15 @@
       // Slightly less height is needed on larger screens as we move
       // the legend to the right of the chart instead of the bottom
       height: 600px;
+    }
+  }
+
+  // Map Chart need totally different sizes
+  .chart-container-digital-agenda.MapCompareCountries > * {
+    height: 600px;
+
+    @media (min-width: 768px) {
+      height: 848px;
     }
   }
 }
