@@ -13,7 +13,7 @@ body.digital-agenda-embedded .globan {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  .app-wrapper:not(.digital-agenda-embedded) {
+  .app-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -24,22 +24,8 @@ body.digital-agenda-embedded .globan {
     box-sizing: border-box;
   }
 
-  .app-wrapper:not(.digital-agenda-embedded) main {
+  .app-wrapper main {
     flex-grow: 1;
     padding-bottom: 120px;
-  }
-
-  .digital-agenda-embedded {
-    .hide-embedded,
-    .ecl-page-header,
-    .ecl-site-footer,
-    .ecl-site-header {
-      display: none !important;
-    }
-
-    .ecl-container {
-      width: initial !important;
-      max-width: initial !important;
-    }
   }
 }

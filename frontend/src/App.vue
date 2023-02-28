@@ -1,8 +1,7 @@
 <template>
-  <div
-    class="ecl app-wrapper"
-    :class="{ 'digital-agenda-embedded': $route.query.embed === 'true' }"
-  >
+  <interactive-chart v-if="isEmbedded && isReady" />
+
+  <div v-else-if="isReady" class="ecl app-wrapper">
     <template v-if="isReady">
       <ecl-site-header />
       <main class="ecl-container">
@@ -22,6 +21,7 @@ import { useScriptTag } from "@vueuse/core";
 import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
+import InteractiveChart from "@/components/charts/InteractiveChart.vue";
 import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
 import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
 import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
@@ -34,7 +34,13 @@ const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
 
 export default {
   name: "App",
-  components: { EclPageHeader, EclSpinner, EclSiteFooter, EclSiteHeader },
+  components: {
+    InteractiveChart,
+    EclPageHeader,
+    EclSpinner,
+    EclSiteFooter,
+    EclSiteHeader,
+  },
   data() {
     return {
       eclIsReady: false,
@@ -42,6 +48,9 @@ export default {
   },
   computed: {
     ...mapStores(useChartGroupStore, useChartStore),
+    isEmbedded() {
+      return new URL(window.location).searchParams.get("embed") === "true";
+    },
     isReady() {
       // Only display the app after the chartGroups and the charts
       // have been loaded to avoid layout shifts.
@@ -75,8 +84,7 @@ export default {
   },
   async mounted() {
     await this.loadECL();
-    await this.$router.isReady();
-    if (this.$route.query.embed) {
+    if (this.isEmbedded) {
       document.body.classList.add("digital-agenda-embedded");
     }
   },

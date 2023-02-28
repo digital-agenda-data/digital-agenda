@@ -29,15 +29,34 @@
   }
 
   .chart-container-digital-agenda {
-    display: flex;
-    min-height: 600px;
-    align-items: center;
-    justify-content: center;
+    position: relative;
   }
 
-  .digital-agenda-embedded .chart-container-digital-agenda {
+  .chart-container-digital-agenda,
+  .chart-container-digital-agenda > * {
+    height: 700px;
+
+    @media (min-width: 768px) {
+      // Slightly less height is needed on larger screens as we move
+      // the legend to the right of the chart instead of the bottom
+      height: 600px;
+    }
+  }
+}
+
+.digital-agenda-embedded #digital-agenda-app {
+  .chart-filters {
+    display: none;
+  }
+
+  .chart-container-digital-agenda {
     border: none !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  .chart-container-digital-agenda,
+  .chart-container-digital-agenda > * {
+    height: 100vh;
   }
 }

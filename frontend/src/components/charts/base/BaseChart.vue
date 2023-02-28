@@ -1,12 +1,11 @@
 <template>
   <highcharts
     v-if="ready"
-    class="ecl-u-flex-grow-1"
     :constructor-type="constructorType"
     :options="{ ...chartOptionsDefaults, ...chartOptions }"
     :callback="highchartsCallback"
   />
-  <ecl-spinner v-else size="large" centered />
+  <ecl-spinner v-else size="large" centered absolute />
 </template>
 
 <script>

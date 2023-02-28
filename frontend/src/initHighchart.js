@@ -37,7 +37,8 @@ highchartsMoreInit(Highcharts);
 // Set global defaults
 Highcharts.setOptions({
   chart: {
-    height: "700px",
+    // Chart height is set by the parent container
+    height: null,
     zooming: {
       pinchType: "x",
     },
@@ -93,11 +94,6 @@ Highcharts.setOptions({
       {
         condition: { minWidth: 768 },
         chartOptions: {
-          chart: {
-            // Slightly less height is needed on larger screens as we move
-            // the legend to the right of the chart instead of the bottom
-            height: "600px",
-          },
           legend: {
             itemWidth: 150,
             layout: "vertical",
