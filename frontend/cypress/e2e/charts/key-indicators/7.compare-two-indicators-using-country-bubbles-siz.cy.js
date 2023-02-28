@@ -22,7 +22,7 @@ describeResponsive("Check Chart", () => {
           unitZ: "% of graduates",
         },
         title: ["Year: 2019"],
-        point: "EU, y: 3.1, z: 3.9. European Union.",
+        point: "European Union, y: 3.1, z: 3.9. European Union.",
         tooltip: [
           "European Union",
           "0.8% of graduates",

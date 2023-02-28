@@ -15,7 +15,7 @@ describeResponsive("Check Chart", () => {
         unitY: "% of graduates",
       },
       title: ["Year: 2019"],
-      point: "EU, 3.1. European Union.",
+      point: "European Union, 3.1. European Union.",
       tooltip: ["European Union", "0.8% of graduates", "3.1% of graduates"],
       definitions: [
         "(X) Indicator: ICT graduates",
