@@ -232,6 +232,13 @@ class Fact(TimestampedModel):
         on_delete=models.CASCADE,
         related_name="facts",
     )
+    import_file = models.ForeignKey(
+        "core.DataFileImport",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name="facts",
+    )
 
     class Meta:
         unique_together = ("indicator", "breakdown", "unit", "country", "period")

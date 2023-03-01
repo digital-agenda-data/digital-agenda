@@ -18,7 +18,7 @@ def import_data_file(self, data_file_pk):
         logger.error("Data file not found for pk %s", data_file_pk)
         raise Ignore()
 
-    loader = get_loader(data_file)
+    loader = get_loader(data_file, extra_fields={"import_file": data_file})
     errors = None
 
     data_file.status = DataFileImport.ImportStatusChoices.IN_PROGRESS

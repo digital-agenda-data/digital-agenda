@@ -67,8 +67,9 @@ class BaseExcelLoader(BaseFileLoader, ABC):
     Loader for Excel file formats.
     """
 
-    def __init__(self, path, cols=DEFAULT_EXCEL_COLS):
+    def __init__(self, path, cols=DEFAULT_EXCEL_COLS, extra_fields=None):
         super().__init__(path)
+        self.extra_fields = extra_fields or {}
         self.cols = cols
         self.sheet = None
 
@@ -91,6 +92,7 @@ class BaseExcelLoader(BaseFileLoader, ABC):
             - a dimension: set of codes dict with unknown dimension codes
         """
         fields = {
+            **self.extra_fields,
             "value": row[self.cols.index("value")].value,
             "flags": row[self.cols.index("flags")].value or "",
         }
@@ -197,14 +199,14 @@ class XLSXLoader(BaseExcelLoader):
         return self.ws.iter_rows(2, self.ws.max_row, 1, len(self.cols))
 
 
-def get_loader(data_file):
+def get_loader(data_file, extra_fields=None):
 
     if data_file.mime_type == "application/vnd.ms-excel":
-        return XLSLoader(data_file.path)
+        return XLSLoader(data_file.path, extra_fields=extra_fields)
     elif (
         data_file.mime_type
         == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     ):
-        return XLSXLoader(data_file.path)
+        return XLSXLoader(data_file.path, extra_fields=extra_fields)
     else:
         raise TypeError("Unsupported MIME type")

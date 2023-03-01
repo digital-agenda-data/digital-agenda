@@ -6,6 +6,9 @@ from django import forms
 
 from admin_auto_filters.filters import AutocompleteFilter
 from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
+from django.db.models import Count
+from django.urls import reverse
+from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 
 from .models import (
@@ -114,6 +117,11 @@ class ImportConfigFilter(AutocompleteFilter):
     field_name = "import_config"
 
 
+class ImportFileFilter(AutocompleteFilter):
+    title = "Import File"
+    field_name = "import_file"
+
+
 class FactAdmin(admin.ModelAdmin):
     list_display = (
         "indicator",
@@ -124,12 +132,14 @@ class FactAdmin(admin.ModelAdmin):
         "value",
         "flags",
         "import_config",
+        "import_file",
     )
     list_filter = [
+        ImportConfigFilter,
+        ImportFileFilter,
         IndicatorFilter,
         CountryFilter,
         PeriodFilter,
-        ImportConfigFilter,
     ]
     list_per_page = 50
     autocomplete_fields = (
@@ -139,6 +149,7 @@ class FactAdmin(admin.ModelAdmin):
         "country",
         "period",
         "import_config",
+        "import_file",
     )
 
     def get_queryset(self, request):
@@ -169,10 +180,11 @@ class DataFileImportForm(forms.ModelForm):
 
 
 class DataFileImportAdmin(admin.ModelAdmin):
-
+    search_fields = ("description", "file")
     fields = (
         "file",
         "status",
+        "num_facts",
         "description",
         "user",
         "errors",
@@ -189,16 +201,28 @@ class DataFileImportAdmin(admin.ModelAdmin):
                 "file",
                 "status",
                 "user",
+                "num_facts",
             )
         else:  # new object
             return (
                 "status",
                 "user",
+                "num_facts",
             )
 
-    list_display = ("file_name", "status", "created_at", "user")
+    list_display = ("file_name", "status", "num_facts", "created_at", "user")
 
     form = DataFileImportForm
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(num_facts=Count("facts"))
+
+    @admin.display(description="Facts Count", ordering="num_facts")
+    def num_facts(self, obj):
+        url = (
+            reverse("admin:core_fact_changelist") + f"?import_file__pk__exact={obj.pk}"
+        )
+        return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
 
     def save_model(self, request, obj, form, change):
         if not hasattr(obj, "user"):
