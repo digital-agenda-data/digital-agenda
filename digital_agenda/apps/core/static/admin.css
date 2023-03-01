@@ -58,6 +58,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Get rid of the horizontal scrollbar in Django admin tables! */
+#result_list tbody td,
+#result_list tbody th {
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
 fieldset.wide .selector {
   width: 1000px;
 }
