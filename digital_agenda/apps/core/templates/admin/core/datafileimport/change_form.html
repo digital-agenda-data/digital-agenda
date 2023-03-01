@@ -1,0 +1,15 @@
+{% extends "admin/change_form.html" %}
+
+{% load static %}
+
+{% block object-tools %}
+  {% if not change %}
+    <ul class="object-tools">
+      <li>
+        <a href="{% static 'import_file_example.xlsx' %}" download="">Download Example</a>
+      </li>
+    </ul>
+  {% endif %}
+
+  {{ block.super }}
+{% endblock %}
