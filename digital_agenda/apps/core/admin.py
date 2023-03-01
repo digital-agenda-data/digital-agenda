@@ -1,6 +1,6 @@
 import json
 
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.db import models
 from django import forms
 
@@ -23,6 +23,7 @@ from .models import (
     Fact,
     DataFileImport,
 )
+from .tasks import import_data_file
 
 
 class DimensionAdmin(admin.ModelAdmin):
@@ -189,6 +190,7 @@ class DataFileImportAdmin(admin.ModelAdmin):
         "user",
         "errors",
     )
+    actions = ("trigger_import", "trigger_import_destructive")
 
     formfield_overrides = {
         models.JSONField: {"widget": JSONEditorWidget},
@@ -228,6 +230,33 @@ class DataFileImportAdmin(admin.ModelAdmin):
         if not hasattr(obj, "user"):
             obj.user = request.user
         super().save_model(request, obj, form, change)
+
+    @admin.action(description="Trigger import for selected files")
+    def trigger_import(self, request, queryset):
+        self._trigger_import(request, queryset)
+
+    @admin.action(
+        description="Delete existing facts and trigger import for selected files"
+    )
+    def trigger_import_destructive(self, request, queryset):
+        self._trigger_import(
+            request, queryset, delete_existing=True
+        )
+
+    def _trigger_import(
+        self, request, queryset, delete_existing=False
+    ):
+        queryset.update(status="Queued")
+        for obj in queryset:
+            import_data_file.delay(
+                obj.id, delete_existing=delete_existing
+            )
+
+        self.message_user(
+            request,
+            "Import tasks have been queued for the selected files",
+            level=messages.SUCCESS,
+        )
 
 
 admin.site.register(DataFileImport, DataFileImportAdmin)

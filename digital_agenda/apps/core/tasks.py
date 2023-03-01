@@ -1,16 +1,16 @@
 from celery import shared_task, states
 from celery.exceptions import Ignore
 from celery.utils.log import get_task_logger
-from django.apps import apps
 
 from .formats import get_loader
+from .models import DataFileImport
+from .models import Fact
 
 logger = get_task_logger(__name__)
 
 
 @shared_task(bind=True)
-def import_data_file(self, data_file_pk):
-    DataFileImport = apps.get_model("core.DataFileImport")  # noqa
+def import_data_file(self, data_file_pk, delete_existing=False):
     try:
         data_file = DataFileImport.objects.get(id=data_file_pk)
     except DataFileImport.DoesNotExist:
@@ -25,6 +25,10 @@ def import_data_file(self, data_file_pk):
     data_file.save()
 
     try:
+        if delete_existing:
+            result = Fact.objects.filter(import_file=data_file).delete()
+            logger.info("Deleted Facts: %s", result)
+
         facts_count, errors = loader.load(allow_errors=False)
         logger.info("Loaded %s facts from data file %s", facts_count, data_file.path)
         if errors:
