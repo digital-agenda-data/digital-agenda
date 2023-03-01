@@ -365,10 +365,10 @@ class FactsViewSet(DimensionViewSetMixin, ListModelMixin, viewsets.GenericViewSe
             **super().get_renderer_context(),
             "header": [
                 "period",
+                "country",
                 "indicator",
                 "breakdown",
                 "unit",
-                "country",
                 "value",
                 "flags",
             ],

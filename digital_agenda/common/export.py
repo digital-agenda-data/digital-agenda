@@ -53,10 +53,10 @@ def export_facts_csv(filename, chartgroup=None, indicatorgroup=None, indicator=N
 
     query = f"""
         SELECT core_period.code    AS "period",
+               core_country.code   AS "country",
                core_indicator.code AS "indicator",
                core_breakdown.code AS "breakdown",
                core_unit.code      AS "unit",
-               core_country.code   AS "country",
                core_fact.value     AS "value",
                core_fact.flags     AS "flags"
         FROM core_fact
