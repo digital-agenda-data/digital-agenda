@@ -136,7 +136,6 @@ class ImportConfigAdmin(admin.ModelAdmin):
         )
 
     def _trigger_import(self, request, queryset, **kwargs):
-        queryset.update(status="Queued")
         for obj in queryset:
             obj.queue_import(created_by=request.user, **kwargs)
 
