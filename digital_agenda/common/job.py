@@ -8,13 +8,16 @@ class LoggingJob(Job):
 
     @classmethod
     def execute(cls, job, task):
-        fmt = logging.Formatter("[%(asctime)s] %(levelname)s %(name)s: %(message)s")
-        handler = logging.StreamHandler(task.log_stream)
-        handler.setFormatter(fmt)
-        cls.parent_logger.addHandler(handler)
+        task_logger = task.get_logger()
+        if task_logger:
+            fmt = logging.Formatter("[%(asctime)s] %(levelname)s %(name)s: %(message)s")
+            handler = logging.StreamHandler(task.log_stream)
+            handler.setLevel(task_logger.level)
+            handler.setFormatter(fmt)
+            cls.parent_logger.addHandler(handler)
 
-        for task_log_handler in task.get_logger().handlers:
-            task_log_handler.setFormatter(fmt)
+            for task_log_handler in task.get_logger().handlers:
+                task_log_handler.setFormatter(fmt)
 
         try:
             cls.execute_with_logging(job, task)

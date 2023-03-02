@@ -280,6 +280,17 @@ class ImportFromConfigTask(TaskRQ):
         default=False,
         help_text="Delete facts linked to this import config before starting the import",
     )
+    task_verbosity = models.PositiveIntegerField(
+        null=False,
+        blank=False,
+        default=DEFAULT_VERBOSITY,
+        choices=(
+            (0, "NONE"),
+            (1, "WARNING"),
+            (2, "INFO"),
+            (3, "DEBUG"),
+        ),
+    )
 
     @staticmethod
     def get_jobclass():
