@@ -84,7 +84,6 @@ class ImportConfigAdmin(admin.ModelAdmin):
                 "fields": [
                     "code",
                     "title",
-                    "status",
                     "num_facts",
                 ]
             },
