@@ -45,7 +45,8 @@ Highcharts.setOptions({
   },
   colors: SERIES_COLORS,
   exporting: {
-    sourceWidth: 1024,
+    sourceHeight: 690,
+    sourceWidth: 1280,
     buttons: {
       contextButton: {
         enabled: false,

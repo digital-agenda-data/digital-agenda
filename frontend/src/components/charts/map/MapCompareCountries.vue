@@ -84,6 +84,9 @@ export default {
             enabled: false,
           },
         },
+        exporting: {
+          sourceHeight: 976,
+        },
         mapNavigation: {
           enabled: false,
         },
