@@ -21,6 +21,6 @@ jobs:
           cd /home/digital-agenda/
           sed -i "/^DOCKER_TAG=/c\DOCKER_TAG=$GITHUB_REF_NAME" .env
           docker compose pull
-          docker compose up -d
+          docker compose up -d --remove-orphans
           docker compose top
 
