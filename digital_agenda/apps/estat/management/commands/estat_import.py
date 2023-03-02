@@ -4,7 +4,6 @@ from django.core.management import BaseCommand
 
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.estat.models import ImportConfig
-from digital_agenda.apps.estat import tasks
 
 
 class Command(BaseCommand):
@@ -45,28 +44,26 @@ class Command(BaseCommand):
         noinput=False,
         **options,
     ):
-        qs = ImportConfig.objects.all()
+        config_qs = ImportConfig.objects.all()
         if code:
-            qs = qs.filter(code=code)
-        ids = qs.values_list("id", flat=True)
+            config_qs = config_qs.filter(code=code)
 
-        if not ids:
+        if not config_qs.exists():
             print("No import configurations found", file=sys.stderr)
             sys.exit(1)
 
         if not noinput and delete_existing:
-            nr_facts = Fact.objects.filter(import_config_id__in=ids).count()
+            nr_facts = Fact.objects.filter(import_config__in=config_qs).count()
             print(
                 f"Warning! This will remove {nr_facts} facts "
-                f"from {len(ids)} import configurations. Continue?",
+                f"from {len(config_qs)} import configurations. Continue?",
                 end=" ",
             )
             if input("[Y/n] ") != "Y":
                 sys.exit(1)
 
-        for config_id in ids:
-            tasks.import_from_config(
-                config_pk=config_id,
+        for config in config_qs:
+            config.run_import(
                 force_download=force_download,
                 delete_existing=delete_existing,
             )

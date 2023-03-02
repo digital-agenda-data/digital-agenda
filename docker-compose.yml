@@ -36,7 +36,7 @@ services:
       - redis
     restart: always
 
-  celery:
+  worker:
     image: ghcr.io/digital-agenda-data/digital-agenda-app:${DOCKER_TAG:-master}
     env_file:
       - .env
@@ -46,7 +46,7 @@ services:
       - db
       - redis
     restart: always
-    command: ["celery", "-A", "digital_agenda", "worker", "-l", "info", "--concurrency=1"]
+    command: ["./manage.py", "rqworker"]
 
   nginx:
     image: ghcr.io/digital-agenda-data/digital-agenda-nginx:${DOCKER_TAG:-master}

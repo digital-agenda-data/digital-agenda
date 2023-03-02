@@ -16,7 +16,7 @@
 - Backend:
     - [django](https://docs.djangoproject.com//)
     - [django-rest-framework](https://www.django-rest-framework.org/)
-    - [celery](https://docs.celeryq.dev/en/stable/)
+    - [django-task](https://github.com/morlandi/django-task)
     - [pytest](https://docs.pytest.org/)
 - Frontend:
     - [vue](https://vuejs.org/guide/introduction.html)
@@ -31,6 +31,7 @@
     - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner)
     - [Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)
 - Misc:
+    - EU Login - No documentation available; however it is a CAS server, so see [django-cas-ng](https://djangocas.dev/docs/latest/) instead.    
     - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA) 
 
 ## Adding a new backend dependency

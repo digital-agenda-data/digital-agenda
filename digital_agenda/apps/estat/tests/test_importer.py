@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.core.exceptions import ValidationError
 from django.test import TestCase
 
 from digital_agenda.apps.core.models import Breakdown
@@ -10,7 +9,6 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.estat.models import ImportConfig
-from digital_agenda.apps.estat.tasks import import_from_config
 
 EU27_2020 = [
     "at",
@@ -52,12 +50,11 @@ class TestImporterSuccess(TestCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.config = ImportConfig.objects.first()
-        import_from_config(cls.config.pk, delete_existing=True)
+        cls.config.run_import(delete_existing=True)
         cls.config.refresh_from_db()
 
     def test_status(self):
-        self.assertIsNotNone(self.config.last_import_time)
-        self.assertEqual(self.config.status, "Completed")
+        self.assertEqual(self.config.latest_task.status, "SUCCESS")
 
     def test_fact_value(self):
         fact = Fact.objects.get(
@@ -143,7 +140,7 @@ class TestImporter(TestCase):
 
     def test_download(self):
         config = ImportConfig.objects.first()
-        import_from_config(config.pk, delete_existing=True, force_download=True)
+        config.run_import(delete_existing=True, force_download=True)
 
         expected_path = settings.ESTAT_DOWNLOAD_DIR / f"{config.code}.json"
         self.assertTrue(expected_path.is_file())
@@ -154,7 +151,7 @@ class TestImporter(TestCase):
         config.indicator_is_surrogate = True
         config.save()
 
-        import_from_config(config.pk, delete_existing=True)
+        config.run_import(delete_existing=True)
 
         expected = ["jingle_jangle"]
         codes = Indicator.objects.values_list("code", flat=True)
@@ -165,13 +162,13 @@ class TestImporter(TestCase):
 
     def test_delete_existing(self):
         config = ImportConfig.objects.first()
-        import_from_config(config.pk, delete_existing=True)
+        config.run_import(delete_existing=True)
 
         # Change the filter to check that old data has been removed
         config.filters = {"hhtyp": ["A2"]}
         config.save()
 
-        import_from_config(config.pk, delete_existing=True)
+        config.run_import(delete_existing=True)
 
         breakdown_codes = Fact.objects.values_list(
             "breakdown__code", flat=True
@@ -184,13 +181,13 @@ class TestImporter(TestCase):
 
     def test_keep_existing(self):
         config = ImportConfig.objects.first()
-        import_from_config(config.pk, delete_existing=True)
+        config.run_import(delete_existing=True)
 
         # Change the filter to check that old data has been removed
         config.filters = {"hhtyp": ["A2"]}
         config.save()
 
-        import_from_config(config.pk)
+        config.run_import()
 
         breakdown_codes = (
             Fact.objects.order_by("breakdown__code")
@@ -201,7 +198,7 @@ class TestImporter(TestCase):
 
     def test_update_existing(self):
         config = ImportConfig.objects.first()
-        import_from_config(config.pk, delete_existing=True)
+        config.run_import(delete_existing=True)
         original_fact = Fact.objects.first()
 
         new_fact = Fact.objects.get(pk=original_fact.pk)
@@ -210,7 +207,7 @@ class TestImporter(TestCase):
         new_fact.import_config = None
         new_fact.save()
 
-        import_from_config(config.pk)
+        config.run_import()
         new_fact.refresh_from_db()
         self.assertEqual(new_fact.value, original_fact.value)
         self.assertEqual(new_fact.flags, original_fact.flags)
@@ -226,10 +223,9 @@ class TestImporterErrors(TestCase):
 
     def check_error(self, msg):
         self.config.save()
-        with self.assertRaises(ValidationError):
-            import_from_config(self.config.pk, delete_existing=True)
+        self.config.run_import(delete_existing=True)
         self.config.refresh_from_db()
-        self.assertIn(msg, self.config.status)
+        self.assertIn(msg, self.config.latest_task.failure_reason)
 
     def test_invalid_filter(self):
         self.config.filters = ["EU"]

@@ -1,13 +1,13 @@
-import textwrap
-
+from admin_auto_filters.filters import AutocompleteFilter
 from django.contrib import admin, messages
 from django.db.models import Count
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 
 from digital_agenda.apps.estat.models import *
-from digital_agenda.apps.estat.tasks import import_from_config
+from digital_agenda.common.job import AsyncTaskAdmin
 
 
 @admin.register(GeoGroup)
@@ -65,16 +65,14 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "country_group",
         "period_start",
         "period_end",
-        "last_import_time",
         "num_facts",
+        "latest_import",
         "title",
-        "status_short",
     )
     search_fields = ("code", "title")
     readonly_fields = (
-        "last_import_time",
         "num_facts",
-        "status",
+        "latest_import",
     )
     autocomplete_fields = ("country_group",)
     actions = ("trigger_import", "trigger_import_destructive")
@@ -86,7 +84,6 @@ class ImportConfigAdmin(admin.ModelAdmin):
                 "fields": [
                     "code",
                     "title",
-                    "last_import_time",
                     "status",
                     "num_facts",
                 ]
@@ -128,30 +125,28 @@ class ImportConfigAdmin(admin.ModelAdmin):
 
     @admin.action(description="Trigger import for selected configs")
     def trigger_import(self, request, queryset):
-        self._trigger_import(request, queryset)
+        return self._trigger_import(request, queryset)
 
     @admin.action(
         description="Delete existing facts and trigger import for selected configs"
     )
     def trigger_import_destructive(self, request, queryset):
-        self._trigger_import(
+        return self._trigger_import(
             request, queryset, force_download=True, delete_existing=True
         )
 
-    def _trigger_import(
-        self, request, queryset, force_download=False, delete_existing=False
-    ):
+    def _trigger_import(self, request, queryset, **kwargs):
         queryset.update(status="Queued")
         for obj in queryset:
-            import_from_config.delay(
-                obj.id, force_download=force_download, delete_existing=delete_existing
-            )
+            obj.queue_import(created_by=request.user, **kwargs)
 
         self.message_user(
             request,
             "Import tasks have been queued for the selected configurations",
             level=messages.SUCCESS,
         )
+
+        return redirect("admin:estat_importfromconfigtask_changelist")
 
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(num_facts=Count("facts"))
@@ -164,6 +159,57 @@ class ImportConfigAdmin(admin.ModelAdmin):
         )
         return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
 
-    @admin.display(description="Status", ordering="status")
-    def status_short(self, obj):
-        return textwrap.shorten(obj.status, 50)
+    @admin.display(description="Latest Task")
+    def latest_import(self, obj):
+        if not obj.latest_task:
+            return
+        url = reverse(
+            "admin:estat_importfromconfigtask_change",
+            kwargs={"object_id": obj.latest_task.id},
+        )
+        return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
+
+
+class ImportConfigFilter(AutocompleteFilter):
+    title = "Import Config"
+    field_name = "import_config"
+
+
+@admin.register(ImportFromConfigTask)
+class ImportFromConfigTaskAdmin(AsyncTaskAdmin):
+    search_fields = [
+        "import_config__code",
+        "import_config__title",
+        "=id",
+        "=job_id",
+    ]
+    list_filter = [
+        ImportConfigFilter,
+        "created_on",
+        "started_on",
+        "status",
+    ]
+    autocomplete_fields = ("import_config",)
+
+    list_display = [
+        "__str__",
+        "import_config_link",
+        "delete_existing",
+        "force_download",
+        "created_on_display",
+        "created_by",
+        "started_on_display",
+        "completed_on_display",
+        "duration_display",
+        "status_display",
+        "progress_display",
+        "mode",
+    ]
+
+    @admin.display(description="Import Config", ordering="import_config")
+    def import_config_link(self, obj):
+        url = reverse(
+            "admin:estat_importconfig_change",
+            kwargs={"object_id": obj.import_config.id},
+        )
+        return mark_safe(f"<a href='{url}'>{obj.import_config}</a>")

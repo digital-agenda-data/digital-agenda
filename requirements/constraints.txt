@@ -1,20 +1,14 @@
-amqp==5.1.1
 anyio==3.6.2
 asgiref==3.6.0
 asttokens==2.2.1
 async-timeout==4.0.2
 attrs==22.2.0
 backcall==0.2.0
-billiard==3.6.4.0
 black==23.1.0
 bleach==6.0.0
-celery==5.2.7
 certifi==2022.12.7
 charset-normalizer==3.0.1
 click==8.1.3
-click-didyoumean==0.3.0
-click-plugins==1.1.1
-click-repl==0.2.0
 coverage==7.1.0
 decorator==5.1.1
 Django==4.1.7
@@ -38,7 +32,9 @@ django-picklefield==3.1
 django-postgres-extra==2.0.8
 django-redis==5.2.0
 django-request-logging==0.7.5
+django-rq==2.7.0
 django-sql-dashboard==1.1
+django-task==2.0.6
 django_debug_toolbar==3.8.1
 djangorestframework==3.14.0
 djangorestframework-csv==2.1.1
@@ -59,7 +55,6 @@ ipython==8.10.0
 ipython-autotime==0.3.1
 jedi==0.18.2
 jsonschema==4.17.3
-kombu==5.2.4
 lxml==4.9.2
 Markdown==3.4.1
 markdown-it-py==2.1.0
@@ -94,6 +89,7 @@ redis==4.5.1
 requests==2.28.2
 rfc3986==1.5.0
 rich==13.3.1
+rq==1.13.0
 six==1.16.0
 sniffio==1.3.0
 sqlparse==0.4.3
@@ -103,7 +99,6 @@ traitlets==5.9.0
 unicodecsv==0.14.1
 uritemplate==4.1.1
 urllib3==1.26.14
-vine==5.0.0
 wcwidth==0.2.6
 webencodings==0.5.1
 xlrd==2.0.1

@@ -27,7 +27,7 @@ FRONTEND_HOST = env.list("FRONTEND_HOST")
 REDIS_HOST = env.str("REDIS_HOST")
 REDIS_PORT = env.int("REDIS_PORT", default=6379)
 REDIS_CACHE_DB = 0
-REDIS_CELERY_DB = 1
+REDIS_TASK_DB = 1
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-DEBUG
 DEBUG = env.bool("DEBUG", default=False)
@@ -72,6 +72,8 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "django_rq",
+    "django_task",
     "adminsortable2",
     "ckeditor",
     "colorfield",
@@ -314,8 +316,18 @@ CONSTANCE_CONFIG = {
 }
 
 
-# Celery
-CELERY_BROKER_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_CELERY_DB}"
+# Task Queue (RQ)
+
+RQ_QUEUES = {
+    "default": {
+        "HOST": REDIS_HOST,
+        "PORT": REDIS_PORT,
+        "DB": REDIS_TASK_DB,
+    }
+}
+
+# Hide RQ admin, since we are using Django Task models instead
+RQ_SHOW_ADMIN_LINK = False
 
 ESTAT_DOWNLOAD_BASE_URL = env.str(
     "ESTAT_DOWNLOAD_BASE_URL",

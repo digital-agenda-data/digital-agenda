@@ -5,8 +5,6 @@
   "fields": {
     "code": "educ_uoe_grad03",
     "title": null,
-    "last_import_time": null,
-    "status": "",
     "indicator": "ict_grad",
     "indicator_is_surrogate": true,
     "breakdown": "sex",

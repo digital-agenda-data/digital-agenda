@@ -4,8 +4,6 @@
   "fields": {
     "code": "educ_uoe_grad03",
     "title": null,
-    "last_import_time": null,
-    "status": "",
     "indicator": "ict_grad",
     "indicator_is_surrogate": true,
     "breakdown": "sex",
@@ -47,8 +45,6 @@
   "fields": {
     "code": "isoc_bde15b_h",
     "title": null,
-    "last_import_time": null,
-    "status": "",
     "indicator": "indic_is",
     "indicator_is_surrogate": false,
     "breakdown": "hhtyp",

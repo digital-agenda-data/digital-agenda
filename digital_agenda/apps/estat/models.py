@@ -7,6 +7,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 
 from django.db import models
+from django_task.models import TaskRQ
 
 from digital_agenda.common.models import NaturalCodeManger
 
@@ -73,15 +74,6 @@ class ImportConfig(models.Model):
         help_text=(
             "Human readable title for logging and differentiating from multiple configs for the same dataset"
         ),
-    )
-    last_import_time = models.DateTimeField(
-        null=True,
-        help_text=(
-            "Time when the last import was completed, regardless if it was successful or not."
-        ),
-    )
-    status = models.TextField(
-        help_text="Status of the import from config task or the error message if it failed"
     )
 
     indicator = CICharField(max_length=60)
@@ -249,7 +241,48 @@ class ImportConfig(models.Model):
                         f"Mapped value for {dimension!r} not found: {val!r}"
                     )
 
+    def run_import(self, **kwargs):
+        return self._run_import(False, **kwargs)
+
+    def queue_import(self, **kwargs):
+        return self._run_import(True, **kwargs)
+
+    def _run_import(self, is_async, **kwargs):
+        task = ImportFromConfigTask.objects.create(import_config=self, **kwargs)
+        task.run(is_async=is_async)
+        return task
+
+    @cached_property
+    def latest_task(self):
+        try:
+            return self.tasks.latest()
+        except ImportFromConfigTask.DoesNotExist:
+            return None
+
     def __str__(self):
-        if self.title:
-            return f"{self.code} ({self.pk}) {self.title}"
         return f"{self.code} ({self.pk})"
+
+
+class ImportFromConfigTask(TaskRQ):
+    DEFAULT_VERBOSITY = 2
+    TASK_QUEUE = "default"
+    TASK_TIMEOUT = 30 * 60
+    LOG_TO_FIELD = True
+    LOG_TO_FILE = False
+
+    import_config = models.ForeignKey(
+        ImportConfig, on_delete=models.CASCADE, related_name="tasks"
+    )
+    force_download = models.BooleanField(
+        default=False, help_text="Force redownload the dataset"
+    )
+    delete_existing = models.BooleanField(
+        default=False,
+        help_text="Delete facts linked to this import config before starting the import",
+    )
+
+    @staticmethod
+    def get_jobclass():
+        from .jobs import ImportFromConfigJob
+
+        return ImportFromConfigJob

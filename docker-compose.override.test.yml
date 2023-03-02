@@ -6,7 +6,7 @@ services:
     environment:
       - GUNICORN_CMD_ARGS=--workers=2 --threads=2
 
-  celery:
+  worker:
     build:
       context: .
       dockerfile: docker/app.docker

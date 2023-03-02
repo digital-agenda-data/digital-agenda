@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: docker/app.docker
 
-  celery:
+  worker:
     build:
       context: .
       dockerfile: docker/app.docker

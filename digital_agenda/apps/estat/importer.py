@@ -17,7 +17,6 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.estat.json_stat import JSONStat
-from digital_agenda.apps.estat.models import ImportConfig
 
 logger = logging.getLogger(__name__)
 
@@ -93,8 +92,8 @@ class EstatDataset(JSONStat):
 
 
 class EstatImporter:
-    def __init__(self, config_id, force_download=False):
-        self.config = ImportConfig.objects.get(pk=config_id)
+    def __init__(self, config, force_download=False):
+        self.config = config
         self.force_download = force_download
         self.cache = defaultdict(dict)
         self.unique = set()

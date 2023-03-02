@@ -69,9 +69,9 @@ This document describes installation steps required to install locally for devel
   ```shell
   npm run dev
   ```  
-- _(optional)_ Start worker. _**NOTE** Celery does not have hot-reload, changes to the code will require a restart_
+- _(optional)_ Start worker. _**NOTE** Worker does not have hot-reload, changes to the code will require a restart_
   ```shell
-  celery -A digital_agenda worker -c 1 -l debug
+  ./manage.py rqworker
   ```
   
 ## Updating the application

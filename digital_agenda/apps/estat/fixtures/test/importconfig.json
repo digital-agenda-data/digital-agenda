@@ -5,8 +5,6 @@
   "fields": {
     "code": "isoc_ci_cm_h",
     "title": null,
-    "last_import_time": null,
-    "status": "",
     "indicator": "indic_is",
     "indicator_is_surrogate": false,
     "breakdown": "hhtyp",

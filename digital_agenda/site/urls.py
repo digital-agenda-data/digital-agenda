@@ -32,6 +32,8 @@ urlpatterns = [
     ),
     path("ht/", include("health_check.urls")),
     path("dashboard/", include("django_sql_dashboard.urls")),
+    path("django-rq/", include("django_rq.urls")),
+    path("django_task/", include("django_task.urls", namespace="django_task")),
     path(
         "admin/cas/login",
         django_cas_ng.views.LoginView.as_view(),

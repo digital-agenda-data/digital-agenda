@@ -23,7 +23,7 @@ from .models import (
     Fact,
     DataFileImport,
 )
-from .tasks import import_data_file
+from .jobs import import_data_file
 
 
 class DimensionAdmin(admin.ModelAdmin):
