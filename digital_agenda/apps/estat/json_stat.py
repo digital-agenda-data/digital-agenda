@@ -6,7 +6,10 @@ import json
 import itertools
 import functools
 import collections
+import logging
 import math
+
+logger = logging.getLogger(__name__)
 
 Category = collections.namedtuple("Category", ["id", "label"])
 Dimension = collections.namedtuple("Dimension", ["id", "label", "categories"])
@@ -15,14 +18,29 @@ Dimension = collections.namedtuple("Dimension", ["id", "label", "categories"])
 class JSONStat:
     def __init__(self, fp):
         self.dataset = json.load(fp)
-        assert float(self.dataset.get("version")) >= 2.0, "Unsupported version"
+        logger.debug(
+            "Parsing JSON-stat: version=%r source=%r label=%r",
+            self._version,
+            self.source,
+            self.label,
+        )
+        assert self._version >= 2.0, f"Unsupported version: {self._version}"
 
     @property
     def label(self):
         return self.dataset.get("label", "")
 
+    @property
+    def source(self):
+        return self.dataset.get("source", "")
+
+    @property
+    def _version(self):
+        return float(self.dataset.get("version", "nan"))
+
     @functools.cached_property
     def dimensions(self):
+        logger.debug("Parsing dimensions: %s", self.dataset["dimension"])
         result = []
         for dim_id in self.dataset["id"]:
 
@@ -44,7 +62,6 @@ class JSONStat:
                     ],
                 )
             )
-
         return result
 
     @functools.cached_property

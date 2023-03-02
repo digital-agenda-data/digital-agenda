@@ -207,12 +207,16 @@ class EstatImporter:
         for facts in batched(self.iter_facts(), batch_size):
             total += len(self.create_batch(facts))
             logger.info(
-                "Batch processed %r; fact objs created %s / %s",
-                self.config,
-                total,
-                len(self.dataset),
+                "Batch processed %r; fact objs created in total %s", self.config, total
             )
 
         logger.info("Assigning indicator datasource")
         for indicator in self.cache["indicator"].values():
             indicator.data_sources.add(self.data_source)
+
+        logger.info(
+            "Import complete %r; processed %s out of %s total in the ESTAT dataset",
+            self.config,
+            total,
+            len(self.dataset),
+        )
