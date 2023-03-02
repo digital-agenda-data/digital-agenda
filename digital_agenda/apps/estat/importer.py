@@ -151,12 +151,16 @@ class EstatImporter:
         try:
             return self.cache[dimension][category_id]
         except KeyError:
-            obj, _created = MODELS[dimension].objects.get_or_create(
+            obj, created = MODELS[dimension].objects.get_or_create(
                 code=category_id,
                 defaults={
                     "label": category_label,
                 },
             )
+            if created:
+                logger.info("Created %r", obj)
+            else:
+                logger.debug("Using %r", obj)
             self.cache[dimension][category_id] = obj
         return obj
 
