@@ -15,7 +15,7 @@ describeResponsive("Check Indicators Page", () => {
       .contains("data")
       .parent("a")
       .downloadLink()
-      .should("contain", "period,indicator,breakdown,unit,country,value,flags");
+      .should("contain", "period,country,indicator,breakdown,unit,value,flags");
 
     // Check exporting values for an indicator group
     for (const label of [

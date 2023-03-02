@@ -25,6 +25,6 @@ describeResponsive("Check Metadata Page", () => {
       .contains("Export CSV")
       .parent("a")
       .downloadLink()
-      .should("contain", "period,indicator,breakdown,unit,country,value,flags");
+      .should("contain", "period,country,indicator,breakdown,unit,value,flags");
   });
 });
