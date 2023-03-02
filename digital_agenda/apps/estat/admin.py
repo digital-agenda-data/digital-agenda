@@ -5,9 +5,9 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
+from django_task.admin import TaskAdmin
 
 from digital_agenda.apps.estat.models import *
-from digital_agenda.common.job import AsyncTaskAdmin
 
 
 @admin.register(GeoGroup)
@@ -175,7 +175,7 @@ class ImportConfigFilter(AutocompleteFilter):
 
 
 @admin.register(ImportFromConfigTask)
-class ImportFromConfigTaskAdmin(AsyncTaskAdmin):
+class ImportFromConfigTaskAdmin(TaskAdmin):
     search_fields = [
         "import_config__code",
         "import_config__title",
