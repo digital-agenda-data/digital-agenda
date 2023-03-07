@@ -2,14 +2,15 @@ import json
 
 from django.contrib import admin, messages
 from django.db import models
-from django import forms
 
 from admin_auto_filters.filters import AutocompleteFilter
 from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
 from django.db.models import Count
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
+from django_task.admin import TaskAdmin
 
 from .models import (
     DataSource,
@@ -22,8 +23,8 @@ from .models import (
     Period,
     Fact,
     DataFileImport,
+    DataFileImportTask,
 )
-from .jobs import import_data_file
 
 
 class DimensionAdmin(admin.ModelAdmin):
@@ -165,56 +166,34 @@ class PrettyJSONEncoder(json.JSONEncoder):
         super().__init__(*args, indent=2, sort_keys=True, **kwargs)
 
 
-class DataFileImportForm(forms.ModelForm):
-    """Disables the `errors` field"""
-
-    class Meta:
-        model = DataFileImport
-        fields = ("errors",)
-        widgets = {
-            "errors": JSONEditorWidget(options={"mode": "view", "modes": ["view"]}),
-        }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields.get("errors").disabled = True
-
-
 class DataFileImportAdmin(admin.ModelAdmin):
     search_fields = ("description", "file")
     fields = (
         "file",
-        "status",
+        "latest_import",
         "num_facts",
         "description",
         "user",
-        "errors",
     )
     actions = ("trigger_import", "trigger_import_destructive")
-
-    formfield_overrides = {
-        models.JSONField: {"widget": JSONEditorWidget},
-    }
 
     def get_readonly_fields(self, request, obj=None):
         # `errors` has a custom widget and is disabled at the form level
         if obj:  # edit
             return (
                 "file",
-                "status",
+                "latest_import",
                 "user",
                 "num_facts",
             )
         else:  # new object
             return (
-                "status",
+                "latest_import",
                 "user",
                 "num_facts",
             )
 
-    list_display = ("file_name", "status", "num_facts", "created_at", "user")
-
-    form = DataFileImportForm
+    list_display = ("file_name", "latest_import", "num_facts", "created_at", "user")
 
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(num_facts=Count("facts"))
@@ -233,30 +212,78 @@ class DataFileImportAdmin(admin.ModelAdmin):
 
     @admin.action(description="Trigger import for selected files")
     def trigger_import(self, request, queryset):
-        self._trigger_import(request, queryset)
+        return self._trigger_import(request, queryset)
 
     @admin.action(
         description="Delete existing facts and trigger import for selected files"
     )
     def trigger_import_destructive(self, request, queryset):
-        self._trigger_import(
-            request, queryset, delete_existing=True
-        )
+        return self._trigger_import(request, queryset, delete_existing=True)
 
-    def _trigger_import(
-        self, request, queryset, delete_existing=False
-    ):
-        queryset.update(status="Queued")
+    def _trigger_import(self, request, queryset, **kwargs):
         for obj in queryset:
-            import_data_file.delay(
-                obj.id, delete_existing=delete_existing
-            )
+            obj.queue_import(created_by=request.user, **kwargs)
 
         self.message_user(
             request,
-            "Import tasks have been queued for the selected files",
+            "Import tasks have been queued for the selected configurations",
             level=messages.SUCCESS,
         )
 
+        return redirect("admin:core_datafileimporttask_changelist")
+
+    @admin.display(description="Latest Task")
+    def latest_import(self, obj):
+        if not obj.latest_task:
+            return
+        url = reverse(
+            "admin:core_datafileimporttask_change",
+            kwargs={"object_id": obj.latest_task.id},
+        )
+        return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
+
 
 admin.site.register(DataFileImport, DataFileImportAdmin)
+
+
+@admin.register(DataFileImportTask)
+class DataFileImportTaskAdmin(TaskAdmin):
+    formfield_overrides = {
+        models.JSONField: {"widget": JSONEditorWidget},
+    }
+
+    search_fields = [
+        "import_file__file",
+        "import_file__description",
+        "=id",
+        "=job_id",
+    ]
+    list_filter = [
+        ImportFileFilter,
+        "created_on",
+        "started_on",
+        "status",
+    ]
+    autocomplete_fields = ("import_file",)
+
+    list_display = [
+        "__str__",
+        "import_file_link",
+        "delete_existing",
+        "created_on_display",
+        "created_by",
+        "started_on_display",
+        "completed_on_display",
+        "duration_display",
+        "status_display",
+        "progress_display",
+        "mode",
+    ]
+
+    @admin.display(description="Import File", ordering="import_file")
+    def import_file_link(self, obj):
+        url = reverse(
+            "admin:core_datafileimport_change",
+            kwargs={"object_id": obj.import_file.id},
+        )
+        return mark_safe(f"<a href='{url}'>{obj.import_file}</a>")

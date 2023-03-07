@@ -8,7 +8,6 @@ from django.dispatch import receiver
 
 from .cache import clear_all_caches
 from .models import DataFileImport
-from . import jobs
 
 
 logger = logging.getLogger(__name__)
@@ -24,7 +23,7 @@ def auto_clear_cache(sender, instance=None, **kwargs):
 def trigger_data_import(sender, instance, created, **kwargs):
     if created:
         transaction.on_commit(  # Avoid race condition where db record is not yet created
-            lambda: jobs.import_data_file.delay(instance.pk)
+            lambda: instance.queue_import()
         )
 
 

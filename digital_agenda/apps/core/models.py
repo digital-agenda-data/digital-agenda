@@ -11,6 +11,7 @@ from django.core.exceptions import ValidationError
 from django.core.files.storage import get_storage_class
 from django.core.validators import FileExtensionValidator
 from django.utils.functional import cached_property
+from django_task.models import TaskRQ
 
 from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import TimestampedModel
@@ -281,11 +282,6 @@ def validate_upload_mime_type(file):
 
 
 class DataFileImport(TimestampedModel):
-    class ImportStatusChoices(models.TextChoices):
-        PENDING = "pending"
-        IN_PROGRESS = "in_progress"
-        SUCCESS = "success"
-        FAILED = "failed"
 
     file = models.FileField(
         storage=_import_files_storage,
@@ -298,14 +294,8 @@ class DataFileImport(TimestampedModel):
             validate_upload_mime_type,
         ],
     )
-    status = models.CharField(
-        max_length=20,
-        choices=ImportStatusChoices.choices,
-        default=ImportStatusChoices.PENDING,
-    )
     description = models.TextField(null=True, blank=True)
     user = models.ForeignKey("accounts.User", on_delete=models.CASCADE)
-    errors = models.JSONField(null=True, blank=True)
 
     @property
     def path(self):
@@ -321,3 +311,55 @@ class DataFileImport(TimestampedModel):
     @cached_property
     def mime_type(self):
         return magic.from_buffer(self.file.read(), mime=True)
+
+    def run_import(self, **kwargs):
+        return self._run_import(False, **kwargs)
+
+    def queue_import(self, **kwargs):
+        return self._run_import(True, **kwargs)
+
+    def _run_import(self, is_async, **kwargs):
+        task = DataFileImportTask.objects.create(import_file=self, **kwargs)
+        task.run(is_async=is_async)
+        return task
+
+    @cached_property
+    def latest_task(self):
+        try:
+            return self.tasks.latest()
+        except DataFileImportTask.DoesNotExist:
+            return None
+
+
+class DataFileImportTask(TaskRQ):
+    DEFAULT_VERBOSITY = 2
+    TASK_QUEUE = "default"
+    TASK_TIMEOUT = 30 * 60
+    LOG_TO_FIELD = True
+    LOG_TO_FILE = False
+
+    import_file = models.ForeignKey(
+        DataFileImport, on_delete=models.CASCADE, related_name="tasks"
+    )
+    delete_existing = models.BooleanField(
+        default=False,
+        help_text="Delete facts linked to this import file before starting the import",
+    )
+    task_verbosity = models.PositiveIntegerField(
+        null=False,
+        blank=False,
+        default=DEFAULT_VERBOSITY,
+        choices=(
+            (0, "NONE"),
+            (1, "WARNING"),
+            (2, "INFO"),
+            (3, "DEBUG"),
+        ),
+    )
+    errors = models.JSONField(null=True, blank=True)
+
+    @staticmethod
+    def get_jobclass():
+        from .jobs import ImportFromDataFileJob
+
+        return ImportFromDataFileJob
