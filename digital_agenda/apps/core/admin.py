@@ -226,7 +226,7 @@ class DataFileImportAdmin(admin.ModelAdmin):
 
         self.message_user(
             request,
-            "Import tasks have been queued for the selected configurations",
+            "Import tasks have been queued for the selected files",
             level=messages.SUCCESS,
         )
 
