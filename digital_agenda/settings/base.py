@@ -424,6 +424,7 @@ if DEBUG:
         INTERNAL_IPS += [".".join(ip.split(".")[:-1] + ["1"]) for ip in ips]
         MIDDLEWARE.insert(2, "debug_toolbar.middleware.DebugToolbarMiddleware")
         DEBUG_TOOLBAR_CONFIG = {
+            "SHOW_COLLAPSED": True,
             "SHOW_TOOLBAR_CALLBACK": f"{__name__}.show_toolbar",
         }
 
