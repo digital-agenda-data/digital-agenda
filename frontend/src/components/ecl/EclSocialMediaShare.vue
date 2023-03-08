@@ -118,6 +118,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.ecl-social-media-share__list {
+  flex-direction: row !important;
+}
+
 .ecl-social-media-share__item {
   margin-right: 0;
 }
