@@ -2,6 +2,7 @@ import json
 
 from django.contrib import admin, messages
 from django.db import models
+from django import forms
 
 from admin_auto_filters.filters import AutocompleteFilter
 from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
@@ -246,8 +247,24 @@ class DataFileImportAdmin(admin.ModelAdmin):
 admin.site.register(DataFileImport, DataFileImportAdmin)
 
 
+class DataFileImportTaskForm(forms.ModelForm):
+    """Disables the `errors` field"""
+
+    class Meta:
+        model = DataFileImportTask
+        fields = ("errors",)
+        widgets = {
+            "errors": JSONEditorWidget(options={"mode": "view", "modes": ["view"]}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields.get("errors").disabled = True
+
+
 @admin.register(DataFileImportTask)
 class DataFileImportTaskAdmin(TaskAdmin):
+    form = DataFileImportTaskForm
     formfield_overrides = {
         models.JSONField: {"widget": JSONEditorWidget},
     }
@@ -279,6 +296,11 @@ class DataFileImportTaskAdmin(TaskAdmin):
         "progress_display",
         "mode",
     ]
+
+    def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj=obj)
+        fields.remove("errors")
+        return fields
 
     @admin.display(description="Import File", ordering="import_file")
     def import_file_link(self, obj):

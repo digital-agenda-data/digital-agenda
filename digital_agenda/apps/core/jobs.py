@@ -26,7 +26,7 @@ class ImportFromDataFileJob(LoggingJob):
                 "Loaded %s facts from data file %s", facts_count, data_file.path
             )
             if errors:
-                raise ValueError()
+                raise ValueError(errors)
         except Exception as exc:
             if errors:
                 task.errors = errors
