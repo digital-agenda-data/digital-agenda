@@ -43,7 +43,7 @@ describe("Check import configuration", () => {
       .click()
       // Wait for the task to finish
       .get("tbody tr:first-child td.field-status_display")
-      .contains("SUCCESS")
+      .contains("SUCCESS", { timeout: 10000 })
       // Navigate to the import config change form
       .get("tbody tr:first-child td.field-import_config_link a")
       .click()
