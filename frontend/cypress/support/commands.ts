@@ -17,6 +17,17 @@ Cypress.Commands.addAll(
 );
 
 Cypress.Commands.addAll({
+  login() {
+    const host = Cypress.env("backendHost");
+    return cy
+      .visit(`${host}/admin/`)
+      .get("input[name=username]")
+      .type("admin@example.com")
+      .get("input[name=password]")
+      .type("admin")
+      .get("input[type=submit]")
+      .click();
+  },
   selectFilter(inputName, label) {
     return cy
       .get(`[data-name='${inputName}']`)
