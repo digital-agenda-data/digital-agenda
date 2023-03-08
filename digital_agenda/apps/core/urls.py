@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
+from .views.misc import AppSettingsView
 from .views.facts import FactsViewSet
 from .views.feedback import FeedbackViewSet
 from .views.unit import UnitViewSet
@@ -26,4 +27,9 @@ router.register("feedback", FeedbackViewSet, "feedback")
 
 urlpatterns = [
     path("", include(router.urls)),
+    path(
+        "app-settings/",
+        AppSettingsView.as_view(),
+        name="app-settings",
+    ),
 ]

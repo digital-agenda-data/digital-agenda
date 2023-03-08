@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import { useAppSettings } from "@/stores/appSettingsStore";
 import { mapStores } from "pinia";
 
 import { getRouteMeta } from "@/lib/utils";
@@ -24,14 +25,18 @@ export default {
     ),
   },
   computed: {
-    ...mapStores(useChartGroupStore, useChartStore),
+    ...mapStores(useChartGroupStore, useChartStore, useAppSettings),
     isEmbedded() {
       return new URL(window.location).searchParams.get("embed") === "true";
     },
     isReady() {
       // Only display the app after the chartGroups and the charts
       // have been loaded to avoid layout shifts.
-      return this.chartGroupStore.isReady && this.chartStore.isReady;
+      return (
+        this.chartGroupStore.isReady &&
+        this.chartStore.isReady &&
+        this.appSettingsStore.isReady
+      );
     },
     pageTitle() {
       return getRouteMeta(this.$route, "title");
@@ -49,12 +54,6 @@ export default {
   watch: {
     docTitle() {
       document.title = this.docTitle;
-    },
-    $route(to, from) {
-      if (window._paq && to.path !== from.path) {
-        // Log a new view manually when the route changes.
-        window._paq.push(["trackPageView"]);
-      }
     },
   },
   mounted() {

@@ -313,6 +313,14 @@ CONSTANCE_CONFIG = {
         "feedback@example.com",
         "Email address where feedback messages are sent to",
     ),
+    "MATOMO_SERVER": (
+        "https://digital-agenda-data.eu/analytics/",
+        "Matomo server; analytics are disabled if this is not set",
+    ),
+    "MATOMO_SITE_ID": (
+        "",
+        "Matomo Site ID; analytics are disabled if this is not set",
+    ),
 }
 
 

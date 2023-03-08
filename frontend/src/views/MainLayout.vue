@@ -10,11 +10,14 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
 import { useScriptTag } from "@vueuse/core";
 
 import EclPageHeader from "@/components/ecl/site-wide/EclPageHeader.vue";
 import EclSiteFooter from "@/components/ecl/site-wide/EclSiteFooter.vue";
 import EclSiteHeader from "@/components/ecl/site-wide/EclSiteHeader.vue";
+
+import { useAppSettings } from "@/stores/appSettingsStore";
 
 import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
@@ -26,8 +29,20 @@ export default {
       eclIsReady: false,
     };
   },
-  async mounted() {
-    await this.loadECL();
+  computed: {
+    ...mapState(useAppSettings, ["appSettings"]),
+  },
+  watch: {
+    $route(to, from) {
+      if (window._paq && to.path !== from.path) {
+        // Log a new view manually when the route changes.
+        window._paq.push(["trackPageView"]);
+      }
+    },
+  },
+  mounted() {
+    this.loadECL();
+    this.initAnalytics();
   },
   methods: {
     /**
@@ -47,6 +62,24 @@ export default {
       } finally {
         this.eclIsReady = true;
       }
+    },
+    async initAnalytics() {
+      const siteId = this.appSettings.analytics_site_id;
+      let server = this.appSettings.analytics_server;
+
+      if (!siteId || !server || window._paq) return;
+      if (!server.endsWith("/")) server += "/";
+
+      const _paq = (window._paq = window._paq || []);
+      _paq.push(["trackPageView"]);
+      _paq.push(["setTrackerUrl", server + "matomo.php"]);
+      _paq.push(["setSiteId", siteId]);
+      const d = document,
+        g = d.createElement("script"),
+        s = d.getElementsByTagName("script")[0];
+      g.async = true;
+      g.src = server + "matomo.js";
+      s.parentNode.insertBefore(g, s);
     },
   },
 };
