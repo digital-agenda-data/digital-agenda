@@ -30,6 +30,11 @@
 
   .chart-container-digital-agenda {
     position: relative;
+    min-height: 700px;
+
+    @media (min-width: 768px) {
+      min-height: 600px;
+    }
   }
 
   .chart-container-digital-agenda > * {
@@ -43,12 +48,22 @@
   }
 
   // Map Chart need totally different sizes
-  .chart-container-digital-agenda.EUMapCompareCountries > *,
-  .chart-container-digital-agenda.WorldMapCompareCountries > * {
-    height: 600px;
+  .chart-container-digital-agenda {
+    &.EUMapCompareCountries,
+    &.WorldMapCompareCountries {
+      min-height: 600px;
 
-    @media (min-width: 768px) {
-      height: 848px;
+      @media (min-width: 768px) {
+        min-height: 848px;
+      }
+
+      & > * {
+        height: 600px;
+
+        @media (min-width: 768px) {
+          height: 848px;
+        }
+      }
     }
   }
 }
