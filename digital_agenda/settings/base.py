@@ -313,6 +313,14 @@ CONSTANCE_CONFIG = {
         "feedback@example.com",
         "Email address where feedback messages are sent to",
     ),
+    "GLOBAL_BANNER_ENABLED": (
+        True,
+        "Enable the Global banner component (Globan)",
+    ),
+    "EU_LOGIN_ENABLED": (
+        True,
+        "Enable login with EU login CAS Server",
+    ),
     "MATOMO_SERVER": (
         "https://digital-agenda-data.eu/analytics/",
         "Matomo server; analytics are disabled if this is not set",
@@ -322,6 +330,35 @@ CONSTANCE_CONFIG = {
         "Matomo Site ID; analytics are disabled if this is not set",
     ),
 }
+CONSTANCE_CONFIG_FIELDSETS = (
+    (
+        "Feedback",
+        {
+            "collapse": False,
+            "fields": ("FEEDBACK_EMAIL",),
+        },
+    ),
+    (
+        "European Commission WebTools",
+        {
+            "collapse": False,
+            "fields": (
+                "GLOBAL_BANNER_ENABLED",
+                "EU_LOGIN_ENABLED",
+            ),
+        },
+    ),
+    (
+        "Analytics",
+        {
+            "collapse": False,
+            "fields": (
+                "MATOMO_SERVER",
+                "MATOMO_SITE_ID",
+            ),
+        },
+    ),
+)
 
 
 # Task Queue (RQ)

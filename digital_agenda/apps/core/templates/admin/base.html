@@ -7,11 +7,13 @@
     src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
     crossorigin="anonymous"></script>
-  <script
-    defer
-    src="https://europa.eu/webtools/load.js?globan=1110"
-    type="text/javascript"
-  ></script>
+  {% if GLOBAL_BANNER_ENABLED %}
+    <script
+      defer
+      src="https://europa.eu/webtools/load.js?globan=1110"
+      type="text/javascript"
+    ></script>
+  {% endif %}
 {% endblock %}
 
 {% block extrastyle %}

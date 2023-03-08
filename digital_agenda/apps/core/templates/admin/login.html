@@ -3,15 +3,17 @@
 
 {% block content %}
   {{ block.super }}
-  <br class="clear"/>
-  <div class="sso-logins">
-    <p>
-      Or login with
-    </p>
-    <div>
-      <a href="{% url 'cas_ng_login' %}" class="sso-login-button">
-        <img src="{% static 'eu-login.png' %}" alt="EU Login"/>
-      </a>
+  {% if EU_LOGIN_ENABLED %}
+    <br class="clear"/>
+    <div class="sso-logins">
+      <p>
+        Or login with
+      </p>
+      <div>
+        <a href="{% url 'cas_ng_login' %}" class="sso-login-button">
+          <img src="{% static 'eu-login.png' %}" alt="EU Login"/>
+        </a>
+      </div>
     </div>
-  </div>
+  {% endif %}
 {% endblock content %}

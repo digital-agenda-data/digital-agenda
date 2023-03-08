@@ -43,6 +43,7 @@ export default {
   mounted() {
     this.loadECL();
     this.initAnalytics();
+    this.initGloban();
   },
   methods: {
     /**
@@ -80,6 +81,13 @@ export default {
       g.async = true;
       g.src = server + "matomo.js";
       s.parentNode.insertBefore(g, s);
+    },
+    async initGloban() {
+      if (!this.appSettings.global_banner_enabled) return;
+
+      await useScriptTag(
+        "https://europa.eu/webtools/load.js?globan=1010"
+      ).load();
     },
   },
 };
