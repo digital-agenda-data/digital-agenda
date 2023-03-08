@@ -28,8 +28,9 @@
     - [Europa Component Library](https://ec.europa.eu/component-library/)
 - [European Commission WebTools](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Webtools+documentation+-+Homepage), 
   documentation requires an account to view (with 2FA active) 
-    - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner)
-    - [Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)
+    - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner) 
+    - ~~[Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)~~
+      (Removed for now as it only works for `*.europa.eu` domains)
 - Misc:
     - EU Login - No documentation available; however it is a CAS server, so see [django-cas-ng](https://djangocas.dev/docs/latest/) instead.    
     - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA) 

@@ -8,7 +8,7 @@
       v-if="icon && iconLeft"
       :icon="icon"
       :rotate="iconRotate"
-      size="fluid"
+      :size="iconSize"
       class="ecl-link__icon"
     />
     <slot>
@@ -20,7 +20,7 @@
       v-if="icon && !iconLeft"
       :icon="icon"
       :rotate="iconRotate"
-      size="fluid"
+      :size="iconSize"
       class="ecl-link__icon"
     />
   </component>
@@ -91,6 +91,16 @@ export default {
       required: false,
       default: "0",
     },
+    iconSize: {
+      type: String,
+      required: false,
+      default: "fluid",
+      validator(value) {
+        return ["2xs", "xs", "s", "m", "l", "xl", "2xl", "fluid"].includes(
+          value
+        );
+      },
+    },
     noVisited: {
       type: Boolean,
       required: false,
@@ -120,7 +130,9 @@ export default {
     isExternalLink() {
       return (
         typeof this.to === "string" &&
-        (this.to.startsWith("http://") || this.to.startsWith("https://"))
+        (this.to.startsWith("http://") ||
+          this.to.startsWith("https://") ||
+          this.to.startsWith("mailto:"))
       );
     },
     bindAttrs() {

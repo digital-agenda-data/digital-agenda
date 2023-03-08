@@ -11,9 +11,21 @@ import socialMediaSpritesURL from "@ecl/preset-ec/dist/images/icons-social-media
 import spritesValidIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
 import socialMediaValidIcons from "@ecl/preset-ec/dist/images/icons-social-media/lists/social-media.json";
 
+import emailIcon from "@/assets/social-media/email.svg?url";
+import twitterIcon from "@/assets/social-media/twitter.svg?url";
+import linkedinIcon from "@/assets/social-media/linkedin.svg?url";
+import facebookIcon from "@/assets/social-media/facebook.svg?url";
+
 const allIcons = Object.fromEntries([
-  ...spritesValidIcons.map((icon) => [icon, iconSpritesURL]),
-  ...socialMediaValidIcons.map((icon) => [icon, socialMediaSpritesURL]),
+  ...spritesValidIcons.map((icon) => [icon, iconSpritesURL + "#" + icon]),
+  ...socialMediaValidIcons.map((icon) => [
+    icon,
+    socialMediaSpritesURL + "#" + icon,
+  ]),
+  ["email", emailIcon + "#root"],
+  ["twitter", twitterIcon + "#root"],
+  ["linkedin", linkedinIcon + "#root"],
+  ["facebook", facebookIcon + "#root"],
 ]);
 
 /**
@@ -79,7 +91,7 @@ export default {
   },
   computed: {
     href() {
-      return allIcons[this.icon] + "#" + this.icon;
+      return allIcons[this.icon];
     },
     classList() {
       const result = [
