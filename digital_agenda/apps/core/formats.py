@@ -167,7 +167,12 @@ class BaseExcelLoader(BaseFileLoader, ABC):
             }
 
         with transaction.atomic():
-            facts = Fact.objects.bulk_create(data)
+            facts = Fact.objects.bulk_create(
+                data,
+                update_conflicts=True,
+                update_fields=("value", "flags", "import_file"),
+                unique_fields=("indicator", "breakdown", "unit", "country", "period"),
+            )
             return len(facts), errors
 
 
