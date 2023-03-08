@@ -43,7 +43,8 @@
   }
 
   // Map Chart need totally different sizes
-  .chart-container-digital-agenda.MapCompareCountries > * {
+  .chart-container-digital-agenda.EUMapCompareCountries > *,
+  .chart-container-digital-agenda.WorldMapCompareCountries > * {
     height: 600px;
 
     @media (min-width: 768px) {

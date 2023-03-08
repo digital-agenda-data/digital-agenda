@@ -177,11 +177,20 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             ),
         ),
         (
-            "Map",
+            "EU Map",
             (
                 (
-                    "MAP_COMPARE_COUNTRIES",
-                    "Map Chart: Compare Countries",
+                    "MAP_EU_COMPARE_COUNTRIES",
+                    "EU Map Chart: Compare Countries",
+                ),
+            ),
+        ),
+        (
+            "World Map",
+            (
+                (
+                    "MAP_WORLD_COMPARE_COUNTRIES",
+                    "World Map Chart: Compare Countries",
                 ),
             ),
         ),

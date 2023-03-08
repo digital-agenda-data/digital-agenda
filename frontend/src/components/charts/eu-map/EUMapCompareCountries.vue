@@ -6,13 +6,13 @@ import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithG
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
-import topologyUrl from "@/assets/topology.json?url";
+import topologyUrl from "@/assets/topology/eu.json?url";
 
 const valueNotAvailableColor = "#E3E3E3";
 const hoverCountryColor = "#467A39";
 
 export default {
-  name: "MapCompareCountries",
+  name: "EUMapCompareCountries",
   extends: BaseChart,
   data() {
     return {
@@ -20,6 +20,9 @@ export default {
     };
   },
   computed: {
+    topologyUrl() {
+      return topologyUrl;
+    },
     constructorType() {
       return "mapChart";
     },
@@ -73,6 +76,24 @@ export default {
     maxValue() {
       return Math.max(...this.apiData.map((item) => item.value));
     },
+    panningEnabled() {
+      return false;
+    },
+    mapNavigationEnabled() {
+      return false;
+    },
+    mapView() {
+      return {
+        center: [348227.6471561784, 7743167.912180269],
+        zoom: -12.65,
+      };
+    },
+    mapViewMobile() {
+      return {
+        center: [1164133.0400299034, 7610148.079491587],
+        zoom: -13.35,
+      };
+    },
     chartOptions() {
       return {
         chart: {
@@ -81,19 +102,16 @@ export default {
           // so disable them completely.
           animation: false,
           panning: {
-            enabled: false,
+            enabled: this.panningEnabled,
           },
         },
         exporting: {
           sourceHeight: 976,
         },
         mapNavigation: {
-          enabled: false,
+          enabled: this.mapNavigationEnabled,
         },
-        mapView: {
-          center: [1164133.0400299034, 7610148.079491587],
-          zoom: -13.35,
-        },
+        mapView: this.mapViewMobile,
         colorAxis: {
           min: 0,
           max: this.maxValue,
@@ -119,10 +137,7 @@ export default {
             {
               condition: { minWidth: 768 },
               chartOptions: {
-                mapView: {
-                  center: [348227.6471561784, 7743167.912180269],
-                  zoom: -12.65,
-                },
+                mapView: this.mapView,
                 legend: {
                   align: "left",
                 },
@@ -136,7 +151,7 @@ export default {
   methods: {
     async loadExtra() {
       if (!this.mapData) {
-        this.mapData = await (await fetch(topologyUrl)).json();
+        this.mapData = await (await fetch(this.topologyUrl)).json();
       }
     },
   },

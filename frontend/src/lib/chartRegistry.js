@@ -15,7 +15,9 @@ import SplineCompareTwoIndicators from "@/components/charts/spline/SplineCompare
 import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterCompareTwoIndicators.vue";
 import BubbleCompareThreeIndicators from "@/components/charts/bubble/BubbleCompareThreeIndicators.vue";
 
-import MapCompareCountries from "@/components/charts/map/MapCompareCountries.vue";
+import EUMapCompareCountries from "@/components/charts/eu-map/EUMapCompareCountries.vue";
+import WorldMapCompareCountries from "@/components/charts/world-map/WorldMapCompareCountries.vue";
+
 import TableDebugData from "@/components/charts/table/TableDebugData.vue";
 
 // Map values from the backend to frontend components
@@ -34,6 +36,7 @@ export default {
   SPLINE_COMPARE_TWO_INDICATORS: SplineCompareTwoIndicators,
   SCATTER_COMPARE_TWO_INDICATORS: ScatterCompareTwoIndicators,
   BUBBLE_COMPARE_THREE_INDICATORS: BubbleCompareThreeIndicators,
-  MAP_COMPARE_COUNTRIES: MapCompareCountries,
+  MAP_EU_COMPARE_COUNTRIES: EUMapCompareCountries,
+  MAP_WORLD_COMPARE_COUNTRIES: WorldMapCompareCountries,
   TABLE_DEBUG_DATA: TableDebugData,
 };
