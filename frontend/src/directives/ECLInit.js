@@ -25,8 +25,8 @@
 export default {
   // called when the bound element's parent component
   // and all its children are mounted.
-  mounted(el) {
-    initComponent(el);
+  mounted(el, binding) {
+    initComponent(el, binding.value);
   },
   // called when the parent component is unmounted
   unmounted(el) {
@@ -34,7 +34,7 @@ export default {
   },
 };
 
-function initComponent(el) {
+function initComponent(el, options) {
   // Requires attribute data-ecl-auto-init="COMPONENT"
   const componentName = el.dataset.eclAutoInit;
 
@@ -51,7 +51,11 @@ function initComponent(el) {
     return;
   }
 
-  window.ECL[componentName].autoInit(el);
+  if (options) {
+    window.ECL[componentName].autoInit(el, options);
+  } else {
+    window.ECL[componentName].autoInit(el);
+  }
 }
 
 function destroyComponent(el) {
