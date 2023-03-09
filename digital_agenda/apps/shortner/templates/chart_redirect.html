@@ -27,9 +27,28 @@
     <meta name="twitter:image" content="{{ image }}" />
 
     <style>
+      .redirect-fallback {
+        opacity: 0;
+
+        animation: fadeIn 0.5s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
       /* Provided by https://loading.io/css/ under  CC0 License */
       .lds-app-loader {
+        font-family: Arial, sans-serif;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         position: absolute;
@@ -89,6 +108,11 @@
         <div></div>
         <div></div>
         <div></div>
+      </div>
+      <h1>Redirecting...</h1>
+      <div class="redirect-fallback">
+        Click <a href="{{ obj.chart_url }}">here</a> if you are not redirected
+        automatically.
       </div>
     </div>
   </body>
