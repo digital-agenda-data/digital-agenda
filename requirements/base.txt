@@ -20,7 +20,6 @@ django-rq
 django-task
 djangorestframework
 djangorestframework-csv
-django-sql-dashboard
 drf-spectacular
 httpx
 openpyxl

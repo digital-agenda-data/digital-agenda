@@ -82,7 +82,6 @@ THIRD_PARTY_APPS = [
     "admin_auto_filters",
     "psqlextra",
     "rest_framework",
-    "django_sql_dashboard",
     "health_check",
     "health_check.db",
     "health_check.cache",
@@ -159,8 +158,6 @@ POSTGRES_PORT = env.int("POSTGRES_PORT", default=5432)
 POSTGRES_DB = env.str("POSTGRES_DB")
 POSTGRES_USER = env.str("POSTGRES_USER")
 POSTGRES_PASSWORD = env.str("POSTGRES_PASSWORD")
-POSTGRES_DASHBOARD_USER = env.str("POSTGRES_DASHBOARD_USER")
-POSTGRES_DASHBOARD_PASSWORD = env.str("POSTGRES_DASHBOARD_PASSWORD")
 
 DATABASES = {
     "default": {
@@ -171,19 +168,6 @@ DATABASES = {
         "USER": POSTGRES_USER,
         "PASSWORD": POSTGRES_PASSWORD,
         "OPTIONS": {"sslmode": "disable"},
-        "CONN_MAX_AGE": None,
-        "CONN_HEALTH_CHECKS": True,
-    },
-    "dashboard": {
-        "ENGINE": "psqlextra.backend",
-        "NAME": POSTGRES_DB,
-        "HOST": POSTGRES_HOST,
-        "PORT": POSTGRES_PORT,
-        "USER": POSTGRES_DASHBOARD_USER,
-        "PASSWORD": POSTGRES_DASHBOARD_PASSWORD,
-        "OPTIONS": {
-            "options": "-c default_transaction_read_only=on -c statement_timeout=5000"
-        },
         "CONN_MAX_AGE": None,
         "CONN_HEALTH_CHECKS": True,
     },

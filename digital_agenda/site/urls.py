@@ -31,7 +31,6 @@ urlpatterns = [
         name="redoc",
     ),
     path("ht/", include("health_check.urls")),
-    path("dashboard/", include("django_sql_dashboard.urls")),
     path("django-rq/", include("django_rq.urls")),
     path("django_task/", include("django_task.urls", namespace="django_task")),
     path(
