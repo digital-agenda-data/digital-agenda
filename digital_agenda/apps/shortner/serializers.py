@@ -13,7 +13,7 @@ class ShortURLSerializer(serializers.ModelSerializer):
         slug_field="code",
         many=False,
         read_only=False,
-        queryset=Chart.objects.filter(is_draft=False),
+        queryset=Chart.objects.all(),
     )
     short_url = serializers.SerializerMethodField(read_only=True)
 
