@@ -35,25 +35,35 @@
         name: 'feedback',
       }"
     />
-    <ecl-social-media-share :text="currentChart.name" />
+    <div v-if="!shareURL">
+      <ecl-button label="Share" icon="share" @click="getShortUrl" />
+    </div>
+    <ecl-social-media-share v-else :text="currentChart.name" :url="shareURL" />
   </div>
 </template>
 <script>
+import EclButton from "@/components/ecl/EclButton.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclSocialMediaShare from "@/components/ecl/EclSocialMediaShare.vue";
+import { api } from "@/lib/api";
 import { mapState } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export default {
   name: "ChartActions",
-  components: { EclLink, EclSocialMediaShare },
+  components: { EclButton, EclLink, EclSocialMediaShare },
   props: {
     chartRef: {
       type: Object,
       required: false,
       default: null,
     },
+  },
+  data() {
+    return {
+      shareURL: null,
+    };
   },
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
@@ -67,6 +77,13 @@ export default {
       return this.chartRef?.chart;
     },
   },
+  watch: {
+    $route() {
+      // Reset share URL since we will need to generate a new one if the URL
+      // changes
+      this.shareURL = null;
+    },
+  },
   methods: {
     printPage() {
       window.print();
@@ -76,6 +93,14 @@ export default {
     },
     downloadChart() {
       this.highchartInstance.exportChartLocal();
+    },
+    async getShortUrl() {
+      this.shareURL = (
+        await api.post("/short-urls/", {
+          chart: this.currentChart.code,
+          query_arguments: window.location.search,
+        })
+      ).data.short_url;
     },
   },
 };

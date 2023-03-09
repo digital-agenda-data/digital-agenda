@@ -7,6 +7,7 @@
       :class="classList"
       :placeholder="placeholderText"
       :disabled="disabled"
+      :readonly="readOnly"
       :required="required"
       :minlength="minLength"
       :maxlength="maxLength"

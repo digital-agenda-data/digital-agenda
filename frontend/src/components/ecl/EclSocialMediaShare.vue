@@ -14,15 +14,24 @@
           icon-size="xl"
           icon-left
           class="ecl-social-media-share__link"
+          rel="noreferrer noopener"
           no-visited
           :title="item.label"
+          @click.capture="item.func"
         />
       </li>
     </ul>
+    <ecl-text-field
+      ref="shareTextField"
+      :model-value="currentUrl.toString()"
+      read-only
+      copy-on-click
+    />
   </div>
 </template>
 
 <script>
+import EclTextField from "@/components/ecl/forms/EclTextField.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { useChartStore } from "@/stores/chartStore";
 import { mapState } from "pinia";
@@ -34,8 +43,13 @@ import { mapState } from "pinia";
  */
 export default {
   name: "EclSocialMediaShare",
-  components: { EclLink },
+  components: { EclTextField, EclLink },
   props: {
+    url: {
+      type: String,
+      required: false,
+      default: null,
+    },
     text: {
       type: String,
       required: false,
@@ -45,7 +59,7 @@ export default {
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
     currentUrl() {
-      return new URL(this.$route.href, window.location);
+      return this.url ?? new URL(this.$route.href, window.location);
     },
     /**
      * EC Web Tools "Share Buttons" widget
@@ -111,7 +125,21 @@ export default {
           icon: "email",
           to: this.mailToShare,
         },
+        {
+          key: "copy",
+          label: "Copy to clipboard",
+          icon: "copy-share",
+          to: "#",
+          func: this.copyUrl,
+        },
       ];
+    },
+  },
+  methods: {
+    copyUrl(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.$refs.shareTextField.copyToClipboard();
     },
   },
 };
@@ -120,6 +148,7 @@ export default {
 <style scoped lang="scss">
 .ecl-social-media-share__list {
   flex-direction: row !important;
+  margin-bottom: 1rem;
 }
 
 .ecl-social-media-share__item {

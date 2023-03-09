@@ -35,6 +35,11 @@ export default {
       required: false,
       default: false,
     },
+    readOnly: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     errors: {
       type: Array,
       required: false,
@@ -82,6 +87,10 @@ export default {
 
       if (this.disabled) {
         result.push(`${this.className}--disabled`);
+      }
+
+      if (this.readOnly) {
+        result.push(`${this.className}--readonly`);
       }
       if (this.errors && this.errors.length > 0) {
         result.push(`${this.className}--invalid`);

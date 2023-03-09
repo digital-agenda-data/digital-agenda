@@ -16,8 +16,9 @@ class ShortURL(TimestampedModel):
     def chart_url(self):
         protocol = "https" if settings.HAS_HTTPS else "http"
         host = settings.FRONTEND_HOST[0]
+        args = self.query_arguments.strip("?")
 
         return (
             f"{protocol}://{host}/datasets/"
-            f"{self.chart.chart_group.code}/charts/{self.chart.code}?{self.query_arguments}"
+            f"{self.chart.chart_group.code}/charts/{self.chart.code}?{args}"
         )
