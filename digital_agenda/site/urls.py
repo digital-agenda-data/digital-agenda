@@ -12,12 +12,16 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from digital_agenda.apps.shortner.views import ChartRedirectView
+
 api_urlpatterns = [
     path("", include("digital_agenda.apps.core.urls")),
     path("", include("digital_agenda.apps.charts.urls")),
+    path("", include("digital_agenda.apps.shortner.urls")),
 ]
 
 urlpatterns = [
+    path("s/<id>/", ChartRedirectView.as_view(), name="chart_redirect"),
     path("api/v1/", include((api_urlpatterns, "api"), namespace="v1")),
     path("api/v1/schema/", SpectacularAPIView.as_view(api_version="v1"), name="schema"),
     path(

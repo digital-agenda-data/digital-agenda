@@ -1,3 +1,5 @@
+import functools
+
 from ckeditor.fields import RichTextField
 from composite_field import CompositeField
 from django.conf import settings
@@ -5,6 +7,7 @@ from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.utils.html import strip_tags
 
 from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import NaturalCodeManger
@@ -254,3 +257,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
             for private_field in Chart._meta.private_fields
             for subfield in private_field.subfields.values()
         )
+
+    @functools.cached_property
+    def plaintext_description(self):
+        return strip_tags(self.description)

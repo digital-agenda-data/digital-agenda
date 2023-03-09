@@ -69,6 +69,7 @@ LOCAL_APPS = [
     "digital_agenda.apps.core.apps.Config",
     "digital_agenda.apps.estat.apps.Config",
     "digital_agenda.apps.charts.apps.Config",
+    "digital_agenda.apps.shortner.apps.Config",
 ]
 
 THIRD_PARTY_APPS = [
@@ -148,6 +149,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "digital_agenda.site.wsgi.application"
 ASGI_APPLICATION = "digital_agenda.site.asgi.application"
+
+# HashID
+# https://github.com/nshafer/django-hashid-field
+
+HASHID_FIELD_SALT = env.str("HASHID_FIELD_SALT")
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

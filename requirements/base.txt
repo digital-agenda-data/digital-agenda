@@ -11,6 +11,7 @@ django-cors-headers
 django-environ
 django-extensions
 django-filter
+django-hashid-field
 django-health-check
 django_json_widget
 django-model-utils
