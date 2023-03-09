@@ -12,6 +12,9 @@ class ShortURL(TimestampedModel):
     chart = models.ForeignKey("charts.Chart", on_delete=models.CASCADE)
     query_arguments = models.CharField(max_length=1024, blank=True, default="")
 
+    class Meta:
+        unique_together = ("chart", "query_arguments")
+
     @functools.cached_property
     def chart_url(self):
         protocol = "https" if settings.HAS_HTTPS else "http"
