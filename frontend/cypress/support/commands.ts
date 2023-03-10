@@ -162,13 +162,29 @@ Cypress.Commands.addAll({
     // Check the export data link
     cy.checkExportLink("Export data", "xlsx");
 
+    // Check share link
+    cy.get("button")
+      .contains("Share")
+      .click()
+      .get(".ecl-social-media-share input[type=text]")
+      .invoke("val")
+      .then((value) => {
+        // Navigate to the short URL and check the chart again.
+        // Everything should be the same as the backend should redirect
+        // us to the exact same page as before.
+        cy.visit(value.toString());
+        checkChartInstance();
+      });
+
     // Check the chart again in embedded mode
     cy.get("a")
       .contains("Embedded URL")
       .parent("a")
       .invoke("attr", "href")
       .then((href) => {
-        // Can't click on in since it opens in a new tab
+        // Can't click on in since it opens in a new tab, so
+        // navigate and check the chart again. Everything should
+        // still be the same, but embedded instead.
         cy.visit(href);
         checkChartInstance();
       });
