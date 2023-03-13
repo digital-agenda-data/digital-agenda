@@ -1,13 +1,13 @@
 from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
-from django.db.models import ManyToManyField
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
+from digital_agenda.common.admin import HasChangesAdminMixin
 
 
 @admin.register(Chart)
-class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
+class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
     prepopulated_fields = {
         "code": (
             "chart_group",
@@ -30,59 +30,113 @@ class ChartAdmin(SortableAdminMixin, admin.ModelAdmin):
         "chart_group",
         *Chart.m2m_filter_options,
     )
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": (
+                    "is_draft",
+                    "chart_group",
+                    "name",
+                    "code",
+                    "chart_type",
+                    "description",
+                    "image",
+                )
+            },
+        ),
+        (
+            "Indicator Group Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "indicator_group_filter_hidden",
+                    "indicator_group_filter_defaults",
+                    "indicator_group_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Indicator Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "indicator_filter_hidden",
+                    "indicator_filter_defaults",
+                    "indicator_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Breakdown Group Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "breakdown_group_filter_hidden",
+                    "breakdown_group_filter_defaults",
+                    "breakdown_group_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Breakdown Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "breakdown_filter_hidden",
+                    "breakdown_filter_defaults",
+                    "breakdown_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Period Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "period_filter_hidden",
+                    "period_filter_defaults",
+                    "period_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Unit Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "unit_filter_hidden",
+                    "unit_filter_defaults",
+                    "unit_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Country Filter",
+            {
+                "classes": ["wide", "collapse"],
+                "fields": [
+                    "country_filter_hidden",
+                    "country_filter_defaults",
+                    "country_filter_ignored",
+                ],
+            },
+        ),
+        (
+            "Advanced Settings",
+            {
+                "classes": ["collapse"],
+                "fields": (
+                    "min_value",
+                    "max_value",
+                ),
+            },
+        ),
+    ]
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         result = super().formfield_for_manytomany(db_field, request, **kwargs)
         result.widget.attrs["style"] = "width: 580px;"
-        return result
-
-    def has_changes(self, private_field, obj=None):
-        if not obj:
-            return False
-
-        for subfield in private_field.subfields.values():
-            value = getattr(obj, subfield.name)
-            if isinstance(subfield, ManyToManyField):
-                if value.exists():
-                    return True
-            elif value != subfield.default:
-                return True
-
-        return False
-
-    def get_fieldsets(self, request, obj=None):
-        result = [
-            (
-                None,
-                {
-                    "fields": (
-                        "is_draft",
-                        "chart_group",
-                        "name",
-                        "code",
-                        "chart_type",
-                        "description",
-                        "image",
-                    )
-                },
-            )
-        ]
-        for private_field in Chart._meta.private_fields:
-            classes = ["wide", "collapse"]
-            if self.has_changes(private_field, obj=obj):
-                classes.append("has-changes")
-
-            subfields = [subfield.name for subfield in private_field.subfields.values()]
-            result.append(
-                (
-                    private_field.verbose_name.title(),
-                    {
-                        "classes": classes,
-                        "fields": subfields,
-                    },
-                )
-            )
-
         return result
 
 

@@ -77,6 +77,8 @@ class ChartSerializer(serializers.ModelSerializer):
             "is_draft",
             "image",
             *Chart.filter_options,
+            "min_value",
+            "max_value",
         )
         read_only_fields = fields
 

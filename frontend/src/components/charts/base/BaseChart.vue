@@ -2,7 +2,7 @@
   <highcharts
     v-if="ready"
     :constructor-type="constructorType"
-    :options="{ ...chartOptionsDefaults, ...chartOptions }"
+    :options="mergedChartOptions"
     :callback="highchartsCallback"
   />
   <ecl-spinner v-else size="large" centered absolute />
@@ -27,7 +27,7 @@ import {
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useCountryStore } from "@/stores/countryStore";
-import { EUROSTAT_FLAGS } from "@/lib/constants";
+import { EUROSTAT_FLAGS, VALUE_AXIS } from "@/lib/constants";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -187,6 +187,30 @@ export default {
      */
     series() {
       return [];
+    },
+    mergedChartOptions() {
+      const result = {
+        ...this.chartOptionsDefaults,
+        ...this.chartOptions,
+      };
+
+      // Set custom ranges to the "value" axis depending on the chart type.
+      // No idea why anyone would ever use this. Oh well... ¯\_(ツ)_/¯
+      const minValue = this.currentChart.min_value;
+      const maxValue = this.currentChart.max_value;
+
+      for (const axis of VALUE_AXIS[this.chartType] ?? []) {
+        result[axis] ??= {};
+
+        // Some charts have multiple axis of the same kind, so force array here
+        // (e.g. SplineCompareTwoIndicators)
+        for (const opt of forceArray(result[axis])) {
+          opt.min = minValue ?? opt.min;
+          opt.max = maxValue ?? opt.max;
+        }
+      }
+
+      return result;
     },
     /**
      * Default chart options, (shallow) merged with the chartOptions

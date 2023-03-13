@@ -72,3 +72,13 @@ export const SERIES_COLORS = [
   "#D000C4",
   "#0B4EA2",
 ];
+
+// Hardcoded list determining what axis are the "value" axis
+// depending on the chart type. Used for custom axis ranges.
+export const VALUE_AXIS = {
+  bar: ["xAxis"],
+  bubble: ["xAxis", "yAxis"],
+  column: ["yAxis"],
+  scatter: ["xAxis", "yAxis"],
+  spline: ["yAxis"],
+};

@@ -222,6 +222,13 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         ),
     )
 
+    min_value = models.FloatField(
+        help_text="Minimum value of the axis", default=None, null=True, blank=True
+    )
+    max_value = models.FloatField(
+        help_text="Maximum value of the axis", default=None, null=True, blank=True
+    )
+
     indicator_group_filter = filter_option_field("core.IndicatorGroup")
     indicator_filter = filter_option_field("core.Indicator")
     breakdown_group_filter = filter_option_field("core.BreakdownGroup")
@@ -261,3 +268,12 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     @functools.cached_property
     def plaintext_description(self):
         return strip_tags(self.description)
+
+    def clean(self):
+        if (
+            self.min_value is not None
+            and self.max_value is not None
+            and self.min_value >= self.max_value
+        ):
+            msg = "Min value must be lower than the Max value"
+            raise ValidationError({"min_value": msg, "max_value": msg})
