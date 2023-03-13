@@ -1,5 +1,6 @@
 <template>
-  <div v-if="eclIsReady" class="ecl app-wrapper">
+  <div v-if="appSettings.global_banner_enabled" id="globan-here" />
+  <div v-if="isReady" class="ecl app-wrapper">
     <ecl-site-header />
     <main class="ecl-container">
       <ecl-page-header />
@@ -26,7 +27,7 @@ export default {
   components: { EclSiteFooter, EclPageHeader, EclSiteHeader },
   data() {
     return {
-      eclIsReady: false,
+      isReady: false,
     };
   },
   computed: {
@@ -40,10 +41,15 @@ export default {
       }
     },
   },
-  mounted() {
-    this.loadECL();
-    this.initAnalytics();
-    this.initGloban();
+  async mounted() {
+    try {
+      await Promise.all([this.loadECL(), this.initGloban()]);
+    } finally {
+      this.isReady = true;
+      // Always attempt to load analytics but do it after the "important"
+      // libraries are loaded.
+      await this.initAnalytics();
+    }
   },
   methods: {
     /**
@@ -54,15 +60,11 @@ export default {
      * of using a CDN as we want to serve them ourselves.
      */
     async loadECL() {
-      try {
-        // ECL.js also requires moment loaded in the global scope.
-        // However, it's only used for the DatePicker component which we have
-        // no need for, so simply mock it here to prevent failure.
-        window.moment = { "": "Moment JS mock" };
-        await useScriptTag(eclURL).load();
-      } finally {
-        this.eclIsReady = true;
-      }
+      // ECL.js also requires moment loaded in the global scope.
+      // However, it's only used for the DatePicker component which we have
+      // no need for, so simply mock it here to prevent failure.
+      window.moment = { "": "Moment JS mock" };
+      await useScriptTag(eclURL).load();
     },
     async initAnalytics() {
       const siteId = this.appSettings.analytics_site_id;
@@ -103,4 +105,8 @@ export default {
 @import "@ecl/preset-ec/dist/styles/ecl-ec-print.css" print;
 
 @import "vue-multiselect/dist/vue-multiselect.css";
+
+#globan-here {
+  min-height: 28px;
+}
 </style>
