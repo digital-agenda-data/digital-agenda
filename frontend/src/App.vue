@@ -1,28 +1,36 @@
 <template>
-  <interactive-chart v-if="isEmbedded && isReady" />
-  <main-layout v-else-if="isReady" />
+  <simple-spinner v-if="!isReady" />
+  <interactive-chart v-else-if="isEmbedded" />
+  <main-layout v-else />
 </template>
 
 <script>
-import { useAppSettings } from "@/stores/appSettingsStore";
 import { mapStores } from "pinia";
+import { defineAsyncComponent } from "vue";
 
 import { getRouteMeta } from "@/lib/utils";
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { defineAsyncComponent } from "vue";
+import { useAppSettings } from "@/stores/appSettingsStore";
+
+import SimpleSpinner from "@/components/SimpleSpinner.vue";
 
 const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
 
 export default {
   name: "App",
   components: {
+    SimpleSpinner,
     // Define async components (instead of regular ones) to avoid loading
     // extra CSS/JS while in embed mode
-    MainLayout: defineAsyncComponent(() => import("@/views/MainLayout.vue")),
-    InteractiveChart: defineAsyncComponent(() =>
-      import("@/components/charts/InteractiveChart.vue")
-    ),
+    MainLayout: defineAsyncComponent({
+      loader: () => import("@/views/MainLayout.vue"),
+      loadingComponent: SimpleSpinner,
+    }),
+    InteractiveChart: defineAsyncComponent({
+      loader: () => import("@/components/charts/InteractiveChart.vue"),
+      loadingComponent: SimpleSpinner,
+    }),
   },
   computed: {
     ...mapStores(useChartGroupStore, useChartStore, useAppSettings),

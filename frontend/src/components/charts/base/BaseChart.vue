@@ -5,7 +5,7 @@
     :options="mergedChartOptions"
     :callback="highchartsCallback"
   />
-  <ecl-spinner v-else size="large" centered absolute />
+  <simple-spinner v-else />
 </template>
 
 <script>
@@ -13,7 +13,7 @@ import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
-import EclSpinner from "@/components/ecl/EclSpinner.vue";
+import SimpleSpinner from "@/components/SimpleSpinner.vue";
 
 import { api } from "@/lib/api";
 import {
@@ -36,7 +36,7 @@ import { EUROSTAT_FLAGS, VALUE_AXIS } from "@/lib/constants";
 export default {
   name: "BaseChart",
   components: {
-    EclSpinner,
+    SimpleSpinner,
     highcharts: Chart,
   },
   data() {
