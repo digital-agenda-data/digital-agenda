@@ -35,14 +35,27 @@
         name: 'feedback',
       }"
     />
-    <div v-if="!shareURL">
-      <ecl-button label="Share" icon="share" @click="getShortUrl" />
-    </div>
-    <ecl-social-media-share v-else :text="currentChart.name" :url="shareURL" />
+    <transition mode="out-in">
+      <div v-if="!shareURL">
+        <ecl-button
+          v-if="!loading"
+          label="Share"
+          icon="share"
+          @click="getShortUrl"
+        />
+        <ecl-spinner v-else size="small" />
+      </div>
+      <ecl-social-media-share
+        v-else
+        :text="currentChart.name"
+        :url="shareURL"
+      />
+    </transition>
   </div>
 </template>
 <script>
 import EclButton from "@/components/ecl/EclButton.vue";
+import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclSocialMediaShare from "@/components/ecl/EclSocialMediaShare.vue";
 import { api } from "@/lib/api";
@@ -52,7 +65,7 @@ import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export default {
   name: "ChartActions",
-  components: { EclButton, EclLink, EclSocialMediaShare },
+  components: { EclSpinner, EclButton, EclLink, EclSocialMediaShare },
   props: {
     chartRef: {
       type: Object,
@@ -62,6 +75,7 @@ export default {
   },
   data() {
     return {
+      loading: false,
       shareURL: null,
     };
   },
@@ -95,12 +109,17 @@ export default {
       this.highchartInstance.exportChartLocal();
     },
     async getShortUrl() {
-      this.shareURL = (
-        await api.post("/short-urls/", {
-          chart: this.currentChart.code,
-          query_arguments: window.location.search,
-        })
-      ).data.short_url;
+      try {
+        this.loading = true;
+        this.shareURL = (
+          await api.post("/short-urls/", {
+            chart: this.currentChart.code,
+            query_arguments: window.location.search,
+          })
+        ).data.short_url;
+      } finally {
+        this.loading = false;
+      }
     },
   },
 };
