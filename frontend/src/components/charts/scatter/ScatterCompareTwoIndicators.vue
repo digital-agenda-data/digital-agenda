@@ -1,4 +1,5 @@
 <script>
+import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
 import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue";
 import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
 import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
@@ -6,7 +7,6 @@ import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithG
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
-import { sortCI } from "@/lib/utils";
 
 export default {
   name: "ScatterCompareTwoIndicators",
@@ -29,6 +29,10 @@ export default {
         {
           component: PeriodFilter,
           attrs: { showAxisLabel: false },
+        },
+        {
+          component: CountryMultiFilter,
+          attrs: { allInitial: true, hidden: true, syncRoute: false },
         },
       ];
     },
@@ -55,8 +59,7 @@ export default {
       return ["country", "axis"];
     },
     series() {
-      return Object.keys(this.apiValuesGrouped).map((countryCode) => {
-        const country = this.countryByCode.get(countryCode);
+      return this.filterStore.countryX.map((country) => {
         const name = country.display;
         return {
           name,
@@ -67,9 +70,9 @@ export default {
           data: [
             {
               name,
-              x: this.apiValuesGrouped[countryCode].X || 0,
-              y: this.apiValuesGrouped[countryCode].Y || 0,
-              z: this.apiValuesGrouped[countryCode].Z || 0,
+              x: this.apiValuesGrouped[country.code]?.X || 0,
+              y: this.apiValuesGrouped[country.code]?.Y || 0,
+              z: this.apiValuesGrouped[country.code]?.Z || 0,
             },
           ],
         };
