@@ -7,7 +7,7 @@ server {
     tcp_nopush on;
 
     gzip on;
-    gzip_types text/plain text/css application/javascript application/json;
+    gzip_types text/plain text/css application/javascript application/json image/svg+xml;
 
     location /static/ {
         alias /.fs/static/;
