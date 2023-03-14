@@ -18,7 +18,6 @@ import SimpleSpinner from "@/components/SimpleSpinner.vue";
 import { api } from "@/lib/api";
 import {
   forceArray,
-  getDisplay,
   getUnitDisplay,
   groupByMulti,
   toAPIKey,
@@ -316,9 +315,7 @@ export default {
           }
 
           if (parent.breakdown?.code) {
-            result.push(
-              `<b>Breakdown:</b> ${parent.getDisplay(parent.breakdown)}`
-            );
+            result.push(`<b>Breakdown:</b> ${parent.breakdown.display}`);
           }
 
           if (parent.period?.code) {
@@ -355,7 +352,6 @@ export default {
     this.loadData();
   },
   methods: {
-    getDisplay,
     getUnitDisplay,
     /**
      * Join objects from the backend or strings to make a title

@@ -29,9 +29,20 @@ class BaseDimensionSerializer(serializers.ModelSerializer):
     label = serializers.CharField(label="Label")
     alt_label = serializers.CharField(label="Alt. label")
     definition = serializers.CharField(label="Definition")
+    display = serializers.SerializerMethodField(label="Display", read_only=True)
 
     class Meta:
-        fields = ["code", "label", "alt_label", "definition"]
+        fields = [
+            "code",
+            "label",
+            "alt_label",
+            "definition",
+            "display",
+        ]
+
+    def get_display(self, obj):
+        """A suitable display string for this dimension"""
+        return obj.alt_label or obj.label or obj.code
 
 
 class BreakdownSerializer(BaseDimensionSerializer):

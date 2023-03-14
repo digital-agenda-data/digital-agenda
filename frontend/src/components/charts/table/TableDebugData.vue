@@ -4,13 +4,13 @@
     <thead>
       <tr>
         <th>Country</th>
-        <th>{{ getDisplay(unit) }}</th>
+        <th>{{ unit.display }}</th>
       </tr>
     </thead>
 
     <tbody>
       <tr v-for="item in apiData" :key="item.country">
-        <td>{{ getDisplay(countryByCode.get(item.country)) }}</td>
+        <td>{{ countryByCode.get(item.country)?.display }}</td>
         <td>{{ item.value }}</td>
       </tr>
       <tr v-if="apiData.length === 0">

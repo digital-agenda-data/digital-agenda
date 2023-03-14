@@ -49,7 +49,7 @@ export default {
             return {
               fact,
               y: fact?.value || 0,
-              name: this.getDisplay(country),
+              name: country.display,
               color: colorForCountry(country),
             };
           }),

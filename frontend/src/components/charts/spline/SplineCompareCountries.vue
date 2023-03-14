@@ -31,7 +31,7 @@ export default {
     series() {
       return this.countries.map((country) => {
         return {
-          name: this.getDisplay(country),
+          name: country.display,
           color: country.color,
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[country.code][periodCode];

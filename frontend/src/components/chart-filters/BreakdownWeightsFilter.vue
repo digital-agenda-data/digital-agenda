@@ -10,7 +10,7 @@
         :to="getDefaultChartRoute(item)"
         no-visited
       >
-        {{ getDisplay(item) }}
+        {{ item.display }}
       </ecl-link>
       <range-filter :query-name="item.code" />
       <span class="ecl-u-type-align-center">

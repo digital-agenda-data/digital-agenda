@@ -16,7 +16,7 @@ import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { api } from "@/lib/api";
 import { FILTER_SUFFIXES } from "@/lib/constants";
 import { useFilterStore } from "@/stores/filterStore";
-import { forceArray, getDisplay, randomChoice } from "@/lib/utils";
+import { forceArray, randomChoice } from "@/lib/utils";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
@@ -162,7 +162,7 @@ export default {
       return this.apiData.map((item) => {
         return {
           id: item.code,
-          text: this.getDisplay(item),
+          text: item.display,
           apiProps: item,
         };
       });
@@ -275,7 +275,6 @@ export default {
     this.filterStore[this.queryName] = null;
   },
   methods: {
-    getDisplay,
     async load() {
       if (!this.endpoint) return;
       if (!Object.values(this.endpointParams).every((item) => !!item)) return;

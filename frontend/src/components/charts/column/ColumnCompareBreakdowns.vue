@@ -61,7 +61,7 @@ export default {
     series() {
       return this.breakdownList.map((breakdown, seriesIndex) => {
         return {
-          name: this.getDisplay(breakdown),
+          name: breakdown.display,
           data: this.sortedCountries.map((country) => {
             const weight = this.getWeight(breakdown);
             const fact = this.apiDataGrouped[breakdown.code]?.[country.code];
@@ -69,7 +69,7 @@ export default {
             return {
               fact,
               y: fact?.value * weight || 0,
-              name: this.getDisplay(country),
+              name: country.display,
               color: colorForCountry(country, seriesIndex),
             };
           }),

@@ -6,6 +6,7 @@ import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithG
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
+import { sortCI } from "@/lib/utils";
 
 export default {
   name: "ScatterCompareTwoIndicators",
@@ -56,7 +57,7 @@ export default {
     series() {
       return Object.keys(this.apiValuesGrouped).map((countryCode) => {
         const country = this.countryByCode.get(countryCode);
-        const name = this.getDisplay(country);
+        const name = country.display;
         return {
           name,
           color: country?.color,

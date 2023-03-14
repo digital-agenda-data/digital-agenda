@@ -50,7 +50,7 @@ export default {
 
         return {
           yAxis: index,
-          name: this.getDisplay(indicator),
+          name: indicator.display,
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
 
@@ -80,7 +80,7 @@ export default {
             ]),
         },
         subtitle: {
-          text: this.getDisplay(this.filterStore.countryX),
+          text: this.filterStore.countryX?.display,
         },
         legend: {
           enabled: true,
@@ -96,14 +96,14 @@ export default {
         yAxis: [
           {
             title: {
-              text: this.getDisplay(this.filterStore.unitX),
+              text: this.filterStore.unitX?.display,
             },
             min: 0,
           },
           {
             opposite: true,
             title: {
-              text: this.getDisplay(this.filterStore.unitY),
+              text: this.filterStore.unitY?.display,
             },
             min: 0,
           },
@@ -117,9 +117,7 @@ export default {
           return [
             `<b>${this.series.name}</b>`,
             parent.getUnitDisplay(this.point.y, this.point.options.unit),
-            `<b>Breakdown:</b> ${parent.getDisplay(
-              this.point.options.breakdown
-            )}`,
+            `<b>Breakdown:</b> ${this.point.options.breakdown?.display}`,
             `<b>Time Period:</b> Year: ${this.point.x}`,
           ].join("<br/>");
         },

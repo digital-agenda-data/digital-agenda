@@ -29,14 +29,14 @@ export default {
           if (item) {
             children.push({
               id: item.code,
-              text: this.getDisplay(item),
+              text: item.display,
             });
           }
         }
 
         result.push({
           id: group.code,
-          text: this.getDisplay(group),
+          text: group.display,
           children,
         });
       }

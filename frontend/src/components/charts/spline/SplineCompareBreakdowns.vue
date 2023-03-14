@@ -36,7 +36,7 @@ export default {
     series() {
       return (this.breakdown || []).map((breakdown) => {
         return {
-          name: this.getDisplay(breakdown),
+          name: breakdown.display,
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
 
@@ -53,7 +53,7 @@ export default {
     chartOptions() {
       return {
         subtitle: {
-          text: this.getDisplay(this.country),
+          text: this.country?.display,
         },
         legend: {
           enabled: (this.breakdown || []).length > 1,
