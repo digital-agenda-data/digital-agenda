@@ -33,7 +33,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       .contains("1. Analyse one indicator and compare countries")
       .click()
       .get(".ecl-breadcrumb a")
-      .contains("Charts")
+      .contains("Key Indicators")
       .click()
       .get("h1")
       .contains("Key Indicators")

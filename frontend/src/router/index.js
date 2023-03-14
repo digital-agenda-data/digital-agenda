@@ -78,7 +78,9 @@ const router = createRouter({
           name: "charts",
           component: ChartListView,
           meta: {
-            breadcrumb: "Charts",
+            // Don't set breadcrumb for the default child view since that will
+            // add an unusable breadcrumb for the parent
+            // breadcrumb: "Charts",
           },
           children: [
             {
