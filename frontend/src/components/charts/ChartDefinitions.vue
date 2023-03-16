@@ -5,7 +5,7 @@
     class="ecl-u-type-paragraph"
   >
     <div class="ecl-u-mt-m">
-      <b>{{ item.display }}:&nbsp;</b>
+      <b>{{ item.dimensionLabel }}:&nbsp;</b>
       <span>{{ item.label || item.alt_label }}</span>
     </div>
     <div class="ecl-u-ml-m ecl-u-mt-m">
@@ -94,17 +94,17 @@ export default {
       const result = [];
       for (const axis of FILTER_SUFFIXES) {
         for (const itemType of ["indicator", "breakdown", "unit"]) {
-          let display = this.currentLabels[itemType] || itemType;
+          let dimensionLabel = this.currentLabels[itemType] || itemType;
           const items = this.filterStore[axis][itemType];
 
           if (axis && this.showAxisLabel) {
-            display = `(${axis}) ${display}`;
+            dimensionLabel = `(${axis}) ${dimensionLabel}`;
           }
           // coerce all values to array if not already, to support
           // multiple definitions of the same type
           for (const item of forceArray(items)) {
             result.push({
-              display,
+              dimensionLabel,
               itemType,
               ...item,
             });
