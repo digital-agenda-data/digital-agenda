@@ -168,7 +168,7 @@ class EstatImporter:
         )
 
         if fact.value is None and not fact.flags:
-            # Set custom flag "Not Available" for this case
+            # Set custom flag "unavailable" for this case
             fact.flags = "x"
 
         unique_key = []

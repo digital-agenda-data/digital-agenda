@@ -124,7 +124,6 @@ class BaseExcelLoader(BaseFileLoader, ABC):
     def valid_row(self, row):
         """
         Validate a row's data.
-        All dimensions and at least one of value/flags must be present.
         """
         for col in self.required_cols:
             cell = row[self.cols.index(col)]

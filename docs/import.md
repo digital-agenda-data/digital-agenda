@@ -4,11 +4,6 @@
 
 Import can be triggered via de Django admin interface. With one or more config selected choose the "import" action from the dropdown above the table and click on "Go". The tasks are executed asynchronously and the "status" field will show the status of the task, and can be:
 
- - Queued, task is still waiting for a worker to run it
- - Running, task is currently being executed by a worker
- - Completed, task has been executed and finished successfully; the timestamp of completion is saved in "Last Import Time"
- - (error details) in case of any errors the error details are instead saved in this field
-
 Imports can also be triggered via cmd line using the `estat_import` management command. Destructive actions will require user interactive confirmation unless the `--no-input` argument is given. Example:
 
 ```shell
@@ -32,6 +27,8 @@ Facts can be loaded from Excel files (`.xls` and `.xlsx` formats supported).
 Imports are started by creating a new record in the "Data file imports" admin site section.
 Once a file is uploaded and the record is saved, the import task will run asynchronously, and update the record status when completed.
 On failure, the `errors` JSON field is populated with the relevant details - e.g. the unknown dimension codes encountered in the file's data.
+
+Historical runs for each import can be found under "Data file import tasks" with all the logs and errors for each run. 
 
 Data structure requirements:
 - data is on the first sheet
