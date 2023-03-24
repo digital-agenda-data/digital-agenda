@@ -291,13 +291,8 @@ class DataFileImportTaskAdmin(TaskAdmin):
         "import_file_link",
         "delete_existing",
         "created_on_display",
-        "created_by",
-        "started_on_display",
-        "completed_on_display",
         "duration_display",
         "status_display",
-        "progress_display",
-        "mode",
     ]
 
     def get_readonly_fields(self, request, obj=None):

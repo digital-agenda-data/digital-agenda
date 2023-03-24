@@ -195,13 +195,8 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
         "delete_existing",
         "force_download",
         "created_on_display",
-        "created_by",
-        "started_on_display",
-        "completed_on_display",
         "duration_display",
         "status_display",
-        "progress_display",
-        "mode",
     ]
 
     @admin.display(description="Import Config", ordering="import_config")
