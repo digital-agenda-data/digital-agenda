@@ -113,10 +113,6 @@ class EstatImporter:
         )[0]
 
     def should_store_observation(self, obs):
-        # Skip empty facts with no flags
-        if obs["value"] is None and not obs["status"]:
-            return False
-
         # Apply period filters
         period = int(obs[self.config.period].id)
         if self.config.period_start and self.config.period_start > period:
@@ -170,6 +166,11 @@ class EstatImporter:
             flags=obs["status"] or "",
             import_config_id=self.config.id,
         )
+
+        if fact.value is None and not fact.flags:
+            # Set custom flag "Not Available" for this case
+            fact.flags = "x"
+
         unique_key = []
         for attr in MODELS:
             obj = self.get_dimension_obj(attr, obs)

@@ -67,10 +67,14 @@ class BaseExcelLoader(BaseFileLoader, ABC):
     Loader for Excel file formats.
     """
 
-    def __init__(self, path, cols=DEFAULT_EXCEL_COLS, extra_fields=None):
+    def __init__(
+        self, path, cols=DEFAULT_EXCEL_COLS, extra_fields=None, required_cols=None
+    ):
         super().__init__(path)
         self.extra_fields = extra_fields or {}
         self.cols = cols
+        # By default, all columns are required except for value and flags
+        self.required_cols = required_cols or self.cols[:-2]
         self.sheet = None
 
     @property
@@ -91,11 +95,19 @@ class BaseExcelLoader(BaseFileLoader, ABC):
             - a field: value dict ready for use in Fact instance creation
             - a dimension: set of codes dict with unknown dimension codes
         """
+        value_cell = row[self.cols.index("value")]
+        flags_cell = row[self.cols.index("flags")]
+
         fields = {
             **self.extra_fields,
-            "value": row[self.cols.index("value")].value,
-            "flags": row[self.cols.index("flags")].value or "",
+            "value": value_cell.value,
+            "flags": flags_cell.value or "",
         }
+
+        if self.empty_cell(value_cell) and self.empty_cell(flags_cell):
+            # Set custom flag "unavailable" for this case
+            fields["flags"] = "x"
+
         errors = defaultdict(set)
         for dim_name, dim_model in DIMENSION_MODELS.items():
             dim_code = row[self.cols.index(dim_name)].value
@@ -114,9 +126,13 @@ class BaseExcelLoader(BaseFileLoader, ABC):
         Validate a row's data.
         All dimensions and at least one of value/flags must be present.
         """
-        return all(
-            [not self.empty_cell(cell) for cell in row[: len(self.cols) - 2]]
-        ) and any([not self.empty_cell(cell) for cell in row[len(self.cols) - 2 :: 2]])
+        for col in self.required_cols:
+            cell = row[self.cols.index(col)]
+
+            if self.empty_cell(cell):
+                return False
+
+        return True
 
     def read(self):
         """

@@ -5,6 +5,8 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from digital_agenda.apps.core.views.facts import EUROSTAT_FLAGS
+
 
 class AppSettingsView(APIView):
     @method_decorator(ensure_csrf_cookie)
@@ -15,5 +17,6 @@ class AppSettingsView(APIView):
                 "analytics_server": config.MATOMO_SERVER,
                 "analytics_site_id": config.MATOMO_SITE_ID,
                 "global_banner_enabled": config.GLOBAL_BANNER_ENABLED,
+                "eurostat_flags": EUROSTAT_FLAGS,
             },
         )

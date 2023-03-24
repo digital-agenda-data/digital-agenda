@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { useAppSettings } from "@/stores/appSettingsStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
@@ -18,6 +19,7 @@ import SimpleSpinner from "@/components/SimpleSpinner.vue";
 import { api } from "@/lib/api";
 import {
   forceArray,
+  getFlagDisplay,
   getUnitDisplay,
   groupByMulti,
   toAPIKey,
@@ -26,7 +28,7 @@ import {
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useCountryStore } from "@/stores/countryStore";
-import { EUROSTAT_FLAGS, VALUE_AXIS } from "@/lib/constants";
+import { VALUE_AXIS } from "@/lib/constants";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -48,6 +50,7 @@ export default {
   },
   computed: {
     ...mapStores(useFilterStore),
+    ...mapState(useAppSettings, ["appSettings"]),
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
     ...mapState(useCountryStore, ["countryByCode"]),
@@ -311,7 +314,7 @@ export default {
           }
 
           for (const flag of fact?.flags || "") {
-            result.push("<b>Flag:</b> " + (EUROSTAT_FLAGS[flag] ?? flag));
+            result.push("<b>Flag:</b> " + getFlagDisplay(flag));
           }
 
           if (parent.breakdown?.code) {

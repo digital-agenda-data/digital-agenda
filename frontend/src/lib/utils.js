@@ -1,3 +1,4 @@
+import { useAppSettings } from "@/stores/appSettingsStore";
 import Highcharts from "highcharts";
 import { SERIES_COLORS } from "@/lib/constants";
 
@@ -132,6 +133,17 @@ export function getUnitDisplay(value, unit) {
   }
 
   return `${value.toFixed(2)} ${label}`;
+}
+
+/**
+ * Get a suitable display string for a data point flag
+ *
+ * @param flag {string} single character data point flag
+ * @return {string}
+ */
+export function getFlagDisplay(flag) {
+  flag = flag.toLowerCase();
+  return useAppSettings().appSettings.eurostat_flags[flag] ?? flag;
 }
 
 /***

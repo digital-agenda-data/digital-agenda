@@ -31,6 +31,7 @@ from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 EUROSTAT_FLAGS = {
+    # Taken from https://ec.europa.eu/eurostat/data/database/information
     "b": "break in time series",
     "c": "confidential",
     "d": "definition differs, see metadata",
@@ -42,6 +43,8 @@ EUROSTAT_FLAGS = {
     "s": "Eurostat estimate",
     "u": "low reliability",
     "z": "not applicable",
+    # Custom flags, not from ESTAT; for internal use only
+    "x": "unavailable",
 }
 
 
