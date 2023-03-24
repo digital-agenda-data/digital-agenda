@@ -243,6 +243,9 @@ class DataFileImportAdmin(admin.ModelAdmin):
         )
         return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
 
+    def response_post_save_add(self, request, obj):
+        return redirect("admin:core_datafileimporttask_changelist")
+
 
 admin.site.register(DataFileImport, DataFileImportAdmin)
 
