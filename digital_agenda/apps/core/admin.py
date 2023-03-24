@@ -302,6 +302,9 @@ class DataFileImportTaskAdmin(TaskAdmin):
         fields.remove("errors")
         return fields
 
+    def has_add_permission(self, request):
+        return False
+
     @admin.display(description="Import File", ordering="import_file")
     def import_file_link(self, obj):
         url = reverse(
