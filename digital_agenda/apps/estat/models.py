@@ -12,6 +12,15 @@ from django_task.models import TaskRQ
 from digital_agenda.common.models import NaturalCodeManger
 
 
+class ImportConfigTag(models.Model):
+    code = CICharField(max_length=60, unique=True)
+
+    objects = NaturalCodeManger()
+
+    def __str__(self):
+        return self.code
+
+
 class GeoGroup(models.Model):
     code = CICharField(max_length=60, unique=True)
     size = models.PositiveIntegerField()
@@ -74,6 +83,11 @@ class ImportConfig(models.Model):
         help_text=(
             "Human readable title for logging and differentiating from multiple configs for the same dataset"
         ),
+    )
+    tags = models.ManyToManyField(
+        ImportConfigTag,
+        help_text="Assigned tags used for filtering and searching; has no impact on the data import",
+        blank=True,
     )
 
     indicator = CICharField(max_length=60)

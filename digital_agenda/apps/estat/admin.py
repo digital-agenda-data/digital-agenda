@@ -10,6 +10,12 @@ from django_task.admin import TaskAdmin
 from digital_agenda.apps.estat.models import *
 
 
+@admin.register(ImportConfigTag)
+class ImportConfigTagAdmin(admin.ModelAdmin):
+    list_display = ("code",)
+    search_fields = ("code",)
+
+
 @admin.register(GeoGroup)
 class GeoGroupAdmin(admin.ModelAdmin):
     formfield_overrides = {
@@ -68,13 +74,15 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "num_facts",
         "latest_import",
         "title",
+        "tag_codes",
     )
     search_fields = ("code", "title")
+    list_filter = ("tags",)
     readonly_fields = (
         "num_facts",
         "latest_import",
     )
-    autocomplete_fields = ("country_group",)
+    autocomplete_fields = ("country_group", "tags")
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
@@ -84,6 +92,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
                 "fields": [
                     "code",
                     "title",
+                    "tags",
                     "num_facts",
                 ]
             },
@@ -147,7 +156,12 @@ class ImportConfigAdmin(admin.ModelAdmin):
         return redirect("admin:estat_importfromconfigtask_changelist")
 
     def get_queryset(self, request):
-        return super().get_queryset(request).annotate(num_facts=Count("facts"))
+        return (
+            super()
+            .get_queryset(request)
+            .annotate(num_facts=Count("facts"))
+            .prefetch_related("tags", "country_group")
+        )
 
     @admin.display(description="Facts Count", ordering="num_facts")
     def num_facts(self, obj):
@@ -166,6 +180,10 @@ class ImportConfigAdmin(admin.ModelAdmin):
             kwargs={"object_id": obj.latest_task.id},
         )
         return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
+
+    @admin.display(description="Tags")
+    def tag_codes(self, obj):
+        return ", ".join(tag.code for tag in obj.tags.all())
 
 
 @admin.register(ImportFromConfigTask)
