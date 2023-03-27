@@ -7,7 +7,11 @@
 </h3>
 <ul>
   <li>
-    <select name="{{ spec.lookup_kwarg }}" style="width: 260px;" onchange="window.location.href = this.value">
+    <select
+        name="{{ spec.lookup_kwarg }}"
+        style="width: 260px;"
+        onchange="window.location.href = new window.URL(this.value, window.location).toString();"
+    >
       {% for choice in choices %}
       <option
         {% if choice.selected%} selected {% endif %}
