@@ -2,11 +2,18 @@
 
 ## Style guide
 
-- The backend code uses the [black style guide](https://black.readthedocs.io/en/stable/) for automatic linting.
+- The backend code uses the [black style guide](https://black.readthedocs.io/en/stable/) for automatic linting. Can
+  be integrated into your IDE or manually run with:
+  ```bash
+  black --extend-exclude=migrations digital_agenda/
+  ```
 - The frontend code uses ES lint and prettier. This can be integrated into your IDE or manually run with:
   ```bash
   cd frontend && npm run lint
   ```
+  
+A workflow is integrated into GitHub action to check that any code push has been first processed with the project
+settings. See [code style workflow](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/lint.yml)
   
 ## Starting points
 
@@ -31,6 +38,8 @@
     - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner) 
     - ~~[Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)~~
       (Removed for now as it only works for `*.europa.eu` domains)
+- [Eurostat](https://ec.europa.eu/eurostat)
+  - [Data download API](https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query)
 - Misc:
     - EU Login - No documentation available; however it is a CAS server, so see [django-cas-ng](https://djangocas.dev/docs/latest/) instead.    
     - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA) 
