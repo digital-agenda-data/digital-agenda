@@ -366,7 +366,6 @@ class DataFileImportTask(TaskRQ):
         verbose_name = "Upload file result"
         verbose_name_plural = "Upload file results"
 
-
     @staticmethod
     def get_jobclass():
         from .jobs import ImportFromDataFileJob

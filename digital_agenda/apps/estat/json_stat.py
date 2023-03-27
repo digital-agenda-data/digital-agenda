@@ -43,7 +43,6 @@ class JSONStat:
         logger.debug("Parsing dimensions: %s", self.dataset["dimension"])
         result = []
         for dim_id in self.dataset["id"]:
-
             cat_ids = self.dataset["dimension"][dim_id]["category"]["index"]
             cat_labels = self.dataset["dimension"][dim_id]["category"]["label"]
             if isinstance(cat_ids, dict):

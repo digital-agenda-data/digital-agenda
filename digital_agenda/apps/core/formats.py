@@ -220,7 +220,6 @@ class XLSXLoader(BaseExcelLoader):
 
 
 def get_loader(data_file, extra_fields=None):
-
     if data_file.mime_type == "application/vnd.ms-excel":
         return XLSLoader(data_file.path, extra_fields=extra_fields)
     elif (

@@ -58,7 +58,6 @@ class Command(BaseCommand):
 
                 # "observation","time_period","ref_area","indicator","breakdown","unit_measure","value","flag","note"
                 for row in csv.DictReader(open(new_fn)):
-
                     x = {
                         "observation": "http://semantic.digital-agenda-data.eu/data/DESI/desi_c_mbb/desi_4g/pc_desi_c_mbb/LV/2017",
                         "time_period": "2017",

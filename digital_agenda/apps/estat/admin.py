@@ -165,10 +165,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
 
     @admin.display(description="Facts Count", ordering="num_facts")
     def num_facts(self, obj):
-        url = (
-            reverse("admin:core_fact_changelist")
-            + f"?import_config={obj.pk}"
-        )
+        url = reverse("admin:core_fact_changelist") + f"?import_config={obj.pk}"
         return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
 
     @admin.display(description="Latest Task")

@@ -11,7 +11,6 @@ from digital_agenda.common.models import TimestampedModel
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
-
         if not email:
             raise ValueError("Users must have an email address.")
 

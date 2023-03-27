@@ -108,7 +108,6 @@ class BreakdownGroupSerializer(BaseDimensionSerializer):
 
 
 class FactSerializer(serializers.ModelSerializer):
-
     period = serializers.CharField(source="period.code", read_only=True)
     country = serializers.CharField(source="country.code", read_only=True)
     indicator = serializers.CharField(source="indicator.code", read_only=True)
