@@ -292,6 +292,11 @@ class ImportFromConfigTask(TaskRQ):
         ),
     )
 
+    class Meta:
+        get_latest_by = "created_on"
+        verbose_name = "Import config result"
+        verbose_name_plural = "Import configs results"
+
     @staticmethod
     def get_jobclass():
         from .jobs import ImportFromConfigJob

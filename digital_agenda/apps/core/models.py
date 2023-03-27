@@ -282,7 +282,6 @@ def validate_upload_mime_type(file):
 
 
 class DataFileImport(TimestampedModel):
-
     file = models.FileField(
         storage=_import_files_storage,
         upload_to=upload_path,
@@ -296,6 +295,10 @@ class DataFileImport(TimestampedModel):
     )
     description = models.TextField(null=True, blank=True)
     user = models.ForeignKey("accounts.User", on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Upload data from file"
+        verbose_name_plural = "Upload data from file"
 
     @property
     def path(self):
@@ -357,6 +360,12 @@ class DataFileImportTask(TaskRQ):
         ),
     )
     errors = models.JSONField(null=True, blank=True)
+
+    class Meta:
+        get_latest_by = "created_on"
+        verbose_name = "Upload file result"
+        verbose_name_plural = "Upload file results"
+
 
     @staticmethod
     def get_jobclass():
