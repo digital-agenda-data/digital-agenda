@@ -1,10 +1,10 @@
 import json
 
+from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
 from django.db import models
 from django import forms
 
-from admin_auto_filters.filters import AutocompleteFilter
 from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
 from django.db.models import Count
 from django.shortcuts import redirect
@@ -45,20 +45,12 @@ class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
     model = IndicatorGroup.indicators.through
 
 
-class IndicatorsFilter(AutocompleteFilter):
-    title = "Indicator"
-    field_name = "indicators"
-
-
 @admin.register(IndicatorGroup)
 class IndicatorGroupAdmin(SortableDimensionAdmin):
     inlines = (IndicatorTabularInline,)
-    list_filter = [IndicatorsFilter]
-
-
-class DataSourceFilter(AutocompleteFilter):
-    title = "Data Source"
-    field_name = "data_sources"
+    list_filter = [
+        AutocompleteFilterFactory("indicator", "indicators"),
+    ]
 
 
 class DataSourceInline(admin.TabularInline):
@@ -68,7 +60,7 @@ class DataSourceInline(admin.TabularInline):
 
 @admin.register(Indicator)
 class IndicatorAdmin(DimensionAdmin):
-    list_filter = [DataSourceFilter]
+    list_filter = [AutocompleteFilterFactory("data source", "data_sources")]
     inlines = (DataSourceInline,)
 
 
@@ -76,15 +68,10 @@ class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):
     model = BreakdownGroup.breakdowns.through
 
 
-class BreakdownsFilter(AutocompleteFilter):
-    title = "Breakdown"
-    field_name = "breakdowns"
-
-
 @admin.register(BreakdownGroup)
 class BreakdownGroupAdmin(SortableDimensionAdmin):
     inlines = (BreakdownTabularInline,)
-    list_filter = [BreakdownsFilter]
+    list_filter = [AutocompleteFilterFactory("breakdown", "breakdowns")]
 
 
 admin.site.register(Breakdown, DimensionAdmin)
@@ -100,31 +87,7 @@ class CountryAdmin(DimensionAdmin):
     list_filter = ("is_group",)
 
 
-class IndicatorFilter(AutocompleteFilter):
-    title = "Indicator"
-    field_name = "indicator"
-
-
-class CountryFilter(AutocompleteFilter):
-    title = "Country"
-    field_name = "country"
-
-
-class PeriodFilter(AutocompleteFilter):
-    title = "Period"
-    field_name = "period"
-
-
-class ImportConfigFilter(AutocompleteFilter):
-    title = "Import Config"
-    field_name = "import_config"
-
-
-class ImportFileFilter(AutocompleteFilter):
-    title = "Import File"
-    field_name = "import_file"
-
-
+@admin.register(Fact)
 class FactAdmin(admin.ModelAdmin):
     list_display = (
         "indicator",
@@ -137,12 +100,18 @@ class FactAdmin(admin.ModelAdmin):
         "import_config",
         "import_file",
     )
+
     list_filter = [
-        ImportConfigFilter,
-        ImportFileFilter,
-        IndicatorFilter,
-        CountryFilter,
-        PeriodFilter,
+        AutocompleteFilterFactory("import config", "import_config"),
+        AutocompleteFilterFactory("import file", "import_file"),
+        "indicator__data_sources",
+        "indicator__groups",
+        AutocompleteFilterFactory("indicator", "indicator"),
+        "breakdown__groups",
+        AutocompleteFilterFactory("breakdown", "breakdown"),
+        AutocompleteFilterFactory("country", "country"),
+        AutocompleteFilterFactory("period", "period"),
+        AutocompleteFilterFactory("unit", "unit"),
     ]
     list_per_page = 50
     autocomplete_fields = (
@@ -157,9 +126,6 @@ class FactAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         return super().get_queryset(request).prefetch_related("import_config")
-
-
-admin.site.register(Fact, FactAdmin)
 
 
 class PrettyJSONEncoder(json.JSONEncoder):
@@ -279,7 +245,7 @@ class DataFileImportTaskAdmin(TaskAdmin):
         "=job_id",
     ]
     list_filter = [
-        ImportFileFilter,
+        AutocompleteFilterFactory("import file", "import_file"),
         "created_on",
         "started_on",
         "status",

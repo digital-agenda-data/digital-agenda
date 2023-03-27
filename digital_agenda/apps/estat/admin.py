@@ -1,4 +1,4 @@
-from admin_auto_filters.filters import AutocompleteFilter
+from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
 from django.db.models import Count
 from django.shortcuts import redirect
@@ -168,11 +168,6 @@ class ImportConfigAdmin(admin.ModelAdmin):
         return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
 
 
-class ImportConfigFilter(AutocompleteFilter):
-    title = "Import Config"
-    field_name = "import_config"
-
-
 @admin.register(ImportFromConfigTask)
 class ImportFromConfigTaskAdmin(TaskAdmin):
     search_fields = [
@@ -182,7 +177,7 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
         "=job_id",
     ]
     list_filter = [
-        ImportConfigFilter,
+        AutocompleteFilterFactory("import config", "import_config"),
         "created_on",
         "started_on",
         "status",
