@@ -168,7 +168,7 @@ class DataFileImportAdmin(admin.ModelAdmin):
     @admin.display(description="Facts Count", ordering="num_facts")
     def num_facts(self, obj):
         url = (
-            reverse("admin:core_fact_changelist") + f"?import_file__pk__exact={obj.pk}"
+            reverse("admin:core_fact_changelist") + f"?import_file={obj.pk}"
         )
         return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
 
