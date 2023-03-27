@@ -1,0 +1,27 @@
+name: "Check Frontend Code Style"
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: "Install dependencies"
+        run: |
+          cd frontend
+          npm install
+      - name: "Lint frontend code"
+        run: |
+          cd frontend 
+          npm run lint:check
