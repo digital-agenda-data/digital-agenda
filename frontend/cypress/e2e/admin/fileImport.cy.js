@@ -3,10 +3,10 @@ describe("Check data file import", () => {
     cy.login()
       // Navigate to the data file import page
       .get("a")
-      .contains("Data file imports")
+      .contains("Upload data from file")
       .click()
       .get("a")
-      .contains("Add data file import")
+      .contains("Add Upload data from file")
       .click()
       // Add a new data file import
       .get("input[type=file]")
@@ -17,7 +17,7 @@ describe("Check data file import", () => {
       .click()
       // Wait for the task to finish
       .get("a")
-      .contains("Data file import tasks")
+      .contains("Upload file results")
       .click()
       .get("tbody tr:first-child td.field-status_display")
       .contains("SUCCESS", { timeout: 10000 })
@@ -38,10 +38,10 @@ describe("Check data file import", () => {
     cy.login()
       // Navigate to the data file import page
       .get("a")
-      .contains("Data file imports")
+      .contains("Upload data from file")
       .click()
       .get("a")
-      .contains("Add data file import")
+      .contains("Add Upload data from file")
       .click()
       // Add a new data file import
       .get("input[type=file]")
@@ -52,7 +52,7 @@ describe("Check data file import", () => {
       .click()
       // Wait for the task to finish
       .get("a")
-      .contains("Data file import tasks")
+      .contains("Upload file results")
       .click()
       .get("tbody tr:first-child td.field-status_display")
       .contains("FAILURE", { timeout: 10000 })
