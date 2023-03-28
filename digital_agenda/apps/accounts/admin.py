@@ -1,8 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import Group
 
 from .forms import UserCreationForm, UserChangeForm
 from .models import User
+
+# We are not using authentication groups. If we want to ever add this back we need
+# to implement permissions checks for all the custom actions we have in the admin.
+admin.site.unregister(Group)
 
 
 class UserAdmin(BaseUserAdmin):
