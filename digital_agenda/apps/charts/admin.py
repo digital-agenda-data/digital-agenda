@@ -1,8 +1,17 @@
 from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
+from django.contrib import messages
+from django.db import connection
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
+from django.template.response import TemplateResponse
+from django.urls import path
+from django.urls import reverse
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
+from digital_agenda.apps.core.cache import clear_all_caches
+from digital_agenda.apps.core.models import Indicator
 from digital_agenda.common.admin import HasChangesAdminMixin
 
 
@@ -153,3 +162,69 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
         "is_draft",
     )
     filter_horizontal = ("indicator_groups",)
+    actions = ["purge_data"]
+
+    @admin.action(description="Purge data for selected chart groups")
+    def purge_data(self, request, queryset):
+        return HttpResponseRedirect(
+            reverse("admin:purge-facts")
+            + "?ids="
+            + ",".join(map(str, queryset.values_list("id", flat=True)))
+        )
+
+    def purge_data_view(self, request):
+        opts = self.model._meta
+        app_label = opts.app_label
+        queryset = self.model.objects.filter(id__in=request.GET.get("ids").split(","))
+
+        if request.method == "GET":
+            return TemplateResponse(
+                request,
+                "admin/purge_facts_confirmation.html",
+                context={
+                    "opts": opts,
+                    "app_label": app_label,
+                    "queryset": queryset,
+                    **self.admin_site.each_context(request),
+                },
+            )
+
+        indicator_ids = tuple(
+            Indicator.objects.filter(groups__chartgroup__in=queryset)
+            .values_list("id", flat=True)
+            .distinct()
+        )
+
+        try:
+            with connection.cursor() as cursor:
+                # We don't need any signals and all cascades ought to be at DB
+                # level already. Avoid the excruciatingly slow ORM delete with
+                # a simple SQL query.
+                cursor.execute(
+                    """
+                        DELETE
+                        FROM core_fact
+                            WHERE core_fact.indicator_id IN %(indicator_ids)s
+                    """,
+                    {"indicator_ids": indicator_ids},
+                )
+        finally:
+            clear_all_caches(force=True)
+
+        self.message_user(
+            request,
+            "Data has been deleted for the selected chart groups",
+            level=messages.SUCCESS,
+        )
+
+        return redirect("admin:charts_chartgroup_changelist")
+
+    def get_urls(self):
+        return [
+            path(
+                "purge-facts/",
+                self.admin_site.admin_view(self.purge_data_view),
+                name="purge-facts",
+            ),
+            *super().get_urls(),
+        ]

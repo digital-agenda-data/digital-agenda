@@ -102,6 +102,7 @@ class FactAdmin(admin.ModelAdmin):
     )
 
     list_filter = [
+        "indicator__groups__chartgroup",
         AutocompleteFilterFactory("import config", "import_config"),
         AutocompleteFilterFactory("import file", "import_file"),
         "indicator__data_sources",

@@ -9,6 +9,7 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.html import strip_tags
 
+from digital_agenda.apps.core.models import Fact
 from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import NaturalCodeManger
 from digital_agenda.common.models import TimestampedModel
@@ -84,6 +85,10 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
 
     def get_label(self, dimension):
         return getattr(self, dimension + "_label", dimension.title())
+
+    @property
+    def facts(self):
+        return Fact.objects.filter(indicator__groups__chartgroup=self).distinct()
 
 
 def filter_option_field(rel_model):

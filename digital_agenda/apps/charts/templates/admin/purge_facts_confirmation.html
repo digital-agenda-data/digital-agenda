@@ -1,0 +1,64 @@
+{% extends "admin/base_site.html" %}
+{% load i18n l10n admin_urls static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    {{ media }}
+    <script src="{% static 'admin/js/cancel.js' %}" async></script>
+{% endblock %}
+
+{% block bodyclass %}
+  {{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} delete-confirmation
+  delete-selected-confirmation
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {% translate 'Delete data' %}
+  </div>
+{% endblock %}
+
+{% block content %}
+  <p>
+    {% blocktrans trimmed %}
+      Are you sure you want to delete the data for the following chart groups?
+    {% endblocktrans %}
+  </p>
+  <p>
+    <b>{% translate "Warning!" %}</b>
+    {% blocktrans trimmed %}
+      Chart groups can have overlapping facts. Deleting this data may impact other chart groups not in this list. Use with caution!
+    {% endblocktrans %}
+  </p>
+  <h2>Facts that are going to be removed</h2>
+  <ul>
+    {% for chart_group in queryset %}
+      <li>
+        <span>{{ chart_group }}</span>
+        <span>-</span>
+        <a
+          href="{% url 'admin:core_fact_changelist' %}?indicator__groups__chartgroup__id__exact={{ chart_group.id }}"
+          target="_blank"
+        >
+          {% blocktrans trimmed count counter=chart_group.facts.count %}
+            {{ counter }} fact
+          {% plural %}
+            {{ counter }} facts
+          {% endblocktrans %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+    <form method="post">{% csrf_token %}
+      <div>
+        <input type="hidden" name="post" value="yes">
+        {% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1">{% endif %}
+        {% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}">{% endif %}
+        <input type="submit" value="{% translate 'Yes, I’m sure' %}">
+        <a href="#" class="button cancel-link">{% translate "No, take me back" %}</a>
+      </div>
+    </form>
+{% endblock %}
