@@ -128,11 +128,14 @@ export function getUnitDisplay(value, unit) {
     return "<b>Data not available</b>";
   }
 
-  if (label.startsWith("%")) {
-    return `${value.toFixed(1)}${label}`;
-  }
+  const valueStr = value.toPrecision(2);
 
-  return `${value.toFixed(2)} ${label}`;
+  if (label.startsWith("%")) {
+    // No extra space if there is a percent in the unit label, as "5 %"
+    // looks bad!
+    return `${valueStr}${label}`;
+  }
+  return `${valueStr} ${label}`;
 }
 
 /**
