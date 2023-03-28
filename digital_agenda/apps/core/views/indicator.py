@@ -12,7 +12,9 @@ class IndicatorViewSet(
     FactExportMixin, DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet
 ):
     model = Indicator
-    queryset = Indicator.objects.prefetch_related("data_sources")
+    queryset = Indicator.objects.prefetch_related("data_sources").order_by(
+        "indicatorgrouplink__display_order"
+    )
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = ExistingFactFilterSet
     serializer_class = IndicatorListSerializer
