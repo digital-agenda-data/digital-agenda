@@ -6,6 +6,7 @@
     zebra
   >
     <template #description="{ item }">
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="item.description" />
 
       <chart-group-extra-links

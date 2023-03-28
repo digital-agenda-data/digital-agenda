@@ -1,5 +1,6 @@
 <template>
   <chart-group-nav>
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="currentChartGroup.description" />
     <p>
       The following table provides methodological information about the source,
@@ -95,6 +96,7 @@
 
               <div v-if="indicator.definition" class="ecl-u-type-paragraph-m">
                 <strong>Definition:&nbsp;</strong>
+                <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="indicator.definition" />
               </div>
 

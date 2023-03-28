@@ -11,6 +11,7 @@
     <div class="ecl-u-ml-m ecl-u-mt-m">
       <div v-if="item.definition">
         <b>Definition:&nbsp;</b>
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <span v-html="item.definition" />
       </div>
 

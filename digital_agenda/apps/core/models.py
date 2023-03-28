@@ -68,7 +68,7 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
     """
 
     indicators = models.ManyToManyField(
-        "Indicator", through="IndicatorGroupLink", related_name="groups", blank=True
+        "Indicator", through="IndicatorGroupLink", related_name="groups", blank=True,
     )
 
     class Meta:

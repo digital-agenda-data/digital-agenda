@@ -18,8 +18,10 @@
           <td class="ecl-table__cell" data-ecl-table-header="Indicator">
             <div>
               <ecl-link :to="item.to" no-visited>
+                <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="item.label" />
               </ecl-link>
+              <!-- eslint-disable-next-line vue/no-v-html -->
               <div class="ecl-u-mt-2xs" v-html="item.definition" />
             </div>
           </td>

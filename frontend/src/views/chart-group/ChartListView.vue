@@ -1,6 +1,7 @@
 <template>
   <chart-group-nav v-if="!chartStore.currentChartCode">
     <ecl-spinner v-if="chartGroupStore.isLoading" size="large" centered />
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-else v-html="chartGroupStore.currentChartGroup.description" />
 
     <h4>Please select one of the available charts:</h4>
@@ -15,6 +16,7 @@
       small
     >
       <template #description="{ item }">
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <div v-html="item.description" />
       </template>
     </ecl-list-illustration>

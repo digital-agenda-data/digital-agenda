@@ -7,6 +7,7 @@
 
     <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8 chart-definitions">
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <div v-html="currentChart.description" />
         <chart-definitions :show-axis-label="chartRef?.showAxisLabel" />
       </div>

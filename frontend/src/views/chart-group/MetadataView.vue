@@ -11,10 +11,11 @@
         </dd>
 
         <dt class="ecl-description-list__term">Description</dt>
-        <dd
-          class="ecl-description-list__definition"
-          v-html="currentChartGroup.description"
-        />
+
+        <dd class="ecl-description-list__definition">
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <span v-html="currentChartGroup.description" />
+        </dd>
 
         <dt class="ecl-description-list__term">Identifier</dt>
         <dd class="ecl-description-list__definition">
@@ -22,10 +23,10 @@
         </dd>
 
         <dt class="ecl-description-list__term">License</dt>
-        <dd
-          class="ecl-description-list__definition"
-          v-html="currentChartGroup.license"
-        />
+        <dd class="ecl-description-list__definition">
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <span v-html="currentChartGroup.license" />
+        </dd>
       </dl>
     </div>
 
