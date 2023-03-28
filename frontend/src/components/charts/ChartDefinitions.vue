@@ -17,7 +17,8 @@
 
       <div v-if="item.note">
         <b>Notes:&nbsp;</b>
-        <span>{{ item.note }}</span>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <span v-html="item.note" />
       </div>
 
       <div
