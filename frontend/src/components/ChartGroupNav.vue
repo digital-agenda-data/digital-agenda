@@ -59,6 +59,11 @@ export default {
           text: "Metadata",
           to: { name: "metadata", params },
         },
+        {
+          id: "feedback",
+          text: "Submit Feedback",
+          to: { name: "feedback" },
+        },
       ];
     },
   },
