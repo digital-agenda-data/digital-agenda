@@ -5,9 +5,10 @@ import logging
 from django.db import transaction
 import xlrd
 import openpyxl
+from openpyxl.utils import get_column_letter
 
 from .models import Period, Country, Indicator, Breakdown, Unit, Fact
-
+from .views.facts import EUROSTAT_FLAGS
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +32,7 @@ class DimensionCache:
         if not dimension:
             try:
                 dimension = self.cache[code] = self.model.objects.get(code=code)
-            except self.model.DoesNotExist:
+            except (self.model.DoesNotExist, ValueError):
                 dimension = None
 
         return dimension
@@ -62,6 +63,91 @@ DEFAULT_EXCEL_COLS = (
 )
 
 
+class RowReader:
+    def __init__(
+        self,
+        row,
+        dimensions,
+        cols=DEFAULT_EXCEL_COLS,
+        extra_fields=None,
+        required_cols=None,
+    ):
+        self.dimensions = dimensions
+        self.row = row
+        self.cols = cols
+        # By default, all columns are required except for value and flags
+        self.required_cols = required_cols or self.cols[:-2]
+        self.errors = defaultdict(list)
+        self.fields = {**extra_fields}
+        self.read_row()
+
+    def add_error(self, col_index, error):
+        col_letter = get_column_letter(col_index + 1)
+        self.errors[f"Column {col_letter}"].append(error)
+
+    def get_value(self):
+        col_index = self.cols.index("value")
+        value_cell = self.row[col_index]
+
+        value = value_cell.value
+        if self.empty_cell(value_cell):
+            value = None
+
+        if value is not None:
+            try:
+                value = float(value)
+            except (TypeError, ValueError):
+                self.add_error(
+                    col_index,
+                    f"Invalid 'value', expected number but got {value!r} instead",
+                )
+
+        return value
+
+    def get_flags(self):
+        col_index = self.cols.index("flags")
+        flags_cell = self.row[col_index]
+
+        flags = flags_cell.value or ""
+        for flag in flags:
+            if flag not in EUROSTAT_FLAGS:
+                self.add_error(col_index, f"Unknown flag {flag!r}")
+
+        return flags
+
+    def read_row(self):
+        """
+        Read data from the given row.
+        """
+        self.fields["value"] = self.get_value()
+        self.fields["flags"] = self.get_flags()
+
+        if self.fields["value"] is None and not self.fields["flags"]:
+            # Set custom flag "unavailable" for this case
+            self.fields["flags"] = "x"
+
+        for col in self.required_cols:
+            col_index = self.cols.index(col)
+            cell = self.row[col_index]
+
+            if self.empty_cell(cell):
+                self.add_error(col_index, f"Column {col!r} must not be empty")
+
+        for dim_name, dim_model in DIMENSION_MODELS.items():
+            col_index = self.cols.index(dim_name)
+            dim_code = self.row[col_index].value
+
+            self.fields[dim_name] = self.dimensions[dim_name].get(dim_code)
+            if self.fields[dim_name] is None:
+                self.add_error(
+                    col_index, f"Missing dimension code for {dim_name!r}: {dim_code!r}"
+                )
+
+    @staticmethod
+    def empty_cell(cell):
+        return cell.value is None or cell.value == ""
+
+
 class BaseExcelLoader(BaseFileLoader, ABC):
     """
     Loader for Excel file formats.
@@ -76,6 +162,7 @@ class BaseExcelLoader(BaseFileLoader, ABC):
         # By default, all columns are required except for value and flags
         self.required_cols = required_cols or self.cols[:-2]
         self.sheet = None
+        self.errors = {}
 
     @property
     @abstractmethod
@@ -88,51 +175,6 @@ class BaseExcelLoader(BaseFileLoader, ABC):
         """Get a row object using a reference produced by `row_iterator`."""
         ...
 
-    def read_row(self, row):
-        """
-        Read data from the given row.
-        Returns: tuple(dict)
-            - a field: value dict ready for use in Fact instance creation
-            - a dimension: set of codes dict with unknown dimension codes
-        """
-        value_cell = row[self.cols.index("value")]
-        flags_cell = row[self.cols.index("flags")]
-
-        fields = {
-            **self.extra_fields,
-            "value": value_cell.value,
-            "flags": flags_cell.value or "",
-        }
-
-        if self.empty_cell(value_cell) and self.empty_cell(flags_cell):
-            # Set custom flag "unavailable" for this case
-            fields["flags"] = "x"
-
-        errors = defaultdict(set)
-        for dim_name, dim_model in DIMENSION_MODELS.items():
-            dim_code = row[self.cols.index(dim_name)].value
-            fields[dim_name] = self.dimensions[dim_name].get(dim_code)
-            if fields[dim_name] is None:
-                errors[dim_name].add(dim_code)
-
-        return fields, errors
-
-    @staticmethod
-    def empty_cell(cell):
-        return cell.value is None or cell.value == ""
-
-    def valid_row(self, row):
-        """
-        Validate a row's data.
-        """
-        for col in self.required_cols:
-            cell = row[self.cols.index(col)]
-
-            if self.empty_cell(cell):
-                return False
-
-        return True
-
     def read(self):
         """
         Read the Excel file until the first invalid row.
@@ -141,24 +183,23 @@ class BaseExcelLoader(BaseFileLoader, ABC):
         and unknown dimension values into the `errors` attribute.
         """
         data = []
-        errors = defaultdict(set)
+        errors = {}
 
-        for row_ref in self.rows_iterator:
-            row = self.get_row(row_ref)
-
-            # Import until first invalid row
-            if not self.valid_row(row):
-                break
-
-            fields, row_errors = self.read_row(row)
+        for row_index, row_ref in enumerate(self.rows_iterator, start=1):
+            row_reader = RowReader(
+                self.get_row(row_ref),
+                self.dimensions,
+                cols=self.cols,
+                extra_fields=self.extra_fields,
+                required_cols=self.required_cols,
+            )
 
             # Skip the row if any dimension code is unknown or both value and flags are missing
-            if row_errors:
-                for dim_name, dim_codes in row_errors.items():
-                    errors[dim_name].update(dim_codes)
+            if row_reader.errors:
+                errors[f"Row {row_index}"] = dict(row_reader.errors)
                 continue
 
-            data.append(Fact(**fields))
+            data.append(Fact(**row_reader.fields))
 
         return data, errors
 
@@ -176,10 +217,7 @@ class BaseExcelLoader(BaseFileLoader, ABC):
         if not data and not errors:
             return 0, {"issue": "No valid row found"}
         elif errors and not allow_errors:
-            return 0, {
-                "issue": "Missing dimension codes",
-                "details": {k: list(v) for k, v in errors.items()},
-            }
+            return 0, errors
 
         with transaction.atomic():
             facts = Fact.objects.bulk_create(
