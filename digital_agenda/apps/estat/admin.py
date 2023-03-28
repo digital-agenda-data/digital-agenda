@@ -198,6 +198,7 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
         "status",
     ]
     autocomplete_fields = ("import_config",)
+    ordering = ("-created_on",)
 
     list_display = [
         "__str__",

@@ -249,6 +249,7 @@ class DataFileImportTaskAdmin(TaskAdmin):
         "status",
     ]
     autocomplete_fields = ("import_file",)
+    ordering = ("-created_on",)
 
     list_display = [
         "__str__",
