@@ -1,4 +1,3 @@
-import { useAppSettings } from "@/stores/appSettingsStore";
 import Highcharts from "highcharts";
 import { SERIES_COLORS } from "@/lib/constants";
 
@@ -120,15 +119,40 @@ export function colorForCountry(country, seriesIndex = 0) {
  * @return {string}
  */
 export function getUnitDisplay(value, unit) {
-  if (!unit) return;
-
+  let numberFormat;
   const label = unit.display;
 
-  if (value === null || value === undefined) {
+  if (!unit) return;
+  if (value === null || value === undefined || Number.isNaN(value)) {
     return "<b>Data not available</b>";
   }
 
-  const valueStr = value.toPrecision(2);
+  if (value < 100) {
+    // Round to at most 2 significant digits for small values.
+    numberFormat = {
+      notation: "standard",
+      maximumSignificantDigits: 2,
+    };
+  } else if (value < Math.pow(10, 6)) {
+    // If less than 1 million, round to integer and include thousands
+    // separators
+    numberFormat = {
+      notation: "standard",
+      maximumFractionDigits: 0,
+      useGrouping: "min2",
+    };
+  } else {
+    // Show compact version for anything bigger, with 2 fixed decimals
+    // E.g. (24.20M)
+    numberFormat = {
+      notation: "compact",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      useGrouping: "min2",
+    };
+  }
+
+  const valueStr = value.toLocaleString("en", numberFormat);
 
   if (label.startsWith("%")) {
     // No extra space if there is a percent in the unit label, as "5 %"
@@ -136,17 +160,6 @@ export function getUnitDisplay(value, unit) {
     return `${valueStr}${label}`;
   }
   return `${valueStr} ${label}`;
-}
-
-/**
- * Get a suitable display string for a data point flag
- *
- * @param flag {string} single character data point flag
- * @return {string}
- */
-export function getFlagDisplay(flag) {
-  flag = flag.toLowerCase();
-  return useAppSettings().appSettings.eurostat_flags[flag] ?? flag;
 }
 
 /***

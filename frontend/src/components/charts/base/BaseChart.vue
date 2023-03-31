@@ -19,7 +19,6 @@ import SimpleSpinner from "@/components/SimpleSpinner.vue";
 import { api } from "@/lib/api";
 import {
   forceArray,
-  getFlagDisplay,
   getUnitDisplay,
   groupByMulti,
   toAPIKey,
@@ -314,7 +313,7 @@ export default {
           }
 
           for (const flag of fact?.flags || "") {
-            result.push("<b>Flag:</b> " + getFlagDisplay(flag));
+            result.push("<b>Flag:</b> " + parent.getFlagDisplay(flag));
           }
 
           if (parent.breakdown?.code) {
@@ -371,6 +370,16 @@ export default {
     },
     highchartsCallback(chart) {
       this.chart = chart;
+    },
+    /**
+     * Get a suitable display string for a data point flag
+     *
+     * @param flag {string} single character data point flag
+     * @return {string}
+     */
+    getFlagDisplay(flag) {
+      flag = flag.toLowerCase();
+      return useAppSettings().appSettings.eurostat_flags[flag] ?? flag;
     },
     async loadData() {
       if (!this.endpointParams) {
