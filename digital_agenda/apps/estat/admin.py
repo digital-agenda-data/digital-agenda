@@ -217,3 +217,8 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
             kwargs={"object_id": obj.import_config.id},
         )
         return mark_safe(f"<a href='{url}'>{obj.import_config}</a>")
+
+    def get_list_display(self, request):
+        fields = super().get_list_display(request)
+        fields.remove("log_link_display")
+        return fields

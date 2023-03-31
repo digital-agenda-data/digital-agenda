@@ -266,6 +266,11 @@ class DataFileImportTaskAdmin(TaskAdmin):
         fields.remove("errors")
         return fields
 
+    def get_list_display(self, request):
+        fields = super().get_list_display(request)
+        fields.remove("log_link_display")
+        return fields
+
     def has_add_permission(self, request):
         return False
 
