@@ -241,7 +241,7 @@ class TestImporterErrors(TestCase):
 
     def test_invalid_filter_value(self):
         self.config.filters = {"geo": ["EUROVISION"]}
-        self.check_error("value for 'geo' not found")
+        self.check_error("for dimension 'geo' not found")
 
     def test_invalid_filter_value_duplicate(self):
         self.config.filters = {"geo": ["EU", "eu"]}
@@ -272,7 +272,7 @@ class TestImporterErrors(TestCase):
 
     def test_invalid_mapping_value(self):
         self.config.mappings = {"country": {"EUROVISION": "EU"}}
-        self.check_error("value for 'country' not found")
+        self.check_error("for dimension 'country' not found")
 
     def test_invalid_mapping_value_duplicate(self):
         self.config.mappings = {"country": {"EU27_2020": "EU", "eu27_2020": "EU"}}
