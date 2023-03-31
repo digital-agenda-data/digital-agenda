@@ -44,6 +44,10 @@ jobs:
       - name: "Seed DB"
         run: |
           docker compose exec -T app ./manage.py seed_db --noinput
+      - name: "Frontend tests"
+        run: |
+          cd frontend
+          npm run test:unit -- run
       - name: "E2E tests"
         id: "frontendTests"
         run: |

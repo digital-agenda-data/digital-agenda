@@ -22,6 +22,18 @@
   ```shell
   pytest digital_agenda/apps/estat/tests/test_importer.py::TestImporterErrors::test_invalid_mapping_value
   ```
+  
+## Running frontend tests 
+
+- To run the full suite, make sure you have everything [installed for dev](./install_develop.md) and run:
+  ```shell
+  cd frontend
+  npm run test:unit
+  ```
+- To run a specific test suite:
+  ```shell
+  npm run test:unit -- src/tests/getUnitDisplay.spec.js
+  ```
 
 ## Running E2E tests 
 
