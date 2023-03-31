@@ -64,7 +64,9 @@ def default_mappings():
     return {
         "indicator": {},
         "breakdown": {},
-        "country": {},
+        "country": {
+            "EU27_2020": "EU",
+        },
         "unit": {},
         "period": {},
     }
