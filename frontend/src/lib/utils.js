@@ -119,10 +119,11 @@ export function colorForCountry(country, seriesIndex = 0) {
  * @return {string}
  */
 export function getUnitDisplay(value, unit) {
+  if (!unit) return;
+
   let numberFormat;
   const label = unit.display;
 
-  if (!unit) return;
   if (value === null || value === undefined || Number.isNaN(value)) {
     return "<b>Data not available</b>";
   }
