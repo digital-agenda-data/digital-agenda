@@ -236,7 +236,7 @@ export default {
         tooltip: this.tooltip,
         yAxis: {
           title: {
-            text: this.unit?.alt_label,
+            text: this.unit?.display,
           },
         },
       };

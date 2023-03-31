@@ -48,6 +48,9 @@ export default {
       return {
         yAxis: {
           min: 0,
+          title: {
+            text: this.unit?.display,
+          },
         },
         plotOptions: {
           series: {
