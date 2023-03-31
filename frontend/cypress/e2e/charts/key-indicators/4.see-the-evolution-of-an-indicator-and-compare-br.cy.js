@@ -7,7 +7,6 @@ describeResponsive("Check Chart", () => {
       "See the evolution of an indicator and compare breakdowns",
       {
         filters: {
-          indicatorGroup: "Digital Skills",
           indicator: "ICT graduates",
           breakdownGroup: "Gender",
           unit: "% of graduates",

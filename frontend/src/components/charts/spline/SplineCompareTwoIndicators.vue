@@ -1,7 +1,6 @@
 <script>
+import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
 import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue";
-import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
-import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
@@ -18,20 +17,14 @@ export default {
     },
     filterXComponents() {
       return [
-        IndicatorGroupFilter,
-        IndicatorFilter,
+        IndicatorWithGroupsFilter,
         BreakdownWithGroupsFilter,
         UnitFilter,
         CountryFilter,
       ];
     },
     filterYComponents() {
-      return [
-        IndicatorGroupFilter,
-        IndicatorFilter,
-        BreakdownWithGroupsFilter,
-        UnitFilter,
-      ];
+      return [IndicatorWithGroupsFilter, BreakdownWithGroupsFilter, UnitFilter];
     },
     endpointFilters() {
       return {

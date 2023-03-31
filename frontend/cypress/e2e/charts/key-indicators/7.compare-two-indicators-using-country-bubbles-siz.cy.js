@@ -7,16 +7,13 @@ describeResponsive("Check Chart", () => {
       "Compare two indicators, using country bubbles sized on a third one",
       {
         filters: {
-          indicatorGroupX: "Digital Skills",
           indicatorX: "ICT graduates",
           breakdownX: "Females",
           periodX: "2019",
           unitX: "% of graduates",
-          indicatorGroupY: "Digital Skills",
           indicatorY: "ICT graduates",
           breakdownY: "Males",
           unitY: "% of graduates",
-          indicatorGroupZ: "Digital Skills",
           indicatorZ: "ICT graduates",
           breakdownZ: "Total",
           unitZ: "% of graduates",

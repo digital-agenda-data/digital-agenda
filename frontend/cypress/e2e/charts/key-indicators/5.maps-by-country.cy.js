@@ -4,7 +4,6 @@ describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
     cy.checkChart("Key Indicators", "Maps by country", {
       filters: {
-        indicatorGroup: "Digital Skills",
         indicator: "ICT graduates",
         breakdown: "Females",
         period: "2019",

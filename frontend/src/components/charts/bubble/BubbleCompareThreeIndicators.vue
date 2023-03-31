@@ -1,8 +1,7 @@
 <script>
+import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
 import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterCompareTwoIndicators.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
-import IndicatorGroupFilter from "@/components/chart-filters/IndicatorGroupFilter.vue";
-import IndicatorFilter from "@/components/chart-filters/IndicatorFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 
@@ -20,8 +19,7 @@ export default {
           component: EclHeading,
           attrs: { size: 5, text: "Bubbles size (Z) proportional to:" },
         },
-        { component: IndicatorGroupFilter, attrs: { size: "l" } },
-        { component: IndicatorFilter, attrs: { size: "l" } },
+        { component: IndicatorWithGroupsFilter, attrs: { size: "l" } },
         { component: BreakdownWithGroupsFilter, attrs: { size: "l" } },
         { component: UnitFilter, attrs: { size: "l" } },
       ];
