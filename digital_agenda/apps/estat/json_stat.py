@@ -69,7 +69,7 @@ class JSONStat:
 
     @functools.cached_property
     def dimension_dict(self):
-        return {d.id: {cat.id: cat for cat in d.categories} for d in self.dimensions}
+        return {d.id: {cat.id for cat in d.categories} for d in self.dimensions}
 
     def _get(self, key, index):
         try:
