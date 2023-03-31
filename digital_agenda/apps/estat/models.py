@@ -231,7 +231,7 @@ class ImportConfig(models.Model):
             for val in values:
                 if val not in categories:
                     raise ValidationError(
-                        f"Filter value for {key!r} not found: {val!r}"
+                        f"Filter value {val!r} for dimension {key!r} not found in: {categories!r}"
                     )
         for dimension in ("indicator", "breakdown", "country", "unit", "period"):
             config_dim = getattr(self, dimension)
@@ -252,7 +252,7 @@ class ImportConfig(models.Model):
             for val in mappings.keys():
                 if val not in categories:
                     raise ValidationError(
-                        f"Mapped value for {dimension!r} not found: {val!r}"
+                        f"Mapped value {val!r} for dimension {dimension!r} not found in: {categories!r}"
                     )
 
     def run_import(self, **kwargs):
