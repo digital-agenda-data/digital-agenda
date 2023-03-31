@@ -43,6 +43,7 @@ class SortableDimensionAdmin(SortableAdminMixin, DimensionAdmin):
 
 class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
     model = IndicatorGroup.indicators.through
+    autocomplete_fields = ("indicator",)
 
 
 @admin.register(IndicatorGroup)
@@ -55,6 +56,7 @@ class IndicatorGroupAdmin(SortableDimensionAdmin):
 
 class DataSourceInline(admin.TabularInline):
     model = Indicator.data_sources.through
+    autocomplete_fields = ("data_source",)
     extra = 0
 
 
@@ -66,6 +68,7 @@ class IndicatorAdmin(DimensionAdmin):
 
 class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):
     model = BreakdownGroup.breakdowns.through
+    autocomplete_fields = ("breakdown",)
 
 
 @admin.register(BreakdownGroup)
