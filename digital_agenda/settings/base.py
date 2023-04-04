@@ -108,6 +108,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "digital_agenda.apps.core.middleware.TimezoneMiddleware",
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -277,6 +278,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+USE_L10N = False
+
+TIMEZONE_COOKIE = "X-Django-Timezone"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

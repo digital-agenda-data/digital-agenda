@@ -4,6 +4,7 @@ from rest_framework import routers
 from .views.misc import AppSettingsView
 from .views.facts import FactsViewSet
 from .views.feedback import FeedbackViewSet
+from .views.misc import SetTimezoneView
 from .views.unit import UnitViewSet
 from .views.period import PeriodViewSet
 from .views.country import CountryViewSet
@@ -31,5 +32,10 @@ urlpatterns = [
         "app-settings/",
         AppSettingsView.as_view(),
         name="app-settings",
+    ),
+    path(
+        "set-timezone/",
+        SetTimezoneView.as_view(),
+        name="set-timezone",
     ),
 ]
