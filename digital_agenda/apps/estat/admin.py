@@ -14,6 +14,7 @@ from digital_agenda.apps.estat.models import *
 class ImportConfigTagAdmin(admin.ModelAdmin):
     list_display = ("code",)
     search_fields = ("code",)
+    ordering = ("code",)
 
 
 @admin.register(GeoGroup)
@@ -23,6 +24,7 @@ class GeoGroupAdmin(admin.ModelAdmin):
     }
     list_display = ("code", "size", "note", "geo_codes")
     search_fields = ("code",)
+    ordering = ("code",)
 
 
 DIMENSION_DESCRIPTION = """
