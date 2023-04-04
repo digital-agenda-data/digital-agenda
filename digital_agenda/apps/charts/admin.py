@@ -164,6 +164,12 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
     filter_horizontal = ("indicator_groups",)
     actions = ["purge_data"]
 
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if "delete_selected" in actions:
+            del actions["delete_selected"]
+        return actions
+
     @admin.action(description="Purge data for selected chart groups")
     def purge_data(self, request, queryset):
         return HttpResponseRedirect(
