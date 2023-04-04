@@ -3,7 +3,7 @@ function getCookie(name) {
   name = name.toLowerCase()
   for (const cookie of document.cookie.split(";")) {
     const [key, value] = cookie.split("=");
-    if (key.toLowerCase() === name) {
+    if (key.trim().toLowerCase() === name) {
       return value
     }
   }
