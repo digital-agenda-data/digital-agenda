@@ -259,7 +259,7 @@ class DataFileImportTaskAdmin(TaskAdmin):
         "__str__",
         "import_file_link",
         "delete_existing",
-        "created_on_display",
+        "created_on",
         "duration_display",
         "status_display",
     ]

@@ -219,7 +219,7 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
         "import_config_link",
         "delete_existing",
         "force_download",
-        "created_on_display",
+        "created_on",
         "duration_display",
         "status_display",
     ]

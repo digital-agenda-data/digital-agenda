@@ -282,6 +282,13 @@ USE_L10N = False
 
 TIMEZONE_COOKIE = "X-Django-Timezone"
 
+# See https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date
+DATETIME_FORMAT = "d N Y, H:i O"
+SHORT_DATETIME_FORMAT = "d-m-Y, H:i"
+DATE_FORMAT = "d N Y"
+SHORT_DATE_FORMAT = "d-m-Y"
+TIME_FORMAT = "H:i:s"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
