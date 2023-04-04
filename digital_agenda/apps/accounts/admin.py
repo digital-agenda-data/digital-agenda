@@ -26,13 +26,14 @@ class UserAdmin(BaseUserAdmin):
         "is_staff",
         "is_active",
     )
+    readonly_fields = ("last_login",)
     fieldsets = (
         (
             None,
             {
                 "fields": (
                     "email",
-                    "password",
+                    "last_login",
                 )
             },
         ),
@@ -43,8 +44,6 @@ class UserAdmin(BaseUserAdmin):
                     "is_active",
                     "is_staff",
                     "is_superuser",
-                    "groups",
-                    "user_permissions",
                 )
             },
         ),
@@ -59,6 +58,7 @@ class UserAdmin(BaseUserAdmin):
                     "password1",
                     "password2",
                     "is_staff",
+                    "is_superuser",
                 ),
             },
         ),
