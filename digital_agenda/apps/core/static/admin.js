@@ -37,4 +37,8 @@ function setTimezone() {
   });
 }
 
-setTimezone();
+try {
+  setTimezone();
+} catch (e) {
+  console.warn("Unable to set timezone", e)
+}
