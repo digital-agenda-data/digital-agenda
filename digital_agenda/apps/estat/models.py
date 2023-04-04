@@ -9,6 +9,7 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django_task.models import TaskRQ
 
+from digital_agenda.apps.estat.importer import ImporterError
 from digital_agenda.common.models import NaturalCodeManger
 
 
@@ -224,16 +225,19 @@ class ImportConfig(models.Model):
         """Simple sanity checks to validate the data matches the given config."""
         for key, values in self.ci_filters.items():
             if key not in dataset.dimension_ids:
-                raise ValidationError(
-                    f"Invalid filter {key!r}, no dimensions with that id found in: "
-                    f"{dataset.dimension_ids}"
+                raise ImporterError(
+                    {
+                        f"Invalid filter {key!r}, no dimensions with that id found in": dataset.dimension_ids
+                    }
                 )
 
             categories = dataset.dimension_dict[key]
             for val in values:
                 if val not in categories:
-                    raise ValidationError(
-                        f"Filter value {val!r} for dimension {key!r} not found in: {categories!r}"
+                    raise ImporterError(
+                        {
+                            f"Filter value {val!r} for dimension {key!r} not found in": categories
+                        }
                     )
         for dimension in ("indicator", "breakdown", "country", "unit", "period"):
             config_dim = getattr(self, dimension)
@@ -244,17 +248,20 @@ class ImportConfig(models.Model):
                 continue
 
             if config_dim not in dataset.dimension_ids:
-                raise ValidationError(
-                    f"Invalid dimension {config_dim!r}, no dimensions with that id found in: "
-                    f"{dataset.dimension_ids}"
+                raise ImporterError(
+                    {
+                        f"Invalid dimension {config_dim!r}, no dimensions with that id found in": dataset.dimension_ids
+                    }
                 )
 
             mappings = self.ci_mappings.get(dimension, {})
             categories = dataset.dimension_dict[config_dim]
             for val in mappings.keys():
                 if val not in categories:
-                    raise ValidationError(
-                        f"Mapped value {val!r} for dimension {dimension!r} not found in: {categories!r}"
+                    raise ImporterError(
+                        {
+                            f"Mapped value {val!r} for dimension {dimension!r} not found in": categories
+                        }
                     )
 
     def run_import(self, **kwargs):
@@ -307,6 +314,7 @@ class ImportFromConfigTask(TaskRQ):
             (3, "DEBUG"),
         ),
     )
+    errors = models.JSONField(null=True, blank=True)
 
     class Meta:
         get_latest_by = "created_on"

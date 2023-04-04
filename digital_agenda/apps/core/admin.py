@@ -266,7 +266,10 @@ class DataFileImportTaskAdmin(TaskAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj=obj)
-        fields.remove("errors")
+        try:
+            fields.remove("errors")
+        except ValueError:
+            pass
         return fields
 
     def get_list_display(self, request):

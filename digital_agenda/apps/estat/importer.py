@@ -7,7 +7,6 @@ from collections import defaultdict
 
 import httpx
 from django.conf import settings
-from django.core.exceptions import ValidationError
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
@@ -27,6 +26,10 @@ MODELS = {
     "unit": Unit,
     "period": Period,
 }
+
+
+class ImporterError(ValueError):
+    pass
 
 
 def batched(iterable, n):
@@ -178,9 +181,10 @@ class EstatImporter:
 
         key = tuple(unique_key)
         if key in self.unique:
-            raise ValidationError(
-                f"Duplicate key detected in the dataset "
-                f"(mapping or filter may not be correct?): {key}"
+            raise ImporterError(
+                {
+                    "Duplicate key detected in the dataset (mapping or filter may not be correct?)": key
+                }
             )
         self.unique.add(key)
 

@@ -193,6 +193,12 @@ class ImportConfigAdmin(admin.ModelAdmin):
 
 @admin.register(ImportFromConfigTask)
 class ImportFromConfigTaskAdmin(TaskAdmin):
+    formfield_overrides = {
+        models.JSONField: {
+            "widget": JSONEditorWidget(options={"mode": "view", "modes": ["view"]})
+        },
+    }
+
     search_fields = [
         "import_config__code",
         "import_config__title",
@@ -225,6 +231,18 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
             kwargs={"object_id": obj.import_config.id},
         )
         return mark_safe(f"<a href='{url}'>{obj.import_config}</a>")
+
+    def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj=obj)
+        try:
+            fields.remove("errors")
+        except ValueError:
+            pass
+        return fields
+
+    def get_exclude(self, request, obj=None):
+        if not obj:
+            return ["errors"]
 
     def get_list_display(self, request):
         fields = super().get_list_display(request)
