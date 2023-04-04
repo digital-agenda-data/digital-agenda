@@ -130,3 +130,10 @@ form .aligned label + div.help {
 .constance table th:last-child {
   width: 5rem;
 }
+
+.field-log_text div.readonly {
+  white-space: pre;
+  overflow: auto;
+  background: var(--darkened-bg);
+  padding: 0.5rem !important;
+}
