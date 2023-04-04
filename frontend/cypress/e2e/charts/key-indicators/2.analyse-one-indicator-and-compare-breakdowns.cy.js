@@ -14,7 +14,7 @@ describeResponsive("Check Chart", () => {
         },
         title: ["ICT graduates", "Year: 2019"],
         point: "European Union, 0.8. Females.",
-        tooltip: ["European Union", "Females", "0.80% of graduates"],
+        tooltip: ["European Union", "Females", "0.8% of graduates"],
         definitions: [
           "Indicator: ICT graduates",
           "Definition: Individuals with a degree in ICT",
