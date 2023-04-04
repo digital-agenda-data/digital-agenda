@@ -183,7 +183,9 @@ class EstatImporter:
         if key in self.unique:
             raise ImporterError(
                 {
-                    "Duplicate key detected in the dataset (mapping or filter may not be correct?)": key
+                    "Duplicate key detected in the dataset (mapping or filter may not be correct?)": list(
+                        map(str, key)
+                    )
                 }
             )
         self.unique.add(key)

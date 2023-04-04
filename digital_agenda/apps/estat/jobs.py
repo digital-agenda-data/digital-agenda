@@ -1,8 +1,11 @@
 import logging
 
+from django.core.exceptions import ValidationError
+
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.estat.importer import EstatImporter
+from digital_agenda.apps.estat.importer import ImporterError
 from digital_agenda.common.job import LoggingJob
 
 logger = logging.getLogger(__name__)
@@ -22,11 +25,17 @@ class ImportFromConfigJob(LoggingJob):
                 logger.info("Deleted Facts: %s", result)
 
             importer.run()
-            clear_all_caches(force=True)
+        except ValidationError as exc:
+            task.errors = exc.message_dict
+            raise
+        except ImporterError as exc:
+            task.errors = exc.args[0]
+            raise
         except Exception as exc:
-            if len(exc.args) > 0:
-                task.errors = exc.args[0]
-                task.save()
+            task.errors = {
+                "Unexpected error": str(exc),
+            }
             raise
         finally:
+            task.save()
             clear_all_caches(force=True)

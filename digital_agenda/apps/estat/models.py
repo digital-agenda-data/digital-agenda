@@ -50,11 +50,7 @@ class GeoGroup(models.Model):
 
         if len(self.geo_codes) != self.size:
             raise ValidationError(
-                {
-                    "size": ValidationError(
-                        f"Size mismatch; geo codes has {len(self.geo_codes)} codes"
-                    )
-                }
+                {"size": f"Size mismatch; geo codes has {len(self.geo_codes)} codes"}
             )
 
     def natural_key(self):

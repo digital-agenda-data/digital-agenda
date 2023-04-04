@@ -73,9 +73,7 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
             and self.period_end
             and self.period_start > self.period_end
         ):
-            error = ValidationError(
-                "Start period must be less than or equal to the end period"
-            )
+            error = "Start period must be less than or equal to the end period"
             raise ValidationError(
                 {
                     "period_start": error,
