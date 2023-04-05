@@ -311,7 +311,7 @@ CONSTANCE_BACKEND = "constance.backends.database.DatabaseBackend"
 CONSTANCE_CONFIG = {
     "FEEDBACK_EMAIL": (
         "feedback@example.com",
-        "Email address where feedback messages are sent to",
+        "Email addresses where feedback messages are sent to; multiple addresses can be specified separated by comma",
     ),
     "GLOBAL_BANNER_ENABLED": (
         True,

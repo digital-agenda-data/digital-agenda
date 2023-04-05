@@ -1,5 +1,8 @@
 import logging
 
+from django_rq import job
+from django.core.mail import send_mail
+
 from digital_agenda.common.job import LoggingJob
 from .cache import clear_all_caches
 from .formats import get_loader
@@ -41,3 +44,8 @@ class ImportFromDataFileJob(LoggingJob):
             raise
         finally:
             clear_all_caches(force=True)
+
+
+@job
+def send_mail_job(subject, message, from_email, recipient_list):
+    send_mail(subject, message, from_email, recipient_list)
