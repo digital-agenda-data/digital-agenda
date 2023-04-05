@@ -81,7 +81,6 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "django_filters",
     "admin_auto_filters",
-    "psqlextra",
     "rest_framework",
     "health_check",
     "health_check.db",
@@ -168,7 +167,7 @@ POSTGRES_PASSWORD = env.str("POSTGRES_PASSWORD")
 
 DATABASES = {
     "default": {
-        "ENGINE": "psqlextra.backend",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": POSTGRES_DB,
         "HOST": POSTGRES_HOST,
         "PORT": POSTGRES_PORT,

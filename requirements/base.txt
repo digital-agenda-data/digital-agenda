@@ -1,4 +1,4 @@
-Django
+Django==4.2.*  # LTS
 django-admin-autocomplete-filter
 django-admin-env-notice
 django-admin-sortable2
@@ -15,17 +15,16 @@ django-hashid-field
 django-health-check
 django_json_widget
 django-model-utils
-django-postgres-extra
 django-redis
-django-rq
-django-task
 djangorestframework
 djangorestframework-csv
+django-rq
+django-task
 drf-spectacular
 httpx
 openpyxl
 pillow
-psycopg2-binary
+psycopg[binary]
 python-magic
 rich
 xlrd
