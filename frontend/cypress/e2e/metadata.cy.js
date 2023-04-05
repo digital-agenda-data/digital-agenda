@@ -2,11 +2,11 @@ import describeResponsive from "../support/describeResponsive";
 
 describeResponsive("Check Metadata Page", () => {
   it("Check export links", () => {
-    cy.visit("/")
-      .get(".ecl-list-illustration a")
+    cy.visit("/");
+    cy.get(".ecl-list-illustration a")
       .contains("Digital Economy and Society Index")
-      .click()
-      .get("a")
+      .click();
+    cy.get("a")
       .contains("Entire dataset metadata and download services")
       .click();
 

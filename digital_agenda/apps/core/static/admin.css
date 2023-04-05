@@ -1,5 +1,11 @@
-/* Use palette from https://ec.europa.eu/component-library/ec/guidelines/colours/ */
-:root {
+/*
+  Use palette from https://ec.europa.eu/component-library/ec/guidelines/colours/
+  Also disable the dark mode theme.
+*/
+:root,
+html[data-theme="auto"],
+html[data-theme="dark"],
+html[data-theme="light"] {
   --primary: #004494;
   --secondary: #002F67;
   --accent: #FFF4BB;
@@ -49,6 +55,7 @@
   --object-tools-fg: var(--button-fg);
   --object-tools-bg: var(--close-button-bg);
   --object-tools-hover-bg: var(--close-button-hover-bg);
+  --font-family-primary: Arial, sans-serif;
 }
 
 body {
@@ -56,6 +63,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Disable changed the theme and remove dark mode options */
+.theme-toggle {
+  display: none;
 }
 
 /* Get rid of the horizontal scrollbar in Django admin tables! */
