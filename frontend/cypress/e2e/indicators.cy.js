@@ -2,11 +2,11 @@ import describeResponsive from "../support/describeResponsive";
 
 describeResponsive("Check Indicators Page", () => {
   it("Check export links", () => {
-    cy.visit("/")
-      .get(".ecl-list-illustration a")
+    cy.visit("/");
+    cy.get(".ecl-list-illustration a")
       .contains("Digital Economy and Society Index")
-      .click()
-      .get("a")
+      .click();
+    cy.get("a")
       .contains("Consult the list of indicators, their definition and sources")
       .click();
 

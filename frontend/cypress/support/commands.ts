@@ -19,19 +19,14 @@ Cypress.Commands.addAll(
 Cypress.Commands.addAll({
   login() {
     const host = Cypress.env("backendHost");
-    return cy
-      .visit(`${host}/admin/`)
-      .get("input[name=username]")
-      .type("admin@example.com")
-      .get("input[name=password]")
-      .type("admin")
-      .get("input[type=submit]")
-      .click();
+    cy.visit(`${host}/admin/`);
+    cy.get("input[name=username]").type("admin@example.com");
+    cy.get("input[name=password]").type("admin");
+    return cy.get("input[type=submit]").click();
   },
   selectFilter(inputName, label) {
+    cy.get(`[data-name='${inputName}']`).click();
     return cy
-      .get(`[data-name='${inputName}']`)
-      .click()
       .get(`[data-name='${inputName}'] [role='option']`)
       .contains(label)
       .click();
@@ -46,12 +41,9 @@ Cypress.Commands.addAll({
         }
       });
 
-    cy.get("form.ecl-search-form input[type=search]")
-      .type(searchQuery)
-      .get("form.ecl-search-form [type=submit]")
-      .click()
-      .get("h1")
-      .contains("Search for indicators");
+    cy.get("form.ecl-search-form input[type=search]").type(searchQuery);
+    cy.get("form.ecl-search-form [type=submit]").click();
+    cy.get("h1").contains("Search for indicators");
   },
 
   checkExportLink(linkText, expectedType) {
@@ -104,15 +96,10 @@ Cypress.Commands.addAll({
     chart,
     { filters = {}, title = [], point = null, tooltip = [], definitions = [] }
   ) {
+    cy.task("cleanDownloadsFolder").visit("/");
     // Navigate to the chart
-    cy.task("cleanDownloadsFolder")
-      .visit("/")
-      .get(".ecl-list-illustration a")
-      .contains(chartGroup)
-      .click()
-      .get(".ecl-list-illustration a")
-      .contains(chart)
-      .click();
+    cy.get(".ecl-list-illustration a").contains(chartGroup).click();
+    cy.get(".ecl-list-illustration a").contains(chart).click();
 
     // Set the filters
     for (const filtersKey in filters) {
@@ -163,10 +150,8 @@ Cypress.Commands.addAll({
     cy.checkExportLink("Export data", "xlsx");
 
     // Check share link
-    cy.get("button")
-      .contains("Share")
-      .click()
-      .get(".ecl-social-media-share input[type=text]")
+    cy.get("button").contains("Share").click();
+    cy.get(".ecl-social-media-share input[type=text]")
       .invoke("val")
       .then((value) => {
         // Navigate to the short URL and check the chart again.
