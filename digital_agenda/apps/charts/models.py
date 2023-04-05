@@ -3,7 +3,6 @@ import functools
 from ckeditor.fields import RichTextField
 from composite_field import CompositeField
 from django.conf import settings
-from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -27,7 +26,7 @@ class DraftModel(models.Model):
 class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     objects = NaturalCodeManger()
 
-    code = CICharField(max_length=60, unique=True)
+    code = models.CharField(max_length=60, unique=True, db_collation="case_insensitive")
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
     license = RichTextField()

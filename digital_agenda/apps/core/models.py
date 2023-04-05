@@ -6,7 +6,6 @@ from colorfield.fields import ColorField
 
 from django.conf import settings
 from django.db import models
-from django.contrib.postgres.fields import CICharField
 from django.core.exceptions import ValidationError
 from django.core.files.storage import get_storage_class
 from django.core.validators import FileExtensionValidator
@@ -28,7 +27,7 @@ class BaseDimensionModel(TimestampedModel):
     Base model for dimension-like models, with a unique code and label/short label fields.
     """
 
-    code = CICharField(max_length=60, unique=True)
+    code = models.CharField(max_length=60, unique=True, db_collation="case_insensitive")
     label = models.TextField(null=True, blank=True)
     alt_label = models.TextField(null=True, blank=True, verbose_name="Alt. label")
     definition = models.TextField(null=True, blank=True)
