@@ -93,7 +93,9 @@ def export_facts_csv(filename, chartgroup=None, indicatorgroup=None, indicator=N
                 f"COPY ({query}) TO STDOUT WITH CSV HEADER",
                 params,
             )
-            cursor.copy_expert(query_interpolated, tmpf)
+            with cursor.copy(query_interpolated) as copy:
+                for data in copy:
+                    tmpf.write(data)
 
             tmpf.seek(0)
             return FileResponse(tmpf, as_attachment=True, filename=filename)
