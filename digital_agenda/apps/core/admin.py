@@ -155,6 +155,12 @@ class DataFileImportAdmin(admin.ModelAdmin):
 
     list_display = ("file_name", "latest_import", "num_facts", "created_at", "user")
 
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if "delete_selected" in actions:
+            del actions["delete_selected"]
+        return actions
+
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(num_facts=Count("facts"))
 
