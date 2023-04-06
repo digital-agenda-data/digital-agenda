@@ -51,23 +51,6 @@ export default {
       return this.apiData.length > 1;
     },
   },
-  watch: {
-    apiDataRaw(newValue, oldValue) {
-      const newQuery = { ...this.$route.query };
-
-      // Delete old values (if any)
-      for (const item of oldValue || []) {
-        delete newQuery[item.code];
-      }
-
-      // Set all values to default of 5
-      for (const item of newValue || []) {
-        newQuery[item.code] = 5;
-      }
-
-      this.$router.replace({ query: newQuery });
-    },
-  },
   methods: {
     getNormalized(code) {
       return ((this.rawValues[code] / this.total) * 100).toFixed(2);
