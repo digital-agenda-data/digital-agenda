@@ -15,6 +15,11 @@ export default {
     groupEndpoint() {
       return this.errorMustImplement("groupEndpoint");
     },
+    ignoredGroupCodes() {
+      return new Set(
+        this.currentFilterOptions.ignored[this.queryName + "Group"]
+      );
+    },
     apiDataByCode() {
       return groupByUnique(this.apiData);
     },
@@ -23,6 +28,10 @@ export default {
 
       for (const group of this.groups ?? []) {
         const children = [];
+
+        if (this.ignoredGroupCodes.has(group.code)) {
+          continue;
+        }
 
         for (const code of group.members) {
           const item = this.apiDataByCode.get(code);
