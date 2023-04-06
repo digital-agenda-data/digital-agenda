@@ -12,6 +12,7 @@ from django.core.validators import FileExtensionValidator
 from django.utils.functional import cached_property
 from django_task.models import TaskRQ
 
+from digital_agenda.common.citext import CICharField
 from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import TimestampedModel
 
@@ -27,7 +28,7 @@ class BaseDimensionModel(TimestampedModel):
     Base model for dimension-like models, with a unique code and label/short label fields.
     """
 
-    code = models.CharField(max_length=60, unique=True, db_collation="case_insensitive")
+    code = CICharField(max_length=60, unique=True)
     label = models.TextField(null=True, blank=True)
     alt_label = models.TextField(null=True, blank=True, verbose_name="Alt. label")
     definition = models.TextField(null=True, blank=True)

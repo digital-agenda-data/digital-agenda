@@ -9,11 +9,12 @@ from django.db import models
 from django_task.models import TaskRQ
 
 from digital_agenda.apps.estat.importer import ImporterError
+from digital_agenda.common.citext import CICharField
 from digital_agenda.common.models import NaturalCodeManger
 
 
 class ImportConfigTag(models.Model):
-    code = models.CharField(max_length=60, unique=True, db_collation="case_insensitive")
+    code = CICharField(max_length=60, unique=True)
 
     objects = NaturalCodeManger()
 
@@ -22,7 +23,7 @@ class ImportConfigTag(models.Model):
 
 
 class GeoGroup(models.Model):
-    code = models.CharField(max_length=60, unique=True, db_collation="case_insensitive")
+    code = CICharField(max_length=60, unique=True)
     size = models.PositiveIntegerField()
     note = models.CharField(max_length=1024, blank=True, null=True)
     geo_codes = models.JSONField(default=list)
@@ -73,7 +74,7 @@ def is_unique(values):
 
 
 class ImportConfig(models.Model):
-    code = models.CharField(max_length=60, db_collation="case_insensitive")
+    code = CICharField(max_length=60)
     title = models.CharField(
         max_length=1024,
         blank=True,
@@ -88,25 +89,19 @@ class ImportConfig(models.Model):
         blank=True,
     )
 
-    indicator = models.CharField(max_length=60, db_collation="case_insensitive")
+    indicator = CICharField(max_length=60)
     indicator_is_surrogate = models.BooleanField(default=False)
 
-    breakdown = models.CharField(max_length=60, db_collation="case_insensitive")
+    breakdown = CICharField(max_length=60)
     breakdown_is_surrogate = models.BooleanField(default=False)
 
-    country = models.CharField(
-        max_length=60, default="geo", db_collation="case_insensitive"
-    )
+    country = CICharField(max_length=60, default="geo")
     country_is_surrogate = models.BooleanField(default=False)
 
-    unit = models.CharField(
-        max_length=60, default="unit", db_collation="case_insensitive"
-    )
+    unit = CICharField(max_length=60, default="unit")
     unit_is_surrogate = models.BooleanField(default=False)
 
-    period = models.CharField(
-        max_length=60, default="time", db_collation="case_insensitive"
-    )
+    period = CICharField(max_length=60, default="time")
     period_is_surrogate = models.BooleanField(default=False)
 
     period_start = models.PositiveIntegerField(

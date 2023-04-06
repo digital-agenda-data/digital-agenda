@@ -9,6 +9,7 @@ from django.db import models
 from django.utils.html import strip_tags
 
 from digital_agenda.apps.core.models import Fact
+from digital_agenda.common.citext import CICharField
 from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import NaturalCodeManger
 from digital_agenda.common.models import TimestampedModel
@@ -26,7 +27,7 @@ class DraftModel(models.Model):
 class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     objects = NaturalCodeManger()
 
-    code = models.CharField(max_length=60, unique=True, db_collation="case_insensitive")
+    code = CICharField(max_length=60, unique=True)
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
     license = RichTextField()
