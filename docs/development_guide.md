@@ -42,7 +42,28 @@ settings. See [code style workflow](https://github.com/digital-agenda-data/digit
   - [Data download API](https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query)
 - Misc:
     - EU Login - No documentation available; however it is a CAS server, so see [django-cas-ng](https://djangocas.dev/docs/latest/) instead.    
-    - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA) 
+    - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA)
+
+## Testing data
+
+Minimal data used for testing can be added with the "seed_db" management command.
+
+```shell
+./manage.py seed_db
+```
+
+This will:
+
+ - remove ALL existing data
+ - creates an admin user with credentials: 
+   - user: `admin@example.com`
+   - password: `admin`
+ - load the base fixtures (countries/indicators/breakdowns/etc.)
+ - load a small subset of data for DESI directly from fixtures
+ - creates a few small ESTAT import configs for "Key Indicators" and imports the data
+ - adds images for all chart groups
+
+This command is required to run the [E2E tests](./tests.md#running-e2e-tests)
 
 ## Adding a new backend dependency
 

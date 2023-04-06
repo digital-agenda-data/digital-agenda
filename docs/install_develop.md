@@ -35,19 +35,12 @@ This document describes installation steps required to install locally for devel
   ```shell
   ./manage.py migrate
   ```
-- Create superuser
+- Add some testing data to the DB (see [development guide](./development_guide.md#testing-data) for details on what this
+  includes):
   ```shell
-  ./manage.py createsuperuser
+  ./manage.py seed_db
   ```
-- Load initial fixtures
-  ```shell
-  ./manage.py load_initial_fixtures
-  ```
-- _(optional)_ Import data from ESTAT
-  ```shell
-  ./manage.py estat_import
-  ```
-  
+
 ## Installing Frontend for development
 
 - Change directory to the frontend directory
@@ -73,7 +66,11 @@ This document describes installation steps required to install locally for devel
   ```shell
   ./manage.py rqworker
   ```
-  
+- Check frontend is running correctly at http://localhost:8080
+- Check backend is running correctly at http://localhost:8000 and login with credentials:
+    - user: `admin@example.com`
+    - password: `admin`
+
 ## Updating the application
 
 - Update the code with the latest version
@@ -89,3 +86,8 @@ This document describes installation steps required to install locally for devel
   ```shell
   ./manage.py migrate
   ```
+
+## Where to go from here?
+
+See the and [tests guide](./tests.md) to run some the test suites locally. Afterward check
+the [development guide](./development_guide.md) to help you get started.  
