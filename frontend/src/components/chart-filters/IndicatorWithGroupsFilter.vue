@@ -2,7 +2,7 @@
 import BaseSelectWithGroupFilter from "@/components/chart-filters/base/BaseSelectWithGroupFilter.vue";
 
 export default {
-  name: "IndicatorFilter",
+  name: "IndicatorWithGroupsFilter",
   extends: BaseSelectWithGroupFilter,
   computed: {
     queryName() {
