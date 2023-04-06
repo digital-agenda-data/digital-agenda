@@ -1,5 +1,10 @@
 <template>
-  <ecl-range :key="queryName" v-model="modelValue" :max="10" />
+  <ecl-range
+    :key="queryName"
+    v-model="modelValue"
+    :max="10"
+    :input-name="queryName"
+  />
 </template>
 
 <script>
