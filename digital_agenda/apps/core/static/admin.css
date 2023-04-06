@@ -149,3 +149,7 @@ form .aligned label + div.help {
   background: var(--darkened-bg);
   padding: 0.5rem !important;
 }
+
+.aligned p.file-upload {
+  margin-left: 0 !important;
+}

@@ -147,22 +147,11 @@ class DataFileImportAdmin(admin.ModelAdmin):
         "user",
     )
     actions = ("trigger_import", "trigger_import_destructive")
-
-    def get_readonly_fields(self, request, obj=None):
-        # `errors` has a custom widget and is disabled at the form level
-        if obj:  # edit
-            return (
-                "file",
-                "latest_import",
-                "user",
-                "num_facts",
-            )
-        else:  # new object
-            return (
-                "latest_import",
-                "user",
-                "num_facts",
-            )
+    readonly_fields = (
+        "latest_import",
+        "user",
+        "num_facts",
+    )
 
     list_display = ("file_name", "latest_import", "num_facts", "created_at", "user")
 
