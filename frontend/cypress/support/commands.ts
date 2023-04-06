@@ -91,16 +91,19 @@ Cypress.Commands.addAll({
         });
       });
   },
-  checkChart(
-    chartGroup,
-    chart,
-    { filters = {}, title = [], point = null, tooltip = [], definitions = [] }
-  ) {
-    cy.task("cleanDownloadsFolder").visit("/");
-    // Navigate to the chart
+  navigateToChart(chartGroup, chart) {
+    cy.visit("/");
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
-
+  },
+  checkChart({
+    filters = {},
+    title = [],
+    point = null,
+    tooltip = [],
+    definitions = [],
+  }) {
+    cy.task("cleanDownloadsFolder");
     // Set the filters
     for (const filtersKey in filters) {
       cy.selectFilter(filtersKey, filters[filtersKey]);

@@ -2,7 +2,11 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.checkChart("Key Indicators", "Compare the evolution of two indicators", {
+    cy.navigateToChart(
+      "Key Indicators",
+      "Compare the evolution of two indicators"
+    );
+    cy.checkChart({
       filters: {
         indicatorX: "ICT graduates",
         breakdownX: "Females",

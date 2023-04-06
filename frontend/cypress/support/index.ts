@@ -48,13 +48,19 @@ declare global {
       ): Chainable<string>;
 
       /**
+       * Navigate to a chart
+       */
+      navigateToChart(chartGroup: string, chart: string): void;
+      /**
        * Perform checks for a chart page
        */
-      checkChart(
-        chartGroup: string,
-        chart: string,
-        config: { filters; title; point; tooltip; definitions }
-      ): Chainable<undefined>;
+      checkChart(config: {
+        filters;
+        title;
+        point;
+        tooltip;
+        definitions;
+      }): Chainable<undefined>;
     }
   }
 }
