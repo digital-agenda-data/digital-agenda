@@ -34,7 +34,10 @@ class Command(BaseCommand):
         call_command("flush", "--noinput")
         call_command("load_initial_fixtures", "--test", "--exclude", "importconfigs")
 
-        # Import some facts from some small configs
+        # Import some data for DESI
+        call_command("loaddata", "test/desi-facts")
+
+        # Import some facts from some small ESTAT configs
         call_command("loaddata", "test/seed_importconfigs")
         call_command("estat_import")
 

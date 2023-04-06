@@ -1,0 +1,2914 @@
+[
+{
+  "model": "core.fact",
+  "pk": 1,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 56.4654608249712,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "AT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 2,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 39.8267939979994,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 3,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 50.703051491168104,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BG"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 4,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 58.7762365089401,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CY"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 5,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 52.6899044842693,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CZ"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 6,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 67.3209597555665,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 7,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 77.08926178685161,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 8,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 44.4498592045127,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 9,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 49.5785204565069,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 10,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 69.71022232643939,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "ES"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 11,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 59.931844817617794,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 12,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 60.5479812702981,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 13,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 64.1861238301732,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 14,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 48.0569353947698,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 15,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 57.604315697943896,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 16,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 61.5381470130749,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 17,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 61.2265414298907,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 18,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 49.3529361017232,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 19,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 59.3041726333276,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 20,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 50.074503119078294,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LV"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 21,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 53.000131208341806,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "MT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 22,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 70.1000862851641,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "NL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 23,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 46.515951644894,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 24,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 51.586995658245904,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 25,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 55.2260765990281,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "RO"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 26,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 60.2548457740354,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 27,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 59.8979362672498,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 28,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 49.823236351113195,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_conn"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 29,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 72.1178661909171,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "AT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 30,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 64.75295820105819,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 31,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 51.8964771714302,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BG"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 32,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 57.5196559276702,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CY"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 33,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 64.4558988313274,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CZ"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 34,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 63.4093676930113,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 35,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.669Z",
+    "updated_at": "2023-04-06T07:23:40.669Z",
+    "value": 83.0683156113728,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 36,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 91.1791654730757,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 37,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 39.385649306853395,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 38,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 83.5212538801216,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "ES"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 39,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 67.3464044397151,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 40,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 87.3653453398453,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 41,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 67.3512930771169,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 42,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 53.568878178133296,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 43,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 57.4013621614213,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 44,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 83.4500518094906,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 45,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 58.4801191796865,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 46,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 81.79895118902259,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 47,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 83.3723853330343,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 48,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 78.8075358858073,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LV"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 49,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 85.8072286179429,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "MT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 50,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 84.1858594237206,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "NL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 51,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 55.762661938817004,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 52,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 67.9074451629247,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 53,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 21.0433045708637,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "RO"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 54,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 82.4213337752195,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 55,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 69.4945843424689,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 56,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 51.997814457097405,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_dps"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 57,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 50.952043939393896,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "AT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 58,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 48.6909939393939,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 59,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 32.5902424242424,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BG"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 60,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 41.7652356060606,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CY"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 61,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 45.5898803030303,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CZ"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 62,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 44.9666356060606,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 63,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 59.1866598484848,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 64,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 53.948178787878796,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 65,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 40.133943181818196,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 66,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 51.322283333333296,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "ES"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 67,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 45.7479606060606,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 68,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 71.390628030303,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 69,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 49.8697113636363,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 70,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 51.8289143939394,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 71,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 38.4482439393939,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 72,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 62.6419575757576,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 73,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 36.5684098484848,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 74,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 42.459217424242404,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 75,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 57.772609848484805,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 76,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 44.1352242424242,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LV"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 77,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 56.5951242424242,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "MT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 78,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 63.1270287878788,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "NL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 79,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 37.0306787878788,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 80,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 45.9407984848485,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 81,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 30.9176787878788,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "RO"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 82,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 61.977445454545496,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 83,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 44.251989393939404,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 84,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 44.1290439393939,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_hc"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 85,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 39.167311323895696,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "AT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 86,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 47.9588062820943,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 87,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 15.5297588313316,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "BG"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 88,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 35.347691979351495,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CY"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 89,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 33.8384043638991,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "CZ"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 90,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 35.8350283374656,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 91,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.670Z",
+    "updated_at": "2023-04-06T07:23:40.670Z",
+    "value": 57.991014961038104,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "DK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 92,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 36.4719565782828,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 93,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 26.626509159957102,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 94,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 38.5364399063453,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "ES"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 95,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 36.0747315225153,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "EU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 96,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 59.086565175968495,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 97,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 31.909430226603803,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "FR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 98,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 36.730032549185495,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HR"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 99,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 21.5846491585574,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "HU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 100,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 43.3229325755246,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 101,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 40.739987590828605,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "IT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 102,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 37.2464826848231,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 103,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 34.95650061082,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LU"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 104,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 25.825743569919602,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "LV"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 105,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 48.1276078342725,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "MT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 106,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 52.0653393531759,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "NL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 107,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 22.8805119564828,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PL"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 108,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 37.5912876363252,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "PT"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 109,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 15.1525911104917,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "RO"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 110,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 56.2386108433246,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SE"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 111,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 39.8371984981474,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SI"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+},
+{
+  "model": "core.fact",
+  "pk": 112,
+  "fields": {
+    "created_at": "2023-04-06T07:23:40.671Z",
+    "updated_at": "2023-04-06T07:23:40.671Z",
+    "value": 27.8328033634477,
+    "flags": "",
+    "indicator": [
+      "desi_sliders"
+    ],
+    "breakdown": [
+      "desi_idt"
+    ],
+    "unit": [
+      "pc_desi_sliders"
+    ],
+    "country": [
+      "SK"
+    ],
+    "period": [
+      2022
+    ],
+    "import_config": null
+  }
+}
+]
