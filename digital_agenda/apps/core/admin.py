@@ -34,7 +34,16 @@ class DimensionAdmin(admin.ModelAdmin):
     list_per_page = 20
 
 
-admin.site.register(DataSource, DimensionAdmin)
+@admin.register(DataSource)
+class DataSourceAdmin(DimensionAdmin):
+    list_display = ("code", "label", "indicator_codes")
+
+    @admin.display(description="Indicators")
+    def indicator_codes(self, obj):
+        return ", ".join(indicator.code for indicator in obj.indicators.all())
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).prefetch_related("indicators")
 
 
 class SortableDimensionAdmin(SortableAdminMixin, DimensionAdmin):
