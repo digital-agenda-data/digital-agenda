@@ -49,9 +49,7 @@ class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
 @admin.register(IndicatorGroup)
 class IndicatorGroupAdmin(SortableDimensionAdmin):
     inlines = (IndicatorTabularInline,)
-    list_filter = [
-        AutocompleteFilterFactory("indicator", "indicators"),
-    ]
+    list_filter = ["chartgroup", AutocompleteFilterFactory("indicator", "indicators")]
 
 
 class DataSourceInline(admin.TabularInline):
@@ -139,19 +137,9 @@ class PrettyJSONEncoder(json.JSONEncoder):
 
 class DataFileImportAdmin(admin.ModelAdmin):
     search_fields = ("description", "file")
-    fields = (
-        "file",
-        "latest_import",
-        "num_facts",
-        "description",
-        "user",
-    )
+    fields = ("file", "latest_import", "num_facts", "description", "user")
     actions = ("trigger_import", "trigger_import_destructive")
-    readonly_fields = (
-        "latest_import",
-        "user",
-        "num_facts",
-    )
+    readonly_fields = ("latest_import", "user", "num_facts")
 
     list_display = ("file_name", "latest_import", "num_facts", "created_at", "user")
 
@@ -220,7 +208,7 @@ class DataFileImportTaskForm(forms.ModelForm):
         model = DataFileImportTask
         fields = ("errors",)
         widgets = {
-            "errors": JSONEditorWidget(options={"mode": "view", "modes": ["view"]}),
+            "errors": JSONEditorWidget(options={"mode": "view", "modes": ["view"]})
         }
 
     def __init__(self, *args, **kwargs):
@@ -231,16 +219,9 @@ class DataFileImportTaskForm(forms.ModelForm):
 @admin.register(DataFileImportTask)
 class DataFileImportTaskAdmin(TaskAdmin):
     form = DataFileImportTaskForm
-    formfield_overrides = {
-        models.JSONField: {"widget": JSONEditorWidget},
-    }
+    formfield_overrides = {models.JSONField: {"widget": JSONEditorWidget}}
 
-    search_fields = [
-        "import_file__file",
-        "import_file__description",
-        "=id",
-        "=job_id",
-    ]
+    search_fields = ["import_file__file", "import_file__description", "=id", "=job_id"]
     list_filter = [
         AutocompleteFilterFactory("import file", "import_file"),
         "created_on",
@@ -278,7 +259,6 @@ class DataFileImportTaskAdmin(TaskAdmin):
     @admin.display(description="Import File", ordering="import_file")
     def import_file_link(self, obj):
         url = reverse(
-            "admin:core_datafileimport_change",
-            kwargs={"object_id": obj.import_file.id},
+            "admin:core_datafileimport_change", kwargs={"object_id": obj.import_file.id}
         )
         return mark_safe(f"<a href='{url}'>{obj.import_file}</a>")
