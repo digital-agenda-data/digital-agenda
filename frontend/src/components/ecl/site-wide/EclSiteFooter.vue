@@ -109,7 +109,7 @@
               <li class="ecl-site-footer__list-item">
                 <ecl-link
                   class="ecl-site-footer__link"
-                  to="https://ec.europa.eu/info/about-european-commission/contact_en"
+                  to="https://commission.europa.eu/about-european-commission/contact_en"
                   aria-label="Link to Contact the European Commission"
                   label="Contact us"
                 />
@@ -122,7 +122,7 @@
         <div class="ecl-site-footer__column">
           <div class="ecl-site-footer__section">
             <ecl-link
-              to="https://ec.europa.eu/info/index_en"
+              to="https://commission.europa.eu/index_en"
               class="ecl-site-footer__logo-link"
               aria-label="European Commission"
             >
@@ -137,7 +137,7 @@
             <h2 class="ecl-site-footer__title">
               <ecl-link
                 class="ecl-site-footer__title-link"
-                to="https://ec.europa.eu/info/index_en"
+                to="https://commission.europa.eu/index_en"
                 label="European Commission"
               />
             </h2>
@@ -151,7 +151,7 @@
             <ul class="ecl-site-footer__list">
               <li class="ecl-site-footer__list-item">
                 <ecl-link
-                  to="https://ec.europa.eu/info/about-european-commission/contact_en"
+                  to="https://commission.europa.eu/about-european-commission/contact_en"
                   class="ecl-site-footer__link"
                   aria-label="Link to Contact the European Commission"
                   label="Contact the European Commission"
@@ -166,7 +166,7 @@
               </li>
               <li class="ecl-site-footer__list-item">
                 <ecl-link
-                  to="https://ec.europa.eu/info/resources-partners_en"
+                  to="https://commission.europa.eu/resources-partners_en"
                   class="ecl-site-footer__link"
                   label="Resources for partners"
                 />
@@ -181,7 +181,7 @@
             <ul class="ecl-site-footer__list">
               <li class="ecl-site-footer__list-item">
                 <ecl-link
-                  to="https://ec.europa.eu/info/language-policy_en"
+                  to="https://commission.europa.eu/language-policy_en"
                   class="ecl-site-footer__link"
                   aria-label="Link to Languages on our websites"
                   label="Languages on our websites"
@@ -189,7 +189,7 @@
               </li>
               <li class="ecl-site-footer__list-item">
                 <ecl-link
-                  to="https://ec.europa.eu/info/cookies_en"
+                  to="https://commission.europa.eu/cookies_en"
                   class="ecl-site-footer__link"
                   aria-label="Link to Cookies"
                   label="Cookies"
@@ -197,7 +197,7 @@
               </li>
               <li class="ecl-site-footer__list-item">
                 <ecl-link
-                  to="https://ec.europa.eu/info/privacy-policy_en"
+                  to="https://commission.europa.eu/privacy-policy_en"
                   class="ecl-site-footer__link"
                   aria-label="Link to Privacy policy"
                   label="Privacy policy"
@@ -205,7 +205,7 @@
               </li>
               <li class="ecl-site-footer__list-item">
                 <ecl-link
-                  to="https://ec.europa.eu/info/legal-notice_en"
+                  to="https://commission.europa.eu/legal-notice_en"
                   class="ecl-site-footer__link"
                   aria-label="Link to Legal notice"
                   label="Legal notice"
