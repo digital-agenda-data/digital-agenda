@@ -41,22 +41,17 @@
               Follow us on
             </h2>
             <ul class="ecl-site-footer__list ecl-site-footer__list--inline">
-              <li class="ecl-site-footer__list-item">
+              <li
+                v-for="social in socialMediaLinks"
+                :key="social.icon"
+                class="ecl-site-footer__list-item"
+              >
                 <ecl-link
                   class="ecl-site-footer__link"
-                  to="https://www.facebook.com/DigitalSingleMarket"
-                  icon="facebook-negative"
+                  :to="social.link"
+                  :icon="social.icon"
+                  :label="social.label"
                   icon-left
-                  label="Facebook"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  class="ecl-site-footer__link"
-                  to="http://twitter.com/DSMeu"
-                  icon="twitter-negative"
-                  icon-left
-                  label="Twitter"
                 />
               </li>
             </ul>
@@ -242,6 +237,33 @@ export default {
     return {
       logoURL,
       loginLink,
+      socialMediaLinks: [
+        {
+          link: "https://www.facebook.com/DigitalEU",
+          icon: "facebook-negative",
+          label: "Facebook",
+        },
+        {
+          link: "https://www.youtube.com/c/DigitalEU",
+          icon: "youtube-negative",
+          label: "Youtube",
+        },
+        {
+          link: "https://www.linkedin.com/showcase/digital-eu/",
+          icon: "linkedin-negative",
+          label: "Linkedin",
+        },
+        {
+          link: "https://www.instagram.com/DigitalEU/",
+          icon: "instagram-negative",
+          label: "Instagram",
+        },
+        {
+          link: "https://twitter.com/DigitalEU",
+          icon: "twitter-negative",
+          label: "Twitter",
+        },
+      ],
     };
   },
 };

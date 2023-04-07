@@ -14,6 +14,9 @@ import linkedinIcon from "@/assets/social-media/linkedin.svg?url";
 import facebookIcon from "@/assets/social-media/facebook.svg?url";
 import facebookNegativeIcon from "@/assets/social-media/facebook-negative.svg?url";
 import twitterNegativeIcon from "@/assets/social-media/twitter-negative.svg?url";
+import instagramNegativeIcon from "@/assets/social-media/instagram-negative.svg?url";
+import linkedinNegativeIcon from "@/assets/social-media/linkedin-negative.svg?url";
+import youtubeNegativeIcon from "@/assets/social-media/youtube-negative.svg?url";
 import copyShareIcon from "@/assets/social-media/copy-share.svg?url";
 
 const allIcons = Object.fromEntries([
@@ -30,6 +33,9 @@ const allIcons = Object.fromEntries([
   ["facebook", facebookIcon + "#root"],
   ["twitter-negative", twitterNegativeIcon + "#root"],
   ["facebook-negative", facebookNegativeIcon + "#root"],
+  ["instagram-negative", instagramNegativeIcon + "#root"],
+  ["linkedin-negative", linkedinNegativeIcon + "#root"],
+  ["youtube-negative", youtubeNegativeIcon + "#root"],
   ["copy-share", copyShareIcon + "#root"],
 ]);
 
