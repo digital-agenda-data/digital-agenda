@@ -84,11 +84,36 @@ class BreakdownGroupAdmin(SortableDimensionAdmin):
     list_filter = [AutocompleteFilterFactory("breakdown", "breakdowns")]
 
 
-admin.site.register(Breakdown, DimensionAdmin)
+@admin.register(Breakdown)
+class BreakdownAdmin(DimensionAdmin):
+    fields = ("code", "label", "alt_label", "definition", "indicators_with_facts")
+    readonly_fields = ("indicators_with_facts",)
 
-admin.site.register(Unit, DimensionAdmin)
+    @admin.display(description="Indicators with facts")
+    def indicators_with_facts(self, obj):
+        result = []
+        for fact in (
+            Fact.objects.filter(breakdown=obj)
+            .select_related("indicator")
+            .order_by("indicator__code")
+            .distinct("indicator__code")
+        ):
+            indicator = fact.indicator
+            url = reverse(
+                "admin:core_indicator_change", kwargs={"object_id": indicator.id}
+            )
+            result.append(f'<li><a href="{url}">{indicator}</a></li>')
+        return mark_safe(f"<ul>{''.join(result)}</ul>")
 
-admin.site.register(Period, DimensionAdmin)
+
+@admin.register(Unit)
+class UnitAdmin(DimensionAdmin):
+    pass
+
+
+@admin.register(Period)
+class PeriodAdmin(DimensionAdmin):
+    pass
 
 
 @admin.register(Country)
@@ -144,6 +169,7 @@ class PrettyJSONEncoder(json.JSONEncoder):
         super().__init__(*args, indent=2, sort_keys=True, **kwargs)
 
 
+@admin.register(DataFileImport)
 class DataFileImportAdmin(admin.ModelAdmin):
     search_fields = ("description", "file")
     fields = ("file", "latest_import", "num_facts", "description", "user")
@@ -205,9 +231,6 @@ class DataFileImportAdmin(admin.ModelAdmin):
 
     def response_post_save_add(self, request, obj):
         return redirect("admin:core_datafileimporttask_changelist")
-
-
-admin.site.register(DataFileImport, DataFileImportAdmin)
 
 
 class DataFileImportTaskForm(forms.ModelForm):

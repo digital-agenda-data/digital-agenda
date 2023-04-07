@@ -153,3 +153,7 @@ form .aligned label + div.help {
 .aligned p.file-upload {
   margin-left: 0 !important;
 }
+
+.field-indicators_with_facts ul {
+  margin-left:  0 !important;
+}
