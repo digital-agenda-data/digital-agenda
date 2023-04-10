@@ -61,9 +61,7 @@ def default_mappings():
     return {
         "indicator": {},
         "breakdown": {},
-        "country": {
-            "EU27_2020": "EU",
-        },
+        "country": {"EU27_2020": "EU"},
         "unit": {},
         "period": {},
     }
@@ -87,6 +85,20 @@ class ImportConfig(models.Model):
         ImportConfigTag,
         help_text="Assigned tags used for filtering and searching; has no impact on the data import",
         blank=True,
+    )
+
+    data_last_update = models.DateTimeField(
+        null=True,
+        help_text="Last data update of the local copy of the dataset as extracted from the ESTAT annotations",
+    )
+    datastructure_last_update = models.DateTimeField(
+        null=True,
+        help_text="Last structure update of the local copy of the dataset as extracted from the ESTAT annotations",
+    )
+    datastructure_last_version = models.CharField(
+        null=True,
+        max_length=60,
+        help_text="Last version update of the local copy of the dataset as extracted from the ESTAT annotations",
     )
 
     indicator = CICharField(max_length=60)
@@ -175,12 +187,7 @@ class ImportConfig(models.Model):
             error = ValidationError(
                 "Start period must be less than or equal to the end period"
             )
-            raise ValidationError(
-                {
-                    "period_start": error,
-                    "period_end": error,
-                }
-            )
+            raise ValidationError({"period_start": error, "period_end": error})
 
         if not isinstance(self.filters, dict):
             raise ValidationError({"filters": "Must be a valid JSON object"})
@@ -303,12 +310,7 @@ class ImportFromConfigTask(TaskRQ):
         null=False,
         blank=False,
         default=DEFAULT_VERBOSITY,
-        choices=(
-            (0, "NONE"),
-            (1, "WARNING"),
-            (2, "INFO"),
-            (3, "DEBUG"),
-        ),
+        choices=((0, "NONE"), (1, "WARNING"), (2, "INFO"), (3, "DEBUG")),
     )
     errors = models.JSONField(null=True, blank=True)
 

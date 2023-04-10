@@ -142,9 +142,9 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django_admin_env_notice.context_processors.from_settings",
-            ],
+            ]
         },
-    },
+    }
 ]
 
 WSGI_APPLICATION = "digital_agenda.site.wsgi.application"
@@ -176,7 +176,7 @@ DATABASES = {
         "OPTIONS": {"sslmode": "disable"},
         "CONN_MAX_AGE": None,
         "CONN_HEALTH_CHECKS": True,
-    },
+    }
 }
 
 
@@ -225,17 +225,11 @@ AUTH_USER_MODEL = "accounts.User"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
     },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 LOGIN_URL = "/admin/login"
@@ -313,70 +307,34 @@ CONSTANCE_CONFIG = {
         "feedback@example.com",
         "Email addresses where feedback messages are sent to; multiple addresses can be specified separated by comma",
     ),
-    "GLOBAL_BANNER_ENABLED": (
-        True,
-        "Enable the Global banner component (Globan)",
-    ),
-    "EU_LOGIN_ENABLED": (
-        True,
-        "Enable login with EU login CAS Server",
-    ),
+    "GLOBAL_BANNER_ENABLED": (True, "Enable the Global banner component (Globan)"),
+    "EU_LOGIN_ENABLED": (True, "Enable login with EU login CAS Server"),
     "MATOMO_SERVER": (
         "https://digital-agenda-data.eu/analytics/",
         "Matomo server; analytics are disabled if this is not set",
     ),
-    "MATOMO_SITE_ID": (
-        "",
-        "Matomo Site ID; analytics are disabled if this is not set",
-    ),
+    "MATOMO_SITE_ID": ("", "Matomo Site ID; analytics are disabled if this is not set"),
 }
 CONSTANCE_CONFIG_FIELDSETS = (
-    (
-        "Feedback",
-        {
-            "collapse": False,
-            "fields": ("FEEDBACK_EMAIL",),
-        },
-    ),
+    ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL",)}),
     (
         "European Commission WebTools",
-        {
-            "collapse": False,
-            "fields": (
-                "GLOBAL_BANNER_ENABLED",
-                "EU_LOGIN_ENABLED",
-            ),
-        },
+        {"collapse": False, "fields": ("GLOBAL_BANNER_ENABLED", "EU_LOGIN_ENABLED")},
     ),
-    (
-        "Analytics",
-        {
-            "collapse": False,
-            "fields": (
-                "MATOMO_SERVER",
-                "MATOMO_SITE_ID",
-            ),
-        },
-    ),
+    ("Analytics", {"collapse": False, "fields": ("MATOMO_SERVER", "MATOMO_SITE_ID")}),
 )
 
 
 # Task Queue (RQ)
 
-RQ_QUEUES = {
-    "default": {
-        "HOST": REDIS_HOST,
-        "PORT": REDIS_PORT,
-        "DB": REDIS_TASK_DB,
-    }
-}
+RQ_QUEUES = {"default": {"HOST": REDIS_HOST, "PORT": REDIS_PORT, "DB": REDIS_TASK_DB}}
 
 # Hide RQ admin, since we are using Django Task models instead
 RQ_SHOW_ADMIN_LINK = False
 
 ESTAT_DOWNLOAD_BASE_URL = env.str(
     "ESTAT_DOWNLOAD_BASE_URL",
-    default="https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data",
+    default="https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/",
 ).strip("/")
 ESTAT_DOWNLOAD_TIMEOUT = env.float("ESTAT_DOWNLOAD_TIMEOUT", default=30.0)
 ESTAT_DOWNLOAD_DIR = FS_DIR / "estat"
@@ -386,8 +344,7 @@ DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
 
 IMPORT_FILES_SUBDIR = env.str("IMPORT_FILES_SUBDIR", default="import_files")
 IMPORT_FILES_ALLOWED_EXTENSIONS = env.list(
-    "IMPORT_FILES_ALLOWED_EXTENSIONS",
-    default=["xls", "xlsx"],
+    "IMPORT_FILES_ALLOWED_EXTENSIONS", default=["xls", "xlsx"]
 )
 IMPORT_FILES_ALLOWED_MIME_TYPES = env.list(
     "IMPORT_FILES_ALLOWED_MIME_TYPES",
@@ -476,10 +433,8 @@ if DEBUG:
     AUTH_PASSWORD_VALIDATORS = [
         {
             "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-            "OPTIONS": {
-                "min_length": 4,
-            },
-        },
+            "OPTIONS": {"min_length": 4},
+        }
     ]
 
     if DEBUG:

@@ -1,3 +1,4 @@
+import datetime
 import gzip
 import itertools
 import shutil
@@ -45,6 +46,47 @@ def batched(iterable, n):
         yield batch
 
 
+class EstatDataflow:
+    def __init__(self, code, dataset=None):
+        self.code = code
+        self.dataset = dataset
+
+        if not dataset:
+            dataset = self.download()
+
+        self.annotations = {}
+        for item in dataset["extension"]["annotation"]:
+            self.annotations[item["type"]] = item
+        logger.debug("Extracted annotations: %s", self.annotations)
+
+    def download(self):
+        logger.info("Getting metadata from: %s", self.download_url)
+        with httpx.get(
+            self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT
+        ) as resp:
+            resp.raise_for_status()
+            return resp.json()
+
+    @cached_property
+    def download_url(self):
+        # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+metadata+query
+        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/dataflow/{self.code}?format=JSON&lang=en"
+
+    @cached_property
+    def version(self):
+        return self.dataset["extension"]["datastructure"]["version"]
+
+    @cached_property
+    def update_data(self):
+        return datetime.datetime.fromisoformat(self.annotations["UPDATE_DATA"]["date"])
+
+    @cached_property
+    def update_structure(self):
+        return datetime.datetime.fromisoformat(
+            self.annotations["UPDATE_STRUCTURE"]["date"]
+        )
+
+
 class EstatDataset(JSONStat):
     def __init__(self, code, force_download=False):
         self.code = code
@@ -66,9 +108,7 @@ class EstatDataset(JSONStat):
 
         logger.info("Downloading from: %s", self.download_url)
         with httpx.stream(
-            "GET",
-            self.download_url,
-            timeout=settings.ESTAT_DOWNLOAD_TIMEOUT,
+            "GET", self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT
         ) as resp:
             with self.download_gz_path.open("wb") as f_out:
                 for chunk in resp.iter_raw():
@@ -91,7 +131,11 @@ class EstatDataset(JSONStat):
     @cached_property
     def download_url(self):
         # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query
-        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/{self.code}?compressed=true&format=JSON&lang=en"
+        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/data/{self.code}?compressed=true&format=JSON&lang=en"
+
+    @cached_property
+    def dataflow(self):
+        return EstatDataflow(self.code, dataset=self.dataset)
 
 
 class EstatImporter:
@@ -155,10 +199,7 @@ class EstatImporter:
             return self.cache[dimension][category_id]
         except KeyError:
             obj, created = MODELS[dimension].objects.get_or_create(
-                code=category_id,
-                defaults={
-                    "label": category_label,
-                },
+                code=category_id, defaults={"label": category_label}
             )
             if created:
                 logger.info("Created %r", obj)
@@ -230,3 +271,8 @@ class EstatImporter:
             total,
             len(self.dataset),
         )
+
+        self.config.data_last_update = self.dataset.dataflow.update_data
+        self.config.datastructure_last_update = self.dataset.dataflow.update_structure
+        self.config.datastructure_last_version = self.dataset.dataflow.version
+        self.config.save()

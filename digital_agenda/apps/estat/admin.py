@@ -3,6 +3,7 @@ from django.contrib import admin, messages
 from django.db.models import Count
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.utils.formats import date_format
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
@@ -75,12 +76,19 @@ class ImportConfigAdmin(admin.ModelAdmin):
     )
     search_fields = ("code", "title", "indicator", "tags__code")
     list_filter = ("tags",)
-    readonly_fields = ("num_facts", "latest_import")
+    readonly_fields = (
+        "num_facts",
+        "latest_import",
+        "latest_run_date",
+        "data_last_update",
+        "datastructure_last_update",
+        "datastructure_last_version",
+    )
     autocomplete_fields = ("country_group", "tags")
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
-        (None, {"fields": ["code", "title", "tags", "num_facts"]}),
+        (None, {"fields": ["code", "title", "tags"]}),
         (
             "Dimensions",
             {
@@ -102,6 +110,19 @@ class ImportConfigAdmin(admin.ModelAdmin):
             },
         ),
         ("Mappings", {"description": MAPPING_DESCRIPTION, "fields": ["mappings"]}),
+        (
+            "Metadata",
+            {
+                "fields": [
+                    "num_facts",
+                    "latest_import",
+                    "latest_run_date",
+                    "data_last_update",
+                    "datastructure_last_update",
+                    "datastructure_last_version",
+                ]
+            },
+        ),
     )
 
     @admin.action(description="Trigger import for selected configs")
@@ -155,7 +176,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
     def latest_run_date(self, obj):
         if not obj.latest_task:
             return
-        return obj.latest_task.created_on
+        return date_format(obj.latest_task.created_on, "DATETIME_FORMAT")
 
     @admin.display(description="Tags")
     def tag_codes(self, obj):
