@@ -19,9 +19,7 @@ class ImportConfigTagAdmin(admin.ModelAdmin):
 
 @admin.register(GeoGroup)
 class GeoGroupAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.JSONField: {"widget": JSONEditorWidget},
-    }
+    formfield_overrides = {models.JSONField: {"widget": JSONEditorWidget}}
     list_display = ("code", "size", "note", "geo_codes")
     search_fields = ("code",)
     ordering = ("code",)
@@ -63,42 +61,26 @@ taken as they are instead. Example:
 
 @admin.register(ImportConfig)
 class ImportConfigAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.JSONField: {"widget": JSONEditorWidget},
-    }
+    formfield_overrides = {models.JSONField: {"widget": JSONEditorWidget}}
     list_display = (
         "code",
-        "indicator",
-        "breakdown",
         "country_group",
         "period_start",
         "period_end",
         "num_facts",
+        "latest_run_date",
         "latest_import",
         "title",
         "tag_codes",
     )
-    search_fields = ("code", "title")
+    search_fields = ("code", "title", "indicator", "tags__code")
     list_filter = ("tags",)
-    readonly_fields = (
-        "num_facts",
-        "latest_import",
-    )
+    readonly_fields = ("num_facts", "latest_import")
     autocomplete_fields = ("country_group", "tags")
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
-        (
-            None,
-            {
-                "fields": [
-                    "code",
-                    "title",
-                    "tags",
-                    "num_facts",
-                ]
-            },
-        ),
+        (None, {"fields": ["code", "title", "tags", "num_facts"]}),
         (
             "Dimensions",
             {
@@ -116,21 +98,10 @@ class ImportConfigAdmin(admin.ModelAdmin):
             "Filters",
             {
                 "description": FILTERS_DESCRIPTION,
-                "fields": [
-                    "country_group",
-                    "period_start",
-                    "period_end",
-                    "filters",
-                ],
+                "fields": ["country_group", "period_start", "period_end", "filters"],
             },
         ),
-        (
-            "Mappings",
-            {
-                "description": MAPPING_DESCRIPTION,
-                "fields": ["mappings"],
-            },
-        ),
+        ("Mappings", {"description": MAPPING_DESCRIPTION, "fields": ["mappings"]}),
     )
 
     @admin.action(description="Trigger import for selected configs")
@@ -180,6 +151,12 @@ class ImportConfigAdmin(admin.ModelAdmin):
         )
         return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
 
+    @admin.display(description="Latest Run")
+    def latest_run_date(self, obj):
+        if not obj.latest_task:
+            return
+        return obj.latest_task.created_on
+
     @admin.display(description="Tags")
     def tag_codes(self, obj):
         return ", ".join(tag.code for tag in obj.tags.all())
@@ -196,15 +173,10 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
     formfield_overrides = {
         models.JSONField: {
             "widget": JSONEditorWidget(options={"mode": "view", "modes": ["view"]})
-        },
+        }
     }
 
-    search_fields = [
-        "import_config__code",
-        "import_config__title",
-        "=id",
-        "=job_id",
-    ]
+    search_fields = ["import_config__code", "import_config__title", "=id", "=job_id"]
     list_filter = [
         AutocompleteFilterFactory("import config", "import_config"),
         "created_on",
