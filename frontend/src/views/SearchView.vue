@@ -20,6 +20,8 @@
               <ecl-link :to="item.to" no-visited>
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="item.label" />
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                (<span v-html="item.code" />)
               </ecl-link>
               <!-- eslint-disable-next-line vue/no-v-html -->
               <div class="ecl-u-mt-2xs" v-html="item.definition" />
@@ -89,6 +91,7 @@ export default {
         return {
           id: [item.code, item.group, item.chart_group].join("-"),
           chartGroup,
+          code: item.highlight?.code || item.code,
           label: item.highlight?.label || item.label,
           definition: item.highlight?.definition || item.definition,
           to: {

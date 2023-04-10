@@ -27,9 +27,7 @@ class ChartGroupViewSet(
     model = ChartGroup
 
     def get_queryset(self):
-        queryset = ChartGroup.objects.all().prefetch_related(
-            "indicator_groups",
-        )
+        queryset = ChartGroup.objects.all().prefetch_related("indicator_groups")
 
         if not self.request.user.is_authenticated:
             queryset = queryset.filter(is_draft=False)
@@ -135,6 +133,7 @@ class ChartGroupIndicatorSearchViewSet(
                  INNER JOIN charts_chartgroup
                             ON charts_chartgroup_indicator_groups.chartgroup_id = charts_chartgroup.id,
                  json_build_object(
+                     'code', core_indicator.code,
                      'label', core_indicator.label,
                      'alt_label', core_indicator.alt_label,
                      'definition', core_indicator.definition
