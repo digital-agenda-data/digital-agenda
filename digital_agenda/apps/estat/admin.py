@@ -1,5 +1,6 @@
 from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
+from django.db.models import Count
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
@@ -7,7 +8,6 @@ from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
 
 from digital_agenda.apps.estat.models import *
-from digital_agenda.common.admin import NumFactsAdminMixIn
 
 
 @admin.register(ImportConfigTag)
@@ -60,7 +60,7 @@ taken as they are instead. Example:
 
 
 @admin.register(ImportConfig)
-class ImportConfigAdmin(NumFactsAdminMixIn, admin.ModelAdmin):
+class ImportConfigAdmin(admin.ModelAdmin):
     formfield_overrides = {models.JSONField: {"widget": JSONEditorWidget}}
     list_display = (
         "code",
@@ -75,11 +75,9 @@ class ImportConfigAdmin(NumFactsAdminMixIn, admin.ModelAdmin):
     )
     search_fields = ("code", "title", "indicator", "tags__code")
     list_filter = ("tags",)
-    readonly_fields = ("latest_import",)
+    readonly_fields = ("num_facts", "latest_import")
     autocomplete_fields = ("country_group", "tags")
     actions = ("trigger_import", "trigger_import_destructive")
-
-    num_facts_filter = "import_config"
 
     fieldsets = (
         (None, {"fields": ["code", "title", "tags", "num_facts"]}),
@@ -131,7 +129,17 @@ class ImportConfigAdmin(NumFactsAdminMixIn, admin.ModelAdmin):
         return redirect("admin:estat_importfromconfigtask_changelist")
 
     def get_queryset(self, request):
-        return super().get_queryset(request).prefetch_related("tags", "country_group")
+        return (
+            super()
+            .get_queryset(request)
+            .annotate(num_facts=Count("facts"))
+            .prefetch_related("tags", "country_group")
+        )
+
+    @admin.display(description="Facts Count", ordering="num_facts")
+    def num_facts(self, obj):
+        url = reverse("admin:core_fact_changelist") + f"?import_config={obj.pk}"
+        return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
 
     @admin.display(description="Latest Task")
     def latest_import(self, obj):

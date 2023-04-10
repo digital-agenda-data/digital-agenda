@@ -26,7 +26,7 @@ from .models import (
     DataFileImport,
     DataFileImportTask,
 )
-from digital_agenda.common.admin import NumFactsAdminMixIn
+from digital_agenda.common.admin import HasFactsAdminMixIn
 
 
 class DimensionAdmin(admin.ModelAdmin):
@@ -75,10 +75,10 @@ class DataSourceInline(admin.TabularInline):
 
 
 @admin.register(Indicator)
-class IndicatorAdmin(NumFactsAdminMixIn, DimensionAdmin):
+class IndicatorAdmin(HasFactsAdminMixIn, DimensionAdmin):
     list_filter = [AutocompleteFilterFactory("data source", "data_sources")]
     inlines = (DataSourceInline,)
-    num_facts_filter = "indicator"
+    facts_filter = "indicator"
 
 
 class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):
@@ -93,10 +93,10 @@ class BreakdownGroupAdmin(SortableDimensionAdmin):
 
 
 @admin.register(Breakdown)
-class BreakdownAdmin(NumFactsAdminMixIn, DimensionAdmin):
+class BreakdownAdmin(HasFactsAdminMixIn, DimensionAdmin):
     fields = ("code", "label", "alt_label", "definition", "indicators_with_facts")
     readonly_fields = ("indicators_with_facts",)
-    num_facts_filter = "breakdown"
+    facts_filter = "breakdown"
 
     @admin.display(description="Indicators with facts")
     def indicators_with_facts(self, obj):
@@ -116,20 +116,20 @@ class BreakdownAdmin(NumFactsAdminMixIn, DimensionAdmin):
 
 
 @admin.register(Unit)
-class UnitAdmin(NumFactsAdminMixIn, DimensionAdmin):
-    num_facts_filter = "unit"
+class UnitAdmin(HasFactsAdminMixIn, DimensionAdmin):
+    facts_filter = "unit"
 
 
 @admin.register(Period)
-class PeriodAdmin(NumFactsAdminMixIn, DimensionAdmin):
-    num_facts_filter = "period"
+class PeriodAdmin(HasFactsAdminMixIn, DimensionAdmin):
+    facts_filter = "period"
 
 
 @admin.register(Country)
-class CountryAdmin(NumFactsAdminMixIn, DimensionAdmin):
+class CountryAdmin(HasFactsAdminMixIn, DimensionAdmin):
     list_display = ("code", "is_group", "label", "alt_label", "color")
     list_filter = ("is_group",)
-    num_facts_filter = "country"
+    facts_filter = "country"
 
 
 @admin.register(Fact)
@@ -180,20 +180,27 @@ class PrettyJSONEncoder(json.JSONEncoder):
 
 
 @admin.register(DataFileImport)
-class DataFileImportAdmin(NumFactsAdminMixIn, admin.ModelAdmin):
+class DataFileImportAdmin(admin.ModelAdmin):
     search_fields = ("description", "file")
-    fields = ("file", "latest_import", "description", "user")
+    fields = ("file", "latest_import", "num_facts", "description", "user")
     actions = ("trigger_import", "trigger_import_destructive")
-    readonly_fields = ("latest_import", "user")
+    readonly_fields = ("latest_import", "user", "num_facts")
 
     list_display = ("file_name", "latest_import", "created_at", "user")
-    num_facts_filter = "import_file"
 
     def get_actions(self, request):
         actions = super().get_actions(request)
         if "delete_selected" in actions:
             del actions["delete_selected"]
         return actions
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(num_facts=Count("facts"))
+
+    @admin.display(description="Facts Count", ordering="num_facts")
+    def num_facts(self, obj):
+        url = reverse("admin:core_fact_changelist") + f"?import_file={obj.pk}"
+        return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
 
     def save_model(self, request, obj, form, change):
         if not hasattr(obj, "user"):

@@ -1,9 +1,14 @@
 from django.contrib import admin
+from django.contrib.admin import BooleanFieldListFilter
 from django.contrib.admin import SimpleListFilter
 from django.db.models import Count
+from django.db.models import Exists
 from django.db.models import ManyToManyField
+from django.db.models import OuterRef
 from django.urls import reverse
 from django.utils.safestring import mark_safe
+
+from digital_agenda.apps.core.models import Fact
 
 
 class HasChangesAdminMixin:
@@ -43,63 +48,56 @@ class HasChangesAdminMixin:
         return fieldsets
 
 
-class ZeroFactsFilter(SimpleListFilter):
-    title = "Fact Count"
+class HasFactsFilter(SimpleListFilter):
+    title = "Has Facts"
 
-    parameter_name = "num_facts__is_zero"
+    parameter_name = "has_facts"
 
     def lookups(self, request, model_admin):
-        return [("true", "No facts"), ("false", "At least one fact")]
+        return [("true", "Yes"), ("false", "No")]
 
     def queryset(self, request, queryset):
         val = self.value()
         if val == "true":
-            return queryset.filter(num_facts=0)
+            return queryset.filter(has_facts=True)
         if val == "false":
-            return queryset.filter(num_facts__gt=0)
+            return queryset.filter(has_facts=False)
 
         return queryset
 
 
-class NumFactsAdminMixIn:
+class HasFactsAdminMixIn:
     """Admin Mixin that adds:
 
-    - an aggregated fact count for the dimension, as a link to the fact admin
-      filtered by the corresponding dimension
-    - a list filter to either get all entries with zero facts or all entries with
+    - A flag determining whether there are facts linked to the corresponding dimension
+    - A list filter to either get all entries with zero facts or all entries with
       more than one fact
 
     Only works if the model has a direct relationship with the Fact model.
     """
 
-    facts_rel_name = "facts"
-    num_facts_filter = None
+    facts_filter: str = None
 
     def get_list_filter(self, request):
         result = super().get_list_filter(request)
-        return [*result, ZeroFactsFilter]
+        return [*result, HasFactsFilter]
 
     def get_readonly_fields(self, request, obj=None):
         result = super().get_readonly_fields(request, obj=obj)
-        if "num_facts" not in result:
-            return [*result, "num_facts"]
+        if "has_facts" not in result:
+            return [*result, "has_facts"]
         return result
 
     def get_list_display(self, request):
         result = super().get_list_display(request)
-        if "num_facts" not in result:
-            return [*result, "num_facts"]
+        if "has_facts" not in result:
+            return [*result, "has_facts"]
         return result
 
     def get_queryset(self, request):
-        return (
-            super().get_queryset(request).annotate(num_facts=Count(self.facts_rel_name))
-        )
+        subquery = Fact.objects.filter((self.facts_filter, OuterRef("pk")))
+        return super().get_queryset(request).annotate(has_facts=Exists(subquery))
 
-    @admin.display(description="Facts Count", ordering="num_facts")
-    def num_facts(self, obj):
-        assert self.num_facts_filter, "'num_facts_filter' not set"
-        url = (
-            reverse("admin:core_fact_changelist") + f"?{self.num_facts_filter}={obj.pk}"
-        )
-        return mark_safe(f"<a href='{url}'>{obj.num_facts}</a>")
+    @admin.display(description="Has Facts", ordering="has_facts", boolean=True)
+    def has_facts(self, obj):
+        return obj.has_facts
