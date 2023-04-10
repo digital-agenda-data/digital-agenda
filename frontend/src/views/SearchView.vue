@@ -1,5 +1,9 @@
 <template>
-  <ecl-search-form class="ecl-u-mt-l" placeholder="search for indicators" />
+  <ecl-search-form
+    class="ecl-u-mt-l"
+    placeholder="search for indicators"
+    :model-value="searchQuery"
+  />
   <div v-if="apiData" class="ecl-u-mt-2xl">
     <table
       class="ecl-table ecl-table--zebra ecl-u-break-word ecl-u-position-relative"
