@@ -40,7 +40,13 @@ class DataSourceAdmin(DimensionAdmin):
 
     @admin.display(description="Indicators")
     def indicator_codes(self, obj):
-        return ", ".join(indicator.code for indicator in obj.indicators.all())
+        result = []
+        for indicator in obj.indicators.all():
+            url = reverse(
+                "admin:core_indicator_change", kwargs={"object_id": indicator.id}
+            )
+            result.append(f'<a href="{url}">{indicator.code}</a>')
+        return mark_safe(", ".join(result))
 
     def get_queryset(self, request):
         return super().get_queryset(request).prefetch_related("indicators")
