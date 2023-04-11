@@ -5,6 +5,7 @@ import magic
 from colorfield.fields import ColorField
 
 from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.files.storage import get_storage_class
@@ -68,10 +69,7 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
     """
 
     indicators = models.ManyToManyField(
-        "Indicator",
-        through="IndicatorGroupLink",
-        related_name="groups",
-        blank=True,
+        "Indicator", through="IndicatorGroupLink", related_name="groups", blank=True
     )
 
     class Meta:
@@ -258,11 +256,6 @@ class Fact(TimestampedModel):
         super().save(*args, **kwargs)
 
 
-def _import_files_storage():
-    storage_class = get_storage_class(settings.DEFAULT_STORAGE_CLASS)
-    return storage_class()
-
-
 def upload_path(instance, filename):
     ts = (
         datetime.now()
@@ -286,7 +279,6 @@ def validate_upload_mime_type(file):
 
 class DataFileImport(TimestampedModel):
     file = models.FileField(
-        storage=_import_files_storage,
         upload_to=upload_path,
         validators=[
             FileExtensionValidator(
@@ -355,12 +347,7 @@ class DataFileImportTask(TaskRQ):
         null=False,
         blank=False,
         default=DEFAULT_VERBOSITY,
-        choices=(
-            (0, "NONE"),
-            (1, "WARNING"),
-            (2, "INFO"),
-            (3, "DEBUG"),
-        ),
+        choices=((0, "NONE"), (1, "WARNING"), (2, "INFO"), (3, "DEBUG")),
     )
     errors = models.JSONField(null=True, blank=True)
 

@@ -10,7 +10,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -47,9 +46,7 @@ class Migration(migrations.Migration):
                 ),
                 ("definition", models.TextField(blank=True, null=True)),
             ],
-            options={
-                "ordering": ["code"],
-            },
+            options={"ordering": ["code"]},
         ),
         migrations.CreateModel(
             name="BreakdownGroup",
@@ -82,9 +79,7 @@ class Migration(migrations.Migration):
                 ),
                 ("definition", models.TextField(blank=True, null=True)),
             ],
-            options={
-                "ordering": ["display_order", "code"],
-            },
+            options={"ordering": ["display_order", "code"]},
         ),
         migrations.CreateModel(
             name="Country",
@@ -124,10 +119,7 @@ class Migration(migrations.Migration):
                 ),
                 ("is_group", models.BooleanField(default=False)),
             ],
-            options={
-                "verbose_name_plural": "Countries",
-                "ordering": ["code"],
-            },
+            options={"verbose_name_plural": "Countries", "ordering": ["code"]},
         ),
         migrations.CreateModel(
             name="DataSource",
@@ -158,9 +150,7 @@ class Migration(migrations.Migration):
                 ("url", models.URLField(blank=True, null=True)),
                 ("note", models.TextField(blank=True, null=True)),
             ],
-            options={
-                "ordering": ["code"],
-            },
+            options={"ordering": ["code"]},
         ),
         migrations.CreateModel(
             name="Indicator",
@@ -200,9 +190,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={
-                "ordering": ["code"],
-            },
+            options={"ordering": ["code"]},
         ),
         migrations.CreateModel(
             name="IndicatorGroup",
@@ -235,9 +223,7 @@ class Migration(migrations.Migration):
                 ),
                 ("definition", models.TextField(blank=True, null=True)),
             ],
-            options={
-                "ordering": ["display_order", "code"],
-            },
+            options={"ordering": ["display_order", "code"]},
         ),
         migrations.CreateModel(
             name="Period",
@@ -261,9 +247,7 @@ class Migration(migrations.Migration):
                 ("definition", models.TextField(blank=True, null=True)),
                 ("code", models.PositiveIntegerField(unique=True)),
             ],
-            options={
-                "ordering": ["-code"],
-            },
+            options={"ordering": ["-code"]},
         ),
         migrations.CreateModel(
             name="Unit",
@@ -292,9 +276,7 @@ class Migration(migrations.Migration):
                 ),
                 ("definition", models.TextField(blank=True, null=True)),
             ],
-            options={
-                "ordering": ["code"],
-            },
+            options={"ordering": ["code"]},
         ),
         migrations.CreateModel(
             name="IndicatorGroupLink",
@@ -427,7 +409,6 @@ class Migration(migrations.Migration):
                 (
                     "file",
                     models.FileField(
-                        storage=digital_agenda.apps.core.models._import_files_storage,
                         upload_to=digital_agenda.apps.core.models.upload_path,
                         validators=[
                             django.core.validators.FileExtensionValidator(
@@ -461,9 +442,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={
-                "abstract": False,
-            },
+            options={"abstract": False},
         ),
         migrations.CreateModel(
             name="BreakdownGroupLink",
@@ -527,7 +506,6 @@ class Migration(migrations.Migration):
             unique_together={("indicator", "breakdown", "unit", "country", "period")},
         ),
         migrations.AlterUniqueTogether(
-            name="breakdowngrouplink",
-            unique_together={("breakdown", "group")},
+            name="breakdowngrouplink", unique_together={("breakdown", "group")}
         ),
     ]

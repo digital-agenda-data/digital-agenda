@@ -349,7 +349,8 @@ ESTAT_DOWNLOAD_TIMEOUT = env.float("ESTAT_DOWNLOAD_TIMEOUT", default=30.0)
 ESTAT_DOWNLOAD_DIR = FS_DIR / "estat"
 ESTAT_DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
-DEFAULT_STORAGE_CLASS = "django.core.files.storage.FileSystemStorage"
+STORAGES = {"default": {"BACKEND": "django.core.files.storage.FileSystemStorage"}}
+
 
 IMPORT_FILES_SUBDIR = env.str("IMPORT_FILES_SUBDIR", default="import_files")
 IMPORT_FILES_ALLOWED_EXTENSIONS = env.list(
