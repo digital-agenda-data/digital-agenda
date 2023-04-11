@@ -3,7 +3,6 @@ from django.contrib import admin, messages
 from django.db.models import Count
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.utils.formats import date_format
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
@@ -73,9 +72,10 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "latest_import",
         "title",
         "tag_codes",
+        "new_version_available",
     )
     search_fields = ("code", "title", "indicator", "tags__code")
-    list_filter = ("tags",)
+    list_filter = ("tags", "new_version_available")
     readonly_fields = (
         "num_facts",
         "latest_import",
@@ -83,6 +83,8 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "data_last_update",
         "datastructure_last_update",
         "datastructure_last_version",
+        "new_version_available",
+        "databrowser_link",
     )
     autocomplete_fields = ("country_group", "tags")
     actions = ("trigger_import", "trigger_import_destructive")
@@ -120,6 +122,8 @@ class ImportConfigAdmin(admin.ModelAdmin):
                     "data_last_update",
                     "datastructure_last_update",
                     "datastructure_last_version",
+                    "databrowser_link",
+                    "new_version_available",
                 ]
             },
         ),
@@ -176,11 +180,18 @@ class ImportConfigAdmin(admin.ModelAdmin):
     def latest_run_date(self, obj):
         if not obj.latest_task:
             return
-        return date_format(obj.latest_task.created_on, "DATETIME_FORMAT")
+        return obj.latest_task.created_on
 
     @admin.display(description="Tags")
     def tag_codes(self, obj):
         return ", ".join(tag.code for tag in obj.tags.all())
+
+    @admin.display(description="Databrowser")
+    def databrowser_link(self, obj):
+        if not obj.code:
+            return "-"
+        url = f"https://ec.europa.eu/eurostat/databrowser/view/{obj.code}/default/table?lang=en"
+        return mark_safe(f'<a href="{url}" target="_blank">{url}</a>')
 
     def get_actions(self, request):
         actions = super().get_actions(request)

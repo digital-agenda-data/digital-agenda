@@ -5,6 +5,7 @@ from rest_framework.permissions import AllowAny
 
 from digital_agenda.apps.core.serializers import FeedbackSerializer
 from digital_agenda.apps.core.jobs import send_mail_job
+from digital_agenda.common.utils import split_email
 
 EMAIL_TEMPLATE = """
 New feedback received:
@@ -35,7 +36,7 @@ class FeedbackViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             "[Digital Agenda Data] New feedback received",
             EMAIL_TEMPLATE % serializer.validated_data,
             None,
-            config.FEEDBACK_EMAIL.split(","),
+            split_email(config.FEEDBACK_EMAIL),
         )
         if serializer.validated_data["email"]:
             send_mail_job.delay(

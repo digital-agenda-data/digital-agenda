@@ -1,6 +1,6 @@
 -r base.txt
 
-black
+black[d]
 coverage
 django-debug-toolbar
 django-request-logging

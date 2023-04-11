@@ -1,6 +1,7 @@
 import datetime
 import gzip
 import itertools
+import json
 import shutil
 import logging
 from functools import cached_property
@@ -50,27 +51,24 @@ class EstatDataflow:
     def __init__(self, code, dataset=None):
         self.code = code
         self.dataset = dataset
-
-        if not dataset:
-            dataset = self.download()
+        if not self.dataset:
+            self.download()
 
         self.annotations = {}
-        for item in dataset["extension"]["annotation"]:
+        for item in self.dataset["extension"]["annotation"]:
             self.annotations[item["type"]] = item
         logger.debug("Extracted annotations: %s", self.annotations)
 
     def download(self):
         logger.info("Getting metadata from: %s", self.download_url)
-        with httpx.get(
-            self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT
-        ) as resp:
-            resp.raise_for_status()
-            return resp.json()
+        resp = httpx.get(self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT)
+        resp.raise_for_status()
+        self.dataset = resp.json()
 
     @cached_property
     def download_url(self):
         # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+metadata+query
-        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/dataflow/{self.code}?format=JSON&lang=en"
+        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/dataflow/ESTAT/{self.code}?format=JSON&lang=en"
 
     @cached_property
     def version(self):
@@ -86,18 +84,33 @@ class EstatDataflow:
             self.annotations["UPDATE_STRUCTURE"]["date"]
         )
 
+    def __eq__(self, other):
+        return (
+            isinstance(other, self.__class__)
+            and self.version == other.version
+            and self.update_data == other.update_data
+            and self.update_structure == other.update_structure
+        )
+
+    def __str__(self):
+        return f"<ESTAT Dataflow(code={self.code}, version={self.version})>"
+
 
 class EstatDataset(JSONStat):
     def __init__(self, code, force_download=False):
         self.code = code
         self.force_download = force_download
-        self.download()
+        self._cached_dataset = None
+
+        self._load_cached()
+        if self._cache_is_stale:
+            self._download()
+            self._load_cached()
 
         logger.info("Processing dataset: %s", self.json_path)
-        with self.json_path.open() as f:
-            super().__init__(f)
+        super().__init__(self._cached_dataset)
 
-    def download(self):
+    def _download(self):
         # XXX This downloads the whole dataset; if this proves to be too large
         # XXX in practice (e.g. because of too much memory used) we can instead:
         # XXX   - split the download per years using the start/endPeriod filter
@@ -119,6 +132,34 @@ class EstatDataset(JSONStat):
         with gzip.open(self.download_gz_path, "rb") as f_in:
             with self.json_path.open("wb") as f_out:
                 shutil.copyfileobj(f_in, f_out)
+
+    def _load_cached(self):
+        if self.json_path.is_file():
+            with self.json_path.open() as f:
+                self._cached_dataset = json.load(f)
+
+    @property
+    def _cache_is_stale(self):
+        if self.force_download:
+            logger.info(
+                "Cached dataset forced stale: force_download=%s", self.force_download
+            )
+            return True
+
+        if not self._cached_dataset:
+            logger.info("No cached dataset available")
+            return True
+
+        old_dataflow = EstatDataflow(self.code, dataset=self._cached_dataset)
+        logger.info("Cached dataset %s available, checking if stale", old_dataflow)
+
+        new_dataflow = EstatDataflow(self.code)
+        if old_dataflow != new_dataflow:
+            logger.info("Cached dataset IS stale, new dataset found: %s", new_dataflow)
+            return True
+
+        logger.info("Cached dataset %s is NOT stale", new_dataflow)
+        return False
 
     @cached_property
     def json_path(self):
@@ -275,4 +316,5 @@ class EstatImporter:
         self.config.data_last_update = self.dataset.dataflow.update_data
         self.config.datastructure_last_update = self.dataset.dataflow.update_structure
         self.config.datastructure_last_version = self.dataset.dataflow.version
+        self.config.new_version_available = False
         self.config.save()

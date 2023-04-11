@@ -2,16 +2,19 @@
 
 ### Triggering import config
 
-Import can be triggered via de Django admin interface. With one or more config selected choose the "import" action from
+Import can be triggered via de Django admin interface. With one or more config selected, choose the "import" action from
 the dropdown above the table and click on "Go". The tasks are executed asynchronously and the "latest task" field will
 show the status of the last import run. Clicking on it will provide more details
 such as import logs. On failure, the `errors` JSON field is populated with the relevant details - e.g. the unknown
 dimension codes encountered in the file's data.
 
 Using the "Delete existing facts and trigger import" option instead will first delete any facts that are linked to the
-import config
-and as well as force a redownload of the dataset from ESTAT instead of using a locally cached version, if that was
-available in the first place.
+import config and as well as force redownloading the dataset from ESTAT instead of using a locally cached version, if
+that was available in the first place.
+
+The cached dataset is automatically checked if stale or not before use in an import by validating the local data with
+the metadata API from ESTAT.
+If the cache is stale, the new version will be downloaded before the import.
 
 Details for all historical runs can be found in the "Import config results" section of the admin.
 
@@ -43,7 +46,8 @@ Once a file is uploaded and the record is saved, the import task will run asynch
 when completed. On failure, the `errors` JSON field is populated with the relevant details - e.g. the unknown
 dimension codes encountered in the file's data.
 
-Historical runs for each import can be found under "Upload data from file results" with all the logs and errors for each run.
+Historical runs for each import can be found under "Upload data from file results" with all the logs and errors for each
+run.
 
 Data structure requirements:
 
@@ -58,35 +62,35 @@ Data structure requirements:
     - value
     - flag(s)
 
-## Updating data 
+## Updating data
 
-Whenever data is imported (either via file upload or ESTAT import), any old fact value that already existed with the 
-same unique key will be updated. The fact will also be linked to the new file/import and unliked from the old 
-file/import it was imported from. 
+Whenever data is imported (either via file upload or ESTAT import), any old fact value that already existed with the
+same unique key will be updated. The fact will also be linked to the new file/import and unliked from the old
+file/import it was imported from.
 
 The unique key consists of the following columns:
 
- - indicator
- - breakdown
- - unit
- - country
- - period
+- indicator
+- breakdown
+- unit
+- country
+- period
 
 Values update on duplicate key:
 
- - value
- - flags
- - import_file
- - import_config
+- value
+- flags
+- import_file
+- import_config
 
 ## Replacing data
 
 If a full replacement of data is required (either via file upload or ESTAT import), you can either:
 
- - modify the existing "Upload data from file" entry, by changing the "file" field and uploading a new file in its place
- - modify the existing "Import Config" entry, by changing the filters/mapping/dimensions/etc.
- - select the checkbox in the list view for the updated entry
- - select "Delete existing facts and trigger import" from the dropdown above and click on GO
+- modify the existing "Upload data from file" entry, by changing the "file" field and uploading a new file in its place
+- modify the existing "Import Config" entry, by changing the filters/mapping/dimensions/etc.
+- select the checkbox in the list view for the updated entry
+- select "Delete existing facts and trigger import" from the dropdown above and click on GO
 
 This will effectively replace all old data with the new version, including deleting any old entries that are no longer
 present in the new version.

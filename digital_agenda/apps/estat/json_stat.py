@@ -2,7 +2,6 @@
 
 Full specifications here: https://json-stat.org/format/
 """
-import json
 import itertools
 import functools
 import collections
@@ -16,8 +15,8 @@ Dimension = collections.namedtuple("Dimension", ["id", "label", "categories"])
 
 
 class JSONStat:
-    def __init__(self, fp):
-        self.dataset = json.load(fp)
+    def __init__(self, dataset):
+        self.dataset = dataset
         logger.debug(
             "Parsing JSON-stat: version=%r source=%r label=%r",
             self._version,
@@ -53,10 +52,7 @@ class JSONStat:
                     id=dim_id.lower(),
                     label=self.dataset["dimension"][dim_id].get("label"),
                     categories=[
-                        Category(
-                            id=cat_id.lower(),
-                            label=cat_labels[cat_id],
-                        )
+                        Category(id=cat_id.lower(), label=cat_labels[cat_id])
                         for cat_id in cat_ids
                     ],
                 )

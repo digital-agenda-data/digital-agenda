@@ -48,6 +48,20 @@ services:
     restart: always
     command: ["./manage.py", "rqworker"]
 
+  scheduler:
+    image: ghcr.io/digital-agenda-data/digital-agenda-app:${DOCKER_TAG:-master}
+    env_file:
+      - .env
+    volumes:
+      - app_data:/app/.fs
+    depends_on:
+      - db
+      - redis
+      - worker
+    restart: always
+    command: [ "./manage.py", "rqscheduler" ]
+
+
   nginx:
     image: ghcr.io/digital-agenda-data/digital-agenda-nginx:${DOCKER_TAG:-master}
     volumes:

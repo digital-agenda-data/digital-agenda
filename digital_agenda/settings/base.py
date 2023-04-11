@@ -314,6 +314,11 @@ CONSTANCE_CONFIG = {
         "Matomo server; analytics are disabled if this is not set",
     ),
     "MATOMO_SITE_ID": ("", "Matomo Site ID; analytics are disabled if this is not set"),
+    "ESTAT_UPDATE_ALERT_EMAILS": (
+        "",
+        "Alerts are automatically sent to all staff whenever datasets are updated in ESTAT. This setting can be used "
+        "to specify a list of addresses separated by comma that should receive the alerts instead.",
+    ),
 }
 CONSTANCE_CONFIG_FIELDSETS = (
     ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL",)}),
@@ -322,10 +327,14 @@ CONSTANCE_CONFIG_FIELDSETS = (
         {"collapse": False, "fields": ("GLOBAL_BANNER_ENABLED", "EU_LOGIN_ENABLED")},
     ),
     ("Analytics", {"collapse": False, "fields": ("MATOMO_SERVER", "MATOMO_SITE_ID")}),
+    ("Alerts", {"collapse": False, "fields": ("ESTAT_UPDATE_ALERT_EMAILS",)}),
 )
 
 
 # Task Queue (RQ)
+
+RQ = {"DEFAULT_RESULT_TTL": 0}
+
 
 RQ_QUEUES = {"default": {"HOST": REDIS_HOST, "PORT": REDIS_PORT, "DB": REDIS_TASK_DB}}
 

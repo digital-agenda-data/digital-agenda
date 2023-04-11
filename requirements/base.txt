@@ -27,4 +27,5 @@ pillow
 psycopg[binary]
 python-magic
 rich
+rq-scheduler
 xlrd

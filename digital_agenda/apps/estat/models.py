@@ -100,6 +100,10 @@ class ImportConfig(models.Model):
         max_length=60,
         help_text="Last version update of the local copy of the dataset as extracted from the ESTAT annotations",
     )
+    new_version_available = models.BooleanField(
+        default=False,
+        help_text="An updated version of the dataset is available in ESTAT",
+    )
 
     indicator = CICharField(max_length=60)
     indicator_is_surrogate = models.BooleanField(default=False)
