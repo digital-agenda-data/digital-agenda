@@ -69,12 +69,15 @@ def send_estat_update_alerts():
         logger.info("No import config has a new version available")
         return
 
-    if constance.config.ESTAT_UPDATE_ALERT_EMAILS:
-        recipient_list = split_email(constance.config.ESTAT_UPDATE_ALERT_EMAILS)
-    else:
+    recipient_list = split_email(constance.config.ESTAT_UPDATE_ALERT_EMAILS or "")
+    if not recipient_list:
         recipient_list = User.objects.filter(is_staff=True).values_list(
             "email", flat=True
         )
+
+    if not recipient_list:
+        raise Exception("No recipients configured to receive alerts")
+
     context = {
         "config_count": config_count,
         "list_url": (
