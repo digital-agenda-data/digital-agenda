@@ -115,10 +115,6 @@ class EstatDataset(JSONStat):
         # XXX in practice (e.g. because of too much memory used) we can instead:
         # XXX   - split the download per years using the start/endPeriod filter
         # XXX   - filter the download using the provided keys filters
-        if not self.force_download and self.json_path.is_file():
-            logger.info("File already downloaded: %s", self.json_path)
-            return
-
         logger.info("Downloading from: %s", self.download_url)
         with httpx.stream(
             "GET", self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT

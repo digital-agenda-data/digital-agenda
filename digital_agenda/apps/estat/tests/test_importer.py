@@ -1,3 +1,5 @@
+import json
+
 from django.conf import settings
 from django.test import TestCase
 
@@ -114,10 +116,7 @@ class TestImporterSuccess(TestCase):
 
         unit = Unit.objects.first()
         self.assertEqual(unit.code.lower(), "pc_hh")
-        self.assertEqual(
-            unit.label,
-            "Percentage of households",
-        )
+        self.assertEqual(unit.label, "Percentage of households")
 
     def test_period(self):
         expected = [2010, 2011, 2012, 2013]
@@ -144,6 +143,30 @@ class TestImporter(TestCase):
 
         expected_path = settings.ESTAT_DOWNLOAD_DIR / f"{config.code}.json"
         self.assertTrue(expected_path.is_file())
+
+    def test_download_invalidate_cache(self):
+        config = ImportConfig.objects.first()
+        config.run_import(delete_existing=True, force_download=True)
+
+        expected_path = settings.ESTAT_DOWNLOAD_DIR / f"{config.code}.json"
+        self.assertTrue(expected_path.is_file())
+
+        with expected_path.open("r") as f:
+            dataset = json.load(f)
+            original_version = dataset["extension"]["datastructure"]["version"]
+            dataset["extension"]["datastructure"]["version"] = "Hornet"
+
+        with expected_path.open("w") as f:
+            json.dump(dataset, f)
+
+        config = ImportConfig.objects.first()
+        config.run_import()
+
+        with expected_path.open("r") as f:
+            dataset = json.load(f)
+            self.assertEqual(
+                original_version, dataset["extension"]["datastructure"]["version"]
+            )
 
     def test_surrogate_indicator(self):
         config = ImportConfig.objects.first()
