@@ -1,5 +1,6 @@
 import "./styles/main.scss";
 import ECWebTool from "@/directives/ECWebTool";
+import { useAppSettings } from "@/stores/appSettingsStore";
 
 import { createApp, reactive } from "vue";
 
@@ -55,4 +56,35 @@ app.directive("visible", visible);
 app.directive("ecl-init", ECLInit);
 app.directive("ec-wt-render", ECWebTool);
 
-app.mount("#digital-agenda-app");
+async function initSentry() {
+  const appSettingsStore = useAppSettings();
+  await appSettingsStore.promise;
+  if (appSettingsStore.appSettings.sentry_dsn) {
+    const Sentry = await import("@sentry/vue");
+    Sentry.init({
+      app,
+      dsn: appSettingsStore.appSettings.sentry_dsn,
+      environment: appSettingsStore.appSettings.environment_name,
+      integrations: [
+        new Sentry.BrowserTracing({
+          routingInstrumentation: Sentry.vueRouterInstrumentation(router),
+        }),
+      ],
+    });
+  }
+}
+
+async function mountApp() {
+  // Sentry annoyingly needs to be noticed before the app mount, so we
+  // have to wait for the app settings to be loaded in the appSettingsStore
+  // AND then mount the app itself.
+  try {
+    await initSentry();
+  } catch (e) {
+    console.warn("Unable to init Sentry", e);
+  } finally {
+    app.mount("#digital-agenda-app");
+  }
+}
+
+mountApp();

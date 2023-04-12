@@ -4,11 +4,10 @@ import { defineStore } from "pinia";
 
 export const useAppSettings = defineStore("appSettings", {
   state: () => {
+    const promise = api.get("/app-settings/").then((r) => r.data);
     return {
-      ...useAsyncState(
-        api.get("/app-settings/").then((r) => r.data),
-        {}
-      ),
+      promise,
+      ...useAsyncState(promise, {}),
     };
   },
   getters: {

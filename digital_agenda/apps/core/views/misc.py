@@ -21,7 +21,9 @@ class AppSettingsView(APIView):
                 "analytics_site_id": config.MATOMO_SITE_ID,
                 "global_banner_enabled": config.GLOBAL_BANNER_ENABLED,
                 "eurostat_flags": EUROSTAT_FLAGS,
-            },
+                "sentry_dsn": settings.SENTRY_DSN,
+                "environment_name": settings.ENVIRONMENT_NAME,
+            }
         )
 
 

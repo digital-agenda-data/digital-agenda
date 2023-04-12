@@ -28,6 +28,9 @@ export default defineConfig({
           if (id.includes("node_modules/highcharts/")) {
             return "highcharts";
           }
+          if (id.includes("node_modules/@sentry")) {
+            return "sentry";
+          }
           if (id.includes("node_modules/")) {
             return "vendor";
           }
