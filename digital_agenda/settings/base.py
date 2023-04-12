@@ -339,7 +339,7 @@ RQ = {"DEFAULT_RESULT_TTL": 0}
 RQ_QUEUES = {"default": {"HOST": REDIS_HOST, "PORT": REDIS_PORT, "DB": REDIS_TASK_DB}}
 
 # Hide RQ admin, since we are using Django Task models instead
-RQ_SHOW_ADMIN_LINK = True
+RQ_SHOW_ADMIN_LINK = False
 
 ESTAT_DOWNLOAD_BASE_URL = env.str(
     "ESTAT_DOWNLOAD_BASE_URL",
