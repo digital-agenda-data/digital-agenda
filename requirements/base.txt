@@ -28,4 +28,5 @@ psycopg[binary]
 python-magic
 rich
 rq-scheduler
+sentry-sdk[django]
 xlrd
