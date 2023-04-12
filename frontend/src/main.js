@@ -65,6 +65,7 @@ async function initSentry() {
       app,
       dsn: appSettingsStore.appSettings.sentry_dsn,
       environment: appSettingsStore.appSettings.environment_name,
+      sendClientReports: false,
       integrations: [
         new Sentry.BrowserTracing({
           routingInstrumentation: Sentry.vueRouterInstrumentation(router),
