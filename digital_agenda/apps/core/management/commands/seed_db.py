@@ -32,7 +32,7 @@ class Command(BaseCommand):
                 sys.exit(1)
 
         call_command("flush", "--noinput")
-        call_command("load_initial_fixtures", "--exclude", "estat.importconfig")
+        call_command("load_initial_fixtures", "--exclude", "importconfig")
 
         # Create and admin user
         call_command("loaddata", "test/users")
