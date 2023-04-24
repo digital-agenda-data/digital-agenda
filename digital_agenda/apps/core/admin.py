@@ -96,9 +96,41 @@ class DataSourceInline(admin.TabularInline):
 
 @admin.register(Indicator)
 class IndicatorAdmin(HasFactsAdminMixIn, DimensionAdmin):
-    list_filter = [AutocompleteFilterFactory("data source", "data_sources")]
+    list_filter = [AutocompleteFilterFactory("data source", "data_sources"), "groups"]
+    list_display = ("code", "label", "group_codes", "has_facts")
+    fields = (
+        "code",
+        "label",
+        "alt_label",
+        "definition",
+        "note",
+        "group_list",
+        "has_facts",
+    )
+
     inlines = (DataSourceInline,)
     facts_filter = "indicator"
+    readonly_fields = ("group_codes", "group_list")
+
+    @admin.display(description="Groups")
+    def group_codes(self, obj):
+        result = []
+        for group in obj.groups.all():
+            url = reverse(
+                "admin:core_indicatorgroup_change", kwargs={"object_id": group.id}
+            )
+            result.append(f'<a href="{url}">{group.code}</a>')
+        return mark_safe(", ".join(result))
+
+    @admin.display(description="Groups")
+    def group_list(self, obj):
+        result = []
+        for group in obj.groups.all():
+            url = reverse(
+                "admin:core_indicatorgroup_change", kwargs={"object_id": group.id}
+            )
+            result.append(f'<li><a href="{url}">{group}</a></li>')
+        return mark_safe(f"<ul>{''.join(result)}</ul>")
 
 
 class BreakdownTabularInline(SortableInlineAdminMixin, admin.TabularInline):
