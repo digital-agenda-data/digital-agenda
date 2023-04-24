@@ -38,6 +38,16 @@ class DimensionAdmin(admin.ModelAdmin):
 @admin.register(DataSource)
 class DataSourceAdmin(DimensionAdmin):
     list_display = ("code", "label", "indicator_codes")
+    readonly_fields = ("indicator_codes", "indicators_list")
+    fields = (
+        "code",
+        "label",
+        "alt_label",
+        "definition",
+        "url",
+        "note",
+        "indicators_list",
+    )
 
     @admin.display(description="Indicators")
     def indicator_codes(self, obj):
@@ -48,6 +58,16 @@ class DataSourceAdmin(DimensionAdmin):
             )
             result.append(f'<a href="{url}">{indicator.code}</a>')
         return mark_safe(", ".join(result))
+
+    @admin.display(description="Indicators")
+    def indicators_list(self, obj):
+        result = []
+        for indicator in obj.indicators.all():
+            url = reverse(
+                "admin:core_indicator_change", kwargs={"object_id": indicator.id}
+            )
+            result.append(f'<li><a href="{url}">{indicator}</a></li>')
+        return mark_safe(f"<ul>{''.join(result)}</ul>")
 
     def get_queryset(self, request):
         return super().get_queryset(request).prefetch_related("indicators")

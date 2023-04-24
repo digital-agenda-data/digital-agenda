@@ -154,6 +154,6 @@ form .aligned label + div.help {
   margin-left: 0 !important;
 }
 
-.field-indicators_with_facts ul {
+.form-row ul {
   margin-left:  0 !important;
 }
