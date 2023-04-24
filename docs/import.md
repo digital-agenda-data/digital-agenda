@@ -138,3 +138,12 @@ command:
 ```
 
 All initial fixtures will be dumped into the [fixtures](../fixtures) folder. 
+
+---
+
+Example usage from docker:
+
+```shell
+docker compose exec app ./manage.py load_initial_fixtures --dump
+docker compose cp app:/app/fixtures/ fixtures/
+```
