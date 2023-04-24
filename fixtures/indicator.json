@@ -3951,7 +3951,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-01-27T11:11:22.485Z",
         "code": "ict_grad",
         "label": "ICT graduates",
         "alt_label": "ICT graduates",
@@ -4568,6 +4568,54 @@
         "label": "1.5 Online consultations or voting",
         "alt_label": "1.5 Online consultations or voting",
         "definition": "People who took part in on-line consultations or voting to define civic or political issues (e.g. urban planning, signing a petition)",
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-03-28T09:40:41.648Z",
+        "updated_at": "2023-03-28T09:41:08.444Z",
+        "code": "desi_fttpc",
+        "label": "Fibre to the Premises (FTTP) coverage",
+        "alt_label": "",
+        "definition": "Percentage of households covered by FTTH and FTTB",
+        "note": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic"
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-03-31T14:57:14.037Z",
+        "updated_at": "2023-03-31T15:09:39.284Z",
+        "code": "i_dsk_i_b",
+        "label": "DSI 2015-2019 Individuals with basic skills in Information domain",
+        "alt_label": "DSI 2015-2019 - Information Domain - Basic Skills",
+        "definition": "",
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-03-31T14:57:19.358Z",
+        "updated_at": "2023-03-31T15:08:45.126Z",
+        "code": "i_dsk_c_b",
+        "label": "DSI 2015-2019 Individuals with basic skills in Communication domain",
+        "alt_label": "DSI 2015-2019 - Communication Domain - Basic Skills",
+        "definition": "",
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-04-17T14:26:42.733Z",
+        "updated_at": "2023-04-17T14:26:42.733Z",
+        "code": "e_ebuy2",
+        "label": "Enterprises purchasing online of at least 1% of total purchases (as of 2014)",
+        "alt_label": null,
+        "definition": null,
         "note": null
     }
 }

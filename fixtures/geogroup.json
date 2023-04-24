@@ -243,8 +243,8 @@
     "model": "estat.geogroup",
     "fields": {
         "code": "EU27_2020",
-        "size": 27,
-        "note": "European Union - 27 countries (from 2020)",
+        "size": 29,
+        "note": "European Union - 27 countries (from 2020), plus UK, NO",
         "geo_codes": [
             "AT",
             "BE",
@@ -272,7 +272,49 @@
             "RO",
             "SE",
             "SI",
-            "SK"
+            "SK",
+            "NO",
+            "UK"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU27_extended",
+        "size": 30,
+        "note": "European Union - 27 countries (from 2020) plus NO, UK",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "NO",
+            "UK",
+            "EU27_2020"
         ]
     }
 }

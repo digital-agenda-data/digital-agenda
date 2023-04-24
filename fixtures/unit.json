@@ -1461,5 +1461,71 @@
         "alt_label": "Score (0 to 1)",
         "definition": "Women in Digital Score"
     }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-03-31T06:34:57.018Z",
+        "updated_at": "2023-03-31T06:34:57.018Z",
+        "code": "nr",
+        "label": "Number",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-03-31T07:14:41.022Z",
+        "updated_at": "2023-03-31T07:14:41.022Z",
+        "code": "cp_eur_hab",
+        "label": "Current prices, euro per capita",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-03-31T07:14:41.130Z",
+        "updated_at": "2023-03-31T07:14:41.130Z",
+        "code": "cp_mpps",
+        "label": "Current prices, million purchasing power standards",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-03-31T07:14:41.167Z",
+        "updated_at": "2023-03-31T07:14:41.167Z",
+        "code": "cp_meur",
+        "label": "Current prices, million euro",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-03-31T07:29:40.896Z",
+        "updated_at": "2023-03-31T07:29:40.896Z",
+        "code": "ths_hh",
+        "label": "Thousand households",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-04-07T15:40:35.699Z",
+        "updated_at": "2023-04-07T15:40:35.699Z",
+        "code": "pc_ind_secoitpp",
+        "label": "Percentage of individuals who have experienced online identity theft, phishing or pharming",
+        "alt_label": null,
+        "definition": null
+    }
 }
 ]

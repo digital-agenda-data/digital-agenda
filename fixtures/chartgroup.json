@@ -3,7 +3,7 @@
     "model": "charts.chartgroup",
     "fields": {
         "created_at": "2022-11-16T13:03:18.117Z",
-        "updated_at": "2023-02-08T06:43:31.968Z",
+        "updated_at": "2023-02-08T12:57:23.842Z",
         "display_order": 1,
         "is_draft": false,
         "code": "desi",
@@ -11,7 +11,7 @@
         "short_name": "DESI",
         "license": "<p><a href=\"https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright\">https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright</a></p>",
         "description": "<p>The Digital Economy and Society Index (<strong>DESI</strong>) is a composite index that&nbsp;<strong>summarises relevant indicators</strong>&nbsp;on Europe&rsquo;s digital performance and&nbsp;<strong>tracks the evolution of EU Member States</strong>, across five main dimensions: Connectivity, Human Capital, Use of Internet, Integration of Digital Technology, Digital Public Services. Read&nbsp;<strong><a href=\"http://ec.europa.eu/digital-agenda/en/digital-economy-and-society-index-desi\">reports and methodological notes</a></strong>.</p>",
-        "image": "",
+        "image": "desi.png",
         "indicator_group_label": "Indicator group",
         "indicator_label": "Indicator",
         "breakdown_group_label": "Breakdown group",
@@ -22,13 +22,7 @@
         "period_end": null,
         "indicator_groups": [
             [
-                "desi"
-            ],
-            [
                 "desi_total"
-            ],
-            [
-                "desi_dim"
             ],
             [
                 "desi_subdim"
@@ -38,6 +32,12 @@
             ],
             [
                 "desi_sliders"
+            ],
+            [
+                "desi"
+            ],
+            [
+                "desi_dim"
             ]
         ]
     }
@@ -46,7 +46,7 @@
     "model": "charts.chartgroup",
     "fields": {
         "created_at": "2022-11-16T13:07:33.482Z",
-        "updated_at": "2023-02-08T06:43:28.188Z",
+        "updated_at": "2023-02-08T12:57:30.336Z",
         "display_order": 2,
         "is_draft": false,
         "code": "key-indicators",
@@ -54,7 +54,7 @@
         "short_name": "Key Indicators",
         "license": "<p><a href=\"https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright\">https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright</a></p>",
         "description": "<p>European Commission services selected various indicators, divided into thematic groups, which illustrate some&nbsp;<strong>key dimensions of the European information society</strong>&nbsp;(Telecom sector, Broadband, Mobile, Internet usage, Internet services, eGovernment, eCommerce, eBusiness, ICT Skills, Research and Development). These indicators allow a comparison of progress&nbsp;<strong>across European countries</strong>&nbsp;as well as over time. Multiple interactive charts allow you to assess countries&#39; profiles.</p>",
-        "image": "",
+        "image": "key-indicators.png",
         "indicator_group_label": "Indicator group",
         "indicator_label": "Indicator",
         "breakdown_group_label": "Breakdown group",
@@ -65,13 +65,13 @@
         "period_end": null,
         "indicator_groups": [
             [
+                "bbquality"
+            ],
+            [
                 "telecom"
             ],
             [
                 "broadband"
-            ],
-            [
-                "bbquality"
             ],
             [
                 "mobile"
@@ -128,7 +128,7 @@
     "model": "charts.chartgroup",
     "fields": {
         "created_at": "2022-11-16T13:08:47.911Z",
-        "updated_at": "2023-02-08T06:43:24.387Z",
+        "updated_at": "2023-02-08T12:57:35.455Z",
         "display_order": 3,
         "is_draft": false,
         "code": "e-gov-2020",
@@ -136,7 +136,7 @@
         "short_name": "E-Gov-2020",
         "license": "<p><a href=\"https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright\">https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright</a></p>",
         "description": "<p>The e-Government Benchmark framework corresponds with the key policy priorities in the e-government Action Plan, the Tallinn and Berlin Declarations. The e-Government Benchmark framework reflects on the Digital Decade and it brings insights on the state-of play of e-government in Europe. The measurement evaluates the maturity of online public services in terms of User centricity, Transparency, and use of Key enablers. It also brings the dimension of Cross-border service delivery, which is a truly European metric. The new method presents various changes e.g. simplified life events by measuring less services for national users, substantially increasing the amount of services that are measured cross-border, including the Career and the Family life events, and addition of Health life events for odd years together with relabeling of some indicators. Various indicators allow the comparison over the time and across countries. The list of countries currently includes the European Union Member States, Iceland, Norway, Montenegro, Republic of Serbia, Switzerland, Turkey as well as Albania and North Macedonia.</p>",
-        "image": "",
+        "image": "e-gov-2020.png",
         "indicator_group_label": "Indicator group",
         "indicator_label": "Indicator",
         "breakdown_group_label": "Breakdown group",
@@ -156,7 +156,7 @@
     "model": "charts.chartgroup",
     "fields": {
         "created_at": "2022-11-16T13:12:22.108Z",
-        "updated_at": "2023-02-08T06:43:20.057Z",
+        "updated_at": "2023-02-08T12:57:40.756Z",
         "display_order": 4,
         "is_draft": false,
         "code": "e-gov",
@@ -164,7 +164,7 @@
         "short_name": "E-Gov",
         "license": "<p><a href=\"https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright\">https://ec.europa.eu/geninfo/legal_notices_en.htm#copyright</a></p>",
         "description": "<p>The e-Government Benchmark framework corresponds with the key policy priorities in the e-government Action Plan and the Tallinn Declaration and brings insights on the state-of play of e-government in Europe. The measurement evaluates the maturity of online public services in terms of User centricity, Transparency, and use of Key enablers. It also brings the dimension of Cross-border service delivery, which is a truly European metric. Various indicators allow the comparison over the time and across countries. The list of countries currently includes the European Union Member States, Iceland, Norway, Montenegro, Republic of Serbia, Switzerland, Turkey as well as Albania and North Macedonia.</p>",
-        "image": "",
+        "image": "e-gov.png",
         "indicator_group_label": "Indicator group",
         "indicator_label": "Indicator",
         "breakdown_group_label": "Breakdown group",

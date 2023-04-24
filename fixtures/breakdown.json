@@ -3969,5 +3969,280 @@
         "alt_label": "65-74",
         "definition": null
     }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-03-28T09:43:00.544Z",
+        "updated_at": "2023-03-28T09:43:00.544Z",
+        "code": "desi_fttpc",
+        "label": "FTTP coverage",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-03-31T06:34:56.989Z",
+        "updated_at": "2023-03-31T06:34:56.989Z",
+        "code": "t",
+        "label": "Total",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:19.177Z",
+        "updated_at": "2023-04-17T10:57:39.461Z",
+        "code": "nace_c10-c18",
+        "label": "Manufacture of products based on: food, beverages, tobacco, textile, leather, wood, pulp and paper; publishing and printing",
+        "alt_label": "Manufacture: food, beverages, tobacco, textile, leather, wood, paper; publishing and printing 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:19.634Z",
+        "updated_at": "2023-04-17T10:57:48.069Z",
+        "code": "nace_c19-c23",
+        "label": "Manufacture of coke, refined petroleum, chemical and basic pharmaceutical products, rubber and plastics, other non-metallic mineral products",
+        "alt_label": "Manufacture: coke, petroleum, chemical, plastics, other non-metallic mineral products 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:20.028Z",
+        "updated_at": "2023-04-17T10:57:56.662Z",
+        "code": "nace_c24_c25",
+        "label": "Manufacture of basic metals and fabricated metal products, except machinery and equipment",
+        "alt_label": "Manufacture: basic metals & fabricated metal products excluding machines & equipments 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:20.196Z",
+        "updated_at": "2023-04-17T10:58:05.326Z",
+        "code": "nace_c26-c33",
+        "label": "Manufacture of computers, electric and optical products, electrical equipment, machinery and equipment n.e.c, motor vehicles, other transport equipment, furniture, other manufacturing, repair and installation of machinery and equipment",
+        "alt_label": "Manufacture: computers, electric & optical, motor vehicles, transport equipment, furniture, repair 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:20.679Z",
+        "updated_at": "2023-04-17T10:58:17.315Z",
+        "code": "nace_d_e",
+        "label": "Electricity, gas, steam and air conditioning supply; water supply; sewerage, waste management and remediation activities",
+        "alt_label": "Electricity, gas, steam, air conditioning; water supply, sewerage, waste management & remediation 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:21.125Z",
+        "updated_at": "2023-04-17T10:58:34.509Z",
+        "code": "nace_g45",
+        "label": "Wholesale and retail trade and repair of motor vehicles and motorcycles",
+        "alt_label": "Trade of motor vehicles and motorcycles 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:21.246Z",
+        "updated_at": "2023-04-17T10:58:44.987Z",
+        "code": "nace_g46",
+        "label": "Wholesale trade, except of motor vehicles and motorcycles",
+        "alt_label": "Wholesale trade, except of motor vehicles and motorcycles 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:21.365Z",
+        "updated_at": "2023-04-17T10:58:51.685Z",
+        "code": "nace_g47",
+        "label": "Retail trade, except of motor vehicles and motorcycles",
+        "alt_label": "Retail trade, except of motor vehicles and motorcycles 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:21.509Z",
+        "updated_at": "2023-04-17T10:58:59.678Z",
+        "code": "nace_h",
+        "label": "Transportation and storage",
+        "alt_label": "Transport and storage 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:21.674Z",
+        "updated_at": "2023-04-17T10:59:11.130Z",
+        "code": "nace_i",
+        "label": "Accommodation and food service activities",
+        "alt_label": "Accommodation and food service activities 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:22.018Z",
+        "updated_at": "2023-04-17T10:59:22.382Z",
+        "code": "nace_j58-j60",
+        "label": "Publishing, motion picture, video, television programme production; sound recording, programming and broadcasting activities",
+        "alt_label": "Publishing activities; films & television, sound & music publishing; broadcasting 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:22.186Z",
+        "updated_at": "2023-04-17T10:59:29.107Z",
+        "code": "nace_j61",
+        "label": "Telecommunications",
+        "alt_label": "Telecommunications 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:25.881Z",
+        "updated_at": "2023-04-17T10:59:36.142Z",
+        "code": "nace_j62_j63",
+        "label": "Computer programming, consultancy, and information service activities",
+        "alt_label": "Computer programming, consultancy and related activities, information services 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:26.022Z",
+        "updated_at": "2023-04-17T10:59:46.390Z",
+        "code": "nace_l68",
+        "label": "Real estate activities",
+        "alt_label": "Real estate activities 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:26.256Z",
+        "updated_at": "2023-04-17T09:28:15.446Z",
+        "code": "nace_m69-m74",
+        "label": "Legal and accounting activities; activities of head offices; management consultancy activities; architectural and engineering activities; technical testing and analysis; scientific research and development; advertising and market research; other professional, scientific and technical activities",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:13:26.572Z",
+        "updated_at": "2023-04-17T11:00:05.953Z",
+        "code": "nace_n",
+        "label": "Administrative and support service activities",
+        "alt_label": "Administrative and support service activities 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:36:14.198Z",
+        "updated_at": "2023-04-17T10:59:54.205Z",
+        "code": "nace_m",
+        "label": "Professional, scientific and technical activities",
+        "alt_label": "Professional, scientific and technical activities 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T09:37:33.062Z",
+        "updated_at": "2023-04-17T10:58:26.619Z",
+        "code": "nace_f",
+        "label": "Construction",
+        "alt_label": "Construction 10+",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T12:03:41.063Z",
+        "updated_at": "2023-04-17T12:03:41.063Z",
+        "code": "10-49",
+        "label": "From 10 to 49 persons employed",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T12:03:41.238Z",
+        "updated_at": "2023-04-17T12:03:41.238Z",
+        "code": "10-249",
+        "label": "From 10 to 249 persons employed",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T12:03:41.290Z",
+        "updated_at": "2023-04-17T12:03:41.290Z",
+        "code": "ge10",
+        "label": "10 persons employed or more",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T12:03:41.344Z",
+        "updated_at": "2023-04-17T12:03:41.344Z",
+        "code": "50-249",
+        "label": "From 50 to 249 persons employed",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-04-17T12:03:41.398Z",
+        "updated_at": "2023-04-17T12:03:41.398Z",
+        "code": "ge250",
+        "label": "250 persons employed or more",
+        "alt_label": null,
+        "definition": null
+    }
 }
 ]

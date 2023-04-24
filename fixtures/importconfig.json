@@ -6,9 +6,9 @@
         "code": "educ_uoe_grad03",
         "title": null,
         "remarks": null,
-        "data_last_update": null,
-        "datastructure_last_update": null,
-        "datastructure_last_version": null,
+        "data_last_update": "2022-08-09T21:00:00Z",
+        "datastructure_last_update": "2022-06-13T21:00:00Z",
+        "datastructure_last_version": "23.1",
         "new_version_available": false,
         "indicator": "ict_grad",
         "indicator_is_surrogate": true,
@@ -44,7 +44,5612 @@
                 "T": "TOTAL"
             }
         },
-        "tags": []
+        "tags": [
+            4
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 2,
+    "fields": {
+        "code": "demo_pjan",
+        "title": "Eurostat total population",
+        "remarks": null,
+        "data_last_update": "2023-04-04T21:00:00Z",
+        "datastructure_last_update": "2023-02-22T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "population",
+        "indicator_is_surrogate": true,
+        "breakdown": "sex",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": 2000,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "age": [
+                "TOTAL"
+            ],
+            "freq": [
+                "A"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "NR": "habitants"
+            },
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "T": "Total"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 3,
+    "fields": {
+        "code": "tec00001",
+        "title": "Gross domestic product at market prices",
+        "remarks": null,
+        "data_last_update": "2023-04-20T21:00:00Z",
+        "datastructure_last_update": "2023-04-20T21:00:00Z",
+        "datastructure_last_version": "40.0",
+        "new_version_available": true,
+        "indicator": "gdp",
+        "indicator_is_surrogate": true,
+        "breakdown": "total",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "FREQ": [
+                "A"
+            ],
+            "UNIT": [
+                "CP_EUR_HAB",
+                "CP_MEUR"
+            ],
+            "NA_ITEM": [
+                "B1GQ"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 4,
+    "fields": {
+        "code": "lfst_hhnhwhtc",
+        "title": "Number of households",
+        "remarks": null,
+        "data_last_update": "2023-02-15T22:00:00Z",
+        "datastructure_last_update": "2023-02-15T22:00:00Z",
+        "datastructure_last_version": "15.0",
+        "new_version_available": false,
+        "indicator": "households",
+        "indicator_is_surrogate": true,
+        "breakdown": "total",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "FREQ": [
+                "A"
+            ],
+            "UNIT": [
+                "THS_HH"
+            ],
+            "HHCOMP": [
+                "TOTAL"
+            ],
+            "N_CHILD": [
+                "TOTAL"
+            ],
+            "HHWKSTAT": [
+                "TOTAL"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {},
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 5,
+    "fields": {
+        "code": "isoc_bde15cua",
+        "title": "Internet use and activities",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "31.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "I_IDAY",
+                "I_IHIF",
+                "I_IUJOB",
+                "I_IUMAPP",
+                "I_IUNW",
+                "I_IUOLC",
+                "I_IUPH1",
+                "I_IUSNET",
+                "I_IUUPL",
+                "I_IUVOTE",
+                "I_IUSE",
+                "I_IUEDUIF",
+                "I_IUIF"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {
+                "i_iunw1": "i_iunw",
+                "i_iuupl1": "i_iuupl"
+            }
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 6,
+    "fields": {
+        "code": "isoc_sk_dskl_i",
+        "title": "Digital Skills Index 2019",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "PC_IND",
+                "PC_IND_IU3"
+            ],
+            "INDIC_IS": [
+                "I_DSK_AB",
+                "I_DSK_BAB",
+                "I_DSK_L",
+                "I_DSK_C_AB",
+                "I_DSK_C_B",
+                "I_DSK_I_B",
+                "I_DSK_I_AB",
+                "I_DSK_PS_AB",
+                "I_DSK_S_AB"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH",
+                "ISCO_ICT",
+                "ISCO_ICTX",
+                "EMP_CON_PRM",
+                "EMP_CON_TMP"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 7,
+    "fields": {
+        "code": "isoc_sk_dskl_i21",
+        "title": "Digital Skills Index 2021",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "6.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "PC_IND",
+                "PC_IND_IU3"
+            ],
+            "INDIC_IS": [
+                "I_DSK2_IL_AB",
+                "I_DSK2_IL_B",
+                "I_DSK2_IL_BAB",
+                "I_DSK2_CC_AB",
+                "I_DSK2_CC_B",
+                "I_DSK2_CC_BAB",
+                "I_DSK2_DCC_AB",
+                "I_DSK2_DCC_B",
+                "I_DSK2_DCC_BAB",
+                "I_DSK2_SF_AB",
+                "I_DSK2_SF_B",
+                "I_DSK2_SF_BAB",
+                "I_DSK2_PS_AB",
+                "I_DSK2_PS_B",
+                "I_DSK2_PS_BAB",
+                "I_DSK2_AB",
+                "I_DSK2_B",
+                "I_DSK2_BAB",
+                "I_DSK2_LW",
+                "I_DSK2_N",
+                "I_DSK2_LM",
+                "I_DSK2_X",
+                "I_DSK2_NA",
+                "I_DSK2_IC_S"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH",
+                "ISCO_ICT",
+                "ISCO_ICTX"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 8,
+    "fields": {
+        "code": "isoc_ci_ac_i",
+        "title": "Individuals - internet activities",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "34.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "I_IUBK",
+                "I_IUGM",
+                "I_IUGMV",
+                "I_IUSELL",
+                "I_IUVOD"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {
+                "i_iugmv": "i_iugm"
+            }
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 9,
+    "fields": {
+        "code": "isoc_bde15ei",
+        "title": "Individuals using the internet for interacting with public authorities",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "31.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_igov12rt",
+                "i_iugov12"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 10,
+    "fields": {
+        "code": "isoc_cisci_pb",
+        "title": "Security related problems experienced when using the internet",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_secfl",
+                "i_secfl2",
+                "i_secpif1",
+                "i_secvir1"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {
+                "i_secfl2": "i_secfl"
+            }
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 11,
+    "fields": {
+        "code": "isoc_cicci_use",
+        "title": "Individuals - use of cloud services",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_cc"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 12,
+    "fields": {
+        "code": "isoc_cisci_prv",
+        "title": "Privacy and protection of personal information (until 2016)",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2021-02-08T22:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_atsw",
+                "i_cook",
+                "i_piacadv"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 13,
+    "fields": {
+        "code": "isoc_ec_iprb",
+        "title": "Problems encountered by individuals when buying/ordering over the internet (until 2019)",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "28.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_barr1x"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 14,
+    "fields": {
+        "code": "isoc_cisci_ax",
+        "title": "Activities via internet not done because of security concerns",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_sbgood"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 15,
+    "fields": {
+        "code": "isoc_ec_ibuy",
+        "title": "Internet purchases by individuals (until 2019)",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "PC_IND",
+                "PC_IND_ILT12",
+                "PC_IND_IU3",
+                "PC_IND_BLT12"
+            ],
+            "INDIC_IS": [
+                "i_bfeu",
+                "i_bgood",
+                "i_bgoodo",
+                "i_blt12"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 16,
+    "fields": {
+        "code": "isoc_ec_ib20",
+        "title": "Internet purchases by individuals (2020 onwards)",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "31.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": 2020,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "PC_IND",
+                "PC_IND_ILT12",
+                "PC_IND_IU3"
+            ],
+            "INDIC_IS": [
+                "i_blt12"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 17,
+    "fields": {
+        "code": "isoc_sk_cskl_i",
+        "title": "Individuals' level of computer skills (until 2019)",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "pc_ind",
+                "pc_ind_ilt12"
+            ],
+            "INDIC_IS": [
+                "i_cisk_sfjobx",
+                "i_cprg",
+                "i_cprg1"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {
+                "i_cprg1": "i_cprg"
+            }
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 18,
+    "fields": {
+        "code": "isoc_sks_itspt",
+        "title": "Employed ICT specialists - total",
+        "remarks": null,
+        "data_last_update": "2022-10-10T09:00:00Z",
+        "datastructure_last_update": "2022-10-10T09:00:00Z",
+        "datastructure_last_version": "22.1",
+        "new_version_available": false,
+        "indicator": "ict_spec3_broad",
+        "indicator_is_surrogate": true,
+        "breakdown": "total",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "PC_EMP",
+                "THS_PER"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "ths_per": "th_ind"
+            },
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            4
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 19,
+    "fields": {
+        "code": "isoc_ci_ifp_iu",
+        "title": "Individuals - internet use",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "31.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "i_ilt12",
+                "i_iu3",
+                "i_iux"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 20,
+    "fields": {
+        "code": "isoc_bde15b_h",
+        "title": "Broadband and connectivity - households",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "29.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "hhtyp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "pc_hh"
+            ],
+            "HHTYP": [
+                "TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "HH_DEG1",
+                "HH_DEG2",
+                "HH_DEG3",
+                "ALL_DCH",
+                "ALL_NDCH"
+            ],
+            "INDIC_IS": [
+                "h_bbfix",
+                "h_broad",
+                "h_iacc",
+                "h_xcost"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "TOTAL": "HH_TOTAL"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 21,
+    "fields": {
+        "code": "isoc_bde15b_i",
+        "title": "Broadband and connectivity - individuals",
+        "remarks": null,
+        "data_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_update": "2023-03-07T10:00:00Z",
+        "datastructure_last_version": "27.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2007"
+        ],
+        "filters": {
+            "unit": [
+                "PC_IND",
+                "PC_IND_IU3"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ],
+            "indic_is": [
+                "i_iumc"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            3
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 22,
+    "fields": {
+        "code": "educ_uoe_grad04",
+        "title": "Graduates in tertiary education (STEM)",
+        "remarks": null,
+        "data_last_update": "2022-08-09T21:00:00Z",
+        "datastructure_last_update": "2022-06-13T21:00:00Z",
+        "datastructure_last_version": "23.1",
+        "new_version_available": false,
+        "indicator": "st_grad",
+        "indicator_is_surrogate": true,
+        "breakdown": "sex",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "isced11": [
+                "ED5-8"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "P_THAB": "nb_x1000inh_20_29"
+            },
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "T": "TOTAL"
+            }
+        },
+        "tags": [
+            4
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 23,
+    "fields": {
+        "code": "isoc_bde15b_p",
+        "title": "Broadband and connectivity - persons employed by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "29.2",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_EMP",
+                "PC_EMP_PMD",
+                "PC_EMP_PMD1"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "P_IUSE",
+                "P_EMPMD",
+                "P_EMPMD1",
+                "P_EMPMD2",
+                "P_IACC3G"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "PC_EMP_PMD1": "PC_EMP_PMD"
+            },
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "P_EMPMD1": "P_EMPMD",
+                "P_EMPMD2": "P_EMPMD",
+                "P_IACC3G": "P_EMPMD"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 24,
+    "fields": {
+        "code": "isoc_bde15b_p_s",
+        "title": "Broadband and connectivity - persons employed by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "2.2",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_EMP",
+                "PC_EMP_PMD",
+                "PC_EMP_PMD1"
+            ],
+            "indic_is": [
+                "P_IUSE",
+                "P_EMPMD",
+                "P_EMPMD1",
+                "P_EMPMD2",
+                "P_IACC3G"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "PC_EMP_PMD1": "PC_EMP_PMD"
+            },
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "P_EMPMD1": "P_EMPMD",
+                "P_EMPMD2": "P_EMPMD",
+                "P_IACC3G": "P_EMPMD"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 25,
+    "fields": {
+        "code": "isoc_ci_in_en2",
+        "title": "Internet access by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "31.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_RA"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 26,
+    "fields": {
+        "code": "isoc_ci_in_es",
+        "title": "Internet access by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_RA"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 27,
+    "fields": {
+        "code": "isoc_cismtn2",
+        "title": "Social media use by type, internet advertising and NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_ADS",
+                "E_ADS_LOC",
+                "E_ADS_TRK",
+                "E_SM_ANY",
+                "E_SM1_ANY",
+                "E_SM_GE2",
+                "E_SM1_GE2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_SM1_ANY": "E_SM_ANY",
+                "E_SM1_GE2": "E_SM_GE2"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 28,
+    "fields": {
+        "code": "isoc_cismt",
+        "title": "Social media use by type, internet advertising and size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_ADS",
+                "E_ADS_LOC",
+                "E_ADS_TRK",
+                "E_SM_ANY",
+                "E_SM1_ANY",
+                "E_SM_GE2",
+                "E_SM1_GE2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_SM1_ANY": "E_SM_ANY",
+                "E_SM1_GE2": "E_SM_GE2"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 29,
+    "fields": {
+        "code": "isoc_ciwebn2",
+        "title": "Websites and functionalities by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_WEB",
+                "E_WEBF2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 30,
+    "fields": {
+        "code": "isoc_ciweb",
+        "title": "Websites and functionalities by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "29.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_WEB",
+                "E_WEBF2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 31,
+    "fields": {
+        "code": "isoc_ci_it_en2",
+        "title": "Type of connections to the internet by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "29.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_BROAD",
+                "E_FIXBB",
+                "E_ISPDF_GE30",
+                "E_ISPDFOKX",
+                "E_ISPDFOKX_GE100"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_FIXBB": "E_BROAD"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 32,
+    "fields": {
+        "code": "isoc_ci_it_es",
+        "title": "Type of connections to the internet by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_BROAD",
+                "E_FIXBB",
+                "E_ISPDF_GE30",
+                "E_ISPDFOKX",
+                "E_ISPDFOKX_GE100"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_FIXBB": "E_BROAD"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 33,
+    "fields": {
+        "code": "isoc_ec_eseln2",
+        "title": "E-commerce sales of enterprises by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "29.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_AESEU",
+                "E_AWS_CMP",
+                "E_AWS_COWN",
+                "E_AWS_GT1_B2C_GT10WS",
+                "E_ESELL"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 34,
+    "fields": {
+        "code": "isoc_ec_esels",
+        "title": "E-commerce sales of enterprises by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_AESEU",
+                "E_AWS_CMP",
+                "E_AWS_COWN",
+                "E_AWS_GT1_B2C_GT10WS",
+                "E_ESELL"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 35,
+    "fields": {
+        "code": "isoc_eb_bdn2",
+        "title": "Big data analysis by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "N"
+            ],
+            "indic_is": [
+                "E_BD",
+                "E_BDA"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 36,
+    "fields": {
+        "code": "isoc_eb_bd",
+        "title": "Big data analysis by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_BD",
+                "E_BDA"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 37,
+    "fields": {
+        "code": "isoc_cicce_usen2",
+        "title": "Cloud computing services by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_CC",
+                "E_CC1_SI",
+                "E_CC_GE_ME",
+                "E_CC_PCPU"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 38,
+    "fields": {
+        "code": "isoc_cicce_use",
+        "title": "Cloud computing services by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "30.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_CC",
+                "E_CC1_SI",
+                "E_CC_GE_ME",
+                "E_CC_PCPU"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 39,
+    "fields": {
+        "code": "isoc_eb_iipn2",
+        "title": "Integration of internal processes by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_RFAC",
+                "E_RFAC1",
+                "E_RFID",
+                "E_RFID1",
+                "E_RFPSAS1",
+                "E_ERP",
+                "E_ERP1"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_ERP": "E_ERP1",
+                "E_RFAC1": "E_RFAC",
+                "E_RFID1": "E_RFID",
+                "E_RFPSAS1": "E_RFPSAS"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 40,
+    "fields": {
+        "code": "isoc_eb_iip",
+        "title": "Integration of internal processes by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "29.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_RFAC",
+                "E_RFAC1",
+                "E_RFID",
+                "E_RFID1",
+                "E_RFPSAS1",
+                "E_ERP1"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_RFAC1": "E_RFAC",
+                "E_RFID1": "E_RFID",
+                "E_RFPSAS1": "E_RFPSAS"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 41,
+    "fields": {
+        "code": "isoc_bde15dip",
+        "title": "Integration of internal processes by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_SISORP"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 42,
+    "fields": {
+        "code": "isoc_bde15dipn2",
+        "title": "Integration of internal processes by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_SISORP"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 43,
+    "fields": {
+        "code": "isoc_eb_ain2",
+        "title": "Artificial intelligence by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_AI_TANY"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 44,
+    "fields": {
+        "code": "isoc_eb_ai",
+        "title": "Artificial intelligence by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_AI_TANY"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 45,
+    "fields": {
+        "code": "isoc_ske_itspen2",
+        "title": "Enterprises that employ ICT specialists by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "24.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_ITSP2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 46,
+    "fields": {
+        "code": "isoc_ske_itspe",
+        "title": "Enterprises that employ ICT specialists by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "3.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_ITSP2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 47,
+    "fields": {
+        "code": "isoc_ske_itrcrn2",
+        "title": "Enterprises that recruited or tried to recruit ICT specialists by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "28.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_ITSPVAC2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 48,
+    "fields": {
+        "code": "isoc_ske_itrcrs",
+        "title": "Enterprises that recruited or tried to recruit ICT specialists by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "3.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_ITSPVAC2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 49,
+    "fields": {
+        "code": "isoc_ske_fctn2",
+        "title": "Enterprises - ICT functions performed by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "3.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_IT_MEXT"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 50,
+    "fields": {
+        "code": "isoc_ske_fct",
+        "title": "Enterprises - ICT functions performed by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "28.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_IT_MEXT"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 51,
+    "fields": {
+        "code": "isoc_cisce_ran2",
+        "title": "Security policy: measures, risks and staff awareness by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "5.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_SECPOL",
+                "E_SECPOL1",
+                "E_SECPOL2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_SECPOL": "E_SECPOL1",
+                "E_SECPOL2": "E_SECPOL1"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 52,
+    "fields": {
+        "code": "isoc_cisce_ra",
+        "title": "Security policy: measures, risks and staff awareness by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "30.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_SECPOL",
+                "E_SECPOL1",
+                "E_SECPOL2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_SECPOL": "E_SECPOL1",
+                "E_SECPOL2": "E_SECPOL1"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 53,
+    "fields": {
+        "code": "isoc_ske_ittn2",
+        "title": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "28.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_ITT2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 54,
+    "fields": {
+        "code": "isoc_ske_itts",
+        "title": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_version": "3.0",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_ITT2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 55,
+    "fields": {
+        "code": "isoc_cimobe_usen2",
+        "title": "Use of mobile connections to the internet by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_EMPMD1_GT20",
+                "E_EMPMD2_GT20",
+                "E_PMD_APP"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_EMPMD1_GT20": "E_EMPMD_GT20",
+                "E_EMPMD2_GT20": "E_EMPMD_GT20"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 56,
+    "fields": {
+        "code": "isoc_cimobe_use",
+        "title": "Use of mobile connections to the internet by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_EMPMD1_GT20",
+                "E_EMPMD2_GT20",
+                "E_PMD_APP"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_EMPMD1_GT20": "E_EMPMD_GT20",
+                "E_EMPMD2_GT20": "E_EMPMD_GT20"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 57,
+    "fields": {
+        "code": "isoc_bde15b_en2",
+        "title": "Broadband and connectivity - enterprises by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_PMD",
+                "E_EMPMD1_GT0"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_EMPMD1_GT0": "E_PMD"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 58,
+    "fields": {
+        "code": "isoc_bde15b_e",
+        "title": "Broadband and connectivity - enterprises by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_PMD",
+                "E_EMPMD1_GT0"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_EMPMD1_GT0": "E_PMD"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 59,
+    "fields": {
+        "code": "isoc_ec_evaln2",
+        "title": "Value of e-commerce sales by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_TURN"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_AWSVAL_CMP",
+                "E_AWSVAL_COWN",
+                "E_ETURN"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 60,
+    "fields": {
+        "code": "isoc_ec_evals",
+        "title": "Value of e-commerce sales by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_TURN"
+            ],
+            "indic_is": [
+                "E_AWSVAL_CMP",
+                "E_AWSVAL_COWN",
+                "E_ETURN"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 61,
+    "fields": {
+        "code": "isoc_bde15decn2",
+        "title": "E-commerce, customer relation management (CRM) and secure transactions by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT",
+                "PC_TURN",
+                "PC_ENT_AESELL"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "M",
+                "N"
+            ],
+            "indic_is": [
+                "E_CRMAN",
+                "E_EBUY",
+                "E_EBUY2"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "M": "NACE_M",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_EBUY2": "E_EBUY"
+            }
+        },
+        "tags": [
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 62,
+    "fields": {
+        "code": "isoc_bde15dec",
+        "title": "E-commerce, customer relation management (CRM) and secure transactions by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "28.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT",
+                "PC_TURN",
+                "PC_ENT_AESELL"
+            ],
+            "indic_is": [
+                "E_CRMAN",
+                "E_EBUY",
+                "E_EBUY2"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {}
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 63,
+    "fields": {
+        "code": "isoc_bde15discn2",
+        "title": "Integration with customers/suppliers and SCM by NACE",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "nace_r2",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "nace_r2": [
+                "C10-C18",
+                "C19-C23",
+                "C24_C25",
+                "C26-C33",
+                "D_E",
+                "F",
+                "G45",
+                "G46",
+                "G47",
+                "H",
+                "I",
+                "J58-J60",
+                "J61",
+                "J62_J63",
+                "L68",
+                "M69-M74",
+                "N"
+            ],
+            "indic_is": [
+                "E_INV4S_AP",
+                "E_INVSNDAP",
+                "E_INV3SBG_AP_GT0",
+                "E_SISC"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "F": "NACE_F",
+                "H": "NACE_H",
+                "I": "NACE_I",
+                "N": "NACE_N",
+                "D_E": "NACE_D_E",
+                "G45": "NACE_G45",
+                "G46": "NACE_G46",
+                "G47": "NACE_G47",
+                "J61": "NACE_J61",
+                "L68": "NACE_L68",
+                "C10-C18": "NACE_C10-C18",
+                "C19-C23": "NACE_C19-C23",
+                "C24_C25": "NACE_C24_C25",
+                "C26-C33": "NACE_C26-C33",
+                "J58-J60": "NACE_J58-J60",
+                "J62_J63": "NACE_J62_J63",
+                "M69-M74": "NACE_M"
+            },
+            "indicator": {
+                "E_INVSNDAP": "E_INVSND",
+                "E_INV3SBG_AP_GT0": "E_INVSND"
+            }
+        },
+        "tags": [
+            8,
+            6,
+            9
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 64,
+    "fields": {
+        "code": "isoc_bde15disc",
+        "title": "Integration with customers/suppliers and SCM by size class of enterprise",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "27.1",
+        "new_version_available": false,
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "size_emp",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_INV4S_AP",
+                "E_INVSNDAP",
+                "E_INV3SBG_AP_GT0",
+                "E_SISC"
+            ],
+            "size_emp": [
+                "GE250",
+                "GE10",
+                "10-49",
+                "50-249",
+                "10-249"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "GE10": "ent_all_xfin",
+                "10-49": "ent_s_xfin",
+                "GE250": "ent_l_xfin",
+                "10-249": "ent_sm_xfin",
+                "50-249": "ent_m_xfin"
+            },
+            "indicator": {
+                "E_INVSNDAP": "E_INVSND",
+                "E_INV3SBG_AP_GT0": "E_INVSND"
+            }
+        },
+        "tags": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 65,
+    "fields": {
+        "code": "isoc_sks_itsps",
+        "title": "Employed ICT specialists by sex",
+        "remarks": null,
+        "data_last_update": "2022-10-10T09:00:00Z",
+        "datastructure_last_update": "2022-10-10T09:00:00Z",
+        "datastructure_last_version": "22.1",
+        "new_version_available": false,
+        "indicator": "ict_spec3_broad",
+        "indicator_is_surrogate": true,
+        "breakdown": "sex",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "UNIT": [
+                "PC",
+                "THS_PER"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "pc": "pc_emp",
+                "ths_per": "th_ind"
+            },
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            4
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 66,
+    "fields": {
+        "code": "isoc_ec_esels",
+        "title": "E_AWSWW (e_aws/rest_world)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "e_aws",
+        "indicator_is_surrogate": true,
+        "breakdown": "rest_world",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_AWSWW"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            10,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 67,
+    "fields": {
+        "code": "isoc_ec_esels",
+        "title": "E_AWSHM (e_aws/own_country)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "e_aws",
+        "indicator_is_surrogate": true,
+        "breakdown": "own_country",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_AWSHM"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            10,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 68,
+    "fields": {
+        "code": "isoc_ec_esels",
+        "title": "E_AWSEU (e_aws/other_eu_countries)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T10:00:00Z",
+        "datastructure_last_version": "2.1",
+        "new_version_available": false,
+        "indicator": "e_aws",
+        "indicator_is_surrogate": true,
+        "breakdown": "other_eu_countries",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_AWSEU"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            10,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 69,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v1 (vlo)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_vlo",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": 2019,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI_VLO"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 70,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v2-4 (vlo)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_vlo",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": 2020,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI2_VLO",
+                "E_DI3_VLO",
+                "E_DI4_VLO"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 71,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v1 (lo)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_lo",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": 2019,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI_LO"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 72,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v2-4 (lo)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_lo",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": 2020,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI2_LO",
+                "E_DI3_LO",
+                "E_DI4_LO"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 73,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v1 (hi)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_hi",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": 2019,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI_HI"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 74,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v2-4 (hi)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_hi",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": 2020,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI2_HI",
+                "E_DI3_HI",
+                "E_DI4_HI"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 75,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v1 (vhi)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_vhi",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": 2019,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI_VHI"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 76,
+    "fields": {
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v2-4 (vhi)",
+        "remarks": null,
+        "data_last_update": "2023-01-05T10:00:00Z",
+        "datastructure_last_update": "2022-12-08T22:00:00Z",
+        "datastructure_last_version": "12.1",
+        "new_version_available": false,
+        "indicator": "edigint2015",
+        "indicator_is_surrogate": true,
+        "breakdown": "e_di_vhi",
+        "breakdown_is_surrogate": true,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": 2020,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_ENT"
+            ],
+            "indic_is": [
+                "E_DI2_VHI",
+                "E_DI3_VHI",
+                "E_DI4_VHI"
+            ],
+            "size_emp": [
+                "GE10"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            11,
+            6
+        ]
     }
 }
 ]

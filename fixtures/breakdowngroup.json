@@ -339,12 +339,12 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
+        "updated_at": "2023-03-28T13:21:51.572Z",
         "display_order": 2,
         "code": "desi",
         "label": "Main Dimensions of the DESI",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
@@ -873,6 +873,18 @@
         "label": "Working patterns and conditions",
         "alt_label": "Working patterns and conditions",
         "definition": "Breakdown by Working patterns(full/ part time) and conditions (contract duration)"
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2023-04-17T09:22:42.857Z",
+        "updated_at": "2023-04-17T10:43:15.987Z",
+        "display_order": 100001,
+        "code": "nace_r2_17",
+        "label": "Economic sectors (17 NACE groups)",
+        "alt_label": "Economic sectors (17 NACE groups)",
+        "definition": "Breakdown by 17 economic sectors (NACE Rev.2)"
     }
 }
 ]

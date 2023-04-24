@@ -4570,5 +4570,29 @@
             "wid"
         ]
     }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1127,
+        "indicator": [
+            "i_dsk_i_b"
+        ],
+        "group": [
+            "ict-skills"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1128,
+        "indicator": [
+            "i_dsk_c_b"
+        ],
+        "group": [
+            "ict-skills"
+        ]
+    }
 }
 ]

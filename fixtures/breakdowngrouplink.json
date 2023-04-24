@@ -4258,5 +4258,209 @@
             "byage6classes"
         ]
     }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 1,
+        "breakdown": [
+            "nace_c10-c18"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 2,
+        "breakdown": [
+            "nace_c19-c23"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 3,
+        "breakdown": [
+            "nace_c24_c25"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 4,
+        "breakdown": [
+            "nace_c26-c33"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 5,
+        "breakdown": [
+            "nace_d_e"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 6,
+        "breakdown": [
+            "nace_f"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 7,
+        "breakdown": [
+            "nace_g45"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 8,
+        "breakdown": [
+            "nace_g46"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 9,
+        "breakdown": [
+            "nace_g47"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 10,
+        "breakdown": [
+            "nace_h"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 11,
+        "breakdown": [
+            "nace_i"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 12,
+        "breakdown": [
+            "nace_j58-j60"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 13,
+        "breakdown": [
+            "nace_j61"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 14,
+        "breakdown": [
+            "nace_j62_j63"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 15,
+        "breakdown": [
+            "nace_l68"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 16,
+        "breakdown": [
+            "nace_m"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 18,
+        "breakdown": [
+            "nace_n"
+        ],
+        "group": [
+            "nace_r2_17"
+        ]
+    }
 }
 ]
