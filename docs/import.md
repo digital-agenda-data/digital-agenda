@@ -128,3 +128,13 @@ For breakdowns, validation of the group can be done versus the breakdown groups 
 In both cases, warnings are issued for unknown references, and those association records are **not** included in the
 links fixture.
 
+## Updating fixtures
+
+Fixtures can be exported via the admin UI, as well as bulk export back into the "initial fixtures" with the following
+command:
+
+```shell
+./manage.py load_initial_fixtures --dump
+```
+
+All initial fixtures will be dumped into the [fixtures](../fixtures) folder. 
