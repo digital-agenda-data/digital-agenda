@@ -86,6 +86,9 @@ class ImportConfig(models.Model):
         help_text="Assigned tags used for filtering and searching; has no impact on the data import",
         blank=True,
     )
+    remarks = models.TextField(
+        blank=True, null=True, help_text="Additional notes/remarks"
+    )
 
     data_last_update = models.DateTimeField(
         null=True,

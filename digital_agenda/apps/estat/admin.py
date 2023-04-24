@@ -1,5 +1,6 @@
 from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
+from django.contrib.admin import EmptyFieldListFilter
 from django.db.models import Count
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -72,10 +73,11 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "latest_import",
         "title",
         "tag_codes",
+        "has_remarks",
         "new_version_available",
     )
     search_fields = ("code", "title", "indicator", "tags__code")
-    list_filter = ("tags", "new_version_available")
+    list_filter = ("tags", ("remarks", EmptyFieldListFilter), "new_version_available")
     readonly_fields = (
         "num_facts",
         "latest_import",
@@ -90,7 +92,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
-        (None, {"fields": ["code", "title", "tags"]}),
+        (None, {"fields": ["code", "title", "tags", "remarks"]}),
         (
             "Dimensions",
             {
@@ -192,6 +194,10 @@ class ImportConfigAdmin(admin.ModelAdmin):
             return "-"
         url = f"https://ec.europa.eu/eurostat/databrowser/view/{obj.code}/default/table?lang=en"
         return mark_safe(f'<a href="{url}" target="_blank">{url}</a>')
+
+    @admin.display(description="Has Remarks", boolean=True)
+    def has_remarks(self, obj):
+        return bool(obj.remarks)
 
     def get_actions(self, request):
         actions = super().get_actions(request)
