@@ -46,7 +46,7 @@ EU27_2020 = [
 
 class TestImporterSuccess(TestCase):
     config = None
-    fixtures = ["geogroup", "test/importconfig.json"]
+    fixtures = ["test/geogroup", "test/importconfig.json"]
 
     @classmethod
     def setUpClass(cls):
@@ -135,7 +135,7 @@ class TestImporterSuccess(TestCase):
 
 
 class TestImporter(TestCase):
-    fixtures = ["geogroup", "test/importconfig.json"]
+    fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def test_download(self):
         config = ImportConfig.objects.first()
@@ -238,7 +238,7 @@ class TestImporter(TestCase):
 
 
 class TestImporterErrors(TestCase):
-    fixtures = ["geogroup", "test/importconfig.json"]
+    fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def setUp(self):
         super().setUp()

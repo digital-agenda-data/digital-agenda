@@ -15,7 +15,7 @@ THE_FUTURE = datetime.datetime(5542, 1, 1, tzinfo=UTC)
 
 
 class TestCheckUpdates(TestCase):
-    fixtures = ["geogroup", "test/importconfig.json"]
+    fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def setUp(self):
         super().setUp()
@@ -57,7 +57,7 @@ class TestCheckUpdates(TestCase):
 
 
 class TestSendAlert(TestCase):
-    fixtures = ["geogroup", "test/importconfig.json"]
+    fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def setUp(self):
         super().setUp()
@@ -82,7 +82,7 @@ class TestSendAlert(TestCase):
 
 
 class TestCheckAll(TestCase):
-    fixtures = ["geogroup", "test/importconfig.json"]
+    fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def setUp(self):
         super().setUp()
