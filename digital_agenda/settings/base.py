@@ -73,6 +73,7 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "adminactions",
     "django_rq",
     "django_task",
     "adminsortable2",

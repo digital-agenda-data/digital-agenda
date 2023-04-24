@@ -14,6 +14,12 @@ from drf_spectacular.views import (
 
 from digital_agenda.apps.shortner.views import ChartRedirectView
 
+from django.contrib.admin import site
+import adminactions.actions as actions
+
+# register all adminactions
+actions.add_to_site(site)
+
 api_urlpatterns = [
     path("", include("digital_agenda.apps.core.urls")),
     path("", include("digital_agenda.apps.charts.urls")),
@@ -37,10 +43,9 @@ urlpatterns = [
     path("ht/", include("health_check.urls")),
     path("django-rq/", include("django_rq.urls")),
     path("django_task/", include("django_task.urls", namespace="django_task")),
+    path("admin/adminactions/", include("adminactions.urls")),
     path(
-        "admin/cas/login",
-        django_cas_ng.views.LoginView.as_view(),
-        name="cas_ng_login",
+        "admin/cas/login", django_cas_ng.views.LoginView.as_view(), name="cas_ng_login"
     ),
     path(
         "admin/cas/logout",
