@@ -92,17 +92,16 @@ class BreakdownGroupAdmin(SortableDimensionAdmin):
     list_filter = [AutocompleteFilterFactory("breakdown", "breakdowns")]
 
 
-@admin.register(Breakdown)
-class BreakdownAdmin(HasFactsAdminMixIn, DimensionAdmin):
+class IndicatorsWithFactsMixIn:
+    facts_filter: str = None
     fields = ("code", "label", "alt_label", "definition", "indicators_with_facts")
     readonly_fields = ("indicators_with_facts",)
-    facts_filter = "breakdown"
 
     @admin.display(description="Indicators with facts")
     def indicators_with_facts(self, obj):
         result = []
         for fact in (
-            Fact.objects.filter(breakdown=obj)
+            Fact.objects.filter((self.facts_filter, obj))
             .select_related("indicator")
             .order_by("indicator__code")
             .distinct("indicator__code")
@@ -115,8 +114,13 @@ class BreakdownAdmin(HasFactsAdminMixIn, DimensionAdmin):
         return mark_safe(f"<ul>{''.join(result)}</ul>")
 
 
+@admin.register(Breakdown)
+class BreakdownAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin):
+    facts_filter = "breakdown"
+
+
 @admin.register(Unit)
-class UnitAdmin(HasFactsAdminMixIn, DimensionAdmin):
+class UnitAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin):
     facts_filter = "unit"
 
 
