@@ -129,10 +129,11 @@ export function getUnitDisplay(value, unit) {
   }
 
   if (value < 100) {
-    // Round to at most 2 significant digits for small values.
+    // No rounding for smaller values
     numberFormat = {
       notation: "standard",
-      maximumSignificantDigits: 2,
+      // We're still limited by 64bit float arithmetics rules, tho
+      maximumSignificantDigits: 17,
     };
   } else if (value < Math.pow(10, 6)) {
     // If less than 1 million, round to integer and include thousands
@@ -143,7 +144,7 @@ export function getUnitDisplay(value, unit) {
       useGrouping: "min2",
     };
   } else {
-    // Show compact version for anything bigger, with 2 fixed decimals
+    // Show the compact version for anything bigger, with 2 fixed decimals
     // E.g. (24.20M)
     numberFormat = {
       notation: "compact",

@@ -18,7 +18,7 @@ describeResponsive("Check Chart", () => {
       tooltip: [
         "European Union",
         "Human Capital",
-        "18 weighted score (0 to 100)",
+        "18.299184242424243 weighted score (0 to 100)",
       ],
       definitions: [
         "Indicator: Digital Economy and Society Index",

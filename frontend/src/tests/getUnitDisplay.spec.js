@@ -11,11 +11,12 @@ function checkDisplayUnit(value, valueStr) {
 // We're using the default, since there is no browser support for other version at this time.
 //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#rounding_modes
 test("displayUnit", () => {
-  checkDisplayUnit(0.124, "0.12");
-  checkDisplayUnit(0.1249, "0.12");
-  checkDisplayUnit(0.125, "0.13");
-  checkDisplayUnit(1.234, "1.2");
-  checkDisplayUnit(12.34, "12");
+  checkDisplayUnit(0.124, "0.124");
+  checkDisplayUnit(0.1249, "0.1249");
+  checkDisplayUnit(0.125, "0.125");
+  checkDisplayUnit(1.234, "1.234");
+  checkDisplayUnit(12.34, "12.34");
+  checkDisplayUnit(12.3456789, "12.3456789");
   checkDisplayUnit(123.4, "123");
 
   checkDisplayUnit(1234.1, "1,234");
