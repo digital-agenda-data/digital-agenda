@@ -1,0 +1,3973 @@
+[
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c10_12",
+        "label": "Beverages, food and tobacco products ",
+        "alt_label": "Beverages, food and tobacco",
+        "definition": "Nace rev.2 sector c10_12 - Manufacture of beverages, food and tobacco products"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c10_18",
+        "label": "Manufacture: food, beverages, tobacco, textile, leather, wood, paper; publishing and printing 10+",
+        "alt_label": "Manufacture: food, beverages, tobacco, textile, leather, wood, paper; publishing and printing 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c10_33",
+        "label": "Manufacturing sector",
+        "alt_label": "Manufacturing sector",
+        "definition": "Nace rev.2 c10_33 - Manufacturing"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c10_s951_xk",
+        "label": "All enterprises, without financial sector (10 persons employed or more)",
+        "alt_label": "All enterprises",
+        "definition": "Eurostat definition of Nace2 codes: 10_C10_S951_XK"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c13_15",
+        "label": "Textiles, wearing apparel, leather and related products ",
+        "alt_label": "Textiles, leather, etc",
+        "definition": "Nace rev.2 c13_15 - Manufacture of textiles, wearing apparel, leather and related products"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c16_18",
+        "label": "Wood & cork, Paper, printing & reproduction of recorded media",
+        "alt_label": "Wood, Paper, etc",
+        "definition": "Nace rev.2 c16_18 - Manufacture of wood & products of wood & cork, except furniture; articles of straw & plaiting materials; paper & paper products; printing & reproduction of recorded media"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c19_23",
+        "label": "Manufacture: coke, petroleum, chemical, plastics, other non-metallic mineral products 10+",
+        "alt_label": "Manufacture: coke, petroleum, chemical, plastics, other non-metallic mineral products 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c24_25",
+        "label": "Manufacture: basic metals & fabricated metal products excluding machines & equipments 10+",
+        "alt_label": "Manufacture: basic metals & fabricated metal products excluding machines & equipments 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c26",
+        "label": "Computer, electronic and optical products ",
+        "alt_label": "Computer, electronic and optical",
+        "definition": "Nace rev.2 c26 - Manufacture of computer, electronic and optical products"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c26_33",
+        "label": "Manufacture: computers, electric & optical, motor vehicles, transport equipment, furniture, repair 10+",
+        "alt_label": "Manufacture: computers, electric & optical, motor vehicles, transport equipment, furniture, repair 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c27_28",
+        "label": "Electrical equipment, machinery and equipment n.e.c. ",
+        "alt_label": "Electrical equipment & machinery",
+        "definition": "Nace rev.2 c27_28 - Manufacture of electrical equipment, machinery and equipment n.e.c."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c29_30",
+        "label": "Motor vehicles, trailers, other transport equipment ",
+        "alt_label": "Motor vehicles & transport equipment",
+        "definition": "Nace rev.2 c29_30 - Manufacture of motor vehicles, trailers and semi-trailers, other transport equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_c31_33",
+        "label": "Furniture; repair and installation of machinery",
+        "alt_label": "Furniture; Repair of machinery",
+        "definition": "Nace rev.2 c31_33 - Manufacture of furniture and other manufacturing; repair and installation of machinery and equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_d35_e39",
+        "label": "Electricity, gas, steam, air conditioning; water supply, sewerage, waste management&remediation 10+",
+        "alt_label": "Electricity, gas, steam, air conditioning; water supply, sewerage, waste management&remediation 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_f41_43",
+        "label": "Construction 10+",
+        "alt_label": "Construction 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_g45",
+        "label": "Trade of motor vehicles and motorcycles 10+",
+        "alt_label": "Trade of motor vehicles and motorcycles 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_g46",
+        "label": "Wholesale trade, except of motor vehicles and motorcycles 10+",
+        "alt_label": "Wholesale trade, except of motor vehicles and motorcycles 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_g47",
+        "label": "Retail trade, except of motor vehicles and motorcycles 10+",
+        "alt_label": "Retail trade, except of motor vehicles and motorcycles 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_h49_53",
+        "label": "Transport and storage 10+",
+        "alt_label": "Transport and storage 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_i55_56",
+        "label": "Accommodation and food service activities 10+",
+        "alt_label": "Accommodation and food service activities 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_j58_60",
+        "label": "Publishing activities; films & television, sound & music publishing; broadcasting 10+",
+        "alt_label": "Publishing activities; films & television, sound & music publishing; broadcasting 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_j61",
+        "label": "Telecommunications 10+",
+        "alt_label": "Telecommunications 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_j62_63",
+        "label": "Computer programming, consultancy and related activities, information services 10+",
+        "alt_label": "Computer programming, consultancy and related activities, information services 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_l68",
+        "label": "Real estate activities 10+",
+        "alt_label": "Real estate activities 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_m69_74",
+        "label": "Professional, scientific and technical activities 10+",
+        "alt_label": "Professional, scientific and technical activities 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_n77_82",
+        "label": "Administrative and support service activities 10+",
+        "alt_label": "Administrative and support service activities 10+",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "10_s951",
+        "label": "Repair of computers and communication equipment",
+        "alt_label": "Repair of computers and communication equipment",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "1500_mhz",
+        "label": "1500 MHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "1800_mhz",
+        "label": "1800 MHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "1m_websites",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "From the list of 1 million most visited websites, provided by Alexa"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "261",
+        "label": "Manufacture of electronic components and boards",
+        "alt_label": "Manufacture of electronic components and boards",
+        "definition": "NACE2 261 Manufacture of electronic components and boards"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "261to264",
+        "label": "ICT manufacturing industries",
+        "alt_label": "ICT manufacturing industries",
+        "definition": "NACE2 261 to 264 - 261 Manufacture of electronic components and boards, 262 Manufacture of computers and peripheral equipment,  263 Manufacture of communication equipment, 264 Manufacture of consumer electronics"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "261to264_582_61_62_631_951",
+        "label": "ICT industries total (6 subsectors)",
+        "alt_label": "ICT industries total (6 subsectors)",
+        "definition": "NACE2 261 to 264, 582,61, 62, 631, 951 ; 261 Manufacture of electronic components and boards, 262 Manufacture of computers and peripheral equipment,  263 Manufacture of communication equipment, 264 Manufacture of consumer electronics; 582 Software publishing; 61 Telecomunications; 62 Computer programing, consultancy and related activities; 631 Data processing, hosting and related activities, web portals; 951 Repair of computers and communication equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "262",
+        "label": "Manufacture of computers and peripheral equipment",
+        "alt_label": "Manufacture of computers and peripheral equipment",
+        "definition": "NACE2 262 Manufacture of computers and peripheral equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "263",
+        "label": "Manufacture of communication equipment",
+        "alt_label": "Manufacture of communication equipment",
+        "definition": "NACE2 263 Manufacture of communication equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "264",
+        "label": "Manufacture of consumer electronics",
+        "alt_label": "Manufacture of consumer electronics",
+        "definition": "NACE2 264 Manufacture of consumer electronics"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "2_6_ghz",
+        "label": "2.6 GHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "2_ghz_paired",
+        "label": "2 GHz paired",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "3_4_ghz",
+        "label": "3.4-3.6 GHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "3_6_ghz",
+        "label": "3.6-3.8 GHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "582_62_631_951",
+        "label": "Computer and related activities",
+        "alt_label": "Computer and related activities",
+        "definition": "NACE2 582, 62, 631, 951\nComputer and related activities inc. Software publishing; Computer programing, consultancy and related activities; Data processing, hosting and related activities, web portals; Repair of computers and communication equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "5g_pb",
+        "label": "5G pioneer bands",
+        "alt_label": "5G pioneer bands",
+        "definition": "European Comission services"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "61",
+        "label": "Telecommunications",
+        "alt_label": "Telecommunications",
+        "definition": "NACE2 61 Telecommunications"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "61_582_62_631_951",
+        "label": "ICT services industries",
+        "alt_label": "ICT services industries",
+        "definition": "NACE2 582,61, 62, 631, 951\n582 Software publishing; 61 Telecomunications; 62 Computer programing, consultancy and related activities; 631 Data processing, hosting and related activities, web portals; 951 Repair of computers and communication equipment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "700_mhz",
+        "label": "700 MHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "800_mhz",
+        "label": "800 MHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "900_mhz",
+        "label": "900 MHz",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "all_dch",
+        "label": "Household with dependent children",
+        "alt_label": "with dependent childrens",
+        "definition": "dependent childrens are under 16"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "all_egov_le",
+        "label": "All Life Events",
+        "alt_label": "All Life Events",
+        "definition": "The following life events are included in the scope: Regular business operations and Business Start-up, Moving, Owning and driving a car, Starting a small claims procedure, Family, Career and Studying"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "all_ndch",
+        "label": "Household without dependent children",
+        "alt_label": "without dependent childrens",
+        "definition": "dependent childrens are under 16"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "authentic_sources",
+        "label": "Authentic sources",
+        "alt_label": "Authentic sources",
+        "definition": "Base registries used by governments to automatically validate or fetch data relating to citizens or businesses. It facilitates prefilling of online forms and the implementation of the ‘once-only principle’, which implies that governments re-use data to deliver services automatically."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "auto_service",
+        "label": "Automated service",
+        "alt_label": "Automated service",
+        "definition": "eGovernment automated service"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "bus_startup",
+        "label": "Business Start Up Life Event",
+        "alt_label": "Business Start Up",
+        "definition": "eGovernment services related to the life event: Business Start Up"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cable",
+        "label": "Cable modem",
+        "alt_label": "Cable modem",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cb_eu_for",
+        "label": "Individuals who are born in another EU Member State",
+        "alt_label": "Another EU state",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cb_ext_eu",
+        "label": "Individuals who are born in non-EU country",
+        "alt_label": "Non-EU country",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cb_for",
+        "label": "Individuals who are foreign-born",
+        "alt_label": "Foreign-born",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cb_nat",
+        "label": "Individuals who are native-born",
+        "alt_label": "Native",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cc_eu_for",
+        "label": "Nationals of another EU-Member State",
+        "alt_label": "Nationals another EU",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cc_ext_eu",
+        "label": "Nationals of non-EU country",
+        "alt_label": "Nationals non-EU",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cc_for",
+        "label": "Non-nationals",
+        "alt_label": "Non-nationals",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cc_nat",
+        "label": "Nationals",
+        "alt_label": "Nationals",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_a",
+        "label": "Directorate A, DG CONNECT",
+        "alt_label": "Directorate A",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_all",
+        "label": "DG CONNECT",
+        "alt_label": "DG CONNECT",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_b",
+        "label": "Directorate B, DG CONNECT",
+        "alt_label": "Directorate B",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_c",
+        "label": "Directorate C, DG CONNECT",
+        "alt_label": "Directorate C",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_d",
+        "label": "Directorate D, DG CONNECT",
+        "alt_label": "Directorate D",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_e",
+        "label": "Directorate E, DG CONNECT",
+        "alt_label": "Directorate E",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_f",
+        "label": "Directorate F, DG CONNECT",
+        "alt_label": "Directorate F",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_g",
+        "label": "Directorate G, DG CONNECT",
+        "alt_label": "Directorate G",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_h",
+        "label": "Directorate H, DG CONNECT",
+        "alt_label": "Directorate H",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cnect_r",
+        "label": "Directorate R, DG CONNECT",
+        "alt_label": "Directorate R",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "csk_hi",
+        "label": "Individuals with high computer skills",
+        "alt_label": "high computer skills",
+        "definition": "Individuals having ever carried out at least 5 of the following 6 activities: coping or moving a file or folder, using copy and paste tools, using basic arithmetic formula in a spreadsheet, compressing (or zipping) files, connecting and installing new devices, writing a computer program using a specialised programming language. Only those having ever used a computer were proposed the question."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "csk_lo",
+        "label": "Individuals with low computer skills",
+        "alt_label": "low computer skills",
+        "definition": "Individuals having ever carried out only 1 or 2 of the following 6 activities: coping or moving a file or folder, using copy and paste tools, using basic arithmetic formula in a spreadsheet, compressing (or zipping) files, connecting and installing new devices, writing a computer program using a specialised programming language. Only those having ever used a computer were proposed the question."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "csk_me",
+        "label": "Individuals with medium computer skills",
+        "alt_label": "medium computer skills",
+        "definition": "Individuals having ever carried out 3 or 4 of the following 6 activities: coping or moving a file or folder, using copy and paste tools, using basic arithmetic formula in a spreadsheet, compressing (or zipping) files, connecting and installing new devices, writing a computer program using a specialised programming language. Only those having ever used a computer were proposed the question."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "cskx",
+        "label": "Individuals with no computer skills",
+        "alt_label": "no computer skills",
+        "definition": "Individuals having ever used a computer, but having carried out none of the following 6 activities: coping or moving a file or folder, using copy and paste tools, using basic arithmetic formula in a spreadsheet, compressing (or zipping) files, connecting and installing new devices, writing a computer program using a specialised programming language. Only those having ever used a computer were proposed the question."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_4g",
+        "label": "4G coverage",
+        "alt_label": "4G coverage",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_5g",
+        "label": "5G readiness",
+        "alt_label": "5G readiness",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_5gc",
+        "label": "5G coverage",
+        "alt_label": "5G coverage",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_bbpi",
+        "label": "Broadband price index",
+        "alt_label": "Broadband price index",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_c_bbpi",
+        "label": "Broadband price index",
+        "alt_label": "Broadband price index",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_c_fbbc",
+        "label": "Fixed broadband coverage",
+        "alt_label": "Fixed broadband coverage",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_c_fbbtc",
+        "label": "Fixed broadband take-up",
+        "alt_label": "Fixed broadband take-up",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_c_mbb",
+        "label": "Mobile broadband",
+        "alt_label": "Mobile broadband",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_conn",
+        "label": "Connectivity",
+        "alt_label": "Connectivity",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps",
+        "label": "Digital Public Services",
+        "alt_label": "Digital Public Services",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps_egov",
+        "label": "e-Government",
+        "alt_label": "e-Government",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps_egovuser",
+        "label": "e-Government Users",
+        "alt_label": "e-Government Users",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps_opendata",
+        "label": "Open Data",
+        "alt_label": "Open Data",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps_prefform",
+        "label": "Pre-filled Forms",
+        "alt_label": "Pre-filled Forms",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps_psbiz",
+        "label": "Digital public services for businesses",
+        "alt_label": "Digital public services for businesses",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_dps_pscit",
+        "label": "Digital public services for citizens",
+        "alt_label": "Digital public services for citizens",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_fbbc",
+        "label": "Fast BB (NGA) coverage",
+        "alt_label": "Fast broadband (NGA) coverage",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_fbbtc",
+        "label": "Overall fixed BB take-up",
+        "alt_label": "Overall fixed broadband take-up",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_gbpstc",
+        "label": "At least 1 Gbps take-up",
+        "alt_label": "At least 1 Gbps take-up",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc",
+        "label": "Human Capital",
+        "alt_label": "Human Capital",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_abds",
+        "label": "Above basic digital skills",
+        "alt_label": "Above basic digital skills",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_abss",
+        "label": "At least basic software skills",
+        "alt_label": "At least basic software skills",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_asd",
+        "label": "Advanced Skills and Development",
+        "alt_label": "Advanced Skills and Development",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_bds",
+        "label": "At least Basic Digital Skills",
+        "alt_label": "At least Basic Digital Skills",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_bsu",
+        "label": "Internet User Skills",
+        "alt_label": "Internet User Skills",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_entict",
+        "label": "Enterprises providing ICT training ",
+        "alt_label": "Enterprises providing ICT training",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_fictspec",
+        "label": "Female ICT specialists",
+        "alt_label": "Female ICT specialists",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_ictg",
+        "label": "ICT graduates",
+        "alt_label": "ICT graduates",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_hc_ictspec",
+        "label": "ICT Specialists",
+        "alt_label": "ICT Specialists",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt",
+        "label": "Integration of Digital Technology",
+        "alt_label": "Integration of Digital Technology",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_ai",
+        "label": "Artificial intelligence",
+        "alt_label": "AI",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_bigdat",
+        "label": "Big data",
+        "alt_label": "Big data",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_cloud",
+        "label": "Cloud",
+        "alt_label": "Cloud",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_di",
+        "label": "Digital intensity",
+        "alt_label": "Digital intensity",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_dtb",
+        "label": "Digital technologies for businesses",
+        "alt_label": "Digital technologies for businesses",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_ecomm",
+        "label": "e-Commerce",
+        "alt_label": "e-Commerce",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_ecomturn",
+        "label": "e-Commerce turnover",
+        "alt_label": "e-Commerce turnover",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_einv",
+        "label": "e-Invoices",
+        "alt_label": "e-Invoices",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_eis",
+        "label": "Electronic Information Sharing",
+        "alt_label": "Electronic Information Sharing",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_ictsust",
+        "label": "ICT for environmental sustainability",
+        "alt_label": "ICT for environmental sustainability",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_sellcb",
+        "label": "Selling online cross-border",
+        "alt_label": "Selling online cross-border",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_smedi",
+        "label": "SMEs with at least a basic level of digital intensity",
+        "alt_label": "SMEs with at least a basic level of digital intensity",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_smeso",
+        "label": "SMEs selling online",
+        "alt_label": "SMEs selling online",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_idt_socmed",
+        "label": "Social media",
+        "alt_label": "Social media",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_mbbtu",
+        "label": "Mobile BB take-up",
+        "alt_label": "Mobile broadband take-up",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_total",
+        "label": "Aggregate score",
+        "alt_label": "Aggregate score",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_ufbbtu",
+        "label": "At least 100 Mbps fixed BB take-up",
+        "alt_label": "At least 100 Mbps fixed broadband take-up",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "desi_vhcnc",
+        "label": "Fixed Very High Capacity Network (VHCN) coverage",
+        "alt_label": "Fixed Very High Capacity Network (VHCN) coverage",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "digital_post",
+        "label": "Digital Post",
+        "alt_label": "Digital Post",
+        "definition": "Public administrations should allow citizens to receive mail in a digital format and help reduce paper mailing. Governments should provide the possibility to communicate electronically-only with citizens or entrepreneurs through personal mailboxes or other digital post solutions. This represents a novelty of the 2016 measurement."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ds_a_basic",
+        "label": "level: Above Basic",
+        "alt_label": "level: Above Basic",
+        "definition": "Individual having \"above basic\" skills in ALL the four Digital Competence domains included in the index: information, communication, content-creation and problem-solving."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ds_b_basic",
+        "label": "level: Low",
+        "alt_label": "level: Low",
+        "definition": "Individual \"without basic\" skills in AT LEAST ONE of the four Digital Competence domains included in the index: information, communication, content-creation and problem-solving."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ds_basic",
+        "label": "level: Basic",
+        "alt_label": "level: Basic",
+        "definition": "Individual having at least \"basic\" skills in ALL the four Digital Competence domains included in the index: information, communication, content-creation and problem-solving, but no more than three above basic."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ds_no",
+        "label": "No digital skills ",
+        "alt_label": "No",
+        "definition": "Individuals that have not used internet during last 3 months."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "dsk_ab",
+        "label": "level: Above Basic",
+        "alt_label": "level: Above Basic",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "dsk_b",
+        "label": "level: Basic",
+        "alt_label": "level: Basic",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "dsk_x",
+        "label": "level: none",
+        "alt_label": "level: none",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_cc_hi",
+        "label": "High sophistication",
+        "alt_label": "High sophistication",
+        "definition": "Usage of any of the following Cloud computing services: accounting software applications, CRM software, computing power."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_cc_lo",
+        "label": "Low sophistication",
+        "alt_label": "Low sophistication",
+        "definition": "Usage of Cloud computing services for e-mail, office software, storage of files, but none of the other medium-high sophistication services proposed in the questionnaire."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_cc_me",
+        "label": "Medium sophistication",
+        "alt_label": "Medium sophistication",
+        "definition": "Usage of Cloud computing services for hosting of the enterprise's database, but none of the high sophistication services proposed in the questionnaire: accounting software applications, CRM software, computing power. Include other non specified services."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_di_hi",
+        "label": "High (7-9)",
+        "alt_label": "High (7-9)",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_di_lo",
+        "label": "Low (4-6)",
+        "alt_label": "Low (4-6)",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_di_vhi",
+        "label": "Very High (10-12)",
+        "alt_label": "Very High (10-12)",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_di_vlo",
+        "label": "Very Low (0-3)",
+        "alt_label": "Very Low (0-3)",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1a_uc_oa",
+        "label": "1.1 User centricity - Online availability",
+        "alt_label": "1.1 User centricity - Online availability",
+        "definition": "eGovernment services related to User centricity - Online availability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1a_ucg_oa",
+        "label": "1a User Centric Government - Online availability",
+        "alt_label": "1a User Centric Government - Online availability",
+        "definition": "eGovernment services related to User Centric Government - Online availability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1b_uc_mf",
+        "label": "1.2 User centricity - Mobile friendliness",
+        "alt_label": "1.2 User centricity - Mobile friendliness",
+        "definition": "eGovernment services related to User centricity - Mobile friendliness"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1b_ucg_us",
+        "label": "1b User Centric Government - Usability",
+        "alt_label": "1b User Centric Government - Usability",
+        "definition": "eGovernment services related to User Centric Government - Usability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1c_uc_us",
+        "label": "1.3 User centricity - User support",
+        "alt_label": "1.3 User centricity - User support",
+        "definition": "eGovernment services related to User centricity - User support"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1c_ucg_mf",
+        "label": "1c User Centric Government - Mobile Friendliness",
+        "alt_label": "1c User Centric Government - Mobile Friendliness",
+        "definition": "eGovernment services related to User Centric Government - Mobile Friendliness"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1d_ucg_eu",
+        "label": "1d User Centric Government - Ease of Use",
+        "alt_label": "1d User Centric Government - Ease of Use",
+        "definition": "eGovernment services related to User Centric Government - Ease of Use"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_1e_ucg_su",
+        "label": "1e User Centric Government - Speed of Use",
+        "alt_label": "1e User Centric Government - Speed of Use",
+        "definition": "eGovernment services related to User Centric Government - Speed of Use"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2a_tg_sd",
+        "label": "2a Transparent Government - Service delivery",
+        "alt_label": "2a Transparent Government - Service delivery",
+        "definition": "eGovernment services related to Transparent Government - Service delivery"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2a_tr_sd",
+        "label": "2.1 Transparency - Transparency of service delivery",
+        "alt_label": "2.1 Transparency - Transparency of service delivery",
+        "definition": "eGovernment services related to Transparency - Transparency of service delivery"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2b_tg_po",
+        "label": "2b Transparent Government - Public organisations",
+        "alt_label": "2b Transparent Government - Public organisations",
+        "definition": "eGovernment services related to Transparent Government - Public organisations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2c_tg_pd",
+        "label": "2c Transparent Government - Personal data",
+        "alt_label": "2c Transparent Government - Personal data",
+        "definition": "eGovernment services related to Transparent Government - Personal data"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2c_tr_pd",
+        "label": "2.2 Transparency - Transparency of personal data",
+        "alt_label": "2.2 Transparency - Transparency of personal data",
+        "definition": "eGovernment services related to Transparency - Transparency of personal data"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2c_tr_sd",
+        "label": "2.3 Transparency - Transparency of service design",
+        "alt_label": "2.3 Transparency - Transparency of service design",
+        "definition": "eGovernment services related to Transparency - Transparency of service design"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_2x_tr_po",
+        "label": "2.X Transparency - Transparency of public organisations (old indicator)",
+        "alt_label": "2.X Transparency - Transparency of public organisations (old indicator)",
+        "definition": "Transparency - Transparency of public organisations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3a_cm_oa",
+        "label": "3a Citizen Mobility - Online availability",
+        "alt_label": "3a Citizen Mobility - Online availability",
+        "definition": "eGovernment services related to Citizen Mobility - Online availability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3a_ke_eid",
+        "label": "3.1 Key enablers - eID",
+        "alt_label": "3.1 Key enablers - eID",
+        "definition": "eGovernment services related to Key enablers - eID"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3b_cm_us",
+        "label": "3b Citizen Mobility - Usability",
+        "alt_label": "3b Citizen Mobility - Usability",
+        "definition": "eGovernment services related to Citizen Mobility - Usability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3b_ke_edoc",
+        "label": "3.2 Key enabler - eDocuments",
+        "alt_label": "3.2 Key enabler - eDocuments",
+        "definition": "eGovernment services related to Key enabler - eDocuments"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3c_cm_eidcb",
+        "label": "3c Citizen Mobility - eID Cross Borders",
+        "alt_label": "3c Citizen Mobility - eID Cross Borders",
+        "definition": "eGovernment services related to Citizen Mobility - eID Cross Borders"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3c_ke_as",
+        "label": "3.3 Key enabler - Authentic sources",
+        "alt_label": "3.3 Key enabler - Authentic sources",
+        "definition": "eGovernment services related to Key enabler - Authentic sources"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3d_cm_edoccb",
+        "label": "3d Citizen Mobility - eDocuments Cross Borders",
+        "alt_label": "3d Citizen Mobility - eDocuments Cross Borders",
+        "definition": "eGovernment services related to Citizen Mobility - eDocuments Cross Borders"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3d_ke_dp",
+        "label": "3.4 Key enabler - Digital Post",
+        "alt_label": "3.4 Key enabler - Digital Post",
+        "definition": "eGovernment services related to Key enabler - Digital Post"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3e_cm_eu",
+        "label": "3e Citizen Mobility - Ease of Use",
+        "alt_label": "3e Citizen Mobility - Ease of Use",
+        "definition": "eGovernment services related to Citizen Mobility - Ease of Use"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_3f_cm_su",
+        "label": "3f Citizen Mobility - Speed of Use",
+        "alt_label": "3f Citizen Mobility - Speed of Use",
+        "definition": "eGovernment services related to Citizen Mobility - Speed of Use"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4a_bm_oa",
+        "label": "4a Business Mobility - Online availability",
+        "alt_label": "4a Business Mobility - Online availability",
+        "definition": "eGovernment services related to Business Mobility - Online availability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4a_cb_oa",
+        "label": "4.1 Cross-border services - Cross-border online availability",
+        "alt_label": "4.1 Cross-border services - Cross-border online availability",
+        "definition": "eGovernment services related to Cross-border services - Cross-border online availability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4b_bm_us",
+        "label": "4b Business Mobility - Usability",
+        "alt_label": "4b Business Mobility - Usability",
+        "definition": "eGovernment services related to Business Mobility - Usability"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4b_cb_us",
+        "label": "4.2 Cross-border services - Cross-border user support",
+        "alt_label": "4.2 Cross-border services - Cross-border user support",
+        "definition": "eGovernment services related to Cross-border services - Cross-border user support"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4c_bm_eidcb",
+        "label": "4c Business Mobility - eID Cross Borders",
+        "alt_label": "4c Business Mobility - eID Cross Borders",
+        "definition": "eGovernment services related to Business Mobility - eID Cross Borders"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4c_cb_eid",
+        "label": "4.3 Cross-border services - Cross-border eID",
+        "alt_label": "4.3 Cross-border services - Cross-border eID",
+        "definition": "eGovernment services related to Cross-border services - Cross-border eID"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4d_bm_edoccb",
+        "label": "4d Business Mobility - eDocuments Cross Borders",
+        "alt_label": "4d Business Mobility - eDocuments Cross Borders",
+        "definition": "eGovernment services related to Business Mobility - eDocuments Cross Borders"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4d_cb_edoc",
+        "label": "4.4 Cross-border services - Cross-border eDocuments",
+        "alt_label": "4.4 Cross-border services - Cross-border eDocuments",
+        "definition": "eGovernment services related to Cross-border services - Cross-border eDocuments"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4e_bm_eu",
+        "label": "4e Business Mobility - Ease of Use",
+        "alt_label": "4e Business Mobility - Ease of Use",
+        "definition": "eGovernment services related to Business Mobility - Ease of Use"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_4f_bm_su",
+        "label": "4f Business Mobility - Speed of Use",
+        "alt_label": "4f Business Mobility - Speed of Use",
+        "definition": "eGovernment services related to Business Mobility - Speed of Use"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_5a_ke_eid",
+        "label": "5a Key Enablers - eID",
+        "alt_label": "5a Key Enablers - eID",
+        "definition": "eGovernment services related to Key Enablers - eID. A government-issued, electronic identification solution to determine if the use is who he claims to be. Using eID enables online transactions, saves time and reduces costs for all actors involved."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_5b_ke_edoc",
+        "label": "5b Key Enablers - eDocuments",
+        "alt_label": "5b Key Enablers - eDocuments",
+        "definition": "eGovernment services related to Key Enablers - eDocuments. An electronic document reduces offline \npaper processes by allowing citizens and businesses to send authenticated documents online."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_5c_ke_as",
+        "label": "5c Key Enablers - Authentic sources",
+        "alt_label": "5c Key Enablers - Authentic sources",
+        "definition": "eGovernment services related to Key Enablers - Authentic sources"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_5d_ke_dp",
+        "label": "5d Key Enablers - Digital Post",
+        "alt_label": "5d Key Enablers - Digital Post",
+        "definition": "eGovernment services related to Key Enablers - Digital Post. Public administrations should allow citizens to receive mail in a digital format and help reduce paper mailing. Governments should provide the possibility to communicate electronically-only with citizens or entrepreneurs through personal mailboxes or other digital post solutions. This represents a novelty of the 2016 measurement."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_5e_ke_esafe",
+        "label": "5e Key Enablers - eSafe",
+        "alt_label": "5e Key Enablers - eSafe",
+        "definition": "eGovernment services related to Key Enablers - eSafe"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_5f_ke_sso",
+        "label": "5f Key Enablers - Single Sign On (SSO)",
+        "alt_label": "5f Key Enablers - Single Sign On (SSO)",
+        "definition": "eGovernment services related to Key Enablers - Single Sign On (SSO)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_1",
+        "label": "Regular business operations",
+        "alt_label": "Regular business operations",
+        "definition": "A business life event related to the economic affairs domain, covering services around: tax and corporate finance, VAT and business changes. A total of 10 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_2",
+        "label": "Moving",
+        "alt_label": "Moving",
+        "definition": "A citizens life event related to the housing domain, covering services around: find, adapt and move to new house, and moving and living abroad. A total of 8 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_3",
+        "label": "Transport",
+        "alt_label": "Transport",
+        "definition": "A citizen life event related to the transport domain, covering services around: buying a car, and taxes, certificates and permits. A total of 9 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_4",
+        "label": "Starting a small claims procedure",
+        "alt_label": "Starting a small claims procedure",
+        "definition": "A citizen life event related to the justice domain, covering services around: preparing claim, issuing claim and monitoring status and appeal. A total of 6 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_5",
+        "label": "Business Start-up",
+        "alt_label": "Business Start-up",
+        "definition": "A business life event related to the economic affairs domain, covering services around: orientation, administrative requirements, basic registration, tax-related matters, insurance-related matters, hiring a first employee and request an environmental permit. A total of 16 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_6",
+        "label": "Family",
+        "alt_label": "Family",
+        "definition": "A citizen life event related to the social protection domain, covering services around: birth, marriage, personal documents and registering death. A total of 10 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_7",
+        "label": "Career",
+        "alt_label": "Career",
+        "definition": "A citizen life event related to the employment domain, covering services around: immediate actions for unemployed, guidance on additional benefits and allowances, maintaining applicable benefits, finding a new job and fulfilling duties being employed and retiring. A total of 19 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_8",
+        "label": "Studying",
+        "alt_label": "Studying",
+        "definition": "A citizen life event related to the educational domain, covering services around: orientation, enrolment and study guidance. A total of 11 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_events_9",
+        "label": "Health",
+        "alt_label": "Health",
+        "definition": "A citizen life event related to the health domain, covering services around: obtain a European Health Insurance Card, applying for electronic health records. A total of 7 services are assessed under this life event."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_scope_1",
+        "label": "Citizen life events",
+        "alt_label": "Citizen life events",
+        "definition": "The citizen life events are: Moving, Owning and driving a car, Starting a small claims procedure, Family, Career and Studying"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "e_gov_scope_2",
+        "label": "Business life events",
+        "alt_label": "Business life events",
+        "definition": "The business life events are: Regular business operations and Business Start-up"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ec_all",
+        "label": "All research DGs of the European Commission",
+        "alt_label": "EC all reserach DGs",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "edocuments",
+        "label": "eDocuments",
+        "alt_label": "eDocuments",
+        "definition": "An electronic document reduces offline \npaper processes by allowing citizens and businesses to send authenticated documents online."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "egov_le_bus",
+        "label": "Life Events for Businesses",
+        "alt_label": "Life Events for Businesses",
+        "definition": "The indicator is calculated for the basic services (therefore excluding extended services) of the life events of “Regular business operations” and “Starting-up a business”. These life events are calculated in alternate years. Therefore, each year the indicator will be a (moving) average of the latest available year of data for each indicator."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "egov_life_events",
+        "label": "All Life Events",
+        "alt_label": "All Life Events",
+        "definition": "Biennial average over 9 life events. Life events are packages of government services which are usually provided by multiple government agencies around a subject that occur in relation each other, from the perspective of the citizen or entrepreneur concerned. In other words, life events are chains of services that are logically coherent from the perspective of actual users.\n5 life events being measured in odd years (e.g.2021, 2023) and 4 life events in even years (2020, 2022). \nOdd years life events consist of: Regular business operations;  Transport; Starting a small claims procedure; Moving; and Health. Even years life events consists of: Business Start-up; Career; Studying and Family. \n* Health life event was introduced in 2021"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "eid",
+        "label": "eID",
+        "alt_label": "eID",
+        "definition": "A government-issued, electronic identification solution to determine if the use is who he claims to be. Using eID enables online transactions, saves time and reduces costs for all actors involved."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "einfra",
+        "label": "eInfrastructures",
+        "alt_label": "eInfra",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "emp_con_prm",
+        "label": "Working with a permanent job or under contract of unlimited duration",
+        "alt_label": "Working with a permanent job or under contract of unlimited duration",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "emp_con_tmp",
+        "label": "Working with a temporary job or under contract of limited duration",
+        "alt_label": "Working with a temporary job or under contract of limited duration",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "emp_wkt_ft",
+        "label": "Employees working full time",
+        "alt_label": "Employees working full time",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "emp_wkt_pt",
+        "label": "Employees working part time",
+        "alt_label": "Employees working part time",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "empl_une",
+        "label": "Active labour force (employed and unemployed)",
+        "alt_label": "Employed and unemployed",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ent_all_xfin",
+        "label": "All enterprises, without financial sector (10 persons employed or more)",
+        "alt_label": "All enterprises",
+        "definition": "Since 2010: 10_C10_S951_XK, 2009: 10_C10_N82_XK, until 2008: 10_dfghiko"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ent_l_xfin",
+        "label": "Large enterprises (250 persons employed or more), without financial sector",
+        "alt_label": "Large enterprises",
+        "definition": "Since 2010: L_C10_S951_XK, 2009: L_C10_N82_XK, until 2008: l_dfghiko"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ent_m_xfin",
+        "label": "Medium enterprises (50-249 persons employed), without financial sector",
+        "alt_label": "Medium enterprises",
+        "definition": "Since 2010: L_C10_S951_XK, 2009: L_C10_N82_XK, until 2008: l_dfghiko"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ent_s_xfin",
+        "label": "Small enterprises (10-49 persons employed), without financial sector",
+        "alt_label": "Small enterprises",
+        "definition": "Since 2010: L_C10_S951_XK, 2009: L_C10_N82_XK, until 2008: l_dfghiko"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ent_sm_xfin",
+        "label": "SMEs (10-249 persons employed), without financial sector",
+        "alt_label": "SMEs (10-249 persons employed)",
+        "definition": "Since 2010: SM_C10_S951_XK, 2009: SM_C10_N82_XK, until 2008: sm_dfghiko"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_events",
+        "label": "PSI events and activities",
+        "alt_label": "Events and activities",
+        "definition": "PSI-related vents and activities (3 indicators: some national or inter-regional events; a moderate number of national or inter-regional events; a considerable number of national or inter-regional events)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_exarrange",
+        "label": "PSI use of exclusive arrangements",
+        "alt_label": "Exclusive arrangements",
+        "definition": "PSI exclusive arrangements (3 indicators: prohibition of exclusive arrangements; legal action against exclusive arrangements; ending exclusive arrangements)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_formats",
+        "label": "PSI formats",
+        "alt_label": "Formats",
+        "definition": "PSI dataset formats (4 indicators: endorsement of ‘raw’ data and open standards; obligatory ‘raw’ data and open standards; endorsement of ‘Linked Open Data’; existence of national or regional data catalogue(s))"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_implem",
+        "label": "Implementation of the PSI Directive",
+        "alt_label": "PSI mplementation",
+        "definition": "Implementation of the PSI Directive (2 indicators: implementation and absence of infringement procedures and exemptions granted)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_localpsi",
+        "label": "Local and regional PSI availability and open data communities",
+        "alt_label": "Local PSI",
+        "definition": "Local and regional PSI availability and open data communities (3 indicators: some local or regional PSI available and community activity; moderate local or regional PSI available and community activity; considerable local or regional PSI available and community activity)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_practice",
+        "label": "National PSI re-use practice",
+        "alt_label": "The practice of re-use",
+        "definition": "National PSI re-use policy (5 indicators: general right of re-use; distinction between commercial and non-commercial re-use; redress mechanisms; pro-active publishing of PSI for re-use; availability of standard licences)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_pricing",
+        "label": "PSI pricing",
+        "alt_label": "Pricing",
+        "definition": "PSI pricing (3 indicators: cost-recovery model or marginal costing model; no exceptions to marginal costing model)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "epsiscore_total",
+        "label": "PSI overall score",
+        "alt_label": "PSI overall score",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "f",
+        "label": "Females ",
+        "alt_label": "Females",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "f_y16_74",
+        "label": "Females, 16 to 74 years old",
+        "alt_label": "Females",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "family",
+        "label": "Family Life Event",
+        "alt_label": "Family",
+        "definition": "eGovernment services related to the life event: Life"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "fttx",
+        "label": "Fiber to the x",
+        "alt_label": "Fiber to the x",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "gen_admin_move",
+        "label": "General administration: moving Life Event",
+        "alt_label": "General administration: moving",
+        "definition": "eGovernment services related to the life event: moving (General administration)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "gen_pract",
+        "label": "All general practitioners",
+        "alt_label": "GPs",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "goods",
+        "label": "Goods",
+        "alt_label": "Goods",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "grade11gen",
+        "label": "Grade 11 (Upper secondary, vocational)",
+        "alt_label": "Grade 11 Vocational",
+        "definition": "Students enrolled are at the eleventh year of schooling, counting from the first year of Primary - ISCED level 1. Mean age of students in Grade11 is at least 16,5 years."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "grade11voc",
+        "label": "Grade 11 (Upper secondary, general)",
+        "alt_label": "Grade 11 General",
+        "definition": "Students enrolled are at the eleventh year of schooling, counting from the first year of Primary - ISCED level 1. Mean age of students in Grade11 is at least 16,5 years."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "grade4",
+        "label": "Grade 4 (Primary school)",
+        "alt_label": "Grade 4",
+        "definition": "Students enrolled are at the fourth year of schooling, counting from the first year of Primary - ISCED level 1. Mean age of students in Grade4 is at least 9,5 years."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "grade8",
+        "label": "Grade 8 (Lower secondary)",
+        "alt_label": "Grade 8",
+        "definition": "Students enrolled are at the eighth year of schooling, counting from the first year of Primary - ISCED level 1. Mean age of students in Grade8 is at least 13,5 years."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hh_deg1",
+        "label": "Households living in densely-populated area",
+        "alt_label": "Urban areas",
+        "definition": "Densely-populated area with at least 500 inhabitants/Km2."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hh_deg2",
+        "label": "Households living in intermediate urbanized area",
+        "alt_label": "Intermediate areas",
+        "definition": "Intermediate urbanized area with between 100 and 499 inhabitants/Km2."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hh_deg3",
+        "label": "Households living in sparsely populated area",
+        "alt_label": "Rural areas",
+        "definition": "Sparsely populated area with less than 100 inhabitants/Km2."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hh_no1",
+        "label": "Living in Not Objective 1 regions / 'Regional Competitiveness and Employment' Region",
+        "alt_label": "Other regions",
+        "definition": "As defined in Structural Funds regulations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hh_o1",
+        "label": "Living in Objective 1 regions / 'Convergence' regions",
+        "alt_label": "Objective1-Convergence regions",
+        "definition": "As defined in Structural Funds regulations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hh_total",
+        "label": "All households",
+        "alt_label": "All households",
+        "definition": "All households with at least one individual aged 16-74."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hhi_q1",
+        "label": "Individuals living in a household with income in first quartile (lowest)",
+        "alt_label": "low income households",
+        "definition": "Income in the first quartile means income among the 25% lowest income observed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hhi_q2",
+        "label": "Individuals living in a household with income in second quartile",
+        "alt_label": "medium/low income households",
+        "definition": "Income in the second quartile means income among the 50% lowest incomes observed, but not among the 25% lowest"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hhi_q3",
+        "label": "Individuals living in a household with income in third quartile",
+        "alt_label": "medium/high income households",
+        "definition": "Income in the third quartile means income among the 50% highest incomes observed, but not among the 25% highest"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "hhi_q4",
+        "label": "Individuals living in a household with income in fourth quartile (highest)",
+        "alt_label": "high income households",
+        "definition": "Income in the fourth quartile means income among the 25% highest incomes observed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "i0_2",
+        "label": "Individuals with no or low formal education",
+        "alt_label": "low education level",
+        "definition": "Having maximum Primary or Lower secondary education (ISCED 0, 1 or 2)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "i0_4",
+        "label": "Individuals with no high education",
+        "alt_label": "no high education",
+        "definition": "Having maximum post post secondary education, but not tertiary  (ISCED 1997 0-4 Level 0 – Pre-primary education Level 1 – Primary education or first stage of basic education, Level 2 – Lower secondary or second stage of basic education, Level 3 – (Upper) secondary education, Level 4 – Post-secondary non-tertiary education)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "i3_4",
+        "label": "Individuals with medium formal education",
+        "alt_label": "medium education level",
+        "definition": "Having Upper or post secondary education, but not tertiary (ISCED 3 or 4)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "i5_8",
+        "label": "Individuals with high formal education",
+        "alt_label": "high education level",
+        "definition": "(ISCED 2011 5-8 Level 5 – Short-cycle tertiary education, Level 6 – Bachelor’s or equivalent level, Level 7 – Master’s or equivalent level, Level 8 – Doctoral or equivalent level)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_dch",
+        "label": "Individuals living in a household with children",
+        "alt_label": "Individuals living in a household with children",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_deg1",
+        "label": "Individuals living in densely-populated area",
+        "alt_label": "Urban areas",
+        "definition": "Densely-populated area with at least 500 inhabitants/Km2."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_deg2",
+        "label": "Individuals living in intermediate urbanized area",
+        "alt_label": "Intermediate areas",
+        "definition": "Intermediate urbanized area with between 100 and 499 inhabitants/Km2."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_deg3",
+        "label": "Individuals living in sparsely populated area",
+        "alt_label": "Rural areas",
+        "definition": "Sparsely populated area with less than 100 inhabitants/Km2."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_no1",
+        "label": "Living in Not Objective 1 regions / 'Regional Competitiveness and Employment' Region",
+        "alt_label": "Other regions",
+        "definition": "As defined in Structural Funds regulations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_no_dch",
+        "label": "Individuals living in a household without children",
+        "alt_label": "Individuals living in a household without children",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_o1",
+        "label": "Living in Objective 1 regions / 'Convergence' regions",
+        "alt_label": "Objective1-Convergence regions",
+        "definition": "As defined in Structural Funds regulations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "ind_total",
+        "label": "All Individuals (aged 16-74)",
+        "alt_label": "All individuals",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "info_online_no_portal",
+        "label": "Information online but not through portal",
+        "alt_label": "Information online but not through portal",
+        "definition": "eGovernment information provided online but not through a portal"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "info_online_portal",
+        "label": "Information online and through portal",
+        "alt_label": "Information online and through portal",
+        "definition": "eGovernment information provided online and through a portal"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_a",
+        "label": "Directorate A, DG INFSO",
+        "alt_label": "Directorate A",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_all",
+        "label": "DG INFSO",
+        "alt_label": "DG INFSO",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_b",
+        "label": "Directorate B, DG INFSO",
+        "alt_label": "Directorate B",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_c",
+        "label": "Directorate C, DG INFSO",
+        "alt_label": "Directorate C",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_d",
+        "label": "Directorate D, DG INFSO",
+        "alt_label": "Directorate D",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_e",
+        "label": "Directorate E, DG INFSO",
+        "alt_label": "Directorate E",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_f",
+        "label": "Directorate F, DG INFSO",
+        "alt_label": "Directorate F",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_g",
+        "label": "Directorate G, DG INFSO",
+        "alt_label": "Directorate G",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_h",
+        "label": "Directorate H, DG INFSO",
+        "alt_label": "Directorate H",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "infso_r",
+        "label": "Directorate R, DG INFSO",
+        "alt_label": "Directorate R",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "isco_ict",
+        "label": "ICT professionals",
+        "alt_label": "ICT professionals",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "isco_ictx",
+        "label": "Non ICT professionals",
+        "alt_label": "Non ICT professionals",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "l_c10_f43",
+        "label": "Large enterprises in manufacturing, electricity, gaz; water supply and construction",
+        "alt_label": "Large enterprises in manufacturing, electricity, gaz; water supply and construction",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "l_c10_s951_xk",
+        "label": "Large enterprises (250 persons employed or more), without financial sector",
+        "alt_label": "Large enterprises",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "l_g45_s951_xk",
+        "label": "Large enterprises in services, without financial",
+        "alt_label": "Large enterprises in services, without financial",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "lose_find_job",
+        "label": "Losing and Finding a Job Life Event",
+        "alt_label": "Losing and Finding a Job",
+        "definition": "eGovernment services related to the life event: Losing and Finding a Job"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "m",
+        "label": "Males",
+        "alt_label": "Males",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "m_c10_f43",
+        "label": "Medium enterprises in manufacturing, electricity, gaz; water supply and construction",
+        "alt_label": "Medium enterprises in manufacturing, electricity, gaz; water supply and construction",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "m_c10_s951_xk",
+        "label": "Medium enterprises (50-249 persons employed), without financial sector",
+        "alt_label": "Medium enterprises",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "m_g45_s951_xk",
+        "label": "Medium enterprises in services, without financial",
+        "alt_label": "Medium enterprises in services, without financial",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "m_y16_74",
+        "label": "Males, 16 to 74 years old",
+        "alt_label": "Males",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "men",
+        "label": "Men",
+        "alt_label": "Men",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "not_assigned",
+        "label": "Total not assigned due to lack of demand",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "offer_100_mbps",
+        "label": "Advertised download speed above 100 Mbps",
+        "alt_label": "Advertised download speed above 100 Mbps",
+        "definition": "Offers with a maximum advertised download speed above 100 Mbps"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "offer_12_30_mbps",
+        "label": "Advertised download speed above 12 and up to 30 Mbps",
+        "alt_label": "Advertised download speed above 12 and up to 30 Mbps",
+        "definition": "Offers with a maximum advertised download speed above 12 and up to 30 Mbps (Iincluded)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "offer_30_100_mbps",
+        "label": "Advertised download speed above 30 and up to 100 Mbps",
+        "alt_label": "Advertised download speed above 30 and up to 100 Mbps",
+        "definition": "Offers with a maximum advertised download speed above 30 and up to 100 Mbps (included)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "offer_30_mbps",
+        "label": "Advertised download speed of 30 Mbps or above",
+        "alt_label": "Advertised download equal or above 30 Mbps",
+        "definition": "Offers with a maximum advertised download speed of at least 30 Mbps or above."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "offer_8_12_mbps",
+        "label": "Advertised download speed above 8 and up to 12 Mbps",
+        "alt_label": "Advertised download speed above 8 and up to 12 Mbps",
+        "definition": "Offers with a maximum advertised download speed above 8 and up to 12 Mbps (included)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "offline",
+        "label": "Offline",
+        "alt_label": "Offline",
+        "definition": "eGovernment service or information provided offline"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "orgclass_hesrec",
+        "label": "Higher education and non-profit research organisations",
+        "alt_label": "Higher education/research org.",
+        "definition": "Public or private higher education institutions and not for profit research organisations (HES/REC)."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "orgclass_le",
+        "label": "Large enterprises",
+        "alt_label": "Large enterprises",
+        "definition": "Large enterprises with more than 250 employed persons or a turnover ≥ 50 millions euro and a balance sheet total ≥ 43 millions euro."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "orgclass_nil",
+        "label": "Other organizations",
+        "alt_label": "Other organizations",
+        "definition": "All other types of organisations (i.e. public administrations, NGO, public sector enterprises, etc.) (NIL)."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "orgclass_sme",
+        "label": "Small and medium enterprises",
+        "alt_label": "SME",
+        "definition": "Small and medium individual private enterprises (SME) with less than 250 employed persons and a turnover ≤ 50 millions euro or a balance sheet total ≤ 43 millions euro."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "orgclass_total",
+        "label": "All organizations",
+        "alt_label": "All organizations",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "other_eu_countries",
+        "label": "Customers, other EU countries",
+        "alt_label": "Customers, other EU countries",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "own_country",
+        "label": "Customers, own country",
+        "alt_label": "Customers, own country",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "own_drive_car",
+        "label": "Owning and driving a car Life Event",
+        "alt_label": "Owning and driving a car",
+        "definition": "eGovernment services related to the life event: Owning and driving a car"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "reg_bus_op",
+        "label": "Regular business operations Life Event",
+        "alt_label": "Regular business operations",
+        "definition": "eGovernment services related to the life event: Regular business operations"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "rest_world",
+        "label": "Customers, rest of the world",
+        "alt_label": "Customers, rest of the world",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "retir_other",
+        "label": "Retired and other inactive",
+        "alt_label": "Retired and inactive",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "rf_0",
+        "label": "Individuals with no disadvantage factor",
+        "alt_label": "No disadvantage factor",
+        "definition": "Individuals with none of the 3 following characteristics: 55 to 74 years old; low education; unemployed or inactive or retired"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "rf_ge1",
+        "label": "Individuals with at least 1 disadvantage factor",
+        "alt_label": "At least 1 disadvantage factor",
+        "definition": "Individuals with at least one of the 3 following characteristics: 55 to 74 years old; low education; unemployed or inactive or retired"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "rf_ge2",
+        "label": "Individuals with at least 2 disadvantage factor",
+        "alt_label": "At least 2 disadvantage factors",
+        "definition": "Individuals with at least two of the 3 following characteristics: 55 to 74 years old; low education; unemployed or inactive or retired"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "rural_pop",
+        "label": "Rural population",
+        "alt_label": "Rural population",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "s_c10_f43",
+        "label": "Small enterprises in manufacturing, electricity, gaz; water supply and construction",
+        "alt_label": "Small enterprises in manufacturing, electricity, gaz; water supply and construction",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "s_c10_s951_xk",
+        "label": "Small enterprises (10-49 persons employed), without financial sector",
+        "alt_label": "Small enterprises",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "s_g45_s951_xk",
+        "label": "Small enterprises in services, without financial",
+        "alt_label": "Small enterprises in services, without financial",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "sal_self_fam",
+        "label": "Employees, self-employed, family workers",
+        "alt_label": "Employees, self-employed, family workers",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "serv_online_no_portal",
+        "label": "Service online but not through portal",
+        "alt_label": "Service online but not through portal",
+        "definition": "eGovernment service provided online but not through a portal"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "serv_online_portal",
+        "label": "Service online and through portal",
+        "alt_label": "Service online and through portal",
+        "definition": "eGovernment service provided online and through a portal"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "services",
+        "label": "Services",
+        "alt_label": "Services",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "sm_c10_s951_xk",
+        "label": "SMEs (10-249 persons employed), without financial sector",
+        "alt_label": "SMEs (10-249 persons employed)",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "small_claims",
+        "label": "Starting a Small Claims procedure Life Event",
+        "alt_label": "Starting a Small Claims procedure",
+        "definition": "eGovernment services related to the life event: Starting a Small Claims procedure"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_01",
+        "label": "01 Future Networks and Internet",
+        "alt_label": "SO 01",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_02",
+        "label": "02 Software, Services and internet connected objects",
+        "alt_label": "SO 02",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_03",
+        "label": "03 Trustworthy ICT",
+        "alt_label": "SO 03",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_04",
+        "label": "04 Networked Media",
+        "alt_label": "SO 04",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_05",
+        "label": "05 Cognitive Systems and Robotics",
+        "alt_label": "SO 05",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_06",
+        "label": "06 Nanoelectronics",
+        "alt_label": "SO 06",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_07",
+        "label": "07 Micro/nanosystems",
+        "alt_label": "SO 07",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_08",
+        "label": "08 Embedded Systems",
+        "alt_label": "SO 08",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_09",
+        "label": "09 Photonics",
+        "alt_label": "SO 09",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_10",
+        "label": "10 Organic and large area Electronics",
+        "alt_label": "SO 10",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_11",
+        "label": "11 Language Technologies",
+        "alt_label": "SO 11",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_12",
+        "label": "12 Intelligent Information Management",
+        "alt_label": "SO 12",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_13",
+        "label": "13 ICT for Health",
+        "alt_label": "SO 13",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_14",
+        "label": "14 ICT and Ageing",
+        "alt_label": "SO 14",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_15",
+        "label": "15 ICT for Inclusion",
+        "alt_label": "SO 15",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_16",
+        "label": "16 ICT for Governance and Policy Modelling",
+        "alt_label": "SO 16",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_17",
+        "label": "17 ICT for Energy Efficiency",
+        "alt_label": "SO 17",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_18",
+        "label": "18 ICT for Transport",
+        "alt_label": "SO 18",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_19",
+        "label": "19 ICT for the Enterprise",
+        "alt_label": "SO 19",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_20",
+        "label": "20 ICT for Learning",
+        "alt_label": "SO 20",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_21",
+        "label": "21 Digital Libraries",
+        "alt_label": "SO 21",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_22_1",
+        "label": "22.1 FET Open",
+        "alt_label": "SO 22.1",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_22_2",
+        "label": "22.2 FET Proactive",
+        "alt_label": "SO 22.2",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_22_3",
+        "label": "22.3 FET Flagship",
+        "alt_label": "SO 22.3",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_23",
+        "label": "23 International Cooperation",
+        "alt_label": "SO 23",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_24",
+        "label": "24 Accompanying Measures",
+        "alt_label": "SO 24",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_25",
+        "label": "25 Big Data",
+        "alt_label": "SO 25",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "so_26",
+        "label": "26 Creativity",
+        "alt_label": "SO 26",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "speed_10l30",
+        "label": "at least 10 but below 30 Mbps",
+        "alt_label": "at least 10 but below 30 Mbps",
+        "definition": "Based on the advertised download speed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "speed_2l10",
+        "label": "at least 2 but below 10 Mbps",
+        "alt_label": "at least 2 but below 10 Mbps",
+        "definition": "Based on the advertised download speed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "speed_30l100",
+        "label": "at least 30 but below 100 Mbps",
+        "alt_label": "at least 30 but below 100 Mbps",
+        "definition": "Based on the advertised download speed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "speed_ge100",
+        "label": "above 100 Mbps",
+        "alt_label": "above 100 Mbps",
+        "definition": "Based on the advertised download speed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "speed_l2",
+        "label": "below 2 Mbps",
+        "alt_label": "below 2 Mbps",
+        "definition": "Based on the advertised download speed"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "stud",
+        "label": "Students",
+        "alt_label": "Students",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "study",
+        "label": "Studying Life Event",
+        "alt_label": "Studying",
+        "definition": "eGovernment services related to the life event: Studying"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "tot_ict_products",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total of ICT products (goods and services)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_fbb",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total number of fixed broadband subscriptions"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_mbb",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total number of mobile broadband subscriptions"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_mob",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total number of mobile subscriptions (SIM Cards)"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_offers8plus",
+        "label": "Advertised download speed of 8 Mbps or above",
+        "alt_label": "Advertised download equal or above 8 Mbps",
+        "definition": "Offers with a maximum advertised download speed of at least 8 Mbps or above."
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_pop",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total population"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_pophh",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total number of households"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_sos",
+        "label": "All Strategic Objectives and eInfrastructures",
+        "alt_label": "All SOs",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "total_tel",
+        "label": "Total",
+        "alt_label": "Total",
+        "definition": "Scope: Total of the Electronic Communications sector"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "une",
+        "label": "Unemployed",
+        "alt_label": "Unemployed",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "wid_score",
+        "label": "Score for Women in Digital",
+        "alt_label": "Score for Women in Digital",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "women",
+        "label": "Women",
+        "alt_label": "Women",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "xdsl",
+        "label": "xDSL technology",
+        "alt_label": "xDSL technology",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y16_24",
+        "label": "Individuals, 16 to 24 years old",
+        "alt_label": "16-24",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y25_34",
+        "label": "Individuals, 25 to 34 years old",
+        "alt_label": "25-34",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y25_54",
+        "label": "Individuals, 25 to 54 years old",
+        "alt_label": "25-54",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y25_64",
+        "label": "Individuals, 25 to 64 years old",
+        "alt_label": "25-64",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y35_44",
+        "label": "Individuals, 35 to 44 years old",
+        "alt_label": "35-44",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y45_54",
+        "label": "Individuals, 45 to 54 years old",
+        "alt_label": "45-54",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y55_64",
+        "label": "Individuals, 55 to 64 years old",
+        "alt_label": "55-64",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y55_74",
+        "label": "Individuals, 55 to 74 years old",
+        "alt_label": "55-74",
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2022-05-27T14:13:44.260Z",
+        "updated_at": "2022-05-27T14:13:44.260Z",
+        "code": "y65_74",
+        "label": "Individuals, 65 to 74 years old",
+        "alt_label": "65-74",
+        "definition": null
+    }
+}
+]

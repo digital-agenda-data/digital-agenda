@@ -1,0 +1,279 @@
+[
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU",
+        "size": 37,
+        "note": "European Union (EU6-1958, EU9-1973, EU10-1981, EU12-1986, EU15-1995, EU25-2004, EU27-2007, EU28-2013, EU27-2020)",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "UK",
+            "EU6",
+            "EU9",
+            "EU10",
+            "EU12",
+            "EU15",
+            "EU25",
+            "EU27_2007",
+            "EU28",
+            "EU27_2020"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU6",
+        "size": 6,
+        "note": "European Community  - 6 founder countries (1958-1972)",
+        "geo_codes": [
+            "BE",
+            "DE",
+            "FR",
+            "IT",
+            "LU",
+            "NL"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU10",
+        "size": 10,
+        "note": "European Community - 10 countries (1981-1985)",
+        "geo_codes": [
+            "BE",
+            "DE",
+            "FR",
+            "IT",
+            "LU",
+            "NL",
+            "DK",
+            "IE",
+            "UK",
+            "EL"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU12",
+        "size": 12,
+        "note": "European Community - 12 countries (1986-1994)",
+        "geo_codes": [
+            "BE",
+            "DE",
+            "DK",
+            "EL",
+            "ES",
+            "FR",
+            "IE",
+            "IT",
+            "LU",
+            "NL",
+            "PT",
+            "UK"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU15",
+        "size": 15,
+        "note": "European Union - 15 countries (1995-2004)",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "DE",
+            "DK",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "IE",
+            "IT",
+            "LU",
+            "NL",
+            "PT",
+            "SE",
+            "UK"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU25",
+        "size": 25,
+        "note": "European Union - 25 countries (2004-2006)",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "DK",
+            "FI",
+            "FR",
+            "DE",
+            "EL",
+            "IE",
+            "IT",
+            "LU",
+            "NL",
+            "PT",
+            "SE",
+            "ES",
+            "UK",
+            "CY",
+            "CZ",
+            "EE",
+            "HU",
+            "LV",
+            "LT",
+            "MT",
+            "PL",
+            "SK",
+            "SI"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU27_2007",
+        "size": 27,
+        "note": "European Union - 27 countries (2007-2013)",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "HU",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "UK"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU28",
+        "size": 28,
+        "note": "European Union - 28 countries (2013-2020)",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "UK"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU27_2020",
+        "size": 27,
+        "note": "European Union - 27 countries (from 2020)",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK"
+        ]
+    }
+}
+]

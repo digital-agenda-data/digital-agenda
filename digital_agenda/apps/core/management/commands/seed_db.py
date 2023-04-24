@@ -32,7 +32,13 @@ class Command(BaseCommand):
                 sys.exit(1)
 
         call_command("flush", "--noinput")
-        call_command("load_initial_fixtures", "--test", "--exclude", "importconfigs")
+        call_command("load_initial_fixtures", "--exclude", "estat.importconfig")
+
+        # Create and admin user
+        call_command("loaddata", "test/users")
+
+        # Import some facts
+        call_command("loaddata", "test/facts")
 
         # Import some data for DESI
         call_command("loaddata", "test/desi-facts")
@@ -41,16 +47,8 @@ class Command(BaseCommand):
         call_command("loaddata", "test/seed_importconfigs")
         call_command("estat_import")
 
-        dir_path = (
-            settings.BASE_DIR
-            / "digital_agenda"
-            / "apps"
-            / "charts"
-            / "fixtures"
-            / "test"
-        )
         for group in ChartGroup.objects.all():
-            img_path = dir_path / f"{group.code}.png"
+            img_path = settings.TEST_FIXTURES_DIR / f"{group.code}.png"
             with img_path.open("rb") as f:
                 group.image = File(f, name=img_path.name)
                 group.save()

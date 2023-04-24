@@ -1,0 +1,1465 @@
+[
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "corehours_million",
+        "label": "million core hours",
+        "alt_label": "million core hours",
+        "definition": "million core hours"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "cum_nr_artic",
+        "label": "Cumulated number of articles",
+        "alt_label": "Cumulated nb of articles",
+        "definition": "Cumulated figure of articles resulting from FP7 ICT projects reported and validated over the years 2007 - 2013"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "cum_nr_pat",
+        "label": "Cumulated number of patents",
+        "alt_label": "Cumulated nb of patents",
+        "definition": "Cumulated figure of patents resulting from FP7 ICT projects reported and validated over the years 2007 - 2013."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "cum_nr_pub",
+        "label": "Cumulated number of publications",
+        "alt_label": "Cumulated nb of publications",
+        "definition": "Cumulated figure of publications resulting from FP7 ICT projects reported and validated over the years 2007 - 2013"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "cum_x10mil_ecfund",
+        "label": "Cumulated number per 10 Million EURO of EC funding",
+        "alt_label": "Cumulated nb per 10 Million EURO",
+        "definition": "Cumulated figures resulting from FP7 ICT projects per Euro 10M spent. It considers the projects over the period 2007-2013"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "days",
+        "label": "calendar days",
+        "alt_label": "calendar days",
+        "definition": "Calendar days."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "desi_score",
+        "label": "score (0 to 1)",
+        "alt_label": "DESI score",
+        "definition": "Score in the scope of the DESI, normalised between 0 and 1"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "egov_score",
+        "label": "Score (0 to 100)",
+        "alt_label": "Score (0 to 100)",
+        "definition": "The score of the country, from a minimum of 0 to a maximum of 100."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "epsiscore_pts",
+        "label": "PSI scoreboard points",
+        "alt_label": "PSI points",
+        "definition": "Can range from 0 to 100 for each of the 7 sub-dimensions. The overall score is the sum of the sub-dimension scores and can range from 0 to 700."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "euro",
+        "label": "Euro",
+        "alt_label": "euro",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "euro_x_hab",
+        "label": "Euro per habitant",
+        "alt_label": "euro x habitant",
+        "definition": "Habitants are the total population 1st of Jan of the same year (Eurostat)"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "euro_x_million_gbaord",
+        "label": "Euro per Million of GBAORD",
+        "alt_label": "euro x million of GBAORD",
+        "definition": "GBAORD - Government budget appropriations or outlays for research and development (Eurostat)"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "euro_x_million_of_gdp",
+        "label": "Euro per Million of GDP",
+        "alt_label": "euro x million of GDP",
+        "definition": "GDP-Gross domestic product at current prices of the same year (Eurostat nama_gdp_c)."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "eurocent",
+        "label": "Euro cents",
+        "alt_label": "Euro cents",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "gbpskm",
+        "label": "gigabits per second times km",
+        "alt_label": "Gbpskm",
+        "definition": "gigabits per second times km"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "habitants",
+        "label": "Number of habitants",
+        "alt_label": "Number of habitants",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "hhi",
+        "label": "HHI score",
+        "alt_label": "HHI score",
+        "definition": "Herfindahl index calculated for different connection technologies"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "ia12ave",
+        "label": "Diversification index average",
+        "alt_label": "",
+        "definition": "Average of the number of different activities, out of a list of 12, realised by internet users. Computed by DG CONNECT using Eurostat data."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "median_euro_ppp",
+        "label": "Median price in euros, corrected using Purchasing Power Parities",
+        "alt_label": "Median price in euros (PPPs corrected)",
+        "definition": "Median price between similar offers, which value in euros is corrected using Purchasing Power Parities (PPPs), based on consumer price indices."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "mhz",
+        "label": "MHz",
+        "alt_label": "MHz",
+        "definition": "Mega Hertz"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "million_euro",
+        "label": "Million Euro",
+        "alt_label": "million euro",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "minimum_euro_ppp",
+        "label": "Minimum price in euros, corrected using Purchasing Power Parities",
+        "alt_label": "Minimum price in euros (PPPs corrected)",
+        "definition": "Minimun price between similar offers, which value in euros is corrected using Purchasing Power Parities (PPPs), based on consumer price indices."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "mio_hh",
+        "label": "million of households",
+        "alt_label": "million of households",
+        "definition": "Households with at least one member aged 16-74. "
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "mio_ind",
+        "label": "million of individuals",
+        "alt_label": "million of individuals",
+        "definition": "Individuals aged 16-74"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_channel",
+        "label": "Number of TV channels",
+        "alt_label": "nb of channels",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_empl",
+        "label": "Number of employed persons",
+        "alt_label": "Number of employed persons",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_ent",
+        "label": "Number of enterprises",
+        "alt_label": "Number of enterprises",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_infr_case",
+        "label": "Number of NIF infringement cases",
+        "alt_label": "nb of infringement cases",
+        "definition": "Number of NIF infringement cases against Member States"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_vod_service",
+        "label": "Number of Video on Demand services",
+        "alt_label": "nb of VoD services",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_x1000inh_20_29",
+        "label": "Number per 1 000 inhabitants aged 20-29 years",
+        "alt_label": "Number per 1 000 inhabitants aged 20-29 years",
+        "definition": "Number per 1 000 inhabitants aged 20-29 years"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nb_x100stud",
+        "label": "Number per 100 students",
+        "alt_label": "Number per 100 students",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nbr_lines",
+        "label": "Number of subscriptions",
+        "alt_label": "Number of subscriptions",
+        "definition": "Number of fixed subsciptions (lines)"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nbr_organisations",
+        "label": "Number of organizations",
+        "alt_label": "Number of organizations",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nbr_participations",
+        "label": "Number of participations",
+        "alt_label": "Number of participations",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nbr_subs",
+        "label": "Number of subscriptions",
+        "alt_label": "Number of subscriptions",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "no_posts",
+        "label": "Number of posts",
+        "alt_label": "nb of posts",
+        "definition": "Number of posts in DG CONNECT."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nr_artic",
+        "label": "Number of articles",
+        "alt_label": "Nb of articles",
+        "definition": "Articles (reported and validated) resulting from FP7 ICT projects terminated in the reference year"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nr_pat",
+        "label": "Number of patents",
+        "alt_label": "Nb of patents",
+        "definition": "Patents (reported and validated) resulting from FP7 ICT projects terminated in the reference year"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nr_pub",
+        "label": "Number of publications",
+        "alt_label": "Nb of publications",
+        "definition": "Publications (reported and validated) resulting from FP7 ICT projects terminated in the reference year"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "nr_x10mil_ecfund",
+        "label": "Number per 10 Million EURO of EC funding",
+        "alt_label": "Nb per 10 Million EURO",
+        "definition": "Number of research outputs resulting from FP7 ICT projects, terminated in the reference year, per 10M Euro of EC funding spent for their implementation. "
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "od_score",
+        "label": "Percentage of the maximum open data score",
+        "alt_label": "Percentage of maximum score",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "opendata_score",
+        "label": "Score (0 to 100)",
+        "alt_label": "Score (0 to 100)",
+        "definition": "The score of the country, from a minimum of 0 to a maximum of 100."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_adm_cinema",
+        "label": "Percentage of total admissions ",
+        "alt_label": "% of total admissions ",
+        "definition": "Percentage of total admissions in cinemas"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_bb_lines",
+        "label": "Percentage of fixed broadband subscriptions",
+        "alt_label": "% of fixed broadband subscriptions",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of the DESI dimension"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_c_bbpi",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_c_fbbc",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_c_fbbtc",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_c_mbb",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_conn",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of the DESI Sub-dimension"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_dps",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of the DESI Sub-dimension"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_dps_egov",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_hc",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of the DESI Sub-dimension"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_hc_asd",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_hc_bsu",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_idt",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of the DESI Sub-dimension"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_idt_di",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_idt_dtb",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_idt_ecomm",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of a DESI indicator"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_desi_sliders",
+        "label": "weighted score (0 to 100)",
+        "alt_label": "",
+        "definition": "Weighted score of the DESI dimension"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_digskillindex",
+        "label": "Percentage of internet users",
+        "alt_label": "% of internet users",
+        "definition": "Individuals having used internet during last 3 months"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_dispo_income",
+        "label": "Percentage of disposable income",
+        "alt_label": "% of disposable income",
+        "definition": "Real adjusted gross disposable income of households per capita, extracted from  Eurostat table  <a href=\"http://ec.europa.eu/eurostat/tgm/table.do?tab=table&plugin=1&language=en&pcode=tec00113\">tec00113</a>."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_e_cc",
+        "label": "percentage of enterprises purchasing Cloud Computing services",
+        "alt_label": "% of enterprises purchasing Cloud Computing services",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_e_gov_ke",
+        "label": "weighted score",
+        "alt_label": "",
+        "definition": "Weighted score of the use of key enablers"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_e_gov_oa",
+        "label": "weighted score",
+        "alt_label": "",
+        "definition": "Weighted score of the service availability"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ebhh_tv",
+        "label": "Percentage of housaholds having a TV",
+        "alt_label": "% of housaholds having a TV",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_edigint2015",
+        "label": "Percentage of enterprises (all sectors)",
+        "alt_label": "Percentage of enterprises (all sectors)",
+        "definition": "Enterprises with 10 or more persons employed. All manufacturing and service sectors, excluding the financial sector. (breakdown code 10_C10_S951_XK)"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_emp",
+        "label": "Percentage of total employment",
+        "alt_label": "% of total employment",
+        "definition": "Total employement in enterprises with 10 or more persons employed, all manufacturing and service sectors, excluding the financial sector. Based on the average number of employed persons during the previous year."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_emp_pmd",
+        "label": "Percentage of employees working in enterprises which provide mobile devices",
+        "alt_label": "% of employees working in enterprises which provide mobile devices",
+        "definition": "Total employement in enterprises which provide portable devices to some employees, with 10 or more persons employed, all manufacturing and service sectors, excluding the financial sector. Based on the average number of employed persons during the previous year."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ent",
+        "label": "Percentage of enterprises",
+        "alt_label": "% of enterprises",
+        "definition": "Enterprises with 10 or more persons employed. All manufacturing and service sectors, excluding the financial sector. Breaks in series because until 2008 economic activities according to NACE Rev 1.1 and from 2009 data are based on NACE Rev.2. Since 2010 include also sector S 95.1-Repair of computers and communication equipment."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ent_aesell",
+        "label": "Percentage of enterprises receiving e-commerce orders over the last calendar year",
+        "alt_label": "% of enterprises receiving e-commerce orders",
+        "definition": "Percentage of enterprises receiving e-commerce orders over the last calendar year"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ent_awsell",
+        "label": "Percentage of enterprises with web sales",
+        "alt_label": "% of enterprises with web sales",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ent_itsprcr2",
+        "label": "Percentage of enterprises which recruited/tried to recruit personnel for jobs requiring ICT specialist skills",
+        "alt_label": "% of enterprises which recruited/tried to recruit ICT specialist",
+        "definition": "Limited comparability between 2007 and 2012 results.  Enterprises with 10 or more persons employed. All manufacturing and service sectors, excluding the financial sector. Breaks in series because until 2008 economic activities according to NACE Rev 1.1 and from 2009 data are based on NACE Rev.2. Since 2010 include also sector S 95.1-Repair of computers and communication equipment."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_epsi_score",
+        "label": "PSI scoreboard points in %",
+        "alt_label": "PSI points in %",
+        "definition": "Can range from 0 to 100 for each of the 7 sub-dimensions. The overall score is the sum of the sub-dimension scores and can range from 0 to 700."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_exp",
+        "label": "Percentage of total export",
+        "alt_label": "% of total export",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_fp7ict_ec_funding",
+        "label": "Percentage of EC funding",
+        "alt_label": "% of EC funding",
+        "definition": "Value of European Commission funding committed through grant agreements signed, during the reference year, with participants in ICT research projects under the EU's Seventh Framework Programme (FP7). Projects under negotiation are not included."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_fp7ict_particip",
+        "label": "Percentage of participations",
+        "alt_label": "% of participations",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_gbaord",
+        "label": "Percentage of public R&D expediture",
+        "alt_label": "% of public R&D expediture",
+        "definition": "GBAORD - Government budget appropriations or outlays for research and development"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_gp",
+        "label": "Percentage of general practitioners",
+        "alt_label": "% of general practitioners",
+        "definition": "Percentage of general practitioners, based on valid answers."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_grad",
+        "label": "Percentage of graduates",
+        "alt_label": "% of graduates",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_grants",
+        "label": "Percentage of grants",
+        "alt_label": "% of grants",
+        "definition": "Percentage of grants agreements signed during the reference year"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_gva",
+        "label": "Percentage of ICT Gross Value Added",
+        "alt_label": "% of ICT Gross Value Added",
+        "definition": "Gross Value Added of the ICT sector estimated by JRC-IPTS PREDICT2 project, based on Eurostat data."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_h2020_ec_funding",
+        "label": "Percentage of EC funding",
+        "alt_label": "% of EC funding",
+        "definition": "Value of European Commission funding committed through grant agreements signed, during the reference year, with participants in ICT research projects in H2020. Projects under negotiation are not included."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_h2020_particip",
+        "label": "Percentage of participations",
+        "alt_label": "% of participations",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_hh",
+        "label": "Percentage of households",
+        "alt_label": "% of households",
+        "definition": "Households with at least one member aged 16-74. "
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_hh_all",
+        "label": "Percentage of households",
+        "alt_label": "% of households",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_i-dsk-c",
+        "label": "percentage of internet users",
+        "alt_label": "% of internet users",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_i-dsk-i",
+        "label": "percentage of internet users",
+        "alt_label": "% of internet users",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_i-dsk-ind",
+        "label": "percentage of individuals",
+        "alt_label": "% of individuals",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_i-dsk-iu3",
+        "label": "percentage of internet users",
+        "alt_label": "% of internet users",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_i-dsk-ps",
+        "label": "percentage of internet users",
+        "alt_label": "% of internet users",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_i-dsk-s",
+        "label": "percentage of internet users",
+        "alt_label": "% of internet users",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ict_ent",
+        "label": "Percentage of ICT sector enterprises",
+        "alt_label": "% of ICT sector enterprises",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ict_spec",
+        "label": "Percentage of ICT specialists",
+        "alt_label": "% of ICT specialists",
+        "definition": "Percentage of ICT specialists"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_igov12nrt",
+        "label": "% of individuals who need to submit official forms to administrative authorities",
+        "alt_label": "% of individuals who need to submit official forms",
+        "definition": "This denominator is derived from two questions: one counting people who submitted forms online and another one about reasons for not doing such online submission because they did not have to submit official forms at all."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_imp",
+        "label": "Percentage of total import",
+        "alt_label": "% of total import",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_income",
+        "label": "Percentage of income",
+        "alt_label": "% of icnome",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind",
+        "label": "Percentage of individuals",
+        "alt_label": "% of individuals",
+        "definition": "Individuals aged 16-74"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_blt12",
+        "label": "Percentage of individuals who ordered goods or services over the Internet",
+        "alt_label": "% of individuals buying online",
+        "definition": "Percentage of individuals who ordered goods or services, over the Internet, for private use, in the last year"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_emp",
+        "label": "Percentage of total employment",
+        "alt_label": "% of total employment",
+        "definition": "Total number of Persons in employment as defined for the Labour Force Survey"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_fem_emp",
+        "label": "Percentage of females employment",
+        "alt_label": "% of female employment",
+        "definition": "Total number of Female in employment"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_form",
+        "label": "Percentage of individuals who used Internet (last year) and need to submit filled forms",
+        "alt_label": "% of internet users (last year) who need to submit filled form",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_igov12nrt",
+        "label": "% of individuals who need to submit official forms to administrative authorities",
+        "alt_label": "% of individuals who need to submit official forms",
+        "definition": "This denominator is derived from two questions: one counting people who submitted forms online and another one about reasons for not doing such online submission because they did not have to submit official forms at all."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_ilt12",
+        "label": "Percentage of individuals who used Internet within the last 12 months",
+        "alt_label": "% of internet users (last 12 months)",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_iu3",
+        "label": "Percentage of individuals who used Internet in the last 3 months",
+        "alt_label": "% of internet users (last 3 months)",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_ind_iugov12",
+        "label": "Percentage of individuals who used the Internet, in the last 12 months, for interaction with public authorities",
+        "alt_label": "% of internet users  who interacted with public authorities (last year)",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_lines",
+        "label": "Percentage of fixed broadband subscriptions",
+        "alt_label": "% of fixed broadband subscriptions",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_male_earning",
+        "label": "Percentage of average gross hourly earnings of men",
+        "alt_label": "% of average gross hourly earnings of men",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_nomspeed",
+        "label": "Percentage of the advertised Speed",
+        "alt_label": "% of the advertised Speed",
+        "definition": "The measurement of the actual Speed is compared with the Advertised download Speed as indicated in the offers subscribed by the sample of users."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_organisations",
+        "label": "Percentage of organizations",
+        "alt_label": "% of organisations",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_pop",
+        "label": "Percentage of total population",
+        "alt_label": "% of total population",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_posts",
+        "label": "Percentage of posts",
+        "alt_label": "% of posts",
+        "definition": "Percentage of posts in DG CONNECT."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_projects",
+        "label": "Percentage of projects",
+        "alt_label": "% of projects",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_pub_serv_for_citizen",
+        "label": "Percentage  of public services for citizens",
+        "alt_label": "% pub serv for citizen",
+        "definition": "Percentage of public services for citizens out of a basket of 12."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_pub_serv_for_ent",
+        "label": "Percentage  of public services for enterprises",
+        "alt_label": "% pub serv for ent",
+        "definition": "Percentage of public services for enterprises out of a basket of 8."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_rural_pop",
+        "label": "Percentage of rural population",
+        "alt_label": "% of rural population",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_schools",
+        "label": "Percentage of schools",
+        "alt_label": "% of schools",
+        "definition": "Each school has an equal weight, independently of the number of students"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_spectrum_assigned",
+        "label": "Percentage of harmonized spectrum assigned",
+        "alt_label": "% of harmonized spectrum assigned",
+        "definition": "Percentage of harmonized spectrum assigned, without consideration of the not assigned due to lack of demand. "
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_spectrum_wbb",
+        "label": "MHz assigned ",
+        "alt_label": "MHz assigned ",
+        "definition": "Assigned number of MHz"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_subs",
+        "label": "Percentage of subscribers",
+        "alt_label": "% of subscribers",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_tel_rev",
+        "label": "Percentage of total revenue of the Electronic Communication Sector",
+        "alt_label": "% of revenue of the Electronic Communication Sector",
+        "definition": "Total includes wholesale and retail revenues from electronic communications perceived in the reference year by all telecom operators (VAT excluded)."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_total_cost",
+        "label": "Percentage of total cost",
+        "alt_label": "% of total cost",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_trp_commit",
+        "label": "Percentage of EU R&I committed funding",
+        "alt_label": "Share of EU R&I committed funding",
+        "definition": "Share of credit commitments for EU Research and Innovation programs"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_turn",
+        "label": "Percentage of total turnover",
+        "alt_label": "% of turnover",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "pc_websites",
+        "label": "Percentage of websites",
+        "alt_label": "% of websites",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "psi_score",
+        "label": "Score (0 to 700)",
+        "alt_label": "Score (0 to 700)",
+        "definition": "The score of the country, from a minimum of 0 to a maximum of 700."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "subs_per_100_pop",
+        "label": "Number of subscriptions per 100 people",
+        "alt_label": "Subscriptions per 100 people",
+        "definition": "Number of subscriptions every 100 people. Depending of the indicator, subscriptions can be fixed lines or mobile active SIM cards."
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "terabite",
+        "label": "Terabits x month",
+        "alt_label": "Terabits x month",
+        "definition": "Terabits x month"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "th_ind",
+        "label": "thousand of individuals ",
+        "alt_label": "thousand of individuals ",
+        "definition": "thousand of individuals aged 16-74"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "thousand_euro",
+        "label": "Thousand Euro",
+        "alt_label": "Thousand Euro",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "thousand_hh",
+        "label": "Thousand of households",
+        "alt_label": "Thousand of households",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "thousand_ind",
+        "label": "Thousand of individuals ",
+        "alt_label": "Thousand of individuals ",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2022-05-27T14:22:18.355Z",
+        "code": "wid_score",
+        "label": "Score (0 to 1)",
+        "alt_label": "Score (0 to 1)",
+        "definition": "Women in Digital Score"
+    }
+}
+]

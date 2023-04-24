@@ -1,0 +1,50 @@
+[
+{
+    "model": "estat.importconfig",
+    "pk": 1,
+    "fields": {
+        "code": "educ_uoe_grad03",
+        "title": null,
+        "remarks": null,
+        "data_last_update": null,
+        "datastructure_last_update": null,
+        "datastructure_last_version": null,
+        "new_version_available": false,
+        "indicator": "ict_grad",
+        "indicator_is_surrogate": true,
+        "breakdown": "sex",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "isced11": [
+                "ED5-8"
+            ],
+            "iscedf13": [
+                "F06"
+            ]
+        },
+        "mappings": {
+            "unit": {
+                "PC": "PC_GRAD"
+            },
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {
+                "T": "TOTAL"
+            }
+        },
+        "tags": []
+    }
+}
+]

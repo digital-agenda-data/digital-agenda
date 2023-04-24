@@ -15,6 +15,11 @@ env = environ.Env()
 if os.path.exists(str(BASE_DIR / ".env")):
     env.read_env(str(BASE_DIR / ".env"))
 
+INITIAL_FIXTURES_DIR = BASE_DIR / "fixtures"
+TEST_FIXTURES_DIR = INITIAL_FIXTURES_DIR / "test"
+
+FIXTURE_DIRS = [INITIAL_FIXTURES_DIR]
+
 # Min year for various period settings in the app
 MIN_YEAR = 1990
 
