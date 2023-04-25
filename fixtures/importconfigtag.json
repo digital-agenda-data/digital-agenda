@@ -1,0 +1,56 @@
+[
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "Background variables"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "HH"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "DSK"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "ENT"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "ENT_SIZE"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "ENT_NACE"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "TODO"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "ENT_AWS"
+    }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "DII"
+    }
+}
+]
