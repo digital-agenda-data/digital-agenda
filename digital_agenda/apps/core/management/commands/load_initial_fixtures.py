@@ -27,6 +27,7 @@ class Command(BaseCommand):
         Country,
         # Imports
         GeoGroup,
+        ImportConfigTag,
         ImportConfig,
         # Charts
         ChartGroup,

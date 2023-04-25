@@ -21,6 +21,9 @@ class ImportConfigTag(models.Model):
     def __str__(self):
         return self.code
 
+    def natural_key(self):
+        return (self.code,)  # noqa
+
 
 class GeoGroup(models.Model):
     code = CICharField(max_length=60, unique=True)
