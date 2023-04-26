@@ -143,7 +143,7 @@ class ImportConfig(models.Model):
         null=True,
         blank=True,
         on_delete=models.CASCADE,
-        help_text="Only include datapoints for countries in this group OR the group itself",
+        help_text="Only include datapoints for countries in this group",
     )
     filters = models.JSONField(
         default=dict,
@@ -172,7 +172,6 @@ class ImportConfig(models.Model):
             result[self.country.lower()].update(
                 val.lower() for val in self.country_group.geo_codes
             )
-            result[self.country.lower()].add(self.country_group.code.lower())
 
         return result
 
