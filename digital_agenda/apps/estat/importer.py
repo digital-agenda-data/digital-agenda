@@ -202,10 +202,10 @@ class EstatImporter:
             return False
 
         # Apply period filters
-        period = int(obs[self.config.period].id)
-        if self.config.period_start and self.config.period_start > period:
+        year = int(Period.split_code(obs[self.config.period].id)[0])
+        if self.config.period_start and self.config.period_start > year:
             return False
-        if self.config.period_end and self.config.period_end < period:
+        if self.config.period_end and self.config.period_end < year:
             return False
 
         # Apply all the other filters
