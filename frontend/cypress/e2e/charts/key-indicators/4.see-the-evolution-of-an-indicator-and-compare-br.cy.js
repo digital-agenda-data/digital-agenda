@@ -14,7 +14,7 @@ describeResponsive("Check Chart", () => {
         country: "European Union",
       },
       title: ["ICT graduates", "European Union"],
-      point: "2019, 0.8. Females.",
+      point: "Year: 2019, 0.8. Females.",
       definitions: [
         "Indicator: ICT graduates",
         "Definition: Individuals with a degree in ICT",
