@@ -4,11 +4,14 @@ import BaseChart from "@/components/charts/base/BaseChart.vue";
 import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
+import { usePeriodStore } from "@/stores/periodStore";
+import { mapState } from "pinia";
 
 export default {
   name: "SplineCompareCountries",
   extends: BaseChart,
   computed: {
+    ...mapState(usePeriodStore, ["periodByCode"]),
     chartType() {
       return "spline";
     },
@@ -33,12 +36,13 @@ export default {
           color: country.color,
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[country.code][periodCode];
+            const period = this.periodByCode.get(periodCode);
 
             return {
               fact,
               y: fact?.value || null,
-              x: parseInt(periodCode),
-              name: periodCode,
+              x: new Date(period?.date),
+              name: period?.label || period?.code,
             };
           }),
         };
@@ -46,6 +50,9 @@ export default {
     },
     chartOptions() {
       return {
+        xAxis: {
+          type: "datetime",
+        },
         yAxis: {
           min: 0,
           title: {

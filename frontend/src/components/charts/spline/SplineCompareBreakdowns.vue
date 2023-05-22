@@ -5,11 +5,14 @@ import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
+import { usePeriodStore } from "@/stores/periodStore";
+import { mapState } from "pinia";
 
 export default {
   name: "SplineCompareBreakdowns",
   extends: BaseChart,
   computed: {
+    ...mapState(usePeriodStore, ["periodByCode"]),
     chartType() {
       return "spline";
     },
@@ -37,12 +40,13 @@ export default {
           name: breakdown.display,
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
+            const period = this.periodByCode.get(periodCode);
 
             return {
               fact,
               y: fact?.value || null,
-              x: parseInt(periodCode),
-              name: periodCode,
+              x: new Date(period?.date),
+              name: period?.label || period?.code,
             };
           }),
         };
@@ -55,6 +59,9 @@ export default {
         },
         legend: {
           enabled: (this.breakdown || []).length > 1,
+        },
+        xAxis: {
+          type: "datetime",
         },
         yAxis: {
           min: 0,

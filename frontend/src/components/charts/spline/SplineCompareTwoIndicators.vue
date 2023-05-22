@@ -4,11 +4,14 @@ import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue"
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
+import { usePeriodStore } from "@/stores/periodStore";
+import { mapState } from "pinia";
 
 export default {
   name: "SplineCompareTwoIndicators",
   extends: BaseMultiAxisChart,
   computed: {
+    ...mapState(usePeriodStore, ["periodByCode"]),
     chartType() {
       return "spline";
     },
@@ -46,12 +49,14 @@ export default {
           name: indicator.display,
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
+            const period = this.periodByCode.get(periodCode);
 
             return {
               y: apiValue,
-              x: parseInt(periodCode),
-              name: periodCode,
+              x: new Date(period?.date),
+              name: period?.label || period?.code,
               unit,
+              period,
               breakdown,
             };
           }),
@@ -86,6 +91,9 @@ export default {
             },
           },
         },
+        xAxis: {
+          type: "datetime",
+        },
         yAxis: [
           {
             title: {
@@ -111,7 +119,7 @@ export default {
             `<b>${this.series.name}</b>`,
             parent.getUnitDisplay(this.point.y, this.point.options.unit),
             `<b>Breakdown:</b> ${this.point.options.breakdown?.display}`,
-            `<b>Time Period:</b> Year: ${this.point.x}`,
+            `<b>Time Period:</b> ${this.point.options.period?.label}`,
           ].join("<br/>");
         },
       };
