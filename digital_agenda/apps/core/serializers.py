@@ -32,13 +32,7 @@ class BaseDimensionSerializer(serializers.ModelSerializer):
     display = serializers.SerializerMethodField(label="Display", read_only=True)
 
     class Meta:
-        fields = [
-            "code",
-            "label",
-            "alt_label",
-            "definition",
-            "display",
-        ]
+        fields = ["code", "label", "alt_label", "definition", "display"]
 
     def get_display(self, obj):
         """A suitable display string for this dimension"""
@@ -64,6 +58,7 @@ class CountrySerializer(BaseDimensionSerializer):
 class PeriodSerializer(BaseDimensionSerializer):
     class Meta(BaseDimensionSerializer.Meta):
         model = Period
+        fields = BaseDimensionSerializer.Meta.fields + ["date"]
 
 
 class DataSourceSerializer(BaseDimensionSerializer):
@@ -160,9 +155,7 @@ class CaptchaValidator:
         try:
             resp = httpx.post(
                 f"https://api.eucaptcha.eu/api/validateCaptcha/{value['id']}",
-                headers={
-                    "x-jwtString": value["token"],
-                },
+                headers={"x-jwtString": value["token"]},
                 data={
                     "captchaAnswer": answer,
                     "useAudio": "false",

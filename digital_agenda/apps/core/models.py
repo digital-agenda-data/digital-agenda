@@ -1,14 +1,16 @@
+import re
+import calendar
+from datetime import date
 from datetime import datetime
+from datetime import timedelta
 from pathlib import Path
 
 import magic
 from colorfield.fields import ColorField
 
 from django.conf import settings
-from django.core.files.storage import FileSystemStorage
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.core.files.storage import get_storage_class
 from django.core.validators import FileExtensionValidator
 from django.utils.functional import cached_property
 from django_task.models import TaskRQ
@@ -203,10 +205,77 @@ class Country(BaseDimensionModel):
 class Period(BaseDimensionModel):
     """Dimension model for time periods"""
 
-    code = models.PositiveIntegerField(unique=True)
+    date = models.DateField(null=False, blank=True, db_index=True)
 
     class Meta:
         ordering = ["-code"]
+
+    @staticmethod
+    def split_code(code):
+        try:
+            year, qualifier = re.split(r"[-_\s]", code.lower(), maxsplit=1)
+        except ValueError:
+            year, qualifier = code, ""
+        return year, qualifier
+
+    def _guess_fields_from_code(self):
+        year, qualifier = self.split_code(self.code)
+
+        year = int(year)
+        assert year >= 1900, f"year for date is likely too low '{year}'"
+        assert year <= date.today().year, f"year appears to be in the future '{year}'"
+
+        if not qualifier:
+            self.label = self.label or f"Year: {year}"
+            self.alt_label = self.alt_label or str(year)
+        else:
+            self.label = self.label or self.code.upper()
+            self.alt_label = self.label or self.code.upper()
+
+        if not qualifier:
+            # Annual
+            index = 1
+            length = 12
+        elif qualifier.startswith("h") or qualifier.startswith("s"):
+            # Half-yearly, semesterly
+            index = int(qualifier[1])
+            length = 6
+        elif qualifier.startswith("q"):
+            # Quarterly
+            index = int(qualifier[1])
+            length = 3
+        else:
+            # Monthly (hopefully)
+            # Strip any leading zeros from stuff like "2022-06"
+            index = int(qualifier.lstrip("0"))
+            length = 1
+
+        first_month = (index - 1) * length + 1
+        last_month = index * length
+        last_day = calendar.monthrange(year, last_month)[1]
+
+        date_start = date(year, first_month, 1)
+        date_end = date(year, last_month, last_day)
+
+        mid_date = date_start + timedelta(days=round((date_end - date_start).days / 2))
+        self.date = self.date or mid_date
+
+    def clean(self):
+        if self.date:
+            return
+
+        try:
+            self._guess_fields_from_code()
+        except (ValueError, TypeError, AssertionError) as e:
+            raise ValidationError(
+                {
+                    "date": f"Unable to guess date; please check code or enter a date manually: {e}"
+                }
+            )
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
 
 
 class Fact(TimestampedModel):
@@ -250,10 +319,6 @@ class Fact(TimestampedModel):
                 name="core_fact_either_val_or_flags",
             )
         ]
-
-    def save(self, *args, **kwargs):
-        self.clean()
-        super().save(*args, **kwargs)
 
 
 def upload_path(instance, filename):

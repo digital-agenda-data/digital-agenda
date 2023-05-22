@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.db.models import Max
 from django.db.models import Min
 from django.utils.decorators import method_decorator
@@ -8,7 +10,6 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
-from rest_framework_csv.renderers import CSVRenderer
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
@@ -56,17 +57,18 @@ class ChartGroupViewSet(
 
         queryset = (
             Indicator.objects.filter(facts__period__isnull=False)
+            .prefetch_related("data_sources")
             .annotate(
-                min_period=Min("facts__period__code"),
-                max_period=Max("facts__period__code"),
+                min_period=Min("facts__period__date"),
+                max_period=Max("facts__period__date"),
             )
             .filter(groups__id__in=group_ids)
         )
 
         if obj.period_start:
-            queryset = queryset.exclude(max_period__lt=obj.period_start)
+            queryset = queryset.exclude(max_period__lt=date(obj.period_start, 1, 1))
         if obj.period_end:
-            queryset = queryset.exclude(min_period__gt=obj.period_end)
+            queryset = queryset.exclude(min_period__gt=date(obj.period_end, 12, 31))
 
         return Response(ChartIndicatorListSerializer(queryset, many=True).data)
 

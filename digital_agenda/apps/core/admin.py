@@ -178,6 +178,7 @@ class UnitAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin):
 
 @admin.register(Period)
 class PeriodAdmin(HasFactsAdminMixIn, DimensionAdmin):
+    list_display = ("code", "label", "alt_label", "date")
     facts_filter = "period"
 
 
