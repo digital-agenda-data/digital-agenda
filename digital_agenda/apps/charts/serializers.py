@@ -84,8 +84,8 @@ class ChartSerializer(serializers.ModelSerializer):
 
 
 class ChartIndicatorListSerializer(IndicatorListSerializer):
-    min_period = serializers.CharField(read_only=True)
-    max_period = serializers.CharField(read_only=True)
+    min_period = serializers.SerializerMethodField(read_only=True)
+    max_period = serializers.SerializerMethodField(read_only=True)
 
     class Meta(IndicatorListSerializer.Meta):
         fields = IndicatorListSerializer.Meta.fields + [
@@ -94,6 +94,12 @@ class ChartIndicatorListSerializer(IndicatorListSerializer):
             "definition",
             "note",
         ]
+
+    def get_min_period(self, obj):
+        return obj.min_period.year
+
+    def get_max_period(self, obj):
+        return obj.max_period.year
 
 
 class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):
