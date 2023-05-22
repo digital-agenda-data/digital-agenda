@@ -227,7 +227,7 @@ export default {
           text: this.makeTitle([this.indicator, this.breakdown]),
         },
         subtitle: {
-          text: this.period?.code && `Year: ${this.period.code}`,
+          text: this.period?.label || this.period?.code,
         },
         legend: {
           enabled: false,
@@ -321,7 +321,7 @@ export default {
           }
 
           if (parent.period?.code) {
-            result.push(`<b>Time Period:</b> Year: ${parent.period.code}`);
+            result.push(`<b>Time Period:</b> ${parent.period.label}`);
           }
 
           return result.join("<br/>");
