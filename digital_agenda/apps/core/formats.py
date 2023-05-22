@@ -26,16 +26,24 @@ class DimensionCache:
     def __init__(self, model):
         self.model = model
         self.cache = {}
+        # Period obj can be auto-created
+        self._auto_create = model == Period
 
     def get(self, code):
-        dimension = self.cache.get(code)
-        if not dimension:
-            try:
-                dimension = self.cache[code] = self.model.objects.get(code=code)
-            except (self.model.DoesNotExist, ValueError):
-                dimension = None
+        try:
+            return self.cache[code]
+        except KeyError:
+            pass
 
-        return dimension
+        if self._auto_create:
+            obj = self.cache[code] = self.model.objects.get_or_create(code=code)[0]
+        else:
+            try:
+                obj = self.cache[code] = self.model.objects.get(code=code)
+            except (self.model.DoesNotExist, ValueError):
+                obj = None
+
+        return obj
 
 
 class BaseFileLoader(ABC):
