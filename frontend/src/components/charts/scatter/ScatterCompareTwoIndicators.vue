@@ -100,9 +100,7 @@ export default {
           },
         },
         title: {
-          text:
-            this.filterStore.periodX?.code &&
-            `Year: ${this.filterStore.periodX.code}`,
+          text: this.filterStore.periodX?.label,
         },
         subtitle: {
           enabled: !!this.chartSubtitle,
