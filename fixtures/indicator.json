@@ -5,8 +5,8 @@
         "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2022-05-27T14:14:32.070Z",
         "code": "5g_read",
-        "label": "5G readiness",
-        "alt_label": "5G readiness",
+        "label": "5G spectrum",
+        "alt_label": "5G spectrum",
         "definition": "The amount of spectrum assigned and ready for 5G use within the so-called 5G pioneer bands. These bands are 700 MHz (703-733 MHz and 758-788 MHz), 3.6 GHz (3400-3800 MHz) and 26 GHz (1000 MHz within 24250-27500 MHz). All three spectrum bands have an equal weight.",
         "note": null
     }
@@ -2309,8 +2309,8 @@
         "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2022-05-27T14:14:32.070Z",
         "code": "e_webf2",
-        "label": "Enterprises having a website with some sofisticated functionalities",
-        "alt_label": "Enterprises having a website with some sofisticated functionalities",
+        "label": "Enterprises having a website with some sophisticated functionalities",
+        "alt_label": "Enterprises having a website with some sophisticated functionalities",
         "definition": "Website having at least one of the following four functionalities : product catalogues or price lists (webacc), possibilities for visitors to customise or design the products (webctm), order tracking available online (webot) or personalised content in the website for regular/repeated visitors (webper).",
         "note": "Enterprises with 10 or more persons employed. All manufacturing and service sectors, excluding the financial sector. Breaks in series because until 2008 economic activities according to NACE Rev 1.1 and from 2009 data are based on NACE Rev.2. Since 2010 data include also sector S95.1-Repair of computers and communication equipment."
     }
