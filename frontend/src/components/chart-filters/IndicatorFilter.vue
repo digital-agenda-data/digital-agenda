@@ -11,11 +11,6 @@ export default {
     endpoint() {
       return "/indicators/";
     },
-    endpointParams() {
-      return {
-        indicator_group: this.filterStore.indicatorGroup?.code,
-      };
-    },
   },
 };
 </script>

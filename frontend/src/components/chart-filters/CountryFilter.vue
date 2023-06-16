@@ -19,11 +19,6 @@ export default {
     endpoint() {
       return "/countries/";
     },
-    endpointParams() {
-      return {
-        indicator: this.filterStore.indicator?.code,
-      };
-    },
     label() {
       return "Country";
     },
