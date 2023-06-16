@@ -11,11 +11,6 @@ export default {
     endpoint() {
       return "/periods/";
     },
-    endpointParams() {
-      return {
-        indicator: this.filterStore.indicator?.code,
-      };
-    },
     apiData() {
       const periodStart = this.currentChartGroup.period_start ?? -Infinity;
       const periodEnd = this.currentChartGroup.period_end ?? Infinity;

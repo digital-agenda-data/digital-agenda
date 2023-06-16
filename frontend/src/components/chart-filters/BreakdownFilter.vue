@@ -11,12 +11,6 @@ export default {
     endpoint() {
       return "/breakdowns/";
     },
-    endpointParams() {
-      return {
-        indicator: this.filterStore.indicator?.code,
-        breakdown_group: this.filterStore.breakdownGroup?.code,
-      };
-    },
     defaultSingleValue() {
       // Default to the first item, as that will likely be the "total"
       return this.items[0]?.id;

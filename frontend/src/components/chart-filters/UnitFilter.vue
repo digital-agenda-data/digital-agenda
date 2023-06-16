@@ -11,11 +11,6 @@ export default {
     endpoint() {
       return "/units/";
     },
-    endpointParams() {
-      return {
-        indicator: this.filterStore.indicator?.code,
-      };
-    },
   },
 };
 </script>

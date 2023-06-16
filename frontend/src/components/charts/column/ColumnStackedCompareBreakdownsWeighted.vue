@@ -19,6 +19,7 @@ export default {
             allInitial: true,
             syncRoute: false,
             class: ["chart-filter-full"],
+            extraParams: ["indicator"],
           },
         },
         IndicatorWithGroupsFilter,
