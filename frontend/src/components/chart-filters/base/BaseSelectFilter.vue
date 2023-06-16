@@ -16,7 +16,7 @@ import EclSelect from "@/components/ecl/forms/EclSelect.vue";
 import { api } from "@/lib/api";
 import { FILTER_SUFFIXES } from "@/lib/constants";
 import { useFilterStore } from "@/stores/filterStore";
-import { forceArray, randomChoice } from "@/lib/utils";
+import { forceArray, randomChoice, toAPIKey } from "@/lib/utils";
 import { mapState } from "pinia";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useChartStore } from "@/stores/chartStore";
@@ -45,6 +45,17 @@ export default {
       validator(value) {
         return FILTER_SUFFIXES.includes(value);
       },
+    },
+    /**
+     * Additional params to send as API filters.
+     * For example:
+     *
+     *  ["breakdown", "unit"]
+     */
+    extraParams: {
+      type: Array,
+      required: false,
+      default: null,
     },
     /**
      * Set "display: none" on the component. Useful for loading
@@ -257,9 +268,16 @@ export default {
       }
       return true;
     },
+    mergedEndpointParams() {
+      const result = { ...this.endpointParams };
+      for (const key of forceArray(this.extraParams)) {
+        result[toAPIKey(key)] = this.filterStore[key]?.code;
+      }
+      return result;
+    },
   },
   watch: {
-    endpointParams(newValue, oldValue) {
+    mergedEndpointParams(newValue, oldValue) {
       if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
         this.load();
       }
@@ -277,7 +295,8 @@ export default {
   methods: {
     async load() {
       if (!this.endpoint) return;
-      if (!Object.values(this.endpointParams).every((item) => !!item)) return;
+      if (!Object.values(this.mergedEndpointParams).every((item) => !!item))
+        return;
 
       this.loading = true;
       this.filterStore.loadingCounter += 1;
@@ -305,7 +324,7 @@ export default {
     async loadApiData() {
       this.apiDataRaw = (
         await api.get(this.endpoint, {
-          params: this.endpointParams,
+          params: this.mergedEndpointParams,
         })
       ).data;
     },
