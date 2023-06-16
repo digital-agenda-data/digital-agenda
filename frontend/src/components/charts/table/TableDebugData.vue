@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th>Country</th>
-        <th>{{ unit.display }}</th>
+        <th>{{ unit?.display }}</th>
       </tr>
     </thead>
 

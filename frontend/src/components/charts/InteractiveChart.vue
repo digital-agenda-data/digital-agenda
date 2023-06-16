@@ -43,13 +43,29 @@ export default {
       const result = [];
       for (const axis of FILTER_SUFFIXES) {
         const items = this.$refs.chart?.[`filter${axis}Components`] ?? [];
+        const previousParams = [];
 
         for (const item of items) {
           if (!item) {
             continue;
           }
 
-          result.push(this.normalizeFilterComponent(item, axis));
+          const filterComponent = this.normalizeFilterComponent(item, axis);
+
+          // Add extra filter params based on the previous filters; that way
+          // we should never have impossible combinations.
+          filterComponent.attrs.extraParams = [
+            ...(filterComponent.attrs.extraParams ?? []),
+            ...previousParams,
+          ];
+
+          const queryName = filterComponent.component.computed?.queryName?.();
+          const isMultiple = filterComponent.component.computed?.multiple?.();
+          if (queryName && !isMultiple) {
+            previousParams.push(queryName);
+          }
+
+          result.push(filterComponent);
         }
       }
       return result;
