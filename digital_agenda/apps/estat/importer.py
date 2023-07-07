@@ -1,9 +1,11 @@
+import collections
 import datetime
 import gzip
 import itertools
 import json
 import shutil
 import logging
+import decimal
 from functools import cached_property
 from collections import defaultdict
 
@@ -180,7 +182,6 @@ class EstatImporter:
         self.config = config
         self.force_download = force_download
         self.cache = defaultdict(dict)
-        self.unique = set()
 
     @cached_property
     def dataset(self):
@@ -245,37 +246,64 @@ class EstatImporter:
             self.cache[dimension][category_id] = obj
         return obj
 
-    def get_fact(self, obs):
-        fact = Fact(
-            value=obs["value"],
-            flags=obs["status"] or "",
-            import_config_id=self.config.id,
-        )
-        unique_key = []
-        for attr in MODELS:
-            obj = self.get_dimension_obj(attr, obs)
-            unique_key.append(obj)
-            setattr(fact, attr, obj)
-
-        key = tuple(unique_key)
-        if key in self.unique:
-            raise ImporterError(
-                {
-                    "Duplicate key detected in the dataset (mapping or filter may not be correct?)": list(
-                        map(str, key)
-                    )
-                }
-            )
-        self.unique.add(key)
-
-        return fact
-
     def iter_facts(self):
+        fact_collection = collections.defaultdict(list)
         for obs in self.dataset:
             if not self.should_store_observation(obs):
                 continue
 
-            yield self.get_fact(obs)
+            fact = Fact(
+                value=obs["value"],
+                flags=obs["status"] or "",
+                import_config_id=self.config.id,
+            )
+            unique_key = []
+            for attr in MODELS:
+                obj = self.get_dimension_obj(attr, obs)
+                unique_key.append(obj)
+                setattr(fact, attr, obj)
+
+            fact_collection[tuple(unique_key)].append(fact)
+
+        for key, fact_group in fact_collection.items():
+            yield self._handle_conflict(fact_group, key)
+
+    def _handle_conflict(self, fact_group, key):
+        if len(fact_group) == 1:
+            return fact_group[0]
+
+        # Chose one fact to work on
+        fact = fact_group[0]
+        try:
+            # Convert to decimal (from string) to avoid janky float arithmetics
+            total = sum(decimal.Decimal(str(fact.value)) for fact in fact_group)
+        except (TypeError, decimal.InvalidOperation):
+            # At least one value is missing, set the merged result to None as well
+            # and set custom flags to indicate the missing part
+            fact.value = None
+            fact.flags = "~"
+            return fact
+
+        match self.config.conflict_resolution:
+            case self.config.ConflictResolution.SUM_VALUES:
+                new_value = total
+            case self.config.ConflictResolution.AVERAGE_VALUES:
+                new_value = total / len(fact_group)
+            case _:
+                raise ImporterError(
+                    {
+                        "Duplicate key detected in the dataset (mapping or filter may not be correct?)": list(
+                            map(str, key)
+                        )
+                    }
+                )
+
+        all_flags = [set(fact.flags) for fact in fact_group]
+
+        fact.value = float(new_value)
+        fact.flags = "".join(set.union(*all_flags))
+
+        return fact
 
     def create_batch(self, facts):
         return Fact.objects.bulk_create(
