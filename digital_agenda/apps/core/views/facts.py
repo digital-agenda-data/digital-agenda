@@ -45,6 +45,7 @@ EUROSTAT_FLAGS = {
     "z": "not applicable",
     # Custom flags, not from ESTAT; for internal use only
     "x": "unavailable",
+    "~": "at least one datapoint missing from combined value",
 }
 
 
@@ -93,10 +94,7 @@ class FactsFilter(filters.FilterSet):
 
         return queryset.filter(
             Exists(
-                rel_model.objects.filter(
-                    id=OuterRef(f"{name}_id"),
-                    groups__code=value,
-                )
+                rel_model.objects.filter(id=OuterRef(f"{name}_id"), groups__code=value)
             )
         )
 
@@ -208,23 +206,10 @@ class FactXLSXSerializer:
         if not self.chart_group:
             return
 
+        sheet.append(["Source", "European Commission, Digital Scoreboard"])
+        sheet.append(["Dataset", self.chart_group.name])
         sheet.append(
-            [
-                "Source",
-                "European Commission, Digital Scoreboard",
-            ]
-        )
-        sheet.append(
-            [
-                "Dataset",
-                self.chart_group.name,
-            ]
-        )
-        sheet.append(
-            [
-                "Charts",
-                f"https://{host}/datasets/{self.chart_group.code}/charts",
-            ]
+            ["Charts", f"https://{host}/datasets/{self.chart_group.code}/charts"]
         )
         sheet.append(
             [
@@ -243,14 +228,7 @@ class FactXLSXSerializer:
         sheet = self.wb.create_sheet("Applied Filters")
         self.set_dimensions(sheet, [15, 15, 40, 40, 40])
         self.write_headers(
-            sheet,
-            [
-                "Dimension",
-                "Code",
-                "Label",
-                "Alt. Label",
-                "Definition",
-            ],
+            sheet, ["Dimension", "Code", "Label", "Alt. Label", "Definition"]
         )
 
         for filter_key, value in self.filter_args.items():
@@ -268,13 +246,7 @@ class FactXLSXSerializer:
 
     def render_dimensions_sheet(self):
         headers = ["code", "label", "alt_label", "definition"]
-        dimensions = [
-            "indicator",
-            "breakdown",
-            "unit",
-            "country",
-            "period",
-        ]
+        dimensions = ["indicator", "breakdown", "unit", "country", "period"]
         dimension_codes = collections.defaultdict(set)
         for row in self.data:
             for dim in dimensions:
