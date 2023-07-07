@@ -1,0 +1,46 @@
+[
+  {
+    "model": "estat.importconfig",
+    "pk": 1,
+    "fields": {
+      "code": "isoc_e_dii",
+      "title": "Digital Intensity Index v4 (vhi and hi)",
+      "conflict_resolution": "RAISE_ERROR",
+      "indicator": "e_di4_vhi_and_hi",
+      "indicator_is_surrogate": true,
+      "breakdown": "total",
+      "breakdown_is_surrogate": true,
+      "country": "geo",
+      "country_is_surrogate": false,
+      "unit": "unit",
+      "unit_is_surrogate": false,
+      "period": "time",
+      "period_is_surrogate": false,
+      "period_start": 2022,
+      "period_end": 2022,
+      "country_group": null,
+      "filters": {
+        "unit": [
+          "PC_ENT"
+        ],
+        "indic_is": [
+          "E_DI4_VHI",
+          "E_DI4_HI"
+        ],
+        "size_emp": [
+          "GE10"
+        ]
+      },
+      "mappings": {
+        "unit": {},
+        "period": {},
+        "country": {
+          "EU27_2020": "EU"
+        },
+        "breakdown": {},
+        "indicator": {}
+      },
+      "tags": []
+    }
+  }
+]

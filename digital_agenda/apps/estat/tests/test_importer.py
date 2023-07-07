@@ -237,6 +237,107 @@ class TestImporter(TestCase):
         self.assertEqual(new_fact.import_config, original_fact.import_config)
 
 
+class TestImporterDataMerge(TestCase):
+    fixtures = ["test/geogroup", "test/data_merge_importconfig.json"]
+
+    def setUp(self):
+        super().setUp()
+        # See https://ec.europa.eu/eurostat/databrowser/view/isoc_e_dii/default/table
+        # for values
+        self.config = ImportConfig.objects.first()
+
+    def test_raise_error(self):
+        self.config.run_import(delete_existing=True)
+        self.config.refresh_from_db()
+        self.assertIn(
+            "Duplicate key detected in the dataset",
+            self.config.latest_task.failure_reason,
+        )
+
+    def test_sum_values(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="EU",
+        )
+        # EU should have:
+        #   - 4.3 for e_di_vhi
+        #   - 28.1 for e_di_hi
+        self.assertEqual(fact.value, 32.4)
+        self.assertEqual(fact.flags, "")
+
+    def test_avg_values(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.AVERAGE_VALUES
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="EU",
+        )
+        # EU should have:
+        #   - 4.3 for e_di_vhi
+        #   - 28.1 for e_di_hi
+        self.assertEqual(fact.value, 16.2)
+        self.assertEqual(fact.flags, "")
+
+    def test_missing_value_sum(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="MK",
+        )
+        # Nort Macedonia (MK) has no value for e_di_vhi
+        self.assertEqual(fact.value, None)
+        self.assertEqual(fact.flags, "~")
+
+    def test_missing_value_avg(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.AVERAGE_VALUES
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="MK",
+        )
+        # Nort Macedonia (MK) has no value for e_di_vhi
+        self.assertEqual(fact.value, None)
+        self.assertEqual(fact.flags, "~")
+
+    def test_merge_flags(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="FR",
+        )
+        # France (FR) has the (b) flag for both values
+        self.assertEqual(fact.flags, "b")
+
+
 class TestImporterErrors(TestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
