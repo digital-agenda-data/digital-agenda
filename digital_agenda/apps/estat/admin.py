@@ -92,7 +92,18 @@ class ImportConfigAdmin(admin.ModelAdmin):
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
-        (None, {"fields": ["code", "title", "tags", "remarks"]}),
+        (
+            None,
+            {
+                "fields": [
+                    "code",
+                    "title",
+                    "tags",
+                    "remarks",
+                    "conflict_resolution",
+                ]
+            },
+        ),
         (
             "Dimensions",
             {
