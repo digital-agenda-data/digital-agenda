@@ -75,6 +75,11 @@ def is_unique(values):
 
 
 class ImportConfig(models.Model):
+    class ConflictResolution(models.TextChoices):
+        RAISE_ERROR = "RAISE_ERROR", "Raise errors on duplicate keys"
+        SUM_VALUES = "SUM_VALUES", "Add values and merge flags"
+        AVERAGE_VALUES = "AVERAGE_VALUES", "Average values and merge flags"
+
     code = CICharField(max_length=60)
     title = models.CharField(
         max_length=1024,
@@ -109,6 +114,16 @@ class ImportConfig(models.Model):
     new_version_available = models.BooleanField(
         default=False,
         help_text="An updated version of the dataset is available in ESTAT",
+    )
+
+    conflict_resolution = models.CharField(
+        max_length=60,
+        choices=ConflictResolution.choices,
+        default=ConflictResolution.RAISE_ERROR,
+        help_text=(
+            "Importer behavior when a duplicate key is detected in the processed dataset. "
+            "Can be used to merge multiple values into a single surrogate indicator."
+        ),
     )
 
     indicator = CICharField(max_length=60)
