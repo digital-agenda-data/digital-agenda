@@ -76,7 +76,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "has_remarks",
         "new_version_available",
     )
-    search_fields = ("code", "title", "indicator", "tags__code")
+    search_fields = ("code", "title", "indicator", "tags__code", "filters", "mappings")
     list_filter = ("tags", ("remarks", EmptyFieldListFilter), "new_version_available")
     readonly_fields = (
         "num_facts",
@@ -92,18 +92,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
-        (
-            None,
-            {
-                "fields": [
-                    "code",
-                    "title",
-                    "tags",
-                    "remarks",
-                    "conflict_resolution",
-                ]
-            },
-        ),
+        (None, {"fields": ["code", "title", "tags", "remarks", "conflict_resolution"]}),
         (
             "Dimensions",
             {
