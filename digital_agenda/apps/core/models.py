@@ -388,6 +388,13 @@ class DataFileImport(TimestampedModel):
 
     @cached_property
     def latest_task(self):
+        prefetched_tasks = getattr(self, "prefetched_latest_tasks", None)
+        if prefetched_tasks is not None:
+            try:
+                return prefetched_tasks[0]
+            except IndexError:
+                return None
+
         try:
             return self.tasks.latest()
         except DataFileImportTask.DoesNotExist:

@@ -2,6 +2,7 @@ from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
 from django.contrib.admin import EmptyFieldListFilter
 from django.db.models import Count
+from django.db.models import Prefetch
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
@@ -160,7 +161,15 @@ class ImportConfigAdmin(admin.ModelAdmin):
             super()
             .get_queryset(request)
             .annotate(num_facts=Count("facts"))
-            .prefetch_related("tags", "country_group")
+            .prefetch_related(
+                "tags",
+                "country_group",
+                Prefetch(
+                    "tasks",
+                    ImportFromConfigTask.objects.all().order_by("-created_on"),
+                    to_attr="prefetched_latest_tasks",
+                ),
+            )
         )
 
     @admin.display(description="Facts Count", ordering="num_facts")
