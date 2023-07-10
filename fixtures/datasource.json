@@ -2065,5 +2065,18 @@
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_sks_itsps",
         "note": ""
     }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-07-05T10:16:19.455Z",
+        "updated_at": "2023-07-05T10:16:19.455Z",
+        "code": "estat_isoc_e_diin2",
+        "label": "Digital Intensity by NACE Rev.2 activity",
+        "alt_label": null,
+        "definition": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_e_diin2",
+        "note": null
+    }
 }
 ]

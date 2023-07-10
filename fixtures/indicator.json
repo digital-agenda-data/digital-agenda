@@ -3,12 +3,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-06-14T15:19:43.383Z",
         "code": "5g_read",
         "label": "5G spectrum",
         "alt_label": "5G spectrum",
         "definition": "The amount of spectrum assigned and ready for 5G use within the so-called 5G pioneer bands. These bands are 700 MHz (703-733 MHz and 758-788 MHz), 3.6 GHz (3400-3800 MHz) and 26 GHz (1000 MHz within 24250-27500 MHz). All three spectrum bands have an equal weight.",
-        "note": null
+        "note": ""
     }
 },
 {
@@ -2307,7 +2307,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-06-14T15:04:15.649Z",
         "code": "e_webf2",
         "label": "Enterprises having a website with some sophisticated functionalities",
         "alt_label": "Enterprises having a website with some sophisticated functionalities",
@@ -2343,9 +2343,9 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-07-05T09:32:14.607Z",
         "code": "edigint2015",
-        "label": "Digital Intensity score for Enterprises",
+        "label": "Digital Intensity score for Enterprises (DII v1)",
         "alt_label": "Digital Intensity score for Enterprises",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "note": "The 2015 list of technologies includes: usage of internet by a majority of the workers; access to ICT specialist skills; fixed broadband speed > 30 Mbps; mobile devices used by more than 20% of employed persons; has a website; has some sophisticated functions on the website; presence on social media; does e-sales for at least 1% of turnover; exploit the B2C opportunities of web sales; use an ERP software; use a CRM software; share electronically supply chain management information.\r\nIn 2016 the last 3 indicators have been replaced with: pay to advertise on the internet; purchase cloud computing advanced services; send eInvoices. There is thus a break in series with in general a reduction of the digital intensity scores."
@@ -4617,6 +4617,186 @@
         "alt_label": null,
         "definition": null,
         "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T09:31:32.000Z",
+        "updated_at": "2023-07-05T09:31:32.000Z",
+        "code": "edigint2018",
+        "label": "Digital Intensity score for Enterprises (DII v2)",
+        "alt_label": "Digital Intensity score for Enterprises (DII v2)",
+        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T09:31:54.786Z",
+        "updated_at": "2023-07-05T09:31:54.786Z",
+        "code": "edigint2021",
+        "label": "Digital Intensity score for Enterprises (DII v3)",
+        "alt_label": "Digital Intensity score for Enterprises (DII v3)",
+        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T09:32:45.060Z",
+        "updated_at": "2023-07-05T09:32:45.060Z",
+        "code": "edigint2022",
+        "label": "Digital Intensity score for Enterprises (DII v4)",
+        "alt_label": "Digital Intensity score for Enterprises (DII v4)",
+        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.067Z",
+        "updated_at": "2023-07-05T10:13:31.067Z",
+        "code": "e_di4_vlo",
+        "label": "Enterprises with very low digital intensity index (Version 4)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.131Z",
+        "updated_at": "2023-07-05T10:13:31.131Z",
+        "code": "e_di4_lo",
+        "label": "Enterprises with low digital intensity index (Version 4)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.143Z",
+        "updated_at": "2023-07-05T10:13:31.143Z",
+        "code": "e_di4_hi",
+        "label": "Enterprises with high digital intensity index (Version 4)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.153Z",
+        "updated_at": "2023-07-05T10:13:31.153Z",
+        "code": "e_di4_vhi",
+        "label": "Enterprises with very high digital intensity index (Version 4)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.220Z",
+        "updated_at": "2023-07-05T10:13:31.220Z",
+        "code": "e_di_lo",
+        "label": "Enterprises with low digital intensity index (DII version 1)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.239Z",
+        "updated_at": "2023-07-05T10:13:31.239Z",
+        "code": "e_di_hi",
+        "label": "Enterprises with high digital intensity index (DII version 1)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.262Z",
+        "updated_at": "2023-07-05T10:13:31.262Z",
+        "code": "e_di_vhi",
+        "label": "Enterprises with very high digital intensity index (DII version 1)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.290Z",
+        "updated_at": "2023-07-05T10:13:31.290Z",
+        "code": "e_di2_vlo",
+        "label": "Enterprises with very low digital intensity index (DII version 2)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.303Z",
+        "updated_at": "2023-07-05T10:13:31.303Z",
+        "code": "e_di2_lo",
+        "label": "Enterprises with low digital intensity index (DII version 2)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.319Z",
+        "updated_at": "2023-07-05T10:13:31.319Z",
+        "code": "e_di2_hi",
+        "label": "Enterprises with high digital intensity index (DII version 2)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-05T10:13:31.333Z",
+        "updated_at": "2023-07-05T10:13:31.333Z",
+        "code": "e_di2_vhi",
+        "label": "Enterprises with very high digital intensity index (DII version 2)",
+        "alt_label": null,
+        "definition": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2023-07-10T07:19:58.791Z",
+        "updated_at": "2023-07-10T07:40:38.703Z",
+        "code": "e_di4_hivhi",
+        "label": "Enterprises with at least a high level of digital intensity (2022)",
+        "alt_label": "Enterprises with at least a high level of digital intensity (2022)",
+        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. High levels are attributed to those enterprises using at least 7 of the listed digital technologies.",
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
     }
 }
 ]

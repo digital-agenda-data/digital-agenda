@@ -950,7 +950,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 14,
+        "display_order": 12,
         "indicator": [
             "e_ads"
         ],
@@ -998,7 +998,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 31,
+        "display_order": 34,
         "indicator": [
             "e_ai_tany"
         ],
@@ -1082,30 +1082,6 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 30,
-        "indicator": [
-            "e_bd"
-        ],
-        "group": [
-            "ebusiness"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 30,
-        "indicator": [
-            "e_bda"
-        ],
-        "group": [
-            "ebusiness"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 13,
         "indicator": [
             "e_broad"
@@ -1118,7 +1094,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 27,
+        "display_order": 29,
         "indicator": [
             "e_cc"
         ],
@@ -1130,7 +1106,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 27,
+        "display_order": 28,
         "indicator": [
             "e_cc1_si"
         ],
@@ -1142,7 +1118,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 28,
+        "display_order": 30,
         "indicator": [
             "e_cc_ge_me"
         ],
@@ -1154,7 +1130,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 29,
+        "display_order": 31,
         "indicator": [
             "e_cc_pcpu"
         ],
@@ -1166,7 +1142,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 3,
+        "display_order": 2,
         "indicator": [
             "e_crman"
         ],
@@ -1178,7 +1154,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 19,
+        "display_order": 20,
         "indicator": [
             "e_di3_hi"
         ],
@@ -1190,7 +1166,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 20,
+        "display_order": 21,
         "indicator": [
             "e_di3_lo"
         ],
@@ -1202,7 +1178,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 18,
+        "display_order": 19,
         "indicator": [
             "e_di3_vhi"
         ],
@@ -1214,7 +1190,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 21,
+        "display_order": 22,
         "indicator": [
             "e_di3_vlo"
         ],
@@ -1226,7 +1202,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 16,
+        "display_order": 17,
         "indicator": [
             "e_di_hivhi"
         ],
@@ -1238,7 +1214,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 17,
+        "display_order": 18,
         "indicator": [
             "e_di_vlo"
         ],
@@ -1262,7 +1238,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 12,
+        "display_order": 9,
         "indicator": [
             "e_empmd_gt20"
         ],
@@ -1274,7 +1250,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 2,
+        "display_order": 1,
         "indicator": [
             "e_erp1"
         ],
@@ -2054,7 +2030,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 5,
+        "display_order": 4,
         "indicator": [
             "e_inv4s_ap"
         ],
@@ -2066,7 +2042,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 6,
+        "display_order": 5,
         "indicator": [
             "e_invsnd"
         ],
@@ -2174,19 +2150,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 13,
-        "indicator": [
-            "e_pmd_app"
-        ],
-        "group": [
-            "ebusiness"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 11,
+        "display_order": 8,
         "indicator": [
             "e_ra"
         ],
@@ -2198,7 +2162,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 23,
+        "display_order": 24,
         "indicator": [
             "e_rfac"
         ],
@@ -2210,7 +2174,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 22,
+        "display_order": 23,
         "indicator": [
             "e_rfid"
         ],
@@ -2222,7 +2186,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 24,
+        "display_order": 25,
         "indicator": [
             "e_rfpsas"
         ],
@@ -2246,7 +2210,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 4,
+        "display_order": 3,
         "indicator": [
             "e_sisc"
         ],
@@ -2270,7 +2234,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 25,
+        "display_order": 26,
         "indicator": [
             "e_sm_any"
         ],
@@ -2282,7 +2246,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 26,
+        "display_order": 27,
         "indicator": [
             "e_sm_ge2"
         ],
@@ -2294,7 +2258,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 9,
+        "display_order": 6,
         "indicator": [
             "e_web"
         ],
@@ -2306,7 +2270,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 10,
+        "display_order": 7,
         "indicator": [
             "e_webf2"
         ],
@@ -2342,7 +2306,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 15,
+        "display_order": 13,
         "indicator": [
             "edigint2015"
         ],
@@ -4202,18 +4166,6 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 13,
-        "indicator": [
-            "p_empmd"
-        ],
-        "group": [
-            "ebusiness"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 8,
         "indicator": [
             "p_iuse"
@@ -4592,6 +4544,102 @@
         ],
         "group": [
             "ict-skills"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 14,
+        "indicator": [
+            "edigint2018"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 15,
+        "indicator": [
+            "edigint2021"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 16,
+        "indicator": [
+            "edigint2022"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 35,
+        "indicator": [
+            "e_di4_vhi"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 36,
+        "indicator": [
+            "e_di4_hi"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 37,
+        "indicator": [
+            "e_di4_lo"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 38,
+        "indicator": [
+            "e_di4_vlo"
+        ],
+        "group": [
+            "ebusiness"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 39,
+        "indicator": [
+            "e_di4_hivhi"
+        ],
+        "group": [
+            "ebusiness"
         ]
     }
 }

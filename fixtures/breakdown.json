@@ -4244,5 +4244,170 @@
         "alt_label": null,
         "definition": null
     }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:58.799Z",
+        "updated_at": "2023-07-10T07:19:58.799Z",
+        "code": "c10-c18",
+        "label": "Manufacture of products based on: food, beverages, tobacco, textile, leather, wood, pulp and paper; publishing and printing",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.002Z",
+        "updated_at": "2023-07-10T07:19:59.002Z",
+        "code": "c19-c23",
+        "label": "Manufacture of coke, refined petroleum, chemical and basic pharmaceutical products, rubber and plastics, other non-metallic mineral products",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.190Z",
+        "updated_at": "2023-07-10T07:19:59.190Z",
+        "code": "c24_c25",
+        "label": "Manufacture of basic metals and fabricated metal products, except machinery and equipment",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.235Z",
+        "updated_at": "2023-07-10T07:19:59.235Z",
+        "code": "c26-c33",
+        "label": "Manufacture of computers, electric and optical products, electrical equipment, machinery and equipment n.e.c, motor vehicles, other transport equipment, furniture, other manufacturing, repair and installation of machinery and equipment",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.441Z",
+        "updated_at": "2023-07-10T07:19:59.441Z",
+        "code": "d_e",
+        "label": "Electricity, gas, steam and air conditioning supply; water supply; sewerage, waste management and remediation activities",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.637Z",
+        "updated_at": "2023-07-10T07:19:59.637Z",
+        "code": "g45",
+        "label": "Wholesale and retail trade and repair of motor vehicles and motorcycles",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.695Z",
+        "updated_at": "2023-07-10T07:19:59.695Z",
+        "code": "g46",
+        "label": "Wholesale trade, except of motor vehicles and motorcycles",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.735Z",
+        "updated_at": "2023-07-10T07:19:59.735Z",
+        "code": "g47",
+        "label": "Retail trade, except of motor vehicles and motorcycles",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.785Z",
+        "updated_at": "2023-07-10T07:19:59.785Z",
+        "code": "h",
+        "label": "Transportation and storage",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.834Z",
+        "updated_at": "2023-07-10T07:19:59.834Z",
+        "code": "i",
+        "label": "Accommodation and food service activities",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:19:59.952Z",
+        "updated_at": "2023-07-10T07:19:59.952Z",
+        "code": "j58-j60",
+        "label": "Publishing, motion picture, video, television programme production; sound recording, programming and broadcasting activities",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:20:00.011Z",
+        "updated_at": "2023-07-10T07:20:00.011Z",
+        "code": "j61",
+        "label": "Telecommunications",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:20:00.056Z",
+        "updated_at": "2023-07-10T07:20:00.056Z",
+        "code": "j62_j63",
+        "label": "Computer programming, consultancy, and information service activities",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:20:00.115Z",
+        "updated_at": "2023-07-10T07:20:00.115Z",
+        "code": "l68",
+        "label": "Real estate activities",
+        "alt_label": null,
+        "definition": null
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-07-10T07:20:00.352Z",
+        "updated_at": "2023-07-10T07:20:00.352Z",
+        "code": "n",
+        "label": "Administrative and support service activities",
+        "alt_label": null,
+        "definition": null
+    }
 }
 ]

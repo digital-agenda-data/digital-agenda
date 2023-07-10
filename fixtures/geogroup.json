@@ -251,8 +251,8 @@
     "model": "estat.geogroup",
     "fields": {
         "code": "EU27_2020",
-        "size": 30,
-        "note": "European Union - 27 countries (from 2020), plus UK, NO",
+        "size": 28,
+        "note": "European Union - 27 countries (from 2020)",
         "geo_codes": [
             "AT",
             "BE",
@@ -281,8 +281,6 @@
             "SE",
             "SI",
             "SK",
-            "NO",
-            "UK",
             "EU27_2020"
         ]
     }
