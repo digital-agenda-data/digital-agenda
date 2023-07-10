@@ -239,6 +239,7 @@ class PrettyJSONEncoder(json.JSONEncoder):
 
 @admin.register(DataFileImport)
 class DataFileImportAdmin(admin.ModelAdmin):
+    list_per_page = 20
     search_fields = ("description", "file")
     fields = ("file", "latest_import", "num_facts", "description", "user")
     actions = ("trigger_import", "trigger_import_destructive")
