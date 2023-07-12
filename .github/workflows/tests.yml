@@ -31,6 +31,7 @@ jobs:
           docker compose exec -T app wait_for_services.sh
       - name: "Top"
         run: |
+          docker compose logs
           docker compose top
       - name: "Install dev dependencies"
         run: |
