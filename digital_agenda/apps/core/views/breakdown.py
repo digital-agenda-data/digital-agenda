@@ -13,3 +13,12 @@ class BreakdownViewSet(DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet):
     queryset = Breakdown.objects.all().order_by("breakdowngrouplink__display_order")
     filter_backends = [filters.DjangoFilterBackend]
     filterset_class = ExistingFactFilterSet
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if breakdown_group_code := self.request.GET.get("breakdown_group"):
+            # Filter links by breakdown group to avoid duplicates if a breakdown
+            # belongs to multiple groups.
+            # This can happen because the order of items is not global but is per group.
+            qs = qs.filter(breakdowngrouplink__group__code=breakdown_group_code)
+        return qs
