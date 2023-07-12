@@ -437,10 +437,9 @@ if SENTRY_DSN:
         integrations=[DjangoIntegration(), LoggingIntegration()],
     )
 
+DJANGO_DEBUG_TOOLBAR = env.bool("DJANGO_DEBUG_TOOLBAR", default=True)
 
 if DEBUG:
-    DJANGO_DEBUG_TOOLBAR = env.bool("DJANGO_DEBUG_TOOLBAR", default=True)
-
     INTERNAL_IPS = ["127.0.0.1"]
 
     if DJANGO_DEBUG_TOOLBAR:
