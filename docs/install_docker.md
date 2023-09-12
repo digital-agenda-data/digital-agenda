@@ -1,6 +1,6 @@
 # Install Docker
 
-This is the backend for the Digital Agenda **Data Visualisation Tool**.
+Installation instructions with docker, assuming that the host machine setup is complete.
 
 ## Docker Setup
  

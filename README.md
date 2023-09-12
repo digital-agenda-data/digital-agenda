@@ -7,6 +7,7 @@
 
 Docs:
 
+ - [Setup host machine for docker (Ubuntu)](docs/setup_host_ubuntu.md)
  - [Install Docker](docs/install_docker.md)
  - [Import data](docs/import.md)
  - [Maintenance](docs/maintenance.md)
