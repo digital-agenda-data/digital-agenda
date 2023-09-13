@@ -9,6 +9,7 @@ class LoggingJob(Job):
     @classmethod
     def execute(cls, job, task):
         task_logger = task.get_logger()
+        handler = None
         if task_logger:
             fmt = logging.Formatter("[%(asctime)s] %(levelname)s %(name)s: %(message)s")
             handler = logging.StreamHandler(task.log_stream)
@@ -22,7 +23,8 @@ class LoggingJob(Job):
         try:
             cls.execute_with_logging(job, task)
         finally:
-            cls.parent_logger.removeHandler(handler)
+            if handler:
+                cls.parent_logger.removeHandler(handler)
 
     @staticmethod
     def execute_with_logging(job, task):
