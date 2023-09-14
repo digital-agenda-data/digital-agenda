@@ -70,7 +70,7 @@ export default {
       const siteId = this.appSettings.analytics_site_id;
       let server = this.appSettings.analytics_server;
 
-      if (!siteId || !server || window._paq) return;
+      if (!siteId || !server) return;
       if (!server.endsWith("/")) server += "/";
 
       const _paq = (window._paq = window._paq || []);
