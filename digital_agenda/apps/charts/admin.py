@@ -17,12 +17,7 @@ from digital_agenda.common.admin import HasChangesAdminMixin
 
 @admin.register(Chart)
 class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
-    prepopulated_fields = {
-        "code": (
-            "chart_group",
-            "name",
-        ),
-    }
+    prepopulated_fields = {"code": ("chart_group", "name")}
     search_fields = ("code", "name", "description")
     list_filter = ("chart_group", "is_draft", "chart_type")
     list_select_related = ("chart_group",)
@@ -35,10 +30,7 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
         "is_draft",
     )
     exclude = ("display_order",)
-    autocomplete_fields = (
-        "chart_group",
-        *Chart.m2m_filter_options,
-    )
+    autocomplete_fields = ("chart_group", *Chart.m2m_filter_options)
     fieldsets = [
         (
             None,
@@ -133,13 +125,7 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
         ),
         (
             "Advanced Settings",
-            {
-                "classes": ["collapse"],
-                "fields": (
-                    "min_value",
-                    "max_value",
-                ),
-            },
+            {"classes": ["collapse"], "fields": ("min_value", "max_value")},
         ),
     ]
 
@@ -195,7 +181,7 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
                 },
             )
 
-        indicator_ids = tuple(
+        indicator_ids = list(
             Indicator.objects.filter(groups__chartgroup__in=queryset)
             .values_list("id", flat=True)
             .distinct()
@@ -203,16 +189,16 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
 
         try:
             with connection.cursor() as cursor:
-                # We don't need any signals and all cascades ought to be at DB
+                # We don't need any signals; all cascades ought to be at DB
                 # level already. Avoid the excruciatingly slow ORM delete with
                 # a simple SQL query.
                 cursor.execute(
                     """
                         DELETE
                         FROM core_fact
-                            WHERE core_fact.indicator_id IN %(indicator_ids)s
+                            WHERE core_fact.indicator_id = ANY(%s)
                     """,
-                    {"indicator_ids": indicator_ids},
+                    (indicator_ids,),
                 )
         finally:
             clear_all_caches(force=True)
