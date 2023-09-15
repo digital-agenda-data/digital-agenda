@@ -1,16 +1,26 @@
 import { getUnitDisplay } from "@/lib/utils";
 import { expect, test } from "vitest";
 
-const UNIT = { display: "Number of habitants" };
+const UNIT = { code: "nr_hab", display: "Number of habitants" };
+const UNIT_PC = { code: "pc_hab", display: "% of habitants" };
 
 function checkDisplayUnit(value, valueStr) {
   expect(getUnitDisplay(value, UNIT)).toBe(valueStr + " Number of habitants");
 }
 
+function checkDisplayUnitPercent(value, valueStr) {
+  expect(getUnitDisplay(value, UNIT_PC)).toBe(valueStr + "% of habitants");
+}
+
 // See Rounding Modes in Number format for details on how this should work:
-// We're using the default, since there is no browser support for other version at this time.
+// We're using the default, since there is no browser support for other versions at this time.
 //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#rounding_modes
 test("displayUnit", () => {
+  checkDisplayUnitPercent(0.123456789, "0.12");
+  checkDisplayUnitPercent(1.23456789, "1.23");
+  checkDisplayUnitPercent(12.3456789, "12.35");
+  checkDisplayUnitPercent(123.456789, "123.46");
+
   checkDisplayUnit(0.124, "0.124");
   checkDisplayUnit(0.1249, "0.1249");
   checkDisplayUnit(0.125, "0.125");
