@@ -170,6 +170,18 @@ class IndicatorsWithFactsMixIn:
 @admin.register(Breakdown)
 class BreakdownAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin):
     facts_filter = "breakdown"
+    fields = ("code", "label", "alt_label", "definition", "group_links")
+    readonly_fields = ("group_links",)
+
+    @admin.display(description="Breakdown Groups")
+    def group_links(self, obj):
+        result = []
+        for group in obj.groups.all():
+            url = reverse(
+                "admin:core_breakdowngroup_change", kwargs={"object_id": group.id}
+            )
+            result.append(f'<li><a href="{url}">{group}</a></li>')
+        return mark_safe(f"<ul>{''.join(result)}</ul>")
 
 
 @admin.register(Unit)
