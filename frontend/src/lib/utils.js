@@ -128,16 +128,24 @@ export function getUnitDisplay(value, unit) {
     return "<b>Data not available</b>";
   }
 
-  if (value < 100) {
+  if (unit.code.toLowerCase().startsWith("pc_")) {
+    // Round to 2 fixed decimals for what is likely a percentage.
+    // (E.g. 35.80%)
+    numberFormat = {
+      notation: "standard",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    };
+  } else if (value < 100) {
     // No rounding for smaller values
     numberFormat = {
       notation: "standard",
-      // We're still limited by 64bit float arithmetics rules, tho
+      // We're still limited by 64bit float arithmetics rules, tho'
       maximumSignificantDigits: 17,
     };
   } else if (value < Math.pow(10, 6)) {
-    // If less than 1 million, round to integer and include thousands
-    // separators
+    // If less than 1 million, round to integer and include thousands' separators.
+    // (E.g. 123,456)
     numberFormat = {
       notation: "standard",
       maximumFractionDigits: 0,
@@ -145,7 +153,7 @@ export function getUnitDisplay(value, unit) {
     };
   } else {
     // Show the compact version for anything bigger, with 2 fixed decimals
-    // E.g. (24.20M)
+    // (E.g. 24.20M)
     numberFormat = {
       notation: "compact",
       minimumFractionDigits: 2,

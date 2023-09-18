@@ -23,9 +23,9 @@ describeResponsive("Check Chart", () => {
       point: "Romania, y: 4.1, z: 6.3. Romania.",
       tooltip: [
         "Romania",
-        "2.2% of graduates",
-        "4.1% of graduates",
-        "6.3% of graduates",
+        "2.20% of graduates",
+        "4.10% of graduates",
+        "6.30% of graduates",
       ],
       definitions: [
         "(X) Indicator: ICT graduates",
