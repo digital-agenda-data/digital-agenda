@@ -7,6 +7,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.html import strip_tags
+from hashid_field import BigHashidAutoField
 
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.common.citext import CICharField
@@ -211,9 +212,10 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         ),
     ]
 
+    id = BigHashidAutoField(primary_key=True)
     chart_group = models.ForeignKey("ChartGroup", on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    code = models.SlugField(unique=True)
+    code = models.SlugField()
 
     chart_type = models.CharField(max_length=50, choices=CHART_TYPE_CHOICES)
     description = RichTextField()
@@ -242,6 +244,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
 
     class Meta:
         ordering = ["display_order", "code"]
+        unique_together = ("chart_group", "code")
 
     def natural_key(self):
         return (self.code,)  # noqa

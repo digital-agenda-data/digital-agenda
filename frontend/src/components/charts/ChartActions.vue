@@ -113,7 +113,7 @@ export default {
         this.loading = true;
         this.shareURL = (
           await api.post("/short-urls/", {
-            chart: this.currentChart.code,
+            chart: this.currentChart.id,
             query_arguments: window.location.search,
           })
         ).data.short_url;

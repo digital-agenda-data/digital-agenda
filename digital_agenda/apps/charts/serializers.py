@@ -1,11 +1,10 @@
+from hashid_field.rest import HashidSerializerCharField
 from rest_framework import serializers
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.serializers import IndicatorGroupSerializer
 from digital_agenda.apps.core.serializers import IndicatorListSerializer
-from digital_agenda.apps.core.serializers import PeriodSerializer
 
 
 class CodeRelatedField(serializers.SlugRelatedField):
@@ -44,6 +43,7 @@ class ChartGroupSerializer(serializers.ModelSerializer):
 
 
 class ChartSerializer(serializers.ModelSerializer):
+    id = HashidSerializerCharField(read_only=True)
     chart_group = CodeRelatedField()
     indicator_group_filter_defaults = CodeRelatedField(many=True)
     indicator_group_filter_ignored = CodeRelatedField(many=True)
@@ -69,6 +69,7 @@ class ChartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chart
         fields = (
+            "id",
             "name",
             "code",
             "chart_type",
