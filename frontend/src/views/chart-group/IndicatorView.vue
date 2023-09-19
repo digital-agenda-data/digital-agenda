@@ -100,6 +100,12 @@
                 <span v-html="indicator.definition" />
               </div>
 
+              <div v-if="indicator.note" class="ecl-u-type-paragraph-m">
+                <strong>Notes:&nbsp;</strong>
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <span v-html="indicator.note" />
+              </div>
+
               <div class="ecl-u-type-paragraph-m">
                 <strong>Time coverage:&nbsp;</strong>
                 <span v-if="indicator.min_period !== indicator.max_period">
