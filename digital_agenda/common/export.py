@@ -5,9 +5,9 @@ from django.http import FileResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from rest_framework.decorators import action
-from rest_framework_csv.renderers import CSVRenderer
 
 from digital_agenda.apps.core.serializers import FactSerializer
+from digital_agenda.common.renderers import CustomCSVRenderer
 
 
 class FactExportMixin:
@@ -18,7 +18,7 @@ class FactExportMixin:
 
     def get_renderers(self):
         if self.action == "facts":
-            return [CSVRenderer]
+            return [CustomCSVRenderer]
         return super().get_renderers()
 
     @action(methods=["GET"], detail=True)
@@ -26,10 +26,7 @@ class FactExportMixin:
     def facts(self, request, code=None):
         """Optimized bulk export for facts. Only support CSV format."""
         return export_facts_csv(
-            code + "-data.csv",
-            **{
-                self.model._meta.model_name: self.get_object().id,
-            },
+            code + "-data.csv", **{self.model._meta.model_name: self.get_object().id}
         )
 
 
@@ -90,8 +87,7 @@ def export_facts_csv(filename, chartgroup=None, indicatorgroup=None, indicator=N
     try:
         with connection.cursor() as cursor:
             query_interpolated = cursor.mogrify(
-                f"COPY ({query}) TO STDOUT WITH CSV HEADER",
-                params,
+                f"COPY ({query}) TO STDOUT WITH CSV HEADER", params
             )
             with cursor.copy(query_interpolated) as copy:
                 for data in copy:
