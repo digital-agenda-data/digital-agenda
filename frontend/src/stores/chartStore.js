@@ -35,7 +35,9 @@ export const useChartStore = defineStore("chart", {
       const groupCode = useChartGroupStore().currentChartGroupCode;
       return (
         this.chartList.find(
-          (chart) => chart.chart_group === groupCode && this.currentChartCode
+          (chart) =>
+            chart.chart_group === groupCode &&
+            chart.code === this.currentChartCode
         ) ?? {}
       );
     },
