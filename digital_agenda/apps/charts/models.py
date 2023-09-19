@@ -215,7 +215,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     id = BigHashidAutoField(primary_key=True)
     chart_group = models.ForeignKey("ChartGroup", on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    code = models.SlugField()
+    code = models.SlugField(max_length=255)
 
     chart_type = models.CharField(max_length=50, choices=CHART_TYPE_CHOICES)
     description = RichTextField()
