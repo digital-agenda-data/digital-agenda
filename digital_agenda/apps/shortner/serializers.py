@@ -9,8 +9,8 @@ from digital_agenda.apps.shortner.models import ShortURL
 
 class ShortURLSerializer(serializers.ModelSerializer):
     id = HashidSerializerCharField(read_only=True)
-    chart = serializers.SlugRelatedField(
-        slug_field="code",
+    chart = serializers.PrimaryKeyRelatedField(
+        pk_field=HashidSerializerCharField(source_field="charts.Chart.id"),
         many=False,
         read_only=False,
         queryset=Chart.objects.all(),

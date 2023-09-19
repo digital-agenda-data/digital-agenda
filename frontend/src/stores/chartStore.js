@@ -32,7 +32,14 @@ export const useChartStore = defineStore("chart", {
       return this.$route.params?.chartCode;
     },
     currentChart() {
-      return this.chartByCode.get(this.currentChartCode) ?? {};
+      const groupCode = useChartGroupStore().currentChartGroupCode;
+      return (
+        this.chartList.find(
+          (chart) =>
+            chart.chart_group === groupCode &&
+            chart.code === this.currentChartCode
+        ) ?? {}
+      );
     },
     currentFilterOptions() {
       const result = {};
