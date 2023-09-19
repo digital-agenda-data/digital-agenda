@@ -97,7 +97,11 @@ class DataSourceInline(admin.TabularInline):
 
 @admin.register(Indicator)
 class IndicatorAdmin(HasFactsAdminMixIn, DimensionAdmin):
-    list_filter = [AutocompleteFilterFactory("data source", "data_sources"), "groups"]
+    list_filter = [
+        "groups__chartgroup",
+        AutocompleteFilterFactory("data source", "data_sources"),
+        "groups",
+    ]
     list_display = ("code", "label", "group_codes", "has_facts")
     fields = (
         "code",
