@@ -17,7 +17,7 @@ from digital_agenda.common.admin import HasChangesAdminMixin
 
 @admin.register(Chart)
 class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
-    prepopulated_fields = {"code": ("chart_group", "name")}
+    prepopulated_fields = {"code": ("name",)}
     search_fields = ("code", "name", "description")
     list_filter = ("chart_group", "is_draft", "chart_type")
     list_select_related = ("chart_group",)
