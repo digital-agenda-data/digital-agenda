@@ -1,0 +1,20 @@
+name: Deploy Prod
+
+# Ensure that only one job works on this at a time
+concurrency: prod-deploy
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  docker-build:
+    uses: ./.github/workflows/docker-build.yml
+  deploy-prod:
+    needs: docker-build
+    uses: ./.github/workflows/deploy.yml
+    with:
+      deployEnvironment: desi-prod
+      workingDir: /var/local/desi/
+
+

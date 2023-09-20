@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       deployEnvironment:
-        description: 'Deploy environment'
+        description: 'Deploy environment (e.g. desi-test, desi-prod)'
         required: true
         type: string
       workingDir:
