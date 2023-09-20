@@ -4,6 +4,13 @@
 [![Code Style](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/lint.yml)
 [![CodeQL](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/github-code-scanning/codeql/badge.svg?branch=master)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/github-code-scanning/codeql)
 [![Continuous Integration](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/ci.yml)
+[![Deploy Prod](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/deploy-prod.yml/badge.svg)](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/deploy-prod.yml)
+
+Steps for deployment in prod:
+
+ - Go to the [Deploy Prod Action](https://github.com/digital-agenda-data/digital-agenda/actions/workflows/deploy-prod.yml)
+ - Click on "Run Workflow" 
+ - Select branch/tag if needed and click on "Run"
 
 Docs:
 
