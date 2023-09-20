@@ -123,12 +123,13 @@ export function getUnitDisplay(value, unit) {
 
   let numberFormat;
   const label = unit.display;
+  const code = unit.code.toLowerCase();
 
   if (value === null || value === undefined || Number.isNaN(value)) {
     return "<b>Data not available</b>";
   }
 
-  if (unit.code.toLowerCase().startsWith("pc_")) {
+  if (code.startsWith("pc_") || code.endsWith("_score")) {
     // Round to 2 fixed decimals for what is likely a percentage.
     // (E.g. 35.80%)
     numberFormat = {
