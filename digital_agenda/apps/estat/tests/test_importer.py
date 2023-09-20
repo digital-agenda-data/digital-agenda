@@ -96,7 +96,10 @@ class TestImporterSuccess(TestCase):
 
         data_source = DataSource.objects.first()
         self.assertEqual(data_source.code.lower(), "estat_isoc_ci_cm_h")
-        self.assertEqual(data_source.label, "Households - availability of computers")
+        self.assertEqual(
+            data_source.label,
+            "Eurostat, table isoc_ci_cm_h: Households - availability of computers",
+        )
         self.assertEqual(
             data_source.url,
             "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_cm_h",

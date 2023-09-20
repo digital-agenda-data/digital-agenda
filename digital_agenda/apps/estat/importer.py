@@ -192,7 +192,7 @@ class EstatImporter:
         return DataSource.objects.get_or_create(
             code=f"estat_{self.config.code}",
             defaults={
-                "label": self.dataset.label,
+                "label": f"Eurostat, table {self.config.code}: {self.dataset.label}",
                 "url": f"https://ec.europa.eu/eurostat/web/products-datasets/-/{self.config.code}",
             },
         )[0]
