@@ -706,5 +706,17 @@
         "definition": null,
         "date": "2022-06-15"
     }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-20T11:15:51.383Z",
+        "updated_at": "2023-09-20T11:15:51.383Z",
+        "code": "2023",
+        "label": "2023",
+        "alt_label": "2023",
+        "definition": "",
+        "date": "2023-07-02"
+    }
 }
 ]

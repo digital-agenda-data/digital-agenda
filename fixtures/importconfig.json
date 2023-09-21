@@ -8,8 +8,8 @@
         "remarks": null,
         "data_last_update": "2023-06-26T21:00:00Z",
         "datastructure_last_update": "2023-06-26T21:00:00Z",
-        "datastructure_last_version": "27.0",
-        "new_version_available": false,
+        "datastructure_last_version": "28.0",
+        "new_version_available": true,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "ict_grad",
         "indicator_is_surrogate": true,
@@ -62,7 +62,7 @@
         "data_last_update": "2023-07-03T21:00:00Z",
         "datastructure_last_update": "2023-02-22T10:00:00Z",
         "datastructure_last_version": "29.0",
-        "new_version_available": false,
+        "new_version_available": true,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "population",
         "indicator_is_surrogate": true,
@@ -114,10 +114,10 @@
         "code": "tec00001",
         "title": "Gross domestic product at market prices",
         "remarks": null,
-        "data_last_update": "2023-07-07T21:00:00Z",
-        "datastructure_last_update": "2023-07-07T21:00:00Z",
-        "datastructure_last_version": "44.0",
-        "new_version_available": false,
+        "data_last_update": "2023-09-15T09:00:00Z",
+        "datastructure_last_update": "2023-09-15T09:00:00Z",
+        "datastructure_last_version": "46.0",
+        "new_version_available": true,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "gdp",
         "indicator_is_surrogate": true,
@@ -171,7 +171,7 @@
         "remarks": null,
         "data_last_update": "2023-06-15T21:00:00Z",
         "datastructure_last_update": "2023-04-26T21:00:00Z",
-        "datastructure_last_version": "17.0",
+        "datastructure_last_version": "17.1",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "households",
@@ -227,9 +227,9 @@
         "code": "isoc_bde15cua",
         "title": "Internet use and activities",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "32.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "34.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -330,9 +330,9 @@
         "code": "isoc_sk_dskl_i",
         "title": "Digital Skills Index 2019",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -437,9 +437,9 @@
         "code": "isoc_sk_dskl_i21",
         "title": "Digital Skills Index 2021",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "7.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "9.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -553,9 +553,9 @@
         "code": "isoc_ci_ac_i",
         "title": "Individuals - internet activities",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "35.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "37.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -647,9 +647,9 @@
         "code": "isoc_bde15ei",
         "title": "Individuals using the internet for interacting with public authorities",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "32.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "34.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -736,9 +736,9 @@
         "code": "isoc_cisci_pb",
         "title": "Security related problems experienced when using the internet",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -827,9 +827,9 @@
         "code": "isoc_cicci_use",
         "title": "Individuals - use of cloud services",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -913,9 +913,9 @@
         "code": "isoc_cisci_prv",
         "title": "Privacy and protection of personal information (until 2016)",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
+        "data_last_update": "2023-09-19T09:00:00Z",
         "datastructure_last_update": "2021-02-08T22:00:00Z",
-        "datastructure_last_version": "28.0",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1001,9 +1001,9 @@
         "code": "isoc_ec_iprb",
         "title": "Problems encountered by individuals when buying/ordering over the internet (until 2019)",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "29.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1087,9 +1087,9 @@
         "code": "isoc_cisci_ax",
         "title": "Activities via internet not done because of security concerns",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1173,9 +1173,9 @@
         "code": "isoc_ec_ibuy",
         "title": "Internet purchases by individuals (until 2019)",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1270,9 +1270,9 @@
         "code": "isoc_ec_ib20",
         "title": "Internet purchases by individuals (2020 onwards)",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "32.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "34.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1361,9 +1361,9 @@
         "code": "isoc_sk_cskl_i",
         "title": "Individuals' level of computer skills (until 2019)",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1460,7 +1460,7 @@
         "data_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_version": "23.0",
-        "new_version_available": false,
+        "new_version_available": true,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "ict_spec3_broad",
         "indicator_is_surrogate": true,
@@ -1508,9 +1508,9 @@
         "code": "isoc_ci_ifp_iu",
         "title": "Individuals - internet use",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_version": "32.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "34.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1598,9 +1598,9 @@
         "code": "isoc_bde15b_h",
         "title": "Broadband and connectivity - households",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
+        "data_last_update": "2023-09-19T09:00:00Z",
         "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "32.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1666,9 +1666,9 @@
         "code": "isoc_bde15b_i",
         "title": "Broadband and connectivity - individuals",
         "remarks": null,
-        "data_last_update": "2023-05-10T09:00:00Z",
-        "datastructure_last_update": "2023-03-07T10:00:00Z",
-        "datastructure_last_version": "28.0",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1760,7 +1760,7 @@
         "remarks": null,
         "data_last_update": "2023-07-07T09:00:00Z",
         "datastructure_last_update": "2023-06-26T21:00:00Z",
-        "datastructure_last_version": "27.0",
+        "datastructure_last_version": "27.1",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "st_grad",
@@ -1808,9 +1808,9 @@
         "code": "isoc_bde15b_p",
         "title": "Broadband and connectivity - persons employed by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "31.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "32.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1913,9 +1913,9 @@
         "code": "isoc_bde15b_p_s",
         "title": "Broadband and connectivity - persons employed by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -1991,11 +1991,11 @@
     "fields": {
         "code": "isoc_ci_in_en2",
         "title": "Internet access by NACE",
-        "remarks": null,
-        "data_last_update": "2023-01-05T10:00:00Z",
-        "datastructure_last_update": "2022-12-08T10:00:00Z",
-        "datastructure_last_version": "31.1",
-        "new_version_available": true,
+        "remarks": "",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "34.0",
+        "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
         "indicator_is_surrogate": false,
@@ -2037,7 +2037,7 @@
                 "N"
             ],
             "indic_is": [
-                "E_RA"
+                "E_IUSE"
             ]
         },
         "mappings": {
@@ -2084,11 +2084,11 @@
     "fields": {
         "code": "isoc_ci_in_es",
         "title": "Internet access by size class of enterprise",
-        "remarks": null,
-        "data_last_update": "2023-01-05T10:00:00Z",
-        "datastructure_last_update": "2022-12-08T10:00:00Z",
-        "datastructure_last_version": "2.1",
-        "new_version_available": true,
+        "remarks": "",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-05-25T09:00:00Z",
+        "datastructure_last_version": "5.0",
+        "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
         "indicator_is_surrogate": false,
@@ -2110,7 +2110,7 @@
                 "PC_ENT"
             ],
             "indic_is": [
-                "E_RA"
+                "E_IUSE"
             ],
             "size_emp": [
                 "GE250",
@@ -2152,9 +2152,9 @@
         "code": "isoc_cismtn2",
         "title": "Social media use by type, internet advertising and NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2254,9 +2254,9 @@
         "code": "isoc_cismt",
         "title": "Social media use by type, internet advertising and size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2330,9 +2330,9 @@
         "code": "isoc_ciwebn2",
         "title": "Websites and functionalities by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2424,9 +2424,9 @@
         "code": "isoc_ciweb",
         "title": "Websites and functionalities by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "31.0",
+        "datastructure_last_version": "32.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2492,9 +2492,9 @@
         "code": "isoc_ci_it_en2",
         "title": "Type of connections to the internet by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "31.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "32.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2591,9 +2591,9 @@
         "code": "isoc_ci_it_es",
         "title": "Type of connections to the internet by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2664,9 +2664,9 @@
         "code": "isoc_ec_eseln2",
         "title": "E-commerce sales of enterprises by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "31.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "32.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2761,9 +2761,9 @@
         "code": "isoc_ec_esels",
         "title": "E-commerce sales of enterprises by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2832,9 +2832,9 @@
         "code": "isoc_eb_bdn2",
         "title": "Big data analysis by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2927,9 +2927,9 @@
         "code": "isoc_eb_bd",
         "title": "Big data analysis by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -2995,9 +2995,9 @@
         "code": "isoc_cicce_usen2",
         "title": "Cloud computing services by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3091,9 +3091,9 @@
         "code": "isoc_cicce_use",
         "title": "Cloud computing services by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "32.0",
+        "datastructure_last_version": "33.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3161,9 +3161,9 @@
         "code": "isoc_eb_iipn2",
         "title": "Integration of internal processes by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3265,9 +3265,9 @@
         "code": "isoc_eb_iip",
         "title": "Integration of internal processes by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "31.0",
+        "datastructure_last_version": "32.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3341,9 +3341,9 @@
         "code": "isoc_bde15dip",
         "title": "Integration of internal processes by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3434,9 +3434,9 @@
         "code": "isoc_bde15dipn2",
         "title": "Integration of internal processes by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3501,9 +3501,9 @@
         "code": "isoc_eb_ain2",
         "title": "Artificial intelligence by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3594,9 +3594,9 @@
         "code": "isoc_eb_ai",
         "title": "Artificial intelligence by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3661,9 +3661,9 @@
         "code": "isoc_ske_itspen2",
         "title": "Enterprises that employ ICT specialists by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "26.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "27.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3754,9 +3754,9 @@
         "code": "isoc_ske_itspe",
         "title": "Enterprises that employ ICT specialists by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "5.0",
+        "datastructure_last_version": "6.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3821,9 +3821,9 @@
         "code": "isoc_ske_itrcrn2",
         "title": "Enterprises that recruited or tried to recruit ICT specialists by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3914,9 +3914,9 @@
         "code": "isoc_ske_itrcrs",
         "title": "Enterprises that recruited or tried to recruit ICT specialists by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "5.0",
+        "datastructure_last_version": "6.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -3981,9 +3981,9 @@
         "code": "isoc_ske_fctn2",
         "title": "Enterprises - ICT functions performed by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "5.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "6.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4074,9 +4074,9 @@
         "code": "isoc_ske_fct",
         "title": "Enterprises - ICT functions performed by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4141,9 +4141,9 @@
         "code": "isoc_cisce_ran2",
         "title": "Security policy: measures, risks and staff awareness by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "7.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "8.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4239,9 +4239,9 @@
         "code": "isoc_cisce_ra",
         "title": "Security policy: measures, risks and staff awareness by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "32.0",
+        "datastructure_last_version": "33.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4311,9 +4311,9 @@
         "code": "isoc_ske_ittn2",
         "title": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4404,9 +4404,9 @@
         "code": "isoc_ske_itts",
         "title": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "5.0",
+        "datastructure_last_version": "6.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4471,9 +4471,9 @@
         "code": "isoc_cimobe_usen2",
         "title": "Use of mobile connections to the internet by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4569,9 +4569,9 @@
         "code": "isoc_cimobe_use",
         "title": "Use of mobile connections to the internet by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4641,9 +4641,9 @@
         "code": "isoc_bde15b_en2",
         "title": "Broadband and connectivity - enterprises by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4737,9 +4737,9 @@
         "code": "isoc_bde15b_e",
         "title": "Broadband and connectivity - enterprises by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4807,9 +4807,9 @@
         "code": "isoc_ec_evaln2",
         "title": "Value of e-commerce sales by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4902,9 +4902,9 @@
         "code": "isoc_ec_evals",
         "title": "Value of e-commerce sales by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -4971,9 +4971,9 @@
         "code": "isoc_bde15decn2",
         "title": "E-commerce, customer relation management (CRM) and secure transactions by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -5069,10 +5069,10 @@
     "fields": {
         "code": "isoc_bde15dec",
         "title": "E-commerce, customer relation management (CRM) and secure transactions by size class of enterprise",
-        "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "remarks": "",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "30.0",
+        "datastructure_last_version": "31.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -5122,7 +5122,9 @@
                 "10-249": "ent_sm_xfin",
                 "50-249": "ent_m_xfin"
             },
-            "indicator": {}
+            "indicator": {
+                "E_EBUY2": "E_EBUY"
+            }
         },
         "tags": [
             [
@@ -5141,9 +5143,9 @@
         "code": "isoc_bde15discn2",
         "title": "Integration with customers/suppliers and SCM by NACE",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -5241,9 +5243,9 @@
         "code": "isoc_bde15disc",
         "title": "Integration with customers/suppliers and SCM by size class of enterprise",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "29.0",
+        "datastructure_last_version": "30.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -5316,7 +5318,7 @@
         "remarks": null,
         "data_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_update": "2023-05-03T21:00:00Z",
-        "datastructure_last_version": "23.0",
+        "datastructure_last_version": "24.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "ict_spec3_broad",
@@ -5366,9 +5368,9 @@
         "code": "isoc_ec_esels",
         "title": "E_AWSWW (e_aws/rest_world)",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "e_aws",
@@ -5423,9 +5425,9 @@
         "code": "isoc_ec_esels",
         "title": "E_AWSHM (e_aws/own_country)",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "e_aws",
@@ -5480,9 +5482,9 @@
         "code": "isoc_ec_esels",
         "title": "E_AWSEU (e_aws/other_eu_countries)",
         "remarks": null,
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "4.0",
+        "datastructure_last_version": "5.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "e_aws",
@@ -5532,926 +5534,14 @@
 },
 {
     "model": "estat.importconfig",
-    "pk": 69,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v1 (edigint2015/vlo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2015",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vlo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": 2019,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI_VLO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 71,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v1 (edigint2015/lo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2015",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_lo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": 2019,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI_LO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 73,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v1 (edigint2015/hi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2015",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_hi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": 2019,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI_HI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 75,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v1 (edigint2015/vhi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2015",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vhi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": 2019,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI_VHI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 77,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v2 (edigint2018/vlo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2018",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vlo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI2_VLO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 78,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v3 (edigint2021/vlo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2021",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vlo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI3_VLO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 79,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v4 (edigint2022/vlo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2022",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vlo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI4_VLO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 80,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v2 (edigint2018/lo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2018",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_lo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI2_LO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 81,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v3 (edigint2021/lo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2021",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_lo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI3_LO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 82,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v4 (edigint2022/lo)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2022",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_lo",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI4_LO"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 83,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v2 (edigint2018/hi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2018",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_hi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI2_HI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 84,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v3 (edigint2021/hi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2021",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_hi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI3_HI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 85,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v4 (edigint2022/hi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2022",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_hi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI4_HI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 86,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v2 (edigint2018/vhi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2018",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vhi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI2_VHI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 87,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v3 (edigint2021/vhi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2021",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vhi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI3_VHI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
-    "pk": 88,
-    "fields": {
-        "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v4 (edigint2022/vhi)",
-        "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
-        "new_version_available": false,
-        "conflict_resolution": "RAISE_ERROR",
-        "indicator": "edigint2022",
-        "indicator_is_surrogate": true,
-        "breakdown": "e_di_vhi",
-        "breakdown_is_surrogate": true,
-        "country": "geo",
-        "country_is_surrogate": false,
-        "unit": "unit",
-        "unit_is_surrogate": false,
-        "period": "time",
-        "period_is_surrogate": false,
-        "period_start": null,
-        "period_end": null,
-        "country_group": [
-            "EU27_2020"
-        ],
-        "filters": {
-            "unit": [
-                "PC_ENT"
-            ],
-            "indic_is": [
-                "E_DI4_VHI"
-            ],
-            "size_emp": [
-                "GE10"
-            ]
-        },
-        "mappings": {
-            "unit": {},
-            "period": {},
-            "country": {
-                "EU27_2020": "EU"
-            },
-            "breakdown": {},
-            "indicator": {}
-        },
-        "tags": [
-            [
-                "ENT"
-            ],
-            [
-                "DII"
-            ]
-        ]
-    }
-},
-{
-    "model": "estat.importconfig",
     "pk": 89,
     "fields": {
         "code": "isoc_e_diin2",
         "title": "Digital Intensity Index by NACE (all)",
-        "remarks": "e_di_vlo, e_di_lo, e_di_hi, e_di_vhi, e_di2_vlo, e_di2_lo, e_di2_hi, e_di2_vhi, e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi,",
-        "data_last_update": "2023-06-30T09:00:00Z",
-        "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "5.0",
+        "remarks": "e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi",
+        "data_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_update": "2023-08-29T09:00:00Z",
+        "datastructure_last_version": "6.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -6492,6 +5582,16 @@
                 "M69-M74",
                 "M",
                 "N"
+            ],
+            "indic_is": [
+                "E_DI4_VHI",
+                "E_DI4_HI",
+                "E_DI4_LO",
+                "E_DI4_VLO",
+                "E_DI3_VHI",
+                "E_DI3_HI",
+                "E_DI3_LO",
+                "E_DI3_VLO"
             ],
             "size_emp": [
                 "GE10"
@@ -6541,10 +5641,10 @@
     "fields": {
         "code": "isoc_e_dii",
         "title": "Digital intensity indicators by size class of enterprise (all)",
-        "remarks": "e_di_vlo, e_di_lo, e_di_hi, e_di_vhi, e_di2_vlo, e_di2_lo, e_di2_hi, e_di2_vhi, e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi,",
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "remarks": "e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi,",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
+        "datastructure_last_version": "15.0",
         "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "indic_is",
@@ -6566,6 +5666,16 @@
             "unit": [
                 "PC_ENT"
             ],
+            "indic_is": [
+                "E_DI4_VHI",
+                "E_DI4_HI",
+                "E_DI4_LO",
+                "E_DI4_VLO",
+                "E_DI3_VHI",
+                "E_DI3_HI",
+                "E_DI3_LO",
+                "E_DI3_VLO"
+            ],
             "size_emp": [
                 "GE250",
                 "GE10",
@@ -6601,19 +5711,19 @@
 },
 {
     "model": "estat.importconfig",
-    "pk": 91,
+    "pk": 93,
     "fields": {
-        "code": "isoc_e_diin2",
-        "title": "Digital Intensity Index v4 (e_di4_hivhi) by NACE",
+        "code": "isoc_e_dii",
+        "title": "Digital Intensity Index v3 - SME (e_di3_sme_x_vlo)",
         "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "5.0",
+        "datastructure_last_version": "15.0",
         "new_version_available": false,
         "conflict_resolution": "SUM_VALUES",
-        "indicator": "e_di4_hivhi",
+        "indicator": "e_di3_sme_x_vlo",
         "indicator_is_surrogate": true,
-        "breakdown": "nace_r2",
+        "breakdown": "size_emp",
         "breakdown_is_surrogate": false,
         "country": "geo",
         "country_is_surrogate": false,
@@ -6630,32 +5740,13 @@
             "unit": [
                 "PC_ENT"
             ],
-            "nace_r2": [
-                "C10-C18",
-                "C19-C23",
-                "C24_C25",
-                "C26-C33",
-                "D_E",
-                "F",
-                "G45",
-                "G46",
-                "G47",
-                "H",
-                "I",
-                "J58-J60",
-                "J61",
-                "J62_J63",
-                "L68",
-                "M69-M74",
-                "M",
-                "N"
-            ],
             "indic_is": [
-                "e_di4_vhi",
-                "e_di4_hi"
+                "e_di3_vhi",
+                "e_di3_hi",
+                "e_di3_lo"
             ],
             "size_emp": [
-                "GE10"
+                "10-249"
             ]
         },
         "mappings": {
@@ -6665,24 +5756,7 @@
                 "EU27_2020": "EU"
             },
             "breakdown": {
-                "F": "NACE_F",
-                "H": "NACE_H",
-                "I": "NACE_I",
-                "M": "NACE_M",
-                "N": "NACE_N",
-                "D_E": "NACE_D_E",
-                "G45": "NACE_G45",
-                "G46": "NACE_G46",
-                "G47": "NACE_G47",
-                "J61": "NACE_J61",
-                "L68": "NACE_L68",
-                "C10-C18": "NACE_C10-C18",
-                "C19-C23": "NACE_C19-C23",
-                "C24_C25": "NACE_C24_C25",
-                "C26-C33": "NACE_C26-C33",
-                "J58-J60": "NACE_J58-J60",
-                "J62_J63": "NACE_J62_J63",
-                "M69-M74": "NACE_M"
+                "10-249": "ent_sm_xfin"
             },
             "indicator": {}
         },
@@ -6698,17 +5772,17 @@
 },
 {
     "model": "estat.importconfig",
-    "pk": 92,
+    "pk": 94,
     "fields": {
         "code": "isoc_e_dii",
-        "title": "Digital Intensity Index v4 (e_di4_hivhi) by by size class of enterprise",
+        "title": "Digital Intensity Index v4 - SME (e_di4_sme_x_vlo)",
         "remarks": "",
-        "data_last_update": "2023-06-30T09:00:00Z",
+        "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
-        "datastructure_last_version": "14.0",
+        "datastructure_last_version": "15.0",
         "new_version_available": false,
         "conflict_resolution": "SUM_VALUES",
-        "indicator": "e_di4_hivhi",
+        "indicator": "e_di4_sme_x_vlo",
         "indicator_is_surrogate": true,
         "breakdown": "size_emp",
         "breakdown_is_surrogate": false,
@@ -6729,13 +5803,10 @@
             ],
             "indic_is": [
                 "e_di4_vhi",
-                "e_di4_hi"
+                "e_di4_hi",
+                "e_di4_lo"
             ],
             "size_emp": [
-                "GE250",
-                "GE10",
-                "10-49",
-                "50-249",
                 "10-249"
             ]
         },
@@ -6746,20 +5817,16 @@
                 "EU27_2020": "EU"
             },
             "breakdown": {
-                "GE10": "ent_all_xfin",
-                "10-49": "ent_s_xfin",
-                "GE250": "ent_l_xfin",
-                "10-249": "ent_sm_xfin",
-                "50-249": "ent_m_xfin"
+                "10-249": "ent_sm_xfin"
             },
             "indicator": {}
         },
         "tags": [
             [
-                "DII"
+                "ENT"
             ],
             [
-                "ENT"
+                "DII"
             ]
         ]
     }

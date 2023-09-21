@@ -16,12 +16,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "bc2020",
+        "updated_at": "2023-09-21T09:02:19.487Z",
+        "code": "broad_conn_ec",
         "label": "Broadband coverage in Europe studies",
-        "alt_label": null,
-        "definition": "IHS Markit, Omdia, Point Topic and VVA, Broadband coverage in Europe studies",
-        "url": "https://ec.europa.eu/digital-single-market/en/broadband-connectivity",
+        "alt_label": "",
+        "definition": "Various studies on broadband coverage in Europe by IHS Markit, Omdia, Point Topic and VVA",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/desi-connectivity",
         "note": ""
     }
 },
@@ -107,12 +107,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:05:46.789Z",
         "code": "cocom_new",
         "label": "Communications Committee survey",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "European Commission services, through the Communications Committee (COCOM)",
-        "url": "https://ec.europa.eu/digital-single-market/en/broadband-connectivity",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/desi-connectivity",
         "note": ""
     }
 },
@@ -380,12 +380,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-18T06:26:13.909Z",
         "code": "desi_idt_ai",
-        "label": "European enterprise survey on the use of technologies based on artificial intelligence by Ipsos and iCite",
-        "alt_label": null,
-        "definition": "European enterprise survey on the use of technologies based on artificial intelligence by Ipsos and iCite",
-        "url": "",
+        "label": "Eurostat - European Union survey on ICT usage and e-commerce in enterprises (E_AI_TANY)",
+        "alt_label": "",
+        "definition": "Eurostat - European Union survey on ICT usage and e-commerce in enterprises (E_AI_TANY)",
+        "url": null,
         "note": ""
     }
 },
@@ -562,12 +562,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:38:36.070Z",
         "code": "e_gov_bench",
-        "label": "eGovernment Benchmarking Report",
-        "alt_label": null,
-        "definition": "eGovernment Benchmarking Report",
-        "url": "https://ec.europa.eu/digital-single-market/en/news/egovernment-benchmark-2018-digital-efforts-european-countries-are-visibly-paying",
+        "label": "eGovernment Benchmarking Reports",
+        "alt_label": "",
+        "definition": "eGovernment Benchmarking Report, Studies for the EC performed by Capgemini (2012-2022) \r\nSee also: https://digital-strategy.ec.europa.eu/en/library?type=28&topic=90",
+        "url": "https://digital-strategy.ec.europa.eu/en/library/egovernment-benchmark-2022",
         "note": ""
     }
 },
@@ -796,11 +796,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:48:32.514Z",
         "code": "estat_isoc_bde15b_e",
-        "label": "Eurostat, Table isoc_bde15b_e: Broadband and connectivity - enterprises",
-        "alt_label": null,
-        "definition": "Eurostat, Table isoc_bde15b_e: Broadband and connectivity - enterprises",
+        "label": "Eurostat, table isoc_bde15b_e: Broadband and connectivity - enterprises by size class of enterprise",
+        "alt_label": "",
+        "definition": "Eurostat, Table isoc_bde15b_e: Broadband and connectivity - enterprises by size class of enterprise",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_e",
         "note": ""
     }
@@ -809,10 +809,10 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:23:17.087Z",
         "code": "estat_isoc_bde15b_h",
-        "label": "Eurostat, Table isoc_bde15b_h: Broadband and connectivity - households",
-        "alt_label": null,
+        "label": "Eurostat, table isoc_bde15b_h: Broadband and connectivity - households",
+        "alt_label": "",
         "definition": "Eurostat, Table isoc_bde15b_h: Broadband and connectivity - households",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_h",
         "note": ""
@@ -822,11 +822,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:22:01.827Z",
         "code": "estat_isoc_bde15b_p",
-        "label": "Eurostat, Table isoc_bde15b_p: Broadband and connectivity - persons employed",
-        "alt_label": null,
-        "definition": "Eurostat, Table isoc_bde15b_p: Broadband and connectivity - persons employed",
+        "label": "Eurostat, table isoc_bde15b_p: Broadband and connectivity - persons employed by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_p",
         "note": ""
     }
@@ -861,11 +861,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:26:54.971Z",
         "code": "estat_isoc_bde15dec",
-        "label": "Eurostat, Table estat_isoc_bde15dec: E-commerce, customer relation management (CRM) and secure transactions",
-        "alt_label": null,
-        "definition": "Eurostat, Table estat_isoc_bde15dec: E-commerce, customer relation management (CRM) and secure transactions",
+        "label": "Eurostat, table isoc_bde15dec: E-commerce, customer relation management (CRM) and secure transactions by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15dec",
         "note": ""
     }
@@ -965,11 +965,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:58:03.131Z",
         "code": "estat_isoc_ci_ifp_fu",
-        "label": "Eurostat, Table isoc_ci_ifp_fu: Frequency of internet use  - individuals",
-        "alt_label": null,
-        "definition": "Eurostat, Table isoc_ci_ifp_fu: Frequency of internet use  - individuals",
+        "label": "Eurostat, Table isoc_ci_ifp_fu: Individuals - frequency of internet use",
+        "alt_label": "",
+        "definition": "",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_ifp_fu",
         "note": ""
     }
@@ -978,11 +978,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:57:50.625Z",
         "code": "estat_isoc_ci_ifp_iu",
-        "label": "Eurostat, Table isoc_ci_ifp_iu: Internet use  - individuals",
-        "alt_label": null,
-        "definition": "Eurostat, Table isoc_ci_ifp_iu: Internet use  - individuals",
+        "label": "Eurostat, table isoc_ci_ifp_iu: Individuals - internet use",
+        "alt_label": "",
+        "definition": "",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_ifp_iu",
         "note": ""
     }
@@ -1056,11 +1056,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:12:09.805Z",
         "code": "estat_isoc_cismt",
-        "label": "Eurostat, Table isoc_cismt: Social media use by type",
-        "alt_label": null,
-        "definition": "Eurostat, Table isoc_cismt: Social media use by type",
+        "label": "Eurostat, table isoc_cismt: Social media use by type, internet advertising and size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cismt",
         "note": ""
     }
@@ -1069,10 +1069,10 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:17:36.549Z",
         "code": "estat_isoc_e_dii",
-        "label": "Eurostat, Table isoc_e_dii: Digital Intensity",
-        "alt_label": null,
+        "label": "Eurostat, Table isoc_e_dii: Digital Intensity by size class of enterprise",
+        "alt_label": "",
         "definition": "Eurostat, Table isoc_e_dii: Digital Intensity",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_e_dii",
         "note": ""
@@ -1095,11 +1095,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T09:49:01.411Z",
         "code": "estat_isoc_eb_bd",
-        "label": "Eurostat, Table isoc_eb_bd: Big data analysis",
-        "alt_label": null,
-        "definition": "Eurostat, Table isoc_eb_bd: Big data analysis",
+        "label": "Eurostat, table isoc_eb_bd: Big data analysis by size class of enterprise",
+        "alt_label": "",
+        "definition": "Eurostat, table isoc_eb_bd: Big data analysis by size class of enterprise",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_bd",
         "note": ""
     }
@@ -1108,10 +1108,10 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:04:59.785Z",
         "code": "estat_isoc_ec_eseln2",
-        "label": "Eurostat, Table isoc_ec_eseln2: Enterprises selling via internet and/or networks other than internet (NACE Rev. 2 activity)",
-        "alt_label": null,
+        "label": "Eurostat, table isoc_ec_eseln2: Enterprises selling via internet and/or networks other than internet (NACE Rev. 2 activity)",
+        "alt_label": "",
         "definition": "Eurostat, Table isoc_ec_eseln2: Enterprises selling via internet and/or networks other than internet (NACE Rev. 2 activity)",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_eseln2",
         "note": ""
@@ -1121,10 +1121,10 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:01:16.547Z",
         "code": "estat_isoc_ec_ibuy",
-        "label": "Eurostat, Table isoc_ec_ibuy: Internet purchases by individuals",
-        "alt_label": null,
+        "label": "Eurostat, Table isoc_ec_ibuy: Internet purchases by individuals (until 2019)",
+        "alt_label": "",
         "definition": "Eurostat, Table isoc_ec_ibuy: Internet purchases by individuals",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_ibuy",
         "note": ""
@@ -1134,12 +1134,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-21T10:03:01.102Z",
         "code": "estat_isoc_ec_iprb",
-        "label": "eurostat table isoc_ec_iprb ",
-        "alt_label": null,
-        "definition": "eurostat table isoc_ec_iprb Problems encountered by individuals when buying/ordering over the internet ",
-        "url": "http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_ec_iprb&lang=en",
+        "label": "Eurostat, table isoc_ec_iprb: Problems encountered by individuals when buying/ordering over the internet",
+        "alt_label": "",
+        "definition": "",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_iprb",
         "note": ""
     }
 },
@@ -1291,37 +1291,11 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "estat_nama_gdp_c",
-        "label": "Eurostat, Table estat_nama_gdp_c: GDP and main components - Current prices",
-        "alt_label": null,
-        "definition": "Eurostat, Table estat_nama_gdp_c: GDP and main components - Current prices",
-        "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/nama_gdp_c",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "estat_randd",
         "label": "Eurostat’s statistics on R&D expenditure",
         "alt_label": null,
         "definition": "Eurostat’s statistics on R&D expenditure are compiled using guidelines laid out in the Frascati manual (http://www.oecd.org/document/6/0,3343,en_2649_34451_33828550_1_1_1_1,00.html)",
         "url": "http://ec.europa.eu/eurostat/web/science-technology-innovation/data/database",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "estat_tps00188",
-        "label": "Eurostat, Table estat_tps00188: Science and technology graduates by sex",
-        "alt_label": null,
-        "definition": "Eurostat, Table estat_tps00188: Science and technology graduates by sex",
-        "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad04",
         "note": ""
     }
 },
@@ -1374,19 +1348,6 @@
         "alt_label": null,
         "definition": "European Data Portal",
         "url": "https://www.europeandataportal.eu/en/impact-studies/open-data-maturity",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "eurostat_ed",
-        "label": "Eurostat education statistics (table educ_uoe_grad04 and tps00188) ",
-        "alt_label": null,
-        "definition": "Eurostat education statistics (table educ_uoe_grad04 and tps00188) ",
-        "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad04",
         "note": ""
     }
 },
@@ -1563,494 +1524,494 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-03-31T06:35:04.223Z",
-        "updated_at": "2023-03-31T06:35:04.223Z",
+        "updated_at": "2023-09-21T10:24:35.651Z",
         "code": "estat_demo_pjan",
-        "label": "Population on 1 January by age and sex",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table demo_pjan: Population on 1 January by age and sex",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/demo_pjan",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-03-31T07:14:41.452Z",
-        "updated_at": "2023-03-31T07:14:41.452Z",
+        "updated_at": "2023-09-21T10:25:02.224Z",
         "code": "estat_tec00001",
-        "label": "Gross domestic product at market prices",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table tec00001: Gross domestic product at market prices",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/tec00001",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-07T15:33:14.482Z",
-        "updated_at": "2023-04-07T15:33:14.482Z",
+        "updated_at": "2023-09-21T09:59:07.818Z",
         "code": "estat_isoc_bde15ei",
-        "label": "Individuals using the internet for interacting with public authorities",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15ei: Individuals using the internet for interacting with public authorities",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15ei",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-07T16:02:18.812Z",
-        "updated_at": "2023-04-07T16:02:18.812Z",
+        "updated_at": "2023-09-21T09:29:43.109Z",
         "code": "estat_isoc_cicci_use",
-        "label": "Individuals - use of cloud services",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_cicci_use: Individuals - use of cloud services",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cicci_use",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-07T16:32:47.239Z",
-        "updated_at": "2023-04-07T16:32:47.239Z",
+        "updated_at": "2023-09-21T10:00:58.680Z",
         "code": "estat_isoc_ec_ib20",
-        "label": "Internet purchases by individuals (2020 onwards)",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ec_ib20: Internet purchases by individuals (2020 onwards)",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_ib20",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-07T17:31:21.578Z",
-        "updated_at": "2023-04-07T17:31:21.578Z",
+        "updated_at": "2023-09-21T09:44:33.054Z",
         "code": "estat_isoc_bde15b_i",
-        "label": "Broadband and connectivity - individuals",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15b_i: Broadband and connectivity - individuals",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_i",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-07T17:59:08.055Z",
-        "updated_at": "2023-04-07T17:59:08.055Z",
+        "updated_at": "2023-09-21T10:19:03.674Z",
         "code": "estat_educ_uoe_grad04",
-        "label": "Graduates in tertiary education, in science, math., computing, engineering, manufacturing, construction, by sex - per 1000 of population aged 20-29",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table educ_uoe_grad04: Graduates in tertiary education, in science, math., computing, engineering, manufacturing, construction, by sex",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad04",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T11:34:27.443Z",
-        "updated_at": "2023-04-17T11:34:27.443Z",
+        "updated_at": "2023-09-21T10:11:06.603Z",
         "code": "estat_isoc_bde15b_p_s",
-        "label": "Broadband and connectivity - persons employed by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15b_p_s: Broadband and connectivity - persons employed by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_p_s",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T11:59:04.691Z",
-        "updated_at": "2023-04-17T11:59:04.691Z",
+        "updated_at": "2023-09-21T10:09:30.124Z",
         "code": "estat_isoc_ci_in_en2",
-        "label": "Internet access by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ci_in_en2: Internet access by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_in_en2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:03:41.683Z",
-        "updated_at": "2023-04-17T12:03:41.683Z",
+        "updated_at": "2023-09-21T09:48:48.343Z",
         "code": "estat_isoc_ci_in_es",
-        "label": "Internet access by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ci_in_es: Internet access by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_in_es",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:11:26.137Z",
-        "updated_at": "2023-04-17T12:11:26.138Z",
+        "updated_at": "2023-09-21T10:11:33.006Z",
         "code": "estat_isoc_cismtn2",
-        "label": "Social media use by type, internet advertising and NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_cismtn2: Social media use by type, internet advertising and NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cismtn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:19:39.934Z",
-        "updated_at": "2023-04-17T12:19:39.934Z",
+        "updated_at": "2023-09-21T10:08:18.853Z",
         "code": "estat_isoc_ciwebn2",
-        "label": "Websites and functionalities by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ciwebn2: Websites and functionalities by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ciwebn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:21:43.678Z",
-        "updated_at": "2023-04-17T12:21:43.678Z",
+        "updated_at": "2023-09-21T09:45:11.566Z",
         "code": "estat_isoc_ciweb",
-        "label": "Websites and functionalities by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ciweb: Websites and functionalities by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ciweb",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:28:28.778Z",
-        "updated_at": "2023-04-17T12:28:28.778Z",
+        "updated_at": "2023-09-21T09:17:45.231Z",
         "code": "estat_isoc_ci_it_en2",
-        "label": "Type of connections to the internet by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ci_it_en2: Type of connections to the internet by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_it_en2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:30:42.739Z",
-        "updated_at": "2023-04-17T12:30:42.739Z",
+        "updated_at": "2023-09-21T09:48:45.768Z",
         "code": "estat_isoc_ci_it_es",
-        "label": "Type of connections to the internet by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ci_it_es: Type of connections to the internet by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_it_es",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:36:54.932Z",
-        "updated_at": "2023-04-17T12:36:54.932Z",
+        "updated_at": "2023-09-21T10:03:35.051Z",
         "code": "estat_isoc_ec_esels",
-        "label": "E-commerce sales of enterprises by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ec_esels: E-commerce sales of enterprises by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_esels",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:41:16.185Z",
-        "updated_at": "2023-04-17T12:41:16.185Z",
+        "updated_at": "2023-09-20T11:42:11.313Z",
         "code": "estat_isoc_eb_bdn2",
-        "label": "Big data analysis by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_eb_bdn2: Big data analysis by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_bdn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T12:59:26.987Z",
-        "updated_at": "2023-04-17T12:59:26.987Z",
+        "updated_at": "2023-09-21T10:16:06.945Z",
         "code": "estat_isoc_cicce_usen2",
-        "label": "Cloud computing services by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_cicce_usen2: Cloud computing services by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cicce_usen2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:11:01.076Z",
-        "updated_at": "2023-04-17T13:11:01.076Z",
+        "updated_at": "2023-09-21T10:06:17.557Z",
         "code": "estat_isoc_eb_iipn2",
-        "label": "Integration of internal processes by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_eb_iipn2: Integration of internal processes by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_iipn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:12:56.214Z",
-        "updated_at": "2023-04-17T13:12:56.214Z",
+        "updated_at": "2023-09-21T09:49:03.955Z",
         "code": "estat_isoc_eb_iip",
-        "label": "Integration of internal processes by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_eb_iip: Integration of internal processes by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_iip",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:29:40.618Z",
-        "updated_at": "2023-04-17T13:29:40.618Z",
+        "updated_at": "2023-09-21T10:26:19.955Z",
         "code": "estat_isoc_bde15dipn2",
-        "label": "Integration of internal processes by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15dipn2: Integration of internal processes by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15dipn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:42:27.656Z",
-        "updated_at": "2023-04-17T13:42:27.656Z",
+        "updated_at": "2023-09-21T10:16:53.731Z",
         "code": "estat_isoc_eb_ain2",
-        "label": "Artificial intelligence by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_eb_ain2: Artificial intelligence by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_ain2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:45:20.345Z",
-        "updated_at": "2023-04-17T13:45:20.345Z",
+        "updated_at": "2023-09-21T10:20:06.355Z",
         "code": "estat_isoc_ske_itspen2",
-        "label": "Enterprises that employ ICT specialists by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_itspen2: Enterprises that employ ICT specialists by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_itspen2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:46:17.339Z",
-        "updated_at": "2023-04-17T13:46:17.339Z",
+        "updated_at": "2023-09-21T09:43:56.032Z",
         "code": "estat_isoc_ske_itspe",
-        "label": "Enterprises that employ ICT specialists by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_itspe: Enterprises that employ ICT specialists by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_itspe",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:48:28.679Z",
-        "updated_at": "2023-04-17T13:48:28.679Z",
+        "updated_at": "2023-09-21T10:20:32.841Z",
         "code": "estat_isoc_ske_itrcrn2",
-        "label": "Enterprises that recruited or tried to recruit ICT specialists by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_itrcrn2: Enterprises that recruited or tried to recruit ICT specialists by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_itrcrn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:49:30.847Z",
-        "updated_at": "2023-04-17T13:49:30.847Z",
+        "updated_at": "2023-09-21T09:43:45.983Z",
         "code": "estat_isoc_ske_itrcrs",
-        "label": "Enterprises that recruited or tried to recruit ICT specialists by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_itrcrs: Enterprises that recruited or tried to recruit ICT specialists by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_itrcrs",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:51:23.158Z",
-        "updated_at": "2023-04-17T13:51:23.158Z",
+        "updated_at": "2023-09-21T10:21:03.368Z",
         "code": "estat_isoc_ske_fctn2",
-        "label": "Enterprises - ICT functions performed by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_fctn2: Enterprises - ICT functions performed by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_fctn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:52:09.783Z",
-        "updated_at": "2023-04-17T13:52:09.783Z",
+        "updated_at": "2023-09-21T10:21:13.050Z",
         "code": "estat_isoc_ske_fct",
-        "label": "Enterprises - ICT functions performed by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_fct: Enterprises - ICT functions performed by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_fct",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:55:17.501Z",
-        "updated_at": "2023-04-17T13:55:17.501Z",
+        "updated_at": "2023-09-21T10:24:00.200Z",
         "code": "estat_isoc_cisce_ran2",
-        "label": "Security policy: measures, risks and staff awareness by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_cisce_ran2: Security policy: measures, risks and staff awareness by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cisce_ran2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:56:25.780Z",
-        "updated_at": "2023-04-17T13:56:25.780Z",
+        "updated_at": "2023-09-21T09:44:59.338Z",
         "code": "estat_isoc_cisce_ra",
-        "label": "Security policy: measures, risks and staff awareness by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_cisce_ra: Security policy: measures, risks and staff awareness by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cisce_ra",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T13:59:37.882Z",
-        "updated_at": "2023-04-17T13:59:37.882Z",
+        "updated_at": "2023-09-21T09:44:04.447Z",
         "code": "estat_isoc_ske_itts",
-        "label": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ske_itts: Enterprises that provided training to develop/upgrade ICT skills of their personnel by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ske_itts",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:07:45.544Z",
-        "updated_at": "2023-04-17T14:07:45.544Z",
+        "updated_at": "2023-09-21T09:22:25.701Z",
         "code": "estat_isoc_cimobe_usen2",
-        "label": "Use of mobile connections to the internet by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_cimobe_usen2: Use of mobile connections to the internet by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cimobe_usen2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:08:59.258Z",
-        "updated_at": "2023-04-17T14:08:59.258Z",
+        "updated_at": "2023-09-21T09:48:43.040Z",
         "code": "estat_isoc_cimobe_use",
-        "label": "Use of mobile connections to the internet by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table cimobe_use: Use of mobile connections to the internet by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cimobe_use",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:13:43.735Z",
-        "updated_at": "2023-04-17T14:13:43.735Z",
+        "updated_at": "2023-09-21T09:20:55.101Z",
         "code": "estat_isoc_bde15b_en2",
-        "label": "Broadband and connectivity - enterprises by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15b_en2: Broadband and connectivity - enterprises by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15b_en2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:18:01.522Z",
-        "updated_at": "2023-04-17T14:18:01.522Z",
+        "updated_at": "2023-09-21T10:04:11.055Z",
         "code": "estat_isoc_ec_evaln2",
-        "label": "Value of e-commerce sales by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ec_evaln2: Value of e-commerce sales by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_evaln2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:19:19.768Z",
-        "updated_at": "2023-04-17T14:19:19.768Z",
+        "updated_at": "2023-09-21T09:43:33.471Z",
         "code": "estat_isoc_ec_evals",
-        "label": "Value of e-commerce sales by size class of enterprise",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_ec_evals: Value of e-commerce sales by size class of enterprise",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_evals",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:25:43.069Z",
-        "updated_at": "2023-04-17T14:25:43.069Z",
+        "updated_at": "2023-09-21T10:07:08.143Z",
         "code": "estat_isoc_bde15decn2",
-        "label": "E-commerce, customer relation management (CRM) and secure transactions by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15decn2:E-commerce, customer relation management (CRM) and secure transactions by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15decn2",
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:34:14.964Z",
-        "updated_at": "2023-04-17T14:34:14.964Z",
+        "updated_at": "2023-09-21T10:07:48.038Z",
         "code": "estat_isoc_bde15discn2",
-        "label": "Integration with customers/suppliers and SCM by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_bde15discn2: Integration with customers/suppliers and SCM by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15discn2",
-        "note": null
+        "note": ""
     }
 },
 {
@@ -2070,13 +2031,26 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-07-05T10:16:19.455Z",
-        "updated_at": "2023-07-05T10:16:19.455Z",
+        "updated_at": "2023-09-21T10:17:15.932Z",
         "code": "estat_isoc_e_diin2",
-        "label": "Digital Intensity by NACE Rev.2 activity",
-        "alt_label": null,
-        "definition": null,
+        "label": "Eurostat, table isoc_e_diin2: Digital Intensity by NACE Rev.2 activity",
+        "alt_label": "",
+        "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_e_diin2",
-        "note": null
+        "note": ""
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-09-20T15:03:12.762Z",
+        "updated_at": "2023-09-20T15:03:12.762Z",
+        "code": "cnect_ehealth_kpi",
+        "label": "Service contract for the European Commission by Empirica GmbH and PredictBy",
+        "alt_label": "",
+        "definition": "",
+        "url": null,
+        "note": ""
     }
 }
 ]

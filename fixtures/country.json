@@ -726,5 +726,18 @@
         "color": "#CCCCCC",
         "is_group": false
     }
+},
+{
+    "model": "core.country",
+    "fields": {
+        "created_at": "2023-09-18T09:38:24.563Z",
+        "updated_at": "2023-09-18T09:39:28.755Z",
+        "code": "EUPlus",
+        "label": "EU27+ (35 countries, eGovernment Benchmark)",
+        "alt_label": "EU27+ (35 countries)",
+        "definition": "the EU27 Member States as well the EFTA countries (Iceland, Norway and Switzerland) and the EU candidate countries (Albania, Montenegro, North Macedonia, Serbia and Turkey)",
+        "color": "#1A53FF",
+        "is_group": true
+    }
 }
 ]

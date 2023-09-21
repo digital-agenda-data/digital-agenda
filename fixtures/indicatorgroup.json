@@ -16,7 +16,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 200,
+        "display_order": 100,
         "code": "back",
         "label": "Background variables",
         "alt_label": null,
@@ -28,7 +28,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 4,
+        "display_order": 9,
         "code": "bbquality",
         "label": "Broadband speeds and prices",
         "alt_label": null,
@@ -52,7 +52,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 7,
+        "display_order": 1,
         "code": "desi",
         "label": "DESI Stacked",
         "alt_label": null,
@@ -64,7 +64,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 9,
+        "display_order": 3,
         "code": "desi_dim",
         "label": "DESI Dimensions",
         "alt_label": null,
@@ -75,12 +75,12 @@
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 3,
+        "updated_at": "2023-09-18T05:49:19.948Z",
+        "display_order": 5,
         "code": "desi_ind",
         "label": "DESI Individual Indicators",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
@@ -88,7 +88,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 5,
+        "display_order": 6,
         "code": "desi_sliders",
         "label": "DESI Overall Index - weight sliders",
         "alt_label": null,
@@ -100,7 +100,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 2,
+        "display_order": 4,
         "code": "desi_subdim",
         "label": "DESI Sub-dimensions",
         "alt_label": null,
@@ -112,7 +112,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 1,
+        "display_order": 2,
         "code": "desi_total",
         "label": "DESI Overall Index",
         "alt_label": null,
@@ -123,19 +123,19 @@
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 900,
+        "updated_at": "2023-09-21T10:45:01.304Z",
+        "display_order": 101,
         "code": "discontinued",
         "label": "Discontinued indicators",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2023-07-10T07:22:52.784Z",
+        "updated_at": "2023-09-20T15:43:16.115Z",
         "display_order": 80,
         "code": "ebusiness",
         "label": "eBusiness",
@@ -159,24 +159,24 @@
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2022-05-27T14:12:51.541Z",
+        "updated_at": "2023-09-19T14:26:20.095Z",
         "display_order": 60,
         "code": "egovernment",
         "label": "eGovernment",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 100,
+        "updated_at": "2023-09-20T15:02:28.068Z",
+        "display_order": 95,
         "code": "ehealth",
         "label": "eHealth",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
@@ -184,19 +184,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 95,
-        "code": "ict-edu",
-        "label": "ICT in Education",
-        "alt_label": null,
-        "definition": null
-    }
-},
-{
-    "model": "core.indicatorgroup",
-    "fields": {
-        "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 110,
+        "display_order": 97,
         "code": "ict-sector",
         "label": "ICT sector",
         "alt_label": null,
@@ -244,7 +232,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 40,
+        "display_order": 11,
         "code": "internet-usage",
         "label": "Internet usage",
         "alt_label": null,
@@ -255,12 +243,12 @@
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
-        "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 35,
+        "updated_at": "2023-09-20T11:26:39.864Z",
+        "display_order": 10,
         "code": "mobile",
         "label": "Mobile market",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
@@ -268,7 +256,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 120,
+        "display_order": 98,
         "code": "research-and-development",
         "label": "EU Research and Development Programs",
         "alt_label": null,
@@ -280,7 +268,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 121,
+        "display_order": 99,
         "code": "research_einfra",
         "label": "Research e-Infrastructures",
         "alt_label": null,
@@ -292,7 +280,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 105,
+        "display_order": 96,
         "code": "security-privacy",
         "label": "Security and Privacy",
         "alt_label": null,
@@ -304,7 +292,7 @@
     "fields": {
         "created_at": "2022-05-27T14:12:51.541Z",
         "updated_at": "2022-05-27T14:12:51.541Z",
-        "display_order": 6,
+        "display_order": 7,
         "code": "telecom",
         "label": "Telecom sector",
         "alt_label": null,
@@ -321,6 +309,42 @@
         "label": "Women in Digital",
         "alt_label": null,
         "definition": null
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2023-09-18T06:38:23.474Z",
+        "updated_at": "2023-09-18T06:41:50.249Z",
+        "display_order": 102,
+        "code": "egov2013-2019",
+        "label": "eGovernment",
+        "alt_label": "eGovernment",
+        "definition": "e-Government Benchmark (2013-2019)"
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2023-09-18T09:20:52.130Z",
+        "updated_at": "2023-09-18T09:24:54.795Z",
+        "display_order": 103,
+        "code": "egov2020",
+        "label": "eGovernment",
+        "alt_label": "eGovernment",
+        "definition": ""
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2023-09-20T16:41:52.363Z",
+        "updated_at": "2023-09-20T16:59:37.996Z",
+        "display_order": 93,
+        "code": "rid",
+        "label": "Rural in Digital",
+        "alt_label": "Rural in Digital",
+        "definition": ""
     }
 }
 ]

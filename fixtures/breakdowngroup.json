@@ -363,12 +363,12 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
+        "updated_at": "2023-09-15T09:46:05.196Z",
         "display_order": 4,
         "code": "desi_c_fbbc",
         "label": "Indicators under Fixed broadband coverage",
-        "alt_label": null,
-        "definition": null
+        "alt_label": "",
+        "definition": ""
     }
 },
 {
@@ -663,7 +663,7 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
+        "updated_at": "2023-09-19T12:27:33.568Z",
         "display_order": 112,
         "code": "e_gov_scope",
         "label": "Citizen and business",
@@ -785,18 +785,6 @@
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
         "display_order": 100000,
-        "code": "manuf",
-        "label": "Manufacturing sub-sectors",
-        "alt_label": "Manufacturing sub-sectors",
-        "definition": "Manufacturing sector (NACE rev.2 group C) divided into 9 sub-sectors"
-    }
-},
-{
-    "model": "core.breakdowngroup",
-    "fields": {
-        "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
         "code": "mhz_bands",
         "label": "Spectrum Bands ",
         "alt_label": "Spectrum Bands",
@@ -843,7 +831,7 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
+        "updated_at": "2023-09-19T14:01:17.534Z",
         "display_order": 1,
         "code": "total",
         "label": "Total",

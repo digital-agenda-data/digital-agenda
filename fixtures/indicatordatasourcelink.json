@@ -3,10 +3,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "5g_read"
+            "5g_spectrum"
         ],
         "data_source": [
-            "cocom_new"
+            "broad_conn_ec"
         ]
     }
 },
@@ -61,7 +61,7 @@
             "bb_dsl"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -83,7 +83,7 @@
             "bb_fttpcov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -105,7 +105,7 @@
             "bb_lines"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -116,7 +116,7 @@
             "bb_ne"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -127,7 +127,7 @@
             "bb_ngacov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -138,7 +138,7 @@
             "bb_penet"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -149,7 +149,7 @@
             "bb_rfttpcov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -160,7 +160,7 @@
             "bb_rngacov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -171,7 +171,7 @@
             "bb_rvhcncov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -182,7 +182,7 @@
             "bb_scov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -193,7 +193,7 @@
             "bb_speed10"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -204,7 +204,7 @@
             "bb_speed100"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -215,7 +215,7 @@
             "bb_speed2"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -226,7 +226,7 @@
             "bb_speed30"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -237,7 +237,7 @@
             "bb_srcov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -248,7 +248,7 @@
             "bb_vhcncov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -304,17 +304,6 @@
         ],
         "data_source": [
             "einfrageant"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_4g"
-        ],
-        "data_source": [
-            "desi_4g"
         ]
     }
 },
@@ -751,32 +740,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_bd"
-        ],
-        "data_source": [
-            "estat-ent"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_bda"
         ],
         "data_source": [
             "estat_isoc_eb_bd"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_broad"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
         ]
     }
 },
@@ -810,17 +777,6 @@
         ],
         "data_source": [
             "estat_isoc_cicce_use"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_cc_pcpu"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
         ]
     }
 },
@@ -883,28 +839,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_di_hivhi"
-        ],
-        "data_source": [
-            "estat-ent"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_vlo"
-        ],
-        "data_source": [
-            "estat-ent"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_ebuy"
         ],
         "data_source": [
@@ -916,43 +850,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_empmd_gt20"
-        ],
-        "data_source": [
-            "estat_isoc_bde15b_e"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_erp1"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dip"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_esell"
         ],
         "data_source": [
             "estat_isoc_ec_eseln2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_eturn"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
         ]
     }
 },
@@ -1345,39 +1246,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_igov"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_igov2pr"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_igovrt"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_inv"
         ],
         "data_source": [
@@ -1404,50 +1272,6 @@
         ],
         "data_source": [
             "estat_isoc_bde15disc"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_ispdf_ge30"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_it_mext"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_itsp2"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_itspvac2"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
         ]
     }
 },
@@ -1521,164 +1345,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_pmd_app"
-        ],
-        "data_source": [
-            "estat-ent"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "epsi_score"
-        ],
-        "data_source": [
-            "epsiplatform"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_ra"
-        ],
-        "data_source": [
-            "estat-ent"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_rfac"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dth"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_rfid"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dth"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_rfpsas"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dth"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_secpol1"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_sisc"
         ],
         "data_source": [
             "estat_isoc_bde15disc"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_sisorp"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_sm_any"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_sm_ge2"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "eun_computers"
-        ],
-        "data_source": [
-            "eun12"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "eun_web"
-        ],
-        "data_source": [
-            "eun12"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_web"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_webf2"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
         ]
     }
 },
@@ -1884,17 +1554,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "gdp"
-        ],
-        "data_source": [
-            "estat_nama_gdp_c"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "h2020_cofin"
         ],
         "data_source": [
@@ -1997,7 +1656,7 @@
             "h_fbbfix"
         ],
         "data_source": [
-            "estathh_cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -2009,39 +1668,6 @@
         ],
         "data_source": [
             "estat_isoc_bde15b_h"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "hie_use_ex_admin"
-        ],
-        "data_source": [
-            "bench_gp"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "hie_use_pharm"
-        ],
-        "data_source": [
-            "bench_gp"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "househ"
-        ],
-        "data_source": [
-            "estat-hh"
         ]
     }
 },
@@ -2063,18 +1689,7 @@
             "h_ubbfix"
         ],
         "data_source": [
-            "estathh_cocom"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "h_xcost"
-        ],
-        "data_source": [
-            "estat-hh"
+            "broad_conn_ec"
         ]
     }
 },
@@ -2163,17 +1778,6 @@
         ],
         "data_source": [
             "estat_isoc_ec_ibuy"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_cc"
-        ],
-        "data_source": [
-            "estat_isoc_cicce_use"
         ]
     }
 },
@@ -2775,17 +2379,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "i_igov12rt"
-        ],
-        "data_source": [
-            "estat_isoc_r_gov_i"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "i_igovrt"
         ],
         "data_source": [
@@ -2863,51 +2456,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "i_iueduif"
-        ],
-        "data_source": [
-            "estat_isoc_ci_ac_i"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_iugm"
-        ],
-        "data_source": [
-            "estat_isoc_bde15cua"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "i_iugov"
-        ],
-        "data_source": [
-            "estat_isoc_ci_ac_i"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_iugov12"
-        ],
-        "data_source": [
-            "estat_isoc_r_gov_i"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_iuif"
         ],
         "data_source": [
             "estat_isoc_ci_ac_i"
@@ -2933,17 +2482,6 @@
         ],
         "data_source": [
             "estat_isoc_bde15cua"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_iumc"
-        ],
-        "data_source": [
-            "estat_isoc_ci_im_i"
         ]
     }
 },
@@ -2977,28 +2515,6 @@
         ],
         "data_source": [
             "estat_isoc_bde15cua"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_iuse"
-        ],
-        "data_source": [
-            "estat_isoc_ci_ifp_fu"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "i_iusell"
-        ],
-        "data_source": [
-            "estat_isoc_r_iuse_i"
         ]
     }
 },
@@ -3152,7 +2668,7 @@
             "mbb_5gcov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3174,7 +2690,7 @@
             "mbb_ltecov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3185,7 +2701,7 @@
             "mbb_penet"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3196,7 +2712,7 @@
             "mbb_r5gcov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3218,7 +2734,7 @@
             "mbb_rltecov"
         ],
         "data_source": [
-            "bc2020"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3240,7 +2756,7 @@
             "mob_arpu"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3251,7 +2767,7 @@
             "mob_ms"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3273,7 +2789,7 @@
             "mob_penet"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3295,18 +2811,7 @@
             "mob_subs"
         ],
         "data_source": [
-            "cocom"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "p_empmd"
-        ],
-        "data_source": [
-            "estat_isoc_ci_eu_en2"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3318,17 +2823,6 @@
         ],
         "data_source": [
             "estat_isoc_bde15b_p"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "population"
-        ],
-        "data_source": [
-            "eurostat_pop"
         ]
     }
 },
@@ -3369,28 +2863,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "spectrum_wbb"
-        ],
-        "data_source": [
-            "eco_report_03_efis_comm"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "st_grad"
-        ],
-        "data_source": [
-            "estat_tps00188"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "tel_ftr"
         ],
         "data_source": [
@@ -3405,7 +2877,7 @@
             "tel_inv"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3427,7 +2899,7 @@
             "tel_rev"
         ],
         "data_source": [
-            "cocom"
+            "broad_conn_ec"
         ]
     }
 },
@@ -3699,7 +3171,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_ra"
+            "e_iuse"
         ],
         "data_source": [
             "estat_isoc_ci_in_en2"
@@ -3710,7 +3182,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_ra"
+            "e_iuse"
         ],
         "data_source": [
             "estat_isoc_ci_in_es"
@@ -4458,17 +3930,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_ebuy2"
-        ],
-        "data_source": [
-            "estat_isoc_bde15dec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_inv4s_ap"
         ],
         "data_source": [
@@ -4524,50 +3985,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "edigint2015"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "edigint2022"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "edigint2021"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "edigint2018"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_di4_vlo"
         ],
         "data_source": [
@@ -4602,94 +4019,6 @@
     "fields": {
         "indicator": [
             "e_di4_vhi"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_vlo"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_lo"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_hi"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_vhi"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_vlo"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_lo"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_hi"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_vhi"
         ],
         "data_source": [
             "estat_isoc_e_dii"
@@ -4788,109 +4117,87 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "e_di_vlo"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_lo"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_hi"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di_vhi"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_vlo"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_lo"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_hi"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di2_vhi"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di4_hivhi"
-        ],
-        "data_source": [
-            "estat_isoc_e_diin2"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "e_di4_hivhi"
+            "e_di3_sme_x_vlo"
         ],
         "data_source": [
             "estat_isoc_e_dii"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "e_di4_sme_x_vlo"
+        ],
+        "data_source": [
+            "estat_isoc_e_dii"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "e_gov_dpsc_new"
+        ],
+        "data_source": [
+            "e_gov_bench"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "e_gov_ebus_new"
+        ],
+        "data_source": [
+            "e_gov_bench"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "e_gov_ebus"
+        ],
+        "data_source": [
+            "e_gov_bench"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "e_gov_pff_new"
+        ],
+        "data_source": [
+            "e_gov_bench"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "5g_cov_3400_3800"
+        ],
+        "data_source": [
+            "broad_conn_ec"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "ehealth_aehr"
+        ],
+        "data_source": [
+            "cnect_ehealth_kpi"
         ]
     }
 }

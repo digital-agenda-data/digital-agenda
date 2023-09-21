@@ -4,18 +4,6 @@
     "fields": {
         "display_order": 1,
         "breakdown": [
-            "10_c10_12"
-        ],
-        "group": [
-            "manuf"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 1,
-        "breakdown": [
             "10_c10_18"
         ],
         "group": [
@@ -28,46 +16,10 @@
     "fields": {
         "display_order": 2,
         "breakdown": [
-            "10_c13_15"
-        ],
-        "group": [
-            "manuf"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 3,
-        "breakdown": [
-            "10_c16_18"
-        ],
-        "group": [
-            "manuf"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 2,
-        "breakdown": [
             "10_c19_23"
         ],
         "group": [
             "econsector"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 4,
-        "breakdown": [
-            "10_c19_23"
-        ],
-        "group": [
-            "manuf"
         ]
     }
 },
@@ -80,30 +32,6 @@
         ],
         "group": [
             "econsector"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 5,
-        "breakdown": [
-            "10_c24_25"
-        ],
-        "group": [
-            "manuf"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 6,
-        "breakdown": [
-            "10_c26"
-        ],
-        "group": [
-            "manuf"
         ]
     }
 },
@@ -116,42 +44,6 @@
         ],
         "group": [
             "econsector"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 7,
-        "breakdown": [
-            "10_c27_28"
-        ],
-        "group": [
-            "manuf"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 8,
-        "breakdown": [
-            "10_c29_30"
-        ],
-        "group": [
-            "manuf"
-        ]
-    }
-},
-{
-    "model": "core.breakdowngrouplink",
-    "fields": {
-        "display_order": 9,
-        "breakdown": [
-            "10_c31_33"
-        ],
-        "group": [
-            "manuf"
         ]
     }
 },
@@ -350,7 +242,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 14,
         "breakdown": [
             "1m_websites"
         ],
@@ -386,7 +278,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 2,
         "breakdown": [
             "261to264_582_61_62_631_951"
         ],
@@ -494,7 +386,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 3,
         "breakdown": [
             "5g_pb"
         ],
@@ -578,7 +470,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 4,
         "breakdown": [
             "all_egov_le"
         ],
@@ -2282,7 +2174,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 6,
         "breakdown": [
             "egov_le_bus"
         ],
@@ -2294,7 +2186,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 7,
         "breakdown": [
             "egov_life_events"
         ],
@@ -2378,7 +2270,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 57,
+        "display_order": 21,
         "breakdown": [
             "ent_all_xfin"
         ],
@@ -2534,7 +2426,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 12,
         "breakdown": [
             "epsiscore_total"
         ],
@@ -2606,7 +2498,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 13,
         "breakdown": [
             "gen_pract"
         ],
@@ -2738,7 +2630,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 41,
+        "display_order": 19,
         "breakdown": [
             "hh_total"
         ],
@@ -2930,7 +2822,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 2,
+        "display_order": 18,
         "breakdown": [
             "ind_total"
         ],
@@ -3338,7 +3230,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 63,
+        "display_order": 22,
         "breakdown": [
             "orgclass_total"
         ],
@@ -3974,7 +3866,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 15,
         "breakdown": [
             "tot_ict_products"
         ],
@@ -3986,7 +3878,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 16,
         "breakdown": [
             "total"
         ],
@@ -3998,7 +3890,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 17,
         "breakdown": [
             "total_fbb"
         ],
@@ -4010,7 +3902,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 8,
         "breakdown": [
             "total_mbb"
         ],
@@ -4022,7 +3914,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 9,
         "breakdown": [
             "total_mob"
         ],
@@ -4034,7 +3926,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 53,
+        "display_order": 20,
         "breakdown": [
             "total_offers8plus"
         ],
@@ -4046,7 +3938,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 10,
         "breakdown": [
             "total_pop"
         ],
@@ -4058,7 +3950,7 @@
 {
     "model": "core.breakdowngrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 11,
         "breakdown": [
             "total_pophh"
         ],
@@ -4460,6 +4352,54 @@
         ],
         "group": [
             "nace_r2_17"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 3,
+        "breakdown": [
+            "desi_fttpc"
+        ],
+        "group": [
+            "desi_c_fbbc"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 3,
+        "breakdown": [
+            "e_gov_scope_1_new"
+        ],
+        "group": [
+            "e_gov_scope"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 4,
+        "breakdown": [
+            "e_gov_scope_2_new"
+        ],
+        "group": [
+            "e_gov_scope"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 5,
+        "breakdown": [
+            "all_egov_le_new"
+        ],
+        "group": [
+            "total"
         ]
     }
 }

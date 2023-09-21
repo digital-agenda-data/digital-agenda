@@ -3,14 +3,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-21T08:38:41.988Z",
-        "updated_at": "2022-11-28T08:59:05.132Z",
+        "updated_at": "2023-09-19T14:31:43.865Z",
         "display_order": 5,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Analyse one indicator and compare countries",
-        "code": "2-analyse-one-indicator-and-compare-countries",
+        "code": "analyse-one-indicator-and-compare-countries",
         "chart_type": "COLUMN_COMPARE_COUNTRIES",
         "description": "<p>This bar-chart allows you to select one indicator, possibly one specific breakdown, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years using the time animation bar. Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>",
         "image": "",
@@ -177,14 +177,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-21T08:56:56.665Z",
-        "updated_at": "2022-12-07T07:17:37.441Z",
+        "updated_at": "2023-09-19T14:31:48.463Z",
         "display_order": 6,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Analyse one indicator and compare breakdowns",
-        "code": "2-analyse-one-indicator-and-compare-breakdowns",
+        "code": "analyse-one-indicator-and-compare-breakdowns",
         "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
         "description": "<p>This bar-chart allows you to select one indicator, one year, and see different breakdowns for selected countries. Countries are ordered by the value of the first breakdown in the indicator. You can also select or de-select countries in order to visualise only those you are interested in.</p>",
         "image": "",
@@ -266,14 +266,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T08:58:47.882Z",
-        "updated_at": "2022-11-28T08:58:47.882Z",
+        "updated_at": "2023-09-19T14:31:56.640Z",
         "display_order": 7,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "See the evolution of an indicator and compare countries",
-        "code": "2-see-the-evolution-of-an-indicator-and-compare-co",
+        "code": "see-the-evolution-of-an-indicator-and-compare-countries",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
         "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one indicator, possibly one specific breakdown, one country and to compare it with some others countries, as well as with the European average trend.</p>",
         "image": "",
@@ -355,14 +355,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T09:28:18.836Z",
-        "updated_at": "2022-11-28T09:28:18.836Z",
+        "updated_at": "2023-09-19T14:32:06.181Z",
         "display_order": 8,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "See the evolution of an indicator and compare breakdowns",
-        "code": "2-see-the-evolution-of-an-indicator-and-compare-br",
+        "code": "see-the-evolution-of-an-indicator-and-compare-breakdowns",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>",
         "image": "",
@@ -444,14 +444,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:37:59.561Z",
-        "updated_at": "2022-12-12T12:40:29.988Z",
+        "updated_at": "2023-09-19T14:36:09.052Z",
         "display_order": 14,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "Analyse one indicator and compare countries",
-        "code": "3-analyse-one-indicator-and-compare-countries",
+        "code": "egov-analyse-one-indicator-and-compare-countries",
         "chart_type": "COLUMN_COMPARE_COUNTRIES",
         "description": "<p>This bar-chart allows you to select one indicator, possibly one specific breakdown, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years using the time animation bar. Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>",
         "image": "",
@@ -569,14 +569,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:38:19.520Z",
-        "updated_at": "2022-12-27T13:16:33.388Z",
+        "updated_at": "2023-09-19T14:36:14.067Z",
         "display_order": 15,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "Analyse one indicator (by life events)",
-        "code": "3-analyse-one-indicator-by-life-events",
+        "code": "egov-analyse-one-indicator-by-life-events",
         "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
         "description": "<p>This bar-chart allows you to select one indicator, one year, and see different breakdowns for selected countries. Countries are ordered by the value of the first breakdown in the indicator. You can also select or de-select countries in order to visualise only those you are interested in.</p>",
         "image": "",
@@ -613,14 +613,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:39:02.631Z",
-        "updated_at": "2022-11-28T10:39:02.631Z",
+        "updated_at": "2023-09-19T14:36:21.005Z",
         "display_order": 16,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "See the evolution of an indicator and compare countries",
-        "code": "3-see-the-evolution-of-an-indicator-and-compare-co",
+        "code": "egov-see-the-evolution-of-an-indicator-by-country",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
         "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one indicator, possibly one specific breakdown, one country and to compare it with some others countries, as well as with the European average trend.</p>",
         "image": "",
@@ -653,14 +653,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:39:18.867Z",
-        "updated_at": "2022-12-27T13:22:11.113Z",
+        "updated_at": "2023-09-19T14:36:29.591Z",
         "display_order": 17,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "See the evolution of an indicator (by life events)",
-        "code": "3-see-the-evolution-of-an-indicator-by-life-events",
+        "code": "egov-see-the-evolution-of-an-indicator-by-life-events",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>",
         "image": "",
@@ -697,14 +697,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:42:50.056Z",
-        "updated_at": "2022-11-28T10:42:50.056Z",
+        "updated_at": "2023-09-19T14:37:04.758Z",
         "display_order": 22,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "Analyse one indicator and compare countries",
-        "code": "4-analyse-one-indicator-and-compare-countries",
+        "code": "egov-analyse-one-indicator-and-compare-countries",
         "chart_type": "COLUMN_COMPARE_COUNTRIES",
         "description": "<p>This bar-chart allows you to select one indicator, possibly one specific breakdown, and see which countries are leading the league. You can also check if the ranking of countries has changed over the last few years using the time animation bar. Countries are always ordered according to their score. You can also select or de-select countries in order to visualise only those you are interested in.</p>",
         "image": "",
@@ -822,14 +822,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:43:05.665Z",
-        "updated_at": "2022-12-27T13:33:59.922Z",
+        "updated_at": "2023-09-19T14:37:11.011Z",
         "display_order": 23,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "Analyse one indicator (by life events)",
-        "code": "4-analyse-one-indicator-by-life-events",
+        "code": "egov-analyse-one-indicator-by-life-events",
         "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
         "description": "<p>This bar-chart allows you to select one indicator, one year, and see different breakdowns for selected countries. Countries are ordered by the value of the first breakdown in the indicator. You can also select or de-select countries in order to visualise only those you are interested in.</p>",
         "image": "",
@@ -866,14 +866,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:43:19.652Z",
-        "updated_at": "2022-11-28T10:47:12.896Z",
+        "updated_at": "2023-09-19T14:37:20.243Z",
         "display_order": 24,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "See the evolution of an indicator and compare countries",
-        "code": "4-see-the-evolution-of-an-indicator-and-compare-co",
+        "code": "egov-see-the-evolution-of-an-indicator-and-compare-countries",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
         "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one indicator, possibly one specific breakdown, one country and to compare it with some others countries, as well as with the European average trend.</p>",
         "image": "",
@@ -906,14 +906,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-28T10:43:37.396Z",
-        "updated_at": "2022-12-27T13:34:35.967Z",
+        "updated_at": "2023-09-19T14:37:26.484Z",
         "display_order": 25,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "See the evolution of an indicator (by life events)",
-        "code": "4-see-the-evolution-of-an-indicator-by-life-events",
+        "code": "egov-see-the-evolution-of-an-indicator-by-life-events",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>",
         "image": "",
@@ -950,14 +950,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-11-29T10:24:16.154Z",
-        "updated_at": "2022-11-29T10:24:16.154Z",
+        "updated_at": "2023-09-19T14:33:09.536Z",
         "display_order": 12,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Compare two indicators",
-        "code": "2-compare-two-indicators",
+        "code": "compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
         "description": "<p>Scatter-plot is a kind of chart that compares two indicators, represented on the horizontal (x) and vertical (y) axis. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows also clustering countries according to their similarities along the two selected indicators. You can zoom inside the chart.</p>",
         "image": "",
@@ -1142,14 +1142,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-02T09:54:48.724Z",
-        "updated_at": "2022-12-02T09:54:48.724Z",
+        "updated_at": "2023-09-19T14:38:12.075Z",
         "display_order": 13,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Compare two indicators, using country bubbles sized on a third one",
-        "code": "2-compare-two-indicators-using-country-bubbles-siz",
+        "code": "compare-three-indicators",
         "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
         "description": "<p>Bubble chart allows to compares two indicators as in a scatter-plot. Each country appears as a bubble whose coordinates are its values on the two selected indicators. The size of the bubble is proportional to a third indicator that could express the weight of the country (use for example the population or the GDP presented in the &quot;background&quot; group of indicators) or another characteristic. You can zoom inside the chart.</p>",
         "image": "",
@@ -1334,14 +1334,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T07:30:17.953Z",
-        "updated_at": "2022-12-06T07:30:17.953Z",
+        "updated_at": "2023-09-19T14:33:34.446Z",
         "display_order": 14,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Compare the evolution of two indicators",
-        "code": "2-compare-the-evolution-of-two-indicators",
+        "code": "compare-the-evolution-of-two-indicators",
         "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
         "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>",
         "image": "",
@@ -1423,14 +1423,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:06:37.089Z",
-        "updated_at": "2022-12-13T08:59:49.701Z",
+        "updated_at": "2023-09-15T10:38:43.090Z",
         "display_order": 2,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
         "name": "DESI by components",
-        "code": "1-desi-by-components",
+        "code": "desi-components",
         "chart_type": "COLUMN_STACKED_COMPARE_BREAKDOWNS",
         "description": "<p>Combine DESI index components with their corresponding breakdown by sub-components to explore the contribution of each indicator or group of indicators to the final ranking.</p>",
         "image": "",
@@ -1475,14 +1475,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:07:23.052Z",
-        "updated_at": "2022-12-12T12:35:59.987Z",
+        "updated_at": "2023-09-19T14:35:42.663Z",
         "display_order": 3,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
-        "name": "Compare the evolution of DESI components",
-        "code": "1-compare-the-evolution-of-desi-components",
+        "name": "DESI - Compare the evolution of DESI components",
+        "code": "desi-compare-evolution-desi-components",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. sub-dimensions of Connectivity). You can select only one country at a time.</p>",
         "image": "",
@@ -1523,14 +1523,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:08:16.611Z",
-        "updated_at": "2022-12-12T12:38:32.137Z",
+        "updated_at": "2023-09-15T10:52:35.620Z",
         "display_order": 4,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
         "name": "DESI - Compare countries progress",
-        "code": "1-desi-compare-countries-progress",
+        "code": "desi-compare-countries-progress",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
         "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one DESI dimension or sub-dimension, selecting a group of countries and comparing with the European average trend.</p>",
         "image": "",
@@ -1567,14 +1567,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:08:45.816Z",
-        "updated_at": "2022-12-12T12:38:50.115Z",
+        "updated_at": "2023-09-15T10:53:06.381Z",
         "display_order": 5,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
         "name": "DESI - Compare two indicators",
-        "code": "1-desi-compare-two-indicators",
+        "code": "desi-compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
         "description": "<p>Scatter-plot is a kind of chart that compares two indicators, represented on the horizontal (x) and vertical (y) axis. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows clustering countries according to their similarities along the two selected indicators. It illustrate also how much they are correlated. You can zoom inside the chart.</p>",
         "image": "",
@@ -1588,7 +1588,11 @@
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
         "indicator_group_filter_defaults": [],
-        "indicator_group_filter_ignored": [],
+        "indicator_group_filter_ignored": [
+            [
+                "desi"
+            ]
+        ],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [
             [
@@ -1702,14 +1706,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:21:30.052Z",
-        "updated_at": "2022-12-06T12:21:59.127Z",
+        "updated_at": "2023-09-19T14:32:43.466Z",
         "display_order": 9,
         "is_draft": true,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Country profiles, the relative position against all other European countries",
-        "code": "2-country-profiles-the-relative-position-against-a",
+        "code": "country-profiles-the-relative-position-against-all-other-european-countries",
         "chart_type": "TABLE_DEBUG_DATA",
         "description": "<p>This chart&#39;s bars represent the relative position of a country on the key indicators of a thematic group, compared on a common scale with the lowest, average and highest European countries&#39; values . It allows to see if a country is performing above/under EU average and more or less near to the maximum/minimum observed among EU countries. The original values are presented at the end of the bars for transparency, but they do not correspond to the length of the bar, because the latter is based on a standardised value.</p>",
         "image": "",
@@ -1742,14 +1746,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:47:35.385Z",
-        "updated_at": "2022-12-06T12:47:43.314Z",
+        "updated_at": "2023-09-19T14:33:00.433Z",
         "display_order": 10,
         "is_draft": true,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Country ranking table, on a thematic group of indicators",
-        "code": "2-country-ranking-table-on-a-thematic-group-of-ind",
+        "code": "country-ranking-table-on-a-thematic-group-of-indicators",
         "chart_type": "TABLE_DEBUG_DATA",
         "description": "<p>This table presents the recent years evolution of a country on the key indicators for a thematic group. For each indicator the country rank among the 27 European Countries is computed. Low ranks (1&deg;, 4&deg;) indicate a top level performance. Higher ranks (22&deg;, 26&deg;) indicate that the majority of the other countries have better figures.</p>",
         "image": "",
@@ -1782,14 +1786,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:48:07.089Z",
-        "updated_at": "2022-12-08T09:55:01.891Z",
+        "updated_at": "2023-09-19T14:33:05.425Z",
         "display_order": 11,
         "is_draft": false,
         "chart_group": [
             "key-indicators"
         ],
         "name": "Maps by country",
-        "code": "2-maps-by-country",
+        "code": "maps-by-country",
         "chart_type": "MAP_EU_COMPARE_COUNTRIES",
         "description": "<p>This chart allows you to select one indicator, one year, and compare countries on a map. Countries are coloured according to their score, so you can easily see, for example, the performance of the neighbours. Larger countries will be more visible than smaller, although surface do not correspondent exactly to the total population.</p>",
         "image": "",
@@ -1971,14 +1975,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:49:06.975Z",
-        "updated_at": "2022-12-16T08:45:20.730Z",
+        "updated_at": "2023-09-15T10:41:43.860Z",
         "display_order": 1,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
         "name": "DESI composite index",
-        "code": "1-desi-composite-index",
+        "code": "desi-composite",
         "chart_type": "COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED",
         "description": "<p>This chart shows the structure of the composite index based on a weighted sum of its five components. The chart allows users to change the weighting of the components and see how countries&#39; ranking is modified.</p>",
         "image": "",
@@ -2015,14 +2019,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:52:13.384Z",
-        "updated_at": "2022-12-08T09:55:04.472Z",
+        "updated_at": "2023-09-19T14:36:34.768Z",
         "display_order": 18,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "Maps by country",
-        "code": "3-maps-by-country",
+        "code": "egov-maps-by-country",
         "chart_type": "MAP_EU_COMPARE_COUNTRIES",
         "description": "<p>This chart allows you to select one indicator, one year, and compare countries on a map. Countries are coloured according to their score, so you can easily see, for example, the performance of the neighbours. Larger countries will be more visible than smaller, although surface do not correspondent exactly to the total population.</p>",
         "image": "",
@@ -2167,14 +2171,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:52:38.424Z",
-        "updated_at": "2022-12-06T12:53:12.150Z",
+        "updated_at": "2023-09-19T14:36:40.517Z",
         "display_order": 19,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "Compare two indicators",
-        "code": "3-compare-two-indicators",
+        "code": "egov-compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
         "description": "<p>Scatter-plot is a kind of chart that compares two indicators, represented on the horizontal (x) and vertical (y) axis. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows also clustering countries according to their similarities along the two selected indicators. You can zoom inside the chart.</p>",
         "image": "",
@@ -2319,14 +2323,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:53:05.700Z",
-        "updated_at": "2022-12-06T12:53:05.700Z",
+        "updated_at": "2023-09-19T14:36:47.075Z",
         "display_order": 20,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "Compare two indicators, using country bubbles sized on a third one",
-        "code": "3-compare-two-indicators-using-country-bubbles-siz",
+        "code": "egov-compare-three-indicators",
         "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
         "description": "<p>Bubble chart allows to compares two indicators as in a scatter-plot. Each country appears as a bubble whose coordinates are its values on the two selected indicators. The size of the bubble is proportional to a third indicator that could express the weight of the country (use for example the population or the GDP presented in the &quot;background&quot; group of indicators) or another characteristic. You can zoom inside the chart.</p>",
         "image": "",
@@ -2471,14 +2475,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:53:30.184Z",
-        "updated_at": "2022-12-06T12:53:30.184Z",
+        "updated_at": "2023-09-19T14:36:51.956Z",
         "display_order": 21,
         "is_draft": false,
         "chart_group": [
             "e-gov-2020"
         ],
         "name": "Compare the evolution of two indicators",
-        "code": "3-compare-the-evolution-of-two-indicators",
+        "code": "egov-compare-the-evolution-of-two-indicators",
         "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
         "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>",
         "image": "",
@@ -2511,14 +2515,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:54:22.986Z",
-        "updated_at": "2022-12-08T09:55:07.103Z",
+        "updated_at": "2023-09-19T14:37:32.500Z",
         "display_order": 26,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "Maps by country",
-        "code": "4-maps-by-country",
+        "code": "egov-maps-by-country",
         "chart_type": "MAP_EU_COMPARE_COUNTRIES",
         "description": "<p>This chart allows you to select one indicator, one year, and compare countries on a map. Countries are coloured according to their score, so you can easily see, for example, the performance of the neighbours. Larger countries will be more visible than smaller, although surface do not correspondent exactly to the total population.</p>",
         "image": "",
@@ -2663,14 +2667,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:54:45.620Z",
-        "updated_at": "2022-12-06T12:54:45.620Z",
+        "updated_at": "2023-09-19T14:37:37.883Z",
         "display_order": 27,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "Compare two indicators",
-        "code": "4-compare-two-indicators",
+        "code": "egov-compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
         "description": "<p>Scatter-plot is a kind of chart that compares two indicators, represented on the horizontal (x) and vertical (y) axis. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows also clustering countries according to their similarities along the two selected indicators. You can zoom inside the chart.</p>",
         "image": "",
@@ -2815,14 +2819,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:55:06.781Z",
-        "updated_at": "2022-12-06T12:55:06.781Z",
+        "updated_at": "2023-09-19T14:37:52.243Z",
         "display_order": 28,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "Compare two indicators, using country bubbles sized on a third one",
-        "code": "4-compare-two-indicators-using-country-bubbles-siz",
+        "code": "egov-compare-three-indicators",
         "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
         "description": "<p>Bubble chart allows to compares two indicators as in a scatter-plot. Each country appears as a bubble whose coordinates are its values on the two selected indicators. The size of the bubble is proportional to a third indicator that could express the weight of the country (use for example the population or the GDP presented in the &quot;background&quot; group of indicators) or another characteristic. You can zoom inside the chart.</p>",
         "image": "",
@@ -2967,14 +2971,14 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:55:28.325Z",
-        "updated_at": "2022-12-06T12:55:28.325Z",
+        "updated_at": "2023-09-19T14:37:57.979Z",
         "display_order": 29,
         "is_draft": false,
         "chart_group": [
-            "e-gov"
+            "e-gov-2013-2019"
         ],
         "name": "Compare the evolution of two indicators",
-        "code": "4-compare-the-evolution-of-two-indicators",
+        "code": "egov-compare-the-evolution-of-two-indicators",
         "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
         "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>",
         "image": "",
