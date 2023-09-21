@@ -1,5 +1,7 @@
 import json
+from unittest.mock import patch
 
+from betamax.fixtures.unittest import BetamaxTestCase
 from django.conf import settings
 from django.test import TestCase
 
@@ -44,16 +46,26 @@ EU27_2020 = [
 ]
 
 
-class TestImporterSuccess(TestCase):
-    config = None
+class BetamaxPatchTestCase(BetamaxTestCase, TestCase):
+    def setUp(self):
+        super().setUp()
+        self._mock_session = patch(
+            "requests.sessions.Session", return_value=self.session
+        ).start()
+
+    def tearDown(self):
+        super().tearDown()
+        patch.stopall()
+
+
+class TestImporterSuccess(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.config = ImportConfig.objects.first()
-        cls.config.run_import(delete_existing=True)
-        cls.config.refresh_from_db()
+    def setUp(self):
+        super().setUp()
+        self.config = ImportConfig.objects.first()
+        self.config.run_import(delete_existing=True)
+        self.config.refresh_from_db()
 
     def test_status(self):
         self.assertEqual(self.config.latest_task.status, "SUCCESS")
@@ -137,7 +149,7 @@ class TestImporterSuccess(TestCase):
         self.assertEqual(EU27_2020, list(codes))
 
 
-class TestImporter(TestCase):
+class TestImporter(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def test_download(self):
@@ -240,7 +252,7 @@ class TestImporter(TestCase):
         self.assertEqual(new_fact.import_config, original_fact.import_config)
 
 
-class TestImporterDataMerge(TestCase):
+class TestImporterDataMerge(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/data_merge_importconfig.json"]
 
     def setUp(self):
@@ -341,7 +353,7 @@ class TestImporterDataMerge(TestCase):
         self.assertEqual(fact.flags, "b")
 
 
-class TestImporterErrors(TestCase):
+class TestImporterErrors(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def setUp(self):
