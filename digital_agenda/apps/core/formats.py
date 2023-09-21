@@ -131,7 +131,7 @@ class RowReader:
         self.fields["flags"] = self.get_flags()
 
         if self.fields["value"] is None and not self.fields["flags"]:
-            # Set custom flag "unavailable" for this case
+            # Set the custom flag "unavailable" for this case
             self.fields["flags"] = "x"
 
         for col in self.required_cols:
@@ -185,13 +185,14 @@ class BaseExcelLoader(BaseFileLoader, ABC):
 
     def read(self):
         """
-        Read the Excel file until the first invalid row.
+        Read the all rows from Excel file.
 
         Collects Fact instances into the `data` attribute,
         and unknown dimension values into the `errors` attribute.
         """
         data = []
         errors = {}
+        all_unique_keys = {}
 
         for row_index, row_ref in enumerate(self.rows_iterator, start=1):
             row_reader = RowReader(
@@ -201,6 +202,13 @@ class BaseExcelLoader(BaseFileLoader, ABC):
                 extra_fields=self.extra_fields,
                 required_cols=self.required_cols,
             )
+
+            unique_key = tuple(row_reader.fields[field] for field in self.required_cols)
+            if duplicate_row := all_unique_keys.get(unique_key):
+                row_reader.errors["ALL"].append(
+                    f"Duplicate entry found at Row {duplicate_row}",
+                )
+            all_unique_keys[unique_key] = row_index
 
             # Skip the row if any dimension code is unknown or both value and flags are missing
             if row_reader.errors:
