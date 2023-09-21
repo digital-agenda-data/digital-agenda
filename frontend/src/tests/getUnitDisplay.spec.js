@@ -2,14 +2,16 @@ import { getUnitDisplay } from "@/lib/utils";
 import { expect, test } from "vitest";
 
 const UNIT = { code: "nr_hab", display: "Number of habitants" };
-const UNIT_PC = { code: "pc_hab", display: "% of habitants" };
+const UNIT_PC_1 = { code: "pc_hab", display: "% of habitants" };
+const UNIT_PC_2 = { code: "hab_score", display: "% of habitants" };
 
 function checkDisplayUnit(value, valueStr) {
   expect(getUnitDisplay(value, UNIT)).toBe(valueStr + " Number of habitants");
 }
 
 function checkDisplayUnitPercent(value, valueStr) {
-  expect(getUnitDisplay(value, UNIT_PC)).toBe(valueStr + "% of habitants");
+  expect(getUnitDisplay(value, UNIT_PC_1)).toBe(valueStr + "% of habitants");
+  expect(getUnitDisplay(value, UNIT_PC_2)).toBe(valueStr + "% of habitants");
 }
 
 // See Rounding Modes in Number format for details on how this should work:

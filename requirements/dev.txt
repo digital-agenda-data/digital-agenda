@@ -1,5 +1,6 @@
 -r base.txt
 
+betamax
 black[d]
 coverage
 django-debug-toolbar

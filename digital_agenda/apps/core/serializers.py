@@ -1,6 +1,6 @@
 import logging
 
-import httpx
+import requests
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 from rest_framework import serializers
@@ -153,7 +153,7 @@ class CaptchaValidator:
             raise ValidationError({"answer": "invalid answer"})
 
         try:
-            resp = httpx.post(
+            resp = requests.post(
                 f"https://api.eucaptcha.eu/api/validateCaptcha/{value['id']}",
                 headers={"x-jwtString": value["token"]},
                 data={
@@ -168,7 +168,7 @@ class CaptchaValidator:
             logger.debug("Captcha validation response: %s", resp)
 
             assert resp["responseCaptcha"] == "success", "incorrect answer"
-        except (httpx.HTTPError, AssertionError) as e:
+        except (requests.RequestException, AssertionError) as e:
             logger.debug("Captcha validation failed: %s", e)
             raise ValidationError(f"Unable to verify captcha: {e}", code=self.code)
 
