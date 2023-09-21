@@ -57,7 +57,7 @@
     "value": 0.5,
     "flags": "",
     "indicator": [
-      "e_di_vlo"
+      "e_di4_vlo"
     ],
     "breakdown": [
       "total"
@@ -132,7 +132,7 @@
     "value": 0.5,
     "flags": "",
     "indicator": [
-      "e_di_hivhi"
+      "e_di4_vhi"
     ],
     "breakdown": [
       "total"
