@@ -37,13 +37,15 @@ class TestDimensionAPI(APIBaseTest):
 
     def test_list_breakdown_groups(self):
         self.create_fact(
-            indicator="5g_read",
+            indicator="5g_spectrum",
             breakdown="total",
             period="2020",
             unit="pc_hh",
             country="EU",
         )
-        resp = self.client.get(reverse("v1:breakdowngroup-list") + "?indicator=5g_read")
+        resp = self.client.get(
+            reverse("v1:breakdowngroup-list") + "?indicator=5g_spectrum"
+        )
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         result = resp.json()
 
@@ -52,13 +54,13 @@ class TestDimensionAPI(APIBaseTest):
 
     def test_list_breakdown(self):
         self.create_fact(
-            indicator="5g_read",
+            indicator="5g_spectrum",
             breakdown="total",
             period="2020",
             unit="pc_hh",
             country="EU",
         )
-        resp = self.client.get(reverse("v1:breakdown-list") + "?indicator=5g_read")
+        resp = self.client.get(reverse("v1:breakdown-list") + "?indicator=5g_spectrum")
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         result = resp.json()
 
