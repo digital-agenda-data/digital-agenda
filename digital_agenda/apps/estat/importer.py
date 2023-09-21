@@ -9,7 +9,7 @@ import decimal
 from functools import cached_property
 from collections import defaultdict
 
-import httpx
+import requests
 from django.conf import settings
 
 from digital_agenda.apps.core.models import Breakdown
@@ -63,7 +63,7 @@ class EstatDataflow:
 
     def download(self):
         logger.info("Getting metadata from: %s", self.download_url)
-        resp = httpx.get(self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT)
+        resp = requests.get(self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT)
         resp.raise_for_status()
         self.dataset = resp.json()
 
@@ -118,11 +118,12 @@ class EstatDataset(JSONStat):
         # XXX   - split the download per years using the start/endPeriod filter
         # XXX   - filter the download using the provided keys filters
         logger.info("Downloading from: %s", self.download_url)
-        with httpx.stream(
-            "GET", self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT
+
+        with requests.get(
+            self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT, stream=True
         ) as resp:
             with self.download_gz_path.open("wb") as f_out:
-                for chunk in resp.iter_raw():
+                for chunk in resp.iter_content(chunk_size=512):
                     f_out.write(chunk)
                 resp.raise_for_status()
 
@@ -134,7 +135,10 @@ class EstatDataset(JSONStat):
     def _load_cached(self):
         if self.json_path.is_file():
             with self.json_path.open() as f:
-                self._cached_dataset = json.load(f)
+                try:
+                    self._cached_dataset = json.load(f)
+                except json.JSONDecodeError as e:
+                    logger.warning("Cache dataset is corrupted: %s", e)
 
     @property
     def _cache_is_stale(self):

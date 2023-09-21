@@ -22,11 +22,11 @@ djangorestframework-csv
 django-rq
 django-task
 drf-spectacular
-httpx
 openpyxl
 pillow
 psycopg[binary]
 python-magic
+requests
 rich
 rq-scheduler
 sentry-sdk[django]
