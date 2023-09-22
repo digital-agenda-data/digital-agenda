@@ -17,7 +17,10 @@ export default {
 
       return this.super(BaseSelectFilter)
         .apiData()
-        .filter((item) => periodStart <= parseInt(item.code) <= periodEnd);
+        .filter((item) => {
+          const year = parseInt(item.code.slice(0, 4));
+          return periodStart <= year && year <= periodEnd;
+        });
     },
     defaultSingleValue() {
       // Default to the latest period instead of a random choice
