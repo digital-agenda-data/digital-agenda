@@ -16,6 +16,8 @@ from .models import (
     Period,
     Fact,
 )
+from ..charts.serializers.chart_options import BreakdownChartOptionSerializer
+from ..charts.serializers.chart_options import IndicatorChartOptionSerializer
 
 logger = logging.getLogger(__name__)
 
@@ -40,8 +42,11 @@ class BaseDimensionSerializer(serializers.ModelSerializer):
 
 
 class BreakdownSerializer(BaseDimensionSerializer):
+    chart_options = BreakdownChartOptionSerializer(many=False, read_only=True)
+
     class Meta(BaseDimensionSerializer.Meta):
         model = Breakdown
+        fields = BaseDimensionSerializer.Meta.fields + ["chart_options"]
 
 
 class UnitSerializer(BaseDimensionSerializer):
@@ -71,10 +76,15 @@ class IndicatorListSerializer(BaseDimensionSerializer):
     data_sources = serializers.SlugRelatedField(
         slug_field="code", read_only=True, many=True
     )
+    chart_options = IndicatorChartOptionSerializer(many=False, read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
-        fields = BaseDimensionSerializer.Meta.fields + ["data_sources", "note"]
+        fields = BaseDimensionSerializer.Meta.fields + [
+            "data_sources",
+            "note",
+            "chart_options",
+        ]
 
 
 class IndicatorGroupSerializer(BaseDimensionSerializer):
