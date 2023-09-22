@@ -228,11 +228,11 @@ class ChartGroupAdmin(SortableAdminMixin, admin.ModelAdmin):
 class IndicatorChartOptionAdmin(admin.ModelAdmin):
     list_display = ("indicator", "color", "dash_style", "symbol")
     autocomplete_fields = ("indicator",)
-    search_fields = ("indicator",)
+    search_fields = ("indicator__code", "indicator__label", "indicator__alt_label")
 
 
 @admin.register(BreakdownChartOption)
 class BreakdownChartOptionAdmin(admin.ModelAdmin):
     list_display = ("breakdown", "color", "dash_style", "symbol")
     autocomplete_fields = ("breakdown",)
-    search_fields = ("breakdown",)
+    search_fields = ("breakdown__code", "breakdown__label", "breakdown__alt_label")
