@@ -23,6 +23,7 @@
         deselect-label=""
         select-group-label=""
         deselect-group-label=""
+        @open="onOpen"
       >
         <template #limit>
           <strong class="multiselect__strong">
@@ -224,6 +225,13 @@ export default {
       } else {
         this.$emit("update:modelValue", Array.from(this.itemsById.keys()));
       }
+    },
+    onOpen() {
+      this.$nextTick(() => {
+        this.$el
+          .querySelector(".multiselect__option--selected")
+          ?.scrollIntoView({ block: "nearest" });
+      });
     },
   },
 };
