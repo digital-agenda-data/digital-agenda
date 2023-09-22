@@ -13,10 +13,12 @@ from rest_framework.response import Response
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.charts.serializers import ChartGroupIndicatorSearchSerializer
-from digital_agenda.apps.charts.serializers import ChartGroupSerializer
-from digital_agenda.apps.charts.serializers import ChartIndicatorListSerializer
-from digital_agenda.apps.charts.serializers import ChartSerializer
+from digital_agenda.apps.charts.serializers.chart import ChartIndicatorListSerializer
+from digital_agenda.apps.charts.serializers.chart import ChartSerializer
+from digital_agenda.apps.charts.serializers.chart_group import (
+    ChartGroupIndicatorSearchSerializer,
+)
+from digital_agenda.apps.charts.serializers.chart_group import ChartGroupSerializer
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.common.export import FactExportMixin

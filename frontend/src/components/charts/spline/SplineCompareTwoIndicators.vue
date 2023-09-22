@@ -43,10 +43,20 @@ export default {
         const unit = this.filterStore[axis].unit;
         const breakdown = this.filterStore[axis].breakdown;
         const indicator = this.filterStore[axis].indicator;
+        const symbolUrl =
+          breakdown.chart_options?.symbol ?? indicator.chart_options?.symbol;
 
         return {
           yAxis: index,
           name: indicator.display,
+          color:
+            breakdown.chart_options?.color ?? indicator.chart_options?.color,
+          dashStyle:
+            breakdown.chart_options?.dash_style ??
+            indicator.chart_options?.dash_style,
+          marker: {
+            symbol: symbolUrl ? `url(${symbolUrl})` : undefined,
+          },
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
             const period = this.periodByCode.get(periodCode);

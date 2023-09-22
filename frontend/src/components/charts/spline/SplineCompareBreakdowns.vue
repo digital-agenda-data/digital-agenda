@@ -36,8 +36,15 @@ export default {
     },
     series() {
       return (this.breakdown || []).map((breakdown) => {
+        const symbolUrl = breakdown.chart_options?.symbol;
+
         return {
           name: breakdown.display,
+          color: breakdown.chart_options?.color,
+          dashStyle: breakdown.chart_options?.dash_style,
+          marker: {
+            symbol: symbolUrl ? `url(${symbolUrl})` : undefined,
+          },
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
             const period = this.periodByCode.get(periodCode);
