@@ -1,6 +1,7 @@
 import functools
 
 from ckeditor.fields import RichTextField
+from colorfield.fields import ColorField
 from composite_field import CompositeField
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -75,12 +76,7 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
             and self.period_start > self.period_end
         ):
             error = "Start period must be less than or equal to the end period"
-            raise ValidationError(
-                {
-                    "period_start": error,
-                    "period_end": error,
-                }
-            )
+            raise ValidationError({"period_start": error, "period_end": error})
 
     def get_label(self, dimension):
         return getattr(self, dimension + "_label", dimension.title())
@@ -183,33 +179,12 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
                 ),
             ),
         ),
-        (
-            "EU Map",
-            (
-                (
-                    "MAP_EU_COMPARE_COUNTRIES",
-                    "EU Map Chart: Compare Countries",
-                ),
-            ),
-        ),
+        ("EU Map", (("MAP_EU_COMPARE_COUNTRIES", "EU Map Chart: Compare Countries"),)),
         (
             "World Map",
-            (
-                (
-                    "MAP_WORLD_COMPARE_COUNTRIES",
-                    "World Map Chart: Compare Countries",
-                ),
-            ),
+            (("MAP_WORLD_COMPARE_COUNTRIES", "World Map Chart: Compare Countries"),),
         ),
-        (
-            "Table",
-            (
-                (
-                    "TABLE_DEBUG_DATA",
-                    "Table: Debug Data",
-                ),
-            ),
-        ),
+        ("Table", (("TABLE_DEBUG_DATA", "Table: Debug Data"),)),
     ]
 
     id = BigHashidAutoField(primary_key=True)
@@ -283,3 +258,53 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         ):
             msg = "Min value must be lower than the Max value"
             raise ValidationError({"min_value": msg, "max_value": msg})
+
+
+class ChartOptionBaseModel(TimestampedModel):
+    color = ColorField(
+        help_text="Color used for this indicator chart series",
+        blank=True,
+        null=True,
+        default=None,
+    )
+    dash_style = models.CharField(
+        max_length=20,
+        help_text="https://api.highcharts.com/highcharts/plotOptions.spline.dashStyle",
+        blank=True,
+        null=True,
+        default=None,
+        choices=[
+            ("Dash", "Dash"),
+            ("DashDot", "DashDot"),
+            ("Dot", "Dot"),
+            ("LongDash", "LongDash"),
+            ("LongDashDot", "LongDashDot"),
+            ("LongDashDotDot", "LongDashDotDot"),
+            ("ShortDash", "ShortDash"),
+            ("ShortDashDot", "ShortDashDot"),
+            ("ShortDashDotDot", "ShortDashDotDot"),
+            ("ShortDot", "ShortDot"),
+            ("Solid", "Solid"),
+        ],
+    )
+    symbol = models.ImageField(
+        blank=True,
+        null=True,
+        default=None,
+        help_text="https://api.highcharts.com/highcharts/plotOptions.spline.marker.symbol",
+    )
+
+    class Meta:
+        abstract = True
+
+
+class IndicatorChartOption(ChartOptionBaseModel):
+    indicator = models.OneToOneField(
+        "core.Indicator", on_delete=models.CASCADE, related_name="chart_options"
+    )
+
+
+class BreakdownChartOption(ChartOptionBaseModel):
+    breakdown = models.OneToOneField(
+        "core.Breakdown", on_delete=models.CASCADE, related_name="chart_options"
+    )
