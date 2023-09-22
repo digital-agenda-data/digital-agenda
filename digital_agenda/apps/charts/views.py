@@ -1,7 +1,9 @@
 from datetime import date
 
+from django.db.models import IntegerField
 from django.db.models import Max
 from django.db.models import Min
+from django.db.models import Value
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -61,16 +63,22 @@ class ChartGroupViewSet(
             Indicator.objects.filter(facts__period__isnull=False)
             .prefetch_related("data_sources")
             .annotate(
-                min_period=Min("facts__period__date"),
-                max_period=Max("facts__period__date"),
+                period_start=Value(obj.period_start, IntegerField()),
+                period_end=Value(obj.period_end, IntegerField()),
+                fact_min_period=Min("facts__period__date"),
+                fact_max_period=Max("facts__period__date"),
             )
             .filter(groups__id__in=group_ids)
         )
 
         if obj.period_start:
-            queryset = queryset.exclude(max_period__lt=date(obj.period_start, 1, 1))
+            queryset = queryset.exclude(
+                fact_max_period__lt=date(obj.period_start, 1, 1)
+            )
         if obj.period_end:
-            queryset = queryset.exclude(min_period__gt=date(obj.period_end, 12, 31))
+            queryset = queryset.exclude(
+                fact_min_period__gt=date(obj.period_end, 12, 31)
+            )
 
         return Response(ChartIndicatorListSerializer(queryset, many=True).data)
 

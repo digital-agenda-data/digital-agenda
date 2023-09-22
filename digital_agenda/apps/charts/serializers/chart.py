@@ -1,3 +1,5 @@
+import math
+
 from hashid_field.rest import HashidSerializerCharField
 from rest_framework import serializers
 
@@ -61,7 +63,7 @@ class ChartIndicatorListSerializer(IndicatorListSerializer):
         ]
 
     def get_min_period(self, obj):
-        return obj.min_period.year
+        return max(obj.fact_min_period.year, obj.period_start or -math.inf)
 
     def get_max_period(self, obj):
-        return obj.max_period.year
+        return min(obj.fact_max_period.year, obj.period_end or math.inf)
