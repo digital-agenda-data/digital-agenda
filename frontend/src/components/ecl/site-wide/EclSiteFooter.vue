@@ -6,30 +6,15 @@
           <div class="ecl-site-footer__section">
             <h2 class="ecl-site-footer__title">
               <ecl-link
-                :to="{ name: 'home' }"
-                label="Data Visualisation Tool"
+                to="https://digital-strategy.ec.europa.eu/en"
                 class="ecl-site-footer__title-link"
-              />
+              >
+                Shaping Europe’s digital future
+              </ecl-link>
             </h2>
             <div class="ecl-site-footer__description">
-              <div>
-                This site is managed by the Directorate-General for
-                Communications Networks, Content and Technology
-              </div>
-              <div class="ecl-u-mt-l">
-                <ecl-link
-                  class="ecl-site-footer__link ecl-link--icon-before"
-                  to="https://creativecommons.org/licenses/by/4.0/"
-                  aria-label="Creative Commons Attribution License"
-                >
-                  <img
-                    src="@/assets/cc_icon_white_x2.png"
-                    alt=""
-                    class="ecl-icon--fluid ecl-u-mr-xs"
-                  />
-                  <span class="ecl-link__label">Creative commons license</span>
-                </ecl-link>
-              </div>
+              This site is managed by: Directorate-General for Communications
+              Networks, Content and Technology
             </div>
           </div>
         </div>
@@ -38,48 +23,29 @@
             <h2
               class="ecl-site-footer__title ecl-site-footer__title--separator"
             >
-              Follow us on
+              Contact us
             </h2>
-            <ul class="ecl-site-footer__list ecl-site-footer__list--inline">
-              <li
-                v-for="social in socialMediaLinks"
-                :key="social.icon"
-                class="ecl-site-footer__list-item"
-              >
+            <ul class="ecl-site-footer__list">
+              <li class="ecl-site-footer__list-item">
                 <ecl-link
+                  to="https://digital-strategy.ec.europa.eu/en/write-us"
                   class="ecl-site-footer__link"
-                  :to="social.link"
-                  :icon="social.icon"
-                  :label="social.label"
-                  icon-left
-                />
+                >
+                  Contact DG CONNECT
+                </ecl-link>
               </li>
             </ul>
-            <div class="ecl-site-footer__section">
-              <h2
-                class="ecl-site-footer__title ecl-site-footer__title--separator"
-              >
-                Related links
-              </h2>
-              <ul class="ecl-site-footer__list ecl-site-footer__list--inline">
-                <li class="ecl-site-footer__list-item">
-                  <ecl-link
-                    class="ecl-site-footer__link"
-                    :to="loginLink"
-                    aria-label="Link to Login Page"
-                    label="Log in"
-                  />
-                </li>
-                <li class="ecl-site-footer__list-item">
-                  <ecl-link
-                    to="https://github.com/digital-agenda-data/"
-                    label="Source code"
-                    class="ecl-site-footer__link"
-                    icon="external"
-                  />
-                </li>
-              </ul>
-            </div>
+          </div>
+          <div class="ecl-site-footer__section">
+            <h2
+              class="ecl-site-footer__title ecl-site-footer__title--separator"
+            >
+              Follow us
+            </h2>
+            <ecl-site-footer-list
+              :items="socialMediaLinks"
+              class="ecl-site-footer__list--inline"
+            />
           </div>
         </div>
         <div class="ecl-site-footer__column">
@@ -89,32 +55,7 @@
             >
               About us
             </h2>
-            <ul class="ecl-site-footer__list">
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  class="ecl-site-footer__link"
-                  :to="{ name: 'about' }"
-                  aria-label="Link to Information about the Digital Agenda"
-                  label="About this website"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  class="ecl-site-footer__link"
-                  :to="{ name: 'feedback' }"
-                  aria-label="Link to Submit feedback"
-                  label="Submit feedback"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  class="ecl-site-footer__link"
-                  to="https://commission.europa.eu/about-european-commission/contact_en"
-                  aria-label="Link to Contact the European Commission"
-                  label="Contact us"
-                />
-              </li>
-            </ul>
+            <ecl-site-footer-list :items="aboutUsLinks" />
           </div>
         </div>
       </div>
@@ -124,94 +65,20 @@
             <ecl-link
               to="https://commission.europa.eu/index_en"
               class="ecl-site-footer__logo-link"
-              aria-label="European Commission"
+              aria-label="Home - European Commission"
             >
-              <img
-                alt="European Commission logo"
-                title="European Commission"
-                class="ecl-site-footer__logo-image-desktop"
-                :src="logoURL"
-              />
+              <img :src="logoURL" title="European Commission" alt="" />
             </ecl-link>
-
-            <h2 class="ecl-site-footer__title">
-              <ecl-link
-                class="ecl-site-footer__title-link"
-                to="https://commission.europa.eu/index_en"
-                label="European Commission"
-              />
-            </h2>
-          </div>
-        </div>
-
-        <div class="ecl-site-footer__column">
-          <div
-            class="ecl-site-footer__section ecl-footer-standardised__section--split-list"
-          >
-            <ul class="ecl-site-footer__list">
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://commission.europa.eu/about-european-commission/contact_en"
-                  class="ecl-site-footer__link"
-                  aria-label="Link to Contact the European Commission"
-                  label="Contact the European Commission"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&amp;institutions=european_commission"
-                  class="ecl-site-footer__link"
-                  label="Follow the European Commission on social media"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://commission.europa.eu/resources-partners_en"
-                  class="ecl-site-footer__link"
-                  label="Resources for partners"
-                />
-              </li>
-            </ul>
           </div>
         </div>
         <div class="ecl-site-footer__column">
-          <div
-            class="ecl-site-footer__section ecl-footer-standardised__section--split-list"
-          >
-            <ul class="ecl-site-footer__list">
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://commission.europa.eu/language-policy_en"
-                  class="ecl-site-footer__link"
-                  aria-label="Link to Languages on our websites"
-                  label="Languages on our websites"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://commission.europa.eu/cookies_en"
-                  class="ecl-site-footer__link"
-                  aria-label="Link to Cookies"
-                  label="Cookies"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://commission.europa.eu/privacy-policy_en"
-                  class="ecl-site-footer__link"
-                  aria-label="Link to Privacy policy"
-                  label="Privacy policy"
-                />
-              </li>
-              <li class="ecl-site-footer__list-item">
-                <ecl-link
-                  to="https://commission.europa.eu/legal-notice_en"
-                  class="ecl-site-footer__link"
-                  aria-label="Link to Legal notice"
-                  label="Legal notice"
-                />
-              </li>
-            </ul>
+          <div class="ecl-site-footer__section">
+            <ecl-site-footer-list :items="extraLinks1" />
+          </div>
+        </div>
+        <div class="ecl-site-footer__column">
+          <div class="ecl-site-footer__section">
+            <ecl-site-footer-list :items="extraLinks2" />
           </div>
         </div>
       </div>
@@ -220,6 +87,7 @@
 </template>
 
 <script>
+import EclSiteFooterList from "@/components/ecl/site-wide/EclSiteFooterList.vue";
 import logoURL from "@ecl/preset-ec/dist/images/logo/negative/logo-ec--en.svg?url";
 
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
@@ -232,36 +100,102 @@ import { loginLink } from "@/lib/api";
  */
 export default {
   name: "EclSiteFooter",
-  components: { EclLink },
+  components: { EclSiteFooterList, EclLink },
   data() {
     return {
       logoURL,
       loginLink,
       socialMediaLinks: [
         {
+          id: "facebook-negative",
           link: "https://www.facebook.com/DigitalEU",
-          icon: "facebook-negative",
-          label: "Facebook",
+          label: "Digital EU on Facebook",
         },
         {
-          link: "https://www.youtube.com/c/DigitalEU",
-          icon: "youtube-negative",
-          label: "Youtube",
-        },
-        {
-          link: "https://www.linkedin.com/showcase/digital-eu/",
-          icon: "linkedin-negative",
-          label: "Linkedin",
-        },
-        {
+          id: "instagram-negative",
           link: "https://www.instagram.com/DigitalEU/",
-          icon: "instagram-negative",
-          label: "Instagram",
+          label: "Digital EU on Instagram",
         },
         {
+          id: "linkedin-negative",
+          link: "https://www.linkedin.com/showcase/digital-eu/",
+          label: "Digital EU on LinkedIn",
+        },
+        {
+          id: "youtube-negative",
+          link: "https://www.youtube.com/c/DigitalEU",
+          label: "Digital EU on Youtube",
+        },
+        {
+          id: "twitter-negative",
           link: "https://twitter.com/DigitalEU",
-          icon: "twitter-negative",
-          label: "Twitter",
+          label: "@DigitalEU on Twitter",
+        },
+      ],
+      aboutUsLinks: [
+        {
+          id: "privacy",
+          link: "https://digital-strategy.ec.europa.eu/en/pages/legal-notice#ecl-inpage-km0gfb8o",
+          label: "Privacy statement",
+        },
+        {
+          id: "copyright",
+          link: "https://digital-strategy.ec.europa.eu/en/pages/legal-notice#ecl-inpage-km0gezfs",
+          label: "Copyright notice",
+        },
+        {
+          id: "about",
+          link: "https://ec.europa.eu/info/departments/communications-networks-content-and-technology_en",
+          label: "About Directorate-General CONNECT",
+        },
+        {
+          id: "language",
+          link: "https://digital-strategy.ec.europa.eu/en/pages/legal-notice#ecl-inpage-kyoexp6k",
+          label: "Language Policy",
+        },
+        {
+          id: "accessibility",
+          link: "https://digital-strategy.ec.europa.eu/en/pages/accessibility",
+          label: "Accessibility statement",
+        },
+      ],
+      extraLinks1: [
+        {
+          id: "contact",
+          link: "https://commission.europa.eu/about-european-commission/contact_en",
+          label: "Contact the European Commission",
+        },
+        {
+          id: "follow",
+          link: "https://european-union.europa.eu/contact-eu/social-media-channels_en#/search?page=0&institutions=european_commission",
+          label: "Follow the European Commission on social media",
+        },
+        {
+          id: "resources",
+          link: "https://commission.europa.eu/resources-partners_en",
+          label: "Resources for partners",
+        },
+      ],
+      extraLinks2: [
+        {
+          id: "language-policy",
+          link: "https://commission.europa.eu/language-policy_en",
+          label: "Language policy",
+        },
+        {
+          id: "cookies",
+          link: "https://commission.europa.eu/cookies_en",
+          label: "Cookies",
+        },
+        {
+          id: "privacy-policy",
+          link: "https://commission.europa.eu/privacy-policy_en",
+          label: "Privacy policy",
+        },
+        {
+          id: "legal-notice",
+          link: "https://commission.europa.eu/legal-notice_en",
+          label: "Legal notice",
         },
       ],
     };
