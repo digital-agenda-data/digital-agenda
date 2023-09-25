@@ -61,7 +61,6 @@
 </template>
 
 <script>
-import EclIcon from "@/components/ecl/EclIcon.vue";
 import EclMessage from "@/components/ecl/EclMessage.vue";
 import { useMessagesStore } from "@/stores/messagesStore";
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
@@ -79,7 +78,7 @@ import { mapStores } from "pinia";
  */
 export default {
   name: "EclSiteHeader",
-  components: { EclMessage, EclIcon, EclLink, EclButton, EclSearchForm },
+  components: { EclMessage, EclLink, EclButton, EclSearchForm },
   data() {
     return {
       logoURL,
