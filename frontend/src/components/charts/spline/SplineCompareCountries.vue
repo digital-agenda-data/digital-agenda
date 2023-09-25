@@ -40,7 +40,7 @@ export default {
 
             return {
               fact,
-              y: fact?.value || null,
+              y: fact?.value ?? null,
               x: new Date(period?.date),
               name: period?.label || period?.code,
             };
