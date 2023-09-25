@@ -53,17 +53,17 @@
       </div>
     </div>
     <ecl-menu :items="menuItems" />
-    <div class="ecl-site-header__message">
-      <div class="ecl-container ecl-u-mt-m">
-        <ecl-message
-          v-for="(message, index) in messagesStore.messageList"
-          v-bind="message"
-          :key="'message' + index"
-          @close="messagesStore.removeMessage(index)"
-        />
-      </div>
-    </div>
   </header>
+  <div class="ecl-site-header__message">
+    <div class="ecl-container ecl-u-mt-m">
+      <ecl-message
+        v-for="(message, index) in messagesStore.messageList"
+        v-bind="message"
+        :key="'message' + index"
+        @close="messagesStore.removeMessage(index)"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
