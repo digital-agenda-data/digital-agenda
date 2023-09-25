@@ -24,7 +24,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       .click();
     cy.get(".ecl-breadcrumb a").contains("Key Indicators").click();
     cy.get("h1").contains("Key Indicators");
-    cy.get(".ecl-breadcrumb a").contains("Data Visualisation Tool").click();
+    cy.get(".ecl-breadcrumb a").contains("DESI Visualisation Tool").click();
     cy.get(".ecl-list-illustration a").contains("2. Key Indicators");
   });
   it("Navigate in between indicator groups", () => {

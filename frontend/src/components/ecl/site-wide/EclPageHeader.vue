@@ -35,7 +35,12 @@ export default {
       const result = [
         {
           id: "home",
-          text: "Data Visualisation Tool",
+          text: "Home",
+          to: "https://digital-strategy.ec.europa.eu/en",
+        },
+        {
+          id: "home-desi",
+          text: "DESI Visualisation Tool",
           to: { name: "home" },
         },
       ];
