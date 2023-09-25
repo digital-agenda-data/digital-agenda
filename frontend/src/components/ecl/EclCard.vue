@@ -1,12 +1,12 @@
 <template>
   <article class="ecl-card">
-    <div
+    <picture
       v-if="image"
-      class="ecl-card__image"
+      class="ecl-picture ecl-card__picture"
       aria-label="card image"
-      role="img"
-      :style="`background-image: url(${image});`"
-    />
+    >
+      <img :src="image" alt="" class="ecl-card__image" />
+    </picture>
 
     <div class="ecl-card__body">
       <div class="ecl-content-block ecl-card__content-block">

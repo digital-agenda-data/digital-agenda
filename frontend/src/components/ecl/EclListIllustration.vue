@@ -14,18 +14,21 @@
       class="ecl-list-illustration__item"
     >
       <component
-        :is="item.to ? 'EclLink' : 'div'"
+        :is="item.to ? 'EclLink' : 'picture'"
         :to="item.to"
-        class="ecl-list-illustration__image"
-        :class="{
-          'ecl-list-illustration__image--small': small,
-          'ecl-list-illustration__image--square': square,
-        }"
-        role="img"
-        :style="`background-image: url(${item.image});`"
-        tabindex="-1"
-        alt=""
-      />
+        class="ecl-picture ecl-list-illustration__picture"
+      >
+        <img
+          :src="item.image"
+          alt=""
+          tabindex="-1"
+          class="ecl-list-illustration__image"
+          :class="{
+            'ecl-list-illustration__image--small': small,
+            'ecl-list-illustration__image--square': square,
+          }"
+        />
+      </component>
 
       <div class="ecl-list-illustration__detail ecl-u-width-100">
         <ecl-label
