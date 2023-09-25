@@ -43,7 +43,7 @@
     <div class="ecl-site-header__banner">
       <div class="ecl-container">
         <div class="ecl-site-header__site-name">
-          Data Visualisation Tool - Data & Indicators
+          Shaping Europe’s digital future
         </div>
       </div>
     </div>

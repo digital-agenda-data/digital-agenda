@@ -35,7 +35,7 @@ export default {
       const result = [
         {
           id: "home",
-          text: "Home",
+          text: "Data Visualisation Tool",
           to: { name: "home" },
         },
       ];
