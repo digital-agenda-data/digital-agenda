@@ -1,5 +1,10 @@
 <template>
-  <header v-ecl-init class="ecl-site-header" data-ecl-auto-init="SiteHeader">
+  <header
+    v-ecl-init
+    class="ecl-site-header"
+    data-ecl-auto-init="SiteHeader"
+    data-ecl-has-menu
+  >
     <div class="ecl-site-header__header">
       <div class="ecl-site-header__container ecl-container">
         <div class="ecl-site-header__top">
@@ -47,6 +52,7 @@
         </div>
       </div>
     </div>
+    <ecl-menu :items="menuItems" />
     <div class="ecl-site-header__message">
       <div class="ecl-container ecl-u-mt-m">
         <ecl-message
@@ -62,6 +68,7 @@
 
 <script>
 import EclMessage from "@/components/ecl/EclMessage.vue";
+import EclMenu from "@/components/ecl/navigation/EclMenu.vue";
 import { useMessagesStore } from "@/stores/messagesStore";
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
 import EclButton from "@/components/ecl/EclButton.vue";
@@ -78,11 +85,53 @@ import { mapStores } from "pinia";
  */
 export default {
   name: "EclSiteHeader",
-  components: { EclMessage, EclLink, EclButton, EclSearchForm },
+  components: { EclMenu, EclMessage, EclLink, EclButton, EclSearchForm },
   data() {
     return {
       logoURL,
       searchQuery: useRouteQuery("q"),
+      menuItems: [
+        {
+          id: "home",
+          link: "https://digital-strategy.ec.europa.eu/en",
+          label: "Home",
+        },
+        {
+          id: "policies",
+          link: "https://digital-strategy.ec.europa.eu/en/policies",
+          label: "Policies",
+        },
+        {
+          id: "activities",
+          link: "https://digital-strategy.ec.europa.eu/en/activities",
+          label: "Activities",
+        },
+        {
+          id: "news",
+          link: "https://digital-strategy.ec.europa.eu/en/news",
+          label: "News",
+        },
+        {
+          id: "library",
+          link: "https://digital-strategy.ec.europa.eu/en/library",
+          label: "Library",
+        },
+        {
+          id: "funding",
+          link: "https://digital-strategy.ec.europa.eu/en/funding",
+          label: "Funding",
+        },
+        {
+          id: "calendar",
+          link: "https://digital-strategy.ec.europa.eu/en/events",
+          label: "Calendar",
+        },
+        {
+          id: "consultations",
+          link: "https://digital-strategy.ec.europa.eu/en/consultations",
+          label: "Consultations",
+        },
+      ],
     };
   },
   computed: {
