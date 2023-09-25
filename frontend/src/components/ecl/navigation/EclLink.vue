@@ -73,6 +73,7 @@ export default {
           "primary",
           "secondary",
           "negative",
+          "none",
         ].includes(value);
       },
     },
@@ -109,7 +110,12 @@ export default {
   },
   computed: {
     classList() {
-      const result = ["ecl-link", `ecl-link--${this.variant}`];
+      const result = [];
+
+      if (this.variant !== "none") {
+        result.push("ecl-link");
+        result.push(`ecl-link--${this.variant}`);
+      }
 
       if (this.icon) {
         result.push("ecl-link--icon");
