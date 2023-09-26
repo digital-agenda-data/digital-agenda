@@ -176,6 +176,7 @@ class BreakdownAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmi
     facts_filter = "breakdown"
     fields = ("code", "label", "alt_label", "definition", "group_links")
     readonly_fields = ("group_links",)
+    list_filter = ("groups",)
 
     @admin.display(description="Breakdown Groups")
     def group_links(self, obj):
