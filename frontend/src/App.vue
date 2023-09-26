@@ -15,7 +15,7 @@ import { useAppSettings } from "@/stores/appSettingsStore";
 
 import SimpleSpinner from "@/components/SimpleSpinner.vue";
 
-const DEFAULT_TITLE = "Digital Scoreboard - Data & Indicators";
+const DEFAULT_TITLE = "Digital Decade DESI visualisation tool";
 
 export default {
   name: "App",

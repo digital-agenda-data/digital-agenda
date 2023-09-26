@@ -40,7 +40,7 @@ export default {
         },
         {
           id: "home-desi",
-          text: "DESI Visualisation Tool",
+          text: "Digital Decade DESI visualisation tool",
           to: { name: "home" },
         },
       ];

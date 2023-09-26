@@ -54,7 +54,7 @@ Highcharts.setOptions({
     },
   },
   credits: {
-    text: "European Commission, Digital Scoreboard",
+    text: "European Commission",
     // Disable credit link on small screens
     href: null,
   },
