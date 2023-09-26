@@ -4,6 +4,7 @@ import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue"
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
+import { getMarkerSymbol } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
 import { mapState } from "pinia";
 
@@ -43,8 +44,6 @@ export default {
         const unit = this.filterStore[axis].unit;
         const breakdown = this.filterStore[axis].breakdown;
         const indicator = this.filterStore[axis].indicator;
-        const symbolUrl =
-          breakdown.chart_options?.symbol ?? indicator.chart_options?.symbol;
 
         return {
           yAxis: index,
@@ -55,7 +54,10 @@ export default {
             breakdown.chart_options?.dash_style ??
             indicator.chart_options?.dash_style,
           marker: {
-            symbol: symbolUrl ? `url(${symbolUrl})` : undefined,
+            symbol: getMarkerSymbol([
+              breakdown.chart_options,
+              indicator.chart_options,
+            ]),
           },
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue = this.apiValuesGrouped[axis]?.[periodCode];

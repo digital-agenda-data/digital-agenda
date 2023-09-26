@@ -328,3 +328,23 @@ export function sortNumeric(array, { reverse = false, keyFunc = (i) => i }) {
     return reverse ? val2 - val1 : val1 - val2;
   });
 }
+
+/**
+ * Given a single chart options object or an array of such objects return
+ * the first existing custom marker symbol value.
+ *
+ * @param iterable {Array|Object}
+ * @return {string}
+ */
+export function getMarkerSymbol(iterable) {
+  for (const item of forceArray(iterable)) {
+    if (!item) continue;
+
+    if (item.custom_symbol) {
+      return `url(${item.custom_symbol})`;
+    }
+    if (item.symbol) {
+      return item.symbol;
+    }
+  }
+}

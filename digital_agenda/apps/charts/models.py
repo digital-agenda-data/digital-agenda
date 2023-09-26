@@ -287,15 +287,34 @@ class ChartOptionBaseModel(TimestampedModel):
             ("Solid", "Solid"),
         ],
     )
-    symbol = models.ImageField(
+    symbol = models.CharField(
+        max_length=20,
         blank=True,
         null=True,
         default=None,
         help_text="https://api.highcharts.com/highcharts/plotOptions.spline.marker.symbol",
+        choices=[
+            ("circle", "circle"),
+            ("square", "square"),
+            ("diamond", "diamond"),
+            ("triangle", "triangle"),
+            ("triangle-down", "triangle-down"),
+        ],
+    )
+    custom_symbol = models.ImageField(
+        blank=True,
+        null=True,
+        default=None,
+        help_text="Custom symbol used instead of the predefined ones",
     )
 
     class Meta:
         abstract = True
+
+    def clean(self):
+        if self.symbol and self.custom_symbol:
+            error = "Symbol and Custom Symbol cannot be used at the same time"
+            raise ValidationError({"symbol": error, "custom_symbol": error})
 
 
 class IndicatorChartOption(ChartOptionBaseModel):

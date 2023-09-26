@@ -5,6 +5,7 @@ import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
+import { getMarkerSymbol } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
 import { mapState } from "pinia";
 
@@ -36,14 +37,12 @@ export default {
     },
     series() {
       return (this.breakdown || []).map((breakdown) => {
-        const symbolUrl = breakdown.chart_options?.symbol;
-
         return {
           name: breakdown.display,
           color: breakdown.chart_options?.color,
           dashStyle: breakdown.chart_options?.dash_style,
           marker: {
-            symbol: symbolUrl ? `url(${symbolUrl})` : undefined,
+            symbol: getMarkerSymbol(breakdown.chart_options),
           },
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
