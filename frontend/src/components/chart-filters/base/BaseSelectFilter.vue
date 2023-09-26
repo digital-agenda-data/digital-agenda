@@ -328,12 +328,19 @@ export default {
       }
 
       this.abortController = new AbortController();
-      this.apiDataRaw = (
-        await api.get(this.endpoint, {
-          signal: this.abortController.signal,
-          params: this.mergedEndpointParams,
-        })
-      ).data;
+      try {
+        this.apiDataRaw = (
+          await api.get(this.endpoint, {
+            signal: this.abortController.signal,
+            params: this.mergedEndpointParams,
+          })
+        ).data;
+      } catch (e) {
+        // Ignore canceled error since that is on purpose.
+        if (e.code !== "ERR_CANCELED") {
+          throw e;
+        }
+      }
     },
     async loadExtra() {},
   },
