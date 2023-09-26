@@ -206,7 +206,9 @@ class FactXLSXSerializer:
         if not self.chart_group:
             return
 
-        sheet.append(["Source", "European Commission, Digital Decade DESI visualisation tool"])
+        sheet.append(
+            ["Source", "European Commission, Digital Decade DESI visualisation tool"]
+        )
         sheet.append(["Dataset", self.chart_group.name])
         sheet.append(
             ["Charts", f"https://{host}/datasets/{self.chart_group.code}/charts"]
