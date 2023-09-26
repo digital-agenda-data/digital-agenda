@@ -107,6 +107,7 @@ export default {
     return {
       apiDataRaw: [],
       loading: false,
+      abortController: null,
     };
   },
   computed: {
@@ -322,11 +323,24 @@ export default {
       }
     },
     async loadApiData() {
-      this.apiDataRaw = (
-        await api.get(this.endpoint, {
-          params: this.mergedEndpointParams,
-        })
-      ).data;
+      if (this.abortController) {
+        this.abortController.abort();
+      }
+
+      this.abortController = new AbortController();
+      try {
+        this.apiDataRaw = (
+          await api.get(this.endpoint, {
+            signal: this.abortController.signal,
+            params: this.mergedEndpointParams,
+          })
+        ).data;
+      } catch (e) {
+        // Ignore canceled error since that is on purpose.
+        if (e.code !== "ERR_CANCELED") {
+          throw e;
+        }
+      }
     },
     async loadExtra() {},
   },
