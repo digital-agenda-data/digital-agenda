@@ -66,6 +66,12 @@ Highcharts.setOptions({
     title: {
       enabled: false,
     },
+    dateTimeLabelFormats: {
+      // The day formatter is likely only used when displaying 1 datapoint in
+      // the (sp)line charts.
+      // Avoid showing "July 1st" and instead show only the year.
+      day: "%Y",
+    },
   },
   plotOptions: {
     series: {
