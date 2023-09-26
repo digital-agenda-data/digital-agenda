@@ -1,3 +1,4 @@
+import decimal
 from abc import ABC, abstractmethod
 from collections import defaultdict
 import logging
@@ -103,8 +104,11 @@ class RowReader:
 
         if value is not None:
             try:
-                value = float(value)
-            except (TypeError, ValueError):
+                # Excel can sometimes store values like 5.6621000000000006 while only
+                # displaying 5.6621.
+                # Round to a sensible precision to (hopefully) get rid of the issue.
+                value = float(round(decimal.Decimal(value), 12))
+            except (TypeError, ValueError, ArithmeticError):
                 self.add_error(
                     col_index,
                     f"Invalid 'value', expected number but got {value!r} instead",
@@ -206,7 +210,7 @@ class BaseExcelLoader(BaseFileLoader, ABC):
             unique_key = tuple(row_reader.fields[field] for field in self.required_cols)
             if duplicate_row := all_unique_keys.get(unique_key):
                 row_reader.errors["ALL"].append(
-                    f"Duplicate entry found at Row {duplicate_row}",
+                    f"Duplicate entry found at Row {duplicate_row}"
                 )
             all_unique_keys[unique_key] = row_index
 
