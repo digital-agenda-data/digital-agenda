@@ -107,7 +107,7 @@ class RowReader:
                 # Excel can sometimes store values like 5.6621000000000006 while only
                 # displaying 5.6621.
                 # Round to a sensible precision to (hopefully) get rid of the issue.
-                value = float(round(decimal.Decimal(value), 12))
+                value = float(round(decimal.Decimal(value), 6))
             except (TypeError, ValueError, ArithmeticError):
                 self.add_error(
                     col_index,
