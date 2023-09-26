@@ -107,6 +107,7 @@ export default {
     return {
       apiDataRaw: [],
       loading: false,
+      abortController: null,
     };
   },
   computed: {
@@ -322,8 +323,14 @@ export default {
       }
     },
     async loadApiData() {
+      if (this.abortController) {
+        this.abortController.abort();
+      }
+
+      this.abortController = new AbortController();
       this.apiDataRaw = (
         await api.get(this.endpoint, {
+          signal: this.abortController.signal,
           params: this.mergedEndpointParams,
         })
       ).data;
