@@ -14,7 +14,9 @@
  */
 export default (el, binding) => {
   const render = () => {
-    window.$wt.render(el, binding.value);
+    if (!window.$wt.exists(binding.value.service || binding.value.utility)) {
+      window.$wt.render(el, binding.value);
+    }
   };
 
   if (window.$wt) {

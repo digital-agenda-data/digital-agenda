@@ -1,5 +1,19 @@
 <template>
-  <div v-if="appSettings.global_banner_enabled" id="globan-here" />
+  <div
+    v-if="appSettings.global_banner_enabled"
+    v-ec-wt-render="{ service: 'globan' }"
+  />
+  <div v-ec-wt-render="{ utility: 'cck' }" />
+  <div
+    v-if="appSettings.analytics_site_id"
+    v-ec-wt-render="{
+      utility: 'analytics',
+      siteID: appSettings.analytics_site_id,
+      sitePath: [host],
+      instance: 'ec',
+      mode: 'default',
+    }"
+  />
   <div v-if="isReady" class="ecl app-wrapper">
     <ecl-site-header />
     <main class="ecl-container">
@@ -27,6 +41,7 @@ export default {
   components: { EclSiteFooter, EclPageHeader, EclSiteHeader },
   data() {
     return {
+      host: window.location.host,
       isReady: false,
     };
   },
@@ -35,20 +50,17 @@ export default {
   },
   watch: {
     $route(to, from) {
-      if (window._paq && to.path !== from.path) {
+      if (window.$wt?.analytics.isTrackable() && to.path !== from.path) {
         // Log a new view manually when the route changes.
-        window._paq.push(["trackPageView"]);
+        window.$wt.trackPageView();
       }
     },
   },
   async mounted() {
     try {
-      await Promise.all([this.loadECL(), this.initGloban()]);
+      await this.loadECL();
     } finally {
       this.isReady = true;
-      // Always attempt to load analytics but do it after the "important"
-      // libraries are loaded.
-      await this.initAnalytics();
     }
   },
   methods: {
@@ -65,31 +77,6 @@ export default {
       // no need for, so simply mock it here to prevent failure.
       window.moment = { "": "Moment JS mock" };
       await useScriptTag(eclURL).load();
-    },
-    async initAnalytics() {
-      const siteId = this.appSettings.analytics_site_id;
-      let server = this.appSettings.analytics_server;
-
-      if (!siteId || !server) return;
-      if (!server.endsWith("/")) server += "/";
-
-      const _paq = (window._paq = window._paq || []);
-      _paq.push(["trackPageView"]);
-      _paq.push(["setTrackerUrl", server + "matomo.php"]);
-      _paq.push(["setSiteId", siteId]);
-      const d = document,
-        g = d.createElement("script"),
-        s = d.getElementsByTagName("script")[0];
-      g.async = true;
-      g.src = server + "matomo.js";
-      s.parentNode.insertBefore(g, s);
-    },
-    async initGloban() {
-      if (!this.appSettings.global_banner_enabled) return;
-
-      await useScriptTag(
-        "https://europa.eu/webtools/load.js?globan=1010"
-      ).load();
     },
   },
 };

@@ -315,11 +315,10 @@ CONSTANCE_CONFIG = {
     ),
     "GLOBAL_BANNER_ENABLED": (True, "Enable the Global banner component (Globan)"),
     "EU_LOGIN_ENABLED": (True, "Enable login with EU login CAS Server"),
-    "MATOMO_SERVER": (
+    "EUROPA_ANALYTICS_SITE_ID": (
         "",
-        "Matomo server; analytics are disabled if this is not set",
+        "Europa Analytics ID; analytics are disabled if this is not set",
     ),
-    "MATOMO_SITE_ID": ("", "Matomo Site ID; analytics are disabled if this is not set"),
     "ESTAT_UPDATE_ALERT_EMAILS": (
         "",
         "Alerts are automatically sent to all staff whenever datasets are updated in ESTAT. This setting can be used "
@@ -335,9 +334,15 @@ CONSTANCE_CONFIG_FIELDSETS = (
     ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL",)}),
     (
         "European Commission WebTools",
-        {"collapse": False, "fields": ("GLOBAL_BANNER_ENABLED", "EU_LOGIN_ENABLED")},
+        {
+            "collapse": False,
+            "fields": (
+                "GLOBAL_BANNER_ENABLED",
+                "EU_LOGIN_ENABLED",
+                "EUROPA_ANALYTICS_SITE_ID",
+            ),
+        },
     ),
-    ("Analytics", {"collapse": False, "fields": ("MATOMO_SERVER", "MATOMO_SITE_ID")}),
     ("Alerts", {"collapse": False, "fields": ("ESTAT_UPDATE_ALERT_EMAILS",)}),
 )
 

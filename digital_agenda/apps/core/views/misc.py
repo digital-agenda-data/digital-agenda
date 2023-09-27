@@ -17,8 +17,7 @@ class AppSettingsView(APIView):
     def get(self, *args, **kwargs):
         return Response(
             {
-                "analytics_server": config.MATOMO_SERVER,
-                "analytics_site_id": config.MATOMO_SITE_ID,
+                "analytics_site_id": config.EUROPA_ANALYTICS_SITE_ID,
                 "global_banner_enabled": config.GLOBAL_BANNER_ENABLED,
                 "eurostat_flags": EUROSTAT_FLAGS,
                 "sentry_dsn": settings.SENTRY_DSN,

@@ -36,6 +36,8 @@ settings. See [code style workflow](https://github.com/digital-agenda-data/digit
 - [European Commission WebTools](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Webtools+documentation+-+Homepage), 
   documentation requires an account to view (with 2FA active) 
     - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner) 
+    - [Cookie Consent Banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Cookie+Consent+Kit+Banner)
+    - [Europa Analytics](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Europa+Analytics)
     - ~~[Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)~~
       (Removed for now as it only works for `*.europa.eu` domains)
 - [Eurostat](https://ec.europa.eu/eurostat)
