@@ -218,6 +218,21 @@ export default {
      * and used for HighCharts.
      */
     chartOptionsDefaults() {
+      let legend;
+      if (this.currentChart?.legend_layout === "horizontal") {
+        legend = {
+          itemWidth: 150,
+          layout: "horizontal",
+        };
+      } else {
+        legend = {
+          itemWidth: 150,
+          layout: "vertical",
+          align: "right",
+          verticalAlign: "middle",
+        };
+      }
+
       return {
         chart: {
           type: this.chartType,
@@ -237,6 +252,16 @@ export default {
           title: {
             text: this.unit?.display,
           },
+        },
+        responsive: {
+          rules: [
+            {
+              condition: { minWidth: 768 },
+              chartOptions: {
+                legend,
+              },
+            },
+          ],
         },
       };
     },

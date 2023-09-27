@@ -217,6 +217,18 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     unit_filter = filter_option_field("core.Unit")
     country_filter = filter_option_field("core.Country")
 
+    legend_layout = models.CharField(
+        max_length=20,
+        default=None,
+        null=True,
+        blank=True,
+        help_text="Choose default legend layout type",
+        choices=[
+            ("horizontal", "horizontal"),
+            ("vertical", "vertical"),
+        ],
+    )
+
     class Meta:
         ordering = ["display_order", "code"]
         unique_together = ("chart_group", "code")

@@ -105,12 +105,6 @@ export function setHighchartsDefaults() {
         {
           condition: { minWidth: 768 },
           chartOptions: {
-            legend: {
-              itemWidth: 150,
-              layout: "vertical",
-              align: "right",
-              verticalAlign: "middle",
-            },
             credits: {
               // Enable credit links on larger screens.
               href: "https://digital-strategy.ec.europa.eu/",

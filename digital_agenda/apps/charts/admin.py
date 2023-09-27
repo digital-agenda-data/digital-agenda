@@ -48,6 +48,7 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
                 )
             },
         ),
+        ("Chart Options", {"fields": ["legend_layout"]}),
         (
             "Indicator Group Filter",
             {

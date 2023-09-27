@@ -46,6 +46,7 @@ class ChartSerializer(serializers.ModelSerializer):
             *Chart.filter_options,
             "min_value",
             "max_value",
+            "legend_layout",
         )
         read_only_fields = fields
 
