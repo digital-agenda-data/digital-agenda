@@ -19,6 +19,7 @@ class AppSettingsView(APIView):
             {
                 "analytics_site_id": config.EUROPA_ANALYTICS_SITE_ID,
                 "global_banner_enabled": config.GLOBAL_BANNER_ENABLED,
+                "cck_enabled": config.CCK_ENABLED,
                 "eurostat_flags": EUROSTAT_FLAGS,
                 "sentry_dsn": settings.SENTRY_DSN,
                 "environment_name": settings.ENVIRONMENT_NAME,

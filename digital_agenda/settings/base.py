@@ -315,6 +315,7 @@ CONSTANCE_CONFIG = {
     ),
     "GLOBAL_BANNER_ENABLED": (True, "Enable the Global banner component (Globan)"),
     "EU_LOGIN_ENABLED": (True, "Enable login with EU login CAS Server"),
+    "CCK_ENABLED": (True, "Enable Cookie Consent Kit Banner"),
     "EUROPA_ANALYTICS_SITE_ID": (
         "",
         "Europa Analytics ID; analytics are disabled if this is not set",
@@ -337,8 +338,9 @@ CONSTANCE_CONFIG_FIELDSETS = (
         {
             "collapse": False,
             "fields": (
-                "GLOBAL_BANNER_ENABLED",
                 "EU_LOGIN_ENABLED",
+                "CCK_ENABLED",
+                "GLOBAL_BANNER_ENABLED",
                 "EUROPA_ANALYTICS_SITE_ID",
             ),
         },
