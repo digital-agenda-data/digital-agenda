@@ -316,7 +316,7 @@ CONSTANCE_CONFIG = {
     "GLOBAL_BANNER_ENABLED": (True, "Enable the Global banner component (Globan)"),
     "EU_LOGIN_ENABLED": (True, "Enable login with EU login CAS Server"),
     "MATOMO_SERVER": (
-        "https://digital-agenda-data.eu/analytics/",
+        "",
         "Matomo server; analytics are disabled if this is not set",
     ),
     "MATOMO_SITE_ID": ("", "Matomo Site ID; analytics are disabled if this is not set"),
@@ -325,8 +325,13 @@ CONSTANCE_CONFIG = {
         "Alerts are automatically sent to all staff whenever datasets are updated in ESTAT. This setting can be used "
         "to specify a list of addresses separated by comma that should receive the alerts instead.",
     ),
+    "CHART_CREDITS": (
+        "European Commission",
+        "Text used in the credits sections of the chart.",
+    ),
 }
 CONSTANCE_CONFIG_FIELDSETS = (
+    ("Site options", {"collapse": False, "fields": ("CHART_CREDITS",)}),
     ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL",)}),
     (
         "European Commission WebTools",

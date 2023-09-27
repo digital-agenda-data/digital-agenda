@@ -23,6 +23,7 @@ class AppSettingsView(APIView):
                 "eurostat_flags": EUROSTAT_FLAGS,
                 "sentry_dsn": settings.SENTRY_DSN,
                 "environment_name": settings.ENVIRONMENT_NAME,
+                "chart_credits": config.CHART_CREDITS,
             }
         )
 

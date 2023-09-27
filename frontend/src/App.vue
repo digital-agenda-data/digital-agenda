@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { setHighchartsDefaults } from "@/initHighchart";
 import { mapStores } from "pinia";
 import { defineAsyncComponent } from "vue";
 
@@ -62,6 +63,9 @@ export default {
   watch: {
     docTitle() {
       document.title = this.docTitle;
+    },
+    isReady() {
+      setHighchartsDefaults();
     },
   },
   mounted() {
