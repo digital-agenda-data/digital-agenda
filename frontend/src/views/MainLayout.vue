@@ -11,7 +11,7 @@
       siteID: appSettings.analytics_site_id,
       sitePath: [host],
       instance: 'ec',
-      mode: 'default',
+      mode: 'manual',
     }"
   />
   <div v-if="isReady" class="ecl app-wrapper">
