@@ -53,6 +53,6 @@ describeResponsive("Check Indicators Page", () => {
     cy.get("tbody td").contains(
       "Notes: Scope includes Households with at least one member aged 16-74."
     );
-    cy.get("tbody td").contains("Time coverage: 2012 - 2013");
+    cy.get("tbody td").contains("Time coverage: 2009-2015");
   });
 });

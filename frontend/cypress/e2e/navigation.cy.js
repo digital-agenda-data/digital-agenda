@@ -3,7 +3,7 @@ import describeResponsive from "../support/describeResponsive";
 describeResponsive("Check App Navigation", (viewportWidth) => {
   it("Navigate in between charts and groups", () => {
     cy.visit("/");
-    cy.get(".ecl-list-illustration a").contains("2. Key Indicators").click();
+    cy.get(".ecl-list-illustration a").contains("Key Indicators").click();
     cy.get("h1").contains("Key Indicators");
     cy.get(".ecl-list-illustration a")
       .contains("1. Analyse one indicator and compare countries")
@@ -18,7 +18,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
   });
   it("Navigate breadcrumbs", () => {
     cy.visit("/");
-    cy.get(".ecl-list-illustration a").contains("2. Key Indicators").click();
+    cy.get(".ecl-list-illustration a").contains("Key Indicators").click();
     cy.get(".ecl-list-illustration a")
       .contains("1. Analyse one indicator and compare countries")
       .click();
@@ -27,11 +27,11 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
     cy.get(".ecl-breadcrumb a")
       .contains("Digital Decade DESI visualisation tool")
       .click();
-    cy.get(".ecl-list-illustration a").contains("2. Key Indicators");
+    cy.get(".ecl-list-illustration a").contains("Key Indicators");
   });
   it("Navigate in between indicator groups", () => {
     cy.visit("/");
-    cy.get(".ecl-list-illustration a").contains("2. Key Indicators").click();
+    cy.get(".ecl-list-illustration a").contains("Key Indicators").click();
 
     if (viewportWidth >= 996) {
       cy.get(".ecl-category-filter a").contains("Indicators").click();
@@ -44,7 +44,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       .contains("ict_grad")
       .should("be.visible")
       .parents("td")
-      .should("contain", "2015 - 2020");
+      .should("contain", "2012-2021");
 
     cy.get("a").contains("ICT graduates").click();
     cy.get("h1").contains("Analyse one indicator and compare countries");
