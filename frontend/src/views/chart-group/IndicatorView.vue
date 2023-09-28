@@ -111,11 +111,6 @@
                 <span v-if="indicator.time_coverage">
                   {{ indicator.time_coverage }}
                 </span>
-                <span v-else-if="indicator.min_period !== indicator.max_period">
-                  {{ indicator.min_period }} -
-                  {{ indicator.max_period }}
-                </span>
-                <span v-else>{{ indicator.min_period }}</span>
               </div>
 
               <div

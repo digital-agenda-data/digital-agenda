@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.contrib.postgres.aggregates import ArrayAgg
 from django.db.models import IntegerField
 from django.db.models import Max
 from django.db.models import Min
@@ -67,6 +68,7 @@ class ChartGroupViewSet(
                 period_end=Value(obj.period_end, IntegerField()),
                 fact_min_period=Min("facts__period__date"),
                 fact_max_period=Max("facts__period__date"),
+                all_periods=ArrayAgg("facts__period__date", distinct=True),
             )
             .filter(groups__id__in=group_ids)
         )
