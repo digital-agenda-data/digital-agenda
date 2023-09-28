@@ -213,6 +213,11 @@ export default {
 
       return result;
     },
+    extraNotes() {
+      return (this.indicator?.extra_notes || [])
+        .filter((item) => item.period === this.period?.code)
+        .map((item) => item.note);
+    },
     /**
      * Default chart options, (shallow) merged with the chartOptions
      * and used for HighCharts.
@@ -242,7 +247,10 @@ export default {
           text: this.makeTitle([this.indicator, this.breakdown]),
         },
         subtitle: {
-          text: this.period?.label || this.period?.code,
+          text: this.joinStrings(
+            [this.period?.label || this.period?.code, ...this.extraNotes],
+            " "
+          ),
         },
         legend: {
           enabled: false,
@@ -384,14 +392,27 @@ export default {
      * Join objects from the backend or strings to make a title
      *
      * @param items {*[]}
+     * @param separator {String}
      * @return {String}
      */
-    makeTitle(items) {
+    makeTitle(items, separator = ", ") {
+      return this.joinStrings(
+        items.map((s) => s?.label),
+        separator
+      );
+    },
+    /**
+     * Join strings excluding any empty/nulls
+     *
+     * @param items {String[]}
+     * @param separator {String}
+     * @return {String}
+     */
+    joinStrings(items, separator = ", ") {
       return items
-        .map((s) => s?.label)
         .map((s) => s?.trim())
         .filter((s) => !!s)
-        .join(", ");
+        .join(separator);
     },
     highchartsCallback(chart) {
       this.chart = chart;

@@ -114,7 +114,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     objects = NaturalCodeManger()
     # !IMPORTANT WARNING!
     #
-    # When adding an entry here a corresponding entry must be added in
+    # When adding an entry here, a corresponding entry must be added in
     #
     #  - frontend/src/lib/chartRegistry.js
     #  - frontend/src/lib/chartDefaultImages.js
@@ -338,4 +338,14 @@ class IndicatorChartOption(ChartOptionBaseModel):
 class BreakdownChartOption(ChartOptionBaseModel):
     breakdown = models.OneToOneField(
         "core.Breakdown", on_delete=models.CASCADE, related_name="chart_options"
+    )
+
+
+class ExtraChartNote(TimestampedModel):
+    indicator = models.ForeignKey(
+        "core.Indicator", on_delete=models.CASCADE, related_name="extra_notes"
+    )
+    period = models.ForeignKey("core.Period", on_delete=models.CASCADE)
+    note = models.CharField(
+        max_length=255, help_text="Extra notes to show in the chart"
     )

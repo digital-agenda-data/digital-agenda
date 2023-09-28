@@ -17,6 +17,7 @@ from .models import (
     Fact,
 )
 from ..charts.serializers.chart_options import BreakdownChartOptionSerializer
+from ..charts.serializers.chart_options import ExtraChartNoteSerializer
 from ..charts.serializers.chart_options import IndicatorChartOptionSerializer
 
 logger = logging.getLogger(__name__)
@@ -77,6 +78,7 @@ class IndicatorListSerializer(BaseDimensionSerializer):
         slug_field="code", read_only=True, many=True
     )
     chart_options = IndicatorChartOptionSerializer(many=False, read_only=True)
+    extra_notes = ExtraChartNoteSerializer(many=True, read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
@@ -84,6 +86,7 @@ class IndicatorListSerializer(BaseDimensionSerializer):
             "data_sources",
             "note",
             "chart_options",
+            "extra_notes",
         ]
 
 

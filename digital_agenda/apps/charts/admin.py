@@ -11,6 +11,7 @@ from django.urls import reverse
 from digital_agenda.apps.charts.models import BreakdownChartOption
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
+from digital_agenda.apps.charts.models import ExtraChartNote
 from digital_agenda.apps.charts.models import IndicatorChartOption
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Indicator
@@ -237,3 +238,18 @@ class BreakdownChartOptionAdmin(admin.ModelAdmin):
     list_display = ("breakdown", "color", "dash_style", "symbol", "custom_symbol")
     autocomplete_fields = ("breakdown",)
     search_fields = ("breakdown__code", "breakdown__label", "breakdown__alt_label")
+
+
+@admin.register(ExtraChartNote)
+class ExtraChartNoteAdmin(admin.ModelAdmin):
+    list_display = ("indicator", "period", "note")
+    autocomplete_fields = ("indicator", "period")
+    search_fields = (
+        "indicator__code",
+        "indicator__label",
+        "indicator__alt_label",
+        "period__code",
+        "period__label",
+        "period__alt_label",
+        "note",
+    )
