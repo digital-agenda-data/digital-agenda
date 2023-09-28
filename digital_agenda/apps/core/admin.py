@@ -109,6 +109,7 @@ class IndicatorAdmin(HasFactsAdminMixIn, DimensionAdmin):
         "alt_label",
         "definition",
         "note",
+        "time_coverage",
         "group_list",
         "has_facts",
     )

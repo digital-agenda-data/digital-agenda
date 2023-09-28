@@ -107,6 +107,13 @@ class Indicator(BaseDimensionModel):
         related_name="indicators",
         blank=True,
     )
+    time_coverage = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        default=None,
+        help_text="Time coverage to display instead of the automatically calculated one",
+    )
     note = models.TextField(null=True, blank=True)
 
     class Meta:

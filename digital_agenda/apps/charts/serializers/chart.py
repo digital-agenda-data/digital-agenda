@@ -61,6 +61,7 @@ class ChartIndicatorListSerializer(IndicatorListSerializer):
             "max_period",
             "definition",
             "note",
+            "time_coverage",
         ]
 
     def get_min_period(self, obj):
