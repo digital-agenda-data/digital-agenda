@@ -251,6 +251,11 @@ export default {
             [this.period?.label || this.period?.code, ...this.extraNotes],
             " "
           ),
+          style: {
+            color: "#333333",
+            fontWeight: "bold",
+            fontSize: "1.4em",
+          },
         },
         legend: {
           enabled: false,
