@@ -35,7 +35,7 @@ export default {
     sortedCountries() {
       return sortNumeric(this.countries, {
         reverse: true,
-        keyFunc: (country) => this.apiValuesGrouped[country.code] ?? 0,
+        keyFunc: (country) => this.apiValuesGrouped[country.code] ?? -Infinity,
       });
     },
     series() {
