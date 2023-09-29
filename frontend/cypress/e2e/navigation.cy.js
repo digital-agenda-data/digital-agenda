@@ -44,7 +44,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       .contains("ict_grad")
       .should("be.visible")
       .parents("td")
-      .should("contain", "2012-2021");
+      .should("contain", "2015-2020");
 
     cy.get("a").contains("ICT graduates").click();
     cy.get("h1").contains("Analyse one indicator and compare countries");
