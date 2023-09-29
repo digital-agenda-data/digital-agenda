@@ -254,7 +254,7 @@ export default {
           style: {
             color: "#333333",
             fontWeight: "bold",
-            fontSize: "1.4em",
+            fontSize: "1rem",
           },
         },
         legend: {
