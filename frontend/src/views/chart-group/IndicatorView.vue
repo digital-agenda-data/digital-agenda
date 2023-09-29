@@ -36,36 +36,42 @@
             <ecl-link
               :to="`${apiURL}/indicator-groups/${group.code}/facts/`"
               no-visited
+              class="download"
               label="data"
             />
             <span>,&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/indicators/?indicator_group=${group.code}&format=csv`"
               no-visited
+              class="download"
               label="indicators"
             />
             <span>,&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/data-sources/?indicator_group=${group.code}&format=csv`"
               no-visited
+              class="download"
               label="data sources"
             />
             <span>,&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/countries/?indicator_group=${group.code}&format=csv`"
               no-visited
+              class="download"
               label="countries"
             />
             <span>,&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/breakdowns/?indicator_group=${group.code}&format=csv`"
               no-visited
+              class="download"
               label="breakdowns"
             />
             <span>,&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/units/?indicator_group=${group.code}&format=csv`"
               no-visited
+              class="download"
               label="units"
             />
           </th>
@@ -135,24 +141,28 @@
                 <ecl-link
                   :to="`${apiURL}/indicators/${indicator.code}/facts/`"
                   no-visited
+                  class="download"
                   label="data"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
                   :to="`${apiURL}/countries/?indicator=${indicator.code}&format=csv`"
                   no-visited
+                  class="download"
                   label="countries"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
                   :to="`${apiURL}/breakdowns/?indicator=${indicator.code}&format=csv`"
                   no-visited
+                  class="download"
                   label="breakdowns"
                 />
                 <span>,&nbsp;</span>
                 <ecl-link
                   :to="`${apiURL}/units/?indicator=${indicator.code}&format=csv`"
                   no-visited
+                  class="download"
                   label="units"
                 />
               </div>
