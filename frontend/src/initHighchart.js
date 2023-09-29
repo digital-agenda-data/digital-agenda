@@ -99,6 +99,10 @@ export function setHighchartsDefaults() {
           },
         },
       },
+      column: {
+        // Make sure we show zero or close to zero values
+        minPointLength: 3,
+      },
     },
     responsive: {
       rules: [
