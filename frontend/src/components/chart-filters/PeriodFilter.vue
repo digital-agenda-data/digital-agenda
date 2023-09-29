@@ -18,7 +18,7 @@ export default {
       return this.super(BaseSelectFilter)
         .apiData()
         .filter((item) => {
-          const year = parseInt(item.code.slice(0, 4));
+          const year = parseInt(item.date.slice(0, 4));
           return periodStart <= year && year <= periodEnd;
         });
     },
