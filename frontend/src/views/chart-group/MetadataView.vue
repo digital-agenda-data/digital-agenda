@@ -62,20 +62,6 @@
             />
           </td>
         </tr>
-      </tbody>
-    </table>
-
-    <h4>Attributes</h4>
-
-    <table class="ecl-table ecl-table--zebra ecl-u-break-word">
-      <thead class="ecl-table__head">
-        <tr class="ecl-table__row">
-          <th class="ecl-table__header">Notation</th>
-          <th class="ecl-table__header">Label</th>
-          <th class="ecl-table__header">Comment</th>
-        </tr>
-      </thead>
-      <tbody class="ecl-table__body">
         <tr class="ecl-table__row">
           <td class="ecl-table__cell" data-ecl-table-header="Notation">
             flags
@@ -89,38 +75,6 @@
               label="Eurostat"
               no-visited
             />
-          </td>
-        </tr>
-        <tr class="ecl-table__row">
-          <td class="ecl-table__cell" data-ecl-table-header="Notation">note</td>
-          <td class="ecl-table__cell" data-ecl-table-header="Label">Note</td>
-          <td class="ecl-table__cell" data-ecl-table-header="Comment">
-            Free text, optional
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h4>Measures</h4>
-
-    <table class="ecl-table ecl-table--zebra ecl-u-break-word">
-      <thead class="ecl-table__head">
-        <tr class="ecl-table__row">
-          <th class="ecl-table__header">Notation</th>
-          <th class="ecl-table__header">Label</th>
-          <th class="ecl-table__header">Comment</th>
-        </tr>
-      </thead>
-      <tbody class="ecl-table__body">
-        <tr class="ecl-table__row">
-          <td class="ecl-table__cell" data-ecl-table-header="Notation">
-            value
-          </td>
-          <td class="ecl-table__cell" data-ecl-table-header="Label">
-            Observation
-          </td>
-          <td class="ecl-table__cell" data-ecl-table-header="Comment">
-            The value of a particular variable at a particular period.
           </td>
         </tr>
       </tbody>
@@ -183,14 +137,14 @@ export default {
           notation: "period",
           endpoint: "periods",
         },
-        {
-          notation: "indicator_group",
-          endpoint: "indicator-groups",
-        },
-        {
-          notation: "breakdown_group",
-          endpoint: "breakdown-groups",
-        },
+        // {
+        //   notation: "indicator_group",
+        //   endpoint: "indicator-groups",
+        // },
+        // {
+        //   notation: "breakdown_group",
+        //   endpoint: "breakdown-groups",
+        // },
         {
           notation: "data_sources",
           endpoint: "data-sources",
