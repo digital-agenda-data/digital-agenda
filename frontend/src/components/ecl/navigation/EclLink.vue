@@ -3,6 +3,7 @@
     :is="isExternalLink ? 'a' : 'RouterLink'"
     :class="classList"
     v-bind="bindAttrs"
+    :download="downloadClass ? '' : undefined"
   >
     <ecl-icon
       v-if="icon && iconLeft"
