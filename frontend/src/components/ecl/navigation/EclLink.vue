@@ -107,10 +107,20 @@ export default {
       required: false,
       default: false,
     },
+    // Add tracking download class if set
+    downloadClass: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     classList() {
       const result = [];
+      if (this.downloadClass) {
+        // Class used to track download links with Europa Analytics
+        result.push("piwik_download");
+      }
 
       if (this.variant !== "none") {
         result.push("ecl-link");

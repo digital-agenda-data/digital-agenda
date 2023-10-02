@@ -18,7 +18,7 @@
       no-visited
       label="Download image"
       to="#download-chart"
-      class="download"
+      download-class
       @click.capture.prevent="downloadChart"
     />
     <ecl-link
@@ -27,7 +27,7 @@
       no-visited
       :to="exportLink"
       :label="'Export data ' + axis"
-      class="download"
+      download-class
     />
     <ecl-link no-visited label="Embedded URL" :to="embedURL" />
     <ecl-link

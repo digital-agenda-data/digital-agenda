@@ -57,7 +57,7 @@
             <span>&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/${endpoint}/?chart_group=${currentChartGroup.code}&format=csv`"
-              class="download"
+              download-class
               label="codelist"
             />
           </td>
@@ -134,7 +134,7 @@
           :to="exportLink"
           no-visited
           label="Export CSV"
-          class="download"
+          download-class
         />
       </li>
       <li>
