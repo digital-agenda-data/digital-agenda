@@ -316,7 +316,7 @@ CONSTANCE_CONFIG = {
     "SEND_FEEDBACK_ACKNOWLEDGEMENT": (
         True,
         "If set, send an acknowledgment email when receiving a new feedback to "
-        "the address specified in the form."
+        "the address specified in the form.",
     ),
     "GLOBAL_BANNER_ENABLED": (True, "Enable the Global banner component (Globan)"),
     "EU_LOGIN_ENABLED": (True, "Enable login with EU login CAS Server"),
@@ -337,7 +337,13 @@ CONSTANCE_CONFIG = {
 }
 CONSTANCE_CONFIG_FIELDSETS = (
     ("Site options", {"collapse": False, "fields": ("CHART_CREDITS",)}),
-    ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL", "SEND_FEEDBACK_ACKNOWLEDGEMENT")}),
+    (
+        "Feedback",
+        {
+            "collapse": False,
+            "fields": ("FEEDBACK_EMAIL", "SEND_FEEDBACK_ACKNOWLEDGEMENT"),
+        },
+    ),
     (
         "European Commission WebTools",
         {
