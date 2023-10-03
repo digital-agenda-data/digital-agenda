@@ -13,6 +13,8 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
+from import_export import resources
+from import_export.admin import ImportExportMixin
 
 from .models import (
     DataSource,
@@ -95,8 +97,23 @@ class DataSourceInline(admin.TabularInline):
     extra = 0
 
 
+class IndicatorResource(resources.ModelResource):
+    class Meta:
+        model = Indicator
+        import_id_fields = ("code",)
+        fields = (
+            "code",
+            "label",
+            "alt_label",
+            "definition",
+            "note",
+            "time_coverage",
+        )
+
+
 @admin.register(Indicator)
-class IndicatorAdmin(HasFactsAdminMixIn, DimensionAdmin):
+class IndicatorAdmin(HasFactsAdminMixIn, ImportExportMixin, DimensionAdmin):
+    resource_class = IndicatorResource
     list_filter = [
         "groups__chartgroup",
         AutocompleteFilterFactory("data source", "data_sources"),

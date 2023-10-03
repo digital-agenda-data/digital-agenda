@@ -14,6 +14,7 @@ django-extensions
 django-filter
 django-hashid-field
 django-health-check
+django-import-export
 django_json_widget
 django-model-utils
 django-redis

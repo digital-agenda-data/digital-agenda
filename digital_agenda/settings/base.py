@@ -98,6 +98,7 @@ THIRD_PARTY_APPS = [
     "constance",
     "constance.backends.database",
     "django_cas_ng",
+    "import_export",
 ]
 
 INSTALLED_APPS = LOCAL_APPS + DJANGO_APPS + THIRD_PARTY_APPS
