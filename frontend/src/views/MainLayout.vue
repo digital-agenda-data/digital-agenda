@@ -50,7 +50,11 @@ export default {
   },
   watch: {
     $route(to, from) {
-      if (window.$wt?.analytics.isTrackable() && to.path !== from.path) {
+      if (
+        window.$wt?.analytics.isTrackable() &&
+        window.$wt?.analytics.isActive &&
+        to.path !== from.path
+      ) {
         // Log a new view manually when the route changes.
         window.$wt.trackPageView();
       }
