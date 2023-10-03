@@ -5,6 +5,7 @@ server {
 
     sendfile on;
     tcp_nopush on;
+    server_tokens off;
 
     gzip on;
     gzip_types text/plain text/css application/javascript application/json image/svg+xml;
