@@ -313,6 +313,11 @@ CONSTANCE_CONFIG = {
         "feedback@example.com",
         "Email addresses where feedback messages are sent to; multiple addresses can be specified separated by comma",
     ),
+    "SEND_FEEDBACK_ACKNOWLEDGEMENT": (
+        True,
+        "If set, send an acknowledgment email when receiving a new feedback to "
+        "the address specified in the form."
+    ),
     "GLOBAL_BANNER_ENABLED": (True, "Enable the Global banner component (Globan)"),
     "EU_LOGIN_ENABLED": (True, "Enable login with EU login CAS Server"),
     "CCK_ENABLED": (True, "Enable Cookie Consent Kit Banner"),
@@ -332,7 +337,7 @@ CONSTANCE_CONFIG = {
 }
 CONSTANCE_CONFIG_FIELDSETS = (
     ("Site options", {"collapse": False, "fields": ("CHART_CREDITS",)}),
-    ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL",)}),
+    ("Feedback", {"collapse": False, "fields": ("FEEDBACK_EMAIL", "SEND_FEEDBACK_ACKNOWLEDGEMENT")}),
     (
         "European Commission WebTools",
         {

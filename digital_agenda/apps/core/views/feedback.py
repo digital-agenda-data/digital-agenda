@@ -38,7 +38,7 @@ class FeedbackViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
             None,
             split_email(config.FEEDBACK_EMAIL),
         )
-        if serializer.validated_data["email"]:
+        if serializer.validated_data["email"] and config.SEND_FEEDBACK_ACKNOWLEDGEMENT:
             send_mail_job.delay(
                 "[Digital Agenda Data] Your feedback has been received",
                 EMAIL_TEMPLATE_AUTHOR % serializer.validated_data,
