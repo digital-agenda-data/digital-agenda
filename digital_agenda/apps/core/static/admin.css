@@ -157,3 +157,7 @@ form .aligned label + div.help {
 .form-row ul {
   margin-left:  0 !important;
 }
+
+.import-preview {
+  color: white;
+}
