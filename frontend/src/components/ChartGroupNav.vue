@@ -61,7 +61,7 @@ export default {
         },
         {
           id: "feedback",
-          text: "Submit Feedback",
+          text: "Submit feedback",
           to: { name: "feedback" },
         },
       ];
