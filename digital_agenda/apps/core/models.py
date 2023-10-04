@@ -226,6 +226,7 @@ class Period(BaseDimensionModel):
         return year, qualifier
 
     def _guess_fields_from_code(self):
+        assert self.code, "Code missing"
         year, qualifier = self.split_code(self.code)
 
         year = int(year)

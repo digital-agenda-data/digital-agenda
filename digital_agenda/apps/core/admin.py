@@ -13,7 +13,6 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
-from import_export import resources
 from import_export.admin import ImportExportMixin
 
 from .models import (
@@ -30,6 +29,14 @@ from .models import (
     DataFileImportTask,
 )
 from digital_agenda.common.admin import HasFactsAdminMixIn
+from digital_agenda.apps.core.resources import (
+    DataSourceResource,
+    IndicatorResource,
+    BreakdownResource,
+    PeriodResource,
+    UnitResource,
+    CountryResource,
+)
 
 
 class DimensionAdmin(admin.ModelAdmin):
@@ -39,7 +46,8 @@ class DimensionAdmin(admin.ModelAdmin):
 
 
 @admin.register(DataSource)
-class DataSourceAdmin(DimensionAdmin):
+class DataSourceAdmin(ImportExportMixin, DimensionAdmin):
+    resource_class = DataSourceResource
     list_display = ("code", "label", "indicator_codes")
     readonly_fields = ("indicator_codes", "indicators_list")
     fields = (
@@ -97,22 +105,8 @@ class DataSourceInline(admin.TabularInline):
     extra = 0
 
 
-class IndicatorResource(resources.ModelResource):
-    class Meta:
-        model = Indicator
-        import_id_fields = ("code",)
-        fields = (
-            "code",
-            "label",
-            "alt_label",
-            "definition",
-            "note",
-            "time_coverage",
-        )
-
-
 @admin.register(Indicator)
-class IndicatorAdmin(HasFactsAdminMixIn, ImportExportMixin, DimensionAdmin):
+class IndicatorAdmin(ImportExportMixin, HasFactsAdminMixIn, DimensionAdmin):
     resource_class = IndicatorResource
     list_filter = [
         "groups__chartgroup",
@@ -190,7 +184,10 @@ class IndicatorsWithFactsMixIn:
 
 
 @admin.register(Breakdown)
-class BreakdownAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin):
+class BreakdownAdmin(
+    ImportExportMixin, IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin
+):
+    resource_class = BreakdownResource
     facts_filter = "breakdown"
     fields = ("code", "label", "alt_label", "definition", "group_links")
     readonly_fields = ("group_links",)
@@ -208,18 +205,23 @@ class BreakdownAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmi
 
 
 @admin.register(Unit)
-class UnitAdmin(IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin):
+class UnitAdmin(
+    ImportExportMixin, IndicatorsWithFactsMixIn, HasFactsAdminMixIn, DimensionAdmin
+):
+    resource_class = UnitResource
     facts_filter = "unit"
 
 
 @admin.register(Period)
-class PeriodAdmin(HasFactsAdminMixIn, DimensionAdmin):
+class PeriodAdmin(ImportExportMixin, HasFactsAdminMixIn, DimensionAdmin):
+    resource_class = PeriodResource
     list_display = ("code", "label", "alt_label", "date")
     facts_filter = "period"
 
 
 @admin.register(Country)
-class CountryAdmin(HasFactsAdminMixIn, DimensionAdmin):
+class CountryAdmin(ImportExportMixin, HasFactsAdminMixIn, DimensionAdmin):
+    resource_class = CountryResource
     list_display = ("code", "is_group", "label", "alt_label", "color")
     list_filter = ("is_group",)
     facts_filter = "country"

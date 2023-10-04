@@ -7,6 +7,9 @@ from django.shortcuts import redirect
 from django.template.response import TemplateResponse
 from django.urls import path
 from django.urls import reverse
+from import_export import resources
+from import_export.admin import ImportExportMixin
+from import_export.widgets import ForeignKeyWidget
 
 from digital_agenda.apps.charts.models import BreakdownChartOption
 from digital_agenda.apps.charts.models import Chart
@@ -15,6 +18,7 @@ from digital_agenda.apps.charts.models import ExtraChartNote
 from digital_agenda.apps.charts.models import IndicatorChartOption
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Indicator
+from digital_agenda.apps.core.models import Period
 from digital_agenda.common.admin import HasChangesAdminMixin
 
 
@@ -240,8 +244,31 @@ class BreakdownChartOptionAdmin(admin.ModelAdmin):
     search_fields = ("breakdown__code", "breakdown__label", "breakdown__alt_label")
 
 
+class ExtraChartNoteResource(resources.ModelResource):
+    indicator = resources.Field(
+        column_name="indicator",
+        attribute="indicator",
+        widget=ForeignKeyWidget(Indicator, field="code"),
+    )
+    period = resources.Field(
+        column_name="period",
+        attribute="period",
+        widget=ForeignKeyWidget(Period, field="code"),
+    )
+
+    class Meta:
+        model = ExtraChartNote
+        import_id_fields = ("indicator", "period")
+        fields = (
+            "indicator",
+            "period",
+            "note",
+        )
+
+
 @admin.register(ExtraChartNote)
-class ExtraChartNoteAdmin(admin.ModelAdmin):
+class ExtraChartNoteAdmin(ImportExportMixin, admin.ModelAdmin):
+    resource_class = ExtraChartNoteResource
     list_display = ("indicator", "period", "note")
     autocomplete_fields = ("indicator", "period")
     search_fields = (
