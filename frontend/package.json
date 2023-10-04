@@ -26,6 +26,7 @@
     "vue-router": "4.1.6"
   },
   "devDependencies": {
+    "@vitejs/plugin-legacy": "4.1.1",
     "@vitejs/plugin-vue": "4.1.0",
     "rollup-plugin-visualizer": "5.9.0",
     "sass": "1.60.0",
@@ -49,7 +50,7 @@
     "typescript": "5.0.3"
   },
   "browserslist": [
-    "defaults",
+    "last 2 versions, not dead, > 0.1%",
     "not op_mini all"
   ]
 }
