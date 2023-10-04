@@ -78,6 +78,7 @@ export default {
     },
     async copyURL(text) {
       try {
+        // eslint-disable-next-line compat/compat
         await navigator.clipboard.writeText(text);
         this.$refs.popover.openPopover();
       } catch (error) {
