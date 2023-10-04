@@ -1,9 +1,9 @@
 <template>
   <highcharts
     v-if="ready"
+    ref="highchartComponent"
     :constructor-type="constructorType"
     :options="mergedChartOptions"
-    :callback="highchartsCallback"
   />
   <simple-spinner v-else />
 </template>
@@ -44,7 +44,6 @@ export default {
       loading: true,
       ready: false,
       apiData: [],
-      chart: null,
     };
   },
   computed: {
@@ -62,6 +61,10 @@ export default {
       "unit",
       "country",
     ]),
+    chart() {
+      // Reference to the highchart Chart object instance
+      return this.$refs.highchartComponent?.chart;
+    },
     /**
      * Default chart type for the series. See docs upstream:
      *
@@ -417,9 +420,6 @@ export default {
         .map((s) => s?.trim())
         .filter((s) => !!s)
         .join(separator);
-    },
-    highchartsCallback(chart) {
-      this.chart = chart;
     },
     /**
      * Get a suitable display string for a data point flag
