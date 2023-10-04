@@ -226,7 +226,6 @@ export default {
       let legend;
       if (this.currentChart?.legend_layout === "horizontal") {
         legend = {
-          itemWidth: 150,
           layout: "horizontal",
         };
       } else {
