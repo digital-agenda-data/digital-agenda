@@ -49,14 +49,14 @@ export default {
           yAxis: index,
           name: indicator.display,
           color:
-            breakdown.chart_options?.color ?? indicator.chart_options?.color,
+            breakdown?.chart_options?.color ?? indicator?.chart_options?.color,
           dashStyle:
-            breakdown.chart_options?.dash_style ??
-            indicator.chart_options?.dash_style,
+            breakdown?.chart_options?.dash_style ??
+            indicator?.chart_options?.dash_style,
           marker: {
             symbol: getMarkerSymbol([
-              breakdown.chart_options,
-              indicator.chart_options,
+              breakdown?.chart_options,
+              indicator?.chart_options,
             ]),
           },
           data: this.apiDataPeriods.map((periodCode) => {
