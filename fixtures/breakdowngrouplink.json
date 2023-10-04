@@ -4402,5 +4402,101 @@
             "total"
         ]
     }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 5,
+        "breakdown": [
+            "dd_hist"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 3,
+        "breakdown": [
+            "dd_ideal"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 6,
+        "breakdown": [
+            "dd_baseline"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 1,
+        "breakdown": [
+            "dd_target"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 2,
+        "breakdown": [
+            "dd_target_2025"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 7,
+        "breakdown": [
+            "dd_edge"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 8,
+        "breakdown": [
+            "dd_quantum"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.breakdowngrouplink",
+    "fields": {
+        "display_order": 4,
+        "breakdown": [
+            "dd_target_edge"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
 }
 ]

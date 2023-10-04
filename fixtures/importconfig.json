@@ -59,10 +59,10 @@
         "code": "demo_pjan",
         "title": "Eurostat total population",
         "remarks": null,
-        "data_last_update": "2023-07-03T21:00:00Z",
-        "datastructure_last_update": "2023-02-22T10:00:00Z",
-        "datastructure_last_version": "29.0",
-        "new_version_available": true,
+        "data_last_update": "2023-09-28T21:00:00Z",
+        "datastructure_last_update": "2023-09-25T21:00:00Z",
+        "datastructure_last_version": "30.0",
+        "new_version_available": false,
         "conflict_resolution": "RAISE_ERROR",
         "indicator": "population",
         "indicator_is_surrogate": true,
@@ -114,8 +114,8 @@
         "code": "tec00001",
         "title": "Gross domestic product at market prices",
         "remarks": null,
-        "data_last_update": "2023-09-15T09:00:00Z",
-        "datastructure_last_update": "2023-09-15T09:00:00Z",
+        "data_last_update": "2023-10-02T09:00:00Z",
+        "datastructure_last_update": "2023-10-02T09:00:00Z",
         "datastructure_last_version": "46.0",
         "new_version_available": true,
         "conflict_resolution": "RAISE_ERROR",
@@ -226,7 +226,7 @@
     "fields": {
         "code": "isoc_bde15cua",
         "title": "Internet use and activities",
-        "remarks": null,
+        "remarks": "",
         "data_last_update": "2023-09-19T09:00:00Z",
         "datastructure_last_update": "2023-09-19T09:00:00Z",
         "datastructure_last_version": "34.0",
@@ -249,7 +249,6 @@
         ],
         "filters": {
             "INDIC_IS": [
-                "I_IDAY",
                 "I_IHIF",
                 "I_IUJOB",
                 "I_IUMAPP",
@@ -259,7 +258,6 @@
                 "I_IUSNET",
                 "I_IUUPL",
                 "I_IUVOTE",
-                "I_IUSE",
                 "I_IUEDUIF",
                 "I_IUIF"
             ],
@@ -1665,7 +1663,7 @@
     "fields": {
         "code": "isoc_bde15b_i",
         "title": "Broadband and connectivity - individuals",
-        "remarks": null,
+        "remarks": "",
         "data_last_update": "2023-09-19T09:00:00Z",
         "datastructure_last_update": "2023-09-19T09:00:00Z",
         "datastructure_last_version": "30.0",
@@ -1684,7 +1682,7 @@
         "period_start": null,
         "period_end": null,
         "country_group": [
-            "EU27_2007"
+            "EU27_2020"
         ],
         "filters": {
             "unit": [
@@ -1732,7 +1730,8 @@
                 "IND_NO_DCH"
             ],
             "indic_is": [
-                "i_iumc"
+                "i_iumc",
+                "i_iump"
             ]
         },
         "mappings": {
@@ -2070,10 +2069,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -2239,10 +2238,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -2409,10 +2408,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -2576,10 +2575,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -2746,10 +2745,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -2909,10 +2908,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ],
             [
                 "TODO"
@@ -3076,10 +3075,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -3250,10 +3249,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -3419,10 +3418,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -3579,10 +3578,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -3739,10 +3738,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -3899,10 +3898,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -4059,10 +4058,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -4224,10 +4223,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -4389,10 +4388,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -4554,10 +4553,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -4722,10 +4721,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -4887,10 +4886,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -5055,10 +5054,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ]
         ]
     }
@@ -5225,10 +5224,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_NACE"
             ],
             [
-                "ENT_NACE"
+                "ENT"
             ],
             [
                 "TODO"
@@ -5315,7 +5314,7 @@
     "fields": {
         "code": "isoc_sks_itsps",
         "title": "Employed ICT specialists by sex",
-        "remarks": null,
+        "remarks": "",
         "data_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_version": "24.0",
@@ -5344,7 +5343,7 @@
         },
         "mappings": {
             "unit": {
-                "pc": "pc_emp",
+                "pc": "pc_ict_spec",
                 "ths_per": "th_ind"
             },
             "period": {},
@@ -5410,10 +5409,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_AWS"
             ],
             [
-                "ENT_AWS"
+                "ENT"
             ]
         ]
     }
@@ -5467,10 +5466,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_AWS"
             ],
             [
-                "ENT_AWS"
+                "ENT"
             ]
         ]
     }
@@ -5524,10 +5523,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "ENT_AWS"
             ],
             [
-                "ENT_AWS"
+                "ENT"
             ]
         ]
     }
@@ -5627,10 +5626,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "DII"
             ],
             [
-                "DII"
+                "ENT"
             ]
         ]
     }
@@ -5701,10 +5700,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "DII"
             ],
             [
-                "DII"
+                "ENT"
             ]
         ]
     }
@@ -5762,10 +5761,10 @@
         },
         "tags": [
             [
-                "ENT"
+                "DII"
             ],
             [
-                "DII"
+                "ENT"
             ]
         ]
     }
@@ -5823,10 +5822,189 @@
         },
         "tags": [
             [
-                "ENT"
+                "DII"
             ],
             [
-                "DII"
+                "ENT"
+            ]
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 95,
+    "fields": {
+        "code": "isoc_ci_ifp_fu",
+        "title": "Individuals - frequency of internet use",
+        "remarks": "i_iuse, i_iday",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "34.0",
+        "new_version_available": false,
+        "conflict_resolution": "RAISE_ERROR",
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "INDIC_IS": [
+                "I_IDAY",
+                "I_IUSE"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "RF_GE1",
+                "RF_GE2",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            [
+                "HH"
+            ]
+        ]
+    }
+},
+{
+    "model": "estat.importconfig",
+    "pk": 96,
+    "fields": {
+        "code": "isoc_ci_dev_i",
+        "title": "Individuals - devices used to access the internet",
+        "remarks": "",
+        "data_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_update": "2023-09-19T09:00:00Z",
+        "datastructure_last_version": "31.0",
+        "new_version_available": false,
+        "conflict_resolution": "RAISE_ERROR",
+        "indicator": "indic_is",
+        "indicator_is_surrogate": false,
+        "breakdown": "ind_type",
+        "breakdown_is_surrogate": false,
+        "country": "geo",
+        "country_is_surrogate": false,
+        "unit": "unit",
+        "unit_is_surrogate": false,
+        "period": "time",
+        "period_is_surrogate": false,
+        "period_start": null,
+        "period_end": null,
+        "country_group": [
+            "EU27_2020"
+        ],
+        "filters": {
+            "unit": [
+                "PC_IND",
+                "PC_IND_IU3"
+            ],
+            "IND_TYPE": [
+                "IND_TOTAL",
+                "HHI_Q1",
+                "HHI_Q2",
+                "HHI_Q3",
+                "HHI_Q4",
+                "Y16_24",
+                "Y25_54",
+                "Y55_74",
+                "Y25_34",
+                "Y35_44",
+                "Y45_54",
+                "Y55_64",
+                "Y65_74",
+                "CB_EU_FOR",
+                "CB_EXT_EU",
+                "CB_NAT",
+                "CB_FOR",
+                "CC_EU_FOR",
+                "CC_EXT_EU",
+                "CC_FOR",
+                "CC_NAT",
+                "IND_DEG1",
+                "IND_DEG2",
+                "IND_DEG3",
+                "I0_2",
+                "I3_4",
+                "I5_8",
+                "SAL_SELF_FAM",
+                "UNE",
+                "EMPL_UNE",
+                "STUD",
+                "RETIR_OTHER",
+                "F_Y16_74",
+                "M_Y16_74",
+                "IND_DCH",
+                "IND_NO_DCH"
+            ],
+            "indic_is": [
+                "I_IUG_MD"
+            ]
+        },
+        "mappings": {
+            "unit": {},
+            "period": {},
+            "country": {
+                "EU27_2020": "EU"
+            },
+            "breakdown": {},
+            "indicator": {}
+        },
+        "tags": [
+            [
+                "HH"
             ]
         ]
     }

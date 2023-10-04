@@ -16,11 +16,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2023-09-21T09:02:19.487Z",
+        "updated_at": "2023-09-28T10:10:47.454Z",
         "code": "broad_conn_ec",
-        "label": "Broadband coverage in Europe studies",
+        "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
         "alt_label": "",
-        "definition": "Various studies on broadband coverage in Europe by IHS Markit, Omdia, Point Topic and VVA",
+        "definition": "Data collected by IHS Markit, Omdia and Point Topic and verified by the national regulatory authorities (by data experts appointed by the members of the Communications Committee in every Member State).",
         "url": "https://digital-strategy.ec.europa.eu/en/policies/desi-connectivity",
         "note": ""
     }
@@ -186,62 +186,10 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_dps_egovuser",
-        "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals (I_IUGOV12)",
-        "alt_label": null,
-        "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals (I_IUGOV12)",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "desi_dps_opendata",
         "label": "European Data Portal",
         "alt_label": null,
         "definition": "European Data Portal",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_dps_prefform",
-        "label": "eGovernment Benchmark",
-        "alt_label": null,
-        "definition": "eGovernment Benchmark",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_dps_psbiz",
-        "label": "eGovernment Benchmark",
-        "alt_label": null,
-        "definition": "eGovernment Benchmark",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_dps_pscit",
-        "label": "eGovernment Benchmark",
-        "alt_label": null,
-        "definition": "eGovernment Benchmark",
         "url": "",
         "note": ""
     }
@@ -290,45 +238,6 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_hc_abds",
-        "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
-        "alt_label": null,
-        "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_hc_abss",
-        "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
-        "alt_label": null,
-        "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_hc_bds",
-        "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
-        "alt_label": null,
-        "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "desi_hc_entict",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ITT2)",
         "alt_label": null,
@@ -341,25 +250,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_hc_fictspec",
-        "label": "Eurostat - Labour force survey (isoc_sks_itsps)",
-        "alt_label": null,
-        "definition": "Eurostat - Labour force survey (isoc_sks_itsps)",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:51:23.421Z",
         "code": "desi_hc_ictg",
-        "label": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies ",
-        "alt_label": null,
-        "definition": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies ",
-        "url": "",
+        "label": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies",
+        "alt_label": "",
+        "definition": "Eurostat (table educ_uoe_grad03, using selection ISCED11=ED5-8) and and ISCEDF_13 [F06] Information and Communication Technologies",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/educ_uoe_grad03",
         "note": ""
     }
 },
@@ -367,25 +263,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_hc_ictspec",
-        "label": "Eurostat - Labour force survey (isoc_sks_itspt)",
-        "alt_label": null,
-        "definition": "Eurostat - Labour force survey (isoc_sks_itspt)",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2023-09-18T06:26:13.909Z",
+        "updated_at": "2023-09-23T16:56:06.710Z",
         "code": "desi_idt_ai",
         "label": "Eurostat - European Union survey on ICT usage and e-commerce in enterprises (E_AI_TANY)",
         "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and e-commerce in enterprises (E_AI_TANY)",
-        "url": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_ai",
         "note": ""
     }
 },
@@ -393,12 +276,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:53:59.958Z",
         "code": "desi_idt_bigdat",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_BDA)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_BDA)",
-        "url": "",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_bd",
         "note": ""
     }
 },
@@ -406,12 +289,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-26T06:55:13.225Z",
         "code": "desi_idt_cloud",
-        "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_CC_GE_ME)",
-        "alt_label": null,
-        "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_CC_GE_ME)",
-        "url": "",
+        "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_CC1_SI)",
+        "alt_label": "",
+        "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_CC1_SI)",
+        "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cicce_use",
         "note": ""
     }
 },
@@ -419,12 +302,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:56:53.638Z",
         "code": "desi_idt_ecomturn",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ETURN)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ETURN)",
-        "url": "",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_evals",
         "note": ""
     }
 },
@@ -432,12 +315,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:56:29.672Z",
         "code": "desi_idt_einv",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_INV4S_AP)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_INV4S_AP)",
-        "url": "",
+        "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15disc",
         "note": ""
     }
 },
@@ -445,12 +328,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:57:22.814Z",
         "code": "desi_idt_eis",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ERP1)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ERP1)",
-        "url": "",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_eb_iip",
         "note": ""
     }
 },
@@ -471,12 +354,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:57:59.466Z",
         "code": "desi_idt_sellcb",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_AESEU)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_AESEU)",
-        "url": "",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_esels",
         "note": ""
     }
 },
@@ -497,12 +380,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-26T07:18:03.034Z",
         "code": "desi_idt_smeso",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ESELL)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_ESELL)",
-        "url": "",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ec_esels",
         "note": ""
     }
 },
@@ -510,12 +393,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-23T16:53:14.858Z",
         "code": "desi_idt_socmed",
         "label": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_SM1_GE2)",
-        "alt_label": null,
+        "alt_label": "",
         "definition": "Eurostat - European Union survey on ICT usage and eCommerce in Enterprises (E_SM1_GE2)",
-        "url": "",
+        "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cismt",
         "note": ""
     }
 },
@@ -523,12 +406,12 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-09-26T06:47:16.878Z",
         "code": "desi_mbbtu",
-        "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals [I_IUMP]",
-        "alt_label": null,
-        "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals [I_IUMP]",
-        "url": "",
+        "label": "Eurostat - European Union survey on ICT usage in Households and by Individuals [I_IUG_MD]",
+        "alt_label": "",
+        "definition": "Eurostat - European Union survey on ICT usage in Households and by Individuals, table ISOC_CI_DEV_I, indicator I_IUG_MD",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_dev_i",
         "note": ""
     }
 },
@@ -562,11 +445,11 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2023-09-21T09:38:36.070Z",
+        "updated_at": "2023-09-28T10:11:53.848Z",
         "code": "e_gov_bench",
-        "label": "eGovernment Benchmarking Reports",
+        "label": "eGovernment Benchmarking Reports (2012-2022)",
         "alt_label": "",
-        "definition": "eGovernment Benchmarking Report, Studies for the EC performed by Capgemini (2012-2022) \r\nSee also: https://digital-strategy.ec.europa.eu/en/library?type=28&topic=90",
+        "definition": "Data collected by Capgemini and verified by relevant ministries in every Member State.\r\nMore information: https://digital-strategy.ec.europa.eu/en/library?type=28&topic=90",
         "url": "https://digital-strategy.ec.europa.eu/en/library/egovernment-benchmark-2022",
         "note": ""
     }
@@ -978,7 +861,7 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2023-09-21T09:57:50.625Z",
+        "updated_at": "2023-09-26T06:15:12.545Z",
         "code": "estat_isoc_ci_ifp_iu",
         "label": "Eurostat, table isoc_ci_ifp_iu: Individuals - internet use",
         "alt_label": "",
@@ -1940,9 +1823,9 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-04-17T14:08:59.258Z",
-        "updated_at": "2023-09-21T09:48:43.040Z",
+        "updated_at": "2023-09-21T14:50:01.085Z",
         "code": "estat_isoc_cimobe_use",
-        "label": "Eurostat, table cimobe_use: Use of mobile connections to the internet by size class of enterprise",
+        "label": "Eurostat, table isoc_cimobe_use: Use of mobile connections to the internet by size class of enterprise",
         "alt_label": "",
         "definition": "",
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_cimobe_use",
@@ -2044,13 +1927,26 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2023-09-20T15:03:12.762Z",
-        "updated_at": "2023-09-20T15:03:12.762Z",
-        "code": "cnect_ehealth_kpi",
-        "label": "Service contract for the European Commission by Empirica GmbH and PredictBy",
+        "updated_at": "2023-09-26T07:59:25.278Z",
+        "code": "cnect_ehealth",
+        "label": "Digital decade e-Health indicators development report",
         "alt_label": "",
-        "definition": "",
-        "url": null,
+        "definition": "Digital decade e-Health indicators development report produced by by empirica GmbH and PredictBy, covering the baseline assessment on EU27 countries’ (plus Iceland and Norway) state-of-play (31.12.2022) towards delivering the Digital Decade Policy Programme 2030 e-health target of 100% EU citizens’ access to electronic health records by 2030",
+        "url": "https://op.europa.eu/en/publication-detail/-/publication/78938111-461e-11ee-92e3-01aa75ed71a1",
         "note": ""
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-09-26T06:42:24.749Z",
+        "updated_at": "2023-09-26T06:42:24.749Z",
+        "code": "estat_isoc_ci_dev_i",
+        "label": "Eurostat, table isoc_ci_dev_i: Individuals - devices used to access the internet",
+        "alt_label": null,
+        "definition": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_dev_i",
+        "note": null
     }
 }
 ]

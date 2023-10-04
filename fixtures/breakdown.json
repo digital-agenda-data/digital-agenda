@@ -4453,5 +4453,93 @@
         "alt_label": "Score for Rural Digital Index",
         "definition": ""
     }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-23T14:10:44.871Z",
+        "updated_at": "2023-09-23T14:10:44.871Z",
+        "code": "dd_hist",
+        "label": "Historical data",
+        "alt_label": "Historical data",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-23T14:11:04.891Z",
+        "updated_at": "2023-09-23T14:11:04.891Z",
+        "code": "dd_ideal",
+        "label": "DD trajectory (ideal path to reach the target)",
+        "alt_label": "DD trajectory",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-23T14:11:22.446Z",
+        "updated_at": "2023-09-23T14:11:22.446Z",
+        "code": "dd_baseline",
+        "label": "Baseline trajectory based on past perfomance",
+        "alt_label": "Baseline trajectory",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-23T14:11:44.395Z",
+        "updated_at": "2023-09-23T14:11:44.395Z",
+        "code": "dd_target",
+        "label": "2030 target",
+        "alt_label": "2030 target",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-23T16:03:25.710Z",
+        "updated_at": "2023-09-23T16:03:25.710Z",
+        "code": "dd_target_2025",
+        "label": "2025 target",
+        "alt_label": "2025 target",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-25T16:12:22.318Z",
+        "updated_at": "2023-09-25T16:55:22.855Z",
+        "code": "dd_edge",
+        "label": "Expected number of deployed edge nodes in the EU",
+        "alt_label": "Expected number of deployed edge nodes in the EU",
+        "definition": "Estimated trajectory based on expert assessment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-25T16:12:39.999Z",
+        "updated_at": "2023-09-25T16:15:07.534Z",
+        "code": "dd_quantum",
+        "label": "Number of quantum computers in the EU. Trajectory towards 2030",
+        "alt_label": "Number of quantum computers in the EU. Trajectory towards 2030",
+        "definition": "Estimated trajectory based on expert assessment"
+    }
+},
+{
+    "model": "core.breakdown",
+    "fields": {
+        "created_at": "2023-09-25T16:46:46.305Z",
+        "updated_at": "2023-09-25T16:56:24.946Z",
+        "code": "dd_target_edge",
+        "label": "Edge nodes deployment target per member state (indicative)",
+        "alt_label": "2030 target",
+        "definition": "High-level estimation on the distribution of edge nodes required per Member State to reach the 2030 European target (10.000 Edge nodes deployed across EU territory). \r\n\r\nIt offers an indicative value for member states Edge deployment ambitions."
+    }
 }
 ]

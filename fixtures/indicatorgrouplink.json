@@ -14,7 +14,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 9,
+        "display_order": 10,
         "indicator": [
             "aaaa_cov"
         ],
@@ -2930,7 +2930,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 6,
+        "display_order": 7,
         "indicator": [
             "i_iumc"
         ],
@@ -3050,7 +3050,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 7,
+        "display_order": 9,
         "indicator": [
             "i_iux"
         ],
@@ -3548,18 +3548,6 @@
         ],
         "group": [
             "discontinued"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "val_add_ict"
-        ],
-        "group": [
-            "ict-sector"
         ]
     }
 },
@@ -4808,6 +4796,1026 @@
         ],
         "group": [
             "rid"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "i_iump"
+        ],
+        "group": [
+            "internet-usage"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_hc_iu"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_hc_bds"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_hc_abds"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_hc_abss"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_hc_entict"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_hc_fbds"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_hc_ictspec"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_hc_ictg"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "desi_hc_fictspec"
+        ],
+        "group": [
+            "desi2023-ds"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_ufbbtu"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_gbpstc"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_vhcnc"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_fttpc"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_mbbtu"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_5gc"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_5g"
+        ],
+        "group": [
+            "desi2023-di"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_idt_smedi"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_idt_eis"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_idt_socmed"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_idt_bigdat"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_idt_cloud"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_idt_ai"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_idt_einv"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_idt_smeso"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "desi_idt_ecomturn"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 10,
+        "indicator": [
+            "desi_idt_sellcb"
+        ],
+        "group": [
+            "desi2023-db"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_dps_egovuser"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_dps_pscit"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_dps_psbiz"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_dps_prefform"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_us"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_mf"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_aehr"
+        ],
+        "group": [
+            "desi2023-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "dd_bds"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "dd_ictspec"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "dd_vhcnc"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "dd_fttpc"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "dd_5gc"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "dd_edge"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "dd_quantum"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "dd_cloud"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "dd_bigdata"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 10,
+        "indicator": [
+            "dd_ai"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 11,
+        "indicator": [
+            "dd_dii"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 12,
+        "indicator": [
+            "dd_unicorns"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 13,
+        "indicator": [
+            "dd_pscit"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 14,
+        "indicator": [
+            "dd_psbiz"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 15,
+        "indicator": [
+            "dd_aehr"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "i_iug_md"
+        ],
+        "group": [
+            "internet-usage"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_1a1"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_1a2"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_1a3"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_1a4"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_1a5"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_1a6"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_1b1"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_1b2"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "desi_1b3"
+        ],
+        "group": [
+            "desi2023-1"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_2a1"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_2a2"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_2a3"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_2a4"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_2b1"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_2b2"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_2b3"
+        ],
+        "group": [
+            "desi2023-2"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_3a1"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_3b1"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_3b2"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_3b3"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_3b4"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_3b5"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_3b6"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_3c1"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "desi_3c2"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 10,
+        "indicator": [
+            "desi_3c3"
+        ],
+        "group": [
+            "desi2023-3"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_4a1"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_4a2"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_4a3"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_4a4"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_4a5"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_4a6"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_4a7"
+        ],
+        "group": [
+            "desi2023-4"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_4b1"
+        ],
+        "group": [
+            "desi2023-4"
         ]
     }
 }

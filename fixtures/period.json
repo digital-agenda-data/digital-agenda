@@ -711,12 +711,168 @@
     "model": "core.period",
     "fields": {
         "created_at": "2023-09-20T11:15:51.383Z",
-        "updated_at": "2023-09-20T11:15:51.383Z",
+        "updated_at": "2023-09-29T16:37:17.325Z",
         "code": "2023",
-        "label": "2023",
+        "label": "Year: 2023",
         "alt_label": "2023",
         "definition": "",
         "date": "2023-07-02"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:24:11.069Z",
+        "updated_at": "2023-09-28T10:36:42.414Z",
+        "code": "2024",
+        "label": "Year: 2024",
+        "alt_label": "2024",
+        "definition": "",
+        "date": "2024-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:24:28.373Z",
+        "updated_at": "2023-09-28T10:36:47.562Z",
+        "code": "2025",
+        "label": "Year: 2025",
+        "alt_label": "2025",
+        "definition": "",
+        "date": "2025-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:24:36.553Z",
+        "updated_at": "2023-09-28T10:36:52.934Z",
+        "code": "2026",
+        "label": "Year: 2026",
+        "alt_label": "2026",
+        "definition": "",
+        "date": "2026-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:24:50.282Z",
+        "updated_at": "2023-09-28T10:36:57.044Z",
+        "code": "2027",
+        "label": "Year: 2027",
+        "alt_label": "2027",
+        "definition": "",
+        "date": "2027-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:24:59.647Z",
+        "updated_at": "2023-09-28T10:37:01.261Z",
+        "code": "2028",
+        "label": "Year: 2028",
+        "alt_label": "2028",
+        "definition": "",
+        "date": "2028-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:25:07.961Z",
+        "updated_at": "2023-09-28T10:37:05.191Z",
+        "code": "2029",
+        "label": "Year: 2029",
+        "alt_label": "2029",
+        "definition": "",
+        "date": "2029-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-23T14:26:23.930Z",
+        "updated_at": "2023-09-28T10:37:10.150Z",
+        "code": "2030",
+        "label": "Year: 2030",
+        "alt_label": "2030",
+        "definition": "",
+        "date": "2030-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-29T13:46:02.535Z",
+        "updated_at": "2023-09-29T13:46:02.535Z",
+        "code": "desi_2018",
+        "label": "DESI period: 2018",
+        "alt_label": "DESI period: 2018",
+        "definition": "",
+        "date": "2018-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-29T13:46:15.627Z",
+        "updated_at": "2023-09-29T13:46:15.627Z",
+        "code": "desi_2019",
+        "label": "DESI period: 2019",
+        "alt_label": "DESI period: 2019",
+        "definition": "",
+        "date": "2019-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-29T13:46:28.267Z",
+        "updated_at": "2023-09-29T13:46:28.267Z",
+        "code": "desi_2020",
+        "label": "DESI period: 2020",
+        "alt_label": "DESI period: 2020",
+        "definition": "",
+        "date": "2020-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-29T13:46:39.430Z",
+        "updated_at": "2023-09-29T13:46:39.430Z",
+        "code": "desi_2021",
+        "label": "DESI period: 2021",
+        "alt_label": "DESI period: 2021",
+        "definition": "",
+        "date": "2021-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-29T13:46:54.467Z",
+        "updated_at": "2023-09-29T13:46:54.467Z",
+        "code": "desi_2022",
+        "label": "DESI period: 2022",
+        "alt_label": "DESI period: 2022",
+        "definition": "",
+        "date": "2022-07-01"
+    }
+},
+{
+    "model": "core.period",
+    "fields": {
+        "created_at": "2023-09-29T13:47:06.641Z",
+        "updated_at": "2023-09-29T13:47:06.641Z",
+        "code": "desi_2023",
+        "label": "DESI period: 2023",
+        "alt_label": "DESI period: 2023",
+        "definition": "",
+        "date": "2023-07-01"
     }
 }
 ]

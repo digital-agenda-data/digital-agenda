@@ -1,0 +1,122 @@
+[
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 1,
+    "fields": {
+        "created_at": "2023-09-23T14:16:16.534Z",
+        "updated_at": "2023-09-23T14:32:05.345Z",
+        "color": "#0D9132",
+        "dash_style": "Dot",
+        "symbol": null,
+        "custom_symbol": "",
+        "breakdown": [
+            "dd_hist"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 2,
+    "fields": {
+        "created_at": "2023-09-23T14:16:50.708Z",
+        "updated_at": "2023-09-23T14:41:10.321Z",
+        "color": "#000000",
+        "dash_style": "ShortDash",
+        "symbol": null,
+        "custom_symbol": "",
+        "breakdown": [
+            "dd_ideal"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 3,
+    "fields": {
+        "created_at": "2023-09-23T14:17:38.363Z",
+        "updated_at": "2023-09-23T14:17:38.363Z",
+        "color": "#2472FF",
+        "dash_style": "Solid",
+        "symbol": null,
+        "custom_symbol": "",
+        "breakdown": [
+            "dd_baseline"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 4,
+    "fields": {
+        "created_at": "2023-09-23T14:18:13.455Z",
+        "updated_at": "2023-09-26T15:46:18.010Z",
+        "color": "#FFFFFF",
+        "dash_style": "Dot",
+        "symbol": null,
+        "custom_symbol": "dd_target_Ik5EW2i.webp",
+        "breakdown": [
+            "dd_target"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 5,
+    "fields": {
+        "created_at": "2023-09-23T16:06:16.838Z",
+        "updated_at": "2023-09-25T16:40:33.038Z",
+        "color": "#FFFFFF",
+        "dash_style": "Dot",
+        "symbol": null,
+        "custom_symbol": "dd_target_rjzbdSE.webp",
+        "breakdown": [
+            "dd_target_2025"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 6,
+    "fields": {
+        "created_at": "2023-09-25T16:13:48.974Z",
+        "updated_at": "2023-09-25T16:13:48.974Z",
+        "color": "#222222",
+        "dash_style": "ShortDash",
+        "symbol": null,
+        "custom_symbol": "",
+        "breakdown": [
+            "dd_edge"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 7,
+    "fields": {
+        "created_at": "2023-09-25T16:13:59.652Z",
+        "updated_at": "2023-09-25T16:13:59.652Z",
+        "color": "#222222",
+        "dash_style": "ShortDash",
+        "symbol": null,
+        "custom_symbol": "",
+        "breakdown": [
+            "dd_quantum"
+        ]
+    }
+},
+{
+    "model": "charts.breakdownchartoption",
+    "pk": 8,
+    "fields": {
+        "created_at": "2023-09-25T16:50:21.957Z",
+        "updated_at": "2023-09-25T16:50:21.957Z",
+        "color": "#FFFFFF",
+        "dash_style": "Dot",
+        "symbol": null,
+        "custom_symbol": "dd_target_HNzHzPH.webp",
+        "breakdown": [
+            "dd_target_edge"
+        ]
+    }
+}
+]

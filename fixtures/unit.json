@@ -1549,5 +1549,38 @@
         "alt_label": "Score (0 to 100)",
         "definition": "Composite score of the country, from a minimum of 0 to a maximum of 100."
     }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-09-23T15:12:27.941Z",
+        "updated_at": "2023-09-25T16:39:28.606Z",
+        "code": "nb_edge",
+        "label": "Number of deployed edge nodes",
+        "alt_label": "deployed edge nodes",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-09-23T15:12:56.481Z",
+        "updated_at": "2023-09-23T15:12:56.481Z",
+        "code": "nb_quantum",
+        "label": "Number of quantum computers",
+        "alt_label": "Number of quantum computers",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2023-09-23T15:45:32.086Z",
+        "updated_at": "2023-09-23T15:45:32.086Z",
+        "code": "nb_unicorns",
+        "label": "Number of unicorns",
+        "alt_label": "Number of unicorns",
+        "definition": ""
+    }
 }
 ]
