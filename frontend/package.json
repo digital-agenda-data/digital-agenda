@@ -50,7 +50,8 @@
     "typescript": "5.0.3"
   },
   "browserslist": [
-    "last 2 versions, not dead, > 0.1%",
-    "not op_mini all"
+    "> 0.1%, last 2 versions, Firefox ESR, not dead",
+    "not op_mini all",
+    "not ie 11"
   ]
 }
