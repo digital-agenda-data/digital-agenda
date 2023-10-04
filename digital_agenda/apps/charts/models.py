@@ -110,8 +110,13 @@ def filter_option_field(rel_model):
     return FilterOptionField()
 
 
+class ChartManger(models.Manager):
+    def get_by_natural_key(self, chart_group_code, code):
+        return self.get(chart_group__code=chart_group_code, code=code)
+
+
 class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
-    objects = NaturalCodeManger()
+    objects = ChartManger()
     # !IMPORTANT WARNING!
     #
     # When adding an entry here, a corresponding entry must be added in
@@ -223,10 +228,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         null=True,
         blank=True,
         help_text="Choose default legend layout type",
-        choices=[
-            ("horizontal", "horizontal"),
-            ("vertical", "vertical"),
-        ],
+        choices=[("horizontal", "horizontal"), ("vertical", "vertical")],
     )
 
     class Meta:
@@ -234,7 +236,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         unique_together = ("chart_group", "code")
 
     def natural_key(self):
-        return (self.code,)  # noqa
+        return (self.chart_group.code, self.code)  # noqa
 
     def __str__(self):
         return self.name
