@@ -43,6 +43,11 @@ function initComponent(el, options) {
     return;
   }
 
+  if (!window.ECL) {
+    console.warn("ECL not initialized");
+    return;
+  }
+
   if (!componentName || !window.ECL[componentName]) {
     console.warn(
       `Invalid or missing data-ecl-auto-init value: ${componentName}`,
@@ -61,6 +66,11 @@ function initComponent(el, options) {
 function destroyComponent(el) {
   // Requires attribute data-ecl-auto-init="COMPONENT"
   const componentName = el.dataset.eclAutoInit;
+
+  if (!window.ECL) {
+    console.warn("ECL not initialized");
+    return;
+  }
 
   if (!componentName || !window.ECL[componentName]) {
     console.warn(

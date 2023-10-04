@@ -61,11 +61,8 @@ export default {
     },
   },
   async mounted() {
-    try {
-      await this.loadECL();
-    } finally {
-      this.isReady = true;
-    }
+    await this.loadECL();
+    this.isReady = true;
   },
   methods: {
     /**
