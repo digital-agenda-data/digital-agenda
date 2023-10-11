@@ -34,7 +34,10 @@ class Command(BaseCommand):
         call_command("flush", "--noinput")
         call_command("load_initial_fixtures", "--exclude", "importconfig")
 
-        # Create and admin user
+        # Create users / password:
+        #  - admin@example.com / admin
+        #  - user@example.com / user
+        #  - inactive@example.com / inactive:
         call_command("loaddata", "test/users")
 
         # Import some facts
