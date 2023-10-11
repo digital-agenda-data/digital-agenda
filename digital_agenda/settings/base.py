@@ -308,6 +308,13 @@ MEDIA_ROOT = FS_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Constance
+CONSTANCE_ADDITIONAL_FIELDS = {
+    "positive_integer": [
+        "django.forms.fields.IntegerField",
+        {"min_value": 0},
+    ]
+}
+
 CONSTANCE_BACKEND = "constance.backends.database.DatabaseBackend"
 CONSTANCE_CONFIG = {
     "FEEDBACK_EMAIL": (
@@ -335,8 +342,18 @@ CONSTANCE_CONFIG = {
         "European Commission",
         "Text used in the credits sections of the chart.",
     ),
+    "USER_INACTIVE_DAYS": (
+        180,
+        (
+            "User accounts will become inactive if they do not login in the specified amount of days. "
+            "Inactive accounts will not be delete in the process and can be re-enabled at a later time if needed. "
+            "Setting this option to 0 disables inactive account expiry."
+        ),
+        "positive_integer",
+    ),
 }
 CONSTANCE_CONFIG_FIELDSETS = (
+    ("Account options", {"collapse": False, "fields": ("USER_INACTIVE_DAYS",)}),
     ("Site options", {"collapse": False, "fields": ("CHART_CREDITS",)}),
     (
         "Feedback",
