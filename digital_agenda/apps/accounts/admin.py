@@ -19,16 +19,11 @@ class UserAdmin(BaseUserAdmin):
     ordering = ("email",)
     list_display = ("email", "is_active", "is_superuser", "last_login")
     list_filter = ("is_active", "is_superuser")
-    readonly_fields = ("last_login",)
+    readonly_fields = ("last_login", "created_at", "updated_at")
     fieldsets = (
         (
             None,
-            {
-                "fields": (
-                    "email",
-                    "last_login",
-                )
-            },
+            {"fields": ("email",)},
         ),
         (
             "Permissions",
@@ -36,6 +31,16 @@ class UserAdmin(BaseUserAdmin):
                 "fields": (
                     "is_active",
                     "is_superuser",
+                )
+            },
+        ),
+        (
+            "Meta",
+            {
+                "fields": (
+                    "last_login",
+                    "created_at",
+                    "updated_at",
                 )
             },
         ),
