@@ -3,10 +3,14 @@
 from django.db import migrations, models
 
 
+def forwards_func(apps, schema_editor):
+    db_alias = schema_editor.connection.alias
+    User = apps.get_model("accounts", "User")
+    User.objects.using(db_alias).all().update(is_staff=True)
+
+
 class Migration(migrations.Migration):
-    dependencies = [
-        ("accounts", "0004_alter_user_email"),
-    ]
+    dependencies = [("accounts", "0004_alter_user_email")]
 
     operations = [
         migrations.AlterField(
@@ -25,4 +29,5 @@ class Migration(migrations.Migration):
                 help_text="Designates whether the user can log into this admin site.",
             ),
         ),
+        migrations.RunPython(forwards_func, reverse_code=migrations.RunPython.noop),
     ]
