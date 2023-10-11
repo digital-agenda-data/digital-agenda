@@ -7,7 +7,7 @@ declare global {
       /**
        * Log into the admin UI
        */
-      login(): Chainable<JQuery<HTMLElement>>;
+      login(user?: string, password?: string): Chainable<JQuery<HTMLElement>>;
       /**
        * Custom command to select an item from EclSelect component
        * @example cy.selectFilter("breakdown", "Total")
