@@ -107,19 +107,6 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "bb_hhi",
-        "label": "Herfindahl index on broadband competition",
-        "alt_label": "Herfindahl index on broadband competition",
-        "definition": "Herfindahl index calculated for seven different connection technologies: xDSL, full or shared LLU, Cable, FTTH, FTTB, Other NGA, Other. Their respective market shares are expressed in percentage of all fixed broadband subscriptions. A small index indicates a competitive industry with no dominant technological platform. The index values raises with concentration over one or few platforms.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2023-09-21T08:56:50.160Z",
         "code": "bb_lines",
         "label": "Fixed broadband subscriptions",
@@ -1264,52 +1251,52 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-18T12:54:17.394Z",
+        "updated_at": "2023-12-19T15:02:18.038Z",
         "code": "e_di3_hi",
-        "label": "DII v3: Enterprises with high digital intensity index (2021)",
-        "alt_label": "DII v3: Enterprises with high digital intensity index (2021)",
+        "label": "DII v3: Enterprises with high digital intensity index (2021, 2023)",
+        "alt_label": "DII v3: Enterprises with high digital intensity index (2021, 2023)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-18T12:54:40.660Z",
+        "updated_at": "2023-12-19T15:02:23.930Z",
         "code": "e_di3_lo",
-        "label": "DII v3: Enterprises with low digital intensity index (2021)",
-        "alt_label": "DII v3: Enterprises with low digital intensity index (2021)",
+        "label": "DII v3: Enterprises with low digital intensity index (2021, 2023)",
+        "alt_label": "DII v3: Enterprises with low digital intensity index (2021, 2023)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-18T12:54:10.163Z",
+        "updated_at": "2023-12-19T15:02:30.167Z",
         "code": "e_di3_vhi",
-        "label": "DII v3: Enterprises with very high digital intensity index (2021)",
-        "alt_label": "DII v3: Enterprises with very high digital intensity index (2021)",
+        "label": "DII v3: Enterprises with very high digital intensity index (2021, 2023)",
+        "alt_label": "DII v3: Enterprises with very high digital intensity index (2021, 2023)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-18T12:54:31.778Z",
+        "updated_at": "2023-12-19T15:02:35.658Z",
         "code": "e_di3_vlo",
-        "label": "DII v3: Enterprises with very low digital intensity index (2021)",
-        "alt_label": "DII v3: Enterprises with very low digital intensity index (2021)",
+        "label": "DII v3: Enterprises with very low digital intensity index (2021, 2023)",
+        "alt_label": "DII v3: Enterprises with very low digital intensity index (2021, 2023)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
@@ -2474,45 +2461,6 @@
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "eoa_nn_films",
-        "label": "Non-national European films in cinemas",
-        "alt_label": "Non-national European Films market share in EU cinemas",
-        "definition": null,
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "eoa_tvchannels_tarfor",
-        "label": "Linear TV channels established in a Member State and targeting foreign countries",
-        "alt_label": "Linear TV channels targeting foreign countries",
-        "definition": null,
-        "time_coverage": null,
-        "note": "page 125"
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "eoa_vod_estab_otheu",
-        "label": "Video on Demand services available in the country but established in another EU country",
-        "alt_label": "VoD services available, established in another EU country",
-        "definition": "Video on demand (VoD) services (all genre except adult) available in a Member State, but established in another EU country",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
         "code": "foa_cit",
         "label": "Basic public services for citizens, which are fully available online",
         "alt_label": "Availability of eGovernment services - citizens",
@@ -2538,214 +2486,6 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7_ict_artic",
-        "label": "Articles resulting from FP7 funded projects in ICT",
-        "alt_label": "Articles from FP7 ICT projects",
-        "definition": "Articles in journals reported through annual surveys of ongoing ICT research projects carried out by the European Commission - DG CONNECT. Outputs reported by participants have been validated in Elsevier’s Scopus databases by UNU-MERIT – Maastricht University under the service contract SMART 2011/0039 funded by the European Commission - DG CONNECT",
-        "time_coverage": null,
-        "note": "It covers FP7 ICT projects started before October 2013. The indicator is not expected to evolve regularly year by year, due to the coverage of thematic areas by calls which may differ from one year to another. Annual figures should therefore be interpreted with caution."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7_ict_pat",
-        "label": "Patents resulting from FP7 funded projects in ICT",
-        "alt_label": "Patents from FP7 ICT projects",
-        "definition": "Patents reported through annual surveys of ongoing ICT research projects carried out by the European Commission - DG CONNECT. Outputs reported by participants have been validated in EPO PATSTAT and Espacenet databases by UNU-MERIT – Maastricht University under the service contract SMART 2011/0039 funded by the European Commission - DG CONNECT",
-        "time_coverage": null,
-        "note": "It covers FP7 ICT projects started before October 2013. The indicator is not expected to evolve regularly year by year, due to the coverage of thematic areas by calls which may differ from one year to another. Annual figures should therefore be interpreted with caution."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7_ict_pub",
-        "label": "Publications resulting from FP7 funded projects in ICT",
-        "alt_label": "Publications from FP7 ICT projects",
-        "definition": "Publications reported through annual surveys of ongoing ICT research projects carried out by the European Commission - DG CONNECT. Outputs reported by participants have been validated in Elsevier’s Scopus databases by UNU-MERIT – Maastricht University under the service contract SMART 2011/0039 funded by the European Commission - DG CONNECT. \n* It includes articles in journals and trade journals, conference proceedings, books, book series",
-        "time_coverage": null,
-        "note": "It covers FP7 ICT projects started before October 2013. The indicator is not expected to evolve regularly year by year, due to the coverage of thematic areas by calls which may differ from one year to another. Annual figures should therefore be interpreted with caution."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_afxp",
-        "label": "Average EC funding per participation in FP7-ICT projects",
-        "alt_label": "FP7 Average EC funding per participation",
-        "definition": "EC funding is the funding committed by the European Commission through grant agreements signed during the reference year. The indicator measure the average EC funding attributed to each partner participation in a specific project.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_cofin",
-        "label": "FP7 EC effective cofinancing rate",
-        "alt_label": "FP7 EC cofinancing rate",
-        "definition": "The cofinancing rate is the % of projects total costs which are covered by EC funding grants. Figures include all partners and third parties (as subcontractors).",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_ec_funding",
-        "label": "EC funding to participants in FP7-ICT projects",
-        "alt_label": "EC funding to FP7-ICT projects",
-        "definition": "Value of European Commission funding committed through grant agreements signed, during the reference year, with participants in ICT research projects under the EU's Seventh Framework Programme (FP7). Projects under negotiation are not included.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_ec_funding_prc",
-        "label": "EC funding to private commercial organisations in FP7-ICT projects",
-        "alt_label": "EC funding to private commercial organisations in FP7-ICT projects",
-        "definition": "Value of European Commission funding committed through grant agreements signed, during the reference year, with private commercial organisations (SMEs and large enterprises) participating in ICT research projects under the EU's Seventh Framework Programme (FP7) - Cooperation and Capacities (e-infrastructures).",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_ec_funding_smes",
-        "label": "EC funding granted to SMEs in FP7-ICT projects",
-        "alt_label": "EC funding to SMEs in FP7-ICT projects",
-        "definition": "Value of European Commission funding committed through grant agreements signed, during the reference year, with SMEs participating in ICT research projects under the EU's Seventh Framework Programme (FP7) - Cooperation and Capacities (e-infrastructures).",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_newentry",
-        "label": "Number of distinct organisations participating in FP7-ICT projects for the first time",
-        "alt_label": "Number of NEW organisations in FP7-ICT projects",
-        "definition": "The first call of FP7 ICT was in 2007 and all participants are considered as new ones. For each of the following years are counted only the organisations participating for the first time in FP7 ICT calls.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_organisations",
-        "label": "Number of distinct organisations participating in FP7-ICT projects",
-        "alt_label": "Number of participants in FP7-ICT projects",
-        "definition": "Organisations participating in FP7 ICT calls for research projects (Cooperation and Capacities and e-infrastructures programs) during the reference year.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_particip",
-        "label": "Total number of participations in FP7-ICT projects",
-        "alt_label": "FP7 Total number of participations",
-        "definition": "Each project has multiple partners participating and each partner can participate in multiple projects. For each participation there could be an EC funding (some participations do not receive EC funding). Third parties are included as partners, receiveing or not EU funding.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_particip_prc",
-        "label": "Total number of participations  by private commercial organisations in FP7-ICT projects",
-        "alt_label": "Total number of private commercial organisations'participations in FP7-ICT projects",
-        "definition": "Total number of participations by private commercial organisations (SMEs and large enterprises)in ICT research projects under the EU's Seventh Framework Programme (FP7) - Cooperation and Capacities (e-infrastructures). Each project has multiple partners participating and each partner can participate in multiple projects.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_particip_smes",
-        "label": "Total number of participations by SMEs in FP7-ICT projects",
-        "alt_label": "Total number of SMEs' participations in FP7-ICT projects",
-        "definition": "Total number by participations of SMEs in ICT research projects under the EU's Seventh Framework Programme (FP7) - Cooperation and Capacities (e-infrastructures). Each project has multiple partners participating and each partner can participate in multiple projects.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "fp7ict_totcost",
-        "label": "Total cost of FP7-ICT projects",
-        "alt_label": "Total cost of FP7-ICT projects",
-        "definition": "Value of the total cost of the ICT research projects for which a grant agreement was signed in the reference year, under the EU's Seventh Framework Programme (FP7). Total cost of the project is the sum of participants' total costs.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "gbaord",
-        "label": "GBAORD - Government budget appropriations or outlays for research and development",
-        "alt_label": "Public R&D expediture (GBAORD)",
-        "definition": "GBAORD include all appropriations (government spending) given to R&D in central (or federal) government budgets. Provincial (or State) government posts are only included if the contribution is significant. Local government funds are excluded",
-        "time_coverage": null,
-        "note": "From 2006 onwards figures were revised and updated by PREDICT 2 project"
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "gbaord_ict",
-        "label": "Public ICT R&D spending (GBAORD in the field of ICT)",
-        "alt_label": "Public ICT R&D spending",
-        "definition": "Estimate of the ICT share in existing disaggregated GBAORD data, based on the assumption that the share of research in the ICT field in GBAORD expenditure is proportional to the share of ICT specialists in the R&D labour cost. Methodology developped and implemented by JRC-IPTS.",
-        "time_coverage": null,
-        "note": "From 2006 onwards figures were revised and updated by PREDICT 2 project"
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2023-09-21T10:25:43.554Z",
         "code": "gdp",
         "label": "GDP - Gross domestic product at market prices",
@@ -2759,111 +2499,20 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020_cofin",
-        "label": "H2020 effective cofinancing rate",
-        "alt_label": "H2020 cofinancing rate",
-        "definition": "The cofinancing rate is the % of projects total costs which are covered by EC funding grants.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020_ec_funding",
-        "label": "Total EC funding to participants in H2020 ICT projects",
-        "alt_label": "Total EC funding to H2020 ICT projects",
-        "definition": "Value of European Commission funding committed through grant agreements signed, during the reference year, with participants in ICT research projects under Horizon 2020 (LEIT ICT, Excellent Science, Societal Challenges 1, 6 and 7). Projects under negotiation are not included.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020_newentry",
-        "label": "Number of distinct organisations participating in H2020 ICT projects for the first time",
-        "alt_label": "Number of new organisations in H2020 projects",
-        "definition": "Organisations participating for the first time in H2020 ICT calls, and which have not participated in FP7 ICT calls during 2007-2013 period.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020_organisations",
-        "label": "Number of distinct organisations participating in H2020 ICT projects",
-        "alt_label": "H2020 Total number of organisations",
-        "definition": "Organisations participating in H2020 ICT projects during the reference year.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020_particip",
-        "label": "Total number of participations in H2020 ICT projects",
-        "alt_label": "H2020 Total number of participations",
-        "definition": "Each project has multiple partners participating and each partner can participate in multiple projects. For each participation there could be an EC funding (some participations do not receive EC funding).",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020_totcost",
-        "label": "Total cost of H2020 ICT projects",
-        "alt_label": "Total cost of H2020 ICT projects",
-        "definition": "Value of the total cost of the ICT research projects for which a grant agreement was signed in the reference year, under the Horizon 2020 LEIT ICT, Excellent Science, Societal Challenges 1, 6 and 7). Total cost of the project is the sum of participants' total costs.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "h2020ict_afxp",
-        "label": "Average EC funding per participation in H2020 ICT projects",
-        "alt_label": "H2020 Average EC funding per participation",
-        "definition": "EC funding is the funding committed by the European Commission through grant agreements signed during the reference year. The indicator measures the average EC funding attributed to each partner participation in a specific project.",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:00:38.266Z",
         "code": "h_bbfix",
         "label": "Households with fixed broadband connection",
         "alt_label": "Households with fixed broadband connection",
         "definition": "Household internet connection type: fixed broadband",
         "time_coverage": null,
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:00:57.999Z",
         "code": "h_broad",
         "label": "Households having a broadband connection",
         "alt_label": "Households with a broadband connection",
@@ -2889,7 +2538,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:06:32.538Z",
         "code": "h_iacc",
         "label": "Households with access to the Internet at home",
         "alt_label": "Households with access to the Internet at home",
@@ -2915,7 +2564,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-21T09:19:34.357Z",
+        "updated_at": "2023-12-19T16:09:18.913Z",
         "code": "h_xcost",
         "label": "Households that have no access to Internet at home, because the costs are too high",
         "alt_label": "Households with no access to Internet at home, because the costs are too high",
@@ -3488,61 +3137,9 @@
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_c_bab",
-        "label": "DSI 2015-2019 Individuals with at least basic digital skills in Communication domain",
-        "alt_label": "DSI 2015-2019 - Communication Domain - At least Basic  Skills",
-        "definition": "These skills refer to the ability to communicate in digital environments, share resources through online tools, link with others and collaborate through digital tools, interact with and participate in communities and networks, cross-cultural awareness. The indicator is based on four activities internet users have been able to do online during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_c_x",
-        "label": "DSI 2015-2019 Individuals with no digital skills in Communication domain",
-        "alt_label": "DSI 2015-2019 - Communication Domain - No Skills",
-        "definition": "These skills refer to the ability to communicate in digital environments, share resources through online tools, link with others and collaborate through digital tools, interact with and participate in communities and networks, cross-cultural awareness. The indicator is based on four activities internet users have been able to do online during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
         "code": "i_dsk_i_ab",
         "label": "DSI 2015-2019 Individuals with above basic level of digital skills in Information domain",
         "alt_label": "DSI 2015-2019 - Information Domain - Above Basic Skills",
-        "definition": "Information processing skills refers to the ability to identify, locate, retrieve, store, organise and analyse digital information, judging its relevance and purpose. The indicator is based on five activities internet users have been able to do online during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_i_bab",
-        "label": "DSI 2015-2019 Individuals with at least basic digital skills in Information domain",
-        "alt_label": "DSI 2015-2019 - Information Domain - At least Basic  Skills",
-        "definition": "Information processing skills refers to the ability to identify, locate, retrieve, store, organise and analyse digital information, judging its relevance and purpose. The indicator is based on five activities internet users have been able to do online during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_i_x",
-        "label": "DSI 2015-2019 Individuals with no digital skills in Information domain",
-        "alt_label": "DSI 2015-2019 - Information Domain - No Skills",
         "definition": "Information processing skills refers to the ability to identify, locate, retrieve, store, organise and analyse digital information, judging its relevance and purpose. The indicator is based on five activities internet users have been able to do online during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
         "time_coverage": null,
         "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
@@ -3579,75 +3176,10 @@
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_ps_bab",
-        "label": "DSI 2015-2019 Individuals with at least basic digital skills in Problem solving domain",
-        "alt_label": "DSI 2015-2019 - Problem Solving Domain - At least Basic  Skills",
-        "definition": "Problem solving skills refers to the ability to identify digital needs and resources, make informed decisions as to which are the most appropriate digital tools according to the purpose or need, solve conceptual problems through digital means, creatively use technologies, solve technical problems, update one's own and others' competences. The indicator is based on three basic digital problems and familiarity with four online services internet users have been able to do during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_ps_x",
-        "label": "DSI 2015-2019 Individuals with no digital skills in Problem solving domain",
-        "alt_label": "DSI 2015-2019 - Problem Solving Domain - No Skills",
-        "definition": "Problem solving skills refers to the ability to identify digital needs and resources, make informed decisions as to which are the most appropriate digital tools according to the purpose or need, solve conceptual problems through digital means, creatively use technologies, solve technical problems, update one's own and others' competences. The indicator is based on three basic digital problems and familiarity with four online services internet users have been able to do during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
         "code": "i_dsk_s_ab",
         "label": "DSI 2015-2019 Individuals with above basic level of digital skills in Software domain",
         "alt_label": "DSI 2015-2019 - Software Domain - Above Basic Skills",
         "definition": "Software skills for content manipulation refer to the ability to create and edit new content (from word processing to images and video); integrate and re-elaborate previous knowledge and content; produce creative expressions, media outputs and programming; deal with and apply intellectual property rights and licences. The indicator is based on six activities internet users have been able to do during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_s_bab",
-        "label": "DSI 2015-2019 Individuals with at least basic digital skills in Software domain",
-        "alt_label": "DSI 2015-2019 - Software Domain - At least Basic  Skills",
-        "definition": "Software skills for content manipulation refer to the ability to create and edit new content (from word processing to images and video); integrate and re-elaborate previous knowledge and content; produce creative expressions, media outputs and programming; deal with and apply intellectual property rights and licences. The indicator is based on six activities internet users have been able to do during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_s_x",
-        "label": "DSI 2015-2019 Individuals with no digital skills in Software domain",
-        "alt_label": "DSI 2015-2019 - Software Domain - No Skills",
-        "definition": "Software skills for content manipulation refer to the ability to create and edit new content (from word processing to images and video); integrate and re-elaborate previous knowledge and content; produce creative expressions, media outputs and programming; deal with and apply intellectual property rights and licences. The indicator is based on six activities internet users have been able to do during previous 3 months. The scores are basic, above basic and none. Individuals not using internet are classified without digital skills.",
-        "time_coverage": null,
-        "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_dsk_x",
-        "label": "DSI 2015-2019 Individuals with no digital skills",
-        "alt_label": "DSI 2015-2019 - No overall digital skills",
-        "definition": "Persons that have been using internet during last 3 months are attributed a score on four digital competence domains: information, communication, content-creation and problem-solving, depending the activities they have been able to do. The scores in each domain are basic, above basic and below basic. Individuals not using internet are classified without digital skills. To be classified \"basic or above basic\" on the overall indicator an individual has to have basic or above basic skills in all the four Digital Competence domains included in the index: information, communication, content-creation and problem-solving.",
         "time_coverage": null,
         "note": "Detailed results are available in the Eurostat table <a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=isoc_sk_dskl_i&lang=en\">ISOC_SK_DSKL_I</a>. Consult the <a href=\"https://ec.europa.eu/digital-agenda/en/news/new-comprehensive-digital-skills-indicator\"> methodological note</a> on DG CONNECT newsroom."
     }
@@ -3669,7 +3201,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-19T14:28:38.253Z",
+        "updated_at": "2023-12-19T16:47:17.099Z",
         "code": "i_igov12rt",
         "label": "Individuals submitting completed forms to public authorities, over the internet, last 12 months",
         "alt_label": "Citizens submitting filled forms to eGov services, last 12 months",
@@ -3695,13 +3227,13 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:30:56.407Z",
         "code": "i_ihif",
         "label": "seeking online information about health",
         "alt_label": "Seeking health information",
         "definition": "Individuals using internet in the last 3 months, seeking information about health: injury, disease, nutrition, improving health, etc.",
         "time_coverage": null,
-        "note": null
+        "note": ""
     }
 },
 {
@@ -3713,19 +3245,6 @@
         "label": "Individuals who have used internet in the last 12 months",
         "alt_label": "Internet used in the last 12 months",
         "definition": null,
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "i_isk_ge_me",
-        "label": "Individuals with medium or high internet skills (3 or more of 6 internet activities)",
-        "alt_label": "Individuals with medium or high internet skills",
-        "definition": "The indicator counts individuals having ever carried out at least 3 of the following 6 activities: using a search engine to find information, sending e-mails with attached files, posting messages to chatrooms, newsgroups or an online discussion forum, using the internet to make telephone calls, using peer-to-peer file sharing for exchanging movies or music, creating a webpage. Only those having ever used the internet were proposed the question.",
         "time_coverage": null,
         "note": null
     }
@@ -3773,7 +3292,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-21T09:28:56.307Z",
+        "updated_at": "2023-12-19T16:31:00.683Z",
         "code": "i_iueduif",
         "label": "looking online for information about education, training or course offers",
         "alt_label": "Information about education & training",
@@ -3812,7 +3331,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-19T14:30:01.994Z",
+        "updated_at": "2023-12-19T16:47:09.407Z",
         "code": "i_iugov12",
         "label": "Individuals interacting online with public authorities, last 12 months",
         "alt_label": "Citizens' use of eGovernment services, last 12 months",
@@ -3825,7 +3344,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-21T09:28:28.508Z",
+        "updated_at": "2023-12-19T16:31:04.393Z",
         "code": "i_iuif",
         "label": "looking for information about goods and services online",
         "alt_label": "Information about goods and services",
@@ -3838,20 +3357,20 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:07.924Z",
         "code": "i_iujob",
         "label": "looking online for a job or sending a job application",
         "alt_label": "Looking for a job, sending a job application",
         "definition": "Individuals have used Internet, in the last 3 months, for looking for a job or sending a job application",
         "time_coverage": null,
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:11.610Z",
         "code": "i_iumapp",
         "label": "making an appointment with a practitioner via a website",
         "alt_label": "Appointment with a practitioner via a website",
@@ -3864,50 +3383,50 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-21T09:27:20.822Z",
+        "updated_at": "2023-12-19T15:50:41.424Z",
         "code": "i_iumc",
         "label": "Individuals using a laptop/tablet to access the internet, away from home or work",
         "alt_label": "Nomadic use of laptop/tablet to access the Internet",
         "definition": "Individuals using a portable computer (laptop) to access the internet away from home or work via any wireless connection (WiFi or cellular networks), in the last 3 months. Since 2012 the question explicitly mention also tablet computer (with touch screen).",
         "time_coverage": null,
-        "note": "Break in series in 2011 and 2012 as the structure of the question has changed. Reconstructed time series using Eurostat varibales: i_iuport, i_iuport1, i_iumc"
+        "note": "Break in series in 2011 and 2012 as the structure of the question has changed. Reconstructed time series using Eurostat variables: i_iuport, i_iuport1, i_iumc"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:15.479Z",
         "code": "i_iunw",
         "label": "reading / downloading online newspapers / news magazines",
         "alt_label": "Reading online newspapers/magazines",
         "definition": "Individuals have used Internet, in the last 3 months, for reading / downloading online newspapers / news magazines",
         "time_coverage": null,
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:19.646Z",
         "code": "i_iuolc",
         "label": "doing an online course (in any subject)",
         "alt_label": "Doing an online course",
         "definition": "Individuals have used Internet, in the last 3 months, for doing an online course (of any subject)",
         "time_coverage": null,
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:23.406Z",
         "code": "i_iuph1",
         "label": "telephoning or video calls (via webcam) over the internet",
         "alt_label": "Telephoning or video calls",
-        "definition": null,
+        "definition": "",
         "time_coverage": null,
         "note": "Biennial indicator. Break in time series between 2007 and 2008 because of new wording. Reconstructed time series using Eurostat varibales: i_iuph and i_iuph1."
     }
@@ -3942,20 +3461,20 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:27.356Z",
         "code": "i_iusnet",
         "label": "participating in social networks, over the internet, last 3 months",
         "alt_label": "Participating in social networks",
         "definition": "Individuals have used Internet, in the last 3 months, for participating in social networks (creating user profile, posting messages or other contributions to facebook, twitter, etc.)",
         "time_coverage": null,
-        "note": null
+        "note": ""
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:32.014Z",
         "code": "i_iuupl",
         "label": "uploading self-created content to be shared",
         "alt_label": "Uploading self-created content",
@@ -3981,7 +3500,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2023-12-19T16:31:35.891Z",
         "code": "i_iuvote",
         "label": "taking part in on-line consultations or voting to define civic or political issues",
         "alt_label": "Taking part in on-line consultations or voting",
@@ -4293,19 +3812,6 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "mob_arpm",
-        "label": "Average Revenue per Minute in Retail Mobile Voice Communications ",
-        "alt_label": "Average Revenue per Minute in Retail Mobile Voice Communications",
-        "definition": "Total voice related retail revenues divided by total voice minutes",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2023-09-21T09:06:31.809Z",
         "code": "mob_arpu",
         "label": "Average Revenue per User (ARPU) in the Retail Mobile Market",
@@ -4326,19 +3832,6 @@
         "definition": "Market share of the market leader based on the number of active SIM cards",
         "time_coverage": null,
         "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "mob_mtr",
-        "label": "Mobile voice termination rate",
-        "alt_label": "Mobile voice termination rate",
-        "definition": "Wholesale call termination charges in mobile voice tecephony",
-        "time_coverage": null,
-        "note": null
     }
 },
 {
@@ -4475,19 +3968,6 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "tel_ftr",
-        "label": "Fixed voice termination rate",
-        "alt_label": "Fixed voice termination rate",
-        "definition": "Wholesale call termination charges of the incumbent operator in fixed voice tecephony for local calls",
-        "time_coverage": null,
-        "note": null
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
         "updated_at": "2023-09-21T09:06:52.494Z",
         "code": "tel_inv",
         "label": "Total investment in networks by the electronic communications sector",
@@ -4495,19 +3975,6 @@
         "definition": "Total investment includes both tangible and intangible investment in telecommunication networks (without license fees) by all telecom operators",
         "time_coverage": null,
         "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
-        "code": "tel_llu",
-        "label": "Local Loop Unbundling: total monthly charge",
-        "alt_label": "Local Loop Unbundling: total monthly charge",
-        "definition": "The monthly total wholesale cost for Local Loop Unbundling charged by incumbent operators, Calculated as the sum of the monthly charge and 1/36  of the conncetion fee",
-        "time_coverage": null,
-        "note": null
     }
 },
 {
@@ -4800,78 +4267,78 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.067Z",
-        "updated_at": "2023-09-18T12:51:47.900Z",
+        "updated_at": "2023-12-19T14:36:10.480Z",
         "code": "e_di4_vlo",
         "label": "DII v4: Enterprises with very low digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with very low digital intensity index (2022)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.131Z",
-        "updated_at": "2023-09-18T12:51:19.653Z",
+        "updated_at": "2023-12-19T14:36:34.567Z",
         "code": "e_di4_lo",
         "label": "DII v4: Enterprises with low digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with low digital intensity index (2022)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.143Z",
-        "updated_at": "2023-09-18T12:50:45.084Z",
+        "updated_at": "2023-12-19T14:36:41.299Z",
         "code": "e_di4_hi",
         "label": "DII v4: Enterprises with high digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with high digital intensity index (2022)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.153Z",
-        "updated_at": "2023-09-18T12:48:46.942Z",
+        "updated_at": "2023-12-19T14:36:19.495Z",
         "code": "e_di4_vhi",
         "label": "DII v4: Enterprises with very high digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with very high digital intensity index (2022)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-11T18:09:29.818Z",
-        "updated_at": "2023-09-18T12:55:02.939Z",
-        "code": "e_di3_sme_x_vlo",
-        "label": "DII v3: SMEs with at least a basic level of digital intensity (2021)",
-        "alt_label": "DII v3: SMEs with at least a basic level of digital intensity (2021)",
+        "updated_at": "2023-12-19T14:47:53.826Z",
+        "code": "e_di3_sme_gelo",
+        "label": "DII v3: SMEs with at least a basic level of digital intensity (2021, 2023)",
+        "alt_label": "DII v3: SMEs with at least a basic level of digital intensity (2021, 2023)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Basic levels are attributed to those enterprises using at least 4 of the listed digital technologies.",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-11T18:17:13.122Z",
-        "updated_at": "2023-09-18T12:52:17.682Z",
-        "code": "e_di4_sme_x_vlo",
+        "updated_at": "2023-12-19T14:39:41.503Z",
+        "code": "e_di4_sme_gelo",
         "label": "DII v4: SMEs with at least a basic level of digital intensity (2022)",
         "alt_label": "DII v4: SMEs with at least a basic level of digital intensity (2022)",
         "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Basic levels are attributed to those enterprises using at least 4 of the listed digital technologies.",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/30b83b9c-3d0c-4086-bf52-77905e19b4eb/details."
+        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
     }
 },
 {
@@ -5203,7 +4670,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T10:05:41.146Z",
-        "updated_at": "2023-09-23T10:05:41.146Z",
+        "updated_at": "2023-12-19T15:50:50.075Z",
         "code": "i_iump",
         "label": "Individuals using a mobile phone (or smart phone) to access the internet",
         "alt_label": "Individuals using a mobile phone to access the internet",
@@ -5528,12 +4995,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-10-03T16:59:31.921Z",
+        "updated_at": "2023-10-18T09:52:56.114Z",
         "code": "desi_4a1",
         "label": "e-Government users",
         "alt_label": "e-Government users",
         "definition": "Individuals who used the Internet, in the last 12 months, for interaction with public authorities on websites or on mobile applications",
-        "time_coverage": "2017-2022",
+        "time_coverage": "2022",
         "note": ""
     }
 },
@@ -5775,12 +5242,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-10-03T16:48:46.702Z",
+        "updated_at": "2023-10-18T09:43:40.384Z",
         "code": "desi_3a1",
         "label": "SMEs with at least a basic level of digital intensity",
         "alt_label": "SMEs with at least a basic level of digital intensity",
         "definition": "The digital intensity score is based on counting how many out of 12 selected technologies are used by enterprises. A basic level requires usage of at least 4 technologies.",
-        "time_coverage": "2021-2022",
+        "time_coverage": "2022",
         "note": ""
     }
 },

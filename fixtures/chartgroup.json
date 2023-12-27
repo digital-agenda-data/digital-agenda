@@ -46,11 +46,11 @@
     "model": "charts.chartgroup",
     "fields": {
         "created_at": "2022-11-16T13:07:33.482Z",
-        "updated_at": "2023-10-03T18:12:59.872Z",
+        "updated_at": "2023-10-04T13:16:38.047Z",
         "display_order": 4,
         "is_draft": false,
         "code": "key-indicators",
-        "name": "Key Indicators",
+        "name": "Key Indicators (Archived)",
         "short_name": "Key Indicators",
         "license": "<p><a href=\"https://commission.europa.eu/legal-notice_en\">https://commission.europa.eu/legal-notice_en</a></p>",
         "description": "<p>The European Commission services selected various indicators, divided into thematic groups, which illustrate some key dimensions of the European information society (telecom sector, broadband, mobile, internet usage, internet services, e-government, e-commerce, e-business, ICT skills, Research and Development). These indicators allow to compare progress across European countries, as well as over time. Multiple interactive charts also enable you to assess countries&#39; profiles.</p>",

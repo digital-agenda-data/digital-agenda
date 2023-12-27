@@ -2,10 +2,7 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart(
-      "Digital Economy and Society Index",
-      "DESI composite index"
-    );
+    cy.navigateToChart("Digital Economy and Society Index", "composite index");
     // Fiddle with one of the sliders
     cy.get("input[type=range][name=desi_hc]")
       .as("range")

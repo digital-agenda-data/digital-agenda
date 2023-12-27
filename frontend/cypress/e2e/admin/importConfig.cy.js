@@ -5,7 +5,7 @@ describe("Check import configuration", () => {
     cy.get("a").contains("Import configs").click();
     cy.get("a").contains("Add import config").click();
     // Add a new import config with filters set to only import a single Fact
-    cy.get("input[name=code]").type("isoc_bde15b_h");
+    cy.get("input[name=code]").type("isoc_ci_it_h");
     cy.get("input[name=title]").type("Test import config");
     cy.get("input[name=indicator]").type("indic_is");
     cy.get("input[name=breakdown]").type("hhtyp");
@@ -14,6 +14,14 @@ describe("Check import configuration", () => {
     cy.get("#id_filters textarea.ace_text-input").clear({ force: true });
     cy.get("#id_filters textarea.ace_text-input").type(
       '{"hhtyp": ["total"], "indic_is": ["h_broad"], "unit": ["pc_hh"], "geo": ["EU27_2020"]}',
+      {
+        force: true,
+        parseSpecialCharSequences: false,
+      }
+    );
+    cy.get("#id_mappings textarea.ace_text-input").clear({ force: true });
+    cy.get("#id_mappings textarea.ace_text-input").type(
+      '{"breakdown": {"total": "hh_total"}, "country": {"EU27_2020": "EU"}}',
       {
         force: true,
         parseSpecialCharSequences: false,

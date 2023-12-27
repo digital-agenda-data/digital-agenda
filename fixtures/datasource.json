@@ -30,19 +30,6 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "bench_gp",
-        "label": "Benchmarking deployment of eHealth among General Practitioners",
-        "alt_label": null,
-        "definition": "Studies committed by DG Connect to monitor the adoption of eHealth technologies by General Practitioners: 2007, 2013",
-        "url": "https://ec.europa.eu/digital-agenda/en/news/benchmarking-deployment-ehealth-among-general-practitioners-2013-smart-20110033",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "berec_roam",
         "label": "International Roaming BEREC Benchmark Data Report",
         "alt_label": null,
@@ -94,21 +81,8 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-12-27T14:17:30.310Z",
         "code": "cocom",
-        "label": "Communications Committee survey",
-        "alt_label": null,
-        "definition": "Electronic communications market indicators collected by Commission services, through National Regulatory Authorities, for the Communications Committee (COCOM) - January and July reports.",
-        "url": "http://ec.europa.eu/digital-agenda/about-fast-and-ultra-fast-internet-access",
-        "note": "extraction 22 May 2013"
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2023-09-21T09:05:46.789Z",
-        "code": "cocom_new",
         "label": "Communications Committee survey",
         "alt_label": "",
         "definition": "European Commission services, through the Communications Committee (COCOM)",
@@ -134,36 +108,10 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_4g",
-        "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "alt_label": null,
-        "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "desi_5g",
         "label": "European Commission services, through the Communications Committee (COCOM)",
         "alt_label": null,
         "definition": "European Commission services, through the Communications Committee (COCOM)",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_5gc",
-        "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "alt_label": null,
-        "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
         "url": "",
         "note": ""
     }
@@ -190,19 +138,6 @@
         "label": "European Data Portal",
         "alt_label": null,
         "definition": "European Data Portal",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_fbbc",
-        "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "alt_label": null,
-        "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
         "url": "",
         "note": ""
     }
@@ -432,19 +367,6 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "desi_vhcnc",
-        "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "alt_label": null,
-        "definition": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2023-09-28T10:11:53.848Z",
         "code": "e_gov_bench",
         "label": "eGovernment Benchmarking Reports (2012-2022)",
@@ -529,58 +451,6 @@
         "alt_label": null,
         "definition": "e-infrastructure project PRACE",
         "url": "http://www.prace-ri.eu",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "eoa_smart12-26",
-        "label": "European Audiovisual Observatory - study \"On demand audiovisual markets in the EU\"",
-        "alt_label": null,
-        "definition": "European Audiovisual Observatory - study \"On demand audiovisual markets in the EU\", of April 2014 (smart 2012-0026)",
-        "url": "https://ec.europa.eu/digital-agenda/en/news/demand-audiovisual-markets-european-union-smart-20120028",
-        "note": "page 20 table 4"
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "eoa_yearbook2014",
-        "label": "European Audiovisual Observatory Yearbook 2014",
-        "alt_label": null,
-        "definition": "European Audiovisual Observatory Yearbook 2014",
-        "url": "http://www.obs.coe.int/eservices/premiumservice",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "epsi",
-        "label": "The PSI Scoreboard",
-        "alt_label": null,
-        "definition": "The PSI Scoreboard is a ‘crowdsourced’ tool to measure the status of Open Data and PSI re-use throughout the EU.",
-        "url": "http://www.epsiplatform.eu/content/european-psi-scoreboard",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "epsiplatform",
-        "label": "The PSI Scoreboard",
-        "alt_label": null,
-        "definition": "The PSI Scoreboard is a ‘crowdsourced’ tool to measure the status of Open Data and PSI re-use throughout the EU. It does NOT monitor government policies, but aims to assess the overall PSI re-use situation, which includes the open data community's activities.",
-        "url": "http://www.epsiplatform.eu/content/european-psi-scoreboard",
         "note": ""
     }
 },
@@ -731,10 +601,10 @@
     "model": "core.datasource",
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
+        "updated_at": "2023-12-19T16:32:37.751Z",
         "code": "estat_isoc_bde15cua",
-        "label": "Eurostat, Table isoc_bde15cua: Internet use and activities",
-        "alt_label": null,
+        "label": "Eurostat, Table isoc_bde15cua: Internet use and activities [discontinued]",
+        "alt_label": "",
         "definition": "Eurostat, Table isoc_bde15cua: Internet use and activities",
         "url": "http://ec.europa.eu/eurostat/web/products-datasets/-/isoc_bde15cua",
         "note": ""
@@ -1187,19 +1057,6 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "estathh_cocom",
-        "label": "European Commission based on Eurostat - ICT Household survey and Communications Committee survey",
-        "alt_label": null,
-        "definition": "European Commission based on Eurostat - Community survey on ICT usage in Households and by Individuals, and Electronic communications market indicators collected by Commission services, through National Regulatory Authorities, for the Communications Committee (COCOM) - January and July reports.",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "eun12",
         "label": "ESSIE Survey about ICT in Education - SMART 2010/0039",
         "alt_label": null,
@@ -1343,19 +1200,6 @@
     "fields": {
         "created_at": "2022-05-27T14:12:30.115Z",
         "updated_at": "2022-05-27T14:12:30.115Z",
-        "code": "nif_database",
-        "label": "NIF_database",
-        "alt_label": null,
-        "definition": "NIF_database",
-        "url": "",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2022-05-27T14:12:30.115Z",
-        "updated_at": "2022-05-27T14:12:30.115Z",
         "code": "point_topic",
         "label": "Point Topic Study on broadband coverage",
         "alt_label": null,
@@ -1387,19 +1231,6 @@
         "alt_label": null,
         "definition": "Analysis conducted by DG CONNECT Unit F4, based on results of the study SMART 2011/0039 which main results are published in: Jacob, J., Sanditov, B., Smirnov, E., Wintjes, R., Surpatean, A., Notten, A., & Sasso, S. (Forthcoming). Analysis of publications and patents of ICT research in FP7. Brussels, European Commission. ",
         "url": "http://ec.europa.eu/digital-agenda/en/digital-agenda-you/our-studies-and-open-datasets",
-        "note": ""
-    }
-},
-{
-    "model": "core.datasource",
-    "fields": {
-        "created_at": "2023-03-28T09:40:06.509Z",
-        "updated_at": "2023-03-28T09:40:23.507Z",
-        "code": "desi_fttpc",
-        "label": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic",
-        "alt_label": "",
-        "definition": "",
-        "url": null,
         "note": ""
     }
 },
@@ -1946,6 +1777,71 @@
         "alt_label": null,
         "definition": null,
         "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_dev_i",
+        "note": null
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-10-18T09:52:41.182Z",
+        "updated_at": "2023-10-18T09:52:41.182Z",
+        "code": "desi_dps_egovuser",
+        "label": "Eurostat – European Union survey on the use of ICT in households and by individuals (ISOC_CIEGI_AC [I_IGOVANYS])",
+        "alt_label": "",
+        "definition": "Eurostat – European Union survey on the use of ICT in households and by individuals (ISOC_CIEGI_AC [I_IGOVANYS])",
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ciegi_ac",
+        "note": ""
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-12-19T16:00:25.060Z",
+        "updated_at": "2023-12-19T16:00:25.060Z",
+        "code": "estat_isoc_ci_it_h",
+        "label": "Eurostat, table isoc_ci_it_h: Households - type of connection to the internet",
+        "alt_label": null,
+        "definition": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_it_h",
+        "note": null
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-12-19T16:06:17.037Z",
+        "updated_at": "2023-12-19T16:06:17.037Z",
+        "code": "estat_isoc_ci_in_h",
+        "label": "Eurostat, table isoc_ci_in_h: Households -  level of internet access",
+        "alt_label": null,
+        "definition": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ci_in_h",
+        "note": null
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-12-19T16:08:58.437Z",
+        "updated_at": "2023-12-19T16:08:58.437Z",
+        "code": "estat_isoc_pibi_rni",
+        "label": "Eurostat, table isoc_pibi_rni: Households - reasons for not having internet access at home",
+        "alt_label": null,
+        "definition": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_pibi_rni",
+        "note": null
+    }
+},
+{
+    "model": "core.datasource",
+    "fields": {
+        "created_at": "2023-12-19T16:39:02.366Z",
+        "updated_at": "2023-12-19T16:39:02.366Z",
+        "code": "estat_isoc_ciegi_ac",
+        "label": "Eurostat, table isoc_ciegi_ac: E-government activities of individuals via websites",
+        "alt_label": null,
+        "definition": null,
+        "url": "https://ec.europa.eu/eurostat/web/products-datasets/-/isoc_ciegi_ac",
         "note": null
     }
 }
