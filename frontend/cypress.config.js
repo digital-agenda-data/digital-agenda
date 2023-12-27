@@ -13,6 +13,9 @@ module.exports = defineConfig({
   env: {
     backendHost,
     frontendHost,
+    grepFilterSpecs: true,
+    grepOmitFiltered: true,
+    grepIntegrationFolder: ".",
   },
   e2e: {
     baseUrl: `http://${frontendHost}`,
@@ -52,6 +55,8 @@ module.exports = defineConfig({
           return readdirSync(config.downloadsFolder);
         },
       });
+      require("@cypress/grep/src/plugin")(config);
+      return config;
     },
   },
 });
