@@ -61,6 +61,9 @@
       "EU27_2020"
     ],
     "filters": {
+      "unit": [
+        "pc_hh"
+      ],
       "hhtyp": [
         "ALL_NDCH",
         "ALL_DCH"
