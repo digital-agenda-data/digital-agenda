@@ -130,9 +130,6 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
@@ -151,16 +148,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -220,9 +208,6 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
@@ -241,16 +226,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -310,9 +286,6 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
@@ -331,16 +304,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -400,9 +364,6 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
@@ -421,16 +382,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -1098,19 +1050,10 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
                 "EU"
-            ],
-            [
-                "EU27"
-            ],
-            [
-                "EU28"
             ],
             [
                 "IL"
@@ -1128,16 +1071,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -1291,19 +1225,10 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
                 "EU"
-            ],
-            [
-                "EU27"
-            ],
-            [
-                "EU28"
             ],
             [
                 "IL"
@@ -1321,16 +1246,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -1390,9 +1306,6 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
@@ -1411,16 +1324,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -1438,13 +1342,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:06:37.089Z",
-        "updated_at": "2023-09-15T10:38:43.090Z",
+        "updated_at": "2023-12-27T10:15:03.301Z",
         "display_order": 2,
         "is_draft": false,
         "chart_group": [
             "desi-2022"
         ],
-        "name": "DESI by components",
+        "name": "DESI 2022 by components",
         "code": "desi-components",
         "chart_type": "COLUMN_STACKED_COMPARE_BREAKDOWNS",
         "description": "<p>Combine DESI index components with their corresponding breakdown by sub-components to explore the contribution of each indicator or group of indicators to the final ranking.</p>",
@@ -1491,13 +1395,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:07:23.052Z",
-        "updated_at": "2023-09-19T14:35:42.663Z",
+        "updated_at": "2023-12-27T10:15:09.316Z",
         "display_order": 3,
         "is_draft": false,
         "chart_group": [
             "desi-2022"
         ],
-        "name": "DESI - Compare the evolution of DESI components",
+        "name": "DESI 2022 - Compare the evolution of DESI components",
         "code": "desi-compare-evolution-desi-components",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. sub-dimensions of Connectivity). You can select only one country at a time.</p>",
@@ -1540,13 +1444,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:08:16.611Z",
-        "updated_at": "2023-09-15T10:52:35.620Z",
+        "updated_at": "2023-12-27T10:15:16.350Z",
         "display_order": 4,
         "is_draft": false,
         "chart_group": [
             "desi-2022"
         ],
-        "name": "DESI - Compare countries progress",
+        "name": "DESI 2022 - Compare countries progress",
         "code": "desi-compare-countries-progress",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
         "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for one DESI dimension or sub-dimension, selecting a group of countries and comparing with the European average trend.</p>",
@@ -1585,13 +1489,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T10:08:45.816Z",
-        "updated_at": "2023-09-15T10:53:06.381Z",
+        "updated_at": "2023-12-27T10:15:26.387Z",
         "display_order": 5,
         "is_draft": false,
         "chart_group": [
             "desi-2022"
         ],
-        "name": "DESI - Compare two indicators",
+        "name": "DESI 2022 - Compare two indicators",
         "code": "desi-compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
         "description": "<p>Scatter-plot is a kind of chart that compares two indicators, represented on the horizontal (x) and vertical (y) axis. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows clustering countries according to their similarities along the two selected indicators. It illustrate also how much they are correlated. You can zoom inside the chart.</p>",
@@ -1899,19 +1803,10 @@
                 "BA"
             ],
             [
-                "BIH"
-            ],
-            [
                 "CH"
             ],
             [
                 "EU"
-            ],
-            [
-                "EU27"
-            ],
-            [
-                "EU28"
             ],
             [
                 "IL"
@@ -1929,16 +1824,7 @@
                 "MK"
             ],
             [
-                "OTHER"
-            ],
-            [
                 "RS"
-            ],
-            [
-                "SL"
-            ],
-            [
-                "SP"
             ],
             [
                 "TR"
@@ -1956,13 +1842,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:49:06.975Z",
-        "updated_at": "2023-09-15T10:41:43.860Z",
+        "updated_at": "2023-12-27T10:14:56.657Z",
         "display_order": 1,
         "is_draft": false,
         "chart_group": [
             "desi-2022"
         ],
-        "name": "DESI composite index",
+        "name": "DESI 2022 composite index",
         "code": "desi-composite",
         "chart_type": "COLUMN_STACKED_COMPARE_BREAKDOWNS_WEIGHTED",
         "description": "<p>This chart shows the structure of the composite index based on a weighted sum of its five components. The chart allows users to change the weighting of the components and see how countries&#39; ranking is modified.</p>",
@@ -3001,7 +2887,7 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T13:11:16.022Z",
-        "updated_at": "2023-09-27T07:04:25.752Z",
+        "updated_at": "2023-12-07T15:24:29.240Z",
         "display_order": 30,
         "is_draft": false,
         "chart_group": [
@@ -3017,7 +2903,7 @@
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
-        "breakdown_filter_hidden": true,
+        "breakdown_filter_hidden": false,
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
@@ -3042,13 +2928,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T13:17:07.224Z",
-        "updated_at": "2023-09-23T13:17:07.224Z",
+        "updated_at": "2023-12-27T10:15:45.597Z",
         "display_order": 31,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
-        "name": "Compare countries progress",
+        "name": "DESI 2023 - Compare countries progress",
         "code": "compare-countries-progress",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
         "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for DESI indicators, selecting a group of countries and comparing with the European average trend.</p>",
@@ -3083,13 +2969,13 @@
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T13:21:23.600Z",
-        "updated_at": "2023-09-23T13:36:50.242Z",
+        "updated_at": "2023-12-27T10:15:53.908Z",
         "display_order": 32,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
-        "name": "Compare two indicators",
+        "name": "DESI 2023 - Compare two indicators",
         "code": "compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
         "description": "<p>Compare two indicators using a scatter-plot chart. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows clustering countries according to their similarities along the two selected indicators and illustrates how much they are correlated. You can also zoom inside the chart.</p>",
@@ -3099,7 +2985,7 @@
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
-        "breakdown_filter_hidden": true,
+        "breakdown_filter_hidden": false,
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,

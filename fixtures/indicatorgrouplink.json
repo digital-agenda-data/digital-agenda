@@ -98,18 +98,6 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 100000,
-        "indicator": [
-            "bb_hhi"
-        ],
-        "group": [
-            "broadband"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 16,
         "indicator": [
             "bb_lines"
@@ -1646,42 +1634,6 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 3,
-        "indicator": [
-            "eoa_nn_films"
-        ],
-        "group": [
-            "audiovisual"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "eoa_tvchannels_tarfor"
-        ],
-        "group": [
-            "audiovisual"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "eoa_vod_estab_otheu"
-        ],
-        "group": [
-            "audiovisual"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 14,
         "indicator": [
             "foa_cit"
@@ -1706,288 +1658,12 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 32,
-        "indicator": [
-            "fp7_ict_artic"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 30,
-        "indicator": [
-            "fp7_ict_pat"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 31,
-        "indicator": [
-            "fp7_ict_pub"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 17,
-        "indicator": [
-            "fp7ict_afxp"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 15,
-        "indicator": [
-            "fp7ict_cofin"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 13,
-        "indicator": [
-            "fp7ict_ec_funding"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 41,
-        "indicator": [
-            "fp7ict_ec_funding_prc"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 42,
-        "indicator": [
-            "fp7ict_ec_funding_smes"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 18,
-        "indicator": [
-            "fp7ict_newentry"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 19,
-        "indicator": [
-            "fp7ict_organisations"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 16,
-        "indicator": [
-            "fp7ict_particip"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 43,
-        "indicator": [
-            "fp7ict_particip_prc"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 44,
-        "indicator": [
-            "fp7ict_particip_smes"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 14,
-        "indicator": [
-            "fp7ict_totcost"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "gbaord"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "gbaord_ict"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 4,
         "indicator": [
             "gdp"
         ],
         "group": [
             "back"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "h2020_cofin"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "h2020_ec_funding"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 9,
-        "indicator": [
-            "h2020_newentry"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 8,
-        "indicator": [
-            "h2020_organisations"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "h2020_particip"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "h2020_totcost"
-        ],
-        "group": [
-            "research-and-development"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 7,
-        "indicator": [
-            "h2020ict_afxp"
-        ],
-        "group": [
-            "research-and-development"
         ]
     }
 },
@@ -2582,57 +2258,9 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 1115,
-        "indicator": [
-            "i_dsk_c_bab"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1116,
-        "indicator": [
-            "i_dsk_c_x"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 1117,
         "indicator": [
             "i_dsk_i_ab"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1118,
-        "indicator": [
-            "i_dsk_i_bab"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1119,
-        "indicator": [
-            "i_dsk_i_x"
         ],
         "group": [
             "ict-skills"
@@ -2666,69 +2294,9 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 1122,
-        "indicator": [
-            "i_dsk_ps_bab"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1123,
-        "indicator": [
-            "i_dsk_ps_x"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 1124,
         "indicator": [
             "i_dsk_s_ab"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1125,
-        "indicator": [
-            "i_dsk_s_bab"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1126,
-        "indicator": [
-            "i_dsk_s_x"
-        ],
-        "group": [
-            "ict-skills"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1113,
-        "indicator": [
-            "i_dsk_x"
         ],
         "group": [
             "ict-skills"
@@ -2792,18 +2360,6 @@
         ],
         "group": [
             "internet-usage"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 8,
-        "indicator": [
-            "i_isk_ge_me"
-        ],
-        "group": [
-            "discontinued"
         ]
     }
 },
@@ -3326,18 +2882,6 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 13,
-        "indicator": [
-            "mob_arpm"
-        ],
-        "group": [
-            "discontinued"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 15,
         "indicator": [
             "mob_arpu"
@@ -3353,18 +2897,6 @@
         "display_order": 14,
         "indicator": [
             "mob_ms"
-        ],
-        "group": [
-            "mobile"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 18,
-        "indicator": [
-            "mob_mtr"
         ],
         "group": [
             "mobile"
@@ -3482,33 +3014,9 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 3,
-        "indicator": [
-            "tel_ftr"
-        ],
-        "group": [
-            "telecom"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
         "display_order": 2,
         "indicator": [
             "tel_inv"
-        ],
-        "group": [
-            "telecom"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "tel_llu"
         ],
         "group": [
             "telecom"
@@ -3820,7 +3328,7 @@
     "fields": {
         "display_order": 34,
         "indicator": [
-            "e_di3_sme_x_vlo"
+            "e_di3_sme_gelo"
         ],
         "group": [
             "ebusiness"
@@ -3832,7 +3340,7 @@
     "fields": {
         "display_order": 29,
         "indicator": [
-            "e_di4_sme_x_vlo"
+            "e_di4_sme_gelo"
         ],
         "group": [
             "ebusiness"
