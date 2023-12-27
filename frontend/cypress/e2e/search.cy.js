@@ -5,7 +5,7 @@ describeResponsive("Check Search Page", () => {
     cy.searchIndicators("Social Media");
     cy.get(".ecl-table tbody tr").should("have.length", 3);
     cy.get("[data-ecl-table-header=Indicator] a").eq(0).click();
-    cy.get("h1").contains("DESI by components").go("back");
+    cy.get("h1").contains("DESI 2022 by components").go("back");
     cy.get("[data-ecl-table-header=Dataset] a").eq(0).click();
     cy.get("h1").contains("Digital Economy and Society Index");
   });

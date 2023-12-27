@@ -43,7 +43,7 @@
 {
   "model": "estat.importconfig",
   "fields": {
-    "code": "isoc_bde15b_h",
+    "code": "isoc_ci_it_h",
     "title": null,
     "indicator": "indic_is",
     "indicator_is_surrogate": false,
@@ -75,7 +75,9 @@
       "country": {
         "EU27_2020": "EU"
       },
-      "breakdown": {},
+      "breakdown": {
+        "TOTAL": "HH_TOTAL"
+      },
       "indicator": {}
     }
   }
