@@ -12,11 +12,11 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@ecl/preset-ec": "3.10.0",
-    "@ecl/preset-reset": "3.10.0",
+    "@ecl/preset-ec": "3.13.0",
+    "@ecl/preset-reset": "3.13.0",
     "@sentry/vue": "7.100.1",
-    "@vueuse/core": "10.7.2",
-    "@vueuse/router": "10.7.2",
+    "@vueuse/core": "10.1.2",
+    "@vueuse/router": "10.1.2",
     "axios": "1.6.7",
     "highcharts": "11.3.0",
     "highcharts-vue": "1.4.3",
