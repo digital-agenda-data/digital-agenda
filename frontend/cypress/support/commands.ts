@@ -13,7 +13,7 @@ Cypress.Commands.addAll(
         .then((url) => cy.request(url))
         .its("body");
     },
-  }
+  },
 );
 
 Cypress.Commands.addAll({
@@ -58,7 +58,7 @@ Cypress.Commands.addAll({
           encoding: null,
         }).then((response) => {
           const detectedTypes = filetypeinfo(new Uint8Array(response.body)).map(
-            (info) => info.typename
+            (info) => info.typename,
           );
 
           expect(expectedType).to.be.oneOf(detectedTypes);
@@ -71,20 +71,20 @@ Cypress.Commands.addAll({
         .task("downloads")
         .then(
           (files: Array<string>) =>
-            files.filter((fn) => fn.match(pattern)).length === 1
-        )
+            files.filter((fn) => fn.match(pattern)).length === 1,
+        ),
     )
       .task("downloads")
       .then((files: Array<string>) => {
         const downloadsFolder = Cypress.config("downloadsFolder");
         const fullPath = path.join(
           downloadsFolder,
-          files.find((fn) => fn.match(pattern))
+          files.find((fn) => fn.match(pattern)),
         );
 
         cy.readFile(fullPath, null).then((buffer) => {
           const detectedTypes = filetypeinfo(buffer).map(
-            (info) => info.typename
+            (info) => info.typename,
           );
 
           expect(expectedType).to.be.oneOf(detectedTypes);

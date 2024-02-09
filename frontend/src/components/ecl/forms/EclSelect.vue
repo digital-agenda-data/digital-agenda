@@ -169,7 +169,7 @@ export default {
         } else {
           this.$emit(
             "update:modelValue",
-            value.map((item) => item.id)
+            value.map((item) => item.id),
           );
         }
       },

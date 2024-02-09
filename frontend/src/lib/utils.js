@@ -99,7 +99,7 @@ export function toAPIKey(key) {
  */
 export function colorForCountry(country, seriesIndex = 0) {
   let color = new Highcharts.Color(
-    SERIES_COLORS[seriesIndex % SERIES_COLORS.length]
+    SERIES_COLORS[seriesIndex % SERIES_COLORS.length],
   );
 
   // Highlight any "group" countries like: EU/EU27/EU28 by
@@ -199,7 +199,7 @@ export function range(start, stop, step = 1) {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#sequence_generator_range
   return Array.from(
     { length: (stop - start) / step },
-    (_, i) => start + i * step
+    (_, i) => start + i * step,
   );
 }
 

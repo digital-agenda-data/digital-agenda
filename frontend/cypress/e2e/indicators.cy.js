@@ -51,7 +51,7 @@ describeResponsive("Check Indicators Page", () => {
     cy.get("thead th").contains("Broadband take-up and coverage");
     cy.get("tbody td").contains("Notation: h_broad");
     cy.get("tbody td").contains(
-      "Notes: Scope includes Households with at least one member aged 16-74."
+      "Notes: Scope includes Households with at least one member aged 16-74.",
     );
     cy.get("tbody td").contains("Time coverage: 2012-2013");
   });

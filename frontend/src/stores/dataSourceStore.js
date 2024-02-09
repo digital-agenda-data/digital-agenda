@@ -8,7 +8,7 @@ export const useDataSourceStore = defineStore("dataSource", {
     return {
       ...useAsyncState(
         api.get("/data-sources/").then((r) => r.data),
-        []
+        [],
       ),
     };
   },

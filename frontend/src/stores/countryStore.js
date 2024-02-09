@@ -8,7 +8,7 @@ export const useCountryStore = defineStore("country", {
     return {
       ...useAsyncState(
         api.get("/countries/").then((r) => r.data),
-        []
+        [],
       ),
     };
   },

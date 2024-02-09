@@ -17,7 +17,7 @@ export default {
     },
     ignoredGroupCodes() {
       return new Set(
-        this.currentFilterOptions.ignored[this.queryName + "Group"]
+        this.currentFilterOptions.ignored[this.queryName + "Group"],
       );
     },
     apiDataByCode() {

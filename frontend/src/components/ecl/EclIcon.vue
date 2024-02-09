@@ -69,7 +69,7 @@ export default {
       default: "m",
       validator(value) {
         return ["2xs", "xs", "s", "m", "l", "xl", "2xl", "fluid"].includes(
-          value
+          value,
         );
       },
     },

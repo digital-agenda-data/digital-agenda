@@ -255,7 +255,7 @@ export default {
     async loadIndicators() {
       this.indicators = (
         await api.get(
-          `/chart-groups/${this.currentChartGroup.code}/indicators/`
+          `/chart-groups/${this.currentChartGroup.code}/indicators/`,
         )
       ).data;
     },

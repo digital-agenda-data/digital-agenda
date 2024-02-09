@@ -167,7 +167,7 @@ export default {
     },
     apiData() {
       return this.apiDataRaw.filter(
-        (apiItem) => !this.ignoredCodes.has(apiItem.code)
+        (apiItem) => !this.ignoredCodes.has(apiItem.code),
       );
     },
     items() {
@@ -235,7 +235,7 @@ export default {
     },
     defaultBackendSingleValue() {
       return this.currentFilterOptions.defaults[this.queryName]?.find((code) =>
-        this.allowedValues.has(code)
+        this.allowedValues.has(code),
       );
     },
     defaultSingleValue() {
@@ -245,7 +245,7 @@ export default {
     },
     defaultBackendMultiValue() {
       return (this.currentFilterOptions.defaults[this.queryName] ?? []).filter(
-        (code) => this.allowedValues.has(code)
+        (code) => this.allowedValues.has(code),
       );
     },
     defaultMultiValue() {

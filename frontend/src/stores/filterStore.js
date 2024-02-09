@@ -47,7 +47,7 @@ export const useFilterStore = defineStore("filter", {
     ...makeGetters(),
     totalLoadingCounter(state) {
       return FILTER_SUFFIXES.map(
-        (suffix) => state[suffix].loadingCounter
+        (suffix) => state[suffix].loadingCounter,
       ).reduce((a, b) => a + b, 0);
     },
     allFiltersLoaded() {

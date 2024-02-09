@@ -51,7 +51,7 @@ function initComponent(el, options) {
   if (!componentName || !window.ECL[componentName]) {
     console.warn(
       `Invalid or missing data-ecl-auto-init value: ${componentName}`,
-      el
+      el,
     );
     return;
   }
@@ -75,7 +75,7 @@ function destroyComponent(el) {
   if (!componentName || !window.ECL[componentName]) {
     console.warn(
       `Invalid or missing data-ecl-auto-init value: ${componentName}`,
-      el
+      el,
     );
     return;
   }

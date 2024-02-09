@@ -4,7 +4,7 @@ describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
     cy.navigateToChart(
       "Key Indicators",
-      "Analyse one indicator and compare countries"
+      "Analyse one indicator and compare countries",
     );
     cy.checkChart({
       filters: {

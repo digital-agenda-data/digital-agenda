@@ -51,7 +51,7 @@ export default {
       default: "primary",
       validator(value) {
         return ["primary", "secondary", "call", "ghost", "search"].includes(
-          value
+          value,
         );
       },
     },
@@ -81,7 +81,7 @@ export default {
       default: "xs",
       validator(value) {
         return ["2xs", "xs", "s", "m", "l", "xl", "2xl", "fluid"].includes(
-          value
+          value,
         );
       },
     },

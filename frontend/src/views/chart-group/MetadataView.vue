@@ -161,7 +161,7 @@ export default {
     datasetLink() {
       return new URL(
         this.$router.resolve(this.datasetRoute).fullPath,
-        window.location
+        window.location,
       ).href;
     },
     exportLink() {

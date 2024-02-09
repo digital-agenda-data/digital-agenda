@@ -4,7 +4,7 @@ describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
     cy.navigateToChart(
       "Key Indicators",
-      "Compare two indicators, using country bubbles sized on a third one"
+      "Compare two indicators, using country bubbles sized on a third one",
     );
     cy.checkChart({
       filters: {
