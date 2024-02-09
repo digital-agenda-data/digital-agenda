@@ -6,10 +6,10 @@ This document describes installation steps required to install locally for devel
 
 ## Preparing environment
 
-- Install nodejs (>=18)
-- Install python and python-dev (>=3.11)
+- Install nodejs (>=20)
+- Install python and python-dev (>=3.12)
 - Install and start postgresql (>=14)
-- Install and start redis (>=6)
+- Install and start redis (>=7)
 - Install required packages for building dependencies:
   ```
   gettext build-essential gcc libmagic1
