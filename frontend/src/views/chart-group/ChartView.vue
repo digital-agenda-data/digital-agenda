@@ -29,16 +29,25 @@
 </template>
 
 <script>
-import InteractiveChart from "@/components/charts/InteractiveChart.vue";
 import { mapState } from "pinia";
 import { useChartStore } from "@/stores/chartStore";
 import ChartActions from "@/components/charts/ChartActions.vue";
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import CardNav from "@/components/CardNav.vue";
+import SimpleSpinner from "@/components/SimpleSpinner.vue";
+import { defineAsyncComponent } from "vue";
 
 export default {
   name: "ChartView",
-  components: { InteractiveChart, CardNav, ChartDefinitions, ChartActions },
+  components: {
+    CardNav,
+    ChartDefinitions,
+    ChartActions,
+    InteractiveChart: defineAsyncComponent({
+      loader: () => import("@/components/charts/InteractiveChart.vue"),
+      loadingComponent: SimpleSpinner,
+    }),
+  },
   computed: {
     ...mapState(useChartStore, ["currentChart", "chartNavForCurrentGroup"]),
     chartRef() {
