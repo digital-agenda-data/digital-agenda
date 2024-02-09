@@ -26,7 +26,6 @@ class BaseDimensionManager(models.Manager):
 
 
 class BaseDimensionModel(TimestampedModel):
-
     """
     Base model for dimension-like models, with a unique code and label/short label fields.
     """
@@ -64,7 +63,6 @@ class DataSource(BaseDimensionModel):
 
 
 class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
-
     """
     Model for groups of indicators. Groups are not referenced directly by facts,
     and function as a hierarchical dimension table.

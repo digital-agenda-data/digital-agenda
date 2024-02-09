@@ -2,6 +2,7 @@
 
 Full specifications here: https://json-stat.org/format/
 """
+
 import itertools
 import functools
 import collections
