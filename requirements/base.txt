@@ -7,7 +7,7 @@ django-cas-ng
 django-ckeditor
 django-colorfield
 django-composite-field
-django-constance[database]
+django-constance
 django-cors-headers
 django-environ
 django-extensions
