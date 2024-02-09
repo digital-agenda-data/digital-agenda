@@ -22,68 +22,61 @@ class ExistingFactFilterSet(filters.FilterSet):
         field_name="unit__code",
         label="unit.code",
         help_text="Filter results by unit code",
-        method="filter_existing_fact",
     )
     period = filters.CharFilter(
         field_name="period__code",
         label="period.code",
         help_text="Filter results by period code",
-        method="filter_existing_fact",
     )
     country = filters.CharFilter(
         field_name="country__code",
         label="country.code",
         help_text="Filter results by country code",
-        method="filter_existing_fact",
     )
     indicator = filters.CharFilter(
         field_name="indicator__code",
         label="indicator.code",
         help_text="Filter results by indicator code",
-        method="filter_existing_fact",
     )
     breakdown = filters.CharFilter(
         field_name="breakdown__code",
         label="breakdown.code",
         help_text="Filter results by breakdown code",
-        method="filter_existing_fact",
     )
     data_source = filters.CharFilter(
         field_name="indicator__data_sources__code",
         label="data_source.code",
         help_text="Filter results by data_source code",
-        method="filter_existing_fact",
     )
     indicator_group = filters.CharFilter(
         field_name="indicator__groups__code",
         label="indicator_group.code",
         help_text="Filter results by indicator_group code",
-        method="filter_existing_fact",
     )
     breakdown_group = filters.CharFilter(
         field_name="breakdown__groups__code",
         label="breakdown_group.code",
         help_text="Filter results by breakdown_group code",
-        method="filter_existing_fact",
     )
     chart_group = filters.CharFilter(
         field_name="indicator__groups__chartgroup__code",
         label="chart_group.code",
         help_text="Filter results by chart_group code",
-        method="filter_existing_fact",
     )
 
     def get_rel_name(self, queryset):
         return self.fact_rel_name or queryset.model.facts.field.name
 
-    def filter_existing_fact(self, queryset, name, value):
-        rel_name = self.get_rel_name(queryset)
+    def filter_queryset(self, queryset):
+        # All the filters actually apply to the facts, and we simply filter by a
+        # subquery referencing on fact with an outer reference to the model.
+        fact_qs = super().filter_queryset(Fact.objects.all())
 
+        rel_name = self.get_rel_name(queryset)
         return queryset.filter(
             Exists(
-                Fact.objects.filter(
+                fact_qs.filter(
                     **{
-                        name: value,
                         rel_name: OuterRef("pk"),
                     }
                 )
