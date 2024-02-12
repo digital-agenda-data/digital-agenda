@@ -251,7 +251,7 @@ export default {
         subtitle: {
           text: this.joinStrings(
             [this.period?.label || this.period?.code, ...this.extraNotes],
-            " "
+            " ",
           ),
           style: {
             color: "#333333",
@@ -329,7 +329,7 @@ export default {
      */
     apiDataPeriods() {
       return Array.from(
-        new Set(this.apiData.map((item) => item.period))
+        new Set(this.apiData.map((item) => item.period)),
       ).sort();
     },
     /**
@@ -405,7 +405,7 @@ export default {
     makeTitle(items, separator = ", ") {
       return this.joinStrings(
         items.map((s) => s?.label),
-        separator
+        separator,
       );
     },
     /**
@@ -454,8 +454,8 @@ export default {
 
       await Promise.all(
         Object.keys(this.endpointParams).map((axis) =>
-          this.getFactForAxis(axis, result)
-        )
+          this.getFactForAxis(axis, result),
+        ),
       );
 
       this.apiData = Object.values(result).flat();

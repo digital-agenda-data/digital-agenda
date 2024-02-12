@@ -72,7 +72,7 @@ export default {
       return {
         url: new URL(
           this.$router.options.history.state.back ?? "/",
-          window.location
+          window.location,
         ).href,
         email: this.email,
         message: this.message,

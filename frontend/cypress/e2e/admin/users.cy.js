@@ -7,7 +7,7 @@ describe("Check user admin functionality", () => {
   it("Check login inactive", () => {
     cy.login("inactive@example.com", "inactive");
     cy.get(".errornote").contains(
-      "Please enter the correct email and password for a staff account."
+      "Please enter the correct email and password for a staff account.",
     );
     cy.get("a").contains("Users").should("not.exist");
   });

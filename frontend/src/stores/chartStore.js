@@ -17,7 +17,7 @@ export const useChartStore = defineStore("chart", {
     return {
       ...useAsyncState(
         api.get("/charts/").then((r) => r.data),
-        []
+        [],
       ),
     };
   },
@@ -37,7 +37,7 @@ export const useChartStore = defineStore("chart", {
         this.chartList.find(
           (chart) =>
             chart.chart_group === groupCode &&
-            chart.code === this.currentChartCode
+            chart.code === this.currentChartCode,
         ) ?? {}
       );
     },
@@ -94,7 +94,7 @@ export const useChartStore = defineStore("chart", {
         // Assume the first chart that has the indicator filter available
         // is the one we want to display as a link in the search results:
         result[chartGroupCode] = this.chartsPerGroup[chartGroupCode].find(
-          (chart) => !chart.indicator_filter_hidden
+          (chart) => !chart.indicator_filter_hidden,
         );
       }
 

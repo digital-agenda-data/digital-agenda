@@ -99,7 +99,7 @@ export function toAPIKey(key) {
  */
 export function colorForCountry(country, seriesIndex = 0) {
   let color = new Highcharts.Color(
-    SERIES_COLORS[seriesIndex % SERIES_COLORS.length]
+    SERIES_COLORS[seriesIndex % SERIES_COLORS.length],
   );
 
   // Highlight any "group" countries like: EU/EU27/EU28 by
@@ -150,7 +150,7 @@ export function getUnitDisplay(value, unit) {
     numberFormat = {
       notation: "standard",
       maximumFractionDigits: 0,
-      useGrouping: "min2",
+      useGrouping: "true",
     };
   } else {
     // Show the compact version for anything bigger, with 2 fixed decimals
@@ -159,7 +159,7 @@ export function getUnitDisplay(value, unit) {
       notation: "compact",
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
-      useGrouping: "min2",
+      useGrouping: "true",
     };
   }
 
@@ -199,7 +199,7 @@ export function range(start, stop, step = 1) {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from#sequence_generator_range
   return Array.from(
     { length: (stop - start) / step },
-    (_, i) => start + i * step
+    (_, i) => start + i * step,
   );
 }
 

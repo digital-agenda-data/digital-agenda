@@ -44,7 +44,7 @@ export default {
         result[country.code] = this.breakdownList
           .map(
             (breakdown) =>
-              this.apiValuesGrouped[breakdown.code]?.[country.code] ?? 0
+              this.apiValuesGrouped[breakdown.code]?.[country.code] ?? 0,
           )
           .reduce((a, b) => a + b, 0);
       }

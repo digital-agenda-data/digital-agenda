@@ -14,7 +14,7 @@ declare global {
        */
       selectFilter(
         inputName: string,
-        label: string
+        label: string,
       ): Chainable<JQuery<HTMLElement>>;
 
       /**
@@ -44,7 +44,7 @@ declare global {
        */
       checkExportLink(
         linkText: string,
-        expectedType: string
+        expectedType: string,
       ): Chainable<string>;
 
       /**

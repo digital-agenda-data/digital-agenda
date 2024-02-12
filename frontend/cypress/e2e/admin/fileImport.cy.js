@@ -6,7 +6,7 @@ describe("Check data file import", () => {
     cy.get("a").contains("Add Upload data from file").click();
     // Add a new data file import
     cy.get("input[type=file]").selectFile(
-      "cypress/fixtures/import_file_valid.xlsx"
+      "cypress/fixtures/import_file_valid.xlsx",
     );
     cy.get("textarea[name=description]").type("Test file import");
     cy.get("input[type=submit][value=Save]").click();
@@ -30,7 +30,7 @@ describe("Check data file import", () => {
     cy.get("a").contains("Add Upload data from file").click();
     // Add a new data file import
     cy.get("input[type=file]").selectFile(
-      "cypress/fixtures/import_file_invalid.xlsx"
+      "cypress/fixtures/import_file_invalid.xlsx",
     );
     cy.get("textarea[name=description]").type("Test file invalid import");
     cy.get("input[type=submit][value=Save]").click();
@@ -54,7 +54,7 @@ describe("Check data file import", () => {
     cy.get("a").contains("Add Upload data from file").click();
     // Add a new data file import
     cy.get("input[type=file]").selectFile(
-      "cypress/fixtures/import_file_invalid_duplicate.xlsx"
+      "cypress/fixtures/import_file_invalid_duplicate.xlsx",
     );
     cy.get("textarea[name=description]").type("Test file invalid import");
     cy.get("input[type=submit][value=Save]").click();

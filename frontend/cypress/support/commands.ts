@@ -13,7 +13,7 @@ Cypress.Commands.addAll(
         .then((url) => cy.request(url))
         .its("body");
     },
-  }
+  },
 );
 
 Cypress.Commands.addAll({
@@ -25,6 +25,10 @@ Cypress.Commands.addAll({
     return cy.get("input[type=submit]").click();
   },
   selectFilter(inputName, label) {
+    // Wait for multiselect to be rendered but wai until it's finished loading
+    cy.get(`[data-name='${inputName}']`).should("exist");
+    cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
+    // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
     return cy
       .get(`[data-name='${inputName}'] [role='option']`)
@@ -58,7 +62,7 @@ Cypress.Commands.addAll({
           encoding: null,
         }).then((response) => {
           const detectedTypes = filetypeinfo(new Uint8Array(response.body)).map(
-            (info) => info.typename
+            (info) => info.typename,
           );
 
           expect(expectedType).to.be.oneOf(detectedTypes);
@@ -71,20 +75,20 @@ Cypress.Commands.addAll({
         .task("downloads")
         .then(
           (files: Array<string>) =>
-            files.filter((fn) => fn.match(pattern)).length === 1
-        )
+            files.filter((fn) => fn.match(pattern)).length === 1,
+        ),
     )
       .task("downloads")
       .then((files: Array<string>) => {
         const downloadsFolder = Cypress.config("downloadsFolder");
         const fullPath = path.join(
           downloadsFolder,
-          files.find((fn) => fn.match(pattern))
+          files.find((fn) => fn.match(pattern)),
         );
 
         cy.readFile(fullPath, null).then((buffer) => {
           const detectedTypes = filetypeinfo(buffer).map(
-            (info) => info.typename
+            (info) => info.typename,
           );
 
           expect(expectedType).to.be.oneOf(detectedTypes);

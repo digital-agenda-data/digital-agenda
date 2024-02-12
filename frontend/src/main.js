@@ -28,7 +28,7 @@ app.mixin({
      */
     errorMustImplement(propName) {
       throw Error(
-        `Component "${this.$options.name}" must implement the "${propName}" property to work correctly.`
+        `Component "${this.$options.name}" must implement the "${propName}" property to work correctly.`,
       );
     },
     /**

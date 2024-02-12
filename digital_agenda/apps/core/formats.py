@@ -57,8 +57,7 @@ class BaseFileLoader(ABC):
         }
 
     @abstractmethod
-    def load(self, *args, **kwargs):
-        ...
+    def load(self, *args, **kwargs): ...
 
 
 DEFAULT_EXCEL_COLS = (

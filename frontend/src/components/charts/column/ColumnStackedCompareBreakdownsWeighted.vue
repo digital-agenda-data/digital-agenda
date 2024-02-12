@@ -37,7 +37,7 @@ export default {
 
       for (const breakdown of this.breakdownList) {
         result[breakdown.code] = parseInt(
-          this.$route.query[breakdown.code] ?? 5
+          this.$route.query[breakdown.code] ?? 5,
         );
       }
       return result;

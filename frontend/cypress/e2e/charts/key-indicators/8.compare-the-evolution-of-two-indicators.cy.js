@@ -4,7 +4,7 @@ describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
     cy.navigateToChart(
       "Key Indicators",
-      "Compare the evolution of two indicators"
+      "Compare the evolution of two indicators",
     );
     cy.checkChart({
       filters: {

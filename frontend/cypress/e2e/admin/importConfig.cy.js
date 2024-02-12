@@ -17,7 +17,7 @@ describe("Check import configuration", () => {
       {
         force: true,
         parseSpecialCharSequences: false,
-      }
+      },
     );
     cy.get("#id_mappings textarea.ace_text-input").clear({ force: true });
     cy.get("#id_mappings textarea.ace_text-input").type(
@@ -25,7 +25,7 @@ describe("Check import configuration", () => {
       {
         force: true,
         parseSpecialCharSequences: false,
-      }
+      },
     );
     cy.get("input[type=submit][value=Save]").click();
     // Trigger an import task

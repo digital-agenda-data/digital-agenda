@@ -19,7 +19,7 @@ export default {
       }
 
       const another = randomChoice(
-        this.allowedValuesArray.filter((code) => code !== "EU")
+        this.allowedValuesArray.filter((code) => code !== "EU"),
       );
       if (another) {
         result.push(another);

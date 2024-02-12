@@ -151,7 +151,7 @@ export default {
             headers: {
               [JWT_HEADER]: this.token,
             },
-          })
+          }),
         );
       } finally {
         this.loading = false;
@@ -161,7 +161,7 @@ export default {
       this.rotate = clamp(
         parseInt(this.rotate) + stepDirection * this.stepDegree,
         -360,
-        360
+        360,
       );
     },
   },

@@ -10,7 +10,7 @@ export const useChartGroupStore = defineStore("chartGroup", {
     return {
       ...useAsyncState(
         api.get("/chart-groups/").then((r) => r.data),
-        []
+        [],
       ),
     };
   },

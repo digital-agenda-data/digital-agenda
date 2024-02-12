@@ -67,7 +67,7 @@ export default {
               enabled: true,
               formatter() {
                 const lastIndex = this.series.yData.findLastIndex(
-                  (el) => el !== null
+                  (el) => el !== null,
                 );
 
                 return this.point.index === lastIndex ? this.series.name : null;
