@@ -57,7 +57,7 @@ export default {
     },
     series() {
       return (this.filterStore.countryX ?? []).map((country) => {
-        const name = country.display;
+        const name = `${country.display} (${country.code})`;
         return {
           name,
           color: country?.color,
@@ -70,6 +70,7 @@ export default {
               x: this.apiValuesGrouped[country.code]?.X || 0,
               y: this.apiValuesGrouped[country.code]?.Y || 0,
               z: this.apiValuesGrouped[country.code]?.Z || 0,
+              code: country.code,
             },
           ],
         };
@@ -94,7 +95,7 @@ export default {
             dataLabels: {
               enabled: true,
               formatter() {
-                return this.point.name;
+                return this.point.code;
               },
             },
           },
