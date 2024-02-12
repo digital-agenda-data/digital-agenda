@@ -56,7 +56,7 @@ export default {
       return ["country", "axis"];
     },
     series() {
-      return this.filterStore.countryX.map((country) => {
+      return (this.filterStore.countryX ?? []).map((country) => {
         const name = country.display;
         return {
           name,
