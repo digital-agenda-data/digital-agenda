@@ -20,9 +20,9 @@ describeResponsive("Check Chart", () => {
         unitZ: "% of graduates",
       },
       title: ["Year: 2019"],
-      point: "Romania, y: 4.1, z: 6.3. Romania.",
+      point: "Romania (RO), y: 4.1, z: 6.3. Romania (RO).",
       tooltip: [
-        "Romania",
+        "Romania (RO)",
         "2.20% of graduates",
         "4.10% of graduates",
         "6.30% of graduates",
