@@ -25,6 +25,10 @@ Cypress.Commands.addAll({
     return cy.get("input[type=submit]").click();
   },
   selectFilter(inputName, label) {
+    // Wait for multiselect to be rendered but wai until it's finished loading
+    cy.get(`[data-name='${inputName}']`).should("exist");
+    cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
+    // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
     return cy
       .get(`[data-name='${inputName}'] [role='option']`)

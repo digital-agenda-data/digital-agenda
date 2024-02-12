@@ -14,6 +14,7 @@
         :allow-empty="allowedEmpty"
         :name="inputName"
         :data-name="inputName"
+        :data-loading="loading"
         label="text"
         track-by="id"
         :group-label="hasGroups ? 'text' : undefined"
