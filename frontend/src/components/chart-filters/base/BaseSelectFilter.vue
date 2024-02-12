@@ -118,7 +118,10 @@ export default {
     },
     model() {
       if (this.syncRoute) {
-        return useRouteQuery(this.queryName + this.axis, this.emptyValue);
+        return useRouteQuery(this.queryName + this.axis, this.emptyValue, {
+          router: this.$router,
+          route: this.$route,
+        });
       }
 
       return ref(this.emptyValue);
