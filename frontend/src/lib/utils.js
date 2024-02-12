@@ -150,7 +150,7 @@ export function getUnitDisplay(value, unit) {
     numberFormat = {
       notation: "standard",
       maximumFractionDigits: 0,
-      useGrouping: "min2",
+      useGrouping: "true",
     };
   } else {
     // Show the compact version for anything bigger, with 2 fixed decimals
@@ -159,7 +159,7 @@ export function getUnitDisplay(value, unit) {
       notation: "compact",
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
-      useGrouping: "min2",
+      useGrouping: "true",
     };
   }
 
