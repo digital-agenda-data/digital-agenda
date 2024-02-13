@@ -464,6 +464,16 @@ LOGGING = {
     },
 }
 
+# CKEditor
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        # https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-enterMode
+        "enterMode": 2,
+        "forceEnterMode": True,
+    },
+}
+
 # Sentry
 SENTRY_DSN = env.str("SENTRY_DSN", default="")
 
