@@ -5,6 +5,9 @@ export default {
   name: "BreakdownMultiFilter",
   extends: BreakdownFilter,
   computed: {
+    queryName() {
+      return "breakdown";
+    },
     multiple() {
       return true;
     },

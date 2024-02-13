@@ -14,11 +14,6 @@ export default {
     groupEndpoint() {
       return "/indicator-groups/";
     },
-    endpointParams() {
-      return {
-        chart_group: this.$route.params.chartGroupCode,
-      };
-    },
   },
 };
 </script>

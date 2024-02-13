@@ -35,6 +35,9 @@ export default {
   computed: {
     ...mapState(useChartGroupStore, ["currentChartGroup"]),
     ...mapState(useChartStore, ["defaultChartForGroup"]),
+    queryName() {
+      return "breakdown";
+    },
     rawValues() {
       const result = {};
 
