@@ -22,6 +22,7 @@ import CardNav from "@/components/CardNav.vue";
 import ChartActions from "@/components/charts/ChartActions.vue";
 import ChartDefinitions from "@/components/charts/ChartDefinitions.vue";
 import EclIcon from "@/components/ecl/EclIcon.vue";
+import { setHighchartsDefaults } from "@/initHighchart";
 import chartRegistry from "@/lib/chartRegistry";
 import { FILTER_SUFFIXES } from "@/lib/constants";
 import { useChartStore } from "@/stores/chartStore";
@@ -70,6 +71,9 @@ export default {
       }
       return result;
     },
+  },
+  beforeMount() {
+    setHighchartsDefaults();
   },
   methods: {
     normalizeFilterComponent(item, suffix = "") {
