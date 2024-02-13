@@ -30,10 +30,10 @@ Cypress.Commands.addAll({
     cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
     // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
-    return cy
-      .get(`[data-name='${inputName}'] [role='option']`)
+    cy.get(`[data-name='${inputName}'] [role='option']`)
       .contains(label)
       .click();
+    cy.get(`[data-name='${inputName}'] .multiselect__single`).contains(label);
   },
   searchIndicators(searchQuery) {
     cy.visit("/")
@@ -108,6 +108,12 @@ Cypress.Commands.addAll({
     definitions = [],
   }) {
     cy.task("cleanDownloadsFolder");
+    // Wait for loading
+    cy.get(".chart-container-digital-agenda").should("exist");
+    cy.get(".chart-container-digital-agenda .lds-app-loader").should(
+      "not.exist",
+    );
+
     // Set the filters
     for (const filtersKey in filters) {
       cy.selectFilter(filtersKey, filters[filtersKey]);
