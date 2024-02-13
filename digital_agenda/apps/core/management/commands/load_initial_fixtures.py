@@ -35,6 +35,7 @@ class Command(BaseCommand):
         BreakdownChartOption,
         IndicatorChartOption,
         ExtraChartNote,
+        ChartFilterOrder,
     )
 
     def add_arguments(self, parser):
