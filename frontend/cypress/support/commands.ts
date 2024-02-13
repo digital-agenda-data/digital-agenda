@@ -114,6 +114,9 @@ Cypress.Commands.addAll({
     }
 
     const checkChartInstance = () => {
+      // Check credits
+      cy.get(".highcharts-credits").contains("European Commission");
+
       // Check chart title/subtitle
       cy.get(".highcharts-title, .highcharts-subtitle")
         .invoke("text")
