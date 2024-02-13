@@ -46,14 +46,22 @@ class Command(BaseCommand):
         # Import some data for DESI
         call_command("loaddata", "test/desi-facts")
 
+        # Import some test charts with custom options
+        call_command("loaddata", "test/chartgroup")
+        call_command("loaddata", "test/chart")
+        call_command("loaddata", "test/chartfilterorder")
+
         # Import some facts from some small ESTAT configs
         call_command("loaddata", "test/seed_importconfigs")
         call_command("estat_import")
 
         for group in ChartGroup.objects.all():
-            img_path = settings.TEST_FIXTURES_DIR / f"{group.code}.png"
-            with img_path.open("rb") as f:
-                group.image = File(f, name=img_path.name)
-                group.save()
+            try:
+                img_path = settings.TEST_FIXTURES_DIR / f"{group.code}.png"
+                with img_path.open("rb") as f:
+                    group.image = File(f, name=img_path.name)
+                    group.save()
+            except OSError:
+                continue
 
         clear_all_caches(force=True)

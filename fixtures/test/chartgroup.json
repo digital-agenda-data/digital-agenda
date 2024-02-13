@@ -1,0 +1,30 @@
+[
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 100,
+        "is_draft": false,
+        "code": "test-group",
+        "name": "Test Chart Group",
+        "short_name": "Test Chart Group",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test various edge cases and special settings</p>",
+        "image": "",
+        "indicator_group_label": "Indicator group",
+        "indicator_label": "Indicator",
+        "breakdown_group_label": "Breakdown group",
+        "breakdown_label": "Breakdown",
+        "period_label": "Period",
+        "unit_label": "Unit of measure",
+        "period_start": null,
+        "period_end": null,
+        "indicator_groups": [
+            [
+                "ict-skills"
+            ]
+        ]
+    }
+}
+]
