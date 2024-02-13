@@ -103,7 +103,7 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
         queryset = (
             Chart.objects.all()
             .select_related("chart_group")
-            .prefetch_related(*Chart.m2m_filter_options)
+            .prefetch_related("filter_order", *Chart.m2m_filter_options)
         )
 
         if not self.request.user.is_authenticated:
