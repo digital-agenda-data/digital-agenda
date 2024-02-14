@@ -1,5 +1,6 @@
 <script>
 import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
+import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterCompareTwoIndicators.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
@@ -22,13 +23,14 @@ export default {
         { component: IndicatorWithGroupsFilter, attrs: { size: "l" } },
         { component: BreakdownWithGroupsFilter, attrs: { size: "l" } },
         { component: UnitFilter, attrs: { size: "l" } },
+        { component: PeriodFilter, attrs: { size: "l" } },
       ];
     },
     endpointFilters() {
       return {
         X: ["indicatorX", "breakdownX", "unitX", "periodX"],
-        Y: ["indicatorY", "breakdownY", "unitY", "periodX"],
-        Z: ["indicatorZ", "breakdownZ", "unitZ", "periodX"],
+        Y: ["indicatorY", "breakdownY", "unitY", "periodY"],
+        Z: ["indicatorZ", "breakdownZ", "unitZ", "periodZ"],
       };
     },
     groupBy() {
@@ -41,6 +43,7 @@ export default {
           this.filterStore.indicatorZ,
           this.filterStore.breakdownZ,
           this.filterStore.unitZ,
+          this.filterStore.periodZ,
         ])
       );
     },

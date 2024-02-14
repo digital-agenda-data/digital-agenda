@@ -24,10 +24,7 @@ export default {
         IndicatorWithGroupsFilter,
         BreakdownWithGroupsFilter,
         UnitFilter,
-        {
-          component: PeriodFilter,
-          attrs: { showAxisLabel: false },
-        },
+        PeriodFilter,
         {
           component: CountryMultiFilter,
           attrs: { allInitial: true, hidden: true, syncRoute: false },
@@ -44,12 +41,13 @@ export default {
         IndicatorWithGroupsFilter,
         BreakdownWithGroupsFilter,
         UnitFilter,
+        PeriodFilter,
       ];
     },
     endpointFilters() {
       return {
         X: ["indicatorX", "breakdownX", "unitX", "periodX"],
-        Y: ["indicatorY", "breakdownY", "unitY", "periodX"],
+        Y: ["indicatorY", "breakdownY", "unitY", "periodY"],
       };
     },
     groupBy() {
@@ -101,7 +99,8 @@ export default {
           },
         },
         title: {
-          text: this.filterStore.periodX?.label,
+          text: "",
+          enable: false,
         },
         subtitle: {
           enabled: !!this.chartSubtitle,
@@ -116,6 +115,7 @@ export default {
               this.filterStore.indicatorX,
               this.filterStore.breakdownX,
               this.filterStore.unitX,
+              this.filterStore.periodX,
             ]),
             enabled: true,
           },
@@ -129,6 +129,7 @@ export default {
               this.filterStore.indicatorY,
               this.filterStore.breakdownY,
               this.filterStore.unitY,
+              this.filterStore.periodY,
             ]),
             enabled: true,
           },
