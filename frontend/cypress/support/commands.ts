@@ -33,6 +33,12 @@ Cypress.Commands.addAll({
     cy.get(`[data-name='${inputName}'] [role='option']`)
       .contains(label)
       .click();
+    // Wait for the dropdown to disappear and make sure the option we wanted
+    // was selected.
+    cy.get(`[data-name='${inputName}']`).type("{esc}");
+    cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
+      "not.be.visible",
+    );
     cy.get(`[data-name='${inputName}'] .multiselect__single`).contains(label);
   },
   searchIndicators(searchQuery) {

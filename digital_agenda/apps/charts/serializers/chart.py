@@ -33,6 +33,10 @@ class ChartSerializer(serializers.ModelSerializer):
     country_filter_defaults = CodeRelatedField(many=True)
     country_filter_ignored = CodeRelatedField(many=True)
 
+    filter_order = serializers.SlugRelatedField(
+        slug_field="filter_field", many=True, read_only=True
+    )
+
     class Meta:
         model = Chart
         fields = (
@@ -45,6 +49,7 @@ class ChartSerializer(serializers.ModelSerializer):
             "is_draft",
             "image",
             *Chart.filter_options,
+            "filter_order",
             "min_value",
             "max_value",
             "legend_layout",

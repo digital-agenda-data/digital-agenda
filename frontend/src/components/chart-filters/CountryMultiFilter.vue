@@ -6,6 +6,9 @@ export default {
   name: "CountryMultiFilter",
   extends: CountryFilter,
   computed: {
+    queryName() {
+      return "country";
+    },
     label() {
       return "Select the countries";
     },

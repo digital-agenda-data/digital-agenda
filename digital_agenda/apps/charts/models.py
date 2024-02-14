@@ -351,3 +351,31 @@ class ExtraChartNote(TimestampedModel):
     note = models.CharField(
         max_length=255, help_text="Extra notes to show in the chart"
     )
+
+
+class ChartFilterOrder(DisplayOrderModel):
+    class FilterTypes(models.TextChoices):
+        INDICATOR_GROUP = "indicatorGroup", "Indicator Group"
+        INDICATOR = "indicator", "Indicator"
+        BREAKDOWN_GROUP = "breakdownGroup", "Breakdown Group"
+        BREAKDOWN = "breakdown", "Breakdown"
+        PERIOD = "period", "Period"
+        UNIT = "unit", "Unit"
+        COUNTRY = "country", "Country"
+
+    chart = models.ForeignKey(
+        Chart, on_delete=models.CASCADE, related_name="filter_order"
+    )
+    filter_field = models.CharField(
+        max_length=50,
+        choices=FilterTypes.choices,
+        help_text=(
+            "Order of the filter in the chart. "
+            "Filters not specified here will use the default order. "
+            "Filters that are not used in the chart will be ignored."
+        ),
+    )
+
+    class Meta:
+        ordering = ["display_order"]
+        unique_together = ("chart", "filter_field")

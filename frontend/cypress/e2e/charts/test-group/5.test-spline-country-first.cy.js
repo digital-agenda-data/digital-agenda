@@ -1,0 +1,29 @@
+import describeResponsive from "../../../support/describeResponsive";
+
+describeResponsive("Check Chart", () => {
+  it("Check Chart", () => {
+    cy.navigateToChart("Test Chart Group", "Test Spline Country First");
+    cy.checkChart({
+      filters: {
+        countryX: "European Union",
+        indicatorX: "ICT graduates",
+        breakdownX: "Females",
+        unitX: "% of graduates",
+        indicatorY: "ICT graduates",
+        breakdownY: "Males",
+        unitY: "% of graduates",
+      },
+      title: ["ICT graduates, Females and ICT graduates, Males"],
+      point: "Year: 2019, 0.8. ICT graduates.",
+      definitions: [
+        "Indicator: ICT graduates",
+        "Breakdown: Females",
+        "Unit of measure: Percentage of graduates",
+        "Indicator: ICT graduates",
+        "Breakdown: Males",
+        "Unit of measure: Percentage of graduates",
+        "Definition: Individuals with a degree in ICT",
+      ],
+    });
+  });
+});

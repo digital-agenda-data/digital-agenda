@@ -57,7 +57,7 @@ export default {
     async loadExtra() {
       this.groups = (
         await api.get(this.groupEndpoint, {
-          params: this.endpointParams,
+          params: this.mergedEndpointParams,
         })
       ).data;
     },

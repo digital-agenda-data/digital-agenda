@@ -273,7 +273,10 @@ export default {
       return true;
     },
     mergedEndpointParams() {
-      const result = { ...this.endpointParams };
+      const result = {
+        chart_group: this.currentChartGroup.code,
+        ...this.endpointParams,
+      };
       for (const key of forceArray(this.extraParams)) {
         result[toAPIKey(key)] = this.filterStore[key]?.code;
       }

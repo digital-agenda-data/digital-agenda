@@ -1,0 +1,101 @@
+[
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-group",
+        "test-chart-period-first"
+      ],
+      "filter_field": "period"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-group",
+        "test-chart-filters-reversed"
+      ],
+      "filter_field": "country"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 2,
+      "chart": [
+        "test-group",
+        "test-chart-filters-reversed"
+      ],
+      "filter_field": "unit"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 3,
+      "chart": [
+        "test-group",
+        "test-chart-filters-reversed"
+      ],
+      "filter_field": "period"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 4,
+      "chart": [
+        "test-group",
+        "test-chart-filters-reversed"
+      ],
+      "filter_field": "breakdownGroup"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 5,
+      "chart": [
+        "test-group",
+        "test-chart-filters-reversed"
+      ],
+      "filter_field": "indicator"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-group",
+        "test-scatter-unit-first"
+      ],
+      "filter_field": "unit"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-group",
+        "test-bubble-breakdown-first"
+      ],
+      "filter_field": "breakdown"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-group",
+        "test-spline-country-first"
+      ],
+      "filter_field": "country"
+    }
+  }
+]

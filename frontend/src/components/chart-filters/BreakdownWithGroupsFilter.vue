@@ -14,11 +14,6 @@ export default {
     groupEndpoint() {
       return "/breakdown-groups/";
     },
-    endpointParams() {
-      return {
-        indicator: this.filterStore.indicator?.code,
-      };
-    },
     defaultSingleValue() {
       // Default to the first item, as that will likely be the "total"
       return this.items[0]?.children[0]?.id;

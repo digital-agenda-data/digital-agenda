@@ -1,4 +1,5 @@
 from adminsortable2.admin import SortableAdminMixin
+from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin
 from django.contrib import messages
 from django.db import connection
@@ -15,6 +16,7 @@ from digital_agenda.apps.charts.models import BreakdownChartOption
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.models import ExtraChartNote
+from digital_agenda.apps.charts.models import ChartFilterOrder
 from digital_agenda.apps.charts.models import IndicatorChartOption
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Indicator
@@ -22,8 +24,15 @@ from digital_agenda.apps.core.models import Period
 from digital_agenda.common.admin import HasChangesAdminMixin
 
 
+class ChartFilterOrderInline(SortableInlineAdminMixin, admin.StackedInline):
+    extra = 0
+    model = ChartFilterOrder
+    autocomplete_fields = ("chart",)
+
+
 @admin.register(Chart)
 class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
+    inlines = (ChartFilterOrderInline,)
     prepopulated_fields = {"code": ("name",)}
     search_fields = ("code", "name", "description")
     list_filter = ("chart_group", "is_draft", "chart_type")
@@ -259,11 +268,7 @@ class ExtraChartNoteResource(resources.ModelResource):
     class Meta:
         model = ExtraChartNote
         import_id_fields = ("indicator", "period")
-        fields = (
-            "indicator",
-            "period",
-            "note",
-        )
+        fields = ("indicator", "period", "note")
 
 
 @admin.register(ExtraChartNote)

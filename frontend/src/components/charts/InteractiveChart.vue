@@ -44,31 +44,43 @@ export default {
       const result = [];
       for (const axis of FILTER_SUFFIXES) {
         const items = this.$refs.chart?.[`filter${axis}Components`] ?? [];
+        // Normalize each filter component of the axis
+        const axisResult = items
+          .filter((item) => !!item)
+          .map((item) => this.normalizeFilterComponent(item, axis));
+
+        // Sort them according to the chart rules (if any)
+        const filterOrder = [
+          // Fixed order
+          "EclHeading",
+          // Custom order
+          ...(this.currentChart.filter_order ?? []),
+          // Default order
+          ...axisResult.map((item) => item.filterType),
+        ];
+        axisResult.sort((a, b) => {
+          const filterPositionA = filterOrder.indexOf(a.filterType);
+          const filterPositionB = filterOrder.indexOf(b.filterType);
+          return filterPositionA - filterPositionB;
+        });
+
+        // Add extra filter params based on the previous filters; that way
+        // we should never have impossible combinations.
         const previousParams = [];
-
-        for (const item of items) {
-          if (!item) {
-            continue;
-          }
-
-          const filterComponent = this.normalizeFilterComponent(item, axis);
-
-          // Add extra filter params based on the previous filters; that way
-          // we should never have impossible combinations.
+        for (const filterComponent of axisResult) {
           filterComponent.attrs.extraParams = [
             ...(filterComponent.attrs.extraParams ?? []),
             ...previousParams,
           ];
 
-          const queryName = filterComponent.component.computed?.queryName?.();
-          const isMultiple = filterComponent.component.computed?.multiple?.();
-          if (queryName && !isMultiple) {
-            previousParams.push(queryName);
+          if (filterComponent.queryName && !filterComponent.isMultiple) {
+            previousParams.push(filterComponent.queryName);
           }
-
-          result.push(filterComponent);
         }
+
+        result.push(...axisResult);
       }
+
       return result;
     },
   },
@@ -86,6 +98,9 @@ export default {
       }
 
       result.key ??= result.component.name + suffix;
+      result.isMultiple = result.component.computed?.multiple?.();
+      result.queryName = result.component.computed?.queryName?.();
+      result.filterType = result.queryName ?? result.component.name;
       result.attrs.axis ??= suffix;
       result.attrs.showAxisLabel ??= this.$refs.chart.showAxisLabel;
 
