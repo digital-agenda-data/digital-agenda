@@ -379,3 +379,5 @@ class ChartFilterOrder(DisplayOrderModel):
     class Meta:
         ordering = ["display_order"]
         unique_together = ("chart", "filter_field")
+        verbose_name = "Chart Filter Order"
+        verbose_name_plural = "Chart Filters Order"
