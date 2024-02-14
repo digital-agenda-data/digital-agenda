@@ -7,8 +7,8 @@ describeResponsive("Check Chart", () => {
       filters: {
         breakdownX: "Females",
         indicatorX: "ICT graduates",
-        periodX: "2019",
         unitX: "% of graduates",
+        periodX: "2019",
         breakdownY: "Males",
         indicatorY: "ICT graduates",
         unitY: "% of graduates",
