@@ -52,6 +52,8 @@ class ChartSerializer(serializers.ModelSerializer):
             "filter_order",
             "min_value",
             "max_value",
+            "min_year",
+            "max_year",
             "legend_layout",
         )
         read_only_fields = fields
