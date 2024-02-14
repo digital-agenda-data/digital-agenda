@@ -58,7 +58,7 @@ export const SERIES_COLORS = [
   "#0B4EA2",
 ];
 
-// Hardcoded list determining what axis are the "value" axis
+// Hardcoded list determining what axes are the "value" axis
 // depending on the chart type. Used for custom axis ranges.
 export const VALUE_AXIS = {
   bar: ["xAxis"],
@@ -66,4 +66,9 @@ export const VALUE_AXIS = {
   column: ["yAxis"],
   scatter: ["xAxis", "yAxis"],
   spline: ["yAxis"],
+};
+// Hardcoded list determining what axes are the "year" axis
+// depending on the chart type. Used for custom axis ranges.
+export const YEAR_AXIS = {
+  spline: ["xAxis"],
 };
