@@ -35,6 +35,7 @@ Cypress.Commands.addAll({
       .click();
     // Wait for the dropdown to disappear and make sure the option we wanted
     // was selected.
+    cy.get(`[data-name='${inputName}']`).type("{esc}");
     cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
       "not.be.visible",
     );
