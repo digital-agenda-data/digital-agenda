@@ -12,8 +12,8 @@ describeResponsive("Check Chart", () => {
         indicatorY: "ICT graduates",
         breakdownY: "Males",
         unitY: "% of graduates",
+        periodY: "2019",
       },
-      title: ["Year: 2019"],
       point: "Romania (RO), 4.1. Romania (RO).",
       tooltip: ["Romania (RO)", "2.20% of graduates", "4.10% of graduates"],
       definitions: [
