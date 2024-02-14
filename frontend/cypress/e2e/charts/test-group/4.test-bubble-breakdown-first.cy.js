@@ -12,11 +12,12 @@ describeResponsive("Check Chart", () => {
         breakdownY: "Males",
         indicatorY: "ICT graduates",
         unitY: "% of graduates",
+        periodY: "2019",
         breakdownZ: "Total",
         indicatorZ: "ICT graduates",
         unitZ: "% of graduates",
+        periodZ: "2019",
       },
-      title: ["Year: 2019"],
       point: "Romania (RO), y: 4.1, z: 6.3. Romania (RO).",
       tooltip: [
         "Romania (RO)",
