@@ -231,6 +231,7 @@ export default {
         query: {
           indicator: indicator.code,
           indicatorGroup: group.code,
+          period: indicator.max_period.code,
         },
       };
     },
