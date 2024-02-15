@@ -19,6 +19,7 @@ import SimpleSpinner from "@/components/SimpleSpinner.vue";
 import { api } from "@/lib/api";
 import {
   forceArray,
+  getDateFromYear,
   getUnitDisplay,
   groupByMulti,
   toAPIKey,
@@ -27,7 +28,7 @@ import {
 import { useChartStore } from "@/stores/chartStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useCountryStore } from "@/stores/countryStore";
-import { VALUE_AXIS } from "@/lib/constants";
+import { VALUE_AXIS, YEAR_AXIS } from "@/lib/constants";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -198,21 +199,31 @@ export default {
         ...this.chartOptions,
       };
 
-      // Set custom ranges to the "value" axis depending on the chart type.
-      // No idea why anyone would ever use this. Oh well... ¯\_(ツ)_/¯
-      const minValue = this.currentChart.min_value;
-      const maxValue = this.currentChart.max_value;
+      const setCustomAxis = (axisTypes, customMin, customMax) => {
+        for (const axis of axisTypes[this.chartType] ?? []) {
+          result[axis] ??= {};
 
-      for (const axis of VALUE_AXIS[this.chartType] ?? []) {
-        result[axis] ??= {};
-
-        // Some charts have multiple axis of the same kind, so force array here
-        // (e.g. SplineCompareTwoIndicators)
-        for (const opt of forceArray(result[axis])) {
-          opt.min = minValue ?? opt.min;
-          opt.max = maxValue ?? opt.max;
+          // Some charts have multiple axis of the same kind, so force array here
+          // (e.g., SplineCompareTwoIndicators)
+          for (const opt of forceArray(result[axis])) {
+            opt.min = customMin ?? opt.min;
+            opt.max = customMax ?? opt.max;
+          }
         }
-      }
+      };
+      // Set custom ranges to the axes depending on the chart type.
+      // No idea why anyone would ever use this.
+      // Oh well... ¯\_(ツ)_/¯
+      setCustomAxis(
+        VALUE_AXIS,
+        this.currentChart.min_value,
+        this.currentChart.max_value,
+      );
+      setCustomAxis(
+        YEAR_AXIS,
+        getDateFromYear(this.currentChart.min_year),
+        getDateFromYear(this.currentChart.max_year),
+      );
 
       return result;
     },

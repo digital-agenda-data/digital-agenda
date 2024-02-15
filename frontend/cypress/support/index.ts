@@ -60,6 +60,8 @@ declare global {
         point;
         tooltip;
         definitions;
+        xAxis;
+        yAxis;
       }): Chainable<undefined>;
     }
   }

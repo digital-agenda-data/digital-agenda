@@ -208,10 +208,42 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     )
 
     min_value = models.FloatField(
-        help_text="Minimum value of the axis", default=None, null=True, blank=True
+        help_text=(
+            "Minimum value of the axis. Used for all axes that display fact values."
+            "This can be vertical, horizontal, or both depending on the chart type."
+        ),
+        default=None,
+        null=True,
+        blank=True,
     )
     max_value = models.FloatField(
-        help_text="Maximum value of the axis", default=None, null=True, blank=True
+        help_text=(
+            "Maximum value of the axis. Used for all axes that display fact values."
+            "This can be vertical, horizontal, or both depending on the chart type."
+        ),
+        default=None,
+        null=True,
+        blank=True,
+    )
+    min_year = models.PositiveIntegerField(
+        validators=[MinValueValidator(settings.MIN_YEAR)],
+        help_text=(
+            "Minimum year of the axis. Used for all axes that display dates."
+            "This can be vertical, horizontal, or both depending on the chart type."
+        ),
+        default=None,
+        null=True,
+        blank=True,
+    )
+    max_year = models.PositiveIntegerField(
+        validators=[MinValueValidator(settings.MIN_YEAR)],
+        help_text=(
+            "Maximum year of the axis. Used for all axes that display dates."
+            "This can be vertical, horizontal, or both depending on the chart type."
+        ),
+        default=None,
+        null=True,
+        blank=True,
     )
 
     indicator_group_filter = filter_option_field("core.IndicatorGroup")
@@ -272,6 +304,14 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         ):
             msg = "Min value must be lower than the Max value"
             raise ValidationError({"min_value": msg, "max_value": msg})
+
+        if (
+            self.min_year is not None
+            and self.max_year is not None
+            and self.min_year >= self.max_year
+        ):
+            msg = "Min year must be lower than the Max year"
+            raise ValidationError({"min_year": msg, "max_year": msg})
 
 
 class ChartOptionBaseModel(TimestampedModel):

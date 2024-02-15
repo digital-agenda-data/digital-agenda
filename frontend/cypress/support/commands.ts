@@ -112,6 +112,8 @@ Cypress.Commands.addAll({
     point = null,
     tooltip = [],
     definitions = [],
+    xAxis = [],
+    yAxis = [],
   }) {
     cy.task("cleanDownloadsFolder");
     // Wait for loading
@@ -139,6 +141,13 @@ Cypress.Commands.addAll({
             expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
           }
         });
+
+      for (const label of xAxis) {
+        cy.get(".highcharts-xaxis-labels text").contains(label);
+      }
+      for (const label of yAxis) {
+        cy.get(".highcharts-yaxis-labels text").contains(label);
+      }
 
       // Check a point in the chart and the tooltip
       if (point) {

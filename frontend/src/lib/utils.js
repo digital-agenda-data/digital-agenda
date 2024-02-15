@@ -348,3 +348,14 @@ export function getMarkerSymbol(iterable) {
     }
   }
 }
+
+/**
+ * Return a date corresponding to the January first of the specified year.
+ *
+ * @param year {Number}
+ * @return {Number}
+ */
+export function getDateFromYear(year) {
+  if (!year || year < 0) return null;
+  return Date.UTC(year, 0, 1);
+}

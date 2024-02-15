@@ -142,7 +142,15 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
         ),
         (
             "Advanced Settings",
-            {"classes": ["collapse"], "fields": ("min_value", "max_value")},
+            {
+                "classes": ["collapse"],
+                "fields": (
+                    "min_value",
+                    "max_value",
+                    "min_year",
+                    "max_year",
+                ),
+            },
         ),
     ]
 
