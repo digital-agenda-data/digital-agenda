@@ -23,6 +23,9 @@
         "indicator_groups": [
             [
                 "ict-skills"
+            ],
+            [
+                "broadband"
             ]
         ]
     }

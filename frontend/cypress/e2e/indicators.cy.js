@@ -1,6 +1,62 @@
 import describeResponsive from "../support/describeResponsive";
 
 describeResponsive("Check Indicators Page", () => {
+  it("Check links to chart", () => {
+    cy.visit("/datasets/key-indicators/indicators");
+    cy.get("a").contains("Households having a broadband connection").click();
+    cy.checkChartInstance({
+      filters: {
+        indicator: "Households with a broadband connection",
+        breakdown: "with dependent childrens",
+        period: "2013",
+        unit: "% of households",
+      },
+      title: [
+        "Households having a broadband connection, Household with dependent children",
+        "Year: 2013",
+      ],
+      point: "European Union, 88.44.",
+      tooltip: [
+        "European Union",
+        "with dependent childrens",
+        "88.44% of households",
+        "Year: 2013",
+      ],
+      definitions: [
+        "Indicator: Households having a broadband connection",
+        "Breakdown: Household with dependent children",
+        "Unit of measure: Percentage of households",
+      ],
+    });
+  });
+  it("Check links to chart period first", () => {
+    cy.visit("/datasets/test-group/indicators");
+    cy.get("a").contains("Households having a broadband connection").click();
+    cy.checkChartInstance({
+      filters: {
+        period: "2013",
+        indicator: "Households with a broadband connection",
+        breakdown: "with dependent childrens",
+        unit: "% of households",
+      },
+      title: [
+        "Households having a broadband connection, Household with dependent children",
+        "Year: 2013",
+      ],
+      point: "European Union, 88.44.",
+      tooltip: [
+        "European Union",
+        "with dependent childrens",
+        "88.44% of households",
+        "Year: 2013",
+      ],
+      definitions: [
+        "Indicator: Households having a broadband connection",
+        "Breakdown: Household with dependent children",
+        "Unit of measure: Percentage of households",
+      ],
+    });
+  });
   it("Check export links", () => {
     cy.visit("/");
     cy.get(".ecl-list-illustration a")

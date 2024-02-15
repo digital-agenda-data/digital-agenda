@@ -24,6 +24,11 @@ Cypress.Commands.addAll({
     cy.get("input[name=password]").type(password);
     return cy.get("input[type=submit]").click();
   },
+  checkFilter(inputName, label) {
+    return cy
+      .get(`[data-name='${inputName}'] .multiselect__single`)
+      .contains(label);
+  },
   selectFilter(inputName, label) {
     // Wait for multiselect to be rendered but wai until it's finished loading
     cy.get(`[data-name='${inputName}']`).should("exist");
@@ -39,7 +44,6 @@ Cypress.Commands.addAll({
     cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
       "not.be.visible",
     );
-    cy.get(`[data-name='${inputName}'] .multiselect__single`).contains(label);
   },
   searchIndicators(searchQuery) {
     cy.visit("/")
@@ -106,7 +110,7 @@ Cypress.Commands.addAll({
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
   },
-  checkChart({
+  checkChartInstance({
     filters = {},
     title = [],
     point = null,
@@ -115,6 +119,49 @@ Cypress.Commands.addAll({
     xAxis = [],
     yAxis = [],
   }) {
+    // Check credits
+    cy.get(".highcharts-credits").contains("European Commission");
+
+    // Check chart definitions
+    for (const txt of definitions) {
+      cy.get(".chart-definitions").contains(txt);
+    }
+
+    // Check the filters
+    for (const filtersKey in filters) {
+      cy.checkFilter(filtersKey, filters[filtersKey]);
+    }
+
+    // Check chart title/subtitle
+    cy.get(".highcharts-title, .highcharts-subtitle")
+      .invoke("text")
+      .then((text) => {
+        for (const txt of title) {
+          // Highcharts adds ZeroWidthSpaces in the text, so we can't
+          // check normally
+          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+        }
+      });
+
+    for (const label of xAxis) {
+      cy.get(".highcharts-xaxis-labels text").contains(label);
+    }
+    for (const label of yAxis) {
+      cy.get(".highcharts-yaxis-labels text").contains(label);
+    }
+
+    // Check a point in the chart and the tooltip
+    if (point) {
+      cy.get(`.highcharts-point[aria-label='${point}']`)
+        .should("be.visible")
+        .trigger("mouseover", { force: true });
+
+      for (const txt of tooltip) {
+        cy.get(".highcharts-tooltip").should("contain", txt);
+      }
+    }
+  },
+  checkChart(config) {
     cy.task("cleanDownloadsFolder");
     // Wait for loading
     cy.get(".chart-container-digital-agenda").should("exist");
@@ -123,50 +170,12 @@ Cypress.Commands.addAll({
     );
 
     // Set the filters
-    for (const filtersKey in filters) {
-      cy.selectFilter(filtersKey, filters[filtersKey]);
+    for (const filtersKey in config.filters ?? {}) {
+      cy.selectFilter(filtersKey, config.filters[filtersKey]);
     }
 
-    const checkChartInstance = () => {
-      // Check credits
-      cy.get(".highcharts-credits").contains("European Commission");
-
-      // Check chart title/subtitle
-      cy.get(".highcharts-title, .highcharts-subtitle")
-        .invoke("text")
-        .then((text) => {
-          for (const txt of title) {
-            // Highcharts adds ZeroWidthSpaces in the text, so we can't
-            // check normally
-            expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
-          }
-        });
-
-      for (const label of xAxis) {
-        cy.get(".highcharts-xaxis-labels text").contains(label);
-      }
-      for (const label of yAxis) {
-        cy.get(".highcharts-yaxis-labels text").contains(label);
-      }
-
-      // Check a point in the chart and the tooltip
-      if (point) {
-        cy.get(`.highcharts-point[aria-label='${point}']`)
-          .should("be.visible")
-          .trigger("mouseover", { force: true });
-
-        for (const txt of tooltip) {
-          cy.get(".highcharts-tooltip").should("contain", txt);
-        }
-      }
-    };
-
-    checkChartInstance();
-
-    // Check chart definitions
-    for (const txt of definitions) {
-      cy.get(".chart-definitions").contains(txt);
-    }
+    // Check the chart instance after all the filters have been set.
+    cy.checkChartInstance(config);
 
     // Check downloading the chart as a png
     // XXX This is unstable disable for now!
@@ -189,7 +198,7 @@ Cypress.Commands.addAll({
         // Everything should be the same as the backend should redirect
         // us to the exact same page as before.
         cy.visit(value.toString());
-        checkChartInstance();
+        cy.checkChartInstance(config);
       });
 
     // Check the chart again in embedded mode
@@ -202,7 +211,12 @@ Cypress.Commands.addAll({
         // navigate and check the chart again. Everything should
         // still be the same, but embedded instead.
         cy.visit(href);
-        checkChartInstance();
+        cy.checkChartInstance({
+          ...config,
+          // No filters of definitions in the embedded mode of the chart
+          filters: {},
+          definitions: [],
+        });
       });
 
     return cy;
