@@ -6,6 +6,7 @@ from rest_framework import serializers
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.core.serializers import BaseDimensionSerializer
 from digital_agenda.apps.core.serializers import IndicatorListSerializer
+from digital_agenda.apps.core.serializers import PeriodSerializer
 from digital_agenda.common.serializers import CodeRelatedField
 
 
@@ -64,6 +65,8 @@ class ChartIndicatorListSerializer(BaseDimensionSerializer):
         slug_field="code", read_only=True, many=True
     )
     time_coverage = serializers.SerializerMethodField(read_only=True)
+    min_period = PeriodSerializer(read_only=True)
+    max_period = PeriodSerializer(read_only=True)
 
     class Meta(IndicatorListSerializer.Meta):
         fields = BaseDimensionSerializer.Meta.fields + [
@@ -72,9 +75,12 @@ class ChartIndicatorListSerializer(BaseDimensionSerializer):
             "definition",
             "note",
             "time_coverage",
+            "min_period",
+            "max_period",
         ]
 
-    def _get_interval(self, start, end):
+    @staticmethod
+    def _get_interval(start, end):
         if start == end:
             return str(start)
 
@@ -84,15 +90,10 @@ class ChartIndicatorListSerializer(BaseDimensionSerializer):
         if obj.time_coverage:
             return obj.time_coverage
 
-        start = obj.period_start or -math.inf
-        end = obj.period_end or math.inf
-        all_years = {
-            period.year for period in obj.all_periods if (start <= period.year <= end)
-        }
-
         intervals = []
         interval_start, interval_end = None, None
-        for year in sorted(all_years):
+        for period in obj.all_periods:
+            year = period.date.year
             if not interval_start:
                 # First year in the series
                 interval_start, interval_end = year, year
