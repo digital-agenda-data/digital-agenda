@@ -59,6 +59,7 @@ export default {
               indicator?.chart_options,
             ]),
           },
+          pointRange: 365 * 24 * 3600 * 1000,
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
             const period = this.periodByCode.get(periodCode);

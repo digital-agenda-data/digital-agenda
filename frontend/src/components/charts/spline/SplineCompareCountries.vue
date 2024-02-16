@@ -34,6 +34,7 @@ export default {
         return {
           name: country.display,
           color: country.color,
+          pointRange: 365 * 24 * 3600 * 1000,
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[country.code][periodCode];
             const period = this.periodByCode.get(periodCode);
