@@ -1,5 +1,15 @@
 export {};
 
+interface CheckChartConfig {
+  filters?: object;
+  title?: string[];
+  point?: string;
+  tooltip?: string[];
+  definitions?: string[];
+  xAxis?: string[];
+  yAxis?: string[];
+}
+
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
@@ -13,6 +23,15 @@ declare global {
        * @example cy.selectFilter("breakdown", "Total")
        */
       selectFilter(
+        inputName: string,
+        label: string,
+      ): Chainable<JQuery<HTMLElement>>;
+
+      /**
+       * Check that the filter is set to the specified value
+       * @example cy.checkFilter("breakdown", "Total")
+       */
+      checkFilter(
         inputName: string,
         label: string,
       ): Chainable<JQuery<HTMLElement>>;
@@ -52,17 +71,25 @@ declare global {
        */
       navigateToChart(chartGroup: string, chart: string): void;
       /**
-       * Perform checks for a chart page
+       * Perform checks for a chart page.
+       *  - set specified filters
+       *  - check the chart instance
+       *  - check export link
+       *  - check share url, and recheck chart instance
+       *  - check the embedded url, and recheck chart instance
        */
-      checkChart(config: {
-        filters;
-        title;
-        point;
-        tooltip;
-        definitions;
-        xAxis;
-        yAxis;
-      }): Chainable<undefined>;
+      checkChart(config: CheckChartConfig): Chainable<undefined>;
+
+      /**
+       * Check the chart instance:
+       *  - check credits
+       *  - check filters are correctly set
+       *  - check title/subtitle
+       *  - check xAxis/yAxis labels
+       *  - check the specified point in the chart
+       *  - check the tooltip of the specified point
+       */
+      checkChartInstance(config: CheckChartConfig): Chainable<undefined>;
     }
   }
 }

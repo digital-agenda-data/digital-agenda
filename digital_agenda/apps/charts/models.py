@@ -1,4 +1,5 @@
 import functools
+from datetime import date
 
 from ckeditor.fields import RichTextField
 from colorfield.fields import ColorField
@@ -84,6 +85,18 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     @property
     def facts(self):
         return Fact.objects.filter(indicator__groups__chartgroup=self).distinct()
+
+    @functools.cached_property
+    def period_start_date(self):
+        if self.period_start:
+            return date(self.period_start, 1, 1)
+        return None
+
+    @functools.cached_property
+    def period_end_date(self):
+        if self.period_end:
+            return date(self.period_end, 12, 31)
+        return None
 
 
 def filter_option_field(rel_model):

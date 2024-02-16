@@ -1,10 +1,4 @@
-from datetime import date
-
 from django.contrib.postgres.aggregates import ArrayAgg
-from django.db.models import IntegerField
-from django.db.models import Max
-from django.db.models import Min
-from django.db.models import Value
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -23,6 +17,7 @@ from digital_agenda.apps.charts.serializers.chart_group import (
 )
 from digital_agenda.apps.charts.serializers.chart_group import ChartGroupSerializer
 from digital_agenda.apps.core.models import Indicator
+from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.common.export import FactExportMixin
 
@@ -57,32 +52,53 @@ class ChartGroupViewSet(
     @action(methods=["GET"], detail=True)
     def indicators(self, request, code=None):
         """Get indicators and min/max periods for this chart group"""
-        obj = self.get_object()
-        group_ids = obj.indicator_groups.all().values_list("id", flat=True)
+        chart_group = self.get_object()
+        end_date = chart_group.period_end_date
+        start_date = chart_group.period_start_date
 
-        queryset = (
+        group_ids = chart_group.indicator_groups.all().values_list("id", flat=True)
+        indicators = list(
             Indicator.objects.filter(facts__period__isnull=False)
             .prefetch_related("data_sources")
             .annotate(
-                period_start=Value(obj.period_start, IntegerField()),
-                period_end=Value(obj.period_end, IntegerField()),
-                fact_min_period=Min("facts__period__date"),
-                fact_max_period=Max("facts__period__date"),
-                all_periods=ArrayAgg("facts__period__date", distinct=True),
+                period_ids=ArrayAgg("facts__period_id", distinct=True),
             )
             .filter(groups__id__in=group_ids)
         )
 
-        if obj.period_start:
-            queryset = queryset.exclude(
-                fact_max_period__lt=date(obj.period_start, 1, 1)
-            )
-        if obj.period_end:
-            queryset = queryset.exclude(
-                fact_min_period__gt=date(obj.period_end, 12, 31)
-            )
+        # Prefetch all required period objects in bulk
+        period_by_ids = Period.objects.in_bulk(
+            {
+                period_id
+                for indicator in indicators
+                for period_id in indicator.period_ids
+            }
+        )
 
-        return Response(ChartIndicatorListSerializer(queryset, many=True).data)
+        results = []
+        for indicator in indicators:
+            all_periods = []
+            for period_id in indicator.period_ids:
+                period = period_by_ids[period_id]
+                # Filter out any periods that are not included the chart group
+                # configured period interval
+                if start_date and period.date < start_date:
+                    continue
+                if end_date and period.date > end_date:
+                    continue
+                all_periods.append(period)
+
+            if not all_periods:
+                # Indicator has no facts in the chart group period range
+                continue
+
+            all_periods.sort(key=lambda p: p.date)
+            indicator.all_periods = all_periods
+            indicator.min_period = all_periods[0]
+            indicator.max_period = all_periods[-1]
+            results.append(indicator)
+
+        return Response(ChartIndicatorListSerializer(results, many=True).data)
 
 
 class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
