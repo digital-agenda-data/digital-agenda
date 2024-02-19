@@ -1,6 +1,23 @@
 import describeResponsive from "../support/describeResponsive";
 
 describeResponsive("Check Search Page", () => {
+  it("Check search page period first link", () => {
+    cy.searchIndicators("h_broad");
+    cy.get("table tr:nth-child(2) a").contains("Test Chart Group");
+    cy.get("table tr:nth-child(2) a").contains("h_broad").click();
+    cy.checkChartInstance({
+      filters: {
+        period: "2013",
+        indicator: "Households with a broadband connection",
+        unit: "% of households",
+      },
+      title: ["Households having a broadband connection", "Year: 2013"],
+      definitions: [
+        "Indicator: Households having a broadband connection",
+        "Unit of measure: Percentage of households",
+      ],
+    });
+  });
   it("Check search results and links", () => {
     cy.searchIndicators("Social Media");
     cy.get(".ecl-table tbody tr").should("have.length", 3);
