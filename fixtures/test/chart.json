@@ -294,7 +294,7 @@
     "fields": {
       "created_at": "2024-02-13T10:19:00.807Z",
       "updated_at": "2024-02-13T10:19:00.807Z",
-      "display_order": 34,
+      "display_order": 41,
       "is_draft": false,
       "chart_group": [
         "test-group"
@@ -306,6 +306,49 @@
       "image": "",
       "min_value": -1,
       "max_value": 5,
+      "indicator_group_filter_hidden": false,
+      "indicator_filter_hidden": false,
+      "breakdown_group_filter_hidden": false,
+      "breakdown_filter_hidden": false,
+      "period_filter_hidden": false,
+      "unit_filter_hidden": false,
+      "country_filter_hidden": false,
+      "legend_layout": null,
+      "indicator_group_filter_defaults": [],
+      "indicator_group_filter_ignored": [],
+      "indicator_filter_defaults": [],
+      "indicator_filter_ignored": [],
+      "breakdown_group_filter_defaults": [],
+      "breakdown_group_filter_ignored": [],
+      "breakdown_filter_defaults": [],
+      "breakdown_filter_ignored": [],
+      "period_filter_defaults": [],
+      "period_filter_ignored": [],
+      "unit_filter_defaults": [],
+      "unit_filter_ignored": [],
+      "country_filter_defaults": [],
+      "country_filter_ignored": []
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 42,
+      "is_draft": false,
+      "chart_group": [
+        "test-group"
+      ],
+      "name": "Test Spline Custom Year Range",
+      "code": "test-spline-custom-year-range",
+      "chart_type": "SPLINE_COMPARE_COUNTRIES",
+      "description": "<p>This charts uses custom year ranges</p>",
+      "image": "",
+      "min_value": null,
+      "max_value": null,
+      "min_year": 2020,
+      "max_year": 2024,
       "indicator_group_filter_hidden": false,
       "indicator_filter_hidden": false,
       "breakdown_group_filter_hidden": false,
