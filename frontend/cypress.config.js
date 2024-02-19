@@ -25,17 +25,15 @@ module.exports = defineConfig({
     // List of viewports used for responsive checks. All tests responsive
     // tests are run on the entire list here. (Using `describeResponsive`)
     viewports: [
+      // 4k
+      [2560, 1440],
+      // Desktop
       [1920, 1080],
-      [1440, 900],
-      [1366, 768],
-      [1280, 800],
+      // Tablet
       [1024, 768],
       [768, 1024],
-      [800, 1280],
-      [600, 960],
-      [480, 853],
+      // Phone
       [414, 896],
-      [375, 667],
       [360, 640],
     ],
     setupNodeEvents(on, config) {
