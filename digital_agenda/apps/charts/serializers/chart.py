@@ -1,10 +1,9 @@
-import math
-
 from hashid_field.rest import HashidSerializerCharField
 from rest_framework import serializers
 
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.core.serializers import BaseDimensionSerializer
+from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.apps.core.serializers import IndicatorListSerializer
 from digital_agenda.apps.core.serializers import PeriodSerializer
 from digital_agenda.common.serializers import CodeRelatedField
@@ -67,6 +66,7 @@ class ChartIndicatorListSerializer(BaseDimensionSerializer):
     time_coverage = serializers.SerializerMethodField(read_only=True)
     min_period = PeriodSerializer(read_only=True)
     max_period = PeriodSerializer(read_only=True)
+    sample_fact = FactSerializer(read_only=True)
 
     class Meta(IndicatorListSerializer.Meta):
         fields = BaseDimensionSerializer.Meta.fields + [
@@ -77,6 +77,7 @@ class ChartIndicatorListSerializer(BaseDimensionSerializer):
             "time_coverage",
             "min_period",
             "max_period",
+            "sample_fact",
         ]
 
     @staticmethod
