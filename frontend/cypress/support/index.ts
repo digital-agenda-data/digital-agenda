@@ -52,9 +52,9 @@ declare global {
       /**
        * Check if the file has been downloaded and verify magic numbers to
        * match the specified type.
-       * @example cy.checkDownload(/.*\.png/, "png")
+       * @example cy.checkDownload(".png", "png")
        */
-      checkDownload(pattern: RegExp, expectedType: string): Chainable<void>;
+      checkDownload(pattern: string, expectedType: string): Chainable<void>;
 
       /**
        * Check if an export link and verify magic numbers to match the
