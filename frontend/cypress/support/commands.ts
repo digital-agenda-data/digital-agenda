@@ -89,9 +89,15 @@ Cypress.Commands.addAll({
       );
 
       cy.readFile(fullPath, null).then((buffer) => {
-        const detectedTypes = filetypeinfo(buffer).map((info) => info.typename);
+        if (expectedType === "svg") {
+          expect(buffer).to.match(/^<svg/);
+        } else {
+          const detectedTypes = filetypeinfo(buffer).map(
+            (info) => info.typename,
+          );
 
-        expect(expectedType).to.be.oneOf(detectedTypes);
+          expect(expectedType).to.be.oneOf(detectedTypes);
+        }
       });
     });
   },
@@ -170,6 +176,10 @@ Cypress.Commands.addAll({
     // Check downloading the chart as a png
     cy.get("a").contains("Download image").click();
     cy.checkDownload(".png", "png");
+
+    // Check downloading the chart as a png
+    cy.get("a").contains("Download SVG").click();
+    cy.checkDownload(".svg", "svg");
 
     // Check the export data link
     cy.checkExportLink("Export data", "xlsx");
