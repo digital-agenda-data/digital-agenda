@@ -2,17 +2,13 @@ import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import visualizer from "rollup-plugin-visualizer";
 import legacy from "@vitejs/plugin-legacy";
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    visualizer({
-      // File will be created after "npm run build"
-      filename: "bundle.stats.html",
-    }),
     legacy(),
   ],
   server: {

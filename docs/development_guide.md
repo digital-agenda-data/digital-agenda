@@ -102,7 +102,7 @@ See more details here: https://ec.europa.eu/component-library/ec/utilities/layou
 ## Previewing production build locally
 
 Checking certain aspects of the app (like bundle chunking and sizes) requires previewing 
-a production build. To do so follow these steps:
+a production build. To do so, follow these steps:
 
 - Create an env config file in the frontend dir to point the API host at the local 
   backend server:
@@ -114,10 +114,6 @@ a production build. To do so follow these steps:
   ```shell
   cd frontend/
   npm run build
-  ```
-- A file will be generated with some bundle stats, that can be checked if needed:
-  ```shell
-  bundle.stats.html
   ```
 - Use the preview script to serve the bundle locally:
   ```shell
