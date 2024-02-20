@@ -194,38 +194,7 @@ export default {
       return [];
     },
     mergedChartOptions() {
-      const result = {
-        ...this.chartOptionsDefaults,
-        ...this.chartOptions,
-      };
-
-      const setCustomAxis = (axisTypes, customMin, customMax) => {
-        for (const axis of axisTypes[this.chartType] ?? []) {
-          result[axis] ??= {};
-
-          // Some charts have multiple axis of the same kind, so force array here
-          // (e.g., SplineCompareTwoIndicators)
-          for (const opt of forceArray(result[axis])) {
-            opt.min = customMin ?? opt.min;
-            opt.max = customMax ?? opt.max;
-          }
-        }
-      };
-      // Set custom ranges to the axes depending on the chart type.
-      // No idea why anyone would ever use this.
-      // Oh well... ¯\_(ツ)_/¯
-      setCustomAxis(
-        VALUE_AXIS,
-        this.currentChart.min_value,
-        this.currentChart.max_value,
-      );
-      setCustomAxis(
-        YEAR_AXIS,
-        getDateFromYear(this.currentChart.min_year),
-        getDateFromYear(this.currentChart.max_year),
-      );
-
-      return result;
+      return this.getMergedChartOptions();
     },
     extraNotes() {
       return (this.indicator?.extra_notes || [])
@@ -487,6 +456,72 @@ export default {
       }
     },
     async loadExtra() {},
+    setCustomAxis(result, axisTypes, customMin, customMax) {
+      for (const axis of axisTypes[this.chartType] ?? []) {
+        result[axis] ??= {};
+
+        // Some charts have multiple axis of the same kind, so force array here
+        // (e.g., SplineCompareTwoIndicators)
+        for (const opt of forceArray(result[axis])) {
+          opt.min = customMin ?? opt.min;
+          opt.max = customMax ?? opt.max;
+        }
+      }
+    },
+    setFontStyleRecursive(obj, parts, fontStyleOption) {
+      if (parts.length === 0) {
+        if (fontStyleOption.font_color) {
+          obj.color = fontStyleOption.font_color;
+        }
+        if (fontStyleOption.font_weigth) {
+          obj.fontWeight = fontStyleOption.font_weigth;
+        }
+        if (fontStyleOption.font_size_px) {
+          obj.fontSize = fontStyleOption.font_size_px.toString() + "px";
+        }
+        return;
+      }
+
+      const currentPart = parts[0];
+      const otherParts = parts.slice(1);
+
+      obj[currentPart] ??= {};
+      for (const child of forceArray(obj[currentPart])) {
+        this.setFontStyleRecursive(child, otherParts, fontStyleOption);
+      }
+    },
+    getMergedChartOptions() {
+      const result = {
+        ...this.chartOptionsDefaults,
+        ...this.chartOptions,
+      };
+
+      for (const fontStyleOption of this.currentChart?.font_styles ?? []) {
+        this.setFontStyleRecursive(
+          result,
+          fontStyleOption.field.split("."),
+          fontStyleOption,
+        );
+      }
+
+      // Set custom ranges to the axes depending on the chart type.
+      // No idea why anyone would ever use this.
+      // Oh well... ¯\_(ツ)_/¯
+      this.setCustomAxis(
+        result,
+        VALUE_AXIS,
+        this.currentChart.min_value,
+        this.currentChart.max_value,
+      );
+      this.setCustomAxis(
+        result,
+        YEAR_AXIS,
+        getDateFromYear(this.currentChart.min_year),
+        getDateFromYear(this.currentChart.max_year),
+      );
+
+      return result;
+    },
   },
 };
 </script>
