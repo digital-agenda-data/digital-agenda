@@ -6,6 +6,7 @@ from colorfield.fields import ColorField
 from composite_field import CompositeField
 from django.conf import settings
 from django.core.exceptions import ValidationError
+from django.core.validators import MaxValueValidator
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.html import strip_tags
@@ -404,6 +405,67 @@ class ExtraChartNote(TimestampedModel):
     note = models.CharField(
         max_length=255, help_text="Extra notes to show in the chart"
     )
+
+
+class ChartFontStyle(models.Model):
+    class Fields(models.TextChoices):
+        TITLE = "title.style", "Title"
+        SUBTITLE = "subtitle.style", "Subtitle"
+        LEGEND = "legend.itemStyle", "Legend Item"
+        TOOLTIP = "tooltip.style", "Tooltip"
+
+        X_AXIS_TITLE = "xAxis.title.style", "Horizontal Axis Title"
+        Y_AXIS_TITLE = "yAxis.title.style", "Vertical Axis Title"
+
+        X_AXIS_LABEL = "xAxis.labels.style", "Horizontal Axis Labels"
+        Y_AXIS_LABEL = "yAxis.labels.style", "Vertical Axis Labels"
+
+        DATA_LABELS = "plotOptions.series.dataLabels.style", "Data Labels"
+        CREDITS = "credits.style", "Chart Credits"
+
+    class FontWeights(models.IntegerChoices):
+        THIN = 100, "Thin (Hairline)"
+        EXTRA_LIGHT = 200, "Extra Light (Ultra Light)"
+        LIGHT = 300, "Light"
+        NORMAL = 400, "Normal (Regular)"
+        MEDIUM = 500, "Medium"
+        SEMI_BOLD = 600, "Semi Bold (Demi Bold)"
+        BOLD = 700, "Bold"
+        EXTRA_BOLD = 800, "Extra Bold (Ultra Bold)"
+        BLACK = 900, "Black (Heavy)"
+        EXTRA_BLACK = 950, "Extra Black (Ultra Black)"
+
+    chart = models.ForeignKey(
+        Chart, on_delete=models.CASCADE, related_name="font_styles"
+    )
+    field = models.CharField(
+        max_length=60,
+        help_text="The chart item(s) this style applies to.",
+        choices=Fields.choices,
+    )
+    font_weight = models.IntegerField(
+        help_text="Set the weight (or boldness) of the font.",
+        blank=True,
+        null=True,
+        default=None,
+        choices=FontWeights.choices,
+    )
+    font_size_px = models.PositiveIntegerField(
+        help_text="Set the font size in pixels.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[MinValueValidator(8), MaxValueValidator(100)],
+    )
+    font_color = ColorField(
+        help_text="Set the text color.",
+        blank=True,
+        null=True,
+        default=None,
+    )
+
+    class Meta:
+        unique_together = ("chart", "field")
 
 
 class ChartFilterOrder(DisplayOrderModel):
