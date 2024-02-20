@@ -50,6 +50,7 @@ class Command(BaseCommand):
         call_command("loaddata", "test/chartgroup")
         call_command("loaddata", "test/chart")
         call_command("loaddata", "test/chartfilterorder")
+        call_command("loaddata", "test/chartfontstyle")
 
         # Import some facts from some small ESTAT configs
         call_command("loaddata", "test/seed_importconfigs")

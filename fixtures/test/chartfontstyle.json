@@ -1,0 +1,142 @@
+[
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 1,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "title.style",
+      "font_weight": 100,
+      "font_size_px": 8,
+      "font_color": "#63b8ff"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 2,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "subtitle.style",
+      "font_weight": 200,
+      "font_size_px": 12,
+      "font_color": "#E41A1C"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 3,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "legend.itemStyle",
+      "font_weight": 300,
+      "font_size_px": 16,
+      "font_color": "#4DAF4A"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 4,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "tooltip.style",
+      "font_weight": 400,
+      "font_size_px": 20,
+      "font_color": "#984EA3"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 5,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "xAxis.title.style",
+      "font_weight": 500,
+      "font_size_px": 24,
+      "font_color": "#FF7F00"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 6,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "yAxis.title.style",
+      "font_weight": 600,
+      "font_size_px": 28,
+      "font_color": "#FFFF33"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 7,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "xAxis.labels.style",
+      "font_weight": 700,
+      "font_size_px": 32,
+      "font_color": "#A65628"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 8,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "yAxis.labels.style",
+      "font_weight": 800,
+      "font_size_px": 36,
+      "font_color": "#F781BF"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 9,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "plotOptions.series.dataLabels.style",
+      "font_weight": 900,
+      "font_size_px": 40,
+      "font_color": "#0B4EA2"
+    }
+  },
+  {
+    "model": "charts.chartfontstyle",
+    "pk": 10,
+    "fields": {
+      "chart": [
+        "test-group",
+        "test-spline-custom-fonts"
+      ],
+      "field": "credits.style",
+      "font_weight": 950,
+      "font_size_px": 10,
+      "font_color": "#044C29"
+    }
+  }
+]
