@@ -22,6 +22,14 @@
       @click.capture.prevent="downloadChart"
     />
     <ecl-link
+      v-if="highchartInstance"
+      no-visited
+      label="Download SVG"
+      to="#download-chart-svg"
+      download-class
+      @click.capture.prevent="downloadChart({ type: 'image/svg+xml' })"
+    />
+    <ecl-link
       v-for="(exportLink, axis) in chartRef?.exportLinks ?? {}"
       :key="'export' + axis"
       no-visited
@@ -107,8 +115,8 @@ export default {
     printChart() {
       this.highchartInstance.print();
     },
-    downloadChart() {
-      this.highchartInstance.exportChartLocal();
+    downloadChart(exportingOptions = {}) {
+      this.highchartInstance.exportChartLocal(exportingOptions);
     },
     async getShortUrl() {
       try {
