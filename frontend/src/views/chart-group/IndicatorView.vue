@@ -231,7 +231,11 @@ export default {
         query: {
           indicator: indicator.code,
           indicatorGroup: group.code,
-          period: indicator.max_period.code,
+          // Specify filters from the sample fact to ensure the link
+          // works even when the order of the filters are changed around
+          breakdown: indicator.sample_fact.breakdown,
+          period: indicator.sample_fact.period,
+          unit: indicator.sample_fact.unit,
         },
       };
     },

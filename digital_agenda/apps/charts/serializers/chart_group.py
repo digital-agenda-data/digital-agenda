@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.core.models import Indicator
+from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.common.serializers import CodeRelatedField
 
 
@@ -37,6 +38,7 @@ class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):
     chart_group = serializers.CharField(source="chart_group_code", read_only=True)
     highlight = serializers.JSONField(read_only=True)
     rank = serializers.FloatField(read_only=True)
+    sample_fact = FactSerializer(read_only=True)
 
     class Meta:
         model = Indicator
@@ -49,4 +51,5 @@ class ChartGroupIndicatorSearchSerializer(serializers.ModelSerializer):
             "chart_group",
             "highlight",
             "rank",
+            "sample_fact",
         ]

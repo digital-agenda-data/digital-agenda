@@ -107,6 +107,11 @@ export default {
             query: {
               indicator: item.code,
               indicatorGroup: item.group,
+              // Specify filters from the sample fact to ensure the link
+              // works even when the order of the filters are changed around
+              breakdown: item.sample_fact.breakdown,
+              period: item.sample_fact.period,
+              unit: item.sample_fact.unit,
             },
           },
           toGroup: {

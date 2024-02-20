@@ -1,4 +1,6 @@
 from django.contrib.postgres.aggregates import ArrayAgg
+from django.db.models import OuterRef
+from django.db.models import Subquery
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -16,9 +18,11 @@ from digital_agenda.apps.charts.serializers.chart_group import (
     ChartGroupIndicatorSearchSerializer,
 )
 from digital_agenda.apps.charts.serializers.chart_group import ChartGroupSerializer
+from digital_agenda.apps.core.models import Fact
 from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.views import CodeLookupMixin
+from digital_agenda.apps.core.views.facts import FactsViewSet
 from digital_agenda.common.export import FactExportMixin
 
 
@@ -56,17 +60,30 @@ class ChartGroupViewSet(
         end_date = chart_group.period_end_date
         start_date = chart_group.period_start_date
 
+        fact_subquery = Fact.objects.filter(indicator_id=OuterRef("id")).order_by(
+            "-period__date"
+        )
+        if start_date:
+            fact_subquery = fact_subquery.filter(period__date__gte=start_date)
+        if end_date:
+            fact_subquery = fact_subquery.filter(period__date__lte=end_date)
+
         group_ids = chart_group.indicator_groups.all().values_list("id", flat=True)
         indicators = list(
             Indicator.objects.filter(facts__period__isnull=False)
             .prefetch_related("data_sources")
             .annotate(
+                # Fetch all periods to correctly compute the "time coverage",
+                # including any gaps in the data.
                 period_ids=ArrayAgg("facts__period_id", distinct=True),
+                # Fetch one sample fact to have all necessary details to compute a
+                # valid link to a chart showing this indicator.
+                sample_fact_id=Subquery(fact_subquery.values("id")[:1]),
             )
             .filter(groups__id__in=group_ids)
         )
 
-        # Prefetch all required period objects in bulk
+        # Prefetch all required objects in bulk
         period_by_ids = Period.objects.in_bulk(
             {
                 period_id
@@ -74,9 +91,14 @@ class ChartGroupViewSet(
                 for period_id in indicator.period_ids
             }
         )
+        facts_by_id = FactsViewSet.queryset.in_bulk(
+            {indicator.sample_fact_id for indicator in indicators}
+        )
 
         results = []
         for indicator in indicators:
+            indicator.sample_fact = facts_by_id[indicator.sample_fact_id]
+
             all_periods = []
             for period_id in indicator.period_ids:
                 period = period_by_ids[period_id]
@@ -152,7 +174,24 @@ class ChartGroupIndicatorSearchViewSet(
                    core_indicatorgroup.code     AS group_code,
                    charts_chartgroup.code       AS chart_group_code,
                    highlight::json              AS highlight,
-                   ts_rank(vector, query)       AS rank
+                   ts_rank(vector, query)       AS rank,
+                   -- Fetch one sample fact to have all necessary details to compute a 
+                   -- valid link to a chart showing this indicator.
+                   (SELECT core_fact.id
+                    FROM core_fact
+                         INNER JOIN core_period
+                                    ON (core_period.id = core_fact.period_id)
+                    WHERE indicator_id = core_indicator.id
+                      AND (
+                        charts_chartgroup.period_start IS NULL OR
+                        EXTRACT(YEAR FROM core_period.date) >= charts_chartgroup.period_start
+                        )
+                      AND (
+                        charts_chartgroup.period_end IS NULL OR
+                        EXTRACT(YEAR FROM core_period.date) <= charts_chartgroup.period_end
+                        )
+                    ORDER BY core_period.date DESC
+                    LIMIT 1)                    AS sample_fact_id
             FROM core_indicator
                  INNER JOIN core_indicatorgrouplink
                             ON core_indicator.id = core_indicatorgrouplink.indicator_id
@@ -199,3 +238,14 @@ class ChartGroupIndicatorSearchViewSet(
     @method_decorator(never_cache)
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
+
+    def get_serializer(self, queryset, *args, **kwargs):
+        indicators = list(queryset)
+
+        facts_by_id = FactsViewSet.queryset.in_bulk(
+            {indicator.sample_fact_id for indicator in indicators}
+        )
+        for indicator in indicators:
+            indicator.sample_fact = facts_by_id[indicator.sample_fact_id]
+
+        return super().get_serializer(indicators, *args, **kwargs)
