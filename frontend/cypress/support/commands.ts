@@ -80,30 +80,26 @@ Cypress.Commands.addAll({
       });
   },
   checkDownload(pattern, expectedType) {
-    cy.waitUntil(() =>
-      cy
-        .task("downloads")
-        .then(
-          (files: Array<string>) =>
-            files.filter((fn) => fn.match(pattern)).length === 1,
-        ),
-    )
-      .task("downloads")
-      .then((files: Array<string>) => {
-        const downloadsFolder = Cypress.config("downloadsFolder");
-        const fullPath = path.join(
-          downloadsFolder,
-          files.find((fn) => fn.match(pattern)),
-        );
+    cy.verifyDownload(pattern, { contains: true });
+    cy.task("downloads").then((files: Array<string>) => {
+      const downloadsFolder = Cypress.config("downloadsFolder");
+      const fullPath = path.join(
+        downloadsFolder,
+        files.find((fn) => fn.includes(pattern)),
+      );
 
-        cy.readFile(fullPath, null).then((buffer) => {
+      cy.readFile(fullPath, null).then((buffer) => {
+        if (expectedType === "svg") {
+          expect(buffer).to.match(/^<svg/);
+        } else {
           const detectedTypes = filetypeinfo(buffer).map(
             (info) => info.typename,
           );
 
           expect(expectedType).to.be.oneOf(detectedTypes);
-        });
+        }
       });
+    });
   },
   navigateToChart(chartGroup, chart) {
     cy.visit("/");
@@ -178,13 +174,12 @@ Cypress.Commands.addAll({
     cy.checkChartInstance(config);
 
     // Check downloading the chart as a png
-    // XXX This is unstable disable for now!
-    // if (title.length > 0) {
-    //   cy.get("a")
-    //     .contains("Download image")
-    //     .click()
-    //     .checkDownload(/png$/, "png");
-    // }
+    cy.get("a").contains("Download image").click();
+    cy.checkDownload(".png", "png");
+
+    // Check downloading the chart as a png
+    cy.get("a").contains("Download SVG").click();
+    cy.checkDownload(".svg", "svg");
 
     // Check the export data link
     cy.checkExportLink("Export data", "xlsx");
