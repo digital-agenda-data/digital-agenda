@@ -2,6 +2,7 @@ require("dotenv").config({ path: "../.env" });
 
 const { rmSync, readdirSync } = require("fs");
 const { defineConfig } = require("cypress");
+const { verifyDownloadTasks } = require("cy-verify-downloads");
 
 // XXX We don't actually know which one we should use
 // XXX if there are more than one!
@@ -37,6 +38,7 @@ module.exports = defineConfig({
       [360, 640],
     ],
     setupNodeEvents(on, config) {
+      on("task", verifyDownloadTasks);
       on("task", {
         log(message) {
           console.log(message);
