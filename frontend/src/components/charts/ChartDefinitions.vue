@@ -9,10 +9,6 @@
       <span>{{ item.label || item.alt_label }}</span>
     </div>
     <div class="ecl-u-ml-m ecl-u-mt-m">
-      <div>
-        <b>Notation:&nbsp;</b>
-        <span>{{ item.code }}</span>
-      </div>
       <div v-if="item.definition">
         <b>Definition:&nbsp;</b>
         <!-- eslint-disable-next-line vue/no-v-html -->
