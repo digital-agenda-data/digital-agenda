@@ -70,6 +70,12 @@ declare global {
        * Navigate to a chart
        */
       navigateToChart(chartGroup: string, chart: string): void;
+
+      /**
+       * Check for the existence of the specified point.
+       * Force hover it and check the tooltip contents to match.
+       */
+      checkPoint(point: string, tooltip?: string[]): void;
       /**
        * Perform checks for a chart page.
        *  - set specified filters

@@ -1,0 +1,1477 @@
+[
+  {
+    "model": "core.fact",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 5.693981,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2011"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 5.6621,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2011"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.028183,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2012"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 5.9388,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2012"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.362384,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2013"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.1438,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2013"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.696586,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2014"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 8,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.3284,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2014"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 9,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 7.030788,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2015"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 10,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.5502,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2015"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 11,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 7.36499,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2016"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 12,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 6.9138,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2016"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 13,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 7.699191,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2017"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 14,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 7.1796,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2017"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 15,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 8.033393,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2018"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 16,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 7.5736,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2018"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 17,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 8.367595,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2019"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 18,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 7.8537,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2019"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 19,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 8.701797,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2020"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 20,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 8.4227,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2020"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 21,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 9.035998,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2021"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 22,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 8.927,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2021"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 23,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 9.3702,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2022"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 24,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.673Z",
+      "value": 9.3702,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2022"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 25,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.673Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 9.3702,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2022"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 26,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 9.704402,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 27,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 10.698925,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 28,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 10.038603,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2024"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 29,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 12.02765,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2024"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 30,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 10.372805,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2025"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 31,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 13.356375,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2025"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 32,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 10.707007,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2026"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 33,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 14.6851,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2026"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 34,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 11.041209,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2027"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 35,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 16.013825,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2027"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 36,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 11.37541,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2028"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 37,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 17.34255,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2028"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 38,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 11.709612,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2029"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 39,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 18.671275,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2029"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 40,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 12.043814,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2030"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 41,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 20.0,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_ideal"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2030"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 42,
+    "fields": {
+      "created_at": "2024-02-21T13:58:02.674Z",
+      "updated_at": "2024-02-21T13:58:02.674Z",
+      "value": 20.0,
+      "flags": "",
+      "indicator": [
+        "dd_ictspec"
+      ],
+      "breakdown": [
+        "dd_target"
+      ],
+      "unit": [
+        "mio_ind"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2030"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 43,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 1.414927,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2019"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 44,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 0.0,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2019"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 45,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 8.774044,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2020"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 46,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 13.9,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2020"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 47,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 39.192169,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2021"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 48,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 65.8,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2021"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 49,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 81.2,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2022"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 50,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 81.2,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_hist"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2022"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 51,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 96.660418,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 52,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.487078,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2024"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 53,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.923124,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2025"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 54,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.988521,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2026"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 55,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.998287,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2027"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 56,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.999744,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2028"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 57,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.999962,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2029"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 58,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 99.999994,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_baseline"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2030"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 59,
+    "fields": {
+      "created_at": "2024-02-21T14:27:54.976Z",
+      "updated_at": "2024-02-21T14:27:54.976Z",
+      "value": 100.0,
+      "flags": "",
+      "indicator": [
+        "dd_5gc"
+      ],
+      "breakdown": [
+        "dd_target"
+      ],
+      "unit": [
+        "pc_hh_all"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "2030"
+      ]
+    }
+  }
+]
