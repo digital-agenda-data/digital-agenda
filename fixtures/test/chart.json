@@ -158,5 +158,20 @@
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
       "description": "<p>This charts has custom font styles</p>"
     }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 44,
+      "chart_group": [
+        "test-group"
+      ],
+      "name": "Test Bubble Custom Fonts",
+      "code": "test-bubble-custom-fonts",
+      "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
+      "description": "<p>This charts has custom font styles</p>"
+    }
   }
 ]
