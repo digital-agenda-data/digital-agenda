@@ -3,8 +3,12 @@ import describeResponsive from "../support/describeResponsive";
 describeResponsive("Check Search Page", () => {
   it("Check search page period first link", () => {
     cy.searchIndicators("h_broad");
-    cy.get("table tr:nth-child(2) a").contains("Test Chart Group");
-    cy.get("table tr:nth-child(2) a").contains("h_broad").click();
+    cy.get("table a")
+      .contains("Test Chart Group")
+      .parents("tr")
+      .find("a")
+      .contains("h_broad")
+      .click();
     cy.checkChartInstance({
       filters: {
         period: "2013",
