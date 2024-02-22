@@ -205,7 +205,7 @@
       ],
       "field": "xAxis.title.style",
       "font_weight": 500,
-      "font_size_px": 24,
+      "font_size_px": 8,
       "font_color": "#FF7F00"
     }
   },
@@ -219,7 +219,7 @@
       ],
       "field": "yAxis.title.style",
       "font_weight": 600,
-      "font_size_px": 28,
+      "font_size_px": 8,
       "font_color": "#FFFF33"
     }
   },
