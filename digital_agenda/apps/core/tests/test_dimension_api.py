@@ -1,5 +1,7 @@
+import io
 import itertools
 
+import openpyxl
 from django.urls import reverse
 from rest_framework import status
 
@@ -27,7 +29,9 @@ class TestDimensionAPI(APIBaseTest):
         "country",
     ]
 
-    def create_fact(self, indicator, breakdown, period, unit, country, value=None):
+    def create_fact(
+        self, indicator, breakdown, period, unit, country, value=None, flags="be"
+    ):
         Fact.objects.create(
             indicator=Indicator.objects.get(code=indicator),
             breakdown=Breakdown.objects.get(code=breakdown),
@@ -35,6 +39,7 @@ class TestDimensionAPI(APIBaseTest):
             unit=Unit.objects.get(code=unit),
             country=Country.objects.get(code=country),
             value=42 if value is None else value,
+            flags=flags,
         )
 
     def create_facts(self):
@@ -153,4 +158,144 @@ class TestDimensionAPI(APIBaseTest):
             "v1:country-list",
             {"period": "2021", "breakdown": "men"},
             "EU",
+        )
+
+    def get_xlsx(self, params) -> openpyxl.Workbook:
+        self.create_facts()
+
+        resp = self.client.get(
+            reverse("v1:fact-list"),
+            {
+                **params,
+                "format": "xlsx",
+            },
+        )
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        return openpyxl.load_workbook(io.BytesIO(resp.content), read_only=True)
+
+    def check_xlsx(self, sheet_name, params, expected):
+        sheet = self.get_xlsx(params)[sheet_name]
+
+        result = {pos: sheet[pos].value for pos in expected}
+        self.assertEqual(result, expected)
+
+    def test_export_filters(self):
+        self.check_xlsx(
+            "Applied Filters",
+            {
+                "indicator": "e_cc",
+                "breakdown": "women",
+                "unit": "euro",
+            },
+            {
+                "A2": "Indicator",
+                "A3": "Breakdown",
+                "A4": "Unit",
+                "B2": "e_cc",
+                "B3": "women",
+                "B4": "euro",
+            },
+        )
+
+    def test_export_period(self):
+        self.check_xlsx(
+            "Period",
+            {
+                "indicator": "e_cc",
+                "breakdown": "women",
+                "unit": "euro",
+                "format": "xlsx",
+            },
+            {
+                "A2": "2021",
+                "A3": "2020",
+            },
+        )
+
+    def test_export_country(self):
+        self.check_xlsx(
+            "Country",
+            {
+                "indicator": "e_cc",
+                "breakdown": "women",
+                "unit": "euro",
+            },
+            {
+                "A2": "EU",
+                "A3": "RO",
+                "B2": "European Union",
+                "B3": "Romania",
+            },
+        )
+
+    def test_export_flags(self):
+        self.check_xlsx(
+            "Flags",
+            {
+                "indicator": "e_cc",
+                "breakdown": "women",
+                "unit": "euro",
+            },
+            {
+                "A2": "b",
+                "A3": "c",
+                "A4": "d",
+                "B2": "break in time series",
+                "B3": "confidential",
+                "B4": "definition differs, see metadata",
+            },
+        )
+
+    def test_export_raw_data(self):
+        self.check_xlsx(
+            "Raw Data",
+            {
+                "indicator": "e_cc",
+                "breakdown": "women",
+                "period": "2021",
+                "unit": "euro",
+            },
+            {
+                "A2": "2021",
+                "B2": "EU",
+                "C2": "e_cc",
+                "D2": "women",
+                "E2": "euro",
+                "F2": 42,
+                "G2": "be",
+                "A3": "2021",
+                "B3": "RO",
+                "C3": "e_cc",
+                "D3": "women",
+                "E3": "euro",
+                "F3": 42,
+                "G3": "be",
+            },
+        )
+
+    def test_export_data(self):
+        self.check_xlsx(
+            "Data",
+            {
+                "indicator": "e_cc",
+                "breakdown": "women",
+                "period": "2021",
+                "unit": "euro",
+            },
+            {
+                "A2": "Year: 2021",
+                "B2": "European Union",
+                "C2": "Buy Cloud Computing services used over the internet",
+                "D2": "Women",
+                "E2": "Euro",
+                "F2": 42,
+                "G2": "break in time series, estimated",
+                "A3": "Year: 2021",
+                "B3": "Romania",
+                "C3": "Buy Cloud Computing services used over the internet",
+                "D3": "Women",
+                "E3": "Euro",
+                "F3": 42,
+                "G3": "break in time series, estimated",
+            },
         )
