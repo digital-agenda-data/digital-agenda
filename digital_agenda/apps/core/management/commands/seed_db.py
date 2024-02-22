@@ -1,3 +1,4 @@
+import itertools
 import sys
 
 from django.conf import settings
@@ -5,7 +6,9 @@ from django.core.files import File
 from django.core.management import BaseCommand
 from django.core.management import call_command
 
+from digital_agenda.apps.charts.models import BreakdownChartOption
 from digital_agenda.apps.charts.models import ChartGroup
+from digital_agenda.apps.charts.models import IndicatorChartOption
 from digital_agenda.apps.core.cache import clear_all_caches
 
 
@@ -67,5 +70,17 @@ class Command(BaseCommand):
                     group.save()
             except OSError:
                 continue
+
+        dd_img = settings.TEST_FIXTURES_DIR / "dd_target.webp"
+        for opt in itertools.chain(
+            BreakdownChartOption.objects.all(),
+            IndicatorChartOption.objects.all(),
+        ):
+            if not opt.custom_symbol:
+                continue
+
+            with dd_img.open("rb") as f:
+                opt.custom_symbol = File(f, name=dd_img.name)
+                opt.save()
 
         clear_all_caches(force=True)
