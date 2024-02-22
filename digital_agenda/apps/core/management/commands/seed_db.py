@@ -46,11 +46,14 @@ class Command(BaseCommand):
         # Import some facts
         call_command("loaddata", "test/facts")
 
-        # Import some data for Digital Economy and Society Index (until 2022)
-        call_command("loaddata", "test/desi-facts")
+        # Import some data for DESI (with extra notes indicators)
+        call_command("loaddata", "test/desi-extra-notes-facts")
 
         # Import some data for Digital Decade indicators and trajectories
         call_command("loaddata", "test/digital-trajectory-facts")
+
+        # Import some data for Digital Economy and Society Index (until 2022)
+        call_command("loaddata", "test/desi-facts")
 
         # Import some test charts with custom options
         call_command("loaddata", "test/chartgroup")
