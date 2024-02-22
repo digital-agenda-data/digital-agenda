@@ -2,11 +2,23 @@ from hashid_field.rest import HashidSerializerCharField
 from rest_framework import serializers
 
 from digital_agenda.apps.charts.models import Chart
+from digital_agenda.apps.charts.models import ChartFontStyle
 from digital_agenda.apps.core.serializers import BaseDimensionSerializer
 from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.apps.core.serializers import IndicatorListSerializer
 from digital_agenda.apps.core.serializers import PeriodSerializer
 from digital_agenda.common.serializers import CodeRelatedField
+
+
+class ChartFontStyleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChartFontStyle
+        fields = (
+            "field",
+            "font_weight",
+            "font_size_px",
+            "font_color",
+        )
 
 
 class ChartSerializer(serializers.ModelSerializer):
@@ -36,6 +48,7 @@ class ChartSerializer(serializers.ModelSerializer):
     filter_order = serializers.SlugRelatedField(
         slug_field="filter_field", many=True, read_only=True
     )
+    font_styles = ChartFontStyleSerializer(many=True, read_only=True)
 
     class Meta:
         model = Chart
@@ -55,6 +68,7 @@ class ChartSerializer(serializers.ModelSerializer):
             "min_year",
             "max_year",
             "legend_layout",
+            "font_styles",
         )
         read_only_fields = fields
 

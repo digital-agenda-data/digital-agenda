@@ -1,0 +1,1346 @@
+[
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 78.46,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 88.09,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 31.74,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 98.72,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 86.02,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 55.09,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 98.86,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 92.96,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 80.5,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 84.02,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 74.2,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 97.03,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 90.16,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 68.72,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 81.02,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 88.16,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 76.26,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 83.1,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 90.89,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 76.96,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 82.97,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 96.85,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 62.62,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 80.8,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 23.55,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 95.77,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 81.28,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:19.312Z",
+      "updated_at": "2024-02-22T08:02:19.312Z",
+      "value": 81.59,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 88.16644,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 85.065238,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 77.206071,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 70.230042,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 47.444185,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 71.127655,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 95.833542,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 89.16775,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 60.717202,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 83.147482,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 71.705804,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 90.06019,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 54.494315,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 85.569417,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 79.914863,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 0.0,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 71.322202,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 91.95394,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 67.169196,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 78.832631,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 77.615667,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 69.376083,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 86.404524,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 62.692292,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 57.067125,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 70.294405,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 80.418625,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-02-22T08:02:28.600Z",
+      "updated_at": "2024-02-22T08:02:28.600Z",
+      "value": 44.765613,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2023"
+      ]
+    }
+  }
+]

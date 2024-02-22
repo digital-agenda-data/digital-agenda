@@ -67,3 +67,7 @@ class Command(BaseCommand):
                 force_download=force_download,
                 delete_existing=delete_existing,
             )
+
+        if not all(config.latest_task.status == "SUCCESS" for config in config_qs):
+            print("Not ALL tasks completed successfully.")
+            sys.exit(1)

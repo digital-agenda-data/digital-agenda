@@ -16,6 +16,7 @@ from digital_agenda.apps.charts.models import BreakdownChartOption
 from digital_agenda.apps.charts.models import Chart
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.models import ExtraChartNote
+from digital_agenda.apps.charts.models import ChartFontStyle
 from digital_agenda.apps.charts.models import ChartFilterOrder
 from digital_agenda.apps.charts.models import IndicatorChartOption
 from digital_agenda.apps.core.cache import clear_all_caches
@@ -27,12 +28,19 @@ from digital_agenda.common.admin import HasChangesAdminMixin
 class ChartFilterOrderInline(SortableInlineAdminMixin, admin.StackedInline):
     extra = 0
     model = ChartFilterOrder
-    autocomplete_fields = ("chart",)
+
+
+class ChartFontStyleInline(admin.TabularInline):
+    extra = 0
+    model = ChartFontStyle
 
 
 @admin.register(Chart)
 class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
-    inlines = (ChartFilterOrderInline,)
+    inlines = (
+        ChartFontStyleInline,
+        ChartFilterOrderInline,
+    )
     prepopulated_fields = {"code": ("name",)}
     search_fields = ("code", "name", "description")
     list_filter = ("chart_group", "is_draft", "chart_type")

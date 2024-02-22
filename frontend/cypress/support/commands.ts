@@ -106,6 +106,15 @@ Cypress.Commands.addAll({
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
   },
+  checkPoint(point, tooltip = []) {
+    cy.get(`.highcharts-point[aria-label='${point}']`)
+      .should("be.visible")
+      .trigger("mouseover", { force: true });
+
+    for (const txt of tooltip) {
+      cy.get(".highcharts-tooltip").should("contain", txt);
+    }
+  },
   checkChartInstance({
     filters = {},
     title = [],
@@ -129,15 +138,17 @@ Cypress.Commands.addAll({
     }
 
     // Check chart title/subtitle
-    cy.get(".highcharts-title, .highcharts-subtitle")
-      .invoke("text")
-      .then((text) => {
-        for (const txt of title) {
-          // Highcharts adds ZeroWidthSpaces in the text, so we can't
-          // check normally
-          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
-        }
-      });
+    if (title?.length > 0) {
+      cy.get(".highcharts-title, .highcharts-subtitle")
+        .invoke("text")
+        .then((text) => {
+          for (const txt of title) {
+            // Highcharts adds ZeroWidthSpaces in the text, so we can't
+            // check normally
+            expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+          }
+        });
+    }
 
     for (const label of xAxis) {
       cy.get(".highcharts-xaxis-labels text").contains(label);
@@ -148,13 +159,7 @@ Cypress.Commands.addAll({
 
     // Check a point in the chart and the tooltip
     if (point) {
-      cy.get(`.highcharts-point[aria-label='${point}']`)
-        .should("be.visible")
-        .trigger("mouseover", { force: true });
-
-      for (const txt of tooltip) {
-        cy.get(".highcharts-tooltip").should("contain", txt);
-      }
+      cy.checkPoint(point, tooltip);
     }
   },
   checkChart(config) {
