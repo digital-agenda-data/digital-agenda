@@ -160,6 +160,7 @@ class FactXLSXSerializer:
         self.render_info_sheet()
         self.render_filters_sheet()
         self.render_dimensions_sheet()
+        self.render_raw_data_sheet()
         self.render_data_sheet()
 
         buffer = io.BytesIO()
@@ -238,7 +239,7 @@ class FactXLSXSerializer:
 
             sheet.append(
                 [
-                    self.chart_group.get_label(filter_key),
+                    self.get_label(filter_key),
                     value,
                     obj.label,
                     obj.alt_label,
@@ -246,29 +247,47 @@ class FactXLSXSerializer:
                 ]
             )
 
-    def render_dimensions_sheet(self):
-        headers = ["code", "label", "alt_label", "definition"]
+    @functools.cached_property
+    def dimensions_by_code(self):
         dimensions = ["indicator", "breakdown", "unit", "country", "period"]
         dimension_codes = collections.defaultdict(set)
         for row in self.data:
             for dim in dimensions:
                 dimension_codes[dim].add(row[dim])
 
+        result = {}
         for dim, codes in dimension_codes.items():
+            result[dim] = {}
+            model = MODELS[dim]
+            for obj in model.objects.filter(code__in=codes):
+                result[dim][obj.code] = obj
+
+        return result
+
+    @functools.lru_cache()
+    def get_label(self, dimension):
+        if self.chart_group:
+            return self.chart_group.get_label(dimension)
+        return dimension.title()
+
+    def render_dimensions_sheet(self):
+        headers = ["code", "label", "alt_label", "definition"]
+
+        for dim, objects in self.dimensions_by_code.items():
             if dim in self.filter_args:
-                # If we are filtering by the dimension there is
+                # If we are filtering by the dimension, there is
                 # no point in adding an extra sheet for it.
                 continue
 
             model = MODELS[dim]
 
-            sheet = self.wb.create_sheet(self.chart_group.get_label(dim))
+            sheet = self.wb.create_sheet(self.get_label(dim))
             self.set_dimensions(sheet, [15, 40, 40, 40])
             self.write_headers(
                 sheet, [getattr(model, h).field.verbose_name.title() for h in headers]
             )
 
-            for obj in model.objects.filter(code__in=codes):
+            for obj in objects.values():
                 sheet.append(getattr(obj, key) for key in headers)
 
         sheet = self.wb.create_sheet("Flags")
@@ -280,8 +299,28 @@ class FactXLSXSerializer:
 
     def render_data_sheet(self):
         sheet = self.wb.create_sheet("Data")
+        self.set_dimensions(sheet, [25 for _ in self.headers])
+        self.write_headers(sheet, [self.get_label(h) for h in self.headers])
+
+        for row in self.data:
+            sheet_row = []
+            for header in self.headers:
+                raw_value = row[header]
+                if header == "flags":
+                    value = ", ".join(EUROSTAT_FLAGS[i] for i in raw_value)
+                elif header in self.dimensions_by_code:
+                    obj = self.dimensions_by_code[header][raw_value]
+                    value = obj.label or obj.alt_label or obj.code
+                else:
+                    value = raw_value
+
+                sheet_row.append(value)
+            sheet.append(sheet_row)
+
+    def render_raw_data_sheet(self):
+        sheet = self.wb.create_sheet("Raw Data")
         self.set_dimensions(sheet, [15 for _ in self.headers])
-        self.write_headers(sheet, [self.chart_group.get_label(h) for h in self.headers])
+        self.write_headers(sheet, [self.get_label(h) for h in self.headers])
 
         for row in self.data:
             sheet.append(row[header] for header in self.headers)
