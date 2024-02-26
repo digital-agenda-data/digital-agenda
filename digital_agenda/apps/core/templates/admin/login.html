@@ -2,8 +2,10 @@
 {% load static %}
 
 {% block content %}
-  {{ block.super }}
-  {% if EU_LOGIN_ENABLED %}
+  {% if config.PASSWORD_LOGIN_ENABLED %}
+    {{ block.super }}
+  {% endif %}
+  {% if config.EU_LOGIN_ENABLED %}
     <br class="clear"/>
     <div class="sso-logins">
       <p>

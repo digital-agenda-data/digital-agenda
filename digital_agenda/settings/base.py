@@ -144,6 +144,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "constance.context_processors.config",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -351,9 +352,25 @@ CONSTANCE_CONFIG = {
         ),
         "positive_integer",
     ),
+    "PASSWORD_LOGIN_ENABLED": (
+        True,
+        (
+            "Enable email and password login. Before disabling this an alternative authentication method must "
+            "be configured."
+        ),
+    ),
 }
 CONSTANCE_CONFIG_FIELDSETS = (
-    ("Account options", {"collapse": False, "fields": ("USER_INACTIVE_DAYS",)}),
+    (
+        "Account options",
+        {
+            "collapse": False,
+            "fields": (
+                "USER_INACTIVE_DAYS",
+                "PASSWORD_LOGIN_ENABLED",
+            ),
+        },
+    ),
     ("Site options", {"collapse": False, "fields": ("CHART_CREDITS",)}),
     (
         "Feedback",

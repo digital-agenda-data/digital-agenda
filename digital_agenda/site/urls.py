@@ -12,6 +12,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from digital_agenda.apps.accounts import views as accounts_views
 from digital_agenda.apps.shortner.views import ChartRedirectView
 
 from django.contrib.admin import site
@@ -54,7 +55,7 @@ urlpatterns = [
     ),
     path(
         "admin/password_reset/",
-        auth_views.PasswordResetView.as_view(),
+        accounts_views.PasswordResetView.as_view(),
         name="admin_password_reset",
     ),
     path(
