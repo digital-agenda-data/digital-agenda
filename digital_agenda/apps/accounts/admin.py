@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
 
+from constance.admin import ConstanceAdmin, Config
+from constance.forms import ConstanceForm
+from django.core.exceptions import ValidationError
+
 from .forms import UserCreationForm, UserChangeForm
 from .models import User
 
@@ -59,3 +63,26 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
     )
+
+
+class CustomConfigForm(ConstanceForm):
+    def clean(self):
+        data = super().clean()
+        if not any([data["PASSWORD_LOGIN_ENABLED"], data["EU_LOGIN_ENABLED"]]):
+            raise ValidationError(
+                {
+                    "PASSWORD_LOGIN_ENABLED": (
+                        "At least one alternative login method must be enabled to "
+                        "disable password login."
+                    )
+                }
+            )
+        return data
+
+
+class ConfigAdmin(ConstanceAdmin):
+    change_list_form = CustomConfigForm
+
+
+admin.site.unregister([Config])
+admin.site.register([Config], ConfigAdmin)
