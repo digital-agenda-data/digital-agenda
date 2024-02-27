@@ -2,7 +2,9 @@ from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
 from django.contrib.admin import EmptyFieldListFilter
 from django.db.models import Count
+from django.db.models import OuterRef
 from django.db.models import Prefetch
+from django.db.models import Subquery
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
@@ -161,7 +163,14 @@ class ImportConfigAdmin(admin.ModelAdmin):
         return (
             super()
             .get_queryset(request)
-            .annotate(num_facts=Count("facts"))
+            .annotate(
+                num_facts=Count("facts"),
+                latest_run_date=Subquery(
+                    ImportFromConfigTask.objects.filter(import_config_id=OuterRef("id"))
+                    .order_by("-created_on")
+                    .values("created_on")[:1]
+                ),
+            )
             .prefetch_related(
                 "tags",
                 "country_group",
@@ -188,11 +197,9 @@ class ImportConfigAdmin(admin.ModelAdmin):
         )
         return mark_safe(f"<a href='{url}'>{obj.latest_task.status}</a>")
 
-    @admin.display(description="Latest Run")
+    @admin.display(description="Latest Run", ordering="latest_run_date")
     def latest_run_date(self, obj):
-        if not obj.latest_task:
-            return
-        return obj.latest_task.created_on
+        return obj.latest_run_date
 
     @admin.display(description="Tags")
     def tag_codes(self, obj):
