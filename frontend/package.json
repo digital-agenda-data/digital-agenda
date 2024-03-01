@@ -47,7 +47,7 @@
     "eslint-plugin-compat": "4.2.0",
     "eslint-plugin-cypress": "2.15.1",
     "eslint-plugin-vue": "9.21.1",
-    "magic-bytes.js": "1.8.0",
+    "magic-bytes.js": "1.10.0",
     "prettier": "3.2.5",
     "typescript": "5.3.3"
   },

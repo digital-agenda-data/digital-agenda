@@ -89,15 +89,11 @@ Cypress.Commands.addAll({
       );
 
       cy.readFile(fullPath, null).then((buffer) => {
-        if (expectedType === "svg") {
-          expect(buffer).to.match(/^<svg/);
-        } else {
-          const detectedTypes = filetypeinfo(buffer).map(
-            (info) => info.typename,
-          );
+        const detectedTypes = filetypeinfo(buffer).map((info) =>
+          info.typename.toLowerCase(),
+        );
 
-          expect(expectedType).to.be.oneOf(detectedTypes);
-        }
+        expect(expectedType.toLowerCase()).to.be.oneOf(detectedTypes);
       });
     });
   },
