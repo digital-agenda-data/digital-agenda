@@ -1,7 +1,6 @@
 import functools
 from datetime import date
 
-from ckeditor.fields import RichTextField
 from colorfield.fields import ColorField
 from composite_field import CompositeField
 from django.conf import settings
@@ -10,6 +9,7 @@ from django.core.validators import MaxValueValidator
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.html import strip_tags
+from django_ckeditor_5.fields import CKEditor5Field
 from hashid_field import BigHashidAutoField
 
 from digital_agenda.apps.core.models import Fact
@@ -34,8 +34,8 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     code = CICharField(max_length=60, unique=True)
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
-    license = RichTextField()
-    description = RichTextField()
+    license = CKEditor5Field()
+    description = CKEditor5Field()
     image = models.ImageField(
         blank=True,
         help_text="Thumbnail image for this Chart Group. A placeholder will be used if this is not configured.",
@@ -212,7 +212,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     code = models.SlugField(max_length=255)
 
     chart_type = models.CharField(max_length=50, choices=CHART_TYPE_CHOICES)
-    description = RichTextField()
+    description = CKEditor5Field()
     image = models.ImageField(
         blank=True,
         help_text=(

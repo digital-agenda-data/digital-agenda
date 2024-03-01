@@ -82,7 +82,7 @@ THIRD_PARTY_APPS = [
     "django_rq",
     "django_task",
     "adminsortable2",
-    "ckeditor",
+    "django_ckeditor_5",
     "colorfield",
     "corsheaders",
     "django_filters",
@@ -483,7 +483,7 @@ LOGGING = {
 
 # CKEditor
 
-CKEDITOR_CONFIGS = {
+CKEDITOR_5_CONFIGS = {
     "default": {
         # https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-enterMode
         "enterMode": 2,
