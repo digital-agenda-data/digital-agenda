@@ -122,7 +122,6 @@ AUTHENTICATION_BACKENDS = (
     "django_cas_ng.backends.CASBackend",
 )
 
-
 # https://djangocas.dev/docs/latest/configuration.html#
 CAS_SERVER_URL = "https://ecas.ec.europa.eu/cas/"
 CAS_VERSION = "3"
@@ -134,7 +133,6 @@ CORS_EXPOSE_HEADERS = ["content-disposition"]
 CORS_ALLOWED_ORIGINS = [PROTOCOL + _host for _host in FRONTEND_HOST]
 
 CSRF_TRUSTED_ORIGINS = [PROTOCOL + _host for _host in (FRONTEND_HOST + BACKEND_HOST)]
-
 
 ROOT_URLCONF = "digital_agenda.site.urls"
 
@@ -187,7 +185,6 @@ DATABASES = {
     }
 }
 
-
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -225,7 +222,6 @@ DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="") or (
     "noreply@" + socket.gethostname()
 )
 
-
 AUTH_USER_MODEL = "accounts.User"
 
 # Password validation
@@ -241,7 +237,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_URL = "/admin/login"
-
 
 REST_FRAMEWORK = {
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
@@ -394,11 +389,9 @@ CONSTANCE_CONFIG_FIELDSETS = (
     ("Alerts", {"collapse": False, "fields": ("ESTAT_UPDATE_ALERT_EMAILS",)}),
 )
 
-
 # Task Queue (RQ)
 
 RQ = {"DEFAULT_RESULT_TTL": 0}
-
 
 RQ_QUEUES = {"default": {"HOST": REDIS_HOST, "PORT": REDIS_PORT, "DB": REDIS_TASK_DB}}
 
@@ -418,7 +411,6 @@ STORAGES = {
     "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
 }
 
-
 IMPORT_FILES_SUBDIR = env.str("IMPORT_FILES_SUBDIR", default="import_files")
 IMPORT_FILES_ALLOWED_EXTENSIONS = env.list(
     "IMPORT_FILES_ALLOWED_EXTENSIONS", default=["xls", "xlsx"]
@@ -435,7 +427,6 @@ IMPORT_FILES_ALLOWED_MIME_TYPES = env.list(
 ENVIRONMENT_NAME = env.str("ENVIRONMENT_NAME", default="")
 ENVIRONMENT_COLOR = env.str("ENVIRONMENT_COLOR", default="")
 ENVIRONMENT_TEXT_COLOR = env.str("ENVIRONMENT_TEXT_COLOR", default="#ffffff")
-
 
 LOGGING = {
     "version": 1,
@@ -485,9 +476,34 @@ LOGGING = {
 
 CKEDITOR_5_CONFIGS = {
     "default": {
-        # https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-enterMode
-        "enterMode": 2,
-        "forceEnterMode": True,
+        "toolbar": {
+            "items": [
+                "undo",
+                "redo",
+                "|",
+                "heading",
+                "|",
+                "fontsize",
+                "fontColor",
+                "fontBackgroundColor",
+                "|",
+                "bold",
+                "italic",
+                "strikethrough",
+                "|",
+                "link",
+                "uploadImage",
+                "blockQuote",
+                "|",
+                "bulletedList",
+                "numberedList",
+                "todoList",
+                "outdent",
+                "indent",
+                "|",
+                "sourceEditing",
+            ],
+        },
     },
 }
 
