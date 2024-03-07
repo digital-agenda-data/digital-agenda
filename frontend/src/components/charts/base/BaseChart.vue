@@ -473,8 +473,8 @@ export default {
         if (fontStyleOption.font_color) {
           obj.color = fontStyleOption.font_color;
         }
-        if (fontStyleOption.font_weigth) {
-          obj.fontWeight = fontStyleOption.font_weigth;
+        if (fontStyleOption.font_weight) {
+          obj.fontWeight = fontStyleOption.font_weight;
         }
         if (fontStyleOption.font_size_px) {
           obj.fontSize = fontStyleOption.font_size_px.toString() + "px";
