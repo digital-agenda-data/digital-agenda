@@ -119,6 +119,7 @@ Cypress.Commands.addAll({
     definitions = [],
     xAxis = [],
     yAxis = [],
+    legend = [],
   }) {
     // Check credits
     cy.get(".highcharts-credits").contains("European Commission");
@@ -151,6 +152,9 @@ Cypress.Commands.addAll({
     }
     for (const label of yAxis) {
       cy.get(".highcharts-yaxis-labels text").contains(label);
+    }
+    for (const label of legend) {
+      cy.get(".highcharts-legend-item text").contains(label);
     }
 
     // Check a point in the chart and the tooltip

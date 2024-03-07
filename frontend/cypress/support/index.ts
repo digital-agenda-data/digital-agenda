@@ -8,6 +8,7 @@ interface CheckChartConfig {
   definitions?: string[];
   xAxis?: string[];
   yAxis?: string[];
+  legend?: string[];
 }
 
 declare global {
