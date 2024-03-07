@@ -5,6 +5,12 @@ import ScatterCompareTwoIndicators from "@/components/charts/scatter/ScatterComp
 import EclHeading from "@/components/ecl/EclHeading.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
+import {
+  getBreakdownLabel,
+  getIndicatorLabel,
+  getPeriodLabel,
+  getUnitLabel,
+} from "@/lib/utils";
 
 export default {
   name: "BubbleCompareThreeIndicators",
@@ -39,11 +45,11 @@ export default {
     chartSubtitle() {
       return (
         "Size of bubble (Z): " +
-        this.makeTitle([
-          this.filterStore.indicatorZ,
-          this.filterStore.breakdownZ,
-          this.filterStore.unitZ,
-          this.filterStore.periodZ,
+        this.joinStrings([
+          getIndicatorLabel(this.filterStore.indicatorZ, "label"),
+          getBreakdownLabel(this.filterStore.breakdownZ, "label"),
+          getUnitLabel(this.filterStore.unitZ, "label"),
+          getPeriodLabel(this.filterStore.periodZ, "label"),
         ])
       );
     },

@@ -6,6 +6,13 @@ import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithG
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import EclHeading from "@/components/ecl/EclHeading.vue";
+import {
+  getBreakdownLabel,
+  getCountryLabel,
+  getIndicatorLabel,
+  getPeriodLabel,
+  getUnitLabel,
+} from "@/lib/utils";
 
 export default {
   name: "ScatterCompareTwoIndicators",
@@ -55,7 +62,7 @@ export default {
     },
     series() {
       return (this.filterStore.countryX ?? []).map((country) => {
-        const name = `${country.display} (${country.code})`;
+        const name = `${getCountryLabel(country)} (${country.code})`;
         return {
           name,
           color: country?.color,
@@ -111,11 +118,11 @@ export default {
           gridLineWidth: 1,
           plotLines: this.getMidPlotLine("X"),
           title: {
-            text: this.makeTitle([
-              this.filterStore.indicatorX,
-              this.filterStore.breakdownX,
-              this.filterStore.unitX,
-              this.filterStore.periodX,
+            text: this.joinStrings([
+              getIndicatorLabel(this.filterStore.indicatorX, "label"),
+              getBreakdownLabel(this.filterStore.breakdownX, "label"),
+              getUnitLabel(this.filterStore.unitX, "label"),
+              getPeriodLabel(this.filterStore.periodX, "label"),
             ]),
             enabled: true,
           },
@@ -125,11 +132,11 @@ export default {
           gridLineWidth: 1,
           plotLines: this.getMidPlotLine("Y"),
           title: {
-            text: this.makeTitle([
-              this.filterStore.indicatorY,
-              this.filterStore.breakdownY,
-              this.filterStore.unitY,
-              this.filterStore.periodY,
+            text: this.joinStrings([
+              getIndicatorLabel(this.filterStore.indicatorY, "label"),
+              getBreakdownLabel(this.filterStore.breakdownY, "label"),
+              getUnitLabel(this.filterStore.unitY, "label"),
+              getPeriodLabel(this.filterStore.periodY, "label"),
             ]),
             enabled: true,
           },
