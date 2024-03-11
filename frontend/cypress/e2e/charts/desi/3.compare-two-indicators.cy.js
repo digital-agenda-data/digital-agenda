@@ -16,7 +16,7 @@ describeResponsive("Check Chart", () => {
       },
       xAxisTitle: [
         "e-Government users",
-        "All Individuals (aged 16-74)",
+        "All Individuals",
         "Percentage of individuals who used Internet within the last 12 months",
         "DESI period: 2023 (data from 2022)",
       ],
