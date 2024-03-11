@@ -8,7 +8,6 @@ import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import {
   getBreakdownLabel,
   getIndicatorLabel,
-  getPeriodLabel,
   getUnitLabel,
 } from "@/lib/utils";
 
@@ -49,7 +48,10 @@ export default {
           getIndicatorLabel(this.filterStore.indicatorZ, "label"),
           getBreakdownLabel(this.filterStore.breakdownZ, "label"),
           getUnitLabel(this.filterStore.unitZ, "label"),
-          getPeriodLabel(this.filterStore.periodZ, "label"),
+          this.getPeriodWithExtraNotes(
+            this.filterStore.periodZ,
+            this.filterStore.indicatorZ,
+          ),
         ])
       );
     },

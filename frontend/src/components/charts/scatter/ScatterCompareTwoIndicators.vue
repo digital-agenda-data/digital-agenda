@@ -10,7 +10,6 @@ import {
   getBreakdownLabel,
   getCountryLabel,
   getIndicatorLabel,
-  getPeriodLabel,
   getUnitLabel,
 } from "@/lib/utils";
 
@@ -122,7 +121,10 @@ export default {
               getIndicatorLabel(this.filterStore.indicatorX, "label"),
               getBreakdownLabel(this.filterStore.breakdownX, "label"),
               getUnitLabel(this.filterStore.unitX, "label"),
-              getPeriodLabel(this.filterStore.periodX, "label"),
+              this.getPeriodWithExtraNotes(
+                this.filterStore.periodX,
+                this.filterStore.indicatorX,
+              ),
             ]),
             enabled: true,
           },
@@ -136,7 +138,10 @@ export default {
               getIndicatorLabel(this.filterStore.indicatorY, "label"),
               getBreakdownLabel(this.filterStore.breakdownY, "label"),
               getUnitLabel(this.filterStore.unitY, "label"),
-              getPeriodLabel(this.filterStore.periodY, "label"),
+              this.getPeriodWithExtraNotes(
+                this.filterStore.periodY,
+                this.filterStore.indicatorY,
+              ),
             ]),
             enabled: true,
           },

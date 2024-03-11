@@ -200,11 +200,6 @@ export default {
     mergedChartOptions() {
       return this.getMergedChartOptions();
     },
-    extraNotes() {
-      return (this.indicator?.extra_notes || [])
-        .filter((item) => item.period === this.period?.code)
-        .map((item) => item.note);
-    },
     /**
      * Default chart options, (shallow) merged with the chartOptions
      * and used for HighCharts.
@@ -236,10 +231,7 @@ export default {
           ]),
         },
         subtitle: {
-          text: this.joinStrings(
-            [getPeriodLabel(this.period, "label"), ...this.extraNotes],
-            " ",
-          ),
+          text: this.getPeriodWithExtraNotes(),
           style: {
             color: "#333333",
             fontWeight: "bold",
@@ -351,7 +343,7 @@ export default {
 
           if (parent.period?.code) {
             result.push(
-              `<b>Time Period:</b> ${getPeriodLabel(parent.period, "label")}`,
+              `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes()}`,
             );
           }
 
@@ -386,6 +378,24 @@ export default {
   },
   methods: {
     getUnitDisplay,
+    /**
+     * Get the preferred label for this period together with any corresponding
+     * extra notes from the indicator.
+     *
+     * @param period {Object} Dimension Object; if null get it from the filterStore
+     * @param indicator {Object} Dimension Object; if null get it from the filterStore
+     * @return {string}
+     */
+    getPeriodWithExtraNotes(period = null, indicator = null) {
+      period ??= this.period;
+      indicator ??= this.indicator;
+
+      const extraNotes = (indicator?.extra_notes || [])
+        .filter((item) => item.period === period?.code)
+        .map((item) => item.note);
+
+      return [getPeriodLabel(period), ...extraNotes].join(" ");
+    },
     /**
      * Join strings excluding any empty/nulls
      *

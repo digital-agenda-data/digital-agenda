@@ -151,7 +151,9 @@ export function getBreakdownLabel(obj, defaultLabel = "alt_label") {
   return getDimensionLabel("breakdown", obj, defaultLabel);
 }
 
-export function getPeriodLabel(obj, defaultLabel = "alt_label") {
+// Default to the "long" label for periods as they include the time period type
+// (Year: 2020 or Desi Period: 2020)
+export function getPeriodLabel(obj, defaultLabel = "label") {
   return getDimensionLabel("period", obj, defaultLabel);
 }
 
