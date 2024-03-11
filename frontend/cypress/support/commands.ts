@@ -102,6 +102,19 @@ Cypress.Commands.addAll({
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
   },
+  hasTexts(selector, texts = []) {
+    if (!texts?.length) return;
+
+    cy.get(selector)
+      .invoke("text")
+      .then((text) => {
+        for (const txt of texts) {
+          // Highcharts adds ZeroWidthSpaces in the text, so we can't
+          // check normally
+          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+        }
+      });
+  },
   checkPoint(point, tooltip = []) {
     cy.get(`.highcharts-point[aria-label='${point}']`)
       .should("be.visible")
@@ -136,34 +149,13 @@ Cypress.Commands.addAll({
       cy.checkFilter(filtersKey, filters[filtersKey]);
     }
 
-    // Check chart title/subtitle
-    if (title?.length > 0) {
-      cy.get(".highcharts-title, .highcharts-subtitle")
-        .invoke("text")
-        .then((text) => {
-          for (const txt of title) {
-            // Highcharts adds ZeroWidthSpaces in the text, so we can't
-            // check normally
-            expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
-          }
-        });
-    }
-
-    for (const label of xAxis) {
-      cy.get(".highcharts-xaxis-labels text").contains(label);
-    }
-    for (const label of xAxisTitle) {
-      cy.get(".highcharts-xaxis .highcharts-axis-title").contains(label);
-    }
-    for (const label of yAxis) {
-      cy.get(".highcharts-yaxis-labels text").contains(label);
-    }
-    for (const label of yAxisTitle) {
-      cy.get(".highcharts-yaxis .highcharts-axis-title").contains(label);
-    }
-    for (const label of legend) {
-      cy.get(".highcharts-legend-item text").contains(label);
-    }
+    // Check various texts
+    cy.hasTexts(".highcharts-title, .highcharts-subtitle", title);
+    cy.hasTexts(".highcharts-xaxis-labels text", xAxis);
+    cy.hasTexts(".highcharts-xaxis .highcharts-axis-title", xAxisTitle);
+    cy.hasTexts(".highcharts-yaxis-labels text", yAxis);
+    cy.hasTexts(".highcharts-yaxis .highcharts-axis-title", yAxisTitle);
+    cy.hasTexts(".highcharts-legend-item text", legend);
 
     // Check a point in the chart and the tooltip
     if (point) {

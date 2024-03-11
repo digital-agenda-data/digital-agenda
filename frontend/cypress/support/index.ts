@@ -75,6 +75,12 @@ declare global {
       navigateToChart(chartGroup: string, chart: string): void;
 
       /**
+       * Check if the selector contains all the specified texts.
+       * Ignores ZeroWidthSpaces.
+       */
+      hasTexts(selector: string, texts?: string[]): void;
+
+      /**
        * Check for the existence of the specified point.
        * Force hover it and check the tooltip contents to match.
        */
