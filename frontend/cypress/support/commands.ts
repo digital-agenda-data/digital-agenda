@@ -119,6 +119,8 @@ Cypress.Commands.addAll({
     definitions = [],
     xAxis = [],
     yAxis = [],
+    xAxisTitle = [],
+    yAxisTitle = [],
     legend = [],
   }) {
     // Check credits
@@ -150,8 +152,14 @@ Cypress.Commands.addAll({
     for (const label of xAxis) {
       cy.get(".highcharts-xaxis-labels text").contains(label);
     }
+    for (const label of xAxisTitle) {
+      cy.get(".highcharts-xaxis .highcharts-axis-title").contains(label);
+    }
     for (const label of yAxis) {
       cy.get(".highcharts-yaxis-labels text").contains(label);
+    }
+    for (const label of yAxisTitle) {
+      cy.get(".highcharts-yaxis .highcharts-axis-title").contains(label);
     }
     for (const label of legend) {
       cy.get(".highcharts-legend-item text").contains(label);

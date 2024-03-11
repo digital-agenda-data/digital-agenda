@@ -8,6 +8,8 @@ interface CheckChartConfig {
   definitions?: string[];
   xAxis?: string[];
   yAxis?: string[];
+  xAxisTitle?: string[];
+  yAxisTitle?: string[];
   legend?: string[];
 }
 
