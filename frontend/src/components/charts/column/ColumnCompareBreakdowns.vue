@@ -6,7 +6,13 @@ import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilte
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
-import { colorForCountry, forceArray, sortNumeric } from "@/lib/utils";
+import {
+  colorForCountry,
+  forceArray,
+  getBreakdownLabel,
+  getCountryLabel,
+  sortNumeric,
+} from "@/lib/utils";
 
 export default {
   name: "ColumnCompareBreakdowns",
@@ -59,7 +65,7 @@ export default {
     series() {
       return this.breakdownList.map((breakdown, seriesIndex) => {
         return {
-          name: breakdown.display,
+          name: getBreakdownLabel(breakdown),
           data: this.sortedCountries.map((country) => {
             const weight = this.getWeight(breakdown);
             const fact = this.apiDataGrouped[breakdown.code]?.[country.code];
@@ -72,7 +78,7 @@ export default {
             return {
               fact: { ...fact, value: adjustedValue },
               y: adjustedValue || 0,
-              name: country.display,
+              name: getCountryLabel(country),
               color: colorForCountry(country, seriesIndex),
             };
           }),

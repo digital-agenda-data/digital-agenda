@@ -32,7 +32,7 @@ export default defineConfig({
       },
     },
   },
-  // test: {
-  //   // ...
-  // },
+  test: {
+    environment: "jsdom",
+  },
 });

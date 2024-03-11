@@ -5,7 +5,13 @@ import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
-import { getMarkerSymbol } from "@/lib/utils";
+import {
+  getBreakdownLabel,
+  getCountryLabel,
+  getMarkerSymbol,
+  getPeriodLabel,
+  getUnitLabel,
+} from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
 import { mapState } from "pinia";
 
@@ -38,7 +44,7 @@ export default {
     series() {
       return (this.breakdown || []).map((breakdown) => {
         return {
-          name: breakdown.display,
+          name: getBreakdownLabel(breakdown),
           color: breakdown.chart_options?.color,
           dashStyle: breakdown.chart_options?.dash_style,
           marker: {
@@ -53,7 +59,7 @@ export default {
               fact,
               y: fact?.value ?? null,
               x: new Date(period?.date),
-              name: period?.label || period?.code,
+              name: getPeriodLabel(period, "label"),
             };
           }),
         };
@@ -62,7 +68,7 @@ export default {
     chartOptions() {
       return {
         subtitle: {
-          text: this.country?.display,
+          text: getCountryLabel(this.country),
         },
         legend: {
           enabled: (this.breakdown || []).length > 1,
@@ -73,7 +79,7 @@ export default {
         yAxis: {
           min: 0,
           title: {
-            text: this.unit?.display,
+            text: getUnitLabel(this.unit),
           },
         },
         plotOptions: {

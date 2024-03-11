@@ -6,6 +6,7 @@ import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
 import topologyUrl from "@/assets/topology/eu.json?url";
+import { getCountryLabel } from "@/lib/utils";
 
 const valueNotAvailableColor = "#E3E3E3";
 const hoverCountryColor = "#467A39";
@@ -56,7 +57,7 @@ export default {
               value,
               x: country.code,
               y: value,
-              key: country.display,
+              key: getCountryLabel(country),
               code: country.code,
               color: value === undefined ? valueNotAvailableColor : undefined,
             };

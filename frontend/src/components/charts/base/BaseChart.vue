@@ -19,8 +19,12 @@ import SimpleSpinner from "@/components/SimpleSpinner.vue";
 import { api } from "@/lib/api";
 import {
   forceArray,
+  getBreakdownLabel,
   getDateFromYear,
+  getIndicatorLabel,
+  getPeriodLabel,
   getUnitDisplay,
+  getUnitLabel,
   groupByMulti,
   toAPIKey,
 } from "@/lib/utils";
@@ -226,11 +230,14 @@ export default {
         },
         series: this.series,
         title: {
-          text: this.makeTitle([this.indicator, this.breakdown]),
+          text: this.joinStrings([
+            getIndicatorLabel(this.indicator, "label"),
+            getBreakdownLabel(this.breakdown, "label"),
+          ]),
         },
         subtitle: {
           text: this.joinStrings(
-            [this.period?.label || this.period?.code, ...this.extraNotes],
+            [getPeriodLabel(this.period, "label"), ...this.extraNotes],
             " ",
           ),
           style: {
@@ -245,7 +252,7 @@ export default {
         tooltip: this.tooltip,
         yAxis: {
           title: {
-            text: this.unit?.display,
+            text: getUnitLabel(this.unit),
           },
         },
         responsive: {
@@ -337,11 +344,15 @@ export default {
           }
 
           if (parent.breakdown?.code) {
-            result.push(`<b>Breakdown:</b> ${parent.breakdown.display}`);
+            result.push(
+              `<b>Breakdown:</b> ${getBreakdownLabel(parent.breakdown)}`,
+            );
           }
 
           if (parent.period?.code) {
-            result.push(`<b>Time Period:</b> ${parent.period.label}`);
+            result.push(
+              `<b>Time Period:</b> ${getPeriodLabel(parent.period, "label")}`,
+            );
           }
 
           return result.join("<br/>");
@@ -375,19 +386,6 @@ export default {
   },
   methods: {
     getUnitDisplay,
-    /**
-     * Join objects from the backend or strings to make a title
-     *
-     * @param items {*[]}
-     * @param separator {String}
-     * @return {String}
-     */
-    makeTitle(items, separator = ", ") {
-      return this.joinStrings(
-        items.map((s) => s?.label),
-        separator,
-      );
-    },
     /**
      * Join strings excluding any empty/nulls
      *

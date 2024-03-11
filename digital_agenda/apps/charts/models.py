@@ -124,6 +124,29 @@ def filter_option_field(rel_model):
     return FilterOptionField()
 
 
+class ChartLabelTypes(models.TextChoices):
+    LABEL = "label", "Long (label)"
+    ALT_LABEL = "alt_label", "Short (alt_label)"
+    CODE = "code", "Code (code)"
+
+
+class ChartDimensionLabel(models.CharField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("max_length", 50)
+        kwargs.setdefault("null", True)
+        kwargs.setdefault("blank", True)
+        kwargs.setdefault("default", None)
+        kwargs.setdefault(
+            "help_text",
+            (
+                "Label type used while displaying this dimension in the chart. "
+                "If empty the other labels are used instead."
+            ),
+        )
+        kwargs["choices"] = ChartLabelTypes.choices
+        super().__init__(*args, **kwargs)
+
+
 class ChartManger(models.Manager):
     def get_by_natural_key(self, chart_group_code, code):
         return self.get(chart_group__code=chart_group_code, code=code)
@@ -267,6 +290,12 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     period_filter = filter_option_field("core.Period")
     unit_filter = filter_option_field("core.Unit")
     country_filter = filter_option_field("core.Country")
+
+    indicator_label = ChartDimensionLabel()
+    breakdown_label = ChartDimensionLabel()
+    period_label = ChartDimensionLabel()
+    unit_label = ChartDimensionLabel()
+    country_label = ChartDimensionLabel()
 
     legend_layout = models.CharField(
         max_length=20,

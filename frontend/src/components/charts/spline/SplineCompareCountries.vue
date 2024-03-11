@@ -4,6 +4,7 @@ import BaseChart from "@/components/charts/base/BaseChart.vue";
 import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
+import { getCountryLabel, getPeriodLabel, getUnitLabel } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
 import { mapState } from "pinia";
 
@@ -32,7 +33,7 @@ export default {
     series() {
       return this.countries.map((country) => {
         return {
-          name: country.display,
+          name: getCountryLabel(country),
           color: country.color,
           pointRange: 365 * 24 * 3600 * 1000,
           data: this.apiDataPeriods.map((periodCode) => {
@@ -43,7 +44,7 @@ export default {
               fact,
               y: fact?.value ?? null,
               x: new Date(period?.date),
-              name: period?.label || period?.code,
+              name: getPeriodLabel(period, "label"),
             };
           }),
         };
@@ -57,7 +58,7 @@ export default {
         yAxis: {
           min: 0,
           title: {
-            text: this.unit?.display,
+            text: getUnitLabel(this.unit),
           },
         },
         plotOptions: {
