@@ -9,7 +9,6 @@ import {
   getBreakdownLabel,
   getCountryLabel,
   getMarkerSymbol,
-  getPeriodLabel,
   getUnitLabel,
 } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
@@ -59,7 +58,7 @@ export default {
               fact,
               y: fact?.value ?? null,
               x: new Date(period?.date),
-              name: getPeriodLabel(period, "label"),
+              name: this.getPeriodWithExtraNotes(period),
             };
           }),
         };

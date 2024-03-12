@@ -4,7 +4,7 @@ import BaseChart from "@/components/charts/base/BaseChart.vue";
 import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
-import { getCountryLabel, getPeriodLabel, getUnitLabel } from "@/lib/utils";
+import { getCountryLabel, getUnitLabel } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
 import { mapState } from "pinia";
 
@@ -44,7 +44,7 @@ export default {
               fact,
               y: fact?.value ?? null,
               x: new Date(period?.date),
-              name: getPeriodLabel(period, "label"),
+              name: this.getPeriodWithExtraNotes(period),
             };
           }),
         };

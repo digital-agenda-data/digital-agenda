@@ -9,7 +9,6 @@ import {
   getCountryLabel,
   getIndicatorLabel,
   getMarkerSymbol,
-  getPeriodLabel,
   getUnitLabel,
 } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
@@ -74,7 +73,7 @@ export default {
             return {
               y: apiValue,
               x: new Date(period?.date),
-              name: getPeriodLabel(period, "label"),
+              name: this.getPeriodWithExtraNotes(period),
               unit,
               period,
               breakdown,
@@ -139,7 +138,7 @@ export default {
             `<b>${this.series.name}</b>`,
             parent.getUnitDisplay(this.point.y, this.point.options.unit),
             `<b>Breakdown:</b> ${getBreakdownLabel(this.point.options.breakdown)}`,
-            `<b>Time Period:</b> ${getPeriodLabel(this.point.options.period, "label")}`,
+            `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes(this.point.options.period)}`,
           ].join("<br/>");
         },
       };
