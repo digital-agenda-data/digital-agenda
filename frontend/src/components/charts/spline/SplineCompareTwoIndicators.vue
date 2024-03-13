@@ -73,9 +73,10 @@ export default {
             return {
               y: apiValue,
               x: new Date(period?.date),
-              name: this.getPeriodWithExtraNotes(period),
+              name: this.getPeriodWithExtraNotes(period, indicator),
               unit,
               period,
+              indicator,
               breakdown,
             };
           }),
@@ -134,11 +135,13 @@ export default {
       const parent = this;
       return {
         formatter() {
+          const { unit, period, breakdown, indicator } = this.point.options;
+
           return [
             `<b>${this.series.name}</b>`,
-            parent.getUnitDisplay(this.point.y, this.point.options.unit),
-            `<b>Breakdown:</b> ${getBreakdownLabel(this.point.options.breakdown)}`,
-            `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes(this.point.options.period)}`,
+            parent.getUnitDisplay(this.point.y, unit),
+            `<b>Breakdown:</b> ${getBreakdownLabel(breakdown)}`,
+            `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes(period, indicator)}`,
           ].join("<br/>");
         },
       };
