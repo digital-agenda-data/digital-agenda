@@ -273,5 +273,40 @@
       "unit_label": "alt_label",
       "country_label": "alt_label"
     }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 50,
+      "chart_group": [
+        "test-group"
+      ],
+      "name": "Test Spline Compare Indicators Notes",
+      "code": "test-spline-compare-indicators-notes",
+      "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "description": "<p>This spline compare indicators with extra notes</p>",
+      "indicator_filter_defaults": [
+        [
+          "desi_4b1"
+        ]
+      ],
+      "breakdown_filter_defaults": [
+        [
+          "all_egov_le"
+        ]
+      ],
+      "unit_filter_defaults": [
+        [
+          "egov_score"
+        ]
+      ],
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
+    }
   }
 ]
