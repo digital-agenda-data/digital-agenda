@@ -2,26 +2,29 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Bubble Code Labels");
+    cy.navigateToChart("Test Filter Order", "Test Bubble Breakdown First");
     cy.checkChart({
       filters: {
-        indicatorX: "ICT graduates",
         breakdownX: "Females",
+        indicatorX: "ICT graduates",
         unitX: "% of graduates",
         periodX: "2019",
-        indicatorY: "ICT graduates",
         breakdownY: "Males",
+        indicatorY: "ICT graduates",
         unitY: "% of graduates",
         periodY: "2019",
-        indicatorZ: "ICT graduates",
         breakdownZ: "Total",
+        indicatorZ: "ICT graduates",
         unitZ: "% of graduates",
         periodZ: "2019",
       },
-      title: ["Size of bubble (Z): ict_grad, total, pc_grad, 2019"],
-      point: "RO (RO), y: 4.1, z: 6.3. RO (RO).",
-      tooltip: ["RO (RO)", "2.20 pc_grad", "4.10 pc_grad", "6.30 pc_grad"],
-      legend: ["RO (RO)", "EU (EU)"],
+      point: "Romania (RO), y: 4.1, z: 6.3. Romania (RO).",
+      tooltip: [
+        "Romania (RO)",
+        "2.20% of graduates",
+        "4.10% of graduates",
+        "6.30% of graduates",
+      ],
       definitions: [
         "(X) Indicator: ICT graduates",
         "(X) Breakdown: Females",

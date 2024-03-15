@@ -2,7 +2,10 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Bar Breakdowns Custom Labels");
+    cy.navigateToChart(
+      "Test Custom Labels",
+      "Test Bar Breakdowns Custom Labels",
+    );
     cy.checkChart({
       filters: {
         indicator: "Households with a broadband connection",

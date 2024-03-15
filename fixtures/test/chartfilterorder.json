@@ -4,7 +4,7 @@
     "fields": {
       "display_order": 1,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-chart-period-first"
       ],
       "filter_field": "period"
@@ -15,7 +15,7 @@
     "fields": {
       "display_order": 1,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-chart-filters-reversed"
       ],
       "filter_field": "country"
@@ -26,7 +26,7 @@
     "fields": {
       "display_order": 2,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-chart-filters-reversed"
       ],
       "filter_field": "unit"
@@ -37,7 +37,7 @@
     "fields": {
       "display_order": 3,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-chart-filters-reversed"
       ],
       "filter_field": "period"
@@ -48,7 +48,7 @@
     "fields": {
       "display_order": 4,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-chart-filters-reversed"
       ],
       "filter_field": "breakdownGroup"
@@ -59,7 +59,7 @@
     "fields": {
       "display_order": 5,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-chart-filters-reversed"
       ],
       "filter_field": "indicator"
@@ -70,7 +70,7 @@
     "fields": {
       "display_order": 1,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-scatter-unit-first"
       ],
       "filter_field": "unit"
@@ -81,7 +81,7 @@
     "fields": {
       "display_order": 1,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-bubble-breakdown-first"
       ],
       "filter_field": "breakdown"
@@ -92,7 +92,7 @@
     "fields": {
       "display_order": 1,
       "chart": [
-        "test-group",
+        "test-filter-order",
         "test-spline-country-first"
       ],
       "filter_field": "country"

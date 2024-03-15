@@ -6,7 +6,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 34,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Chart Period First",
       "code": "test-chart-period-first",
@@ -21,7 +21,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 35,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Chart Filters Reversed",
       "code": "test-chart-filters-reversed",
@@ -36,7 +36,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 36,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Scatter Unit First",
       "code": "test-scatter-unit-first",
@@ -51,7 +51,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 37,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Bubble Breakdown First",
       "code": "test-bubble-breakdown-first",
@@ -66,7 +66,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 38,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Spline Country First",
       "code": "test-spline-country-first",
@@ -81,7 +81,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 39,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Spline Custom Ranges",
       "code": "test-spline-custom-range",
@@ -100,7 +100,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 40,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Bubble Custom Range",
       "code": "test-bubble-custom-range",
@@ -117,7 +117,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 41,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Column Custom Range",
       "code": "test-column-custom-range",
@@ -134,7 +134,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 42,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Spline Custom Year Range",
       "code": "test-spline-custom-year-range",
@@ -151,7 +151,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 43,
       "chart_group": [
-        "test-group"
+        "test-custom-fonts"
       ],
       "name": "Test Spline Custom Fonts",
       "code": "test-spline-custom-fonts",
@@ -166,7 +166,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 44,
       "chart_group": [
-        "test-group"
+        "test-custom-fonts"
       ],
       "name": "Test Bubble Custom Fonts",
       "code": "test-bubble-custom-fonts",
@@ -181,7 +181,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 45,
       "chart_group": [
-        "test-group"
+        "test-custom-labels"
       ],
       "name": "Test Spline Code Labels",
       "code": "test-spline-code-labels",
@@ -201,7 +201,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 46,
       "chart_group": [
-        "test-group"
+        "test-custom-labels"
       ],
       "name": "Test Bubble Code Labels",
       "code": "test-bubble-code-labels",
@@ -221,7 +221,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 47,
       "chart_group": [
-        "test-group"
+        "test-custom-labels"
       ],
       "name": "Test Bar Countries Custom Labels",
       "code": "test-bar-countries-custom-labels",
@@ -241,7 +241,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 48,
       "chart_group": [
-        "test-group"
+        "test-custom-labels"
       ],
       "name": "Test Bar Breakdowns Custom Labels",
       "code": "test-bar-breakdowns-custom-labels",
@@ -261,7 +261,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 49,
       "chart_group": [
-        "test-group"
+        "test-custom-labels"
       ],
       "name": "Test Bar Stacked Breakdowns Alt Labels",
       "code": "test-bar-stacked-breakdowns-alt-labels",
@@ -281,7 +281,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 50,
       "chart_group": [
-        "test-group"
+        "test-extra-notes"
       ],
       "name": "Test Spline Compare Indicators Notes",
       "code": "test-spline-compare-indicators-notes",

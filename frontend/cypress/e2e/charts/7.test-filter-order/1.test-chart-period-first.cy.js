@@ -2,12 +2,12 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Column Custom Range");
+    cy.navigateToChart("Test Filter Order", "Test Chart Period First");
     cy.checkChart({
       filters: {
+        period: "2019",
         indicator: "ICT graduates",
         breakdown: "Females",
-        period: "2019",
         unit: "% of graduates",
       },
       title: ["ICT graduates, Females", "Year: 2019"],
@@ -19,7 +19,6 @@ describeResponsive("Check Chart", () => {
         "Breakdown: Females",
         "Unit of measure: Percentage of graduates",
       ],
-      yAxis: ["-1", "5"],
     });
   });
 });

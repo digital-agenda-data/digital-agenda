@@ -2,20 +2,19 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Spline Code Labels");
+    cy.navigateToChart("Test Filter Order", "Test Spline Country First");
     cy.checkChart({
       filters: {
+        countryX: "European Union",
         indicatorX: "ICT graduates",
         breakdownX: "Females",
-        countryX: "European Union",
         unitX: "% of graduates",
         indicatorY: "ICT graduates",
         breakdownY: "Males",
         unitY: "% of graduates",
       },
-      title: ["ict_grad, f and ict_grad, m", "EU"],
-      point: "2019, 0.8. ict_grad.",
-      legend: ["ict_grad", "ict_grad"],
+      title: ["ICT graduates, Females and ICT graduates, Males"],
+      point: "Year: 2019, 0.8. ICT graduates.",
       definitions: [
         "Indicator: ICT graduates",
         "Breakdown: Females",

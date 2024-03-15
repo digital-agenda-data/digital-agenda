@@ -18,7 +18,7 @@ describeResponsive("Check Indicators Page", () => {
     });
   });
   it("Check links to chart period first", () => {
-    cy.visit("/datasets/test-group/indicators");
+    cy.visit("/datasets/test-filter-order/indicators");
     cy.get("a").contains("Households having a broadband connection").click();
     cy.checkChartInstance({
       filters: {
