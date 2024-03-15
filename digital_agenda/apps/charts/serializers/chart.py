@@ -72,6 +72,7 @@ class ChartSerializer(serializers.ModelSerializer):
             "period_label",
             "unit_label",
             "country_label",
+            "use_period_label_for_axis",
             # Advanced Settings
             "min_value",
             "max_value",
