@@ -2,7 +2,7 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Spline Custom Fonts");
+    cy.navigateToChart("Test Custom Fonts", "Test Spline Custom Fonts");
     cy.checkChart({
       filters: {
         indicatorX: "ICT graduates",

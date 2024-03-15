@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "title.style",
@@ -18,7 +18,7 @@
     "pk": 2,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "subtitle.style",
@@ -32,7 +32,7 @@
     "pk": 3,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "legend.itemStyle",
@@ -46,7 +46,7 @@
     "pk": 4,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "tooltip.style",
@@ -60,7 +60,7 @@
     "pk": 5,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "xAxis.title.style",
@@ -74,7 +74,7 @@
     "pk": 6,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "yAxis.title.style",
@@ -88,7 +88,7 @@
     "pk": 7,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "xAxis.labels.style",
@@ -102,7 +102,7 @@
     "pk": 8,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "yAxis.labels.style",
@@ -116,7 +116,7 @@
     "pk": 9,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "plotOptions.series.dataLabels.style",
@@ -130,7 +130,7 @@
     "pk": 10,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-spline-custom-fonts"
       ],
       "field": "credits.style",
@@ -144,7 +144,7 @@
     "pk": 11,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "title.style",
@@ -158,7 +158,7 @@
     "pk": 12,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "subtitle.style",
@@ -172,7 +172,7 @@
     "pk": 13,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "legend.itemStyle",
@@ -186,7 +186,7 @@
     "pk": 14,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "tooltip.style",
@@ -200,7 +200,7 @@
     "pk": 15,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "xAxis.title.style",
@@ -214,7 +214,7 @@
     "pk": 16,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "yAxis.title.style",
@@ -228,7 +228,7 @@
     "pk": 17,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "xAxis.labels.style",
@@ -242,7 +242,7 @@
     "pk": 18,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "yAxis.labels.style",
@@ -256,7 +256,7 @@
     "pk": 19,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "plotOptions.series.dataLabels.style",
@@ -270,7 +270,7 @@
     "pk": 20,
     "fields": {
       "chart": [
-        "test-group",
+        "test-custom-fonts",
         "test-bubble-custom-fonts"
       ],
       "field": "credits.style",

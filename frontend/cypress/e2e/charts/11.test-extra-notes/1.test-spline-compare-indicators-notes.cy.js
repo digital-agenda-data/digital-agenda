@@ -3,7 +3,7 @@ import describeResponsive from "../../../support/describeResponsive";
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
     cy.navigateToChart(
-      "Test Chart Group",
+      "Test Extra Notes",
       "Test Spline Compare Indicators Notes",
     );
     cy.checkChart({
