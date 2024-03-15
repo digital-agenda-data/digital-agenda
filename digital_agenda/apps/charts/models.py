@@ -296,6 +296,10 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     period_label = ChartDimensionLabel()
     unit_label = ChartDimensionLabel()
     country_label = ChartDimensionLabel()
+    use_period_label_for_axis = models.BooleanField(
+        default=False,
+        help_text="Use the period labels for date axis instead of the actual dates.",
+    )
 
     legend_layout = models.CharField(
         max_length=20,

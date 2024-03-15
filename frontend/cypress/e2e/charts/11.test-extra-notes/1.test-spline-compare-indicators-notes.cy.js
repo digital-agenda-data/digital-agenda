@@ -17,7 +17,7 @@ describeResponsive("Check Chart", () => {
         "71.71 Score (0 to 100)",
         "DESI period: 2023 (data from 2022)",
       ],
-      xAxis: ["2023"],
+      xAxis: ["DESI period: 2023"],
     });
   });
 });

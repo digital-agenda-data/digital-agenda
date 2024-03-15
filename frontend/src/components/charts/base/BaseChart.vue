@@ -11,6 +11,7 @@
 <script>
 import { useAppSettings } from "@/stores/appSettingsStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { usePeriodStore } from "@/stores/periodStore";
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
@@ -57,6 +58,7 @@ export default {
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
     ...mapState(useCountryStore, ["countryByCode"]),
+    ...mapState(usePeriodStore, ["periodList"]),
     ...mapState(useFilterStore, [
       "indicatorGroup",
       "indicator",
@@ -464,7 +466,7 @@ export default {
       }
     },
     async loadExtra() {},
-    setCustomAxis(result, axisTypes, customMin, customMax) {
+    setCustomAxis(result, axisTypes, customMin, customMax, formatter = null) {
       for (const axis of axisTypes[this.chartType] ?? []) {
         result[axis] ??= {};
 
@@ -473,6 +475,11 @@ export default {
         for (const opt of forceArray(result[axis])) {
           opt.min = customMin ?? opt.min;
           opt.max = customMax ?? opt.max;
+
+          if (formatter) {
+            opt.labels ??= {};
+            opt.labels.formatter = formatter;
+          }
         }
       }
     },
@@ -512,6 +519,20 @@ export default {
         );
       }
 
+      let dateFormatter = null;
+      if (this.currentChart.use_period_label_for_axis) {
+        const parent = this;
+        dateFormatter = function () {
+          const defaultLabel = this.axis.defaultLabelFormatter.call(this);
+          const dateValue = this.value;
+          const period = parent?.periodList.find(
+            (period) => new Date(period.date).getTime() === dateValue,
+          );
+          if (!period) return defaultLabel;
+          return parent.getPeriodWithExtraNotes(period);
+        };
+      }
+
       // Set custom ranges to the axes depending on the chart type.
       // No idea why anyone would ever use this.
       // Oh well... ¯\_(ツ)_/¯
@@ -526,6 +547,7 @@ export default {
         YEAR_AXIS,
         getDateFromYear(this.currentChart.min_year),
         getDateFromYear(this.currentChart.max_year),
+        dateFormatter,
       );
 
       return result;

@@ -87,6 +87,7 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
                     "period_label",
                     "unit_label",
                     "country_label",
+                    "use_period_label_for_axis",
                 ],
             },
         ),
