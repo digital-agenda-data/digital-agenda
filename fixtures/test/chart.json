@@ -287,6 +287,79 @@
       "code": "test-spline-compare-indicators-notes",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
       "description": "<p>This spline compare indicators with extra notes</p>",
+      "use_period_label_for_axis": true,
+      "indicator_filter_defaults": [
+        [
+          "desi_4b1"
+        ]
+      ],
+      "breakdown_filter_defaults": [
+        [
+          "all_egov_le"
+        ]
+      ],
+      "unit_filter_defaults": [
+        [
+          "egov_score"
+        ]
+      ],
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 51,
+      "chart_group": [
+        "test-extra-notes"
+      ],
+      "name": "Test Spline Compare Breakdowns Notes",
+      "code": "test-spline-compare-breakdowns-notes",
+      "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "description": "<p>This spline compare breakdowns with extra notes</p>",
+      "use_period_label_for_axis": true,
+      "indicator_filter_defaults": [
+        [
+          "desi_4b1"
+        ]
+      ],
+      "breakdown_group_filter_defaults": [
+        [
+          "total"
+        ]
+      ],
+      "unit_filter_defaults": [
+        [
+          "egov_score"
+        ]
+      ],
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 52,
+      "chart_group": [
+        "test-extra-notes"
+      ],
+      "name": "Test Spline Compare Countries Notes",
+      "code": "test-spline-compare-countries-notes",
+      "chart_type": "SPLINE_COMPARE_COUNTRIES",
+      "description": "<p>This spline compare countries with extra notes</p>",
+      "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
           "desi_4b1"
