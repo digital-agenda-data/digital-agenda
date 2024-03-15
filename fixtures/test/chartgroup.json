@@ -5,21 +5,107 @@
         "created_at": "2024-02-13T10:18:03.650Z",
         "updated_at": "2024-02-13T10:18:03.650Z",
         "display_order": 100,
-        "is_draft": false,
-        "code": "test-group",
-        "name": "Test Chart Group",
-        "short_name": "Test Chart Group",
+        "code": "test-filter-order",
+        "name": "Test Filter Order",
+        "short_name": "Test Filter Order",
         "license": "<p>Nothing</p>",
-        "description": "<p>Test various edge cases and special settings</p>",
-        "image": "",
-        "indicator_group_label": "Indicator group",
-        "indicator_label": "Indicator",
-        "breakdown_group_label": "Breakdown group",
-        "breakdown_label": "Breakdown",
-        "period_label": "Period",
-        "unit_label": "Unit of measure",
-        "period_start": null,
-        "period_end": null,
+        "description": "<p>Test charts that have custom order for the filters</p>",
+        "indicator_groups": [
+            [
+                "ict-skills"
+            ],
+            [
+                "broadband"
+            ],
+            [
+                "desi2023-4"
+            ]
+        ]
+    }
+},
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 110,
+        "code": "test-custom-range",
+        "name": "Test Custom Range",
+        "short_name": "Test Custom Range",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test charts that have custom ranges</p>",
+        "indicator_groups": [
+            [
+                "ict-skills"
+            ],
+            [
+                "broadband"
+            ],
+            [
+                "desi2023-4"
+            ]
+        ]
+    }
+},
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 120,
+        "code": "test-custom-fonts",
+        "name": "Test Custom Fonts",
+        "short_name": "Test Custom Fonts",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test charts that have custom styles</p>",
+        "indicator_groups": [
+            [
+                "ict-skills"
+            ],
+            [
+                "broadband"
+            ],
+            [
+                "desi2023-4"
+            ]
+        ]
+    }
+},
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 130,
+        "code": "test-custom-labels",
+        "name": "Test Custom Labels",
+        "short_name": "Test Custom Labels",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test charts that have custom label choices</p>",
+        "indicator_groups": [
+            [
+                "ict-skills"
+            ],
+            [
+                "broadband"
+            ],
+            [
+                "desi2023-4"
+            ]
+        ]
+    }
+},
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 130,
+        "code": "test-extra-notes",
+        "name": "Test Extra Notes",
+        "short_name": "Test Extra Notes",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test charts that have extra notes</p>",
         "indicator_groups": [
             [
                 "ict-skills"

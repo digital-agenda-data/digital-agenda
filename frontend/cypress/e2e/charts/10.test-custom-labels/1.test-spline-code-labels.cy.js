@@ -2,19 +2,20 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Spline Custom Ranges");
+    cy.navigateToChart("Test Custom Labels", "Test Spline Code Labels");
     cy.checkChart({
       filters: {
         indicatorX: "ICT graduates",
         breakdownX: "Females",
-        unitX: "% of graduates",
         countryX: "European Union",
+        unitX: "% of graduates",
         indicatorY: "ICT graduates",
         breakdownY: "Males",
         unitY: "% of graduates",
       },
-      title: ["ICT graduates, Females and ICT graduates, Males"],
-      point: "Year: 2019, 0.8. ICT graduates.",
+      title: ["ict_grad, f and ict_grad, m", "EU"],
+      point: "2019, 0.8. ict_grad.",
+      legend: ["ict_grad", "ict_grad"],
       definitions: [
         "Indicator: ICT graduates",
         "Breakdown: Females",
@@ -24,8 +25,6 @@ describeResponsive("Check Chart", () => {
         "Unit of measure: Percentage of graduates",
         "Definition: Individuals with a degree in ICT",
       ],
-      xAxis: ["2010", "2030"],
-      yAxis: ["-1", "4"],
     });
   });
 });
