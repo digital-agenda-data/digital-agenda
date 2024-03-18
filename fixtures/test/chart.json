@@ -290,17 +290,17 @@
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
-          "desi_4b1"
+          "desi_4a1"
         ]
       ],
       "breakdown_filter_defaults": [
         [
-          "all_egov_le"
+          "ind_total"
         ]
       ],
       "unit_filter_defaults": [
         [
-          "egov_score"
+          "pc_ind_ilt12"
         ]
       ],
       "country_filter_defaults": [
@@ -326,7 +326,7 @@
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
-          "desi_4b1"
+          "desi_4a1"
         ]
       ],
       "breakdown_group_filter_defaults": [
@@ -336,7 +336,7 @@
       ],
       "unit_filter_defaults": [
         [
-          "egov_score"
+          "pc_ind_ilt12"
         ]
       ],
       "country_filter_defaults": [
@@ -362,17 +362,17 @@
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
-          "desi_4b1"
+          "desi_4a1"
         ]
       ],
       "breakdown_filter_defaults": [
         [
-          "all_egov_le"
+          "ind_total"
         ]
       ],
       "unit_filter_defaults": [
         [
-          "egov_score"
+          "pc_ind_ilt12"
         ]
       ],
       "country_filter_defaults": [

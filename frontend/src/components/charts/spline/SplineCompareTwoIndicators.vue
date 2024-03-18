@@ -72,7 +72,7 @@ export default {
 
             return {
               y: apiValue,
-              x: new Date(period?.date),
+              x: period?.date,
               name: this.getPeriodWithExtraNotes(period, indicator),
               unit,
               period,

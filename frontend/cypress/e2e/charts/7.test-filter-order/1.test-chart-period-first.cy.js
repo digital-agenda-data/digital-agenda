@@ -5,7 +5,8 @@ describeResponsive("Check Chart", () => {
     cy.navigateToChart("Test Filter Order", "Test Chart Period First");
     cy.checkChart({
       filters: {
-        period: "2019",
+        // "Desi Period: 2019" comes before this one; so use regex to select exact
+        period: /^2019$/,
         indicator: "ICT graduates",
         breakdown: "Females",
         unit: "% of graduates",
