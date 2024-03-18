@@ -1,878 +1,878 @@
 [
-{
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.353Z",
-        "updated_at": "2023-05-22T14:37:00.814Z",
-        "code": "2009",
-        "label": "Year: 2009",
-        "alt_label": "2009",
-        "definition": null,
-        "date": "2009-07-02"
+      "created_at": "2022-11-16T13:35:11.353Z",
+      "updated_at": "2023-05-22T14:37:00.814Z",
+      "code": "2009",
+      "label": "Year: 2009",
+      "alt_label": "2009",
+      "definition": null,
+      "date": "2009-07-02"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.357Z",
-        "updated_at": "2023-05-22T14:37:00.813Z",
-        "code": "2010",
-        "label": "Year: 2010",
-        "alt_label": "2010",
-        "definition": null,
-        "date": "2010-07-02"
+      "created_at": "2022-11-16T13:35:11.357Z",
+      "updated_at": "2023-05-22T14:37:00.813Z",
+      "code": "2010",
+      "label": "Year: 2010",
+      "alt_label": "2010",
+      "definition": null,
+      "date": "2010-07-02"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.361Z",
-        "updated_at": "2023-05-22T14:37:00.811Z",
-        "code": "2011",
-        "label": "Year: 2011",
-        "alt_label": "2011",
-        "definition": null,
-        "date": "2011-07-02"
+      "created_at": "2022-11-16T13:35:11.361Z",
+      "updated_at": "2023-05-22T14:37:00.811Z",
+      "code": "2011",
+      "label": "Year: 2011",
+      "alt_label": "2011",
+      "definition": null,
+      "date": "2011-07-02"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.363Z",
-        "updated_at": "2023-05-22T14:37:00.810Z",
-        "code": "2012",
-        "label": "Year: 2012",
-        "alt_label": "2012",
-        "definition": null,
-        "date": "2012-07-01"
+      "created_at": "2022-11-16T13:35:11.363Z",
+      "updated_at": "2023-05-22T14:37:00.810Z",
+      "code": "2012",
+      "label": "Year: 2012",
+      "alt_label": "2012",
+      "definition": null,
+      "date": "2012-07-01"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.365Z",
-        "updated_at": "2023-05-22T14:37:00.808Z",
-        "code": "2013",
-        "label": "Year: 2013",
-        "alt_label": "2013",
-        "definition": null,
-        "date": "2013-07-02"
+      "created_at": "2022-11-16T13:35:11.365Z",
+      "updated_at": "2023-05-22T14:37:00.808Z",
+      "code": "2013",
+      "label": "Year: 2013",
+      "alt_label": "2013",
+      "definition": null,
+      "date": "2013-07-02"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.366Z",
-        "updated_at": "2023-05-22T14:37:00.807Z",
-        "code": "2014",
-        "label": "Year: 2014",
-        "alt_label": "2014",
-        "definition": null,
-        "date": "2014-07-02"
+      "created_at": "2022-11-16T13:35:11.366Z",
+      "updated_at": "2023-05-22T14:37:00.807Z",
+      "code": "2014",
+      "label": "Year: 2014",
+      "alt_label": "2014",
+      "definition": null,
+      "date": "2014-07-02"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.368Z",
-        "updated_at": "2023-05-22T14:37:00.805Z",
-        "code": "2015",
-        "label": "Year: 2015",
-        "alt_label": "2015",
-        "definition": null,
-        "date": "2015-07-02"
+      "created_at": "2022-11-16T13:35:11.368Z",
+      "updated_at": "2023-05-22T14:37:00.805Z",
+      "code": "2015",
+      "label": "Year: 2015",
+      "alt_label": "2015",
+      "definition": null,
+      "date": "2015-07-02"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.369Z",
-        "updated_at": "2023-05-22T14:37:00.804Z",
-        "code": "2016",
-        "label": "Year: 2016",
-        "alt_label": "2016",
-        "definition": null,
-        "date": "2016-07-01"
+      "created_at": "2022-11-16T13:35:11.369Z",
+      "updated_at": "2023-05-22T14:37:00.804Z",
+      "code": "2016",
+      "label": "Year: 2016",
+      "alt_label": "2016",
+      "definition": null,
+      "date": "2016-07-01"
     }
-},
-{
+  },
+  {
     "model": "core.period",
     "fields": {
-        "created_at": "2022-11-16T13:35:11.373Z",
-        "updated_at": "2023-05-22T14:37:00.803Z",
-        "code": "2017",
-        "label": "Year: 2017",
-        "alt_label": "2017",
-        "definition": null,
-        "date": "2017-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-11-16T13:35:11.377Z",
-        "updated_at": "2023-05-22T14:37:00.801Z",
-        "code": "2018",
-        "label": "Year: 2018",
-        "alt_label": "2018",
-        "definition": null,
-        "date": "2018-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-11-16T13:35:11.380Z",
-        "updated_at": "2023-05-22T14:37:00.800Z",
-        "code": "2019",
-        "label": "Year: 2019",
-        "alt_label": "2019",
-        "definition": null,
-        "date": "2019-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-11-16T13:35:11.383Z",
-        "updated_at": "2023-05-22T14:37:00.798Z",
-        "code": "2020",
-        "label": "Year: 2020",
-        "alt_label": "2020",
-        "definition": null,
-        "date": "2020-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-11-16T13:35:11.385Z",
-        "updated_at": "2023-05-22T14:37:00.797Z",
-        "code": "2021",
-        "label": "Year: 2021",
-        "alt_label": "2021",
-        "definition": null,
-        "date": "2021-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-11-16T13:35:11.388Z",
-        "updated_at": "2023-05-22T14:37:00.794Z",
-        "code": "2022",
-        "label": "Year: 2022",
-        "alt_label": "2022",
-        "definition": null,
-        "date": "2022-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-12-28T10:59:16.533Z",
-        "updated_at": "2023-05-22T14:37:00.823Z",
-        "code": "2003",
-        "label": "Year: 2003",
-        "alt_label": "2003",
-        "definition": null,
-        "date": "2003-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-12-28T10:59:16.550Z",
-        "updated_at": "2023-05-22T14:37:00.821Z",
-        "code": "2004",
-        "label": "Year: 2004",
-        "alt_label": "2004",
-        "definition": null,
-        "date": "2004-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-12-28T10:59:16.554Z",
-        "updated_at": "2023-05-22T14:37:00.820Z",
-        "code": "2005",
-        "label": "Year: 2005",
-        "alt_label": "2005",
-        "definition": null,
-        "date": "2005-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-12-28T10:59:16.558Z",
-        "updated_at": "2023-05-22T14:37:00.818Z",
-        "code": "2006",
-        "label": "Year: 2006",
-        "alt_label": "2006",
-        "definition": null,
-        "date": "2006-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-12-28T10:59:16.562Z",
-        "updated_at": "2023-05-22T14:37:00.817Z",
-        "code": "2007",
-        "label": "Year: 2007",
-        "alt_label": "2007",
-        "definition": null,
-        "date": "2007-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2022-12-28T10:59:16.566Z",
-        "updated_at": "2023-05-22T14:37:00.816Z",
-        "code": "2008",
-        "label": "Year: 2008",
-        "alt_label": "2008",
-        "definition": null,
-        "date": "2008-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-03-31T06:34:57.027Z",
-        "updated_at": "2023-05-22T14:37:00.827Z",
-        "code": "2000",
-        "label": "Year: 2000",
-        "alt_label": "2000",
-        "definition": null,
-        "date": "2000-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-03-31T06:34:57.033Z",
-        "updated_at": "2023-05-22T14:37:00.826Z",
-        "code": "2001",
-        "label": "Year: 2001",
-        "alt_label": "2001",
-        "definition": null,
-        "date": "2001-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-03-31T06:34:57.038Z",
-        "updated_at": "2023-05-22T14:37:00.824Z",
-        "code": "2002",
-        "label": "Year: 2002",
-        "alt_label": "2002",
-        "definition": null,
-        "date": "2002-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.526Z",
-        "updated_at": "2023-06-15T14:57:00.526Z",
-        "code": "2004-12",
-        "label": "2004-12",
-        "alt_label": "2004-12",
-        "definition": null,
-        "date": "2004-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.588Z",
-        "updated_at": "2023-06-15T14:57:00.588Z",
-        "code": "2005-06",
-        "label": "2005-06",
-        "alt_label": "2005-06",
-        "definition": null,
-        "date": "2005-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.597Z",
-        "updated_at": "2023-06-15T14:57:00.597Z",
-        "code": "2005-12",
-        "label": "2005-12",
-        "alt_label": "2005-12",
-        "definition": null,
-        "date": "2005-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.610Z",
-        "updated_at": "2023-06-15T14:57:00.610Z",
-        "code": "2006-06",
-        "label": "2006-06",
-        "alt_label": "2006-06",
-        "definition": null,
-        "date": "2006-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.619Z",
-        "updated_at": "2023-06-15T14:57:00.619Z",
-        "code": "2006-12",
-        "label": "2006-12",
-        "alt_label": "2006-12",
-        "definition": null,
-        "date": "2006-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.633Z",
-        "updated_at": "2023-06-15T14:57:00.633Z",
-        "code": "2007-06",
-        "label": "2007-06",
-        "alt_label": "2007-06",
-        "definition": null,
-        "date": "2007-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.646Z",
-        "updated_at": "2023-06-15T14:57:00.646Z",
-        "code": "2007-12",
-        "label": "2007-12",
-        "alt_label": "2007-12",
-        "definition": null,
-        "date": "2007-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.658Z",
-        "updated_at": "2023-06-15T14:57:00.658Z",
-        "code": "2008-06",
-        "label": "2008-06",
-        "alt_label": "2008-06",
-        "definition": null,
-        "date": "2008-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.668Z",
-        "updated_at": "2023-06-15T14:57:00.668Z",
-        "code": "2008-12",
-        "label": "2008-12",
-        "alt_label": "2008-12",
-        "definition": null,
-        "date": "2008-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.681Z",
-        "updated_at": "2023-06-15T14:57:00.681Z",
-        "code": "2009-06",
-        "label": "2009-06",
-        "alt_label": "2009-06",
-        "definition": null,
-        "date": "2009-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.692Z",
-        "updated_at": "2023-06-15T14:57:00.692Z",
-        "code": "2009-12",
-        "label": "2009-12",
-        "alt_label": "2009-12",
-        "definition": null,
-        "date": "2009-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.703Z",
-        "updated_at": "2023-06-15T14:57:00.703Z",
-        "code": "2010-06",
-        "label": "2010-06",
-        "alt_label": "2010-06",
-        "definition": null,
-        "date": "2010-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.718Z",
-        "updated_at": "2023-06-15T14:57:00.718Z",
-        "code": "2010-12",
-        "label": "2010-12",
-        "alt_label": "2010-12",
-        "definition": null,
-        "date": "2010-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.742Z",
-        "updated_at": "2023-06-15T14:57:00.742Z",
-        "code": "2011-06",
-        "label": "2011-06",
-        "alt_label": "2011-06",
-        "definition": null,
-        "date": "2011-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.752Z",
-        "updated_at": "2023-06-15T14:57:00.752Z",
-        "code": "2011-12",
-        "label": "2011-12",
-        "alt_label": "2011-12",
-        "definition": null,
-        "date": "2011-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.761Z",
-        "updated_at": "2023-06-15T14:57:00.761Z",
-        "code": "2012-06",
-        "label": "2012-06",
-        "alt_label": "2012-06",
-        "definition": null,
-        "date": "2012-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.776Z",
-        "updated_at": "2023-06-15T14:57:00.776Z",
-        "code": "2012-12",
-        "label": "2012-12",
-        "alt_label": "2012-12",
-        "definition": null,
-        "date": "2012-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.785Z",
-        "updated_at": "2023-06-15T14:57:00.785Z",
-        "code": "2013-06",
-        "label": "2013-06",
-        "alt_label": "2013-06",
-        "definition": null,
-        "date": "2013-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.799Z",
-        "updated_at": "2023-06-15T14:57:00.799Z",
-        "code": "2013-12",
-        "label": "2013-12",
-        "alt_label": "2013-12",
-        "definition": null,
-        "date": "2013-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.807Z",
-        "updated_at": "2023-06-15T14:57:00.808Z",
-        "code": "2014-06",
-        "label": "2014-06",
-        "alt_label": "2014-06",
-        "definition": null,
-        "date": "2014-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.820Z",
-        "updated_at": "2023-06-15T14:57:00.820Z",
-        "code": "2014-12",
-        "label": "2014-12",
-        "alt_label": "2014-12",
-        "definition": null,
-        "date": "2014-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.833Z",
-        "updated_at": "2023-06-15T14:57:00.833Z",
-        "code": "2015-06",
-        "label": "2015-06",
-        "alt_label": "2015-06",
-        "definition": null,
-        "date": "2015-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.845Z",
-        "updated_at": "2023-06-15T14:57:00.845Z",
-        "code": "2015-12",
-        "label": "2015-12",
-        "alt_label": "2015-12",
-        "definition": null,
-        "date": "2015-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.856Z",
-        "updated_at": "2023-06-15T14:57:00.856Z",
-        "code": "2016-06",
-        "label": "2016-06",
-        "alt_label": "2016-06",
-        "definition": null,
-        "date": "2016-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.866Z",
-        "updated_at": "2023-06-15T14:57:00.866Z",
-        "code": "2016-12",
-        "label": "2016-12",
-        "alt_label": "2016-12",
-        "definition": null,
-        "date": "2016-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.875Z",
-        "updated_at": "2023-06-15T14:57:00.875Z",
-        "code": "2017-06",
-        "label": "2017-06",
-        "alt_label": "2017-06",
-        "definition": null,
-        "date": "2017-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.883Z",
-        "updated_at": "2023-06-15T14:57:00.883Z",
-        "code": "2017-12",
-        "label": "2017-12",
-        "alt_label": "2017-12",
-        "definition": null,
-        "date": "2017-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.896Z",
-        "updated_at": "2023-06-15T14:57:00.896Z",
-        "code": "2018-06",
-        "label": "2018-06",
-        "alt_label": "2018-06",
-        "definition": null,
-        "date": "2018-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.906Z",
-        "updated_at": "2023-06-15T14:57:00.906Z",
-        "code": "2018-12",
-        "label": "2018-12",
-        "alt_label": "2018-12",
-        "definition": null,
-        "date": "2018-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.923Z",
-        "updated_at": "2023-06-15T14:57:00.923Z",
-        "code": "2019-06",
-        "label": "2019-06",
-        "alt_label": "2019-06",
-        "definition": null,
-        "date": "2019-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.935Z",
-        "updated_at": "2023-06-15T14:57:00.936Z",
-        "code": "2019-12",
-        "label": "2019-12",
-        "alt_label": "2019-12",
-        "definition": null,
-        "date": "2019-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.959Z",
-        "updated_at": "2023-06-15T14:57:00.959Z",
-        "code": "2020-06",
-        "label": "2020-06",
-        "alt_label": "2020-06",
-        "definition": null,
-        "date": "2020-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.970Z",
-        "updated_at": "2023-06-15T14:57:00.970Z",
-        "code": "2020-12",
-        "label": "2020-12",
-        "alt_label": "2020-12",
-        "definition": null,
-        "date": "2020-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.983Z",
-        "updated_at": "2023-06-15T14:57:00.983Z",
-        "code": "2021-06",
-        "label": "2021-06",
-        "alt_label": "2021-06",
-        "definition": null,
-        "date": "2021-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:00.992Z",
-        "updated_at": "2023-06-15T14:57:00.992Z",
-        "code": "2021-12",
-        "label": "2021-12",
-        "alt_label": "2021-12",
-        "definition": null,
-        "date": "2021-12-16"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-06-15T14:57:01.002Z",
-        "updated_at": "2023-06-15T14:57:01.002Z",
-        "code": "2022-06",
-        "label": "2022-06",
-        "alt_label": "2022-06",
-        "definition": null,
-        "date": "2022-06-15"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-20T11:15:51.383Z",
-        "updated_at": "2023-09-29T16:37:17.325Z",
-        "code": "2023",
-        "label": "Year: 2023",
-        "alt_label": "2023",
-        "definition": "",
-        "date": "2023-07-02"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:24:11.069Z",
-        "updated_at": "2023-09-28T10:36:42.414Z",
-        "code": "2024",
-        "label": "Year: 2024",
-        "alt_label": "2024",
-        "definition": "",
-        "date": "2024-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:24:28.373Z",
-        "updated_at": "2023-09-28T10:36:47.562Z",
-        "code": "2025",
-        "label": "Year: 2025",
-        "alt_label": "2025",
-        "definition": "",
-        "date": "2025-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:24:36.553Z",
-        "updated_at": "2023-09-28T10:36:52.934Z",
-        "code": "2026",
-        "label": "Year: 2026",
-        "alt_label": "2026",
-        "definition": "",
-        "date": "2026-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:24:50.282Z",
-        "updated_at": "2023-09-28T10:36:57.044Z",
-        "code": "2027",
-        "label": "Year: 2027",
-        "alt_label": "2027",
-        "definition": "",
-        "date": "2027-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:24:59.647Z",
-        "updated_at": "2023-09-28T10:37:01.261Z",
-        "code": "2028",
-        "label": "Year: 2028",
-        "alt_label": "2028",
-        "definition": "",
-        "date": "2028-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:25:07.961Z",
-        "updated_at": "2023-09-28T10:37:05.191Z",
-        "code": "2029",
-        "label": "Year: 2029",
-        "alt_label": "2029",
-        "definition": "",
-        "date": "2029-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-23T14:26:23.930Z",
-        "updated_at": "2023-09-28T10:37:10.150Z",
-        "code": "2030",
-        "label": "Year: 2030",
-        "alt_label": "2030",
-        "definition": "",
-        "date": "2030-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-29T13:46:02.535Z",
-        "updated_at": "2023-09-29T13:46:02.535Z",
-        "code": "desi_2018",
-        "label": "DESI period: 2018",
-        "alt_label": "DESI period: 2018",
-        "definition": "",
-        "date": "2018-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-29T13:46:15.627Z",
-        "updated_at": "2023-09-29T13:46:15.627Z",
-        "code": "desi_2019",
-        "label": "DESI period: 2019",
-        "alt_label": "DESI period: 2019",
-        "definition": "",
-        "date": "2019-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-29T13:46:28.267Z",
-        "updated_at": "2023-09-29T13:46:28.267Z",
-        "code": "desi_2020",
-        "label": "DESI period: 2020",
-        "alt_label": "DESI period: 2020",
-        "definition": "",
-        "date": "2020-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-29T13:46:39.430Z",
-        "updated_at": "2023-09-29T13:46:39.430Z",
-        "code": "desi_2021",
-        "label": "DESI period: 2021",
-        "alt_label": "DESI period: 2021",
-        "definition": "",
-        "date": "2021-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-29T13:46:54.467Z",
-        "updated_at": "2023-09-29T13:46:54.467Z",
-        "code": "desi_2022",
-        "label": "DESI period: 2022",
-        "alt_label": "DESI period: 2022",
-        "definition": "",
-        "date": "2022-07-01"
-    }
-},
-{
-    "model": "core.period",
-    "fields": {
-        "created_at": "2023-09-29T13:47:06.641Z",
-        "updated_at": "2023-09-29T13:47:06.641Z",
-        "code": "desi_2023",
-        "label": "DESI period: 2023",
-        "alt_label": "DESI period: 2023",
-        "definition": "",
-        "date": "2023-07-01"
-    }
-}
+      "created_at": "2022-11-16T13:35:11.373Z",
+      "updated_at": "2023-05-22T14:37:00.803Z",
+      "code": "2017",
+      "label": "Year: 2017",
+      "alt_label": "2017",
+      "definition": null,
+      "date": "2017-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-11-16T13:35:11.377Z",
+      "updated_at": "2023-05-22T14:37:00.801Z",
+      "code": "2018",
+      "label": "Year: 2018",
+      "alt_label": "2018",
+      "definition": null,
+      "date": "2018-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-11-16T13:35:11.380Z",
+      "updated_at": "2023-05-22T14:37:00.800Z",
+      "code": "2019",
+      "label": "Year: 2019",
+      "alt_label": "2019",
+      "definition": null,
+      "date": "2019-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-11-16T13:35:11.383Z",
+      "updated_at": "2023-05-22T14:37:00.798Z",
+      "code": "2020",
+      "label": "Year: 2020",
+      "alt_label": "2020",
+      "definition": null,
+      "date": "2020-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-11-16T13:35:11.385Z",
+      "updated_at": "2023-05-22T14:37:00.797Z",
+      "code": "2021",
+      "label": "Year: 2021",
+      "alt_label": "2021",
+      "definition": null,
+      "date": "2021-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-11-16T13:35:11.388Z",
+      "updated_at": "2023-05-22T14:37:00.794Z",
+      "code": "2022",
+      "label": "Year: 2022",
+      "alt_label": "2022",
+      "definition": null,
+      "date": "2022-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-12-28T10:59:16.533Z",
+      "updated_at": "2023-05-22T14:37:00.823Z",
+      "code": "2003",
+      "label": "Year: 2003",
+      "alt_label": "2003",
+      "definition": null,
+      "date": "2003-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-12-28T10:59:16.550Z",
+      "updated_at": "2023-05-22T14:37:00.821Z",
+      "code": "2004",
+      "label": "Year: 2004",
+      "alt_label": "2004",
+      "definition": null,
+      "date": "2004-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-12-28T10:59:16.554Z",
+      "updated_at": "2023-05-22T14:37:00.820Z",
+      "code": "2005",
+      "label": "Year: 2005",
+      "alt_label": "2005",
+      "definition": null,
+      "date": "2005-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-12-28T10:59:16.558Z",
+      "updated_at": "2023-05-22T14:37:00.818Z",
+      "code": "2006",
+      "label": "Year: 2006",
+      "alt_label": "2006",
+      "definition": null,
+      "date": "2006-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-12-28T10:59:16.562Z",
+      "updated_at": "2023-05-22T14:37:00.817Z",
+      "code": "2007",
+      "label": "Year: 2007",
+      "alt_label": "2007",
+      "definition": null,
+      "date": "2007-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2022-12-28T10:59:16.566Z",
+      "updated_at": "2023-05-22T14:37:00.816Z",
+      "code": "2008",
+      "label": "Year: 2008",
+      "alt_label": "2008",
+      "definition": null,
+      "date": "2008-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-03-31T06:34:57.027Z",
+      "updated_at": "2023-05-22T14:37:00.827Z",
+      "code": "2000",
+      "label": "Year: 2000",
+      "alt_label": "2000",
+      "definition": null,
+      "date": "2000-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-03-31T06:34:57.033Z",
+      "updated_at": "2023-05-22T14:37:00.826Z",
+      "code": "2001",
+      "label": "Year: 2001",
+      "alt_label": "2001",
+      "definition": null,
+      "date": "2001-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-03-31T06:34:57.038Z",
+      "updated_at": "2023-05-22T14:37:00.824Z",
+      "code": "2002",
+      "label": "Year: 2002",
+      "alt_label": "2002",
+      "definition": null,
+      "date": "2002-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.526Z",
+      "updated_at": "2023-06-15T14:57:00.526Z",
+      "code": "2004-12",
+      "label": "2004-12",
+      "alt_label": "2004-12",
+      "definition": null,
+      "date": "2004-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.588Z",
+      "updated_at": "2023-06-15T14:57:00.588Z",
+      "code": "2005-06",
+      "label": "2005-06",
+      "alt_label": "2005-06",
+      "definition": null,
+      "date": "2005-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.597Z",
+      "updated_at": "2023-06-15T14:57:00.597Z",
+      "code": "2005-12",
+      "label": "2005-12",
+      "alt_label": "2005-12",
+      "definition": null,
+      "date": "2005-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.610Z",
+      "updated_at": "2023-06-15T14:57:00.610Z",
+      "code": "2006-06",
+      "label": "2006-06",
+      "alt_label": "2006-06",
+      "definition": null,
+      "date": "2006-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.619Z",
+      "updated_at": "2023-06-15T14:57:00.619Z",
+      "code": "2006-12",
+      "label": "2006-12",
+      "alt_label": "2006-12",
+      "definition": null,
+      "date": "2006-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.633Z",
+      "updated_at": "2023-06-15T14:57:00.633Z",
+      "code": "2007-06",
+      "label": "2007-06",
+      "alt_label": "2007-06",
+      "definition": null,
+      "date": "2007-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.646Z",
+      "updated_at": "2023-06-15T14:57:00.646Z",
+      "code": "2007-12",
+      "label": "2007-12",
+      "alt_label": "2007-12",
+      "definition": null,
+      "date": "2007-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.658Z",
+      "updated_at": "2023-06-15T14:57:00.658Z",
+      "code": "2008-06",
+      "label": "2008-06",
+      "alt_label": "2008-06",
+      "definition": null,
+      "date": "2008-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.668Z",
+      "updated_at": "2023-06-15T14:57:00.668Z",
+      "code": "2008-12",
+      "label": "2008-12",
+      "alt_label": "2008-12",
+      "definition": null,
+      "date": "2008-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.681Z",
+      "updated_at": "2023-06-15T14:57:00.681Z",
+      "code": "2009-06",
+      "label": "2009-06",
+      "alt_label": "2009-06",
+      "definition": null,
+      "date": "2009-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.692Z",
+      "updated_at": "2023-06-15T14:57:00.692Z",
+      "code": "2009-12",
+      "label": "2009-12",
+      "alt_label": "2009-12",
+      "definition": null,
+      "date": "2009-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.703Z",
+      "updated_at": "2023-06-15T14:57:00.703Z",
+      "code": "2010-06",
+      "label": "2010-06",
+      "alt_label": "2010-06",
+      "definition": null,
+      "date": "2010-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.718Z",
+      "updated_at": "2023-06-15T14:57:00.718Z",
+      "code": "2010-12",
+      "label": "2010-12",
+      "alt_label": "2010-12",
+      "definition": null,
+      "date": "2010-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.742Z",
+      "updated_at": "2023-06-15T14:57:00.742Z",
+      "code": "2011-06",
+      "label": "2011-06",
+      "alt_label": "2011-06",
+      "definition": null,
+      "date": "2011-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.752Z",
+      "updated_at": "2023-06-15T14:57:00.752Z",
+      "code": "2011-12",
+      "label": "2011-12",
+      "alt_label": "2011-12",
+      "definition": null,
+      "date": "2011-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.761Z",
+      "updated_at": "2023-06-15T14:57:00.761Z",
+      "code": "2012-06",
+      "label": "2012-06",
+      "alt_label": "2012-06",
+      "definition": null,
+      "date": "2012-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.776Z",
+      "updated_at": "2023-06-15T14:57:00.776Z",
+      "code": "2012-12",
+      "label": "2012-12",
+      "alt_label": "2012-12",
+      "definition": null,
+      "date": "2012-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.785Z",
+      "updated_at": "2023-06-15T14:57:00.785Z",
+      "code": "2013-06",
+      "label": "2013-06",
+      "alt_label": "2013-06",
+      "definition": null,
+      "date": "2013-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.799Z",
+      "updated_at": "2023-06-15T14:57:00.799Z",
+      "code": "2013-12",
+      "label": "2013-12",
+      "alt_label": "2013-12",
+      "definition": null,
+      "date": "2013-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.807Z",
+      "updated_at": "2023-06-15T14:57:00.808Z",
+      "code": "2014-06",
+      "label": "2014-06",
+      "alt_label": "2014-06",
+      "definition": null,
+      "date": "2014-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.820Z",
+      "updated_at": "2023-06-15T14:57:00.820Z",
+      "code": "2014-12",
+      "label": "2014-12",
+      "alt_label": "2014-12",
+      "definition": null,
+      "date": "2014-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.833Z",
+      "updated_at": "2023-06-15T14:57:00.833Z",
+      "code": "2015-06",
+      "label": "2015-06",
+      "alt_label": "2015-06",
+      "definition": null,
+      "date": "2015-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.845Z",
+      "updated_at": "2023-06-15T14:57:00.845Z",
+      "code": "2015-12",
+      "label": "2015-12",
+      "alt_label": "2015-12",
+      "definition": null,
+      "date": "2015-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.856Z",
+      "updated_at": "2023-06-15T14:57:00.856Z",
+      "code": "2016-06",
+      "label": "2016-06",
+      "alt_label": "2016-06",
+      "definition": null,
+      "date": "2016-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.866Z",
+      "updated_at": "2023-06-15T14:57:00.866Z",
+      "code": "2016-12",
+      "label": "2016-12",
+      "alt_label": "2016-12",
+      "definition": null,
+      "date": "2016-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.875Z",
+      "updated_at": "2023-06-15T14:57:00.875Z",
+      "code": "2017-06",
+      "label": "2017-06",
+      "alt_label": "2017-06",
+      "definition": null,
+      "date": "2017-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.883Z",
+      "updated_at": "2023-06-15T14:57:00.883Z",
+      "code": "2017-12",
+      "label": "2017-12",
+      "alt_label": "2017-12",
+      "definition": null,
+      "date": "2017-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.896Z",
+      "updated_at": "2023-06-15T14:57:00.896Z",
+      "code": "2018-06",
+      "label": "2018-06",
+      "alt_label": "2018-06",
+      "definition": null,
+      "date": "2018-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.906Z",
+      "updated_at": "2023-06-15T14:57:00.906Z",
+      "code": "2018-12",
+      "label": "2018-12",
+      "alt_label": "2018-12",
+      "definition": null,
+      "date": "2018-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.923Z",
+      "updated_at": "2023-06-15T14:57:00.923Z",
+      "code": "2019-06",
+      "label": "2019-06",
+      "alt_label": "2019-06",
+      "definition": null,
+      "date": "2019-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.935Z",
+      "updated_at": "2023-06-15T14:57:00.936Z",
+      "code": "2019-12",
+      "label": "2019-12",
+      "alt_label": "2019-12",
+      "definition": null,
+      "date": "2019-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.959Z",
+      "updated_at": "2023-06-15T14:57:00.959Z",
+      "code": "2020-06",
+      "label": "2020-06",
+      "alt_label": "2020-06",
+      "definition": null,
+      "date": "2020-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.970Z",
+      "updated_at": "2023-06-15T14:57:00.970Z",
+      "code": "2020-12",
+      "label": "2020-12",
+      "alt_label": "2020-12",
+      "definition": null,
+      "date": "2020-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.983Z",
+      "updated_at": "2023-06-15T14:57:00.983Z",
+      "code": "2021-06",
+      "label": "2021-06",
+      "alt_label": "2021-06",
+      "definition": null,
+      "date": "2021-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:00.992Z",
+      "updated_at": "2023-06-15T14:57:00.992Z",
+      "code": "2021-12",
+      "label": "2021-12",
+      "alt_label": "2021-12",
+      "definition": null,
+      "date": "2021-12-16"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-06-15T14:57:01.002Z",
+      "updated_at": "2023-06-15T14:57:01.002Z",
+      "code": "2022-06",
+      "label": "2022-06",
+      "alt_label": "2022-06",
+      "definition": null,
+      "date": "2022-06-15"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-20T11:15:51.383Z",
+      "updated_at": "2023-09-29T16:37:17.325Z",
+      "code": "2023",
+      "label": "Year: 2023",
+      "alt_label": "2023",
+      "definition": "",
+      "date": "2023-07-02"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:24:11.069Z",
+      "updated_at": "2023-09-28T10:36:42.414Z",
+      "code": "2024",
+      "label": "Year: 2024",
+      "alt_label": "2024",
+      "definition": "",
+      "date": "2024-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:24:28.373Z",
+      "updated_at": "2023-09-28T10:36:47.562Z",
+      "code": "2025",
+      "label": "Year: 2025",
+      "alt_label": "2025",
+      "definition": "",
+      "date": "2025-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:24:36.553Z",
+      "updated_at": "2023-09-28T10:36:52.934Z",
+      "code": "2026",
+      "label": "Year: 2026",
+      "alt_label": "2026",
+      "definition": "",
+      "date": "2026-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:24:50.282Z",
+      "updated_at": "2023-09-28T10:36:57.044Z",
+      "code": "2027",
+      "label": "Year: 2027",
+      "alt_label": "2027",
+      "definition": "",
+      "date": "2027-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:24:59.647Z",
+      "updated_at": "2023-09-28T10:37:01.261Z",
+      "code": "2028",
+      "label": "Year: 2028",
+      "alt_label": "2028",
+      "definition": "",
+      "date": "2028-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:25:07.961Z",
+      "updated_at": "2023-09-28T10:37:05.191Z",
+      "code": "2029",
+      "label": "Year: 2029",
+      "alt_label": "2029",
+      "definition": "",
+      "date": "2029-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-23T14:26:23.930Z",
+      "updated_at": "2023-09-28T10:37:10.150Z",
+      "code": "2030",
+      "label": "Year: 2030",
+      "alt_label": "2030",
+      "definition": "",
+      "date": "2030-07-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:46:02.535Z",
+      "updated_at": "2024-03-18T09:32:18.728Z",
+      "code": "desi_2018",
+      "label": "DESI period: 2018",
+      "alt_label": "DESI period: 2018",
+      "definition": "",
+      "date": "2018-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:46:15.627Z",
+      "updated_at": "2024-03-18T09:32:18.725Z",
+      "code": "desi_2019",
+      "label": "DESI period: 2019",
+      "alt_label": "DESI period: 2019",
+      "definition": "",
+      "date": "2019-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:46:28.267Z",
+      "updated_at": "2024-03-18T09:32:18.722Z",
+      "code": "desi_2020",
+      "label": "DESI period: 2020",
+      "alt_label": "DESI period: 2020",
+      "definition": "",
+      "date": "2020-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:46:39.430Z",
+      "updated_at": "2024-03-18T09:32:18.717Z",
+      "code": "desi_2021",
+      "label": "DESI period: 2021",
+      "alt_label": "DESI period: 2021",
+      "definition": "",
+      "date": "2021-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:46:54.467Z",
+      "updated_at": "2024-03-18T09:32:18.714Z",
+      "code": "desi_2022",
+      "label": "DESI period: 2022",
+      "alt_label": "DESI period: 2022",
+      "definition": "",
+      "date": "2022-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:47:06.641Z",
+      "updated_at": "2024-03-18T09:32:18.706Z",
+      "code": "desi_2023",
+      "label": "DESI period: 2023",
+      "alt_label": "DESI period: 2023",
+      "definition": "",
+      "date": "2023-01-01"
+    }
+  }
 ]

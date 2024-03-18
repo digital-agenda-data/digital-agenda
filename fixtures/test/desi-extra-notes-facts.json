@@ -1,681 +1,10 @@
 [
   {
     "model": "core.fact",
+    "pk": 1,
     "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 78.46,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "AT"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 88.09,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "BE"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 31.74,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "BG"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 98.72,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "CY"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 86.02,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "CZ"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 55.09,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "DE"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 98.86,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "DK"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 92.96,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "EE"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 80.5,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "EL"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 84.02,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "ES"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 74.2,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "EU"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 97.03,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "FI"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 90.16,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "FR"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 68.72,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "HR"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 81.02,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "HU"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 88.16,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "IE"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 76.26,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "IT"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 83.1,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "LT"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 90.89,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "LU"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 76.96,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "LV"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 82.97,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "MT"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 96.85,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "NL"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 62.62,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "PL"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 80.8,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "PT"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 23.55,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "RO"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 95.77,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "SE"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 81.28,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "SI"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:19.312Z",
-      "updated_at": "2024-02-22T08:02:19.312Z",
-      "value": 81.59,
-      "flags": "",
-      "indicator": [
-        "desi_4a1"
-      ],
-      "breakdown": [
-        "ind_total"
-      ],
-      "unit": [
-        "pc_ind_ilt12"
-      ],
-      "country": [
-        "SK"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 88.16644,
       "flags": "",
       "indicator": [
@@ -692,14 +21,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 2,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 85.065238,
       "flags": "",
       "indicator": [
@@ -716,14 +48,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 3,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 77.206071,
       "flags": "",
       "indicator": [
@@ -740,14 +75,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 4,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 70.230042,
       "flags": "",
       "indicator": [
@@ -764,14 +102,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 5,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 47.444185,
       "flags": "",
       "indicator": [
@@ -788,14 +129,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 6,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 71.127655,
       "flags": "",
       "indicator": [
@@ -812,14 +156,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 7,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 95.833542,
       "flags": "",
       "indicator": [
@@ -836,14 +183,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 8,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 89.16775,
       "flags": "",
       "indicator": [
@@ -860,14 +210,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 9,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 60.717202,
       "flags": "",
       "indicator": [
@@ -884,14 +237,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 10,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 83.147482,
       "flags": "",
       "indicator": [
@@ -908,38 +264,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 11,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
-      "value": 71.705804,
-      "flags": "",
-      "indicator": [
-        "desi_4b1"
-      ],
-      "breakdown": [
-        "all_egov_le"
-      ],
-      "unit": [
-        "egov_score"
-      ],
-      "country": [
-        "EU"
-      ],
-      "period": [
-        "desi_2023"
-      ]
-    }
-  },
-  {
-    "model": "core.fact",
-    "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 90.06019,
       "flags": "",
       "indicator": [
@@ -956,14 +291,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 12,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 54.494315,
       "flags": "",
       "indicator": [
@@ -980,14 +318,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 13,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 85.569417,
       "flags": "",
       "indicator": [
@@ -1004,14 +345,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 14,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 79.914863,
       "flags": "",
       "indicator": [
@@ -1028,14 +372,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 15,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 0.0,
       "flags": "",
       "indicator": [
@@ -1052,14 +399,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 16,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 71.322202,
       "flags": "",
       "indicator": [
@@ -1076,14 +426,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 17,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 91.95394,
       "flags": "",
       "indicator": [
@@ -1100,14 +453,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 18,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 67.169196,
       "flags": "",
       "indicator": [
@@ -1124,14 +480,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 19,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 78.832631,
       "flags": "",
       "indicator": [
@@ -1148,14 +507,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 20,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 77.615667,
       "flags": "",
       "indicator": [
@@ -1172,14 +534,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 21,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 69.376083,
       "flags": "",
       "indicator": [
@@ -1196,14 +561,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 22,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 86.404524,
       "flags": "",
       "indicator": [
@@ -1220,14 +588,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 23,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 62.692292,
       "flags": "",
       "indicator": [
@@ -1244,14 +615,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 24,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 57.067125,
       "flags": "",
       "indicator": [
@@ -1268,14 +642,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 25,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 70.294405,
       "flags": "",
       "indicator": [
@@ -1292,14 +669,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 26,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 80.418625,
       "flags": "",
       "indicator": [
@@ -1316,14 +696,17 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
     }
   },
   {
     "model": "core.fact",
+    "pk": 27,
     "fields": {
-      "created_at": "2024-02-22T08:02:28.600Z",
-      "updated_at": "2024-02-22T08:02:28.600Z",
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
       "value": 44.765613,
       "flags": "",
       "indicator": [
@@ -1340,7 +723,4545 @@
       ],
       "period": [
         "desi_2023"
-      ]
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 28,
+    "fields": {
+      "created_at": "2024-03-18T09:22:52.347Z",
+      "updated_at": "2024-03-18T09:22:52.347Z",
+      "value": 71.705804,
+      "flags": "",
+      "indicator": [
+        "desi_4b1"
+      ],
+      "breakdown": [
+        "all_egov_le"
+      ],
+      "unit": [
+        "egov_score"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 29,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 78.5326,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 30,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 74.3633,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 31,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 34.0039,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 32,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 63.0189,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 33,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 75.872,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 34,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 54.5271,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 35,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 93.1986,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 36,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 89.3712,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 37,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 69.498,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 38,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 72.7149,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 39,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 92.1785,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 40,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 87.0859,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 41,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.216Z",
+      "updated_at": "2024-03-18T09:23:19.216Z",
+      "value": 54.9495,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 42,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 81.4653,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 43,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 91.9125,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 44,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 40.4066,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 45,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 70.3945,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 46,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 79.1326,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 47,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 83.9521,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 48,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 72.325,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 49,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 91.6564,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 50,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 54.6687,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 51,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 58.8545,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 52,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 16.7178,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 53,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 93.2728,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 54,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 76.7944,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 55,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 62.0499,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 56,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 64.8418,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 57,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 80.9296,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 58,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 66.0807,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 59,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 36.2792,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 60,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 58.6846,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 61,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 63.7625,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 62,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 69.3016,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 63,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 91.7739,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 64,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 89.289,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 65,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 67.2964,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 66,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 67.3449,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 67,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 90.7915,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 68,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 51.8599,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 69,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 70.0714,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 70,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 66.967,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 71,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 36.3453,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 72,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 68.9265,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 73,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 63.8298,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 74,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 85.2214,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 75,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 63.3979,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 76,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 90.6906,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 77,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 49.4464,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 78,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 56.8773,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 79,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 15.8859,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 80,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 87.9355,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 81,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 76.6889,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 82,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 67.8145,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 83,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 64.2067,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 84,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 78.8075,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 85,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 64.1122,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 86,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 36.0318,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 87,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 58.3032,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 88,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 61.4478,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 89,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 62.8858,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 90,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 94.0843,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 91,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 88.0564,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 92,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 68.1649,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 93,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 63.3429,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 94,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.217Z",
+      "updated_at": "2024-03-18T09:23:19.217Z",
+      "value": 91.4106,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 95,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 82.4278,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 96,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 41.2462,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 97,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 63.8217,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 98,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 67.3573,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 99,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 29.8799,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 100,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 66.5321,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 101,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 62.2508,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 102,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 80.2394,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 103,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 58.0302,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 104,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 84.1585,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 105,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 49.2898,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 106,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 53.7853,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 107,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 14.6122,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 108,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 87.9789,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 109,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 63.1972,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 110,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 69.2919,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 111,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 61.1291,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 112,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 75.2917,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 113,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 62.7667,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 114,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 32.9987,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 115,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 49.1784,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 116,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 61.0197,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 117,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 60.7562,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 118,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 93.528,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 119,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 87.6501,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 120,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 67.8128,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 121,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 65.4431,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 122,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 87.1776,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 123,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 79.479,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 124,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 48.1112,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 125,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 66.5859,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 126,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 63.6395,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 127,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 31.7264,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 128,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 63.082,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 129,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 65.2789,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 130,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 77.5345,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 131,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 56.7485,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 132,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 85.5947,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 133,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 44.7843,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 134,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 55.1704,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 135,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 12.0902,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 136,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 89.5062,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 137,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 66.6418,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 138,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 61.595,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 139,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 60.0934,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 140,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 70.1198,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 141,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 62.0683,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 142,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 31.3688,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 143,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 52.1047,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 144,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 53.4013,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 145,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 58.5039,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 146,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 91.6663,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 147,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.218Z",
+      "updated_at": "2024-03-18T09:23:19.218Z",
+      "value": 87.6954,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 148,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 67.1862,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 149,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 61.5065,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 150,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 88.3241,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 151,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 77.0114,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 152,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 46.8892,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 153,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 59.3948,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 154,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 67.1501,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 155,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 33.4788,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 156,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 61.6512,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 157,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 77.068,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 158,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 83.2331,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 159,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 56.2163,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 160,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 82.3317,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 161,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 39.5435,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 162,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 61.3224,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 163,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 12.5506,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 164,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 87.2017,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 165,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 62.1808,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 166,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 56.9045,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 167,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 58.3384,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2018"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 168,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 78.46,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "AT"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 169,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 88.09,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BE"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 170,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 31.74,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "BG"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 171,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 98.72,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CY"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 172,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 86.02,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "CZ"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 173,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 55.09,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DE"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 174,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 98.86,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "DK"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 175,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 92.96,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EE"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 176,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 80.5,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EL"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 177,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 84.02,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "ES"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 178,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 97.03,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FI"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 179,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 90.16,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "FR"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 180,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 68.72,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HR"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 181,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 81.02,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "HU"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 182,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 88.16,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IE"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 183,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 76.26,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "IT"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 184,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 83.1,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LT"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 185,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 90.89,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LU"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 186,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 76.96,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "LV"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 187,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 82.97,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "MT"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 188,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 96.85,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "NL"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 189,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 62.62,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PL"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 190,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 80.8,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "PT"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 191,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 23.55,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "RO"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 192,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 95.77,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SE"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 193,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 81.28,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SI"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 194,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 81.59,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "SK"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "pk": 195,
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 74.2,
+      "flags": "",
+      "indicator": [
+        "desi_4a1"
+      ],
+      "breakdown": [
+        "ind_total"
+      ],
+      "unit": [
+        "pc_ind_ilt12"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
     }
   }
 ]
