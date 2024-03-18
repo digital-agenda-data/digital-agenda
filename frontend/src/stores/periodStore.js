@@ -7,7 +7,14 @@ export const usePeriodStore = defineStore("period", {
   state: () => {
     return {
       ...useAsyncState(
-        api.get("/periods/").then((r) => r.data),
+        api.get("/periods/").then((r) =>
+          r.data.map((period) => {
+            return {
+              ...period,
+              date: new Date(period.date),
+            };
+          }),
+        ),
         [],
       ),
     };

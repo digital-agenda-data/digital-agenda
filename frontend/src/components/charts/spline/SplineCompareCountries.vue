@@ -43,7 +43,7 @@ export default {
             return {
               fact,
               y: fact?.value ?? null,
-              x: new Date(period?.date),
+              x: period?.date,
               name: this.getPeriodWithExtraNotes(period),
             };
           }),
