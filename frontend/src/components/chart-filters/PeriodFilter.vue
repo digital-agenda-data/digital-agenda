@@ -18,7 +18,7 @@ export default {
       return this.super(BaseSelectFilter)
         .apiData()
         .filter((item) => {
-          const year = item.date.getFullYear();
+          const year = new Date(item.date).getFullYear();
           return periodStart <= year && year <= periodEnd;
         });
     },
