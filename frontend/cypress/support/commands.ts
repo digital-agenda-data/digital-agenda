@@ -111,7 +111,9 @@ Cypress.Commands.addAll({
         for (const txt of texts) {
           // Highcharts adds ZeroWidthSpaces in the text, so we can't
           // check normally
-          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+          expect(
+            text.replace(/[\u200B-\u200D\uFEFF]/g, " ").replace(/\s+/g, " "),
+          ).to.contain(txt);
         }
       });
   },
@@ -156,6 +158,11 @@ Cypress.Commands.addAll({
       cy.checkFilter(filtersKey, filters[filtersKey]);
     }
 
+    // Check a point in the chart and the tooltip
+    if (point) {
+      cy.checkPoint(point, tooltip);
+    }
+
     // Check various texts
     cy.hasTexts(".highcharts-title, .highcharts-subtitle", title);
     cy.hasTexts(".highcharts-xaxis-labels text", xAxis);
@@ -163,11 +170,6 @@ Cypress.Commands.addAll({
     cy.hasTexts(".highcharts-yaxis-labels text", yAxis);
     cy.hasTexts(".highcharts-yaxis .highcharts-axis-title", yAxisTitle);
     cy.hasTexts(".highcharts-legend-item text", legend);
-
-    // Check a point in the chart and the tooltip
-    if (point) {
-      cy.checkPoint(point, tooltip);
-    }
   },
   checkChart(config) {
     cy.task("cleanDownloadsFolder");
