@@ -8,6 +8,9 @@ interface CheckChartConfig {
   definitions?: string[];
   xAxis?: string[];
   yAxis?: string[];
+  xAxisTitle?: string[];
+  yAxisTitle?: string[];
+  legend?: string[];
 }
 
 declare global {
@@ -70,6 +73,12 @@ declare global {
        * Navigate to a chart
        */
       navigateToChart(chartGroup: string, chart: string): void;
+
+      /**
+       * Check if the selector contains all the specified texts.
+       * Ignores ZeroWidthSpaces.
+       */
+      hasTexts(selector: string, texts?: string[]): void;
 
       /**
        * Check for the existence of the specified point.

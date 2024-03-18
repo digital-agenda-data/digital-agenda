@@ -2,7 +2,7 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Bubble Custom Range");
+    cy.navigateToChart("Test Custom Range", "Test Bubble Custom Range");
     cy.checkChart({
       filters: {
         indicatorX: "ICT graduates",

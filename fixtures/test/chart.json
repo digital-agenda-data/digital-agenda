@@ -6,7 +6,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 34,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Chart Period First",
       "code": "test-chart-period-first",
@@ -21,7 +21,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 35,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Chart Filters Reversed",
       "code": "test-chart-filters-reversed",
@@ -36,7 +36,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 36,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Scatter Unit First",
       "code": "test-scatter-unit-first",
@@ -51,7 +51,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 37,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Bubble Breakdown First",
       "code": "test-bubble-breakdown-first",
@@ -66,7 +66,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 38,
       "chart_group": [
-        "test-group"
+        "test-filter-order"
       ],
       "name": "Test Spline Country First",
       "code": "test-spline-country-first",
@@ -81,7 +81,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 39,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Spline Custom Ranges",
       "code": "test-spline-custom-range",
@@ -100,7 +100,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 40,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Bubble Custom Range",
       "code": "test-bubble-custom-range",
@@ -117,7 +117,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 41,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Column Custom Range",
       "code": "test-column-custom-range",
@@ -134,7 +134,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 42,
       "chart_group": [
-        "test-group"
+        "test-custom-range"
       ],
       "name": "Test Spline Custom Year Range",
       "code": "test-spline-custom-year-range",
@@ -151,7 +151,7 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 43,
       "chart_group": [
-        "test-group"
+        "test-custom-fonts"
       ],
       "name": "Test Spline Custom Fonts",
       "code": "test-spline-custom-fonts",
@@ -166,12 +166,220 @@
       "updated_at": "2024-02-13T10:19:00.807Z",
       "display_order": 44,
       "chart_group": [
-        "test-group"
+        "test-custom-fonts"
       ],
       "name": "Test Bubble Custom Fonts",
       "code": "test-bubble-custom-fonts",
       "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
       "description": "<p>This charts has custom font styles</p>"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 45,
+      "chart_group": [
+        "test-custom-labels"
+      ],
+      "name": "Test Spline Code Labels",
+      "code": "test-spline-code-labels",
+      "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "description": "<p>This charts uses codes as labels for all dimensions</p>",
+      "indicator_label": "code",
+      "breakdown_label": "code",
+      "period_label": "code",
+      "unit_label": "code",
+      "country_label": "code"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 46,
+      "chart_group": [
+        "test-custom-labels"
+      ],
+      "name": "Test Bubble Code Labels",
+      "code": "test-bubble-code-labels",
+      "chart_type": "BUBBLE_COMPARE_THREE_INDICATORS",
+      "description": "<p>This charts uses codes as labels for all dimensions</p>",
+      "indicator_label": "code",
+      "breakdown_label": "code",
+      "period_label": "code",
+      "unit_label": "code",
+      "country_label": "code"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 47,
+      "chart_group": [
+        "test-custom-labels"
+      ],
+      "name": "Test Bar Countries Custom Labels",
+      "code": "test-bar-countries-custom-labels",
+      "chart_type": "BAR_COMPARE_COUNTRIES",
+      "description": "<p>This charts uses labels instead of alt_labels</p>",
+      "indicator_label": "label",
+      "breakdown_label": "label",
+      "period_label": "label",
+      "unit_label": "label",
+      "country_label": "label"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 48,
+      "chart_group": [
+        "test-custom-labels"
+      ],
+      "name": "Test Bar Breakdowns Custom Labels",
+      "code": "test-bar-breakdowns-custom-labels",
+      "chart_type": "BAR_COMPARE_BREAKDOWNS",
+      "description": "<p>This charts uses labels instead of alt_labels</p>",
+      "indicator_label": "label",
+      "breakdown_label": "label",
+      "period_label": "label",
+      "unit_label": "label",
+      "country_label": "label"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 49,
+      "chart_group": [
+        "test-custom-labels"
+      ],
+      "name": "Test Bar Stacked Breakdowns Alt Labels",
+      "code": "test-bar-stacked-breakdowns-alt-labels",
+      "chart_type": "BAR_STACKED_COMPARE_BREAKDOWNS",
+      "description": "<p>This charts uses alt_labels explicitly</p>",
+      "indicator_label": "alt_label",
+      "breakdown_label": "alt_label",
+      "period_label": "alt_label",
+      "unit_label": "alt_label",
+      "country_label": "alt_label"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 50,
+      "chart_group": [
+        "test-extra-notes"
+      ],
+      "name": "Test Spline Compare Indicators Notes",
+      "code": "test-spline-compare-indicators-notes",
+      "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "description": "<p>This spline compare indicators with extra notes</p>",
+      "use_period_label_for_axis": true,
+      "indicator_filter_defaults": [
+        [
+          "desi_4b1"
+        ]
+      ],
+      "breakdown_filter_defaults": [
+        [
+          "all_egov_le"
+        ]
+      ],
+      "unit_filter_defaults": [
+        [
+          "egov_score"
+        ]
+      ],
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 51,
+      "chart_group": [
+        "test-extra-notes"
+      ],
+      "name": "Test Spline Compare Breakdowns Notes",
+      "code": "test-spline-compare-breakdowns-notes",
+      "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "description": "<p>This spline compare breakdowns with extra notes</p>",
+      "use_period_label_for_axis": true,
+      "indicator_filter_defaults": [
+        [
+          "desi_4b1"
+        ]
+      ],
+      "breakdown_group_filter_defaults": [
+        [
+          "total"
+        ]
+      ],
+      "unit_filter_defaults": [
+        [
+          "egov_score"
+        ]
+      ],
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 52,
+      "chart_group": [
+        "test-extra-notes"
+      ],
+      "name": "Test Spline Compare Countries Notes",
+      "code": "test-spline-compare-countries-notes",
+      "chart_type": "SPLINE_COMPARE_COUNTRIES",
+      "description": "<p>This spline compare countries with extra notes</p>",
+      "use_period_label_for_axis": true,
+      "indicator_filter_defaults": [
+        [
+          "desi_4b1"
+        ]
+      ],
+      "breakdown_filter_defaults": [
+        [
+          "all_egov_le"
+        ]
+      ],
+      "unit_filter_defaults": [
+        [
+          "egov_score"
+        ]
+      ],
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
     }
   }
 ]

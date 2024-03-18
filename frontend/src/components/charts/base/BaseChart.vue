@@ -11,6 +11,7 @@
 <script>
 import { useAppSettings } from "@/stores/appSettingsStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { usePeriodStore } from "@/stores/periodStore";
 import { mapState, mapStores } from "pinia";
 import { Chart } from "highcharts-vue";
 
@@ -19,8 +20,12 @@ import SimpleSpinner from "@/components/SimpleSpinner.vue";
 import { api } from "@/lib/api";
 import {
   forceArray,
+  getBreakdownLabel,
   getDateFromYear,
+  getIndicatorLabel,
+  getPeriodLabel,
   getUnitDisplay,
+  getUnitLabel,
   groupByMulti,
   toAPIKey,
 } from "@/lib/utils";
@@ -53,6 +58,7 @@ export default {
     ...mapState(useChartStore, ["currentChart"]),
     ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
     ...mapState(useCountryStore, ["countryByCode"]),
+    ...mapState(usePeriodStore, ["periodList"]),
     ...mapState(useFilterStore, [
       "indicatorGroup",
       "indicator",
@@ -196,11 +202,6 @@ export default {
     mergedChartOptions() {
       return this.getMergedChartOptions();
     },
-    extraNotes() {
-      return (this.indicator?.extra_notes || [])
-        .filter((item) => item.period === this.period?.code)
-        .map((item) => item.note);
-    },
     /**
      * Default chart options, (shallow) merged with the chartOptions
      * and used for HighCharts.
@@ -226,13 +227,13 @@ export default {
         },
         series: this.series,
         title: {
-          text: this.makeTitle([this.indicator, this.breakdown]),
+          text: this.joinStrings([
+            getIndicatorLabel(this.indicator, "label"),
+            getBreakdownLabel(this.breakdown, "label"),
+          ]),
         },
         subtitle: {
-          text: this.joinStrings(
-            [this.period?.label || this.period?.code, ...this.extraNotes],
-            " ",
-          ),
+          text: this.getPeriodWithExtraNotes(),
           style: {
             color: "#333333",
             fontWeight: "bold",
@@ -245,7 +246,7 @@ export default {
         tooltip: this.tooltip,
         yAxis: {
           title: {
-            text: this.unit?.display,
+            text: getUnitLabel(this.unit),
           },
         },
         responsive: {
@@ -337,11 +338,15 @@ export default {
           }
 
           if (parent.breakdown?.code) {
-            result.push(`<b>Breakdown:</b> ${parent.breakdown.display}`);
+            result.push(
+              `<b>Breakdown:</b> ${getBreakdownLabel(parent.breakdown)}`,
+            );
           }
 
           if (parent.period?.code) {
-            result.push(`<b>Time Period:</b> ${parent.period.label}`);
+            result.push(
+              `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes()}`,
+            );
           }
 
           return result.join("<br/>");
@@ -376,17 +381,22 @@ export default {
   methods: {
     getUnitDisplay,
     /**
-     * Join objects from the backend or strings to make a title
+     * Get the preferred label for this period together with any corresponding
+     * extra notes from the indicator.
      *
-     * @param items {*[]}
-     * @param separator {String}
-     * @return {String}
+     * @param period {Object} Dimension Object; if null get it from the filterStore
+     * @param indicator {Object} Dimension Object; if null get it from the filterStore
+     * @return {string}
      */
-    makeTitle(items, separator = ", ") {
-      return this.joinStrings(
-        items.map((s) => s?.label),
-        separator,
-      );
+    getPeriodWithExtraNotes(period = null, indicator = null) {
+      period ??= this.period;
+      indicator ??= this.indicator;
+
+      const extraNotes = (indicator?.extra_notes || [])
+        .filter((item) => item.period === period?.code)
+        .map((item) => item.note);
+
+      return [getPeriodLabel(period), ...extraNotes].join(" ");
     },
     /**
      * Join strings excluding any empty/nulls
@@ -456,7 +466,7 @@ export default {
       }
     },
     async loadExtra() {},
-    setCustomAxis(result, axisTypes, customMin, customMax) {
+    setCustomAxis(result, axisTypes, customMin, customMax, formatter = null) {
       for (const axis of axisTypes[this.chartType] ?? []) {
         result[axis] ??= {};
 
@@ -465,6 +475,11 @@ export default {
         for (const opt of forceArray(result[axis])) {
           opt.min = customMin ?? opt.min;
           opt.max = customMax ?? opt.max;
+
+          if (formatter) {
+            opt.labels ??= {};
+            opt.labels.formatter = formatter;
+          }
         }
       }
     },
@@ -473,8 +488,8 @@ export default {
         if (fontStyleOption.font_color) {
           obj.color = fontStyleOption.font_color;
         }
-        if (fontStyleOption.font_weigth) {
-          obj.fontWeight = fontStyleOption.font_weigth;
+        if (fontStyleOption.font_weight) {
+          obj.fontWeight = fontStyleOption.font_weight;
         }
         if (fontStyleOption.font_size_px) {
           obj.fontSize = fontStyleOption.font_size_px.toString() + "px";
@@ -504,6 +519,20 @@ export default {
         );
       }
 
+      let dateFormatter = null;
+      if (this.currentChart.use_period_label_for_axis) {
+        const parent = this;
+        dateFormatter = function () {
+          const defaultLabel = this.axis.defaultLabelFormatter.call(this);
+          const dateValue = this.value;
+          const period = parent?.periodList.find(
+            (period) => new Date(period.date).getTime() === dateValue,
+          );
+          if (!period) return defaultLabel;
+          return parent.getPeriodWithExtraNotes(period);
+        };
+      }
+
       // Set custom ranges to the axes depending on the chart type.
       // No idea why anyone would ever use this.
       // Oh well... ¯\_(ツ)_/¯
@@ -518,6 +547,7 @@ export default {
         YEAR_AXIS,
         getDateFromYear(this.currentChart.min_year),
         getDateFromYear(this.currentChart.max_year),
+        dateFormatter,
       );
 
       return result;

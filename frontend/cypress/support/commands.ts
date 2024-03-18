@@ -89,15 +89,11 @@ Cypress.Commands.addAll({
       );
 
       cy.readFile(fullPath, null).then((buffer) => {
-        if (expectedType === "svg") {
-          expect(buffer).to.match(/^<svg/);
-        } else {
-          const detectedTypes = filetypeinfo(buffer).map(
-            (info) => info.typename,
-          );
+        const detectedTypes = filetypeinfo(buffer).map((info) =>
+          info.typename.toLowerCase(),
+        );
 
-          expect(expectedType).to.be.oneOf(detectedTypes);
-        }
+        expect(expectedType.toLowerCase()).to.be.oneOf(detectedTypes);
       });
     });
   },
@@ -106,10 +102,30 @@ Cypress.Commands.addAll({
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
   },
+  hasTexts(selector, texts = []) {
+    if (!texts?.length) return;
+
+    cy.get(selector)
+      .invoke("text")
+      .then((text) => {
+        for (const txt of texts) {
+          // Highcharts adds ZeroWidthSpaces in the text, so we can't
+          // check normally
+          expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
+        }
+      });
+  },
   checkPoint(point, tooltip = []) {
-    cy.get(`.highcharts-point[aria-label='${point}']`)
-      .should("be.visible")
-      .trigger("mouseover", { force: true });
+    cy.get(`.highcharts-point[aria-label='${point}']`).should("be.visible");
+    // Triggering focus first allows for tooltips to appear on "spline" charts as well.
+    // As just using mouse events doesn't work for them for some reason.
+    // XXX Although I'm not sure if it's always on the correct point
+    cy.get(`.highcharts-point[aria-label='${point}']`).trigger("focus", {
+      force: true,
+    });
+    cy.get(`.highcharts-point[aria-label='${point}']`).trigger("mouseover", {
+      force: true,
+    });
 
     for (const txt of tooltip) {
       cy.get(".highcharts-tooltip").should("contain", txt);
@@ -123,6 +139,9 @@ Cypress.Commands.addAll({
     definitions = [],
     xAxis = [],
     yAxis = [],
+    xAxisTitle = [],
+    yAxisTitle = [],
+    legend = [],
   }) {
     // Check credits
     cy.get(".highcharts-credits").contains("European Commission");
@@ -137,25 +156,13 @@ Cypress.Commands.addAll({
       cy.checkFilter(filtersKey, filters[filtersKey]);
     }
 
-    // Check chart title/subtitle
-    if (title?.length > 0) {
-      cy.get(".highcharts-title, .highcharts-subtitle")
-        .invoke("text")
-        .then((text) => {
-          for (const txt of title) {
-            // Highcharts adds ZeroWidthSpaces in the text, so we can't
-            // check normally
-            expect(text.replace(/[\u200B-\u200D\uFEFF]/g, " ")).to.contain(txt);
-          }
-        });
-    }
-
-    for (const label of xAxis) {
-      cy.get(".highcharts-xaxis-labels text").contains(label);
-    }
-    for (const label of yAxis) {
-      cy.get(".highcharts-yaxis-labels text").contains(label);
-    }
+    // Check various texts
+    cy.hasTexts(".highcharts-title, .highcharts-subtitle", title);
+    cy.hasTexts(".highcharts-xaxis-labels text", xAxis);
+    cy.hasTexts(".highcharts-xaxis .highcharts-axis-title", xAxisTitle);
+    cy.hasTexts(".highcharts-yaxis-labels text", yAxis);
+    cy.hasTexts(".highcharts-yaxis .highcharts-axis-title", yAxisTitle);
+    cy.hasTexts(".highcharts-legend-item text", legend);
 
     // Check a point in the chart and the tooltip
     if (point) {

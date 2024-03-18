@@ -4,7 +4,13 @@ import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue"
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
-import { getMarkerSymbol } from "@/lib/utils";
+import {
+  getBreakdownLabel,
+  getCountryLabel,
+  getIndicatorLabel,
+  getMarkerSymbol,
+  getUnitLabel,
+} from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
 import { mapState } from "pinia";
 
@@ -47,7 +53,7 @@ export default {
 
         return {
           yAxis: index,
-          name: indicator.display,
+          name: getIndicatorLabel(indicator),
           color:
             breakdown?.chart_options?.color ?? indicator?.chart_options?.color,
           dashStyle:
@@ -67,9 +73,10 @@ export default {
             return {
               y: apiValue,
               x: new Date(period?.date),
-              name: period?.label || period?.code,
+              name: this.getPeriodWithExtraNotes(period, indicator),
               unit,
               period,
+              indicator,
               breakdown,
             };
           }),
@@ -80,18 +87,18 @@ export default {
       return {
         title: {
           text:
-            this.makeTitle([
-              this.filterStore.indicatorX,
-              this.filterStore.breakdownX,
+            this.joinStrings([
+              getIndicatorLabel(this.filterStore.indicatorX, "label"),
+              getBreakdownLabel(this.filterStore.breakdownX, "label"),
             ]) +
             " and " +
-            this.makeTitle([
-              this.filterStore.indicatorY,
-              this.filterStore.breakdownY,
+            this.joinStrings([
+              getIndicatorLabel(this.filterStore.indicatorY, "label"),
+              getIndicatorLabel(this.filterStore.breakdownY, "label"),
             ]),
         },
         subtitle: {
-          text: this.filterStore.countryX?.display,
+          text: getCountryLabel(this.filterStore.countryX),
         },
         legend: {
           enabled: true,
@@ -110,14 +117,14 @@ export default {
         yAxis: [
           {
             title: {
-              text: this.filterStore.unitX?.display,
+              text: getUnitLabel(this.filterStore.unitX),
             },
             min: 0,
           },
           {
             opposite: true,
             title: {
-              text: this.filterStore.unitY?.display,
+              text: getUnitLabel(this.filterStore.unitY),
             },
             min: 0,
           },
@@ -128,11 +135,13 @@ export default {
       const parent = this;
       return {
         formatter() {
+          const { unit, period, breakdown, indicator } = this.point.options;
+
           return [
             `<b>${this.series.name}</b>`,
-            parent.getUnitDisplay(this.point.y, this.point.options.unit),
-            `<b>Breakdown:</b> ${this.point.options.breakdown?.display}`,
-            `<b>Time Period:</b> ${this.point.options.period?.label}`,
+            parent.getUnitDisplay(this.point.y, unit),
+            `<b>Breakdown:</b> ${getBreakdownLabel(breakdown)}`,
+            `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes(period, indicator)}`,
           ].join("<br/>");
         },
       };

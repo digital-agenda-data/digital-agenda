@@ -4,7 +4,7 @@ describeResponsive("Check Search Page", () => {
   it("Check search page period first link", () => {
     cy.searchIndicators("h_broad");
     cy.get("table a")
-      .contains("Test Chart Group")
+      .contains("Test Filter Order")
       .parents("tr")
       .find("a")
       .contains("h_broad")

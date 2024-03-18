@@ -72,6 +72,26 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
         ),
         ("Chart Options", {"fields": ["legend_layout"]}),
         (
+            "Chart Labels",
+            {
+                "description": (
+                    "Chose what labels to use for each dimension in the charts. "
+                    "This only applies to the chart itself and does not affect any "
+                    "other location where the dimensions are displayed. "
+                    "(filters, metadata page, etc.)"
+                ),
+                "classes": ["collapse"],
+                "fields": [
+                    "indicator_label",
+                    "breakdown_label",
+                    "period_label",
+                    "unit_label",
+                    "country_label",
+                    "use_period_label_for_axis",
+                ],
+            },
+        ),
+        (
             "Indicator Group Filter",
             {
                 "classes": ["wide", "collapse"],

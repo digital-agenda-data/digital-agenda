@@ -1,3 +1,4 @@
+import { useChartStore } from "@/stores/chartStore";
 import Highcharts from "highcharts";
 import { SERIES_COLORS } from "@/lib/constants";
 
@@ -112,6 +113,59 @@ export function colorForCountry(country, seriesIndex = 0) {
 }
 
 /**
+ * Get the appropriate label to use for this dimension in the currentChart.
+ *
+ * @param dimensionType {string} indicator/breakdown/unit/period/country
+ * @param dimensionObj {Object} Dimension Object from the backend
+ * @param defaultLabel {string} Default value to use if not specified in the backend
+ * @return {string}
+ */
+function getDimensionLabel(
+  dimensionType,
+  dimensionObj,
+  defaultLabel = "alt_label",
+) {
+  if (!dimensionObj) {
+    return undefined;
+  }
+
+  const labelType =
+    useChartStore().currentChart?.[`${dimensionType}_label`] || defaultLabel;
+
+  switch (labelType) {
+    case "code":
+      return dimensionObj.code;
+    case "label":
+      return dimensionObj.label || dimensionObj.alt_label || dimensionObj.code;
+    default:
+    case "alt_label":
+      return dimensionObj.alt_label || dimensionObj.label || dimensionObj.code;
+  }
+}
+
+export function getIndicatorLabel(obj, defaultLabel = "alt_label") {
+  return getDimensionLabel("indicator", obj, defaultLabel);
+}
+
+export function getBreakdownLabel(obj, defaultLabel = "alt_label") {
+  return getDimensionLabel("breakdown", obj, defaultLabel);
+}
+
+// Default to the "long" label for periods as they include the time period type
+// (Year: 2020 or Desi Period: 2020)
+export function getPeriodLabel(obj, defaultLabel = "label") {
+  return getDimensionLabel("period", obj, defaultLabel);
+}
+
+export function getUnitLabel(obj, defaultLabel = "alt_label") {
+  return getDimensionLabel("unit", obj, defaultLabel);
+}
+
+export function getCountryLabel(obj, defaultLabel = "alt_label") {
+  return getDimensionLabel("country", obj, defaultLabel);
+}
+
+/**
  * Get a suitable display string for this unit value
  *
  * @param value {Number} Unit value
@@ -122,7 +176,7 @@ export function getUnitDisplay(value, unit) {
   if (!unit) return;
 
   let numberFormat;
-  const label = unit.display;
+  const label = getUnitLabel(unit);
   const code = unit.code.toLowerCase();
 
   if (value === null || value === undefined || Number.isNaN(value)) {

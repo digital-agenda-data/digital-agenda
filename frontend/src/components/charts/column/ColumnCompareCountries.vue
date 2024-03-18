@@ -5,7 +5,7 @@ import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vu
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
-import { colorForCountry, sortNumeric } from "@/lib/utils";
+import { colorForCountry, getCountryLabel, sortNumeric } from "@/lib/utils";
 
 export default {
   name: "ColumnCompareCountries",
@@ -47,7 +47,7 @@ export default {
             return {
               fact,
               y: fact?.value || 0,
-              name: country.display,
+              name: getCountryLabel(country),
               color: colorForCountry(country),
             };
           }),

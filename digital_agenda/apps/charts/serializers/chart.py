@@ -61,14 +61,23 @@ class ChartSerializer(serializers.ModelSerializer):
             "chart_group",
             "is_draft",
             "image",
+            # Chart options
             *Chart.filter_options,
+            "legend_layout",
+            "font_styles",
             "filter_order",
+            # Labels
+            "indicator_label",
+            "breakdown_label",
+            "period_label",
+            "unit_label",
+            "country_label",
+            "use_period_label_for_axis",
+            # Advanced Settings
             "min_value",
             "max_value",
             "min_year",
             "max_year",
-            "legend_layout",
-            "font_styles",
         )
         read_only_fields = fields
 

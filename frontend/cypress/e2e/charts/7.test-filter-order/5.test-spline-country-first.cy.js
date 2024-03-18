@@ -2,12 +2,12 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("Test Chart Group", "Test Spline Custom Fonts");
+    cy.navigateToChart("Test Filter Order", "Test Spline Country First");
     cy.checkChart({
       filters: {
+        countryX: "European Union",
         indicatorX: "ICT graduates",
         breakdownX: "Females",
-        countryX: "European Union",
         unitX: "% of graduates",
         indicatorY: "ICT graduates",
         breakdownY: "Males",
