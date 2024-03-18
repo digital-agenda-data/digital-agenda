@@ -386,17 +386,28 @@ export default {
      *
      * @param period {Object} Dimension Object; if null get it from the filterStore
      * @param indicator {Object} Dimension Object; if null get it from the filterStore
+     * @param withBreak {boolean} If True, add a break before the extra notes
      * @return {string}
      */
-    getPeriodWithExtraNotes(period = null, indicator = null) {
+    getPeriodWithExtraNotes(
+      period = null,
+      indicator = null,
+      withBreak = false,
+    ) {
       period ??= this.period;
       indicator ??= this.indicator;
 
       const extraNotes = (indicator?.extra_notes || [])
         .filter((item) => item.period === period?.code)
         .map((item) => item.note);
+      const result = [getPeriodLabel(period)];
 
-      return [getPeriodLabel(period), ...extraNotes].join(" ");
+      if (withBreak && extraNotes.length > 0) {
+        result.push("<br/>");
+      }
+
+      result.push(...extraNotes);
+      return result.join(" ");
     },
     /**
      * Join strings excluding any empty/nulls
@@ -526,10 +537,10 @@ export default {
           const defaultLabel = this.axis.defaultLabelFormatter.call(this);
           const dateValue = this.value;
           const period = parent?.periodList.find(
-            (period) => new Date(period.date).getTime() === dateValue,
+            (period) => period.date.getTime() === dateValue,
           );
           if (!period) return defaultLabel;
-          return parent.getPeriodWithExtraNotes(period);
+          return parent.getPeriodWithExtraNotes(period, parent.indicator, true);
         };
       }
 
