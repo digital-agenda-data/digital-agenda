@@ -8,16 +8,15 @@ describeResponsive("Check Chart", () => {
     );
     cy.checkChart({
       filters: {
-        indicatorY: "e-Government users",
+        indicatorY: "Access to e-health records",
       },
-      point:
-        "DESI period: 2023 (data from 2022), 71.705804. Access to e-health records.",
+      point: "DESI period: 2018 (data from 2017), 58.3384. e-Government users.",
       tooltip: [
-        "Access to e-health records",
-        "71.71 Score (0 to 100)",
-        "DESI period: 2023 (data from 2022)",
+        "e-Government users",
+        "58.34% of internet users (last 12 months)",
+        "DESI period: 2018 (data from 2017)",
       ],
-      xAxis: ["DESI period: 2023"],
+      xAxis: ["DESI period: 2018"],
     });
   });
 });

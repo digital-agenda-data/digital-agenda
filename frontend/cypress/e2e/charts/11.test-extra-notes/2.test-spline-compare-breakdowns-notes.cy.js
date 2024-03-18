@@ -9,15 +9,15 @@ describeResponsive("Check Chart", () => {
     cy.checkChart({
       // No filters since the chart should have the defaults already set to what we need.
       filters: {},
-      title: ["Access to e-health records", "European Union"],
-      point: "DESI period: 2023 (data from 2022), 71.705804. All Life Events.",
+      title: ["e-Government users", "European Union"],
+      point: "DESI period: 2018 (data from 2017), 58.3384. All individuals.",
       tooltip: [
-        "All Life Events",
-        "71.71 Score (0 to 100)",
-        "DESI period: 2023 (data from 2022)",
+        "All individuals",
+        "58.34% of internet users (last 12 months)",
+        "DESI period: 2018 (data from 2017)",
       ],
-      xAxis: ["DESI period: 2023 (data from 2022)"],
-      yAxisTitle: ["Score (0 to 100)"],
+      xAxis: ["DESI period: 2018 (data from 2017)"],
+      yAxisTitle: ["% of internet users (last 12 months)"],
     });
   });
 });
