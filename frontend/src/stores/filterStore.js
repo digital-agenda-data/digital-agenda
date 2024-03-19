@@ -53,5 +53,18 @@ export const useFilterStore = defineStore("filter", {
     allFiltersLoaded() {
       return this.totalLoadingCounter === 0;
     },
+    dimensionsByCode(state) {
+      const result = {};
+      for (const key of FILTERS) {
+        result[key] = new Map();
+        for (const suffix of FILTER_SUFFIXES) {
+          const obj = state[suffix][key];
+          if (!obj) continue;
+
+          result[key].set(obj.code, obj);
+        }
+      }
+      return result;
+    },
   },
 });

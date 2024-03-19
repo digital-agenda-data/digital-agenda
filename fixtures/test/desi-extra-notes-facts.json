@@ -5068,5 +5068,135 @@
       "import_config": null,
       "import_file": null
     }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 24.7944,
+      "flags": "",
+      "indicator": [
+        "desi_3b6"
+      ],
+      "breakdown": [
+        "ent_all_xfin"
+      ],
+      "unit": [
+        "pc_ent"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2019"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 24.7944,
+      "flags": "",
+      "indicator": [
+        "desi_3b6"
+      ],
+      "breakdown": [
+        "ent_all_xfin"
+      ],
+      "unit": [
+        "pc_ent"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2020"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 32.1733,
+      "flags": "",
+      "indicator": [
+        "desi_3b6"
+      ],
+      "breakdown": [
+        "ent_all_xfin"
+      ],
+      "unit": [
+        "pc_ent"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2021"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 32.1733,
+      "flags": "",
+      "indicator": [
+        "desi_3b6"
+      ],
+      "breakdown": [
+        "ent_all_xfin"
+      ],
+      "unit": [
+        "pc_ent"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2022"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
+  },
+  {
+    "model": "core.fact",
+    "fields": {
+      "created_at": "2024-03-18T09:23:19.219Z",
+      "updated_at": "2024-03-18T09:23:19.219Z",
+      "value": 32.2,
+      "flags": "",
+      "indicator": [
+        "desi_3b6"
+      ],
+      "breakdown": [
+        "ent_all_xfin"
+      ],
+      "unit": [
+        "pc_ent"
+      ],
+      "country": [
+        "EU"
+      ],
+      "period": [
+        "desi_2023"
+      ],
+      "import_config": null,
+      "import_file": null
+    }
   }
 ]

@@ -4,6 +4,7 @@ interface CheckChartConfig {
   filters?: object;
   title?: string[];
   point?: string;
+  pointNr?: number;
   tooltip?: string[];
   definitions?: string[];
   xAxis?: string[];

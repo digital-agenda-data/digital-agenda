@@ -28,4 +28,4 @@ class ExtraChartNoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ExtraChartNote
-        fields = ("indicator", "period", "note")
+        fields = ("indicator", "period", "note", "hide_from_line_charts")

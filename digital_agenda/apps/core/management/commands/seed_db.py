@@ -43,6 +43,9 @@ class Command(BaseCommand):
         #  - inactive@example.com / inactive:
         call_command("loaddata", "test/users")
 
+        # Import some testing extra notes
+        call_command("loaddata", "test/extra-chart-notes")
+
         # Import some facts
         call_command("loaddata", "test/facts")
 

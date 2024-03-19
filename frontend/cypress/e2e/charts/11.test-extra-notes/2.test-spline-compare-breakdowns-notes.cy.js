@@ -20,4 +20,23 @@ describeResponsive("Check Chart", () => {
       yAxisTitle: ["% of internet users (last 12 months)"],
     });
   });
+  it("Check Chart Hidden Points from extra notes", () => {
+    cy.navigateToChart(
+      "Test Extra Notes",
+      "Test Spline Compare Breakdowns Notes",
+    );
+    cy.checkChart({
+      filters: {
+        indicator: "e-Invoices",
+      },
+      point: "DESI period: 2019 (data from 2018), 24.7944. All enterprises.",
+      // 3 points from e-Invoices instead of 5 (because 2 are hidden via extra notes)
+      pointNr: 3,
+      tooltip: [
+        "All enterprises",
+        "24.79% of enterprises",
+        "DESI period: 2019 (data from 2018)",
+      ],
+    });
+  });
 });

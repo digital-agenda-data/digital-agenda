@@ -119,24 +119,27 @@ Cypress.Commands.addAll({
   },
   checkPoint(point, tooltip = []) {
     cy.get(`.highcharts-point[aria-label='${point}']`).should("be.visible");
-    // Triggering focus first allows for tooltips to appear on "spline" charts as well.
-    // As just using mouse events doesn't work for them for some reason.
-    // XXX Although I'm not sure if it's always on the correct point
-    cy.get(`.highcharts-point[aria-label='${point}']`).trigger("focus", {
-      force: true,
-    });
-    cy.get(`.highcharts-point[aria-label='${point}']`).trigger("mouseover", {
-      force: true,
-    });
+    if (tooltip && tooltip.length > 0) {
+      // Triggering focus first allows for tooltips to appear on "spline" charts as well.
+      // As just using mouse events doesn't work for them for some reason.
+      // XXX Although I'm not sure if it's always on the correct point
+      cy.get(`.highcharts-point[aria-label='${point}']`).trigger("focus", {
+        force: true,
+      });
+      cy.get(`.highcharts-point[aria-label='${point}']`).trigger("mouseover", {
+        force: true,
+      });
 
-    for (const txt of tooltip) {
-      cy.get(".highcharts-tooltip").should("contain", txt);
+      for (const txt of tooltip) {
+        cy.get(".highcharts-tooltip").should("contain", txt);
+      }
     }
   },
   checkChartInstance({
     filters = {},
     title = [],
     point = null,
+    pointNr = null,
     tooltip = [],
     definitions = [],
     xAxis = [],
@@ -161,6 +164,13 @@ Cypress.Commands.addAll({
     // Check a point in the chart and the tooltip
     if (point) {
       cy.checkPoint(point, tooltip);
+    }
+
+    if (pointNr !== null) {
+      cy.get(".highcharts-series-group .highcharts-point").should(
+        "have.length",
+        pointNr,
+      );
     }
 
     // Check various texts
