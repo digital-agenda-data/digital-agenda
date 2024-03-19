@@ -438,6 +438,13 @@ class ExtraChartNote(TimestampedModel):
     note = models.CharField(
         max_length=255, help_text="Extra notes to show in the chart"
     )
+    hide_from_line_charts = models.BooleanField(
+        default=False,
+        help_text=(
+            "Hide all data points matching this indicator/period combination "
+            "from all line charts."
+        ),
+    )
 
 
 class ChartFontStyle(models.Model):

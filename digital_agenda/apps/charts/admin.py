@@ -1,3 +1,4 @@
+from admin_auto_filters.filters import AutocompleteFilterFactory
 from adminsortable2.admin import SortableAdminMixin
 from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin
@@ -310,7 +311,12 @@ class ExtraChartNoteResource(resources.ModelResource):
 @admin.register(ExtraChartNote)
 class ExtraChartNoteAdmin(ImportExportMixin, admin.ModelAdmin):
     resource_class = ExtraChartNoteResource
-    list_display = ("indicator", "period", "note")
+    list_display = ("indicator", "period", "note", "hide_from_line_charts")
+    list_filter = (
+        AutocompleteFilterFactory("indicator", "indicator"),
+        AutocompleteFilterFactory("period", "period"),
+        "hide_from_line_charts",
+    )
     autocomplete_fields = ("indicator", "period")
     search_fields = (
         "indicator__code",
