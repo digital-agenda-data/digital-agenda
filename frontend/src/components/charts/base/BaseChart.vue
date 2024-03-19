@@ -49,7 +49,7 @@ export default {
     return {
       loading: true,
       ready: false,
-      apiData: [],
+      rawApiData: [],
     };
   },
   computed: {
@@ -67,6 +67,7 @@ export default {
       "period",
       "unit",
       "country",
+      "dimensionsByCode",
     ]),
     chart() {
       // Reference to the highchart Chart object instance
@@ -277,6 +278,24 @@ export default {
       return [];
     },
     /**
+     * Further processes the rawApiData as needed.
+     */
+    apiData() {
+      if (this.chartType === "spline" || this.chartType === "line") {
+        // Filter apiData based on extra notes for line charts.
+        return this.rawApiData.filter((fact) => {
+          const indicator = this.dimensionsByCode.indicator.get(fact.indicator);
+          const extraNote = (indicator?.extra_notes || []).find(
+            (item) => item.period === fact.period,
+          );
+
+          return !extraNote?.hide_from_line_charts;
+        });
+      } else {
+        return this.rawApiData;
+      }
+    },
+    /**
      * Group API data values by the specified keys in `groupBy`. E.g. for
      * the ["country", "period"] groupBy the result would be:
      *
@@ -459,7 +478,7 @@ export default {
         ),
       );
 
-      this.apiData = Object.values(result).flat();
+      this.rawApiData = Object.values(result).flat();
     },
     async getFactForAxis(axis, result) {
       const resp = (
