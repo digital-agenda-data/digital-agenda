@@ -41,14 +41,14 @@ from digital_agenda.apps.core.resources import (
 
 class DimensionAdmin(admin.ModelAdmin):
     list_display = ("code", "label")
-    search_fields = ("code", "label")
+    search_fields = ("code", "label", "definition")
     list_per_page = 20
 
 
 @admin.register(DataSource)
 class DataSourceAdmin(ImportExportMixin, DimensionAdmin):
     resource_class = DataSourceResource
-    list_display = ("code", "label", "indicator_codes")
+    list_display = ("code", "label", "indicator_codes", "definition")
     readonly_fields = ("indicator_codes", "indicators_list")
     fields = (
         "code",
