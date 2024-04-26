@@ -37,12 +37,15 @@
           no-visited
         />
         <div v-if="dataSourceByCode.get(data_source)?.definition">
-          <span>
-            {{ dataSourceByCode.get(data_source)?.definition }}
-          </span>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <span v-html="dataSourceByCode.get(data_source)?.definition" />
         </div>
         <div v-if="dataSourceByCode.get(data_source)?.note">
-          <span>Notes:&nbsp;{{ dataSourceByCode.get(data_source)?.note }}</span>
+          <em>
+            <b>Notes:&nbsp;</b>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <span v-html="dataSourceByCode.get(data_source)?.note" />
+          </em>
         </div>
       </div>
     </div>
