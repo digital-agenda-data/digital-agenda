@@ -36,6 +36,14 @@
           label="[More information]"
           no-visited
         />
+        <div v-if="dataSourceByCode.get(data_source)?.definition">
+          <span>
+            {{ dataSourceByCode.get(data_source)?.definition }}
+          </span>
+        </div>
+        <div v-if="dataSourceByCode.get(data_source)?.note">
+          <span>Notes:&nbsp;{{ dataSourceByCode.get(data_source)?.note }}</span>
+        </div>
       </div>
     </div>
   </div>
