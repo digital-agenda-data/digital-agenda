@@ -131,6 +131,11 @@ export default {
           link: "https://digital-strategy.ec.europa.eu/en/consultations",
           label: "Consultations",
         },
+        {
+          id: "aioffice",
+          link: "https://digital-strategy.ec.europa.eu/en/policies/ai-office",
+          label: "AI Office",
+        },
       ],
     };
   },
