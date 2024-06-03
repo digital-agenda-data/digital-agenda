@@ -53,15 +53,16 @@ describe("check unit display", () => {
     checkDisplayUnit(1.234, "1.234");
     checkDisplayUnit(12.34, "12.34");
     checkDisplayUnit(12.3456789, "12.3456789");
-    checkDisplayUnit(123.4, "123");
+    checkDisplayUnit(123.1234, "123.12");
+    checkDisplayUnit(123.5678, "123.57");
   });
   it("check 1K < value < 1M", () => {
-    checkDisplayUnit(1234.1, "1,234");
-    checkDisplayUnit(1234.5, "1,235");
-    checkDisplayUnit(12345.1, "12,345");
-    checkDisplayUnit(12345.5, "12,346");
-    checkDisplayUnit(123456.1, "123,456");
-    checkDisplayUnit(123456.5, "123,457");
+    checkDisplayUnit(1234.1234, "1,234.12");
+    checkDisplayUnit(1234.5678, "1,234.57");
+    checkDisplayUnit(12345.1234, "12,345.12");
+    checkDisplayUnit(12345.5678, "12,345.57");
+    checkDisplayUnit(123456.1234, "123,456.12");
+    checkDisplayUnit(123456.5678, "123,456.57");
   });
   it("check 1M < value < 1B", () => {
     checkDisplayUnit(1234567, "1.23M");
