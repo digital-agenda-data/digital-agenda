@@ -199,11 +199,12 @@ export function getUnitDisplay(value, unit) {
       maximumSignificantDigits: 17,
     };
   } else if (value < Math.pow(10, 6)) {
-    // If less than 1 million, round to integer and include thousands' separators.
-    // (E.g. 123,456)
+    // If less than 1 million, round to at most two decimals
+    // and include thousands' separators.
+    // (E.g., 123,456)
     numberFormat = {
       notation: "standard",
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 2,
       useGrouping: "true",
     };
   } else {
