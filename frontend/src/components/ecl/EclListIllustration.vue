@@ -11,7 +11,10 @@
       v-for="(item, index) in items"
       v-else
       :key="item.id"
-      class="ecl-list-illustration__item"
+      class="ecl-list-illustration__item ecl-u-mv-s ecl-u-pa-s"
+      :class="{
+        'ecl-card': eclCard,
+      }"
     >
       <component
         :is="item.to ? 'EclLink' : 'picture'"
@@ -26,6 +29,8 @@
           :class="{
             'ecl-list-illustration__image--small': small,
             'ecl-list-illustration__image--square': square,
+            'ecl-u-border-all ecl-u-border-width-1 ecl-u-border-color-grey-10':
+              !eclCard,
           }"
         />
       </component>
@@ -102,6 +107,11 @@ export default {
       required: true,
     },
     zebra: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    eclCard: {
       type: Boolean,
       required: false,
       default: false,

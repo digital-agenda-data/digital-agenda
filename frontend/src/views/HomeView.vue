@@ -3,6 +3,8 @@
     :items="chartGroupStore.chartGroupNavItems"
     :loading="chartGroupStore.isLoading"
     show-index
+    small
+    ecl-card
   >
     <template #description="{ item }">
       <!-- eslint-disable-next-line vue/no-v-html -->
