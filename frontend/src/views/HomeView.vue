@@ -3,7 +3,6 @@
     :items="chartGroupStore.chartGroupNavItems"
     :loading="chartGroupStore.isLoading"
     show-index
-    zebra
   >
     <template #description="{ item }">
       <!-- eslint-disable-next-line vue/no-v-html -->

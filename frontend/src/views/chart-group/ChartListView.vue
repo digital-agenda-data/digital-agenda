@@ -12,7 +12,6 @@
       :items="chartStore.chartNavForCurrentGroup"
       :loading="chartStore.isLoading"
       show-index
-      zebra
       small
     >
       <template #description="{ item }">
