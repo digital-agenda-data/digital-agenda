@@ -46,6 +46,9 @@ class Command(BaseCommand):
         # Import some testing extra notes
         call_command("loaddata", "test/extra-chart-notes")
 
+        # Import some breakdown chart options for testing
+        call_command("loaddata", "test/breakdown-chart-options")
+
         # Import some facts
         call_command("loaddata", "test/facts")
 

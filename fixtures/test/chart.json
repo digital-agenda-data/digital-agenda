@@ -381,5 +381,45 @@
         ]
       ]
     }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 53,
+      "chart_group": [
+        "test-custom-breakdown-options"
+      ],
+      "name": "Test Spline Compare Breakdowns",
+      "code": "test-spline-compare-breakdowns",
+      "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "description": "<p>This spline compare breakdowns with custom breakdown options</p>",
+      "country_filter_defaults": [
+        [
+          "EU"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 54,
+      "chart_group": [
+        "test-custom-breakdown-options"
+      ],
+      "name": "Test Spline Compare Indicators",
+      "code": "test-spline-compare-indicators",
+      "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "description": "<p>This spline compare indicators with custom breakdown options</p>",
+      "breakdown_filter_defaults": [
+        [
+          "cc_nat"
+        ]
+      ]
+    }
   }
 ]
