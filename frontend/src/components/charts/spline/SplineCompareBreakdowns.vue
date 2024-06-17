@@ -8,7 +8,7 @@ import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilte
 import {
   getBreakdownLabel,
   getCountryLabel,
-  getMarkerSymbol,
+  getCustomOptions,
   getUnitLabel,
 } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
@@ -43,12 +43,8 @@ export default {
     series() {
       return (this.breakdown || []).map((breakdown) => {
         return {
+          ...getCustomOptions(breakdown),
           name: getBreakdownLabel(breakdown),
-          color: breakdown.chart_options?.color,
-          dashStyle: breakdown.chart_options?.dash_style,
-          marker: {
-            symbol: getMarkerSymbol(breakdown.chart_options),
-          },
           pointRange: 365 * 24 * 3600 * 1000,
           data: this.apiDataPeriods.map((periodCode) => {
             const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
@@ -84,9 +80,6 @@ export default {
         plotOptions: {
           series: {
             connectNulls: true,
-            dataLabels: {
-              enabled: false,
-            },
           },
         },
       };

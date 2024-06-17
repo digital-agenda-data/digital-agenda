@@ -7,8 +7,8 @@ import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import {
   getBreakdownLabel,
   getCountryLabel,
+  getCustomOptions,
   getIndicatorLabel,
-  getMarkerSymbol,
   getUnitLabel,
 } from "@/lib/utils";
 import { usePeriodStore } from "@/stores/periodStore";
@@ -52,19 +52,9 @@ export default {
         const indicator = this.filterStore[axis].indicator;
 
         return {
+          ...getCustomOptions([breakdown, indicator]),
           yAxis: index,
           name: getIndicatorLabel(indicator),
-          color:
-            breakdown?.chart_options?.color ?? indicator?.chart_options?.color,
-          dashStyle:
-            breakdown?.chart_options?.dash_style ??
-            indicator?.chart_options?.dash_style,
-          marker: {
-            symbol: getMarkerSymbol([
-              breakdown?.chart_options,
-              indicator?.chart_options,
-            ]),
-          },
           pointRange: 365 * 24 * 3600 * 1000,
           data: this.apiDataPeriods.map((periodCode) => {
             const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
@@ -106,9 +96,6 @@ export default {
         plotOptions: {
           series: {
             connectNulls: true,
-            dataLabels: {
-              enabled: false,
-            },
           },
         },
         xAxis: {
