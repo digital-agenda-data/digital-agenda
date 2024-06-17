@@ -1,0 +1,70 @@
+[
+  {
+    "model": "charts.breakdownchartoption",
+    "fields": {
+      "created_at": "2023-09-23T14:16:16.534Z",
+      "updated_at": "2023-09-23T14:32:05.345Z",
+      "color": "#3F888F",
+      "dash_style": null,
+      "line_width": 0,
+      "marker_radius": 12,
+      "symbol": "circle",
+      "custom_symbol": "",
+      "data_labels_enabled": true,
+      "breakdown": [
+        "cc_for"
+      ]
+    }
+  },
+  {
+    "model": "charts.breakdownchartoption",
+    "fields": {
+      "created_at": "2023-09-23T14:16:16.534Z",
+      "updated_at": "2023-09-23T14:32:05.345Z",
+      "color": "#412227",
+      "dash_style": "DashDot",
+      "line_width": 2,
+      "symbol": null,
+      "marker_enabled": false,
+      "custom_symbol": "",
+      "data_labels_enabled": false,
+      "breakdown": [
+        "cc_nat"
+      ]
+    }
+  },
+  {
+    "model": "charts.breakdownchartoption",
+    "fields": {
+      "created_at": "2023-09-23T14:16:16.534Z",
+      "updated_at": "2023-09-23T14:32:05.345Z",
+      "color": "#9D9101",
+      "dash_style": "ShortDashDotDot",
+      "line_width": 4,
+      "marker_radius": 6,
+      "symbol": "diamond",
+      "custom_symbol": "",
+      "data_labels_enabled": null,
+      "breakdown": [
+        "cc_eu_for"
+      ]
+    }
+  },
+  {
+    "model": "charts.breakdownchartoption",
+    "fields": {
+      "created_at": "2023-09-23T14:16:16.534Z",
+      "updated_at": "2023-09-23T14:32:05.345Z",
+      "color": "#F44611",
+      "dash_style": "LongDashDotDot",
+      "line_width": 8,
+      "marker_radius": 8,
+      "symbol": "triangle",
+      "custom_symbol": "",
+      "data_labels_enabled": null,
+      "breakdown": [
+        "cc_ext_eu"
+      ]
+    }
+  }
+]

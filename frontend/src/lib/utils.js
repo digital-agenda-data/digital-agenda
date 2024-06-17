@@ -393,15 +393,58 @@ export function sortNumeric(array, { reverse = false, keyFunc = (i) => i }) {
  */
 export function getMarkerSymbol(iterable) {
   for (const item of forceArray(iterable)) {
-    if (!item) continue;
+    if (!item || !item.chart_options) continue;
 
-    if (item.custom_symbol) {
-      return `url(${item.custom_symbol})`;
+    if (item.chart_options.custom_symbol) {
+      return `url(${item.chart_options.custom_symbol})`;
     }
-    if (item.symbol) {
-      return item.symbol;
+    if (item.chart_options.symbol) {
+      return item.chart_options.symbol;
     }
   }
+}
+
+/**
+ * Get the chart option from an indicator/breakdown object or array of such
+ * objects.
+ *
+ * @param iterable {Array|Object}
+ * @param option {string}
+ * @param fallback {*}
+ * @return {undefined|*}
+ */
+export function getChartOption(iterable, option, fallback = undefined) {
+  for (const item of forceArray(iterable)) {
+    const val = item?.chart_options?.[option];
+    if (val !== undefined && val !== null) {
+      return val;
+    }
+  }
+  return fallback;
+}
+
+/**
+ * Get custom chart objects for the specified list of indicator/breakdowns.
+ *
+ * @param objects {Array|Object}
+ * @return {*}
+ */
+export function getCustomOptions(objects) {
+  const result = {
+    color: getChartOption(objects, "color"),
+    dashStyle: getChartOption(objects, "dash_style"),
+    lineWidth: getChartOption(objects, "line_width", 2),
+    marker: {
+      enabled: getChartOption(objects, "marker_enabled"),
+      radius: getChartOption(objects, "marker_radius", 4),
+      symbol: getMarkerSymbol(objects),
+    },
+  };
+  const dataLabelsEnabled = getChartOption(objects, "data_labels_enabled");
+  if (dataLabelsEnabled !== undefined) {
+    result.dataLabels = { enabled: dataLabelsEnabled };
+  }
+  return result;
 }
 
 /**

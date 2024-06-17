@@ -388,6 +388,12 @@ class ChartOptionBaseModel(TimestampedModel):
             ("Solid", "Solid"),
         ],
     )
+    line_width = models.PositiveIntegerField(
+        default=None,
+        blank=True,
+        null=True,
+        help_text="https://api.highcharts.com/highcharts/plotOptions.series.lineWidth",
+    )
     symbol = models.CharField(
         max_length=20,
         blank=True,
@@ -407,6 +413,24 @@ class ChartOptionBaseModel(TimestampedModel):
         null=True,
         default=None,
         help_text="Custom symbol used instead of the predefined ones",
+    )
+    marker_enabled = models.BooleanField(
+        default=None,
+        blank=True,
+        null=True,
+        help_text="https://api.highcharts.com/highcharts/plotOptions.spline.marker.enabled",
+    )
+    marker_radius = models.PositiveIntegerField(
+        default=None,
+        blank=True,
+        null=True,
+        help_text="https://api.highcharts.com/highcharts/plotOptions.spline.marker.radius",
+    )
+    data_labels_enabled = models.BooleanField(
+        default=None,
+        blank=True,
+        null=True,
+        help_text="https://api.highcharts.com/highcharts/plotOptions.spline.dataLabels.enabled",
     )
 
     class Meta:

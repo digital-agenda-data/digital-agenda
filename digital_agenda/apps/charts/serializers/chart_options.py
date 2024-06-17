@@ -7,7 +7,16 @@ from digital_agenda.apps.charts.models import IndicatorChartOption
 
 class BaseChartOptionSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ["color", "dash_style", "symbol", "custom_symbol"]
+        fields = [
+            "color",
+            "dash_style",
+            "line_width",
+            "symbol",
+            "custom_symbol",
+            "marker_enabled",
+            "marker_radius",
+            "data_labels_enabled",
+        ]
 
 
 class IndicatorChartOptionSerializer(BaseChartOptionSerializer):

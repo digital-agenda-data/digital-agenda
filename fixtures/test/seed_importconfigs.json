@@ -84,5 +84,51 @@
       "indicator": {}
     }
   }
+},
+{
+  "model": "estat.importconfig",
+  "fields": {
+    "code": "isoc_ci_ac_i",
+    "title": null,
+    "indicator": "indic_is",
+    "indicator_is_surrogate": false,
+    "breakdown": "ind_type",
+    "breakdown_is_surrogate": false,
+    "country": "geo",
+    "country_is_surrogate": false,
+    "unit": "unit",
+    "unit_is_surrogate": false,
+    "period": "time",
+    "period_is_surrogate": false,
+    "country_group": [
+      "EU27_2020"
+    ],
+    "filters": {
+      "unit": [
+        "pc_ind"
+      ],
+      "ind_type": [
+        "CC_EU_FOR",
+        "CC_EXT_EU",
+        "CC_FOR",
+        "CC_NAT"
+      ],
+      "indic_is": [
+        "i_iugm",
+        "i_iugmv"
+      ]
+    },
+    "mappings": {
+      "unit": {},
+      "period": {},
+      "country": {
+        "EU27_2020": "EU"
+      },
+      "breakdown": {},
+      "indicator": {
+        "i_iugmv": "i_iugm"
+      }
+    }
+  }
 }
 ]
