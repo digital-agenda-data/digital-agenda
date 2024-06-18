@@ -161,3 +161,9 @@ form .aligned label + div.help {
 .import-preview {
   color: white;
 }
+
+/* Make the submit row sticky */
+.submit-row {
+  position: sticky;
+  bottom: 0;
+}
