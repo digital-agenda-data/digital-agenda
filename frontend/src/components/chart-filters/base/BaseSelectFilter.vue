@@ -284,6 +284,11 @@ export default {
     },
   },
   watch: {
+    currentFilterOptions() {
+      // Reload if the filter options have changed (for example, if the
+      // selected chart has changed).
+      this.load();
+    },
     mergedEndpointParams(newValue, oldValue) {
       if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
         this.load();
@@ -317,7 +322,6 @@ export default {
         ) {
           this.modelValue = this.defaultValue;
         }
-
         if (this.isModelEmpty && this.defaultValue) {
           // A value is required, but none is set. Set the default value
           // automatically to avoid ambiguity;
