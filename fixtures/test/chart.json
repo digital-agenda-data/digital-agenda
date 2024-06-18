@@ -421,5 +421,62 @@
         ]
       ]
     }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 55,
+      "chart_group": [
+        "test-custom-filters"
+      ],
+      "name": "Test Default And Ignore Breakdown Group Total",
+      "code": "test-spline-compare-breakdown-total",
+      "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "description": "<p>This spline chart has both default and ignore values for the breakdown group</p>",
+      "indicator_group_filter_hidden": true,
+      "breakdown_filter_hidden": true,
+      "unit_filter_hidden": true,
+      "breakdown_group_filter_defaults": [
+        [
+          "total"
+        ]
+      ],
+      "breakdown_group_filter_ignored": [
+        [
+          "bygender"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 56,
+      "chart_group": [
+        "test-custom-filters"
+      ],
+      "name": "Test Default And Ignore Breakdown Group Gender",
+      "code": "test-spline-compare-breakdown-gender",
+      "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "description": "<p>This spline chart has both default and ignore values for the breakdown group</p>",
+      "indicator_group_filter_hidden": true,
+      "breakdown_filter_hidden": true,
+      "unit_filter_hidden": true,
+      "breakdown_group_filter_defaults": [
+        [
+          "bygender"
+
+        ]
+      ],
+      "breakdown_group_filter_ignored": [
+        [
+          "total"
+        ]
+      ]
+    }
   }
 ]

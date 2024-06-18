@@ -97,5 +97,71 @@
       ],
       "filter_field": "country"
     }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-custom-filters",
+        "test-spline-compare-breakdown-total"
+      ],
+      "filter_field": "breakdownGroup"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 2,
+      "chart": [
+        "test-custom-filters",
+        "test-spline-compare-breakdown-total"
+      ],
+      "filter_field": "country"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 3,
+      "chart": [
+        "test-custom-filters",
+        "test-spline-compare-breakdown-total"
+      ],
+      "filter_field": "indicator"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 1,
+      "chart": [
+        "test-custom-filters",
+        "test-spline-compare-breakdown-gender"
+      ],
+      "filter_field": "breakdownGroup"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 2,
+      "chart": [
+        "test-custom-filters",
+        "test-spline-compare-breakdown-gender"
+      ],
+      "filter_field": "country"
+    }
+  },
+  {
+    "model": "charts.chartfilterorder",
+    "fields": {
+      "display_order": 3,
+      "chart": [
+        "test-custom-filters",
+        "test-spline-compare-breakdown-gender"
+      ],
+      "filter_field": "indicator"
+    }
   }
 ]
