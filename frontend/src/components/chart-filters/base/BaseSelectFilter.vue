@@ -103,6 +103,7 @@ export default {
       default: false,
     },
   },
+  emits: ["change"],
   data() {
     return {
       apiDataRaw: [],
@@ -289,13 +290,9 @@ export default {
       // selected chart has changed).
       this.load();
     },
-    mergedEndpointParams(newValue, oldValue) {
-      if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
-        this.load();
-      }
-    },
     selected() {
       this.filterStore[this.queryName] = this.selected;
+      this.$emit("change", this.selected);
     },
   },
   mounted() {

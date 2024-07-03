@@ -7,6 +7,8 @@
       v-for="item in normalizedFilterComponents"
       :key="item.key"
       v-bind="item.attrs"
+      :ref="item.key"
+      v-on="item.on"
     />
   </div>
   <div
@@ -78,6 +80,22 @@ export default {
           }
         }
 
+        // When one filter changes load the next one in order.
+        // This should avoid race conditions that can cause filter values
+        // to be reset from the query params.
+        for (let i = 0; i < axisResult.length; i++) {
+          const filterComponent = axisResult[i];
+          const nextFilter = axisResult[i + 1];
+          if (nextFilter) {
+            filterComponent.on.change = () => {
+              console.log(filterComponent.key, nextFilter.key);
+              if (this.$refs[nextFilter.key]) {
+                this.$refs[nextFilter.key][0].load();
+              }
+            };
+          }
+        }
+
         result.push(...axisResult);
       }
 
@@ -109,6 +127,7 @@ export default {
         "chart-filter",
         `chart-filter${suffix}`,
       ];
+      result.on ??= {};
 
       return result;
     },
