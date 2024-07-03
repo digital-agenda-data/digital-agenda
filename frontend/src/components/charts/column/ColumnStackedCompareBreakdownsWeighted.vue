@@ -13,17 +13,16 @@ export default {
   computed: {
     filterComponents() {
       return [
+        IndicatorWithGroupsFilter,
+        BreakdownGroupFilter,
         {
           component: BreakdownWeightsFilter,
           attrs: {
             allInitial: true,
             syncRoute: false,
             class: ["chart-filter-full"],
-            extraParams: ["indicator"],
           },
         },
-        IndicatorWithGroupsFilter,
-        BreakdownGroupFilter,
         PeriodFilter,
         UnitFilter,
         {
