@@ -88,7 +88,6 @@ export default {
           const nextFilter = axisResult[i + 1];
           if (nextFilter) {
             filterComponent.on.change = () => {
-              console.log(filterComponent.key, nextFilter.key);
               if (this.$refs[nextFilter.key]) {
                 this.$refs[nextFilter.key][0].load();
               }
