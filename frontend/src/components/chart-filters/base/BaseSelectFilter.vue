@@ -103,6 +103,7 @@ export default {
       default: false,
     },
   },
+  emits: ["change"],
   data() {
     return {
       apiDataRaw: [],
@@ -284,22 +285,10 @@ export default {
     },
   },
   watch: {
-    currentFilterOptions() {
-      // Reload if the filter options have changed (for example, if the
-      // selected chart has changed).
-      this.load();
-    },
-    mergedEndpointParams(newValue, oldValue) {
-      if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
-        this.load();
-      }
-    },
     selected() {
       this.filterStore[this.queryName] = this.selected;
+      this.$emit("change", this.selected);
     },
-  },
-  mounted() {
-    this.load();
   },
   unmounted() {
     this.filterStore[this.queryName] = null;
