@@ -51,60 +51,97 @@ export default {
           .filter((item) => !!item)
           .map((item) => this.normalizeFilterComponent(item, axis));
 
-        // Sort them according to the chart rules (if any)
-        const filterOrder = [
-          // Fixed order
-          "EclHeading",
-          // Custom order
-          ...(this.currentChart.filter_order ?? []),
-          // Default order
-          ...axisResult.map((item) => item.filterType),
-        ];
-        axisResult.sort((a, b) => {
-          const filterPositionA = filterOrder.indexOf(a.filterType);
-          const filterPositionB = filterOrder.indexOf(b.filterType);
-          return filterPositionA - filterPositionB;
-        });
-
-        // Add extra filter params based on the previous filters; that way
-        // we should never have impossible combinations.
-        const previousParams = [];
-        for (const filterComponent of axisResult) {
-          filterComponent.attrs.extraParams = [
-            ...(filterComponent.attrs.extraParams ?? []),
-            ...previousParams,
-          ];
-
-          if (filterComponent.queryName && !filterComponent.isMultiple) {
-            previousParams.push(filterComponent.queryName);
-          }
-        }
-
-        // When one filter changes load the next one in order.
-        // This should avoid race conditions that can cause filter values
-        // to be reset from the query params.
-        for (let i = 0; i < axisResult.length; i++) {
-          const filterComponent = axisResult[i];
-          const nextFilter = axisResult[i + 1];
-          if (nextFilter) {
-            filterComponent.on.change = () => {
-              if (this.$refs[nextFilter.key]) {
-                this.$refs[nextFilter.key][0].load();
-              }
-            };
-          }
-        }
-
-        result.push(...axisResult);
+        result.push(...this.setLoadOrder(axisResult));
       }
 
       return result;
     },
   },
+  watch: {
+    currentChart() {
+      // Reload in case the filter options have changed.
+      this.initialFiltersLoad();
+    },
+  },
   beforeMount() {
     setHighchartsDefaults();
   },
+  mounted() {
+    this.initialFiltersLoad();
+  },
   methods: {
+    initialFiltersLoad() {
+      // Next tick, so the filter components are loaded and available as refs.
+      this.$nextTick(() => {
+        this.normalizedFilterComponents
+          .filter((item) => item.initialLoad)
+          .forEach((item) => {
+            this.$refs[item.key][0].load();
+          });
+      });
+    },
+    /**
+     * Sort the filter components according to any custom settings in the
+     * backend and configure them to:
+     *
+     *  - Send extra query parameters to the backend API when to filter
+     *    the results; using the configured order.
+     *  - When one value is changed, trigger a chained reload of the other
+     *    filters in the correct order.
+     *  - Mark which filters are first and trigger a load on mount and chart
+     *    changes.
+     */
+    setLoadOrder(axisFilterComponents) {
+      // Sort them according to the chart rules (if any)
+      const filterOrder = [
+        // Fixed order
+        "EclHeading",
+        // Custom order
+        ...(this.currentChart.filter_order ?? []),
+        // Default order
+        ...axisFilterComponents.map((item) => item.filterType),
+      ];
+
+      axisFilterComponents.sort((a, b) => {
+        const filterPositionA = filterOrder.indexOf(a.filterType);
+        const filterPositionB = filterOrder.indexOf(b.filterType);
+        return filterPositionA - filterPositionB;
+      });
+
+      // Add extra filter params based on the previous filters; that way
+      // we should never have impossible combinations.
+      const previousComponents = [];
+      for (const filterComponent of axisFilterComponents) {
+        filterComponent.triggerLoadFor = [];
+        filterComponent.attrs.extraParams = [
+          ...(filterComponent.attrs.extraParams ?? []),
+          ...previousComponents.map((i) => i.queryName),
+        ];
+
+        if (previousComponents.length === 0) {
+          // Set the first one to load on mount and start the chain.
+          // Since it has no parent filter in the chain.
+          filterComponent.initialLoad = true;
+        } else {
+          // Add this filter to the chain load of the last component
+          previousComponents.slice(-1)[0].triggerLoadFor.push(filterComponent);
+        }
+
+        // When one filter changes load the next one in order.
+        // This should avoid race conditions that can cause filter values
+        // to be reset from the query params in case of weird order loading.
+        filterComponent.on.change = () => {
+          filterComponent.triggerLoadFor.forEach((nextFilter) => {
+            this.$refs[nextFilter.key][0].load();
+          });
+        };
+
+        if (filterComponent.queryName && !filterComponent.isMultiple) {
+          previousComponents.push(filterComponent);
+        }
+      }
+      return axisFilterComponents;
+    },
     normalizeFilterComponent(item, suffix = "") {
       let result = item;
       if (!item.component) {
