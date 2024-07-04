@@ -76,7 +76,7 @@ export default {
         this.normalizedFilterComponents
           .filter((item) => item.initialLoad)
           .forEach((item) => {
-            this.$refs[item.key][0].load();
+            this.$refs[item.key][0].load?.();
           });
       });
     },
@@ -132,7 +132,7 @@ export default {
         // to be reset from the query params in case of weird order loading.
         filterComponent.on.change = () => {
           filterComponent.triggerLoadFor.forEach((nextFilter) => {
-            this.$refs[nextFilter.key][0].load();
+            this.$refs[nextFilter.key][0].load?.();
           });
         };
 
