@@ -1,5 +1,5 @@
 <template>
-  <interactive-chart ref="interactiveChart" />
+  <interactive-chart ref="interactiveChart" :key="currentChart.code" />
   <div
     class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m"
   >
