@@ -24,6 +24,26 @@ Cypress.Commands.addAll({
     cy.get("input[name=password]").type(password);
     return cy.get("input[type=submit]").click();
   },
+  checkHasChartData() {
+    cy.get(".chart-filter [data-name]")
+      .filter(":visible")
+      .each((el) => {
+        cy.wrap(el)
+          .find(".multiselect__single, .multiselect__tag")
+          .first()
+          .contains(/.+/);
+      });
+    cy.get(".highcharts-no-data").should("not.exist");
+    cy.get(".highcharts-point").should("exist");
+  },
+  checkNavigateBetweenCharts(chartGroup, chartNames) {
+    cy.navigateToChart(chartGroup, chartNames[0]);
+    cy.checkHasChartData();
+    for (const nextChart of chartNames.slice(1)) {
+      cy.get("a").contains(nextChart).click();
+      cy.checkHasChartData();
+    }
+  },
   checkFilter(inputName, label) {
     return cy
       .get(`[data-name='${inputName}'] .multiselect__single`)
