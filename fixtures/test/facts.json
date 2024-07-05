@@ -19,16 +19,17 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
   "model": "core.fact",
   "fields": {
     "created_at": "2023-02-06T07:03:51.840Z",
-    "updated_at": "2023-02-06T07:05:32.000Z",
+    "updated_at": "2023-02-06T07:05:32Z",
     "value": 0.5,
     "flags": "",
     "indicator": [
@@ -44,9 +45,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -69,9 +71,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -94,9 +97,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -119,9 +123,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -144,9 +149,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -169,9 +175,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -194,9 +201,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -219,9 +227,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -244,9 +253,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -269,9 +279,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -294,9 +305,10 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
   }
 },
 {
@@ -319,9 +331,348 @@
       "EU"
     ],
     "period": [
-      2022
+      "2022"
     ],
-    "import_config": null
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.802Z",
+    "updated_at": "2024-07-05T08:57:06.802Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "desi_idt_socmed"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "ES"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.812Z",
+    "updated_at": "2024-07-05T08:57:06.812Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_sm_any"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "SE"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.814Z",
+    "updated_at": "2024-07-05T08:57:06.814Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_di4_vlo"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "CZ"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.816Z",
+    "updated_at": "2024-07-05T08:57:06.816Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_cc1_si"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "LV"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.818Z",
+    "updated_at": "2024-07-05T08:57:06.818Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_sm_ge2"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "CY"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.820Z",
+    "updated_at": "2024-07-05T08:57:06.820Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_di4_vhi"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "BE"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.822Z",
+    "updated_at": "2024-07-05T08:57:06.822Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_it_mext"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "ES"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.823Z",
+    "updated_at": "2024-07-05T08:57:06.823Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_inv4s_ap"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "DE"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.825Z",
+    "updated_at": "2024-07-05T08:57:06.825Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_itspvac2"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "LT"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.827Z",
+    "updated_at": "2024-07-05T08:57:06.827Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_empmd_gt20"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "EE"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.828Z",
+    "updated_at": "2024-07-05T08:57:06.828Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_di3_vlo"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "PT"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.830Z",
+    "updated_at": "2024-07-05T08:57:06.830Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_di3_vhi"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "BE"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
+  }
+},
+{
+  "model": "core.fact",
+  "fields": {
+    "created_at": "2024-07-05T08:57:06.831Z",
+    "updated_at": "2024-07-05T08:57:06.831Z",
+    "value": 0.7,
+    "flags": "",
+    "indicator": [
+      "e_broad"
+    ],
+    "breakdown": [
+      "total"
+    ],
+    "unit": [
+      "pc_ent"
+    ],
+    "country": [
+      "SK"
+    ],
+    "period": [
+      "2022"
+    ],
+    "import_config": null,
+    "import_file": null
   }
 }
 ]
