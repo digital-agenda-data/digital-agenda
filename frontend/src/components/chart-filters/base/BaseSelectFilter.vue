@@ -316,6 +316,11 @@ export default {
           // automatically to avoid ambiguity;
           this.modelValue = this.defaultValue;
         }
+      } catch (e) {
+        // Ignore canceled error since that is on purpose.
+        if (e.code !== "ERR_CANCELED") {
+          throw e;
+        }
       } finally {
         this.loading = false;
         this.filterStore.loadingCounter -= 1;
@@ -327,19 +332,12 @@ export default {
       }
 
       this.abortController = new AbortController();
-      try {
-        this.apiDataRaw = (
-          await api.get(this.endpoint, {
-            signal: this.abortController.signal,
-            params: this.mergedEndpointParams,
-          })
-        ).data;
-      } catch (e) {
-        // Ignore canceled error since that is on purpose.
-        if (e.code !== "ERR_CANCELED") {
-          throw e;
-        }
-      }
+      this.apiDataRaw = (
+        await api.get(this.endpoint, {
+          signal: this.abortController.signal,
+          params: this.mergedEndpointParams,
+        })
+      ).data;
     },
     async loadExtra() {},
   },
