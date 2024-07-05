@@ -43,11 +43,13 @@ export default {
           }
         }
 
-        result.push({
-          id: group.code,
-          text: group.display,
-          children,
-        });
+        if (children.length > 0) {
+          result.push({
+            id: group.code,
+            text: group.display,
+            children,
+          });
+        }
       }
 
       return result;

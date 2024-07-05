@@ -22,6 +22,19 @@ declare global {
        * Log into the admin UI
        */
       login(user?: string, password?: string): Chainable<JQuery<HTMLElement>>;
+
+      /**
+       * Check if there is data displayed in the chart. Any data will do.
+       */
+      checkHasChartData(): undefined;
+
+      /**
+       * Check that navigating between charts works.
+       */
+      checkNavigateBetweenCharts(
+        chartGroup: string,
+        chartNames: string[],
+      ): undefined;
       /**
        * Custom command to select an item from EclSelect component
        * @example cy.selectFilter("breakdown", "Total")
