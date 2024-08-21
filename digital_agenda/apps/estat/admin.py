@@ -77,11 +77,15 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "latest_import",
         "title",
         "tag_codes",
-        "has_remarks",
+        "has_additional_remarks",
         "new_version_available",
     )
     search_fields = ("code", "title", "indicator", "tags__code", "filters", "mappings")
-    list_filter = ("tags", ("remarks", EmptyFieldListFilter), "new_version_available")
+    list_filter = (
+        "tags",
+        ("additional_remarks", EmptyFieldListFilter),
+        "new_version_available",
+    )
     readonly_fields = (
         "num_facts",
         "latest_import",
@@ -96,7 +100,18 @@ class ImportConfigAdmin(admin.ModelAdmin):
     actions = ("trigger_import", "trigger_import_destructive")
 
     fieldsets = (
-        (None, {"fields": ["code", "title", "tags", "remarks", "conflict_resolution"]}),
+        (
+            None,
+            {
+                "fields": [
+                    "code",
+                    "title",
+                    "tags",
+                    "additional_remarks",
+                    "conflict_resolution",
+                ]
+            },
+        ),
         (
             "Dimensions",
             {
@@ -213,8 +228,8 @@ class ImportConfigAdmin(admin.ModelAdmin):
         return mark_safe(f'<a href="{url}" target="_blank">{url}</a>')
 
     @admin.display(description="Has Remarks", boolean=True)
-    def has_remarks(self, obj):
-        return bool(obj.remarks)
+    def has_additional_remarks(self, obj):
+        return bool(obj.additional_remarks)
 
     def get_actions(self, request):
         actions = super().get_actions(request)

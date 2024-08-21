@@ -5,7 +5,7 @@
     "fields": {
         "code": "educ_uoe_grad03",
         "title": null,
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-12T10:00:00Z",
         "datastructure_last_update": "2023-12-12T10:00:00Z",
         "datastructure_last_version": "29.0",
@@ -58,7 +58,7 @@
     "fields": {
         "code": "demo_pjan",
         "title": "Eurostat total population",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-09-28T21:00:00Z",
         "datastructure_last_update": "2023-09-28T21:00:00Z",
         "datastructure_last_version": "31.0",
@@ -113,7 +113,7 @@
     "fields": {
         "code": "tec00001",
         "title": "Gross domestic product at market prices",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-20T22:00:00Z",
         "datastructure_last_update": "2023-12-20T22:00:00Z",
         "datastructure_last_version": "53.0",
@@ -168,7 +168,7 @@
     "fields": {
         "code": "lfst_hhnhwhtc",
         "title": "Number of households",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-06-15T21:00:00Z",
         "datastructure_last_update": "2023-06-15T21:00:00Z",
         "datastructure_last_version": "17.1",
@@ -228,7 +228,7 @@
     "fields": {
         "code": "isoc_sk_dskl_i",
         "title": "Digital Skills Index 2019",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -335,7 +335,7 @@
     "fields": {
         "code": "isoc_sk_dskl_i21",
         "title": "Digital Skills Index 2021",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "10.0",
@@ -451,7 +451,7 @@
     "fields": {
         "code": "isoc_ci_ac_i",
         "title": "Individuals - internet activities",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "39.0",
@@ -560,7 +560,7 @@
     "fields": {
         "code": "isoc_cisci_pb",
         "title": "Security related problems experienced when using the internet",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -651,7 +651,7 @@
     "fields": {
         "code": "isoc_cicci_use",
         "title": "Individuals - use of cloud services",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -737,7 +737,7 @@
     "fields": {
         "code": "isoc_cisci_prv",
         "title": "Privacy and protection of personal information (until 2016)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "31.0",
@@ -825,7 +825,7 @@
     "fields": {
         "code": "isoc_ec_iprb",
         "title": "Problems encountered by individuals when buying/ordering over the internet (until 2019)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "33.0",
@@ -911,7 +911,7 @@
     "fields": {
         "code": "isoc_cisci_ax",
         "title": "Activities via internet not done because of security concerns",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -997,7 +997,7 @@
     "fields": {
         "code": "isoc_ec_ibuy",
         "title": "Internet purchases by individuals (until 2019)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -1094,7 +1094,7 @@
     "fields": {
         "code": "isoc_ec_ib20",
         "title": "Internet purchases by individuals (2020 onwards)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "36.0",
@@ -1185,7 +1185,7 @@
     "fields": {
         "code": "isoc_sk_cskl_i",
         "title": "Individuals' level of computer skills (until 2019)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -1281,7 +1281,7 @@
     "fields": {
         "code": "isoc_sks_itspt",
         "title": "Employed ICT specialists - total",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_version": "25.0",
@@ -1332,7 +1332,7 @@
     "fields": {
         "code": "isoc_ci_ifp_iu",
         "title": "Individuals - internet use",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "36.0",
@@ -1422,7 +1422,7 @@
     "fields": {
         "code": "isoc_ci_im_i",
         "title": "Individuals - mobile internet access",
-        "remarks": "i_iumc, i_iump",
+        "additional_remarks": "i_iumc, i_iump",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -1513,7 +1513,7 @@
     "fields": {
         "code": "educ_uoe_grad04",
         "title": "Graduates in tertiary education (STEM)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-12T10:00:00Z",
         "datastructure_last_update": "2023-12-12T10:00:00Z",
         "datastructure_last_version": "28.0",
@@ -1563,7 +1563,7 @@
     "fields": {
         "code": "isoc_bde15b_p",
         "title": "Broadband and connectivity - persons employed by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_version": "32.0",
@@ -1668,7 +1668,7 @@
     "fields": {
         "code": "isoc_bde15b_p_s",
         "title": "Broadband and connectivity - persons employed by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -1747,7 +1747,7 @@
     "fields": {
         "code": "isoc_ci_in_en2",
         "title": "Internet access by NACE",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "35.0",
@@ -1840,7 +1840,7 @@
     "fields": {
         "code": "isoc_ci_in_es",
         "title": "Internet access by size class of enterprise",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -1907,7 +1907,7 @@
     "fields": {
         "code": "isoc_cismtn2",
         "title": "Social media use by type, internet advertising and NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -2009,7 +2009,7 @@
     "fields": {
         "code": "isoc_cismt",
         "title": "Social media use by type, internet advertising and size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -2085,7 +2085,7 @@
     "fields": {
         "code": "isoc_ciwebn2",
         "title": "Websites and functionalities by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -2179,7 +2179,7 @@
     "fields": {
         "code": "isoc_ciweb",
         "title": "Websites and functionalities by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "33.0",
@@ -2247,7 +2247,7 @@
     "fields": {
         "code": "isoc_ci_it_en2",
         "title": "Type of connections to the internet by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "33.0",
@@ -2346,7 +2346,7 @@
     "fields": {
         "code": "isoc_ci_it_es",
         "title": "Type of connections to the internet by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -2419,7 +2419,7 @@
     "fields": {
         "code": "isoc_ec_eseln2",
         "title": "E-commerce sales of enterprises by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "34.0",
@@ -2516,7 +2516,7 @@
     "fields": {
         "code": "isoc_ec_esels",
         "title": "E-commerce sales of enterprises by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -2587,7 +2587,7 @@
     "fields": {
         "code": "isoc_eb_bdn2",
         "title": "Big data analysis by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -2682,7 +2682,7 @@
     "fields": {
         "code": "isoc_eb_bd",
         "title": "Big data analysis by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "31.0",
@@ -2750,7 +2750,7 @@
     "fields": {
         "code": "isoc_cicce_usen2",
         "title": "Cloud computing services by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -2846,7 +2846,7 @@
     "fields": {
         "code": "isoc_cicce_use",
         "title": "Cloud computing services by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "34.0",
@@ -2916,7 +2916,7 @@
     "fields": {
         "code": "isoc_eb_iipn2",
         "title": "Integration of internal processes by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -3020,7 +3020,7 @@
     "fields": {
         "code": "isoc_eb_iip",
         "title": "Integration of internal processes by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "33.0",
@@ -3096,7 +3096,7 @@
     "fields": {
         "code": "isoc_bde15dip",
         "title": "[discontinued] Integration of internal processes by NACE (E_SISORP)",
-        "remarks": "E_SISORP is discontinued",
+        "additional_remarks": "E_SISORP is discontinued",
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_version": "31.0",
@@ -3189,7 +3189,7 @@
     "fields": {
         "code": "isoc_bde15dipn2",
         "title": "[discontinued] Integration of internal processes by size class of enterprise (E_SISORP)",
-        "remarks": "E_SISORP is discontinued",
+        "additional_remarks": "E_SISORP is discontinued",
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -3256,7 +3256,7 @@
     "fields": {
         "code": "isoc_eb_ain2",
         "title": "Artificial intelligence by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -3349,7 +3349,7 @@
     "fields": {
         "code": "isoc_eb_ai",
         "title": "Artificial intelligence by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -3416,7 +3416,7 @@
     "fields": {
         "code": "isoc_ske_itspen2",
         "title": "Enterprises that employ ICT specialists by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "28.0",
@@ -3509,7 +3509,7 @@
     "fields": {
         "code": "isoc_ske_itspe",
         "title": "Enterprises that employ ICT specialists by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -3576,7 +3576,7 @@
     "fields": {
         "code": "isoc_ske_itrcrn2",
         "title": "Enterprises that recruited or tried to recruit ICT specialists by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -3669,7 +3669,7 @@
     "fields": {
         "code": "isoc_ske_itrcrs",
         "title": "Enterprises that recruited or tried to recruit ICT specialists by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -3736,7 +3736,7 @@
     "fields": {
         "code": "isoc_ske_fctn2",
         "title": "Enterprises - ICT functions performed by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -3829,7 +3829,7 @@
     "fields": {
         "code": "isoc_ske_fct",
         "title": "Enterprises - ICT functions performed by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -3896,7 +3896,7 @@
     "fields": {
         "code": "isoc_cisce_ran2",
         "title": "Security policy: measures, risks and staff awareness by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_version": "8.0",
@@ -3994,7 +3994,7 @@
     "fields": {
         "code": "isoc_cisce_ra",
         "title": "Security policy: measures, risks and staff awareness by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "33.0",
@@ -4066,7 +4066,7 @@
     "fields": {
         "code": "isoc_ske_ittn2",
         "title": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -4159,7 +4159,7 @@
     "fields": {
         "code": "isoc_ske_itts",
         "title": "Enterprises that provided training to develop/upgrade ICT skills of their personnel by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -4226,7 +4226,7 @@
     "fields": {
         "code": "isoc_cimobe_usen2",
         "title": "Use of mobile connections to the internet by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -4324,7 +4324,7 @@
     "fields": {
         "code": "isoc_cimobe_use",
         "title": "Use of mobile connections to the internet by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "31.0",
@@ -4396,7 +4396,7 @@
     "fields": {
         "code": "isoc_bde15b_en2",
         "title": "Broadband and connectivity - enterprises by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -4492,7 +4492,7 @@
     "fields": {
         "code": "isoc_bde15b_e",
         "title": "Broadband and connectivity - enterprises by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "31.0",
@@ -4562,7 +4562,7 @@
     "fields": {
         "code": "isoc_ec_evaln2",
         "title": "Value of e-commerce sales by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -4657,7 +4657,7 @@
     "fields": {
         "code": "isoc_ec_evals",
         "title": "Value of e-commerce sales by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "6.0",
@@ -4726,7 +4726,7 @@
     "fields": {
         "code": "isoc_bde15decn2",
         "title": "E-commerce, customer relation management (CRM) and secure transactions by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -4825,7 +4825,7 @@
     "fields": {
         "code": "isoc_bde15dec",
         "title": "E-commerce, customer relation management (CRM) and secure transactions by size class of enterprise",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "31.0",
@@ -4898,7 +4898,7 @@
     "fields": {
         "code": "isoc_bde15discn2",
         "title": "Integration with customers/suppliers and SCM by NACE",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "5.0",
@@ -4998,7 +4998,7 @@
     "fields": {
         "code": "isoc_bde15disc",
         "title": "Integration with customers/suppliers and SCM by size class of enterprise",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-08-29T09:00:00Z",
         "datastructure_last_update": "2023-05-25T09:00:00Z",
         "datastructure_last_version": "30.0",
@@ -5071,7 +5071,7 @@
     "fields": {
         "code": "isoc_sks_itsps",
         "title": "Employed ICT specialists by sex",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_update": "2023-05-03T21:00:00Z",
         "datastructure_last_version": "25.0",
@@ -5123,7 +5123,7 @@
     "fields": {
         "code": "isoc_ec_esels",
         "title": "E_AWSWW (e_aws/rest_world)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -5180,7 +5180,7 @@
     "fields": {
         "code": "isoc_ec_esels",
         "title": "E_AWSHM (e_aws/own_country)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -5237,7 +5237,7 @@
     "fields": {
         "code": "isoc_ec_esels",
         "title": "E_AWSEU (e_aws/other_eu_countries)",
-        "remarks": null,
+        "additional_remarks": null,
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -5294,7 +5294,7 @@
     "fields": {
         "code": "isoc_e_diin2",
         "title": "Digital Intensity Index by NACE (all)",
-        "remarks": "e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi",
+        "additional_remarks": "e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "7.0",
@@ -5397,7 +5397,7 @@
     "fields": {
         "code": "isoc_e_dii",
         "title": "Digital intensity indicators by size class of enterprise (all)",
-        "remarks": "e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi,",
+        "additional_remarks": "e_di3_vlo, e_di3_lo, e_di3_hi, e_di3_vhi, e_di4_vlo, e_di4_lo, e_di4_hi, e_di4_vhi,",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "16.0",
@@ -5471,7 +5471,7 @@
     "fields": {
         "code": "isoc_e_dii",
         "title": "Digital Intensity Index v3 - SME 2021 (e_di3_sme_gelo)",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "16.0",
@@ -5532,7 +5532,7 @@
     "fields": {
         "code": "isoc_e_dii",
         "title": "Digital Intensity Index v4 - SME 2022 (e_di4_sme_gelo)",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "16.0",
@@ -5593,7 +5593,7 @@
     "fields": {
         "code": "isoc_ci_ifp_fu",
         "title": "Individuals - frequency of internet use",
-        "remarks": "i_iuse, i_iday",
+        "additional_remarks": "i_iuse, i_iday",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "36.0",
@@ -5682,7 +5682,7 @@
     "fields": {
         "code": "isoc_ci_dev_i",
         "title": "Individuals - devices used to access the internet",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "33.0",
@@ -5772,7 +5772,7 @@
     "fields": {
         "code": "isoc_e_dii",
         "title": "Digital Intensity Index v3 - SME 2023 (e_di3_sme_gelo)",
-        "remarks": "",
+        "additional_remarks": "",
         "data_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_update": "2023-12-08T10:00:00Z",
         "datastructure_last_version": "16.0",
@@ -5831,7 +5831,7 @@
     "fields": {
         "code": "isoc_ci_it_h",
         "title": "Households - type of connection to the internet",
-        "remarks": "H_BBFIX, H_BROAD",
+        "additional_remarks": "H_BBFIX, H_BROAD",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "33.0",
@@ -5897,7 +5897,7 @@
     "fields": {
         "code": "isoc_ci_in_h",
         "title": "Households - level of internet access (h_iacc)",
-        "remarks": "h_iacc",
+        "additional_remarks": "h_iacc",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "29.0",
@@ -5959,7 +5959,7 @@
     "fields": {
         "code": "isoc_pibi_rni",
         "title": "Households - reasons for not having internet access at home (h_xcost)",
-        "remarks": "h_xcost",
+        "additional_remarks": "h_xcost",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "32.0",
@@ -6024,7 +6024,7 @@
     "fields": {
         "code": "isoc_ciegi_ac",
         "title": "E-government activities of individuals via websites (i_iugov12, i_igov12rt)",
-        "remarks": "i_iugov12, i_igov12rt",
+        "additional_remarks": "i_iugov12, i_igov12rt",
         "data_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_update": "2023-12-15T10:00:00Z",
         "datastructure_last_version": "36.0",
