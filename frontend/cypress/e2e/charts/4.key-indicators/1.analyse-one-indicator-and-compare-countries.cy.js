@@ -8,19 +8,27 @@ describeResponsive("Check Chart", () => {
     );
     cy.checkChart({
       filters: {
-        indicator: "ICT graduates",
-        breakdown: "Females",
-        period: "2019",
-        unit: "% of graduates",
+        indicator: "Enterprises with a fixed broadband connection",
+        breakdown: "Total",
+        period: "2022",
+        unit: "% of enterprises",
       },
-      title: ["ICT graduates, Females", "Year: 2019"],
-      point: "European Union, 0.8.",
-      tooltip: ["European Union", "Females", "0.80% of graduates"],
+      title: [
+        "Enterprises having a fixed broadband connection, Total",
+        "Year: 2022",
+      ],
+      point: "European Union, 0.5.",
+      tooltip: [
+        "European Union",
+        "Total",
+        "0.50% of enterprises",
+        "This data point is for the EU",
+      ],
       definitions: [
-        "Indicator: ICT graduates",
-        "Definition: Individuals with a degree in ICT",
-        "Breakdown: Females",
-        "Unit of measure: Percentage of graduates",
+        "Indicator: Enterprises having a fixed broadband connection",
+        "Definition: Fixed broadband connections include DSL, xDSL, cable leased lines, Frame Relay, Metro-Ethernet, PLC-Powerline communications, fixed wireless connections, etc.",
+        "Breakdown: Total",
+        "Unit of measure: Percentage of enterprises",
       ],
     });
   });

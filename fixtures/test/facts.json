@@ -334,7 +334,8 @@
       "2022"
     ],
     "import_config": null,
-    "import_file": null
+    "import_file": null,
+    "remarks": "This data point is for the EU"
   }
 },
 {
@@ -672,7 +673,8 @@
       "2022"
     ],
     "import_config": null,
-    "import_file": null
+    "import_file": null,
+    "remarks": "This data point is for Slovakia"
   }
 }
 ]

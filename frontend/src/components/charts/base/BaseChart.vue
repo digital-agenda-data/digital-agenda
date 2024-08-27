@@ -385,6 +385,10 @@ export default {
             );
           }
 
+          if (fact.remarks) {
+            result.push(`<b>Remarks:</b> ${fact.remarks}`);
+          }
+
           return result.join("<br/>");
         },
       };
