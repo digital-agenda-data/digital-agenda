@@ -268,7 +268,7 @@ class FactXLSXSerializer:
     def get_label(self, dimension):
         if self.chart_group:
             return self.chart_group.get_label(dimension)
-        return dimension.title()
+        return dimension.title().replace("_", " ")
 
     def render_dimensions_sheet(self):
         headers = ["code", "label", "alt_label", "definition"]
@@ -356,6 +356,8 @@ class FactsViewSet(DimensionViewSetMixin, ListModelMixin, viewsets.GenericViewSe
             "country__code",
             "value",
             "flags",
+            "reference_period",
+            "remarks",
         )
         .all()
     )
@@ -387,5 +389,7 @@ class FactsViewSet(DimensionViewSetMixin, ListModelMixin, viewsets.GenericViewSe
                 "unit",
                 "value",
                 "flags",
+                "reference_period",
+                "remarks",
             ],
         }

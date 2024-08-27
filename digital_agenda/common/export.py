@@ -49,13 +49,15 @@ def export_facts_csv(filename, chartgroup=None, indicatorgroup=None, indicator=N
     assert filters, "At least one filter must be provided for export"
 
     query = f"""
-        SELECT core_period.code    AS "period",
-               core_country.code   AS "country",
-               core_indicator.code AS "indicator",
-               core_breakdown.code AS "breakdown",
-               core_unit.code      AS "unit",
-               core_fact.value     AS "value",
-               core_fact.flags     AS "flags"
+        SELECT core_period.code             AS "period",
+               core_country.code            AS "country",
+               core_indicator.code          AS "indicator",
+               core_breakdown.code          AS "breakdown",
+               core_unit.code               AS "unit",
+               core_fact.value              AS "value",
+               core_fact.flags              AS "flags",
+               core_fact.reference_period   AS "reference_period",
+               core_fact.remarks            AS "remarks"
         FROM core_fact
                  INNER JOIN core_indicator
                             ON (core_fact.indicator_id = core_indicator.id)

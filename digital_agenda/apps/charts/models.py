@@ -81,7 +81,7 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
             raise ValidationError({"period_start": error, "period_end": error})
 
     def get_label(self, dimension):
-        return getattr(self, dimension + "_label", dimension.title())
+        return getattr(self, dimension + "_label", dimension.title().replace("_", " "))
 
     @property
     def facts(self):

@@ -132,6 +132,8 @@ class FactSerializer(serializers.ModelSerializer):
             "country",
             "value",
             "flags",
+            "reference_period",
+            "remarks",
         ]
 
 
