@@ -165,6 +165,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
         )
 
     def _trigger_import(self, request, queryset, **kwargs):
+        obj = None
         for obj in queryset:
             obj.queue_import(created_by=request.user, **kwargs)
 
@@ -174,7 +175,10 @@ class ImportConfigAdmin(admin.ModelAdmin):
             level=messages.SUCCESS,
         )
 
-        return redirect("admin:estat_importfromconfigtask_changelist")
+        url = reverse("admin:estat_importfromconfigtask_changelist")
+        if obj and queryset.count() == 1:
+            url += f"?import_config={obj.id}"
+        return redirect(url)
 
     def get_queryset(self, request):
         return (

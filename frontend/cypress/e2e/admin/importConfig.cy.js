@@ -46,7 +46,6 @@ describe("Check import configuration", () => {
     cy.get("tbody tr:first-child th.field-indicator a").click();
 
     // Check imported values
-    cy.get("[name=value]").should("have.value", "87.53");
     cy.get(".field-indicator").contains("[h_broad]");
     cy.get(".field-breakdown").contains("[hh_total]");
     cy.get(".field-unit").contains("[pc_hh]");

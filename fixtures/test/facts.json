@@ -335,6 +335,7 @@
     ],
     "import_config": null,
     "import_file": null,
+    "reference_period": "2020",
     "remarks": "This data point is for the EU"
   }
 },
@@ -674,6 +675,7 @@
     ],
     "import_config": null,
     "import_file": null,
+    "reference_period": "2020",
     "remarks": "This data point is for Slovakia"
   }
 }
