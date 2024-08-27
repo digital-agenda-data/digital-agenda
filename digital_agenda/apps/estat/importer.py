@@ -23,13 +23,17 @@ from digital_agenda.apps.estat.json_stat import JSONStat
 
 logger = logging.getLogger(__name__)
 
-MODELS = {
+MODEL_DIMENSIONS = {
     "indicator": Indicator,
     "breakdown": Breakdown,
     "country": Country,
     "unit": Unit,
     "period": Period,
 }
+TEXT_DIMENSION = (
+    "reference_period",
+    "remarks",
+)
 
 
 class ImporterError(ValueError):
@@ -220,9 +224,12 @@ class EstatImporter:
 
         return True
 
-    def get_dimension_obj(self, dimension, obs):
+    def get_dimension(self, dimension, obs):
         config_dim = getattr(self.config, dimension)
         is_surrogate = getattr(self.config, f"{dimension}_is_surrogate")
+
+        if not config_dim:
+            return None, None
 
         if is_surrogate:
             # Hardcoded value, no label available
@@ -237,10 +244,15 @@ class EstatImporter:
             except KeyError:
                 pass
 
+        return category_id, category_label
+
+    def get_dimension_obj(self, dimension, obs):
+        category_id, category_label = self.get_dimension(dimension, obs)
+
         try:
             return self.cache[dimension][category_id]
         except KeyError:
-            obj, created = MODELS[dimension].objects.get_or_create(
+            obj, created = MODEL_DIMENSIONS[dimension].objects.get_or_create(
                 code=category_id, defaults={"label": category_label}
             )
             if created:
@@ -261,13 +273,19 @@ class EstatImporter:
                 flags=obs["status"] or "",
                 import_config_id=self.config.id,
             )
+
+            # Set dimensions with related models
             unique_key = []
-            for attr in MODELS:
+            for attr in MODEL_DIMENSIONS:
                 obj = self.get_dimension_obj(attr, obs)
                 unique_key.append(obj)
                 setattr(fact, attr, obj)
-
             fact_collection[tuple(unique_key)].append(fact)
+
+            # Set text "dimensions"
+            for attr in TEXT_DIMENSION:
+                dim_id, dim_label = self.get_dimension(attr, obs)
+                setattr(fact, attr, dim_id or dim_label)
 
         for key, fact_group in fact_collection.items():
             yield self._handle_conflict(fact_group, key)
@@ -313,8 +331,20 @@ class EstatImporter:
         return Fact.objects.bulk_create(
             facts,
             update_conflicts=True,
-            update_fields=("value", "flags", "import_config"),
-            unique_fields=("indicator", "breakdown", "unit", "country", "period"),
+            update_fields=(
+                "value",
+                "flags",
+                "import_config",
+                "reference_period",
+                "remarks",
+            ),
+            unique_fields=(
+                "indicator",
+                "breakdown",
+                "unit",
+                "country",
+                "period",
+            ),
         )
 
     def run(self, batch_size=10_000):

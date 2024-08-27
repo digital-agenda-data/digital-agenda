@@ -122,6 +122,8 @@ class ImportConfigAdmin(admin.ModelAdmin):
                     ("country", "country_is_surrogate"),
                     ("period", "period_is_surrogate"),
                     ("unit", "unit_is_surrogate"),
+                    ("reference_period", "reference_period_is_surrogate"),
+                    ("remarks", "remarks_is_surrogate"),
                 ],
             },
         ),
