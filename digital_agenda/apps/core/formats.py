@@ -13,7 +13,24 @@ from .views.facts import EUROSTAT_FLAGS
 
 logger = logging.getLogger(__name__)
 
-
+UNIQUE_EXCEL_COLS = (
+    "period",
+    "country",
+    "indicator",
+    "breakdown",
+    "unit",
+)
+VALID_EXCEL_COLS = (
+    "period",
+    "country",
+    "indicator",
+    "breakdown",
+    "unit",
+    "value",
+    "flags",
+    "reference_period",
+    "remarks",
+)
 DIMENSION_MODELS = {
     "indicator": Indicator,
     "breakdown": Breakdown,
@@ -21,6 +38,10 @@ DIMENSION_MODELS = {
     "country": Country,
     "period": Period,
 }
+
+
+def empty_cell(cell):
+    return cell.value is None or cell.value == ""
 
 
 class DimensionCache:
@@ -60,46 +81,41 @@ class BaseFileLoader(ABC):
     def load(self, *args, **kwargs): ...
 
 
-DEFAULT_EXCEL_COLS = (
-    "period",
-    "country",
-    "indicator",
-    "breakdown",
-    "unit",
-    "value",
-    "flags",
-)
-
-
 class RowReader:
     def __init__(
         self,
         row,
         dimensions,
-        cols=DEFAULT_EXCEL_COLS,
+        header_columns,
         extra_fields=None,
-        required_cols=None,
     ):
         self.dimensions = dimensions
+        self.header_columns = header_columns
         self.row = row
-        self.cols = cols
-        # By default, all columns are required except for value and flags
-        self.required_cols = required_cols or self.cols[:-2]
+        self.row_dict = self._get_row_dict()
         self.errors = defaultdict(list)
         self.fields = {**extra_fields}
         self.read_row()
+
+    def _get_row_dict(self):
+        result = {}
+        for field, index in self.header_columns.items():
+            try:
+                cell = self.row[index]
+                assert not empty_cell(cell)
+            except (IndexError, AssertionError):
+                result[field] = None
+                continue
+
+            result[field] = cell.value
+        return result
 
     def add_error(self, col_index, error):
         col_letter = get_column_letter(col_index + 1)
         self.errors[f"Column {col_letter}"].append(error)
 
     def get_value(self):
-        col_index = self.cols.index("value")
-        value_cell = self.row[col_index]
-
-        value = value_cell.value
-        if self.empty_cell(value_cell):
-            value = None
+        value = self.row_dict["value"]
 
         if value is not None:
             try:
@@ -109,20 +125,17 @@ class RowReader:
                 value = float(round(decimal.Decimal(value), 6))
             except (TypeError, ValueError, ArithmeticError):
                 self.add_error(
-                    col_index,
+                    self.header_columns["value"],
                     f"Invalid 'value', expected number but got {value!r} instead",
                 )
 
         return value
 
     def get_flags(self):
-        col_index = self.cols.index("flags")
-        flags_cell = self.row[col_index]
-
-        flags = flags_cell.value or ""
+        flags = self.row_dict.get("flags") or ""
         for flag in flags:
             if flag not in EUROSTAT_FLAGS:
-                self.add_error(col_index, f"Unknown flag {flag!r}")
+                self.add_error(self.header_columns["flags"], f"Unknown flag {flag!r}")
 
         return flags
 
@@ -132,31 +145,28 @@ class RowReader:
         """
         self.fields["value"] = self.get_value()
         self.fields["flags"] = self.get_flags()
+        self.fields["reference_period"] = self.row_dict.get("reference_period")
+        self.fields["remarks"] = self.row_dict.get("remarks")
 
         if self.fields["value"] is None and not self.fields["flags"]:
             # Set the custom flag "unavailable" for this case
             self.fields["flags"] = "x"
 
-        for col in self.required_cols:
-            col_index = self.cols.index(col)
-            cell = self.row[col_index]
-
-            if self.empty_cell(cell):
-                self.add_error(col_index, f"Column {col!r} must not be empty")
+        for col in UNIQUE_EXCEL_COLS:
+            if not self.row_dict.get(col):
+                self.add_error(
+                    self.header_columns[col], f"Column {col!r} must not be empty"
+                )
 
         for dim_name, dim_model in DIMENSION_MODELS.items():
-            col_index = self.cols.index(dim_name)
-            dim_code = self.row[col_index].value
+            dim_code = self.row_dict[dim_name]
 
             self.fields[dim_name] = self.dimensions[dim_name].get(dim_code)
             if self.fields[dim_name] is None:
                 self.add_error(
-                    col_index, f"Missing dimension code for {dim_name!r}: {dim_code!r}"
+                    self.header_columns[dim_name],
+                    f"Missing dimension code for {dim_name!r}: {dim_code!r}",
                 )
-
-    @staticmethod
-    def empty_cell(cell):
-        return cell.value is None or cell.value == ""
 
 
 class BaseExcelLoader(BaseFileLoader, ABC):
@@ -164,27 +174,45 @@ class BaseExcelLoader(BaseFileLoader, ABC):
     Loader for Excel file formats.
     """
 
-    def __init__(
-        self, path, cols=DEFAULT_EXCEL_COLS, extra_fields=None, required_cols=None
-    ):
+    def __init__(self, path, extra_fields=None):
         super().__init__(path)
         self.extra_fields = extra_fields or {}
-        self.cols = cols
-        # By default, all columns are required except for value and flags
-        self.required_cols = required_cols or self.cols[:-2]
+        self.max_col_index = 0
+        self.header_columns = {}
         self.sheet = None
         self.errors = {}
+        self.read_headers()
 
     @property
     @abstractmethod
     def rows_iterator(self):
-        """Returns an implementation-specific (xls/xlsx) iterator over the active sheet's rows."""
+        """Returns an implementation-specific (xls/xlsx) iterator over the active
+        sheet's rows.
+        """
+        ...
+
+    @property
+    @abstractmethod
+    def header_row(self):
+        """Returns an implementation-specific (xls/xlsx) header row for the
+        active sheet.
+        """
         ...
 
     @abstractmethod
     def get_row(self, row_ref):
         """Get a row object using a reference produced by `row_iterator`."""
         ...
+
+    def read_headers(self):
+        for index, cell in enumerate(self.header_row):
+            if empty_cell(cell):
+                break
+
+            header_name = cell.value.lower().strip()
+            assert header_name in VALID_EXCEL_COLS, f"{header_name} not valid"
+            self.header_columns[header_name] = index
+            self.max_col_index = index
 
     def read(self):
         """
@@ -201,12 +229,11 @@ class BaseExcelLoader(BaseFileLoader, ABC):
             row_reader = RowReader(
                 self.get_row(row_ref),
                 self.dimensions,
-                cols=self.cols,
+                header_columns=self.header_columns,
                 extra_fields=self.extra_fields,
-                required_cols=self.required_cols,
             )
 
-            unique_key = tuple(row_reader.fields[field] for field in self.required_cols)
+            unique_key = tuple(row_reader.fields[field] for field in UNIQUE_EXCEL_COLS)
             if duplicate_row := all_unique_keys.get(unique_key):
                 row_reader.errors["ALL"].append(
                     f"Duplicate entry found at Row {duplicate_row}"
@@ -242,20 +269,36 @@ class BaseExcelLoader(BaseFileLoader, ABC):
             facts = Fact.objects.bulk_create(
                 data,
                 update_conflicts=True,
-                update_fields=("value", "flags", "import_file"),
-                unique_fields=("indicator", "breakdown", "unit", "country", "period"),
+                update_fields=(
+                    "value",
+                    "flags",
+                    "import_file",
+                    "reference_period",
+                    "remarks",
+                ),
+                unique_fields=(
+                    "indicator",
+                    "breakdown",
+                    "unit",
+                    "country",
+                    "period",
+                ),
             )
             return len(facts), errors
 
 
 class XLSLoader(BaseExcelLoader):
     def __init__(self, path, *args, **kwargs):
-        super().__init__(path, *args, **kwargs)
-        self.wb = xlrd.open_workbook(self.path)
+        self.wb = xlrd.open_workbook(path)
         self.ws = self.wb.sheet_by_index(0)
+        super().__init__(path, *args, **kwargs)
 
     def get_row(self, row_ref):
         return self.ws.row(row_ref)
+
+    @property
+    def header_row(self):
+        return self.ws.row(0)
 
     @property
     def rows_iterator(self):
@@ -264,16 +307,20 @@ class XLSLoader(BaseExcelLoader):
 
 class XLSXLoader(BaseExcelLoader):
     def __init__(self, path, *args, **kwargs):
-        super().__init__(path, *args, **kwargs)
-        self.wb = openpyxl.load_workbook(self.path, read_only=True)
+        self.wb = openpyxl.load_workbook(path, read_only=True)
         self.ws = self.wb.active
+        super().__init__(path, *args, **kwargs)
 
     def get_row(self, row_ref):
         return row_ref  # openpyxl iter_rows returns actual row objects
 
     @property
+    def header_row(self):
+        return next(self.ws.iter_rows())
+
+    @property
     def rows_iterator(self):
-        return self.ws.iter_rows(2, self.ws.max_row, 1, len(self.cols))
+        return self.ws.iter_rows(2, self.ws.max_row, 1, self.max_col_index + 1)
 
 
 def get_loader(data_file, extra_fields=None):

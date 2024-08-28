@@ -218,10 +218,16 @@ class Period(BaseDimensionModel):
 
     @staticmethod
     def split_code(code):
-        try:
-            year, qualifier = re.split(r"[-_\s]", code.lower(), maxsplit=1)
-        except ValueError:
-            year, qualifier = code, ""
+        if isinstance(code, float):
+            assert int(code) == code
+            year, qualifier = str(int(code)), ""
+        elif isinstance(code, int):
+            year, qualifier = str(code), ""
+        else:
+            try:
+                year, qualifier = re.split(r"[-_\s]", code.lower(), maxsplit=1)
+            except ValueError:
+                year, qualifier = code, ""
         return year, qualifier
 
     def _guess_fields_from_code(self):
@@ -303,6 +309,8 @@ class Fact(TimestampedModel):
         "Country", on_delete=models.CASCADE, related_name="facts"
     )
     period = models.ForeignKey("Period", on_delete=models.CASCADE, related_name="facts")
+    reference_period = CICharField(max_length=60, null=True, blank=True)
+    remarks = models.TextField(blank=True, null=True)
     import_config = models.ForeignKey(
         "estat.ImportConfig",
         null=True,

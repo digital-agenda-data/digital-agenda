@@ -77,6 +77,26 @@
             />
           </td>
         </tr>
+        <tr class="ecl-table__row">
+          <td class="ecl-table__cell" data-ecl-table-header="Notation">
+            reference_period
+          </td>
+          <td class="ecl-table__cell" data-ecl-table-header="Label">
+            Reference Period
+          </td>
+          <td class="ecl-table__cell" data-ecl-table-header="Comment">
+            Free text reference period
+          </td>
+        </tr>
+        <tr class="ecl-table__row">
+          <td class="ecl-table__cell" data-ecl-table-header="Notation">
+            remarks
+          </td>
+          <td class="ecl-table__cell" data-ecl-table-header="Label">Remarks</td>
+          <td class="ecl-table__cell" data-ecl-table-header="Comment">
+            Free text notes
+          </td>
+        </tr>
       </tbody>
     </table>
 

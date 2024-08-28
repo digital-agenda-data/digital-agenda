@@ -385,6 +385,16 @@ export default {
             );
           }
 
+          if (fact.reference_period) {
+            result.push(
+              `<b>Reference period:</b> Data from ${fact.reference_period}`,
+            );
+          }
+
+          if (fact.remarks) {
+            result.push(`<b>Remarks:</b> ${fact.remarks}`);
+          }
+
           return result.join("<br/>");
         },
       };
