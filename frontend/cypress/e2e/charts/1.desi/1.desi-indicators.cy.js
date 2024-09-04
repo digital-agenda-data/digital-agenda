@@ -14,15 +14,17 @@ describeResponsive("Check Chart", () => {
         "e-Government users",
         "All Individuals",
         "(aged 16-74)",
+        "DESI period: 2023",
         // Check for the extra note
-        "DESI period: 2023 (data from 2022)",
+        "(data from 2022)",
       ],
       point: "European Union, 74.2.",
       tooltip: [
         "European Union",
         "All individuals",
         "74.20% of internet users (last 12 months)",
-        "DESI period: 2023 (data from 2022)",
+        "DESI period: 2023",
+        "(data from 2022)",
       ],
       definitions: [
         "Indicator: e-Government users",

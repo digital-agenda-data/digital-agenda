@@ -34,6 +34,7 @@ Choose what dimension from the ESTAT dataset to take values from. Notes:
 <dl>
     <li>Surrogate fields will be taken as hardcoded values instead.</li>
     <li>Non-existing values are automatically created on import.</li>
+    <li>Imported values can be transformed my using the mapping fields below.</li>
 </dl>
 """
 FILTERS_DESCRIPTION = """

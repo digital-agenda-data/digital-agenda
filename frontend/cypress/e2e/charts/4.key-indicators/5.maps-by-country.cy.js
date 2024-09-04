@@ -9,6 +9,7 @@ describeResponsive("Check Chart", () => {
         breakdown: "Females",
         period: "2019",
         unit: "% of graduates",
+        country: ["Romania"],
       },
       title: ["ICT graduates, Females", "Year: 2019"],
       point: "x, RO, value: 2.2.",
