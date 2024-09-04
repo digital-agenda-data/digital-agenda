@@ -4,6 +4,15 @@
 {% block content %}
   {% if config.PASSWORD_LOGIN_ENABLED %}
     {{ block.super }}
+    <input type="hidden" value="" name="timezone" form="login-form"/>
+
+    <script>
+      function setTimezone() {
+        const el = document.querySelector("input[name=timezone][form=login-form]");
+        el.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      }
+      setTimezone();
+    </script>
   {% endif %}
   {% if config.EU_LOGIN_ENABLED %}
     <br class="clear"/>

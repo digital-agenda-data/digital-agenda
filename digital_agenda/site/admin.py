@@ -1,4 +1,7 @@
+import zoneinfo
+
 from constance import config
+from django.conf import settings
 from django.contrib.admin import AdminSite
 from django.contrib.admin.apps import AdminConfig
 from django.http import Http404
@@ -16,7 +19,19 @@ class DigitalAgendaAdminSite(AdminSite):
     @method_decorator(never_cache)
     def login(self, request, extra_context=None):
         if config.PASSWORD_LOGIN_ENABLED:
-            return super().login(request, extra_context=extra_context)
+            response = super().login(request, extra_context=extra_context)
+            try:
+                zone = zoneinfo.ZoneInfo(request.POST["timezone"])
+                response.set_cookie(
+                    settings.TIMEZONE_COOKIE,
+                    zone.key,
+                    httponly=True,
+                    secure=settings.HAS_HTTPS,
+                    samesite="strict",
+                )
+            except (zoneinfo.ZoneInfoNotFoundError, KeyError):
+                pass
+            return response
 
         if request.method == "GET" and self.has_permission(request):
             # Already logged-in, redirect to admin index
