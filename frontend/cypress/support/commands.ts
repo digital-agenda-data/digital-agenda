@@ -45,9 +45,11 @@ Cypress.Commands.addAll({
     }
   },
   checkFilter(inputName, label) {
-    return cy
-      .get(`[data-name='${inputName}'] .multiselect__single`)
-      .contains(label);
+    if (!Array.isArray(label)) {
+      return cy
+        .get(`[data-name='${inputName}'] .multiselect__single`)
+        .contains(label);
+    }
   },
   selectFilter(inputName, label) {
     // Wait for multiselect to be rendered but wai until it's finished loading
@@ -55,12 +57,30 @@ Cypress.Commands.addAll({
     cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
     // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
-    cy.get(`[data-name='${inputName}'] [role='option']`)
-      .contains(label)
-      .click();
+
+    if (!Array.isArray(label)) {
+      cy.get(`[data-name='${inputName}'] [role='option']`)
+        .contains(label)
+        .click();
+    } else {
+      for (const item of label) {
+        cy.get(`[data-name='${inputName}'] [role='option']`)
+          .contains(item)
+          .closest("[role='option']")
+          .then(($el) => {
+            const checkbox = $el.find("input[type=checkbox]");
+            if (!checkbox.is(":checked")) {
+              cy.wrap($el).click();
+            }
+            cy.wrap(checkbox).should("be.checked", true);
+          });
+      }
+    }
     // Wait for the dropdown to disappear and make sure the option we wanted
     // was selected.
-    cy.get(`[data-name='${inputName}']`).type("{esc}");
+    cy.get(`[data-name='${inputName}'] input[type=text]`)
+      .first()
+      .type("{esc}", { force: true });
     cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
       "not.be.visible",
     );

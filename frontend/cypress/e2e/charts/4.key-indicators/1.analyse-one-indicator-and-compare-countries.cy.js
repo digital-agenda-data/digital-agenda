@@ -23,7 +23,7 @@ describeResponsive("Check Chart", () => {
         "Total",
         "0.50% of enterprises",
         "This data point is for the EU",
-        "Data from 2020",
+        "Reference period: 2020",
       ],
       definitions: [
         "Indicator: Enterprises having a fixed broadband connection",
