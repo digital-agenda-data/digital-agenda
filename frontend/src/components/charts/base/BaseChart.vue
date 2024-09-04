@@ -384,11 +384,11 @@ export default {
             );
           }
 
-          if (fact.reference_period) {
+          if (fact?.reference_period) {
             result.push(`<b>Reference period:</b> ${fact.reference_period}`);
           }
 
-          if (fact.remarks) {
+          if (fact?.remarks) {
             result.push(`<b>Remarks:</b> ${fact.remarks}`);
           }
 
@@ -485,7 +485,7 @@ export default {
     },
     async loadData() {
       if (!this.endpointParams) {
-        this.apiData = [];
+        this.rawApiData = [];
         return;
       }
 
