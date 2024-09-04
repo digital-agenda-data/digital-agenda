@@ -1,5 +1,8 @@
+import zoneinfo
+
 from constance import config
 from django.conf import settings
+from django.http import HttpResponseBadRequest
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -32,10 +35,15 @@ class SetTimezoneView(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
+        try:
+            zone = zoneinfo.ZoneInfo(request.data["timezone"])
+        except zoneinfo.ZoneInfoNotFoundError:
+            return HttpResponseBadRequest()
+
         response = Response(status=HTTP_204_NO_CONTENT)
         response.set_cookie(
             settings.TIMEZONE_COOKIE,
-            request.data["timezone"],
+            zone.key,
             secure=settings.HAS_HTTPS,
             samesite="strict",
         )
