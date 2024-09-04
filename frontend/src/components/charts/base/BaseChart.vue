@@ -9,15 +9,10 @@
 </template>
 
 <script>
-import { useAppSettings } from "@/stores/appSettingsStore";
-import { useChartGroupStore } from "@/stores/chartGroupStore";
-import { usePeriodStore } from "@/stores/periodStore";
-import { mapState, mapStores } from "pinia";
-import { Chart } from "highcharts-vue";
-
 import SimpleSpinner from "@/components/SimpleSpinner.vue";
 
 import { api } from "@/lib/api";
+import { VALUE_AXIS, YEAR_AXIS } from "@/lib/constants";
 import {
   forceArray,
   getBreakdownLabel,
@@ -29,11 +24,15 @@ import {
   groupByMulti,
   toAPIKey,
 } from "@/lib/utils";
+import { useAppSettings } from "@/stores/appSettingsStore";
+import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 import { useChartStore } from "@/stores/chartStore";
-import { useFilterStore } from "@/stores/filterStore";
 import { useCountryStore } from "@/stores/countryStore";
-import { VALUE_AXIS, YEAR_AXIS } from "@/lib/constants";
+import { useFilterStore } from "@/stores/filterStore";
+import { usePeriodStore } from "@/stores/periodStore";
+import { Chart } from "highcharts-vue";
+import { mapState, mapStores } from "pinia";
 
 /**
  * Base component use for charts. Extend this component and override various
@@ -56,7 +55,7 @@ export default {
     ...mapStores(useFilterStore),
     ...mapState(useAppSettings, ["appSettings"]),
     ...mapState(useChartStore, ["currentChart"]),
-    ...mapState(useChartGroupStore, ["currentChartGroupCode"]),
+    ...mapState(useChartGroupStore, ["currentChartGroupCode", "currentLabels"]),
     ...mapState(useCountryStore, ["countryByCode"]),
     ...mapState(usePeriodStore, ["periodList"]),
     ...mapState(useFilterStore, [
@@ -375,25 +374,25 @@ export default {
 
           if (parent.breakdown?.code) {
             result.push(
-              `<b>Breakdown:</b> ${getBreakdownLabel(parent.breakdown)}`,
+              `<b>${parent.currentLabels.breakdown ?? "Breakdown"}:</b> ${getBreakdownLabel(parent.breakdown)}`,
             );
           }
 
           if (parent.period?.code) {
             result.push(
-              `<b>Time Period:</b> ${parent.getPeriodWithExtraNotes()}`,
+              `<b>${parent.currentLabels.period ?? "Time period"}:</b> ${getPeriodLabel(parent.period, "alt_label")}`,
             );
           }
 
           if (fact.reference_period) {
-            result.push(
-              `<b>Reference period:</b> Data from ${fact.reference_period}`,
-            );
+            result.push(`<b>Reference period:</b> ${fact.reference_period}`);
           }
 
           if (fact.remarks) {
             result.push(`<b>Remarks:</b> ${fact.remarks}`);
           }
+
+          result.push(...parent.getExtraNotes());
 
           return result.join("<br/>");
         },
@@ -426,6 +425,14 @@ export default {
   },
   methods: {
     getUnitDisplay,
+    getExtraNotes(period = null, indicator = null) {
+      period ??= this.period;
+      indicator ??= this.indicator;
+
+      return (indicator?.extra_notes || [])
+        .filter((item) => item.period === period?.code)
+        .map((item) => item.note);
+    },
     /**
      * Get the preferred label for this period together with any corresponding
      * extra notes from the indicator.
@@ -443,9 +450,7 @@ export default {
       period ??= this.period;
       indicator ??= this.indicator;
 
-      const extraNotes = (indicator?.extra_notes || [])
-        .filter((item) => item.period === period?.code)
-        .map((item) => item.note);
+      const extraNotes = this.getExtraNotes(period, indicator);
       const result = [getPeriodLabel(period)];
 
       if (withBreak && extraNotes.length > 0) {
