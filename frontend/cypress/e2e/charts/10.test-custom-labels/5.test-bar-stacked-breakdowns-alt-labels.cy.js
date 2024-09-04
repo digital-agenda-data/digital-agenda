@@ -21,7 +21,7 @@ describeResponsive("Check Chart", () => {
         "European Union",
         "with dependent children",
         "85.45% of households",
-        "Time Period: 2012",
+        "Period: 2012",
       ],
       legend: ["with dependent childrens", "without dependent childrens"],
       definitions: [
