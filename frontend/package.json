@@ -14,7 +14,7 @@
   "dependencies": {
     "@ecl/preset-ec": "3.13.0",
     "@ecl/preset-reset": "3.13.0",
-    "@sentry/vue": "7.100.1",
+    "@sentry/vue": "8.33.1",
     "@vueuse/core": "10.7.2",
     "@vueuse/router": "10.7.2",
     "axios": "1.7.4",
