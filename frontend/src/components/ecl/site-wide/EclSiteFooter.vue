@@ -165,6 +165,11 @@ export default {
           link: "https://commission.europa.eu/resources-partners_en",
           label: "Resources for partners",
         },
+        {
+          id: "security",
+          link: "https://commission.europa.eu/legal-notice/vulnerability-disclosure-policy_en",
+          label: "Report an IT vulnerability",
+        },
       ],
       extraLinks2: [
         {
