@@ -134,24 +134,14 @@ export default {
       ],
       aboutUsLinks: [
         {
-          id: "privacy",
-          link: "https://digital-strategy.ec.europa.eu/en/pages/legal-notice#ecl-inpage-km0gfb8o",
-          label: "Privacy statement",
-        },
-        {
           id: "copyright",
           link: "https://digital-strategy.ec.europa.eu/en/pages/legal-notice#ecl-inpage-km0gezfs",
           label: "Copyright notice",
         },
         {
           id: "about",
-          link: "https://ec.europa.eu/info/departments/communications-networks-content-and-technology_en",
+          link: "https://commission.europa.eu/about-european-commission/departments-and-executive-agencies/communications-networks-content-and-technology_en",
           label: "About Directorate-General CONNECT",
-        },
-        {
-          id: "language",
-          link: "https://digital-strategy.ec.europa.eu/en/pages/legal-notice#ecl-inpage-kyoexp6k",
-          label: "Language Policy",
         },
         {
           id: "accessibility",
