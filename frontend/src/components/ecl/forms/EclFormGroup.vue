@@ -1,6 +1,6 @@
 <template>
   <div class="ecl-form-group">
-    <label v-if="label" class="ecl-form-label">
+    <label v-if="label" class="ecl-form-label" :for="inputId">
       {{ label }}
       <span v-if="required === true" class="ecl-form-label__required">*</span>
       <span v-else-if="required === false" class="ecl-form-label__optional">
@@ -46,6 +46,11 @@ export default {
     },
     errors: {
       type: Array,
+      required: false,
+      default: null,
+    },
+    inputId: {
+      type: String,
       required: false,
       default: null,
     },

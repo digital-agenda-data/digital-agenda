@@ -1,8 +1,8 @@
 <template>
-  <ecl-form-group v-bind="{ label, helpText, required }">
+  <ecl-form-group v-bind="{ label, helpText, required }" :input-id="inputName">
     <div :class="classList">
       <vue-multiselect
-        :id="`${inputName}-filter`"
+        :id="inputName"
         ref="multiselect"
         v-model="value"
         :options="items"
