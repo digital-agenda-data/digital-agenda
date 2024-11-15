@@ -448,3 +448,9 @@ class DataFileImportTask(TaskRQ):
         from .jobs import ImportFromDataFileJob
 
         return ImportFromDataFileJob
+
+
+class StaticPage(TimestampedModel):
+    title = models.CharField(max_length=255)
+    code = models.SlugField(max_length=255, unique=True)
+    body = RichTextField()

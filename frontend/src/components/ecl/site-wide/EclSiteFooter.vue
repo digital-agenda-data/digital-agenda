@@ -149,7 +149,7 @@ export default {
         },
         {
           id: "accessibility",
-          link: "https://digital-strategy.ec.europa.eu/en/pages/accessibility",
+          link: "/static/accessibility-statement",
           label: "Accessibility statement",
         },
       ],

@@ -25,6 +25,7 @@ class Command(BaseCommand):
         Unit,
         Period,
         Country,
+        StaticPage,
         # Imports
         GeoGroup,
         ImportConfigTag,

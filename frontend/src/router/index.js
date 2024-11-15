@@ -1,12 +1,13 @@
 import FeedbackView from "@/views/FeedbackView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
+import StaticPageView from "@/views/StaticPageView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useStaticPageStore } from "@/stores/staticPageStore";
 
 import HomeView from "@/views/HomeView.vue";
-import AboutView from "@/views/AboutView.vue";
 import SearchView from "@/views/SearchView.vue";
 
 import DatasetView from "@/views/DatasetView.vue";
@@ -40,12 +41,16 @@ const router = createRouter({
       },
     },
     {
-      path: "/about",
-      name: "about",
-      component: AboutView,
+      path: "/static/:staticPageCode",
+      name: "static",
+      component: StaticPageView,
       meta: {
-        title: "About data visualisation tool",
-        breadcrumb: "About data visualisation tool",
+        title() {
+          return useStaticPageStore().currentStaticPage?.title;
+        },
+        breadcrumb() {
+          return useStaticPageStore().currentStaticPage?.title;
+        },
       },
     },
     {

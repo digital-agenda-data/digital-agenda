@@ -4,6 +4,7 @@ from rest_framework import routers
 from .views.misc import AppSettingsView
 from .views.facts import FactsViewSet
 from .views.feedback import FeedbackViewSet
+from .views.misc import StaticPageViewSet
 from .views.unit import UnitViewSet
 from .views.period import PeriodViewSet
 from .views.country import CountryViewSet
@@ -24,6 +25,7 @@ router.register("data-sources", DataSourceViewSet)
 router.register("breakdown-groups", BreakdownGroupViewSet)
 router.register("indicator-groups", IndicatorGroupViewSet)
 router.register("feedback", FeedbackViewSet, "feedback")
+router.register("static-pages", StaticPageViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
