@@ -23,7 +23,7 @@
   </div>
 
   <div class="ecl-u-screen-only">
-    <h4>See more charts for the same data</h4>
+    <h2>See more charts for the same data</h2>
     <card-nav :items="chartNavKeepFilters" />
   </div>
 </template>
