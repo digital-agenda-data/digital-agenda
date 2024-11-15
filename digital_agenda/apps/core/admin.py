@@ -423,5 +423,5 @@ class StaticPageAdmin(admin.ModelAdmin):
 
     @admin.display(description="View live")
     def view_live(self, obj):
-        url = f"{settings.PROTOCOL}{settings.FRONTEND_HOST[0]}/static/{obj.code}"
+        url = f"{settings.PROTOCOL}{settings.FRONTEND_HOST[0]}/page/{obj.code}"
         return mark_safe(f"<a href='{url}'>View live</a>")

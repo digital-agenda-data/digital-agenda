@@ -41,7 +41,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/static/:staticPageCode",
+      path: "/page/:staticPageCode",
       name: "static",
       component: StaticPageView,
       meta: {
