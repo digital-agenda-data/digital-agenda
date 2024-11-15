@@ -7,12 +7,13 @@
 <script>
 import { setHighchartsDefaults } from "@/initHighchart";
 import { mapStores } from "pinia";
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, ref } from "vue";
 
 import { getRouteMeta } from "@/lib/utils";
 import { useChartStore } from "@/stores/chartStore";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
 import { useAppSettings } from "@/stores/appSettingsStore";
+import { useStaticPageStore } from "@/stores/staticPageStore";
 
 import SimpleSpinner from "@/components/SimpleSpinner.vue";
 
@@ -34,17 +35,23 @@ export default {
     }),
   },
   computed: {
-    ...mapStores(useChartGroupStore, useChartStore, useAppSettings),
+    ...mapStores(
+      useChartGroupStore,
+      useChartStore,
+      useAppSettings,
+      useStaticPageStore,
+    ),
     isEmbedded() {
       return new URL(window.location).searchParams.get("embed") === "true";
     },
     isReady() {
-      // Only display the app after the chartGroups and the charts
+      // Only display the app after the chartGroups, and the charts
       // have been loaded to avoid layout shifts.
-      return (
-        this.chartGroupStore.isReady &&
-        this.chartStore.isReady &&
-        this.appSettingsStore.isReady
+      return ref(
+        this.staticPageStore.isReady &&
+          this.chartGroupStore.isReady &&
+          this.chartStore.isReady &&
+          this.appSettingsStore.isReady,
       );
     },
     pageTitle() {
