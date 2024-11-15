@@ -4,7 +4,7 @@
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-else v-html="chartGroupStore.currentChartGroup.description" />
 
-    <h4>Please select one of the available charts:</h4>
+    <h2>Please select one of the available charts:</h2>
 
     <hr class="ecl-u-border-color-primary" />
 
@@ -20,7 +20,7 @@
       </template>
     </ecl-list-illustration>
 
-    <h4>Further information</h4>
+    <h2>Further information</h2>
 
     <chart-group-extra-links
       v-if="chartGroupStore.currentChartGroupCode"
