@@ -2,7 +2,7 @@
   <router-view />
 
   <div class="ecl-u-screen-only">
-    <h4>Browse other datasets</h4>
+    <h3>Browse other datasets</h3>
     <card-nav :items="chartGroupNavItems" />
   </div>
 </template>

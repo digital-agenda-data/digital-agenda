@@ -18,8 +18,8 @@
       :class="`ecl-u-d-${mobileBreakpoint}-flex`"
     >
       <div class="ecl-u-pa-xs">
-        <h4>About this dataset</h4>
-        <ecl-category-filter :items="navRoutes" />
+        <h2>About this dataset</h2>
+        <ecl-category-filter :items="navRoutes" aria-label="Dataset details" />
       </div>
     </div>
   </div>

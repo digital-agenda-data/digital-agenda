@@ -44,6 +44,10 @@ module.exports = defineConfig({
           console.log(message);
           return null;
         },
+        table(message) {
+          console.table(message);
+          return null;
+        },
         cleanDownloadsFolder() {
           rmSync(config.downloadsFolder, {
             recursive: true,

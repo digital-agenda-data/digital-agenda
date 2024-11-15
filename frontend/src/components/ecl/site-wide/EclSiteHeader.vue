@@ -1,5 +1,6 @@
 <template>
-  <header
+  <div
+    id="header"
     v-ecl-init
     class="ecl-site-header"
     data-ecl-auto-init="SiteHeader"
@@ -53,7 +54,7 @@
       </div>
     </div>
     <ecl-menu :items="menuItems" />
-  </header>
+  </div>
   <div class="ecl-site-header__message">
     <div class="ecl-container ecl-u-mt-m">
       <ecl-message

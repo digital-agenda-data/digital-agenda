@@ -1,8 +1,10 @@
 <template>
   <div v-if="isVisible" class="breakdown-weights ecl-u-mb-m">
-    <b class="ecl-u-type-color-grey-75"> Click to drill down </b>
+    <b class="ecl-u-type-color-grey-100"> Click to drill down </b>
     <b class="breakdown-weights-extra-header"></b>
-    <b class="ecl-u-type-color-grey-75 ecl-u-type-align-center"> Normalized </b>
+    <b class="ecl-u-type-color-grey-100 ecl-u-type-align-center">
+      Normalized
+    </b>
 
     <template v-for="item in apiData" :key="item.code">
       <ecl-link
@@ -12,7 +14,7 @@
       >
         {{ item.display }}
       </ecl-link>
-      <range-filter :query-name="item.code" />
+      <range-filter :query-name="item.code" :label="item.display" />
       <span class="ecl-u-type-align-center">
         {{ getNormalized(item.code) }}%
       </span>

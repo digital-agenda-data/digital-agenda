@@ -2,6 +2,7 @@
   <div class="ecl-page-header">
     <ecl-breadcrumbs
       v-if="breadcrumbs.length > 1"
+      id="nav"
       class="ecl-page-header__breadcrumb"
       :items="breadcrumbs"
     />

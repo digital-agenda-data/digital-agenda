@@ -1,6 +1,6 @@
 <template>
   <chart-group-nav>
-    <h4>Dataset Metadata</h4>
+    <h2>Dataset Metadata</h2>
     <div
       class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-break-word"
     >
@@ -30,7 +30,7 @@
       </dl>
     </div>
 
-    <h4>Dimensions</h4>
+    <h3>Dimensions</h3>
 
     <table class="ecl-table ecl-table--zebra ecl-u-break-word">
       <thead class="ecl-table__head">
@@ -100,7 +100,7 @@
       </tbody>
     </table>
 
-    <h4>Download Data</h4>
+    <h3>Download Data</h3>
 
     <ul>
       <li>
