@@ -25,7 +25,6 @@
         <img
           :src="item.image"
           alt=""
-          tabindex="-1"
           class="ecl-list-illustration__image"
           :class="{
             'ecl-list-illustration__image--small': small,
