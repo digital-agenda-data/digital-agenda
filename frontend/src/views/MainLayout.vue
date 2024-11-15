@@ -1,28 +1,30 @@
 <template>
   <skip-list />
-  <div
-    v-if="appSettings.global_banner_enabled"
-    v-ec-wt-render="{ service: 'globan' }"
-  />
-  <div v-if="appSettings.cck_enabled" v-ec-wt-render="{ utility: 'cck' }" />
-  <div
-    v-if="appSettings.analytics_site_id"
-    v-ec-wt-render="{
-      utility: 'analytics',
-      siteID: appSettings.analytics_site_id,
-      sitePath: [host],
-      instance: 'ec',
-      mode: 'default',
-    }"
-  />
   <div v-if="isReady" class="ecl app-wrapper">
-    <ecl-site-header />
-    <div class="ecl-container">
+    <header>
+      <div
+        v-if="appSettings.global_banner_enabled"
+        v-ec-wt-render="{ service: 'globan' }"
+      />
+      <div v-if="appSettings.cck_enabled" v-ec-wt-render="{ utility: 'cck' }" />
+      <div
+        v-if="appSettings.analytics_site_id"
+        v-ec-wt-render="{
+          utility: 'analytics',
+          siteID: appSettings.analytics_site_id,
+          sitePath: [host],
+          instance: 'ec',
+          mode: 'default',
+        }"
+      />
+      <ecl-site-header />
+    </header>
+    <main class="ecl-container">
       <ecl-page-header />
-      <main id="main">
+      <section id="main">
         <router-view />
-      </main>
-    </div>
+      </section>
+    </main>
     <ecl-site-footer />
   </div>
 </template>
