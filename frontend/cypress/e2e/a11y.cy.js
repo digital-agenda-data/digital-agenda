@@ -3,6 +3,7 @@ const pages = [
   // Captcha is broken, needs to be completely replaced.
   // "/feedback",
   "/search?q=enterprise",
+  "/page/accessibility-statement",
   "/datasets/desi-2022/charts",
   "/datasets/desi-2022/indicators",
   "/datasets/desi-2022/metadata",
