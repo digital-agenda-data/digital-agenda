@@ -35,6 +35,9 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      meta: {
+        title: "Digital Decade DESI visualisation tool",
+      },
     },
     {
       path: "/about",
