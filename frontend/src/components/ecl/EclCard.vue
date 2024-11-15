@@ -1,7 +1,7 @@
 <template>
   <article class="ecl-card">
     <picture v-if="image" class="ecl-picture ecl-card__picture">
-      <img :src="image" alt="card image" class="ecl-card__image" />
+      <img :src="image" alt="" class="ecl-card__image" />
     </picture>
 
     <div class="ecl-card__body">

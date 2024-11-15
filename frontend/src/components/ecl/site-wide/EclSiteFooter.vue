@@ -67,7 +67,11 @@
               class="ecl-site-footer__logo-link"
               aria-label="Home - European Commission"
             >
-              <img :src="logoURL" title="European Commission" alt="" />
+              <img
+                :src="logoURL"
+                title="European Commission"
+                alt="European Commission logo"
+              />
             </ecl-link>
           </div>
         </div>
