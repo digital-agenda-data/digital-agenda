@@ -17,6 +17,7 @@
         v-if="item.plaintextDescription"
         :id="`card-nav-description-${item.id}`"
         class="ecl-u-d-none"
+        hidden
       >
         {{ item.plaintextDescription }}
       </div>

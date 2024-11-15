@@ -2,6 +2,7 @@
   <ecl-form-group v-bind="{ label, helpText, required }">
     <div :class="classList">
       <vue-multiselect
+        :id="`${inputName}-filter`"
         ref="multiselect"
         v-model="value"
         :options="items"
@@ -24,7 +25,9 @@
         deselect-label=""
         select-group-label=""
         deselect-group-label=""
+        :aria-expanded="expanded"
         @open="onOpen"
+        @close="onClose"
       >
         <template #limit>
           <strong class="multiselect__tag">
@@ -144,6 +147,11 @@ export default {
     },
   },
   emits: ["update:modelValue"],
+  data() {
+    return {
+      expanded: false,
+    };
+  },
   computed: {
     allowedEmpty() {
       return this.multiple || this.required === false;
@@ -228,11 +236,15 @@ export default {
       }
     },
     onOpen() {
+      this.expanded = true;
       this.$nextTick(() => {
         this.$el
           .querySelector(".multiselect__option--selected")
           ?.scrollIntoView({ block: "nearest" });
       });
+    },
+    onClose() {
+      this.expanded = false;
     },
   },
 };
