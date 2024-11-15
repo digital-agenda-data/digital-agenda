@@ -1,6 +1,7 @@
 import json
 
 from admin_auto_filters.filters import AutocompleteFilterFactory
+from django.conf import settings
 from django.contrib import admin, messages
 from django.db import models
 from django import forms
@@ -27,6 +28,7 @@ from .models import (
     Fact,
     DataFileImport,
     DataFileImportTask,
+    StaticPage,
 )
 from digital_agenda.common.admin import HasFactsAdminMixIn
 from digital_agenda.apps.core.resources import (
@@ -411,3 +413,15 @@ class DataFileImportTaskAdmin(TaskAdmin):
             "admin:core_datafileimport_change", kwargs={"object_id": obj.import_file.id}
         )
         return mark_safe(f"<a href='{url}'>{obj.import_file}</a>")
+
+
+@admin.register(StaticPage)
+class StaticPageAdmin(admin.ModelAdmin):
+    list_display = ("code", "title", "view_live")
+    search_fields = ("code", "title")
+    prepopulated_fields = {"code": ("title",)}
+
+    @admin.display(description="View live")
+    def view_live(self, obj):
+        url = f"{settings.PROTOCOL}{settings.FRONTEND_HOST[0]}/static/{obj.code}"
+        return mark_safe(f"<a href='{url}'>View live</a>")
