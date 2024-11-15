@@ -7,7 +7,7 @@
 <script>
 import { setHighchartsDefaults } from "@/initHighchart";
 import { mapStores } from "pinia";
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent } from "vue";
 
 import { getRouteMeta } from "@/lib/utils";
 import { useChartStore } from "@/stores/chartStore";
@@ -47,11 +47,11 @@ export default {
     isReady() {
       // Only display the app after the chartGroups, and the charts
       // have been loaded to avoid layout shifts.
-      return ref(
+      return (
         this.staticPageStore.isReady &&
-          this.chartGroupStore.isReady &&
-          this.chartStore.isReady &&
-          this.appSettingsStore.isReady,
+        this.chartGroupStore.isReady &&
+        this.chartStore.isReady &&
+        this.appSettingsStore.isReady
       );
     },
     pageTitle() {
@@ -76,6 +76,11 @@ export default {
     },
   },
   mounted() {
+    this.chartGroupStore.execute();
+    this.chartStore.execute();
+    this.appSettingsStore.execute();
+    this.staticPageStore.execute();
+
     if (this.isEmbedded) {
       document.body.classList.add("digital-agenda-embedded");
     }

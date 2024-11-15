@@ -9,6 +9,7 @@ export const useStaticPageStore = defineStore("staticPage", {
       ...useAsyncState(
         api.get("/static-pages/").then((r) => r.data),
         [],
+        { immediate: false },
       ),
     };
   },
