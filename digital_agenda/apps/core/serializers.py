@@ -16,6 +16,7 @@ from .models import (
     Period,
     Fact,
 )
+from .models import StaticPage
 from ..charts.serializers.chart_options import BreakdownChartOptionSerializer
 from ..charts.serializers.chart_options import ExtraChartNoteSerializer
 from ..charts.serializers.chart_options import IndicatorChartOptionSerializer
@@ -207,3 +208,9 @@ class FeedbackSerializer(serializers.Serializer):
 
     class Meta:
         fields = ["url", "email", "message", "captcha"]
+
+
+class StaticPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StaticPage
+        fields = ["code", "title", "body"]
