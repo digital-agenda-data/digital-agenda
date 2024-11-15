@@ -11,6 +11,7 @@ export const useChartGroupStore = defineStore("chartGroup", {
       ...useAsyncState(
         api.get("/chart-groups/").then((r) => r.data),
         [],
+        { immediate: false },
       ),
     };
   },

@@ -18,6 +18,7 @@ export const useChartStore = defineStore("chart", {
       ...useAsyncState(
         api.get("/charts/").then((r) => r.data),
         [],
+        { immediate: false },
       ),
     };
   },

@@ -5,7 +5,10 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import ensure_csrf_cookie
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import viewsets
 
+from digital_agenda.apps.core.models import StaticPage
+from digital_agenda.apps.core.serializers import StaticPageSerializer
 from digital_agenda.apps.core.views.facts import EUROSTAT_FLAGS
 
 
@@ -24,3 +27,9 @@ class AppSettingsView(APIView):
                 "chart_credits": config.CHART_CREDITS,
             }
         )
+
+
+class StaticPageViewSet(viewsets.ReadOnlyModelViewSet):
+    lookup_field = "code"
+    serializer_class = StaticPageSerializer
+    queryset = StaticPage.objects.all()
