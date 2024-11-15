@@ -4,6 +4,7 @@
     v-model="modelValue"
     :max="10"
     :input-name="queryName"
+    :arial-label="label"
   />
 </template>
 
@@ -16,6 +17,10 @@ export default {
   components: { EclRange },
   props: {
     queryName: {
+      type: String,
+      required: true,
+    },
+    label: {
       type: String,
       required: true,
     },

@@ -9,6 +9,7 @@
       :max="max"
       :min="min"
       :step="step"
+      :aria-label="arialLabel ?? label"
     />
   </ecl-form-group>
 </template>
@@ -72,6 +73,11 @@ export default {
       type: Number,
       required: false,
       default: 1,
+    },
+    arialLabel: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
   emits: ["update:modelValue"],
