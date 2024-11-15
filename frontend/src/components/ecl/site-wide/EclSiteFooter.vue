@@ -1,5 +1,5 @@
 <template>
-  <footer class="ecl-site-footer">
+  <footer id="footer" class="ecl-site-footer">
     <div class="ecl-container ecl-site-footer__container">
       <div class="ecl-site-footer__row">
         <div class="ecl-site-footer__column">

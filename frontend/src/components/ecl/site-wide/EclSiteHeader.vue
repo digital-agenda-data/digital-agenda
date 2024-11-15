@@ -1,5 +1,6 @@
 <template>
   <header
+    id="header"
     v-ecl-init
     class="ecl-site-header"
     data-ecl-auto-init="SiteHeader"

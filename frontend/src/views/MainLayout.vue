@@ -1,4 +1,5 @@
 <template>
+  <skip-list />
   <div
     v-if="appSettings.global_banner_enabled"
     v-ec-wt-render="{ service: 'globan' }"
@@ -16,15 +17,18 @@
   />
   <div v-if="isReady" class="ecl app-wrapper">
     <ecl-site-header />
-    <main class="ecl-container">
+    <div class="ecl-container">
       <ecl-page-header />
-      <router-view />
-    </main>
+      <main id="main">
+        <router-view />
+      </main>
+    </div>
     <ecl-site-footer />
   </div>
 </template>
 
 <script>
+import SkipList from "@/components/SkipList.vue";
 import { mapState } from "pinia";
 import { useScriptTag } from "@vueuse/core";
 
@@ -38,7 +42,7 @@ import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 export default {
   name: "MainLayout",
-  components: { EclSiteFooter, EclPageHeader, EclSiteHeader },
+  components: { SkipList, EclSiteFooter, EclPageHeader, EclSiteHeader },
   data() {
     return {
       host: window.location.host,
