@@ -38,14 +38,17 @@ describe("Test accessibility", () => {
     cy.visit(url);
     cy.injectAxe();
 
-    // Wait for loading
+    // Wait for landmark elements
     cy.get("#header").should("be.visible");
     cy.get("#nav").should("be.visible");
     cy.get("#main").should("be.visible");
     cy.get("#footer").should("be.visible");
-    cy.get(".lds-app-loader").should("not.exist");
-    cy.waitForNetworkIdle(1000, { log: false });
 
+    // Wait for all network requests to settle and loading indicator to disappear
+    cy.waitForNetworkIdle(1000, { log: false });
+    cy.get(".lds-app-loader").should("not.exist");
+
+    // Check and log all accessibility issues.
     cy.checkA11y(null, null, terminalLog);
   }
 
