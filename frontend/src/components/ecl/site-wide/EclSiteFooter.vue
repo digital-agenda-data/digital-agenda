@@ -145,7 +145,7 @@ export default {
         },
         {
           id: "accessibility",
-          link: "/static/accessibility-statement",
+          link: "/page/accessibility-statement",
           label: "Accessibility statement",
         },
       ],
