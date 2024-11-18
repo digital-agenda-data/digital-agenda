@@ -40,8 +40,7 @@ settings. See [code style workflow](https://github.com/digital-agenda-data/digit
     - [Cookie Consent Banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Cookie+Consent+Kit+Banner)
     - [Europa Analytics](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Europa+Analytics)
     - [Sliding Captcha](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Sliding+Captcha)
-    - ~~[Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)~~
-      (Removed for now as it only works for `*.europa.eu` domains)
+    - [Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)
 - [Eurostat](https://ec.europa.eu/eurostat)
   - [Data download API](https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query)
 - Misc:

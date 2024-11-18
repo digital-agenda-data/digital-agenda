@@ -8,35 +8,8 @@
 import iconSpritesURL from "@ecl/preset-ec/dist/images/icons/sprites/icons.svg?url";
 import spritesValidIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
 
-import emailIcon from "@/assets/social-media/email.svg?url";
-import twitterIcon from "@/assets/social-media/twitter.svg?url";
-import linkedinIcon from "@/assets/social-media/linkedin.svg?url";
-import facebookIcon from "@/assets/social-media/facebook.svg?url";
-import facebookNegativeIcon from "@/assets/social-media/facebook-negative.svg?url";
-import twitterNegativeIcon from "@/assets/social-media/twitter-negative.svg?url";
-import instagramNegativeIcon from "@/assets/social-media/instagram-negative.svg?url";
-import linkedinNegativeIcon from "@/assets/social-media/linkedin-negative.svg?url";
-import youtubeNegativeIcon from "@/assets/social-media/youtube-negative.svg?url";
-import copyShareIcon from "@/assets/social-media/copy-share.svg?url";
-
 const allIcons = Object.fromEntries([
   ...spritesValidIcons.map((icon) => [icon, iconSpritesURL + "#" + icon]),
-  // We don't use the sprites for social media icons since the sprite sheet
-  // is very large. We also can't use the individual SVG directly from the
-  // ECL package because they don't have an ID for the root tag, and they can't
-  // be referenced with use; not until SVG 2.0 is finally mainstream.
-  // The images have been copied to the assets folder and edited to add the
-  // id for the root tag.
-  ["email", emailIcon + "#root"],
-  ["twitter", twitterIcon + "#root"],
-  ["linkedin", linkedinIcon + "#root"],
-  ["facebook", facebookIcon + "#root"],
-  ["twitter-negative", twitterNegativeIcon + "#root"],
-  ["facebook-negative", facebookNegativeIcon + "#root"],
-  ["instagram-negative", instagramNegativeIcon + "#root"],
-  ["linkedin-negative", linkedinNegativeIcon + "#root"],
-  ["youtube-negative", youtubeNegativeIcon + "#root"],
-  ["copy-share", copyShareIcon + "#root"],
 ]);
 
 /**
