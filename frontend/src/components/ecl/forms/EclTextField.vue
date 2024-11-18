@@ -8,8 +8,7 @@
     <ecl-popover
       ref="popover"
       :content-id="inputName + '-popover'"
-      :attach-click-listener="false"
-      :attach-key-listener="false"
+      manual-control
     >
       <template #toggle>
         <input
