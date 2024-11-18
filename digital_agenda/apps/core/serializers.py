@@ -145,21 +145,23 @@ class FactSerializer(serializers.ModelSerializer):
 
 @deconstructible
 class CaptchaValidator:
-    """Validate EU Captcha response
+    """Validate EC WebTools Sliding Captcha response
 
-    See https://wikis.ec.europa.eu/display/WEBGUIDE/09.+EU+CAPTCHA for details.
+    See https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Sliding+Captcha for details.
     """
 
     code = "invalid_captcha"
+    REQUIRED_KEYS = {
+        "wt_captcha_sid",
+        "wt_captcha_answer",
+    }
 
     def __init__(self, code=None):
         if code is not None:
             self.code = code
 
     def __call__(self, value):
-        if missing := {"wt_captcha_sid", "wt_captcha_answer"}.difference(
-            set(value.keys())
-        ):
+        if missing := self.REQUIRED_KEYS.difference(set(value.keys())):
             raise ValidationError(
                 f"Missing values for: {', '.join(missing)}", code=self.code
             )
@@ -168,6 +170,8 @@ class CaptchaValidator:
             resp = requests.post(
                 f"https://webtools.europa.eu/rest/captcha/verify",
                 headers={
+                    # Seems weird that we need to fake the Referer header, but that's
+                    # what the official docs recommend. ¯\_(ツ)_/¯
                     "Referer": "https://europa.eu/",
                 },
                 json={
