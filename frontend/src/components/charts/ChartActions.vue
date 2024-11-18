@@ -100,9 +100,16 @@ export default {
     highchartInstance() {
       return this.chartRef?.chart;
     },
+    shortUrlData() {
+      return {
+        chart: this.currentChart.id,
+        query_arguments:
+          "?" + new URLSearchParams(this.$route.query).toString(),
+      };
+    },
   },
   watch: {
-    $route() {
+    shortUrlData() {
       // Reset share URL since we will need to generate a new one if the URL
       // changes
       this.shareURL = null;
@@ -122,10 +129,7 @@ export default {
       try {
         this.loading = true;
         this.shareURL = (
-          await api.post("/short-urls/", {
-            chart: this.currentChart.id,
-            query_arguments: window.location.search,
-          })
+          await api.post("/short-urls/", this.shortUrlData)
         ).data.short_url;
       } finally {
         this.loading = false;
