@@ -34,16 +34,17 @@ settings. See [code style workflow](https://github.com/digital-agenda-data/digit
     - [Cypress testing](https://docs.cypress.io/)
     - [Europa Component Library](https://ec.europa.eu/component-library/)
 - [European Commission WebTools](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Webtools+documentation+-+Homepage), 
-  documentation requires an account to view (with 2FA active) 
+  documentation requires an account to view (with 2FA active). Most tools will only work from localhost or official domains
+  like `*.europa.eu`, see [docs](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/How+to+request+domain+whitelisting)
     - [Global banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Global+banner) 
     - [Cookie Consent Banner](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Cookie+Consent+Kit+Banner)
     - [Europa Analytics](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Europa+Analytics)
+    - [Sliding Captcha](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Sliding+Captcha)
     - [Share buttons](https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Social+bookmarking+and+networking)
 - [Eurostat](https://ec.europa.eu/eurostat)
   - [Data download API](https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query)
 - Misc:
     - EU Login - No documentation available; however it is a CAS server, so see [django-cas-ng](https://djangocas.dev/docs/latest/) instead.    
-    - [EU Captcha](https://github.com/pwc-technology-be/EU-CAPTCHA)
 
 ## Testing data
 

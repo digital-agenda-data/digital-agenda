@@ -1,7 +1,6 @@
 const pages = [
   "/",
-  // Captcha is broken, needs to be completely replaced.
-  // "/feedback",
+  "/feedback",
   "/search?q=enterprise",
   "/page/accessibility-statement",
   "/datasets/desi-2022/charts",
