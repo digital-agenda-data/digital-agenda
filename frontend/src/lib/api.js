@@ -23,6 +23,7 @@ export const loginLink = `${apiBase}/admin/`;
 export const api = axios.create({
   baseURL: apiURL,
   withCredentials: true,
+  withXSRFToken: true,
   xsrfCookieName: "csrftoken",
   xsrfHeaderName: "X-CSRFToken",
   headers: {},
