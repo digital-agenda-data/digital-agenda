@@ -157,34 +157,30 @@ class CaptchaValidator:
             self.code = code
 
     def __call__(self, value):
-        if missing := {"id", "answer", "token"}.difference(set(value.keys())):
+        if missing := {"wt_captcha_sid", "wt_captcha_answer"}.difference(
+            set(value.keys())
+        ):
             raise ValidationError(
                 f"Missing values for: {', '.join(missing)}", code=self.code
             )
 
         try:
-            # answer must be in [0, 360) deg range
-            answer = int(value["answer"]) % 360
-        except (TypeError, ValueError):
-            raise ValidationError({"answer": "invalid answer"})
-
-        try:
             resp = requests.post(
-                f"https://api.eucaptcha.eu/api/validateCaptcha/{value['id']}",
-                headers={"x-jwtString": value["token"]},
-                data={
-                    "captchaAnswer": answer,
-                    "useAudio": "false",
-                    "captchaType": "WHATS_UP",
+                f"https://webtools.europa.eu/rest/captcha/verify",
+                headers={
+                    "Referer": "https://europa.eu/",
+                },
+                json={
+                    "sid": value["wt_captcha_sid"],
+                    "answer": value["wt_captcha_answer"],
                 },
                 timeout=30,
             )
-            resp.raise_for_status()
             resp = resp.json()
             logger.debug("Captcha validation response: %s", resp)
 
-            assert resp["responseCaptcha"] == "success", "incorrect answer"
-        except (requests.RequestException, AssertionError) as e:
+            assert resp["status"] == "success", "incorrect answer"
+        except (requests.RequestException, AssertionError, TypeError, ValueError) as e:
             logger.debug("Captcha validation failed: %s", e)
             raise ValidationError(f"Unable to verify captcha: {e}", code=self.code)
 
