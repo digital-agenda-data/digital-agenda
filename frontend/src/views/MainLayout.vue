@@ -6,7 +6,13 @@
         v-if="appSettings.global_banner_enabled"
         v-ec-wt-render="{ service: 'globan' }"
       />
-      <div v-if="appSettings.cck_enabled" v-ec-wt-render="{ utility: 'cck' }" />
+      <div
+        v-if="appSettings.cck_enabled"
+        v-ec-wt-render="{
+          utility: 'cck',
+          url: 'https://commission.europa.eu/cookies_en',
+        }"
+      />
       <div
         v-if="appSettings.analytics_site_id"
         v-ec-wt-render="{
