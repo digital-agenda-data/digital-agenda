@@ -20,11 +20,11 @@
         :is="item.to ? 'EclLink' : 'picture'"
         :to="item.to"
         class="ecl-picture ecl-list-illustration__picture"
+        :title="item.title"
       >
         <img
           :src="item.image"
           alt=""
-          tabindex="-1"
           class="ecl-list-illustration__image"
           :class="{
             'ecl-list-illustration__image--small': small,

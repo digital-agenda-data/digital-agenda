@@ -1,30 +1,36 @@
 <template>
-  <div
-    v-if="appSettings.global_banner_enabled"
-    v-ec-wt-render="{ service: 'globan' }"
-  />
-  <div v-if="appSettings.cck_enabled" v-ec-wt-render="{ utility: 'cck' }" />
-  <div
-    v-if="appSettings.analytics_site_id"
-    v-ec-wt-render="{
-      utility: 'analytics',
-      siteID: appSettings.analytics_site_id,
-      sitePath: [host],
-      instance: 'ec',
-      mode: 'default',
-    }"
-  />
+  <skip-list />
   <div v-if="isReady" class="ecl app-wrapper">
-    <ecl-site-header />
+    <header>
+      <div
+        v-if="appSettings.global_banner_enabled"
+        v-ec-wt-render="{ service: 'globan' }"
+      />
+      <div v-if="appSettings.cck_enabled" v-ec-wt-render="{ utility: 'cck' }" />
+      <div
+        v-if="appSettings.analytics_site_id"
+        v-ec-wt-render="{
+          utility: 'analytics',
+          siteID: appSettings.analytics_site_id,
+          sitePath: [host],
+          instance: 'ec',
+          mode: 'default',
+        }"
+      />
+      <ecl-site-header />
+    </header>
     <main class="ecl-container">
       <ecl-page-header />
-      <router-view />
+      <section id="main">
+        <router-view />
+      </section>
     </main>
     <ecl-site-footer />
   </div>
 </template>
 
 <script>
+import SkipList from "@/components/SkipList.vue";
 import { mapState } from "pinia";
 import { useScriptTag } from "@vueuse/core";
 
@@ -38,7 +44,7 @@ import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 export default {
   name: "MainLayout",
-  components: { EclSiteFooter, EclPageHeader, EclSiteHeader },
+  components: { SkipList, EclSiteFooter, EclPageHeader, EclSiteHeader },
   data() {
     return {
       host: window.location.host,

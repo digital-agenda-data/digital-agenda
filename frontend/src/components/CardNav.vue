@@ -7,10 +7,20 @@
       class="card-nav-item"
       active-class="card-nav-item-active"
       :aria-label="item.title"
-      :aria-description="item.plaintextDescription"
+      :aria-describedby="
+        item.plaintextDescription && `card-nav-description-${item.id}`
+      "
       :title="item.plaintextDescription"
     >
       <ecl-card :image="item.image" :title="item.title" :labels="item.label" />
+      <div
+        v-if="item.plaintextDescription"
+        :id="`card-nav-description-${item.id}`"
+        class="ecl-u-d-none"
+        hidden
+      >
+        {{ item.plaintextDescription }}
+      </div>
     </router-link>
   </div>
 </template>

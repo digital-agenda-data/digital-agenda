@@ -1,10 +1,6 @@
 <template>
   <article class="ecl-card">
-    <picture
-      v-if="image"
-      class="ecl-picture ecl-card__picture"
-      aria-label="card image"
-    >
+    <picture v-if="image" class="ecl-picture ecl-card__picture">
       <img :src="image" alt="" class="ecl-card__image" />
     </picture>
 

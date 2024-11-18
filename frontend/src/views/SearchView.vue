@@ -152,4 +152,12 @@ export default {
     width: 25%;
   }
 }
+
+a {
+  color: #3860ed;
+}
+
+table {
+  color: #000000 !important;
+}
 </style>
