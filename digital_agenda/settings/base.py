@@ -40,6 +40,9 @@ DEBUG = env.bool("DEBUG", default=False)
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-SECRET_KEY
 SECRET_KEY = env.str("SECRET_KEY")
 
+# https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-CSRF_COOKIE_AGE
+CSRF_COOKIE_AGE = None
+
 # https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-CSRF_COOKIE_SECURE
 CSRF_COOKIE_SECURE = HAS_HTTPS
 
