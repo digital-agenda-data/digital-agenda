@@ -1,6 +1,6 @@
 <template>
   <div
-    v-ecl-init="{ attachClickListener }"
+    v-ecl-init="{ attachClickListener, attachKeyListener }"
     class="ecl-popover"
     data-ecl-auto-init="Popover"
   >
@@ -37,6 +37,11 @@ export default {
      * using openPopover and closePopover functions.
      */
     attachClickListener: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    attachKeyListener: {
       type: Boolean,
       required: false,
       default: true,

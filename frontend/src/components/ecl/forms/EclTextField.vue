@@ -9,6 +9,7 @@
       ref="popover"
       :content-id="inputName + '-popover'"
       :attach-click-listener="false"
+      :attach-key-listener="false"
     >
       <template #toggle>
         <input
