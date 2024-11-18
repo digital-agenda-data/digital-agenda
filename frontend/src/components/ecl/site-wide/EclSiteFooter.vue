@@ -44,7 +44,7 @@
             </h2>
             <ecl-site-footer-list
               :items="socialMediaLinks"
-              class="ecl-site-footer__list--inline"
+              class="ecl-site-footer__list--columns"
             />
           </div>
         </div>
@@ -128,12 +128,12 @@ export default {
         {
           id: "youtube-negative",
           link: "https://www.youtube.com/c/DigitalEU",
-          label: "Digital EU on Youtube",
+          label: "Digital EU on YouTube",
         },
         {
           id: "twitter-negative",
-          link: "https://twitter.com/DigitalEU",
-          label: "@DigitalEU on Twitter",
+          link: "https://x.com/DigitalEU",
+          label: "@DigitalEU on X",
         },
       ],
       aboutUsLinks: [
