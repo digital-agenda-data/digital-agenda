@@ -145,46 +145,46 @@ class FactSerializer(serializers.ModelSerializer):
 
 @deconstructible
 class CaptchaValidator:
-    """Validate EU Captcha response
+    """Validate EC WebTools Sliding Captcha response
 
-    See https://wikis.ec.europa.eu/display/WEBGUIDE/09.+EU+CAPTCHA for details.
+    See https://webgate.ec.europa.eu/fpfis/wikis/display/webtools/Sliding+Captcha for details.
     """
 
     code = "invalid_captcha"
+    REQUIRED_KEYS = {
+        "wt_captcha_sid",
+        "wt_captcha_answer",
+    }
 
     def __init__(self, code=None):
         if code is not None:
             self.code = code
 
     def __call__(self, value):
-        if missing := {"id", "answer", "token"}.difference(set(value.keys())):
+        if missing := self.REQUIRED_KEYS.difference(set(value.keys())):
             raise ValidationError(
                 f"Missing values for: {', '.join(missing)}", code=self.code
             )
 
         try:
-            # answer must be in [0, 360) deg range
-            answer = int(value["answer"]) % 360
-        except (TypeError, ValueError):
-            raise ValidationError({"answer": "invalid answer"})
-
-        try:
             resp = requests.post(
-                f"https://api.eucaptcha.eu/api/validateCaptcha/{value['id']}",
-                headers={"x-jwtString": value["token"]},
-                data={
-                    "captchaAnswer": answer,
-                    "useAudio": "false",
-                    "captchaType": "WHATS_UP",
+                f"https://webtools.europa.eu/rest/captcha/verify",
+                headers={
+                    # Seems weird that we need to fake the Referer header, but that's
+                    # what the official docs recommend. ¯\_(ツ)_/¯
+                    "Referer": "https://europa.eu/",
+                },
+                json={
+                    "sid": value["wt_captcha_sid"],
+                    "answer": value["wt_captcha_answer"],
                 },
                 timeout=30,
             )
-            resp.raise_for_status()
             resp = resp.json()
             logger.debug("Captcha validation response: %s", resp)
 
-            assert resp["responseCaptcha"] == "success", "incorrect answer"
-        except (requests.RequestException, AssertionError) as e:
+            assert resp["status"] == "success", "incorrect answer"
+        except (requests.RequestException, AssertionError, TypeError, ValueError) as e:
             logger.debug("Captcha validation failed: %s", e)
             raise ValidationError(f"Unable to verify captcha: {e}", code=self.code)
 

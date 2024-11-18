@@ -1,6 +1,9 @@
 <template>
   <div
-    v-ecl-init="{ attachClickListener }"
+    v-ecl-init="{
+      attachClickListener: !manualControl,
+      attachKeyListener: !manualControl,
+    }"
     class="ecl-popover"
     data-ecl-auto-init="Popover"
   >
@@ -8,7 +11,8 @@
       class="ecl-popover__toggle"
       :aria-controls="contentId"
       data-ecl-popover-toggle=""
-      aria-expanded="false"
+      :aria-expanded="manualControl ? undefined : 'false'"
+      :role="manualControl ? undefined : 'button'"
       aria-label="Popover toggle"
     >
       <slot name="toggle"></slot>
@@ -36,16 +40,17 @@ export default {
      * Disable the default click listener and toggle the popover manually
      * using openPopover and closePopover functions.
      */
-    attachClickListener: {
+    manualControl: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
     contentId: {
       type: String,
       required: true,
     },
   },
+  computed: {},
   methods: {
     openPopover() {
       this.$el.ECLPopover.openPopover();

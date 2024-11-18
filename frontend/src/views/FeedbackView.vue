@@ -25,11 +25,7 @@
       placeholder-text="Type in your message"
       :errors="errors.message"
     />
-    <captcha-field
-      ref="captchaField"
-      v-model="captcha"
-      :errors="errors.captcha"
-    />
+    <captcha-field ref="captchaField" :errors="errors.captcha" />
     <ecl-button label="Submit" type="submit" />
   </form>
 </template>
@@ -67,8 +63,17 @@ export default {
       captcha: null,
     };
   },
-  computed: {
-    postData() {
+  methods: {
+    ...mapActions(useMessagesStore, ["addMessage"]),
+    getCaptcha() {
+      const inputs = this.$refs.captchaField.$el.querySelectorAll("input");
+      const result = {};
+      for (const inputEl of inputs) {
+        result[inputEl.name] = inputEl.value;
+      }
+      return result;
+    },
+    getPostData() {
       return {
         url: new URL(
           this.$router.options.history.state.back ?? "/",
@@ -76,17 +81,14 @@ export default {
         ).href,
         email: this.email,
         message: this.message,
-        captcha: this.captcha,
+        captcha: this.getCaptcha(),
       };
     },
-  },
-  methods: {
-    ...mapActions(useMessagesStore, ["addMessage"]),
     async submitFeedback() {
       try {
         this.loading = true;
         this.resetErrors();
-        await api.post("/feedback/", this.postData);
+        await api.post("/feedback/", this.getPostData());
         this.addMessage({
           id: "feedback-alert",
           type: "success",
@@ -105,9 +107,9 @@ export default {
         });
       } finally {
         this.loading = false;
-        // Regardless of result reload the captcha, as the image
-        // should have already been invalidated server side
-        await this.$refs.captchaField.reloadCaptchaImg();
+        // Regardless of result, reload the captcha, as the challenge
+        // would have already been invalidated server side.
+        window.$wt?.captcha.refresh();
       }
     },
     resetForm() {
