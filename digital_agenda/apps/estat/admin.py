@@ -66,6 +66,7 @@ taken as they are instead. Example:
 
 @admin.register(ImportConfig)
 class ImportConfigAdmin(admin.ModelAdmin):
+    save_as = True
     list_per_page = 20
     formfield_overrides = {models.JSONField: {"widget": JSONEditorWidget}}
     list_display = (
