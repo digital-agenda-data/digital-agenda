@@ -238,11 +238,11 @@ class TestDimensionAPI(APIBaseTest):
             },
             {
                 "A2": "b",
-                "A3": "c",
-                "A4": "d",
+                "A3": "d",
+                "A4": "e",
                 "B2": "break in time series",
-                "B3": "confidential",
-                "B4": "definition differs, see metadata",
+                "B3": "definition differs, see metadata",
+                "B4": "estimated",
             },
         )
 
