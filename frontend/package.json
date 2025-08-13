@@ -17,7 +17,7 @@
     "@sentry/vue": "8.33.1",
     "@vueuse/core": "10.7.2",
     "@vueuse/router": "10.7.2",
-    "axios": "1.7.4",
+    "axios": "1.8.2",
     "highcharts": "11.3.0",
     "highcharts-vue": "1.4.3",
     "pinia": "2.1.7",
