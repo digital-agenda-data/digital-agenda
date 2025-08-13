@@ -31,18 +31,25 @@ from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.apps.core.views import DimensionViewSetMixin
 
 EUROSTAT_FLAGS = {
-    # Taken from https://ec.europa.eu/eurostat/data/database/information
+    # Taken from https://ec.europa.eu/eurostat/en/web/main/data/database#Flags
     "b": "break in time series",
-    "c": "confidential",
     "d": "definition differs, see metadata",
     "e": "estimated",
     "f": "forecast",
     "n": "not significant",
     "p": "provisional",
-    "r": "revised",
-    "s": "Eurostat estimate",
     "u": "low reliability",
+    # Deprecated flags
+    "s": "Eurostat estimate",
     "z": "not applicable",
+    "c": "confidential",
+    "r": "revised",
+    # New Eurostat flags
+    "i": "value imputed by Eurostat or other receiving agencies",
+    "m": "missing value, data cannot exist",
+    "C": "confidential",
+    "N": "not for publication",
+    "P": "information under non-statistical secrecy arrangements",
     # Custom flags, not from ESTAT; for internal use only
     "x": "unavailable",
     "~": "at least one datapoint missing from combined value",
@@ -307,7 +314,7 @@ class FactXLSXSerializer:
             for header in self.headers:
                 raw_value = row[header]
                 if header == "flags":
-                    value = ", ".join(EUROSTAT_FLAGS[i] for i in raw_value)
+                    value = ", ".join(EUROSTAT_FLAGS.get(i, i) for i in raw_value)
                 elif header in self.dimensions_by_code:
                     obj = self.dimensions_by_code[header][raw_value]
                     value = obj.label or obj.alt_label or obj.code
