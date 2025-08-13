@@ -33,16 +33,23 @@ from digital_agenda.apps.core.views import DimensionViewSetMixin
 EUROSTAT_FLAGS = {
     # Taken from https://ec.europa.eu/eurostat/data/database/information
     "b": "break in time series",
-    "c": "confidential",
     "d": "definition differs, see metadata",
     "e": "estimated",
     "f": "forecast",
     "n": "not significant",
     "p": "provisional",
-    "r": "revised",
-    "s": "Eurostat estimate",
     "u": "low reliability",
+    # Deprecated flags
+    "s": "Eurostat estimate",
     "z": "not applicable",
+    "c": "confidential",
+    "r": "revised",
+    # New Eurostat flags
+    "i": "value imputed by Eurostat or other receiving agencies",
+    "m": "missing value, data cannot exist",
+    "C": "confidential",
+    "N": "not for publication",
+    "P": "information under non-statistical secrecy arrangements",
     # Custom flags, not from ESTAT; for internal use only
     "x": "unavailable",
     "~": "at least one datapoint missing from combined value",
