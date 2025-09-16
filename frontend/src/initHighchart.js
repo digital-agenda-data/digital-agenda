@@ -64,6 +64,8 @@ export function setHighchartsDefaults() {
     },
     yAxis: {
       allowDecimals: false,
+      // improve automatic setting of max value for percentages close to 100%
+      endOnTick: false,
     },
     xAxis: {
       allowDecimals: false,
