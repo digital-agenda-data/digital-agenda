@@ -64,7 +64,10 @@ Full list can be viewed by clicking on this link:
 
 @cron("0 10 * * MON")
 def send_estat_update_alerts():
-    config_count = ImportConfig.objects.filter(new_version_available=True).count()
+    config_count = ImportConfig.objects.filter(
+        new_version_available=True,
+        disable_check_updates=False,
+    ).count()
     if not config_count:
         logger.info("No import config has a new version available")
         return
@@ -98,7 +101,9 @@ def check_all_configs_for_updates():
     # Don't check configs that already have the "new version available" flag already set.
     for estat_code in (
         ImportConfig.objects.filter(
-            datastructure_last_version__isnull=False, new_version_available=False
+            datastructure_last_version__isnull=False,
+            new_version_available=False,
+            disable_check_updates=False,
         )
         .values_list("code", flat=True)
         .distinct("code")
@@ -114,7 +119,9 @@ def check_estat_dataset_for_updates(code):
     logger.info("Checking %s for updates", code)
 
     dataflow = EstatDataflow(code)
-    for config in ImportConfig.objects.filter(code=code, new_version_available=False):
+    for config in ImportConfig.objects.filter(
+        code=code, new_version_available=False, disable_check_updates=False
+    ):
         if (
             dataflow.version != config.datastructure_last_version
             or dataflow.update_data != config.data_last_update
