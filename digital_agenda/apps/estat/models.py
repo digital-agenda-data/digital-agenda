@@ -100,6 +100,11 @@ class ImportConfig(models.Model):
         blank=True, null=True, help_text="Additional notes/remarks"
     )
 
+    disable_check_updates = models.BooleanField(
+        default=False,
+        help_text="Don't check for new data in ESTAT",
+    )
+
     data_last_update = models.DateTimeField(
         null=True,
         help_text="Last data update of the local copy of the dataset as extracted from the ESTAT annotations",

@@ -87,6 +87,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "tags",
         ("additional_remarks", EmptyFieldListFilter),
         "new_version_available",
+        "disable_check_updates",
     )
     readonly_fields = (
         "num_facts",
@@ -111,6 +112,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
                     "tags",
                     "additional_remarks",
                     "conflict_resolution",
+                    "disable_check_updates",
                 ]
             },
         ),
