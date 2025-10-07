@@ -28,6 +28,12 @@ class Command(BaseCommand):
             help="Delete existing facts before importing new ones",
         )
         parser.add_argument(
+            "--dry-run",
+            action="store_true",
+            default=False,
+            help="Dry run only",
+        )
+        parser.add_argument(
             "--noinput",
             "--no-input",
             action="store_true",
@@ -41,6 +47,7 @@ class Command(BaseCommand):
         code=None,
         force_download=False,
         delete_existing=False,
+        dry_run=False,
         noinput=False,
         **options,
     ):
@@ -66,6 +73,7 @@ class Command(BaseCommand):
             config.run_import(
                 force_download=force_download,
                 delete_existing=delete_existing,
+                dry_run=dry_run,
             )
 
         if not all(config.latest_task.status == "SUCCESS" for config in config_qs):

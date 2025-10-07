@@ -8,7 +8,9 @@ import logging
 import decimal
 from functools import cached_property
 from collections import defaultdict
+from io import BytesIO
 
+import openpyxl
 import requests
 from django.conf import settings
 
@@ -328,23 +330,25 @@ class EstatImporter:
         return fact
 
     def create_batch(self, facts):
-        return Fact.objects.bulk_create(
-            facts,
-            update_conflicts=True,
-            update_fields=(
-                "value",
-                "flags",
-                "import_config",
-                "reference_period",
-                "remarks",
-            ),
-            unique_fields=(
-                "indicator",
-                "breakdown",
-                "unit",
-                "country",
-                "period",
-            ),
+        return len(
+            Fact.objects.bulk_create(
+                facts,
+                update_conflicts=True,
+                update_fields=(
+                    "value",
+                    "flags",
+                    "import_config",
+                    "reference_period",
+                    "remarks",
+                ),
+                unique_fields=(
+                    "indicator",
+                    "breakdown",
+                    "unit",
+                    "country",
+                    "period",
+                ),
+            )
         )
 
     def run(self, batch_size=10_000):
@@ -352,18 +356,7 @@ class EstatImporter:
         self.config.clean_with_dataset(self.dataset)
 
         logger.info("Importing with %r", self.config)
-
-        total = 0
-        for facts in batched(self.iter_facts(), batch_size):
-            total += len(self.create_batch(facts))
-            logger.info(
-                "Batch processed %r; fact objs created in total %s", self.config, total
-            )
-
-        logger.info("Assigning indicator datasource")
-        for indicator in self.cache["indicator"].values():
-            indicator.data_sources.add(self.data_source)
-
+        total = self.create_facts(batch_size=batch_size)
         logger.info(
             "Import complete %r; processed %s out of %s total in the ESTAT dataset",
             self.config,
@@ -371,8 +364,119 @@ class EstatImporter:
             len(self.dataset),
         )
 
+    def create_facts(self, batch_size=10_000):
+        total = 0
+        for facts in batched(self.iter_facts(), batch_size):
+            total += self.create_batch(facts)
+            logger.info(
+                "Batch processed %r; fact objs created in total %s", self.config, total
+            )
+        return total
+
+    def update_config(self):
+        logger.info("Assigning indicator datasource")
+        for indicator in self.cache["indicator"].values():
+            indicator.data_sources.add(self.data_source)
         self.config.data_last_update = self.dataset.dataflow.update_data
         self.config.datastructure_last_update = self.dataset.dataflow.update_structure
         self.config.datastructure_last_version = self.dataset.dataflow.version
         self.config.new_version_available = False
         self.config.save()
+
+
+class DryRunEstatImporter(EstatImporter):
+    def __init__(self, config, force_download=False):
+        super().__init__(config, force_download=force_download)
+        self.wb = openpyxl.Workbook()
+        self.ws = self.wb.active
+        self.set_headers()
+        self.current_facts = self.get_current_facts()
+
+    def get_current_facts(self):
+        qs = Fact.objects.filter(import_config=self.config).select_related(
+            "indicator", "breakdown", "unit", "country", "period"
+        )
+        return {fact.unique_key: fact for fact in qs}
+
+    def set_headers(self):
+        self.ws.append(
+            [
+                "Indicator",
+                "Breakdown",
+                "Unit",
+                "Country",
+                "Period",
+                "Old Flags",
+                "New Flags",
+                "Old Value",
+                "New Value",
+                "Diff",
+                "Change Type",
+            ]
+        )
+        self.ws.freeze_panes = "A2"
+
+    def create_batch(self, facts):
+        count = 0
+        for new_fact in facts:
+            count += 1
+            old_fact = self.current_facts.pop(new_fact.unique_key, None)
+            if not old_fact:
+                change_type = "CREATE"
+            elif old_fact.value != new_fact.value:
+                change_type = "UPDATE value"
+            elif old_fact.flags != new_fact.flags:
+                change_type = "UPDATE flags"
+            else:
+                change_type = "NO CHANGE"
+
+            diff = None
+            if old_fact and old_fact.value is not None and new_fact.value is not None:
+                diff = new_fact.value - old_fact.value
+
+            self.ws.append(
+                [
+                    new_fact.indicator.code,
+                    new_fact.breakdown.code,
+                    new_fact.unit.code,
+                    new_fact.country.code,
+                    new_fact.period.code,
+                    old_fact.flags if old_fact else None,
+                    new_fact.flags,
+                    old_fact.value if old_fact else None,
+                    new_fact.value,
+                    diff,
+                    change_type,
+                ]
+            )
+        return count
+
+    def create_facts(self, batch_size=10_000):
+        total = super().create_facts(batch_size=batch_size)
+        for fact in self.current_facts.values():
+            self.ws.append(
+                [
+                    fact.indicator.code,
+                    fact.breakdown.code,
+                    fact.unit.code,
+                    fact.country.code,
+                    fact.period.code,
+                    fact.value,
+                    fact.flags,
+                    None,
+                    None,
+                    "DELETE",
+                ]
+            )
+        self.ws.auto_filter.ref = self.ws.dimensions
+        return total
+
+    def update_config(self):
+        logger.info("Configuration not update when importing to XLSX")
+
+    def get_xlsx(self):
+        buffer = BytesIO()
+        buffer.name = f"{self.config.code}.xlsx"
+        self.wb.save(buffer)
+        buffer.seek(0)
+        return buffer
