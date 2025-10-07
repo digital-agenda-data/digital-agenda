@@ -353,6 +353,10 @@ class ImportFromConfigTask(TaskRQ):
     import_config = models.ForeignKey(
         ImportConfig, on_delete=models.CASCADE, related_name="tasks"
     )
+    dry_run = models.BooleanField(default=False)
+    dry_run_report = models.FileField(
+        upload_to="estat_dry_run_reports/", null=True, editable=False, default=None
+    )
     force_download = models.BooleanField(
         default=False, help_text="Force redownload the dataset"
     )
@@ -378,3 +382,11 @@ class ImportFromConfigTask(TaskRQ):
         from .jobs import ImportFromConfigJob
 
         return ImportFromConfigJob
+
+    def clean(self):
+        if self.dry_run and self.delete_existing:
+            raise ValidationError(
+                {
+                    "delete_existing": "Cannot delete existing facts when running in dry-run mode"
+                }
+            )
