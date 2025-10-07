@@ -1,4 +1,7 @@
 name: Deploy Prod
+permissions:
+  contents: read
+  packages: write
 
 # Ensure that only one job works on this at a time
 concurrency: prod-deploy

@@ -1,4 +1,7 @@
 name: Create and publish a Docker images
+permissions:
+  contents: read
+  packages: write
 
 # Ensure that only one job works on this at a time
 concurrency: ci-build

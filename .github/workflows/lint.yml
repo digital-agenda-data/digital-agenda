@@ -1,4 +1,6 @@
 name: "Code Style"
+permissions:
+  contents: read
 
 on:
   push:

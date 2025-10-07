@@ -1,4 +1,7 @@
 name: "Continuous Integration"
+permissions:
+  contents: read
+  packages: write
 
 # Ensure that only one job works on this at a time
 concurrency: ci-deploy
