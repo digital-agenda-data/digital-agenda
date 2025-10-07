@@ -1,4 +1,4 @@
-Django==4.2.*  # LTS
+Django==5.2.*  # LTS
 django-adminactions
 django-admin-autocomplete-filter
 django-admin-env-notice
