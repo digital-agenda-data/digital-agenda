@@ -11,29 +11,19 @@ import HighchartsVue from "highcharts-vue";
 
 import Highcharts from "highcharts";
 
-import exportingInit from "highcharts/modules/exporting";
-import exportingDataInit from "highcharts/modules/export-data";
-import offlineExportingInit from "highcharts/modules/offline-exporting";
+import "highcharts/modules/exporting";
+import "highcharts/modules/export-data";
+import "highcharts/modules/offline-exporting";
 
-import accessibilityInit from "highcharts/modules/accessibility";
-import noDataToDisplayInit from "highcharts/modules/no-data-to-display";
+import "highcharts/modules/accessibility";
+import "highcharts/modules/no-data-to-display";
 
 // highchart-more required for the Bubble chart
 // (adds a 3rd dimension to the scatter plot)
-import highchartsMoreInit from "highcharts/highcharts-more";
-import mapInit from "highcharts/modules/map";
+import "highcharts/highcharts-more";
+import "highcharts/modules/map";
 
 import { SERIES_COLORS } from "@/lib/constants";
-
-exportingInit(Highcharts);
-exportingDataInit(Highcharts);
-offlineExportingInit(Highcharts);
-
-accessibilityInit(Highcharts);
-noDataToDisplayInit(Highcharts);
-
-mapInit(Highcharts);
-highchartsMoreInit(Highcharts);
 
 export function setHighchartsDefaults() {
   const appSettings = useAppSettings().appSettings;
