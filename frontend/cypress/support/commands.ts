@@ -82,7 +82,7 @@ Cypress.Commands.addAll({
       .first()
       .type("{esc}", { force: true });
     cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
-      "not.be.visible",
+      "not.exist",
     );
   },
   searchIndicators(searchQuery) {
