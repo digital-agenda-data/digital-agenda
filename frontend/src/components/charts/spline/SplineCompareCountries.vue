@@ -68,7 +68,7 @@ export default {
               // Add data label to the last entry
               enabled: true,
               formatter() {
-                const lastIndex = this.series.yData.findLastIndex(
+                const lastIndex = this.series.dataTable.columns.y.findLastIndex(
                   (el) => el !== null,
                 );
 
