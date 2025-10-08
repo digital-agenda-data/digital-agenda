@@ -422,6 +422,17 @@ class DryRunEstatImporter(EstatImporter):
             count += 1
             old_fact = self.current_facts.pop(new_fact.unique_key, None)
             if not old_fact:
+                # There might be a fact that has the same unique key, but was not
+                # included because it's missing the import_config fk.
+                old_fact = Fact.objects.filter(
+                    indicator=new_fact.indicator,
+                    breakdown=new_fact.breakdown,
+                    unit=new_fact.unit,
+                    country=new_fact.country,
+                    period=new_fact.period,
+                ).first()
+
+            if not old_fact:
                 change_type = "CREATE"
             elif old_fact.value != new_fact.value:
                 change_type = "UPDATE value"
@@ -461,8 +472,9 @@ class DryRunEstatImporter(EstatImporter):
                     fact.unit.code,
                     fact.country.code,
                     fact.period.code,
-                    fact.value,
                     fact.flags,
+                    None,
+                    fact.value,
                     None,
                     None,
                     "DELETE",
