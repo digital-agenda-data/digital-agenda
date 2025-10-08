@@ -69,7 +69,8 @@ class EstatDataflow:
 
     def download(self):
         logger.info("Getting metadata from: %s", self.download_url)
-        resp = requests.get(self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT)
+        session = requests.Session()
+        resp = session.get(self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT)
         resp.raise_for_status()
         self.dataset = resp.json()
 
@@ -124,8 +125,8 @@ class EstatDataset(JSONStat):
         # XXX   - split the download per years using the start/endPeriod filter
         # XXX   - filter the download using the provided keys filters
         logger.info("Downloading from: %s", self.download_url)
-
-        with requests.get(
+        session = requests.Session()
+        with session.get(
             self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT, stream=True
         ) as resp:
             with self.download_gz_path.open("wb") as f_out:
@@ -356,7 +357,9 @@ class EstatImporter:
         self.config.clean_with_dataset(self.dataset)
 
         logger.info("Importing with %r", self.config)
+
         total = self.create_facts(batch_size=batch_size)
+        self.update_config()
         logger.info(
             "Import complete %r; processed %s out of %s total in the ESTAT dataset",
             self.config,

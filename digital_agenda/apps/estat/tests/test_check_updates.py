@@ -10,11 +10,12 @@ from digital_agenda.apps.estat.jobs import check_estat_dataset_for_updates
 from digital_agenda.apps.estat.jobs import send_estat_update_alerts
 from digital_agenda.apps.estat.jobs import User
 from digital_agenda.apps.estat.models import ImportConfig
+from digital_agenda.common.test_utils import BetamaxPatchTestCase
 
 THE_FUTURE = datetime.datetime(5542, 1, 1, tzinfo=UTC)
 
 
-class TestCheckUpdates(TestCase):
+class TestCheckUpdates(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
     def setUp(self):

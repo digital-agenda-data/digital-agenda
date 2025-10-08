@@ -1,9 +1,6 @@
 import json
-from unittest.mock import patch
 
-from betamax.fixtures.unittest import BetamaxTestCase
 from django.conf import settings
-from django.test import TestCase
 from openpyxl.reader.excel import load_workbook
 
 from digital_agenda.apps.core.models import Breakdown
@@ -14,6 +11,7 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.estat.models import ImportConfig
+from digital_agenda.common.test_utils import BetamaxPatchTestCase
 
 EU27_2020 = [
     "at",
@@ -45,18 +43,6 @@ EU27_2020 = [
     "si",
     "sk",
 ]
-
-
-class BetamaxPatchTestCase(BetamaxTestCase, TestCase):
-    def setUp(self):
-        super().setUp()
-        self._mock_session = patch(
-            "requests.sessions.Session", return_value=self.session
-        ).start()
-
-    def tearDown(self):
-        super().tearDown()
-        patch.stopall()
 
 
 class TestImporterSuccess(BetamaxPatchTestCase):
@@ -395,9 +381,9 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
             country__code="EU",
         )
         # EU should have:
-        #   - 4.3 for e_di_vhi
-        #   - 28.1 for e_di_hi
-        self.assertEqual(fact.value, 32.4)
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        self.assertEqual(fact.value, 32.09)
         self.assertEqual(fact.flags, "")
 
     def test_avg_values(self):
@@ -413,9 +399,9 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
             country__code="EU",
         )
         # EU should have:
-        #   - 4.3 for e_di_vhi
-        #   - 28.1 for e_di_hi
-        self.assertEqual(fact.value, 16.2)
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        self.assertEqual(fact.value, 16.045)
         self.assertEqual(fact.flags, "")
 
     def test_missing_value_sum(self):
