@@ -48,7 +48,7 @@ module.exports = defineConfig({
       [360, 640],
     ],
     setupNodeEvents(on, config) {
-      on('before:browser:launch', (browser = {}, launchOptions) => {
+      on("before:browser:launch", (browser = {}, launchOptions) => {
         // Start browsers with prefers-reduced-motion set to "reduce" to avoid flakyness from
         // waiting for animations to finish.
         if (browser.family === "firefox") {
@@ -58,7 +58,12 @@ module.exports = defineConfig({
         if (browser.family === "chromium") {
           launchOptions.args.push("--force-prefers-reduced-motion");
         }
-        return launchOptions
+
+        if (browser.name === "electron") {
+          launchOptions.preferences.prefersReducedMotion = true;
+        }
+
+        return launchOptions;
       });
       on("task", verifyDownloadTasks);
       on("task", {
