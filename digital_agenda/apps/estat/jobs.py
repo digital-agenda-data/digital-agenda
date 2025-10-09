@@ -3,11 +3,13 @@ import logging
 import constance
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
+from django.core.files import File
 from django.core.mail import send_mail
 from django_rq import job
 
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
+from digital_agenda.apps.estat.importer import DryRunEstatImporter
 from digital_agenda.apps.estat.importer import EstatDataflow
 from digital_agenda.apps.estat.importer import EstatImporter
 from digital_agenda.apps.estat.importer import ImporterError
@@ -22,19 +24,33 @@ User = get_user_model()
 
 
 class ImportFromConfigJob(LoggingJob):
-    @staticmethod
-    def execute_with_logging(job, task):
+    @classmethod
+    def _execute_import(cls, task):
+        importer = EstatImporter(task.import_config, force_download=task.force_download)
+        logger.info("Processing config: %r", importer.config)
+
+        if task.delete_existing:
+            result = Fact.objects.filter(import_config=importer.config).delete()
+            logger.info("Deleted Facts: %s", result)
+
+        importer.run()
+
+    @classmethod
+    def _execute_dry_run(cls, task):
+        importer = DryRunEstatImporter(
+            task.import_config, force_download=task.force_download
+        )
+        logger.info("Processing config: %r", importer.config)
+        importer.run()
+        task.dry_run_report = File(importer.get_xlsx())
+
+    @classmethod
+    def execute_with_logging(cls, job, task):
         try:
-            importer = EstatImporter(
-                task.import_config, force_download=task.force_download
-            )
-            logger.info("Processing config: %r", importer.config)
-
-            if task.delete_existing:
-                result = Fact.objects.filter(import_config=importer.config).delete()
-                logger.info("Deleted Facts: %s", result)
-
-            importer.run()
+            if task.dry_run:
+                cls._execute_dry_run(task)
+            else:
+                cls._execute_import(task)
         except ValidationError as exc:
             task.errors = exc.message_dict
             raise

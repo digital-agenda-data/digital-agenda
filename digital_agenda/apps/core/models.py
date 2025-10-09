@@ -335,6 +335,16 @@ class Fact(TimestampedModel):
             )
         ]
 
+    @property
+    def unique_key(self):
+        return (
+            self.indicator.code,
+            self.breakdown.code,
+            self.unit.code,
+            self.country.code,
+            self.period.code,
+        )
+
 
 def upload_path(instance, filename):
     ts = (
