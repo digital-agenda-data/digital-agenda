@@ -32,6 +32,21 @@ export function setHighchartsDefaults() {
 
   // Set global defaults
   Highcharts.setOptions({
+    accessibility: {
+      screenReaderSection: {
+        beforeChartFormat: [
+          "<h2>{chartTitle}</h2>",
+          "<div>{typeDescription}</div>",
+          "<div>{chartSubtitle}</div>",
+          "<div>{chartLongdesc}</div>",
+          "<div>{playAsSoundButton}</div>",
+          "<div>{viewTableButton}</div>",
+          "<div>{xAxisDescription}</div>",
+          "<div>{yAxisDescription}</div>",
+          "<div>{annotationsTitle}{annotationsList}</div>",
+          ].join("")
+      }
+    },
     chart: {
       // Chart height is set by the parent container
       height: null,
