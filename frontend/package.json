@@ -27,7 +27,7 @@
     "highcharts-vue": "2.0.1",
     "pinia": "3.0.3",
     "vue": "3.5.22",
-    "vue-multiselect": "3.2.0",
+    "vue-multiselect": "3.4.0",
     "vue-router": "4.5.1"
   },
   "devDependencies": {

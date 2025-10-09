@@ -25,7 +25,9 @@ import "highcharts/modules/map";
 
 import { SERIES_COLORS } from "@/lib/constants";
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+);
 
 export function setHighchartsDefaults() {
   const appSettings = useAppSettings().appSettings;
@@ -44,8 +46,8 @@ export function setHighchartsDefaults() {
           "<div>{xAxisDescription}</div>",
           "<div>{yAxisDescription}</div>",
           "<div>{annotationsTitle}{annotationsList}</div>",
-          ].join("")
-      }
+        ].join(""),
+      },
     },
     chart: {
       // Chart height is set by the parent container
