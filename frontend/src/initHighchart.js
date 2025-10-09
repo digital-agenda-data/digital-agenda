@@ -25,6 +25,8 @@ import "highcharts/modules/map";
 
 import { SERIES_COLORS } from "@/lib/constants";
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 export function setHighchartsDefaults() {
   const appSettings = useAppSettings().appSettings;
 
@@ -36,6 +38,7 @@ export function setHighchartsDefaults() {
       zooming: {
         pinchType: "x",
       },
+      animation: !prefersReducedMotion,
     },
     colors: SERIES_COLORS,
     exporting: {
@@ -71,6 +74,7 @@ export function setHighchartsDefaults() {
     },
     plotOptions: {
       series: {
+        animation: !prefersReducedMotion,
         events: {
           // Disable selecting series from the legend on small screen
           legendItemClick() {
@@ -94,6 +98,7 @@ export function setHighchartsDefaults() {
             },
             plotOptions: {
               series: {
+                animation: !prefersReducedMotion,
                 events: {
                   // Enable selecting series from the legend on large screens
                   legendItemClick() {
