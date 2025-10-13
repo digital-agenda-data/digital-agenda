@@ -150,9 +150,11 @@ Cypress.Commands.addAll({
       .then((text) => {
         for (const txt of texts) {
           // Highcharts adds ZeroWidthSpaces in the text, so we can't
-          // check normally
+          // check normally. If the space is preceded by a hyphen, remove it
+          // completely as it will introduce a false space between two values.
+          // (e.g. Age 16- 18)
           expect(
-            text.replace(/[\u200B-\u200D\uFEFF]/g, " ").replace(/\s+/g, " "),
+            text.replace(/-\u200C/, "-").replace(/[\u200B-\u200D\uFEFF]/g, " ").replace(/\s+/g, " "),
           ).to.contain(txt);
         }
       });
