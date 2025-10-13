@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ecl-u-bg-neutral-60 ecl-u-border-color-secondary ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only chart-filters"
+    class="ecl-u-bg-neutral-40 ecl-u-border-color-secondary ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only chart-filters"
   >
     <component
       :is="item.component"
