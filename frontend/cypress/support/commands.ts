@@ -154,7 +154,7 @@ Cypress.Commands.addAll({
           // completely as it will introduce a false space between two values.
           // (e.g. Age 16- 18)
           expect(
-            text.replace(/-\u200C/, "-").replace(/[\u200B-\u200D\uFEFF]/g, " ").replace(/\s+/g, " "),
+            text.replace(/-[\u200B-\u200D\uFEFF]/, "-").replace(/[\u200B-\u200D\uFEFF]/g, " ").replace(/\s+/g, " "),
           ).to.contain(txt);
         }
       });
