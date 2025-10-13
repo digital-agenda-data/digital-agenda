@@ -57,7 +57,7 @@
   </div>
   <div class="ecl-site-header__message">
     <div class="ecl-container ecl-u-mt-m">
-      <ecl-message
+      <ecl-notification
         v-for="(message, index) in messagesStore.messageList"
         v-bind="message"
         :key="'message' + index"
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import EclMessage from "@/components/ecl/EclMessage.vue";
+import EclNotification from "@/components/ecl/EclNotification.vue";
 import EclMenu from "@/components/ecl/navigation/EclMenu.vue";
 import { useMessagesStore } from "@/stores/messagesStore";
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
@@ -86,7 +86,7 @@ import { mapStores } from "pinia";
  */
 export default {
   name: "EclSiteHeader",
-  components: { EclMenu, EclMessage, EclLink, EclButton, EclSearchForm },
+  components: { EclMenu, EclNotification, EclLink, EclButton, EclSearchForm },
   data() {
     return {
       logoURL,
