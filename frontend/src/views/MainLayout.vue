@@ -96,7 +96,9 @@ export default {
 </script>
 
 <style>
-@import "@ecl/preset-reset/dist/styles/optional/ecl-reset.css";
+@import "@ecl/preset-ec/dist/styles/optional/ecl-reset.css";
+@import "@ecl/preset-ec/dist/styles/optional/ecl-ec-utilities.css";
+@import "@ecl/preset-ec/dist/styles/optional/ecl-ec-easy-to-read.css";
 
 @import "@ecl/preset-ec/dist/styles/optional/ecl-ec-default.css" screen;
 @import "@ecl/preset-ec/dist/styles/ecl-ec.css" screen;

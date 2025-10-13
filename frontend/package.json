@@ -17,8 +17,7 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@ecl/preset-ec": "3.13.0",
-    "@ecl/preset-reset": "3.13.0",
+    "@ecl/preset-ec": "4.11.0",
     "@sentry/vue": "10.18.0",
     "@vueuse/core": "13.9.0",
     "@vueuse/router": "13.9.0",
