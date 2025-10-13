@@ -63,3 +63,8 @@
 .ecl-table__cell:before {
   max-width: 90px;
 }
+
+// Fixes missing space next to the search button
+.ecl-search-form .ecl-button__container {
+  justify-content: space-around;
+}
