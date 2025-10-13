@@ -61,7 +61,6 @@
       }"
       variant="primary"
       label="Consult the list of available indicators, their definition and sources"
-      no-visited
     />
   </p>
   <p>
@@ -73,7 +72,6 @@
         },
       }"
       label="Entire dataset metadata and download services"
-      no-visited
     />
   </p>
 </template>

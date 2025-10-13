@@ -1,7 +1,7 @@
 <template>
   <interactive-chart ref="interactiveChart" :key="currentChart.code" />
   <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m"
+    class="ecl-u-bg-neutral-60 ecl-u-border-color-secondary ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m"
   >
     <h2>Definition and scopes:</h2>
 
@@ -13,7 +13,7 @@
       </div>
 
       <hr
-        class="actions-separator ecl-u-border-color-grey-50 ecl-u-d-block ecl-u-d-l-none"
+        class="actions-separator ecl-u-border-color-neutral-100 ecl-u-d-block ecl-u-d-l-none"
       />
 
       <div class="ecl-col-12 ecl-col-l-4 ecl-u-screen-only">
