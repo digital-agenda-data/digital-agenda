@@ -30,6 +30,7 @@
                 <ecl-link
                   to="https://digital-strategy.ec.europa.eu/en/write-us"
                   class="ecl-site-footer__link"
+                  inverted
                 >
                   Contact DG CONNECT
                 </ecl-link>
