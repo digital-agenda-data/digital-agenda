@@ -1,9 +1,7 @@
 import json
-from unittest.mock import patch
 
-from betamax.fixtures.unittest import BetamaxTestCase
 from django.conf import settings
-from django.test import TestCase
+from openpyxl.reader.excel import load_workbook
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
@@ -13,6 +11,7 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.estat.models import ImportConfig
+from digital_agenda.common.test_utils import BetamaxPatchTestCase
 
 EU27_2020 = [
     "at",
@@ -44,18 +43,6 @@ EU27_2020 = [
     "si",
     "sk",
 ]
-
-
-class BetamaxPatchTestCase(BetamaxTestCase, TestCase):
-    def setUp(self):
-        super().setUp()
-        self._mock_session = patch(
-            "requests.sessions.Session", return_value=self.session
-        ).start()
-
-    def tearDown(self):
-        super().tearDown()
-        patch.stopall()
 
 
 class TestImporterSuccess(BetamaxPatchTestCase):
@@ -147,6 +134,118 @@ class TestImporterSuccess(BetamaxPatchTestCase):
         # It's actually 28 because we expect "EU" as well
         self.assertEqual(len(codes), 28)
         self.assertEqual(EU27_2020, list(codes))
+
+
+class TestImporterDryRun(BetamaxPatchTestCase):
+    fixtures = ["test/geogroup", "test/importconfig.json"]
+
+    def setUp(self):
+        super().setUp()
+        self.config = ImportConfig.objects.first()
+        self.key = ("h_comp", "a1_dch", "pc_hh", "nl", "2010")
+
+    def check_dry_run(self):
+        self.config.run_import(dry_run=True)
+        self.config.refresh_from_db()
+        self.assertEqual(self.config.latest_task.status, "SUCCESS")
+        self.assertIsNotNone(self.config.latest_task.dry_run_report)
+
+        wb = load_workbook(self.config.latest_task.dry_run_report.file, read_only=True)
+        ws = wb.active
+
+        rows = list(ws.rows)
+        headers = [i.value for i in rows[0]]
+        values = {}
+        for row in rows[1:]:
+            row = [i.value for i in row]
+            key = tuple(row[:5])
+            values[key] = dict(zip(headers, row))
+        return values
+
+    def create_fact(self, value, flags):
+        return Fact.objects.create(
+            import_config=self.config,
+            indicator=Indicator.objects.get_or_create(code="h_comp")[0],
+            breakdown=Breakdown.objects.get_or_create(code="a1_dch")[0],
+            unit=Unit.objects.get_or_create(code="pc_hh")[0],
+            country=Country.objects.get_or_create(code="nl")[0],
+            period=Period.objects.get_or_create(code="2010")[0],
+            value=value,
+            flags=flags,
+        )
+
+    def test_create(self):
+        results = self.check_dry_run()
+        row = results[self.key]
+        self.assertEqual(row["Change Type"], "CREATE")
+        self.assertEqual(row["Old Value"], None)
+        self.assertEqual(row["Old Flags"], None)
+        self.assertEqual(row["New Value"], 100)
+        self.assertEqual(row["New Flags"], "u")
+        self.assertEqual(row["Diff"], None)
+
+    def test_verify_no_import_config(self):
+        fact = self.create_fact(100, "u")
+        fact.import_config = None
+        fact.save()
+
+        results = self.check_dry_run()
+        row = results[self.key]
+        self.assertEqual(row["Change Type"], "NO CHANGE")
+        self.assertEqual(row["Old Value"], 100)
+        self.assertEqual(row["Old Flags"], "u")
+        self.assertEqual(row["New Value"], 100)
+        self.assertEqual(row["New Flags"], "u")
+        self.assertEqual(row["Diff"], 0)
+
+    def test_verify_no_change(self):
+        self.create_fact(100, "u")
+        results = self.check_dry_run()
+        row = results[self.key]
+        self.assertEqual(row["Change Type"], "NO CHANGE")
+        self.assertEqual(row["Old Value"], 100)
+        self.assertEqual(row["Old Flags"], "u")
+        self.assertEqual(row["New Value"], 100)
+        self.assertEqual(row["New Flags"], "u")
+        self.assertEqual(row["Diff"], 0)
+
+    def test_verify_update_value(self):
+        self.create_fact(99, "u")
+        results = self.check_dry_run()
+        row = results[self.key]
+        self.assertEqual(row["Change Type"], "UPDATE value")
+        self.assertEqual(row["Old Value"], 99)
+        self.assertEqual(row["Old Flags"], "u")
+        self.assertEqual(row["New Value"], 100)
+        self.assertEqual(row["New Flags"], "u")
+        self.assertEqual(row["Diff"], 1)
+
+    def test_verify_update_flags(self):
+        self.create_fact(100, "r")
+        results = self.check_dry_run()
+        row = results[self.key]
+        self.assertEqual(row["Change Type"], "UPDATE flags")
+        self.assertEqual(row["Old Value"], 100)
+        self.assertEqual(row["Old Flags"], "r")
+        self.assertEqual(row["New Value"], 100)
+        self.assertEqual(row["New Flags"], "u")
+        self.assertEqual(row["Diff"], 0)
+
+    def test_verify_delete(self):
+        fact = self.create_fact(100, "r")
+        fact.indicator = Indicator.objects.get_or_create(code="foo_bar")[0]
+        fact.save()
+
+        key = ("foo_bar", "a1_dch", "pc_hh", "nl", "2010")
+
+        results = self.check_dry_run()
+        row = results[key]
+        self.assertEqual(row["Change Type"], "DELETE")
+        self.assertEqual(row["Old Value"], 100)
+        self.assertEqual(row["Old Flags"], "r")
+        self.assertEqual(row["New Value"], None)
+        self.assertEqual(row["New Flags"], None)
+        self.assertEqual(row["Diff"], None)
 
 
 class TestImporter(BetamaxPatchTestCase):
@@ -282,9 +381,9 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
             country__code="EU",
         )
         # EU should have:
-        #   - 4.3 for e_di_vhi
-        #   - 28.1 for e_di_hi
-        self.assertEqual(fact.value, 32.4)
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        self.assertEqual(fact.value, 32.09)
         self.assertEqual(fact.flags, "")
 
     def test_avg_values(self):
@@ -300,9 +399,9 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
             country__code="EU",
         )
         # EU should have:
-        #   - 4.3 for e_di_vhi
-        #   - 28.1 for e_di_hi
-        self.assertEqual(fact.value, 16.2)
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        self.assertEqual(fact.value, 16.045)
         self.assertEqual(fact.flags, "")
 
     def test_missing_value_sum(self):

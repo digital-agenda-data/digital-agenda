@@ -100,7 +100,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
         "databrowser_link",
     )
     autocomplete_fields = ("country_group", "tags")
-    actions = ("trigger_import", "trigger_import_destructive")
+    actions = ("trigger_import", "trigger_import_destructive", "trigger_import_dry_run")
 
     fieldsets = (
         (
@@ -166,6 +166,12 @@ class ImportConfigAdmin(admin.ModelAdmin):
     def trigger_import_destructive(self, request, queryset):
         return self._trigger_import(
             request, queryset, force_download=True, delete_existing=True
+        )
+
+    @admin.action(description="Trigger dry run import for selected configs")
+    def trigger_import_dry_run(self, request, queryset):
+        return self._trigger_import(
+            request, queryset, force_download=True, dry_run=True
         )
 
     def _trigger_import(self, request, queryset, **kwargs):
@@ -271,6 +277,8 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
         "import_config_link",
         "delete_existing",
         "force_download",
+        "dry_run",
+        "dry_run_report",
         "created_on",
         "duration_display",
         "status_display",
