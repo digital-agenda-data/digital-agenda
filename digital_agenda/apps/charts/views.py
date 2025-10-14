@@ -144,7 +144,7 @@ class ChartViewSet(CodeLookupMixin, viewsets.ReadOnlyModelViewSet):
             .prefetch_related(
                 "filter_order",
                 "font_styles",
-                *Chart.m2m_filter_options,
+                *Chart.get_m2m_filter_options(),
             )
         )
 

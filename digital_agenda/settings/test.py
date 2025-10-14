@@ -15,3 +15,7 @@ with Betamax.configure() as config:
     config.cassette_library_dir = BETAMAX_FIXTURES
     config.default_cassette_options["record_mode"] = "once"
     config.default_cassette_options["preserve_exact_body_bytes"] = "all"
+
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK": lambda request: False,
+}

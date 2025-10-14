@@ -537,12 +537,20 @@ DJANGO_DEBUG_TOOLBAR = env.bool("DJANGO_DEBUG_TOOLBAR", default=True)
 
 if DEBUG:
     INTERNAL_IPS = ["127.0.0.1"]
+    AUTH_PASSWORD_VALIDATORS = [
+        {
+            "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+            "OPTIONS": {"min_length": 4},
+        }
+    ]
+    MIDDLEWARE.append("request_logging.middleware.LoggingMiddleware")
+    REQUEST_LOGGING_DATA_LOG_LEVEL = logging.INFO
+    REQUEST_LOGGING_MAX_BODY_LENGTH = 1000
 
     if DJANGO_DEBUG_TOOLBAR:
-        INSTALLED_APPS += ["debug_toolbar"]
-
-    if DEBUG and DJANGO_DEBUG_TOOLBAR:
         import socket
+
+        INSTALLED_APPS += ["debug_toolbar"]
 
         def show_toolbar(request):
             return DEBUG and (
@@ -557,16 +565,3 @@ if DEBUG:
             "SHOW_COLLAPSED": True,
             "SHOW_TOOLBAR_CALLBACK": f"{__name__}.show_toolbar",
         }
-
-    AUTH_PASSWORD_VALIDATORS = [
-        {
-            "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-            "OPTIONS": {"min_length": 4},
-        }
-    ]
-
-    if DEBUG:
-        MIDDLEWARE.append("request_logging.middleware.LoggingMiddleware")
-
-    REQUEST_LOGGING_DATA_LOG_LEVEL = logging.INFO
-    REQUEST_LOGGING_MAX_BODY_LENGTH = 1000

@@ -55,7 +55,7 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
         "is_draft",
     )
     exclude = ("display_order",)
-    autocomplete_fields = ("chart_group", *Chart.m2m_filter_options)
+    autocomplete_fields = ("chart_group", *Chart.get_m2m_filter_options())
     fieldsets = [
         (
             None,
