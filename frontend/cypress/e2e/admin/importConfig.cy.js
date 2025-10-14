@@ -1,12 +1,16 @@
+import { randomStr } from "../../support/randomStr.js";
+
 describe("Check import configuration", () => {
   it("Create and run import config", () => {
+    const title = randomStr("test-import-config-");
+
     cy.login();
     // Navigate to the import config page
     cy.get("a").contains("Import configs").click();
     cy.get("a").contains("Add import config").click();
     // Add a new import config with filters set to only import a single Fact
     cy.get("input[name=code]").type("isoc_ci_it_h");
-    cy.get("input[name=title]").type("Test import config");
+    cy.get("input[name=title]").type(title);
     cy.get("input[name=indicator]").type("indic_is");
     cy.get("input[name=breakdown]").type("hhtyp");
     cy.get("input[name=reference_period]").type("time");
@@ -32,17 +36,26 @@ describe("Check import configuration", () => {
     );
     cy.get("input[type=submit][value=Save]").click();
     // Trigger an import task
+    cy.get("[role=search] input[type=text]").type(title);
+    cy.get("[role=search] input[type=submit]").click();
     cy.get("td.action-checkbox input[type=checkbox]").first().click();
     cy.get("select[name=action]").select("Trigger import for selected configs");
     cy.get("button[type=submit]").contains("Go").click();
     // Wait for the task to finish
+    cy.contains("1 result");
     cy.get("tbody tr:first-child td.field-status_display").contains("SUCCESS", {
       timeout: 10000,
     });
     // Navigate to the import config change form
     cy.get("tbody tr:first-child td.field-import_config_link a").click();
     // Check that only one fact has been imported, and open the fact details
-    cy.get(".field-num_facts a").contains("1").click();
+    cy.get(".field-num_facts a")
+      .invoke("text")
+      .then((text) => {
+        expect(text.trim()).equal("1");
+      });
+    cy.get(".field-num_facts a").click();
+    cy.contains("1 fact");
     cy.get("tbody tr:first-child th.field-indicator a").click();
 
     // Check imported values

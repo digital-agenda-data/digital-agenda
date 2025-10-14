@@ -31,9 +31,7 @@
                 size="s"
                 class="ecl-button__icon ecl-button__icon--before"
               />
-              <span class="ecl-button__label" data-ecl-label="true">
-                Close
-              </span>
+              <span class="ecl-button__label" data-ecl-label="true">Close</span>
             </span>
           </button>
           <div class="ecl-menu__title">Menu</div>
@@ -49,7 +47,7 @@
                 size="xs"
                 class="ecl-button__icon ecl-button__icon--before"
               />
-              <span class="ecl-button__label" data-ecl-label=""> Back </span>
+              <span class="ecl-button__label" data-ecl-label="">Back</span>
             </span>
           </button>
         </header>
@@ -85,9 +83,7 @@
               class="ecl-button__icon ecl-button__icon--before"
               size="s"
             />
-            <span class="ecl-u-sr-only" data-ecl-label="true">
-              Next items
-            </span>
+            <span class="ecl-u-sr-only" data-ecl-label="true">Next items</span>
           </span>
         </button>
         <ul class="ecl-menu__list" data-ecl-menu-list="">

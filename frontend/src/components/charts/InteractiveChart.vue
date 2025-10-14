@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only chart-filters"
+    class="ecl-u-bg-neutral-40 ecl-u-border-color-secondary ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-screen-only chart-filters"
   >
     <component
       :is="item.component"
@@ -12,7 +12,7 @@
     />
   </div>
   <div
-    class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-grey-10 chart-container-digital-agenda"
+    class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-neutral-60 chart-container-digital-agenda"
     :class="chartComponent?.name"
   >
     <component :is="chartComponent" ref="chart" />

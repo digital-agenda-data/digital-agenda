@@ -88,25 +88,14 @@ export default {
   border: 3px solid transparent;
 }
 
-.card-nav-item:hover,
-.card-nav-item-active {
-  border-color: #ffd617;
-
-  .ecl-card {
-    border-color: transparent;
-  }
-}
-
 .card-nav-item-active {
   pointer-events: none;
 }
 
+.card-nav-item-active,
 .card-nav-item:hover {
-  border-color: #004494;
-  background-color: #e3e3e3;
-
   .ecl-card {
-    background-color: transparent;
+    background-color: var(--ecl-color-neutral-60);
   }
 }
 </style>

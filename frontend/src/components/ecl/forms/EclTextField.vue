@@ -27,7 +27,7 @@
         />
       </template>
 
-      <template #default> Link copied to clipboard </template>
+      <template #default>Link copied to clipboard</template>
     </ecl-popover>
   </ecl-form-group>
 </template>
@@ -78,7 +78,6 @@ export default {
     },
     async copyURL(text) {
       try {
-        // eslint-disable-next-line compat/compat
         await navigator.clipboard.writeText(text);
         this.$refs.popover.openPopover();
       } catch (error) {

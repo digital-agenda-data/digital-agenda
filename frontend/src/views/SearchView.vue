@@ -25,7 +25,9 @@
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="item.label" />
                 <!-- eslint-disable-next-line vue/no-v-html -->
-                (<span v-html="item.code" />)
+                (
+                <span v-html="item.code" />
+                )
               </ecl-link>
               <!-- eslint-disable-next-line vue/no-v-html -->
               <div class="ecl-u-mt-2xs" v-html="item.definition" />

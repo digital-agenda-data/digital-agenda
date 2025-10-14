@@ -108,6 +108,11 @@ export default {
       required: false,
       default: false,
     },
+    inverted: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     // Add tracking download class if set
     downloadClass: {
       type: Boolean,
@@ -136,6 +141,10 @@ export default {
         } else {
           result.push("ecl-link--icon-after");
         }
+      }
+
+      if (this.inverted) {
+        result.push("ecl-link--inverted");
       }
 
       if (this.noVisited) {

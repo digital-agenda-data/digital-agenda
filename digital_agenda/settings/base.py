@@ -85,7 +85,7 @@ THIRD_PARTY_APPS = [
     "django_rq",
     "django_task",
     "adminsortable2",
-    "ckeditor",
+    "django_ckeditor_5",
     "colorfield",
     "corsheaders",
     "django_filters",
@@ -486,41 +486,36 @@ LOGGING = {
 
 # CKEditor
 
-CKEDITOR_CONFIGS = {
+CKEDITOR_5_CONFIGS = {
     "default": {
-        # https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-enterMode
-        "enterMode": 2,
-        "forceEnterMode": True,
-        "toolbar": [
-            [
-                "Styles",
-                "Format",
-                "Bold",
-                "Italic",
-                "Underline",
-                "Strike",
-                "SpellChecker",
-                "Undo",
-                "Redo",
+        "toolbar": {
+            "items": [
+                "undo",
+                "redo",
+                "|",
+                "heading",
+                "|",
+                "fontsize",
+                "fontColor",
+                "fontBackgroundColor",
+                "|",
+                "bold",
+                "italic",
+                "strikethrough",
+                "|",
+                "link",
+                "uploadImage",
+                "blockQuote",
+                "|",
+                "bulletedList",
+                "numberedList",
+                "todoList",
+                "outdent",
+                "indent",
+                "|",
+                "sourceEditing",
             ],
-            [
-                "NumberedList",
-                "BulletedList",
-                "-",
-                "Outdent",
-                "Indent",
-                "-",
-                "JustifyLeft",
-                "JustifyCenter",
-                "JustifyRight",
-                "JustifyBlock",
-            ],
-            ["Link", "Unlink", "Anchor"],
-            ["Image", "Flash", "Table", "HorizontalRule"],
-            ["TextColor", "BGColor"],
-            ["Smiley", "SpecialChar"],
-            ["Source"],
-        ],
+        },
     },
 }
 

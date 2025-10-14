@@ -5,6 +5,7 @@
         :to="item.link"
         :label="item.label"
         class="ecl-site-footer__link"
+        inverted
       />
     </li>
   </ul>
