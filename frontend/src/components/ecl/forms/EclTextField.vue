@@ -27,7 +27,7 @@
         />
       </template>
 
-      <template #default> Link copied to clipboard </template>
+      <template #default>Link copied to clipboard</template>
     </ecl-popover>
   </ecl-form-group>
 </template>
