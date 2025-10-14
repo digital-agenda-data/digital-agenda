@@ -68,5 +68,8 @@
     "last 2 versions",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "overrides": {
+    "serialize-javascript": "3.1.0"
+  }
 }
