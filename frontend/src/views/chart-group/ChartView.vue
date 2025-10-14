@@ -3,7 +3,7 @@
   <div
     class="ecl-u-bg-neutral-40 ecl-u-border-color-secondary ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m"
   >
-    <h2>Definition and scopes:</h2>
+    <h2>Definitions and scope:</h2>
 
     <div class="ecl-row">
       <div class="ecl-col-12 ecl-col-l-8 chart-definitions">
