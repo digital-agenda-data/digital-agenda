@@ -62,7 +62,7 @@ class ChartSerializer(serializers.ModelSerializer):
             "is_draft",
             "image",
             # Chart options
-            *Chart.filter_options,
+            *Chart.get_filter_options(),
             "legend_layout",
             "font_styles",
             "filter_order",

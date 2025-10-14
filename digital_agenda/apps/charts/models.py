@@ -321,8 +321,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         return self.name
 
     @classmethod
-    @property
-    def m2m_filter_options(cls):
+    def get_m2m_filter_options(cls):
         return tuple(
             subfield.name
             for private_field in Chart._meta.private_fields
@@ -331,8 +330,7 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         )
 
     @classmethod
-    @property
-    def filter_options(cls):
+    def get_filter_options(cls):
         return tuple(
             subfield.name
             for private_field in Chart._meta.private_fields
