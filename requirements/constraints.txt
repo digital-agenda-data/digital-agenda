@@ -20,7 +20,7 @@ django-admin-env-notice==1.0.1
 django-admin-sortable2==2.2.8
 django-adminactions==2.4
 django-cas-ng==5.0.1
-django-ckeditor==6.7.3
+django-ckeditor-5==0.2.18
 django-colorfield==0.14.0
 django-composite-field==2.0.1
 django-constance==4.3.2
@@ -32,7 +32,6 @@ django-filter==25.2
 django-hashid-field==3.4.1
 django-health-check==3.20.0
 django-import-export==4.3.10
-django-js-asset==3.1.2
 django-json-widget==2.0.3
 django-model-utils==5.0.0
 django-redis==6.0.0
