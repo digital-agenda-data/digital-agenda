@@ -14,12 +14,17 @@
             class="ecl-site-header__logo-link"
             aria-label="European Commission"
           >
-            <img
-              alt="European Commission logo"
+            <picture
+              class="ecl-picture ecl-site-header__picture"
               title="European Commission"
-              class="ecl-site-header__logo-image ecl-site-header__logo-image-desktop"
-              :src="logoURL"
-            />
+            >
+              <source :srcset="logoURL" media="(min-width: 996px)" />
+              <img
+                class="ecl-site-header__logo-image"
+                :src="logoURLSmall"
+                alt="European Commission logo"
+              />
+            </picture>
           </ecl-link>
           <div class="ecl-site-header__action">
             <div class="ecl-site-header__search-container">
@@ -57,7 +62,7 @@
   </div>
   <div class="ecl-site-header__message">
     <div class="ecl-container ecl-u-mt-m">
-      <ecl-message
+      <ecl-notification
         v-for="(message, index) in messagesStore.messageList"
         v-bind="message"
         :key="'message' + index"
@@ -68,10 +73,11 @@
 </template>
 
 <script>
-import EclMessage from "@/components/ecl/EclMessage.vue";
+import EclNotification from "@/components/ecl/EclNotification.vue";
 import EclMenu from "@/components/ecl/navigation/EclMenu.vue";
 import { useMessagesStore } from "@/stores/messagesStore";
 import logoURL from "@ecl/preset-ec/dist/images/logo/positive/logo-ec--en.svg?url";
+import logoURLSmall from "@ecl/preset-ec/dist/images/logo/logo-ec--mute.svg?url";
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclSearchForm from "@/components/ecl/forms/EclSearchForm.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
@@ -86,10 +92,11 @@ import { mapStores } from "pinia";
  */
 export default {
   name: "EclSiteHeader",
-  components: { EclMenu, EclMessage, EclLink, EclButton, EclSearchForm },
+  components: { EclMenu, EclNotification, EclLink, EclButton, EclSearchForm },
   data() {
     return {
       logoURL,
+      logoURLSmall,
       searchQuery: useRouteQuery("q"),
       menuItems: [
         {

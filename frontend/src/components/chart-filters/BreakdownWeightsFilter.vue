@@ -1,10 +1,8 @@
 <template>
   <div v-if="isVisible" class="breakdown-weights ecl-u-mb-m">
-    <b class="ecl-u-type-color-grey-100"> Click to drill down </b>
+    <b class="ecl-u-type-color-grey-100">Click to drill down</b>
     <b class="breakdown-weights-extra-header"></b>
-    <b class="ecl-u-type-color-grey-100 ecl-u-type-align-center">
-      Normalized
-    </b>
+    <b class="ecl-u-type-color-grey-100 ecl-u-type-align-center">Normalized</b>
 
     <template v-for="item in apiData" :key="item.code">
       <ecl-link

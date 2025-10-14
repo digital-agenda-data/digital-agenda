@@ -1,26 +1,26 @@
 <template>
   <div
-    class="ecl-message"
-    :class="`ecl-message--${type}`"
-    data-ecl-message=""
+    class="ecl-notification"
+    :class="`ecl-notification--${type}`"
+    data-ecl-notification=""
     role="alert"
   >
-    <ecl-icon :icon="icons[type]" size="l" class="ecl-message__icon" />
+    <ecl-icon :icon="icons[type]" size="l" class="ecl-notification__icon" />
 
-    <div class="ecl-message__content">
+    <div class="ecl-notification__content">
       <ecl-button
-        class="ecl-message__close"
-        data-ecl-message-close=""
+        class="ecl-notification__close"
+        data-ecl-notification-close=""
         variant="ghost"
         label="Close"
         icon="close-filled"
         @click="$emit('close')"
       />
 
-      <div v-if="title" class="ecl-message__title">
+      <div v-if="title" class="ecl-notification__title">
         {{ title }}
       </div>
-      <div v-if="description" class="ecl-message__description">
+      <div v-if="description" class="ecl-notification__description">
         {{ description }}
       </div>
     </div>
@@ -32,12 +32,12 @@ import EclButton from "@/components/ecl/EclButton.vue";
 import EclIcon from "@/components/ecl/EclIcon.vue";
 
 /**
- * ECL Message component, see documentation here:
+ * ECL Notification component, see documentation here:
  *
- *  https://ec.europa.eu/component-library/ec/components/message/usage/
+ *  https://ec.europa.eu/component-library/ec/components/notification/usage/
  */
 export default {
-  name: "EclMessage",
+  name: "EclNotification",
   components: { EclButton, EclIcon },
   props: {
     title: {

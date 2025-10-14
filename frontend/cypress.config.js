@@ -1,13 +1,23 @@
-require("dotenv").config({ path: "../.env" });
+import dotenv from "dotenv";
 
-const { rmSync, readdirSync } = require("fs");
-const { defineConfig } = require("cypress");
-const { verifyDownloadTasks } = require("cy-verify-downloads");
+dotenv.config({ path: "../.env" });
+
+import { verifyDownloadTasks } from "cy-verify-downloads";
+import { defineConfig } from "cypress";
+import { readdirSync, rmSync } from "node:fs";
+import { plugin as cypressGrepPlugin } from "@cypress/grep/plugin";
+
+export default defineConfig({
+  e2e: {
+    specPattern: "cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}",
+    baseUrl: "http://localhost:4173",
+  },
+});
 
 // XXX We don't actually know which one we should use
 // XXX if there are more than one!
-const backendHost = process.env.BACKEND_HOST.split(",")[0];
-const frontendHost = process.env.FRONTEND_HOST.split(",")[0];
+const backendHost = process.env.BACKEND_HOST?.split(",")?.[0];
+const frontendHost = process.env.FRONTEND_HOST?.split(",")?.[0];
 
 module.exports = defineConfig({
   scrollBehavior: "center",
@@ -38,6 +48,23 @@ module.exports = defineConfig({
       [360, 640],
     ],
     setupNodeEvents(on, config) {
+      on("before:browser:launch", (browser = {}, launchOptions) => {
+        // Start browsers with prefers-reduced-motion set to "reduce" to avoid flakyness from
+        // waiting for animations to finish.
+        if (browser.family === "firefox") {
+          launchOptions.preferences["ui.prefersReducedMotion"] = 1;
+        }
+
+        if (browser.family === "chromium") {
+          launchOptions.args.push("--force-prefers-reduced-motion");
+        }
+
+        if (browser.name === "electron") {
+          launchOptions.preferences.prefersReducedMotion = true;
+        }
+
+        return launchOptions;
+      });
       on("task", verifyDownloadTasks);
       on("task", {
         log(message) {
@@ -59,7 +86,7 @@ module.exports = defineConfig({
           return readdirSync(config.downloadsFolder);
         },
       });
-      require("@cypress/grep/src/plugin")(config);
+      cypressGrepPlugin(config);
       return config;
     },
   },

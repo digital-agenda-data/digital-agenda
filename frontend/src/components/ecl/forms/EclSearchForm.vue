@@ -5,8 +5,8 @@
     :action="searchAction"
     :method="method"
   >
-    <div class="ecl-form-group">
-      <div v-if="helpText" class="ecl-help-block">
+    <div class="ecl-form-group ecl-u-align-items-center">
+      <div v-if="helpText" class="ecl-help-block ecl-u-mr-xs">
         {{ helpText }}
       </div>
       <label :for="inputName" class="ecl-form-label ecl-search-form__label">

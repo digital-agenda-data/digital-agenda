@@ -37,6 +37,7 @@
               :to="`${apiURL}/indicator-groups/${group.code}/facts/`"
               no-visited
               download-class
+              variant="none"
               label="data"
             />
             <span>,&nbsp;</span>
@@ -44,6 +45,7 @@
               :to="`${apiURL}/indicators/?indicator_group=${group.code}&format=csv`"
               no-visited
               download-class
+              variant="none"
               label="indicators"
             />
             <span>,&nbsp;</span>
@@ -51,6 +53,7 @@
               :to="`${apiURL}/data-sources/?indicator_group=${group.code}&format=csv`"
               no-visited
               download-class
+              variant="none"
               label="data sources"
             />
             <span>,&nbsp;</span>
@@ -58,6 +61,7 @@
               :to="`${apiURL}/countries/?indicator_group=${group.code}&format=csv`"
               no-visited
               download-class
+              variant="none"
               label="countries"
             />
             <span>,&nbsp;</span>
@@ -65,6 +69,7 @@
               :to="`${apiURL}/breakdowns/?indicator_group=${group.code}&format=csv`"
               no-visited
               download-class
+              variant="none"
               label="breakdowns"
             />
             <span>,&nbsp;</span>
@@ -72,6 +77,7 @@
               :to="`${apiURL}/units/?indicator_group=${group.code}&format=csv`"
               no-visited
               download-class
+              variant="none"
               label="units"
             />
           </th>

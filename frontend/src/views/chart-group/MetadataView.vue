@@ -2,7 +2,7 @@
   <chart-group-nav>
     <h2>Dataset Metadata</h2>
     <div
-      class="ecl-u-bg-grey-10 ecl-u-border-color-yellow ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-break-word"
+      class="ecl-u-bg-neutral-40 ecl-u-border-color-secondary ecl-u-border-left ecl-u-border-width-8 ecl-u-pa-m ecl-u-break-word"
     >
       <dl class="ecl-description-list">
         <dt class="ecl-description-list__term">Dataset</dt>

@@ -1,7 +1,7 @@
-@import "chart";
-@import "eclExtra";
-@import "transitions";
-@import "multiselect";
+@use "chart";
+@use "eclExtra";
+@use "transitions";
+@use "multiselect";
 
 body.digital-agenda-embedded .globan {
   display: none;

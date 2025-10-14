@@ -47,7 +47,7 @@ export default {
       ];
 
       for (const match of this.$route.matched) {
-        let label = getRouteMeta(match, "breadcrumb");
+        const label = getRouteMeta(match, "breadcrumb");
         if (!label) {
           continue;
         }

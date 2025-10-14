@@ -48,6 +48,16 @@ describe("Test accessibility", () => {
     cy.get(".lds-app-loader").should("not.exist");
 
     // Check and log all accessibility issues.
+    cy.configureAxe({
+      checks: [
+        {
+          // Disable check because of upstream issue
+          // https://github.com/shentao/vue-multiselect/issues/1923
+          id: "aria-valid-attr-value",
+          enabled: false,
+        },
+      ],
+    });
     cy.checkA11y(null, null, terminalLog);
   }
 
