@@ -42,13 +42,19 @@ describe("Check import configuration", () => {
     cy.get("select[name=action]").select("Trigger import for selected configs");
     cy.get("button[type=submit]").contains("Go").click();
     // Wait for the task to finish
+    cy.contains("1 result");
     cy.get("tbody tr:first-child td.field-status_display").contains("SUCCESS", {
       timeout: 10000,
     });
     // Navigate to the import config change form
     cy.get("tbody tr:first-child td.field-import_config_link a").click();
     // Check that only one fact has been imported, and open the fact details
-    cy.get(".field-num_facts a").contains("1").click();
+    cy.get(".field-num_facts a")
+      .invoke("text")
+      .then((text) => {
+        expect(text.trim()).equal("1");
+      });
+    cy.get(".field-num_facts a").click();
     cy.contains("1 fact");
     cy.get("tbody tr:first-child th.field-indicator a").click();
 
