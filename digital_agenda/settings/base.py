@@ -552,7 +552,6 @@ if DEBUG:
     REQUEST_LOGGING_DATA_LOG_LEVEL = logging.INFO
     REQUEST_LOGGING_MAX_BODY_LENGTH = 1000
 
-
     if DJANGO_DEBUG_TOOLBAR:
         import socket
 
