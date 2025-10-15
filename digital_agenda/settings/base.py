@@ -486,6 +486,54 @@ LOGGING = {
 
 # CKEditor
 
+CKEDITOR_COLORS = [
+    {"color": "#fff", "label": "white"},
+    {"color": "#000", "label": "black"},
+    {"color": "#051036", "label": "primary-180"},
+    {"color": "#0a1f6c", "label": "primary-160"},
+    {"color": "#0f2fa2", "label": "primary-140"},
+    {"color": "#143fd9", "label": "primary-120"},
+    {"color": "#3860ed", "label": "primary-100"},
+    {"color": "#5577f0", "label": "primary-80"},
+    {"color": "#89a1f4", "label": "primary-60"},
+    {"color": "#b1c0f8", "label": "primary-40"},
+    {"color": "#d8e0fb", "label": "primary-20"},
+    {"color": "#8f5600", "label": "secondary-180"},
+    {"color": "#e08700", "label": "secondary-160"},
+    {"color": "#ff9d0a", "label": "secondary-140"},
+    {"color": "#ffad33", "label": "secondary-120"},
+    {"color": "#ffbe5c", "label": "secondary-100"},
+    {"color": "#ffcb7c", "label": "secondary-80"},
+    {"color": "#ffd89d", "label": "secondary-60"},
+    {"color": "#ffe5be", "label": "secondary-40"},
+    {"color": "#fff2de", "label": "secondary-20"},
+    {"color": "#6c85d1", "label": "neutral-180"},
+    {"color": "#7f95d7", "label": "neutral-160"},
+    {"color": "#92a5dd", "label": "neutral-140"},
+    {"color": "#a6b5e3", "label": "neutral-120"},
+    {"color": "#b9c5e9", "label": "neutral-100"},
+    {"color": "#cdd5ef", "label": "neutral-80"},
+    {"color": "#e0e5f5", "label": "neutral-60"},
+    {"color": "#f3f5fb", "label": "neutral-40"},
+    {"color": "#f8f9fd", "label": "neutral-20"},
+    {"color": "#887de8", "label": "accent-160"},
+    {"color": "#978cf2", "label": "accent-140"},
+    {"color": "#a89efa", "label": "accent-120"},
+    {"color": "#bbb3ff", "label": "accent-100"},
+    {"color": "#bfb2ff", "label": "accent-80"},
+    {"color": "#d1ccff", "label": "accent-60"},
+    {"color": "#fafaff", "label": "accent-40"},
+    {"color": "#26324b", "label": "dark-100"},
+    {"color": "#546fa6", "label": "dark-80"},
+    {"color": "#9ac", "label": "dark-60"},
+    {"color": "#3860ed", "label": "info"},
+    {"color": "#24a148", "label": "success"},
+    {"color": "#da1e28", "label": "error"},
+    {"color": "#f39811", "label": "warning"},
+    {"color": "#fcfcfc", "label": "background"},
+    {"color": "#004494", "label": "branding"},
+]
+
 CKEDITOR_5_CONFIGS = {
     "default": {
         "toolbar": {
@@ -515,6 +563,24 @@ CKEDITOR_5_CONFIGS = {
                 "|",
                 "sourceEditing",
             ],
+        },
+        "link": {
+            "decorators": {
+                "openInNewTab": {
+                    "mode": "manual",
+                    "label": "Open in a new tab",
+                    "attributes": {
+                        "target": "_blank",
+                        "rel": "noopener noreferrer",
+                    },
+                },
+            }
+        },
+        "fontColor": {
+            "colors": CKEDITOR_COLORS,
+        },
+        "fontBackgroundColor": {
+            "colors": CKEDITOR_COLORS,
         },
     },
 }
