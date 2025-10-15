@@ -581,7 +581,7 @@ CKEDITOR_5_CONFIGS = {
         },
         "fontBackgroundColor": {
             "colors": CKEDITOR_COLORS,
-        }
+        },
     },
 }
 
