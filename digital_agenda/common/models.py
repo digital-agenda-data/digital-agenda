@@ -33,6 +33,6 @@ class CleanCKEditor5Field(CKEditor5Field):
             return ""
         # Strip whitespace and check for empty CKEditor output
         stripped = value.strip()
-        if stripped in ("<p></p>", "<p>&nbsp;</p>", "<p> </p>", "<p> </p>"):
+        if stripped in ("<p></p>", "<p>&nbsp;</p>", "<p> </p>"):
             return ""
         return value
