@@ -6,7 +6,6 @@ from datetime import timedelta
 from pathlib import Path
 
 import magic
-from django_ckeditor_5.fields import CKEditor5Field
 from colorfield.fields import ColorField
 
 from django.conf import settings
@@ -17,6 +16,7 @@ from django.utils.functional import cached_property
 from django_task.models import TaskRQ
 
 from digital_agenda.common.citext import CICharField
+from digital_agenda.common.models import CleanCKEditor5Field
 from digital_agenda.common.models import DisplayOrderModel
 from digital_agenda.common.models import TimestampedModel
 
@@ -34,7 +34,7 @@ class BaseDimensionModel(TimestampedModel):
     code = CICharField(max_length=60, unique=True)
     label = models.TextField(null=True, blank=True)
     alt_label = models.TextField(null=True, blank=True, verbose_name="Alt. label")
-    definition = CKEditor5Field(null=True, blank=True)
+    definition = CleanCKEditor5Field(null=True, blank=True)
 
     objects = BaseDimensionManager()
 
@@ -57,7 +57,7 @@ class DataSource(BaseDimensionModel):
     """Data sources for indicators (higher dimension, not referenced by facts"""
 
     url = models.URLField(null=True, blank=True)
-    note = CKEditor5Field(null=True, blank=True)
+    note = CleanCKEditor5Field(null=True, blank=True)
 
     class Meta:
         ordering = ["code"]
@@ -113,7 +113,7 @@ class Indicator(BaseDimensionModel):
         default=None,
         help_text="Time coverage to display instead of the automatically calculated one",
     )
-    note = CKEditor5Field(null=True, blank=True)
+    note = CleanCKEditor5Field(null=True, blank=True)
 
     class Meta:
         ordering = ["code"]
@@ -463,4 +463,4 @@ class DataFileImportTask(TaskRQ):
 class StaticPage(TimestampedModel):
     title = models.CharField(max_length=255)
     code = models.SlugField(max_length=255, unique=True)
-    body = CKEditor5Field()
+    body = CleanCKEditor5Field()
