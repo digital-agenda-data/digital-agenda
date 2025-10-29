@@ -484,7 +484,9 @@ class TestImporterErrors(BetamaxPatchTestCase):
 
     def test_invalid_filter_value(self):
         self.config.filters = {"geo": ["EUROVISION"]}
-        self.check_error("The following values for dimension are not allowed: GEO=EUROVISION.")
+        self.check_error(
+            "The following values for dimension are not allowed: GEO=EUROVISION."
+        )
 
     def test_invalid_filter_value_duplicate(self):
         self.config.filters = {"geo": ["EU", "eu"]}
