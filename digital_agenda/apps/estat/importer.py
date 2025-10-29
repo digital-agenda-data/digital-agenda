@@ -99,7 +99,7 @@ class EstatDataflow:
     @cached_property
     def download_url(self):
         # See https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/sdmx3-0/structure-queries
-        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/structure/dataflow/ESTAT/{self.code}/1.0/?lang=EN"
+        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/structure/dataflow/ESTAT/{self.code}/1.0/?lang=EN&format=JSON"
 
     @cached_property
     def version(self):
@@ -151,6 +151,11 @@ class EstatDataset(JSONStat):
             stream=True,
             headers=ESTAT_HEADERS,
         ) as resp:
+            if resp.status_code == 400:
+                # An HTTP 400 usually has additional information on what was wrong.
+                # For example, a bad value for a filter, so extract it and add it here.
+                # Instead of just logging the generic error requests gives.
+                raise ImporterError(resp.json())
             with self.json_path.open("wb") as f_out:
                 for chunk in resp.iter_content(chunk_size=512):
                     f_out.write(chunk)
@@ -197,7 +202,7 @@ class EstatDataset(JSONStat):
     def download_url(self):
         # See https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/sdmx3-0/data-query
         endpoint = f"/data/dataflow/ESTAT/{self.code}/1.0/"
-        args = {"lang": "EN"}
+        args = {"lang": "EN", "format": "JSON"}
         for key_name, values in self.config.filters.items():
             key_name = f"c[{key_name}]"
             args[key_name] = ",".join(values)
