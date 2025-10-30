@@ -265,6 +265,16 @@ class EstatImporter:
             self.cache[dimension][category_id] = obj
         return obj
 
+    def get_value(self, value):
+        if value is None or value == "":
+            return None
+        value *= self.config.value_multiplier
+        value += self.config.value_offset
+
+        if self.config.value_decimal_places is not None:
+            value = round(value, self.config.value_decimal_places)
+        return value
+
     def iter_facts(self):
         fact_collection = collections.defaultdict(list)
         for obs in self.dataset:
@@ -272,7 +282,7 @@ class EstatImporter:
                 continue
 
             fact = Fact(
-                value=obs["value"],
+                value=self.get_value(obs["value"]),
                 flags=obs["status"] or "",
                 import_config_id=self.config.id,
             )

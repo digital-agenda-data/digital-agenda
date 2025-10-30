@@ -132,6 +132,24 @@ class ImportConfig(models.Model):
             "Can be used to merge multiple values into a single surrogate indicator."
         ),
     )
+    value_multiplier = models.DecimalField(
+        default=1,
+        help_text="Multiply all values by this factor before importing",
+        max_digits=20,
+        decimal_places=10,
+    )
+    value_offset = models.DecimalField(
+        default=0,
+        help_text="Add this value to all values before importing",
+        max_digits=20,
+        decimal_places=10,
+    )
+    value_decimal_places = models.PositiveIntegerField(
+        default=None,
+        blank=True,
+        null=True,
+        help_text="Round all values to this number of decimal places before importing",
+    )
 
     indicator = CICharField(max_length=60)
     indicator_is_surrogate = models.BooleanField(default=False)
