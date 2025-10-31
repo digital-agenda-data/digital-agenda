@@ -214,7 +214,7 @@ class EstatDataset(JSONStat):
 
 
 class EstatImporter:
-    def __init__(self, config, force_download=False):
+    def __init__(self, config: "ImportConfig", force_download=False):
         self.config = config
         self.force_download = force_download
         self.cache = defaultdict(dict)
@@ -290,6 +290,28 @@ class EstatImporter:
             self.cache[dimension][category_id] = obj
         return obj
 
+    def get_value(self, obs):
+        value = obs["value"]
+        if value is None or value == "":
+            return None
+
+        value = float(value)
+        for config_dim, multipliers in self.config.ci_multipliers.items():
+            category_id = obs[config_dim].id
+
+            try:
+                value *= multipliers[category_id]
+            except KeyError:
+                pass
+
+        value *= self.config.value_multiplier
+        value += self.config.value_offset
+
+        if self.config.value_decimal_places is not None:
+            value = round(value, self.config.value_decimal_places)
+
+        return value
+
     def iter_facts(self):
         fact_collection = collections.defaultdict(list)
         for obs in self.dataset:
@@ -297,7 +319,7 @@ class EstatImporter:
                 continue
 
             fact = Fact(
-                value=obs["value"],
+                value=self.get_value(obs),
                 flags=obs["status"] or "",
                 import_config_id=self.config.id,
             )

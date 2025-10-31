@@ -251,6 +251,10 @@ class TestImporterDryRun(BetamaxPatchTestCase):
 class TestImporter(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
+    def setUp(self):
+        super().setUp()
+        self.config = ImportConfig.objects.get(code="isoc_ci_cm_h")
+
     def check_file_exists(self, code):
         download_dir = settings.ESTAT_DOWNLOAD_DIR
         pattern = f"{code}-*.json"
@@ -260,15 +264,13 @@ class TestImporter(BetamaxPatchTestCase):
         return matched_files[0]
 
     def test_download(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True, force_download=True)
-        self.check_file_exists(config.code)
+        self.config.run_import(delete_existing=True, force_download=True)
+        self.check_file_exists(self.config.code)
 
     def test_download_invalidate_cache(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True, force_download=True)
+        self.config.run_import(delete_existing=True, force_download=True)
 
-        expected_path = self.check_file_exists(config.code)
+        expected_path = self.check_file_exists(self.config.code)
 
         with expected_path.open("r") as f:
             dataset = json.load(f)
@@ -278,8 +280,8 @@ class TestImporter(BetamaxPatchTestCase):
         with expected_path.open("w") as f:
             json.dump(dataset, f)
 
-        config = ImportConfig.objects.first()
-        config.run_import()
+        self.config.refresh_from_db()
+        self.config.run_import()
 
         with expected_path.open("r") as f:
             dataset = json.load(f)
@@ -288,12 +290,11 @@ class TestImporter(BetamaxPatchTestCase):
             )
 
     def test_surrogate_indicator(self):
-        config = ImportConfig.objects.first()
-        config.indicator = "jingle_jangle"
-        config.indicator_is_surrogate = True
-        config.save()
+        self.config.indicator = "jingle_jangle"
+        self.config.indicator_is_surrogate = True
+        self.config.save()
 
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         expected = ["jingle_jangle"]
         codes = Indicator.objects.values_list("code", flat=True)
@@ -303,14 +304,13 @@ class TestImporter(BetamaxPatchTestCase):
         self.assertEqual(expected, list(fact_codes))
 
     def test_delete_existing(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         # Change the filter to check that old data has been removed
-        config.filters = {"hhtyp": ["A2"]}
-        config.save()
+        self.config.filters = {"hhtyp": ["A2"]}
+        self.config.save()
 
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         breakdown_codes = Fact.objects.values_list(
             "breakdown__code", flat=True
@@ -322,14 +322,13 @@ class TestImporter(BetamaxPatchTestCase):
         self.assertEqual(["a1", "a1_dch", "a2"], list(breakdowns))
 
     def test_keep_existing(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         # Change the filter to check that old data has been removed
-        config.filters = {"hhtyp": ["A2"]}
-        config.save()
+        self.config.filters = {"hhtyp": ["A2"]}
+        self.config.save()
 
-        config.run_import()
+        self.config.run_import()
 
         breakdown_codes = (
             Fact.objects.order_by("breakdown__code")
@@ -339,8 +338,7 @@ class TestImporter(BetamaxPatchTestCase):
         self.assertEqual(["a1", "a1_dch", "a2"], list(breakdown_codes))
 
     def test_update_existing(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
         original_fact = Fact.objects.first()
 
         new_fact = Fact.objects.get(pk=original_fact.pk)
@@ -349,11 +347,33 @@ class TestImporter(BetamaxPatchTestCase):
         new_fact.import_config = None
         new_fact.save()
 
-        config.run_import()
+        self.config.run_import()
         new_fact.refresh_from_db()
         self.assertEqual(new_fact.value, original_fact.value)
         self.assertEqual(new_fact.flags, original_fact.flags)
         self.assertEqual(new_fact.import_config, original_fact.import_config)
+
+    def test_adjust_value(self):
+        self.config.run_import(delete_existing=True, force_download=True)
+
+        fact = Fact.objects.get(
+            indicator__code="h_comp",
+            breakdown__code="a1",
+            unit__code="pc_hh",
+            period__code="2010",
+            country__code="EU",
+        )
+        self.assertEqual(fact.value, 58.58)
+
+        self.config.value_multiplier = -0.1
+        self.config.value_offset = 100
+        self.config.value_decimal_places = 1
+        self.config.save()
+
+        self.config.run_import()
+        fact.refresh_from_db()
+        # Result should be (100 - value / 10) rounded to 1 decimal place
+        self.assertEqual(fact.value, 94.1)
 
 
 class TestImporterDataMerge(BetamaxPatchTestCase):
@@ -363,7 +383,7 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         super().setUp()
         # See https://ec.europa.eu/eurostat/databrowser/view/isoc_e_dii/default/table
         # for values
-        self.config = ImportConfig.objects.first()
+        self.config = ImportConfig.objects.get(code="isoc_e_dii")
 
     def test_raise_error(self):
         self.config.run_import(delete_existing=True)
@@ -391,6 +411,32 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         self.assertEqual(fact.value, 32.09)
         self.assertEqual(fact.flags, "")
 
+    def test_sum_values_with_multipliers(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.multipliers = {
+            "inDIc_is": {
+                "e_DI4_HI": -1,
+                "E_di4_VHI": 2,
+            }
+        }
+        self.config.value_decimal_places = 2
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="EU",
+        )
+        # EU should have:
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        # The result should be (4.19 * 2) + (27.90 * -1)
+        self.assertEqual(fact.value, -19.52)
+        self.assertEqual(fact.flags, "")
+
     def test_avg_values(self):
         self.config.conflict_resolution = ImportConfig.ConflictResolution.AVERAGE_VALUES
         self.config.save()
@@ -407,6 +453,32 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         #   - 4.19 for E_DI4_VHI
         #   - 27.90 for E_DI4_HI
         self.assertEqual(fact.value, 16.045)
+        self.assertEqual(fact.flags, "")
+
+    def test_avg_values_multipliers(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.AVERAGE_VALUES
+        self.config.multipliers = {
+            "inDIc_is": {
+                "e_DI4_HI": -1,
+                "E_di4_VHI": 2,
+            }
+        }
+        self.config.value_decimal_places = 2
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="EU",
+        )
+        # EU should have:
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        # The modified value should be ((4.19 * 2) + (27.90 * -1))/2
+        self.assertEqual(fact.value, -9.76)
         self.assertEqual(fact.flags, "")
 
     def test_missing_value_sum(self):
@@ -437,7 +509,29 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
             period__code="2022",
             country__code="MK",
         )
-        # Nort Macedonia (MK) has no value for e_di_vhi
+        # North Macedonia (MK) has no value for e_di_vhi
+        self.assertEqual(fact.value, None)
+        self.assertEqual(fact.flags, "~")
+
+    def test_missing_value_multiplier(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.multipliers = {
+            "inDIc_is": {
+                "e_DI4_HI": -1,
+                "E_di4_VHI": 2,
+            }
+        }
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="MK",
+        )
+        # North Macedonia (MK) has no value for e_di_vhi
         self.assertEqual(fact.value, None)
         self.assertEqual(fact.flags, "~")
 
@@ -462,7 +556,7 @@ class TestImporterErrors(BetamaxPatchTestCase):
 
     def setUp(self):
         super().setUp()
-        self.config = ImportConfig.objects.first()
+        self.config = ImportConfig.objects.get(code="isoc_ci_cm_h")
 
     def check_error(self, msg):
         self.config.save()
@@ -491,6 +585,38 @@ class TestImporterErrors(BetamaxPatchTestCase):
     def test_invalid_filter_value_duplicate(self):
         self.config.filters = {"geo": ["EU", "eu"]}
         self.check_error("Duplicate values detected")
+
+    def test_invalid_multiplier(self):
+        self.config.multipliers = ["EU"]
+        self.check_error("Must be a valid JSON object")
+
+    def test_invalid_multiplier_key(self):
+        self.config.multipliers = {"geoX": {"EU": -1}}
+        self.check_error("no dimensions with that id found")
+
+    def test_invalid_multiplier_key_duplicate(self):
+        self.config.multipliers = {"geo": {"EU": -1}, "GEO": {"EU": -2}}
+        self.check_error("Duplicate keys detected")
+
+    def test_invalid_multiplier_value(self):
+        self.config.multipliers = {"geo": {"EUROVISION": -1}}
+        self.check_error("for dimension 'geo' not found")
+
+    def test_invalid_multiplier_value_duplicate(self):
+        self.config.filters = {"geo": {"EU": -1, "eu": -2}}
+        self.check_error("Duplicate values detected")
+
+    def test_invalid_multiplier_multiple_dimensions(self):
+        self.config.multipliers = {"geo": {"EU": -1}, "hhtyp": {"A1": -2}}
+        self.check_error("Only one dimension can have multipliers.")
+
+    def test_invalid_multiplier_not_a_number_string(self):
+        self.config.multipliers = {"geo": {"EU": "-1"}}
+        self.check_error("must be a number: '-1'")
+
+    def test_invalid_multiplier_not_a_number_null(self):
+        self.config.multipliers = {"geo": {"EU": None}}
+        self.check_error("must be a number: None")
 
     def test_invalid_dimension_indicator(self):
         self.config.indicator = "mrhouse"

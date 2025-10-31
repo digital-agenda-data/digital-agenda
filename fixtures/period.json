@@ -874,5 +874,41 @@
       "definition": "",
       "date": "2023-01-01"
     }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:47:06.641Z",
+      "updated_at": "2024-03-18T09:32:18.706Z",
+      "code": "desi_2024",
+      "label": "DESI period: 2024",
+      "alt_label": "DESI period: 2024",
+      "definition": "",
+      "date": "2024-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:47:06.641Z",
+      "updated_at": "2024-03-18T09:32:18.706Z",
+      "code": "desi_2025",
+      "label": "DESI period: 2025",
+      "alt_label": "DESI period: 2025",
+      "definition": "",
+      "date": "2025-01-01"
+    }
+  },
+  {
+    "model": "core.period",
+    "fields": {
+      "created_at": "2023-09-29T13:47:06.641Z",
+      "updated_at": "2024-03-18T09:32:18.706Z",
+      "code": "desi_2026",
+      "label": "DESI period: 2026",
+      "alt_label": "DESI period: 2026",
+      "definition": "",
+      "date": "2026-01-01"
+    }
   }
 ]
