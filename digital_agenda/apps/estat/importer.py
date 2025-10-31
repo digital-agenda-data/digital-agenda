@@ -1,6 +1,7 @@
 import collections
 import datetime
 import gzip
+import hashlib
 import itertools
 import json
 import shutil
@@ -9,10 +10,13 @@ import decimal
 from functools import cached_property
 from collections import defaultdict
 from io import BytesIO
+from typing import TYPE_CHECKING
+from urllib.parse import urlencode
 
 import openpyxl
 import requests
 from django.conf import settings
+from django.utils.text import get_valid_filename
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
@@ -22,6 +26,10 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.estat.json_stat import JSONStat
+
+
+if TYPE_CHECKING:
+    from digital_agenda.apps.estat.models import ImportConfig
 
 logger = logging.getLogger(__name__)
 
@@ -36,6 +44,16 @@ TEXT_DIMENSION = (
     "reference_period",
     "remarks",
 )
+
+ESTAT_HEADERS = {
+    # XXX Normally requests put "gzip, deflate" here and handles
+    # XXX decompressing stuff transparently. HOWEVER!! While EUROSTAT
+    # XXX checks the Accept-Encoding header, it DOES NOT put the
+    # XXX "Content-Encoding" in the response. So request assumes the server
+    # XXX doesn't have compression capabilities and assumes it's plaintext.
+    "Accept-Encoding": "identity",
+    "Accept": "application/json",
+}
 
 
 class ImporterError(ValueError):
@@ -70,14 +88,18 @@ class EstatDataflow:
     def download(self):
         logger.info("Getting metadata from: %s", self.download_url)
         session = requests.Session()
-        resp = session.get(self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT)
+        resp = session.get(
+            self.download_url,
+            timeout=settings.ESTAT_DOWNLOAD_TIMEOUT,
+            headers=ESTAT_HEADERS,
+        )
         resp.raise_for_status()
         self.dataset = resp.json()
 
     @cached_property
     def download_url(self):
-        # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+metadata+query
-        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/dataflow/ESTAT/{self.code}?format=JSON&lang=en"
+        # See https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/sdmx3-0/structure-queries
+        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/structure/dataflow/ESTAT/{self.code}/1.0/?lang=EN&format=JSON"
 
     @cached_property
     def version(self):
@@ -106,8 +128,9 @@ class EstatDataflow:
 
 
 class EstatDataset(JSONStat):
-    def __init__(self, code, force_download=False):
-        self.code = code
+    def __init__(self, config: "ImportConfig", force_download=False):
+        self.config = config
+        self.code = self.config.code
         self.force_download = force_download
         self._cached_dataset = None
 
@@ -120,24 +143,23 @@ class EstatDataset(JSONStat):
         super().__init__(self._cached_dataset)
 
     def _download(self):
-        # XXX This downloads the whole dataset; if this proves to be too large
-        # XXX in practice (e.g. because of too much memory used) we can instead:
-        # XXX   - split the download per years using the start/endPeriod filter
-        # XXX   - filter the download using the provided keys filters
         logger.info("Downloading from: %s", self.download_url)
         session = requests.Session()
         with session.get(
-            self.download_url, timeout=settings.ESTAT_DOWNLOAD_TIMEOUT, stream=True
+            self.download_url,
+            timeout=settings.ESTAT_DOWNLOAD_TIMEOUT,
+            stream=True,
+            headers=ESTAT_HEADERS,
         ) as resp:
-            with self.download_gz_path.open("wb") as f_out:
+            if resp.status_code == 400:
+                # An HTTP 400 usually has additional information on what was wrong.
+                # For example, a bad value for a filter, so extract it and add it here.
+                # Instead of just logging the generic error requests gives.
+                raise ImporterError(resp.json())
+            with self.json_path.open("wb") as f_out:
                 for chunk in resp.iter_content(chunk_size=512):
                     f_out.write(chunk)
                 resp.raise_for_status()
-
-        logger.info("Decompressing JSON: %s", self.code)
-        with gzip.open(self.download_gz_path, "rb") as f_in:
-            with self.json_path.open("wb") as f_out:
-                shutil.copyfileobj(f_in, f_out)
 
     def _load_cached(self):
         if self.json_path.is_file():
@@ -172,16 +194,19 @@ class EstatDataset(JSONStat):
 
     @cached_property
     def json_path(self):
-        return settings.ESTAT_DOWNLOAD_DIR / f"{self.code}.json"
-
-    @cached_property
-    def download_gz_path(self):
-        return settings.ESTAT_DOWNLOAD_DIR / f"{self.code}.json.gz"
+        filter_hash = hashlib.md5(self.download_url.encode()).hexdigest()
+        filename = get_valid_filename(self.code + "-" + filter_hash) + ".json"
+        return settings.ESTAT_DOWNLOAD_DIR / filename
 
     @cached_property
     def download_url(self):
-        # See https://wikis.ec.europa.eu/display/EUROSTATHELP/API+SDMX+2.1+-+data+query
-        return f"{settings.ESTAT_DOWNLOAD_BASE_URL}/data/{self.code}?compressed=true&format=JSON&lang=en"
+        # See https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/sdmx3-0/data-query
+        endpoint = f"/data/dataflow/ESTAT/{self.code}/1.0/"
+        args = {"lang": "EN", "format": "JSON"}
+        for key_name, values in self.config.filters.items():
+            key_name = f"c[{key_name}]"
+            args[key_name] = ",".join(values)
+        return settings.ESTAT_DOWNLOAD_BASE_URL + endpoint + "?" + urlencode(args)
 
     @cached_property
     def dataflow(self):
@@ -196,7 +221,7 @@ class EstatImporter:
 
     @cached_property
     def dataset(self):
-        return EstatDataset(self.config.code, force_download=self.force_download)
+        return EstatDataset(self.config, force_download=self.force_download)
 
     @cached_property
     def data_source(self):
