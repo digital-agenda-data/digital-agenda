@@ -132,17 +132,13 @@ class ImportConfig(models.Model):
             "Can be used to merge multiple values into a single surrogate indicator."
         ),
     )
-    value_multiplier = models.DecimalField(
+    value_multiplier = models.FloatField(
         default=1,
         help_text="Multiply all values by this factor before importing",
-        max_digits=20,
-        decimal_places=10,
     )
-    value_offset = models.DecimalField(
+    value_offset = models.FloatField(
         default=0,
         help_text="Add this value to all values before importing",
-        max_digits=20,
-        decimal_places=10,
     )
     value_decimal_places = models.PositiveIntegerField(
         default=None,
@@ -211,6 +207,11 @@ class ImportConfig(models.Model):
         blank=True,
         help_text="Define how ESTAT codes are transformed before inserting into the DB",
     )
+    multipliers = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Define multipliers to apply to specific dimensions values.",
+    )
 
     @cached_property
     def ci_filters(self):
@@ -240,6 +241,29 @@ class ImportConfig(models.Model):
                 result[dimension.lower()][original.lower()] = new_value.lower()
         return result
 
+    @cached_property
+    def ci_multipliers(self):
+        result = collections.defaultdict(dict)
+
+        for key, multipliers in self.multipliers.items():
+            for dimension_value, multiplier_value in multipliers.items():
+                result[key.lower()][dimension_value.lower()] = multiplier_value
+        return result
+
+    def _clean_json_dimensions(self, field_name):
+        config_dict = getattr(self, field_name)
+        if not isinstance(config_dict, dict):
+            raise ValidationError({field_name: "Must be a valid JSON object"})
+
+        if not is_unique(config_dict):
+            raise ValidationError({field_name: "Duplicate keys detected"})
+
+        for key, values in config_dict.items():
+            if not is_unique(values):
+                raise ValidationError(
+                    {field_name: f"Duplicate values detected for the {key!r} dimension"}
+                )
+
     def clean(self):
         for attr in ("code", "indicator", "breakdown", "country", "unit", "period"):
             setattr(self, attr, getattr(self, attr).lower())
@@ -253,18 +277,6 @@ class ImportConfig(models.Model):
                 "Start period must be less than or equal to the end period"
             )
             raise ValidationError({"period_start": error, "period_end": error})
-
-        if not isinstance(self.filters, dict):
-            raise ValidationError({"filters": "Must be a valid JSON object"})
-
-        if not is_unique(self.filters):
-            raise ValidationError({"filters": "Duplicate keys detected"})
-
-        for key, values in self.filters.items():
-            if not is_unique(values):
-                raise ValidationError(
-                    {"filters": f"Duplicate values detected for the {key!r} dimension"}
-                )
 
         if not isinstance(self.mappings, dict):
             raise ValidationError({"mappings": "Must be a valid JSON object"})
@@ -289,13 +301,29 @@ class ImportConfig(models.Model):
                     {"mappings": f"Duplicate values detected for the {key!r} dimension"}
                 )
 
-    def clean_with_dataset(self, dataset):
-        """Simple sanity checks to validate the data matches the given config."""
-        for key, values in self.ci_filters.items():
+        self._clean_json_dimensions("filters")
+        self._clean_json_dimensions("multipliers")
+
+        if len(self.multipliers) > 1:
+            raise ValidationError(
+                {"multipliers": "Only one dimension can have multipliers."}
+            )
+
+        for dimension, values in self.multipliers.items():
+            for code, multiplier in values.items():
+                if not isinstance(multiplier, (int, float)):
+                    raise ValidationError(
+                        {
+                            "multipliers": f"Multiplier for {dimension!r} must be a number: {multiplier!r}"
+                        }
+                    )
+
+    def _validate_json_dimensions(self, dataset, config_dict, config_type):
+        for key, values in config_dict.items():
             if key not in dataset.dimension_ids:
                 raise ImporterError(
                     {
-                        f"Invalid filter {key!r}, no dimensions with that id found in": dataset.dimension_ids
+                        f"Invalid {config_type} {key!r}, no dimensions with that id found in": dataset.dimension_ids
                     }
                 )
 
@@ -304,9 +332,14 @@ class ImportConfig(models.Model):
                 if val not in categories:
                     raise ImporterError(
                         {
-                            f"Filter value {val!r} for dimension {key!r} not found in": categories
+                            f"Invalid {config_type} value {val!r} for dimension {key!r} not found in": categories
                         }
                     )
+
+    def clean_with_dataset(self, dataset):
+        """Simple sanity checks to validate the data matches the given config."""
+        self._validate_json_dimensions(dataset, self.ci_filters, "filter")
+        self._validate_json_dimensions(dataset, self.ci_multipliers, "multiplier")
         for dimension in ("indicator", "breakdown", "country", "unit", "period"):
             config_dim = getattr(self, dimension)
             is_surrogate = getattr(self, f"{dimension}_is_surrogate")

@@ -363,7 +363,7 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         super().setUp()
         # See https://ec.europa.eu/eurostat/databrowser/view/isoc_e_dii/default/table
         # for values
-        self.config = ImportConfig.objects.first()
+        self.config = ImportConfig.objects.get(code="isoc_e_dii")
 
     def test_raise_error(self):
         self.config.run_import(delete_existing=True)
@@ -391,6 +391,32 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         self.assertEqual(fact.value, 32.09)
         self.assertEqual(fact.flags, "")
 
+    def test_sum_values_with_multipliers(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.multipliers = {
+            "inDIc_is": {
+                "e_DI4_HI": -1,
+                "E_di4_VHI": 2,
+            }
+        }
+        self.config.value_decimal_places = 2
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="EU",
+        )
+        # EU should have:
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        # The result should be (4.19 * 2) + (27.90 * -1)
+        self.assertEqual(fact.value, -19.52)
+        self.assertEqual(fact.flags, "")
+
     def test_avg_values(self):
         self.config.conflict_resolution = ImportConfig.ConflictResolution.AVERAGE_VALUES
         self.config.save()
@@ -407,6 +433,32 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         #   - 4.19 for E_DI4_VHI
         #   - 27.90 for E_DI4_HI
         self.assertEqual(fact.value, 16.045)
+        self.assertEqual(fact.flags, "")
+
+    def test_avg_values_multipliers(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.AVERAGE_VALUES
+        self.config.multipliers = {
+            "inDIc_is": {
+                "e_DI4_HI": -1,
+                "E_di4_VHI": 2,
+            }
+        }
+        self.config.value_decimal_places = 2
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="EU",
+        )
+        # EU should have:
+        #   - 4.19 for E_DI4_VHI
+        #   - 27.90 for E_DI4_HI
+        # The modified value should be ((4.19 * 2) + (27.90 * -1))/2
+        self.assertEqual(fact.value, -9.76)
         self.assertEqual(fact.flags, "")
 
     def test_missing_value_sum(self):
@@ -437,7 +489,29 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
             period__code="2022",
             country__code="MK",
         )
-        # Nort Macedonia (MK) has no value for e_di_vhi
+        # North Macedonia (MK) has no value for e_di_vhi
+        self.assertEqual(fact.value, None)
+        self.assertEqual(fact.flags, "~")
+
+    def test_missing_value_multiplier(self):
+        self.config.conflict_resolution = ImportConfig.ConflictResolution.SUM_VALUES
+        self.config.multipliers = {
+            "inDIc_is": {
+                "e_DI4_HI": -1,
+                "E_di4_VHI": 2,
+            }
+        }
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="e_di4_vhi_and_hi",
+            breakdown__code="total",
+            unit__code="pc_ent",
+            period__code="2022",
+            country__code="MK",
+        )
+        # North Macedonia (MK) has no value for e_di_vhi
         self.assertEqual(fact.value, None)
         self.assertEqual(fact.flags, "~")
 
@@ -462,7 +536,7 @@ class TestImporterErrors(BetamaxPatchTestCase):
 
     def setUp(self):
         super().setUp()
-        self.config = ImportConfig.objects.first()
+        self.config = ImportConfig.objects.get(code="isoc_ci_cm_h")
 
     def check_error(self, msg):
         self.config.save()
@@ -491,6 +565,38 @@ class TestImporterErrors(BetamaxPatchTestCase):
     def test_invalid_filter_value_duplicate(self):
         self.config.filters = {"geo": ["EU", "eu"]}
         self.check_error("Duplicate values detected")
+
+    def test_invalid_multiplier(self):
+        self.config.multipliers = ["EU"]
+        self.check_error("Must be a valid JSON object")
+
+    def test_invalid_multiplier_key(self):
+        self.config.multipliers = {"geoX": {"EU": -1}}
+        self.check_error("no dimensions with that id found")
+
+    def test_invalid_multiplier_key_duplicate(self):
+        self.config.multipliers = {"geo": {"EU": -1}, "GEO": {"EU": -2}}
+        self.check_error("Duplicate keys detected")
+
+    def test_invalid_multiplier_value(self):
+        self.config.multipliers = {"geo": {"EUROVISION": -1}}
+        self.check_error("for dimension 'geo' not found")
+
+    def test_invalid_multiplier_value_duplicate(self):
+        self.config.filters = {"geo": {"EU": -1, "eu": -2}}
+        self.check_error("Duplicate values detected")
+
+    def test_invalid_multiplier_multiple_dimensions(self):
+        self.config.multipliers = {"geo": {"EU": -1}, "hhtyp": {"A1": -2}}
+        self.check_error("Only one dimension can have multipliers.")
+
+    def test_invalid_multiplier_not_a_number_string(self):
+        self.config.multipliers = {"geo": {"EU": "-1"}}
+        self.check_error("must be a number: '-1'")
+
+    def test_invalid_multiplier_not_a_number_null(self):
+        self.config.multipliers = {"geo": {"EU": None}}
+        self.check_error("must be a number: None")
 
     def test_invalid_dimension_indicator(self):
         self.config.indicator = "mrhouse"

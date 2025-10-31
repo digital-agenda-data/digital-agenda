@@ -33,8 +33,9 @@ DIMENSION_DESCRIPTION = """
 Choose what dimension from the ESTAT dataset to take values from. Notes:
 <dl>
     <li>Surrogate fields will be taken as hardcoded values instead.</li>
+    <li>Surrogate fields may create duplicate, which need to be handled using conflict resolution.</li>
     <li>Non-existing values are automatically created on import.</li>
-    <li>Imported values can be transformed my using the mapping fields below.</li>
+    <li>Imported values can be transformed by using the mapping/multiplier fields below.</li>
 </dl>
 """
 FILTERS_DESCRIPTION = """
@@ -58,6 +59,17 @@ taken as they are instead. Example:
   "country": {
     "EU28": "EU",
     "EU27_2020": "EU"
+  }
+}
+</pre>
+"""
+MULTIPLIERS_DESCRIPTION = """
+Multiply values based on ESTAT codes before inserting into DB. Useful to be used with 
+surrogate fields and conflict resolution. Example:
+<pre>
+{
+  "STK_FLOW": {
+    "EXP": -1
   }
 }
 </pre>
@@ -117,6 +129,17 @@ class ImportConfigAdmin(admin.ModelAdmin):
             },
         ),
         (
+            "Transform values",
+            {
+                "description": "Value transformation on the final value before inserting into DB",
+                "fields": [
+                    "value_multiplier",
+                    "value_offset",
+                    "value_decimal_places",
+                ],
+            },
+        ),
+        (
             "Dimensions",
             {
                 "description": DIMENSION_DESCRIPTION,
@@ -139,6 +162,13 @@ class ImportConfigAdmin(admin.ModelAdmin):
             },
         ),
         ("Mappings", {"description": MAPPING_DESCRIPTION, "fields": ["mappings"]}),
+        (
+            "Multipliers",
+            {
+                "description": MULTIPLIERS_DESCRIPTION,
+                "fields": ["multipliers"],
+            },
+        ),
         (
             "Metadata",
             {
