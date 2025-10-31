@@ -410,7 +410,7 @@ RQ_SHOW_ADMIN_LINK = False
 
 ESTAT_DOWNLOAD_BASE_URL = env.str(
     "ESTAT_DOWNLOAD_BASE_URL",
-    default="https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/",
+    default="https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/",
 ).strip("/")
 ESTAT_DOWNLOAD_TIMEOUT = env.float("ESTAT_DOWNLOAD_TIMEOUT", default=30.0)
 ESTAT_DOWNLOAD_DIR = FS_DIR / "estat"

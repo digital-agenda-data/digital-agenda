@@ -78,9 +78,7 @@
       "country": {
         "EU27_2020": "EU"
       },
-      "breakdown": {
-        "TOTAL": "HH_TOTAL"
-      },
+      "breakdown": {},
       "indicator": {}
     }
   }

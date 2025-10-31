@@ -97,7 +97,7 @@ class TestImporterSuccess(BetamaxPatchTestCase):
         self.assertEqual(data_source.code.lower(), "estat_isoc_ci_cm_h")
         self.assertEqual(
             data_source.label,
-            "Eurostat, table isoc_ci_cm_h: Households - availability of computers",
+            "Eurostat, table isoc_ci_cm_h: Households - availability of computers (2006-2017)",
         )
         self.assertEqual(
             data_source.url,
@@ -251,19 +251,24 @@ class TestImporterDryRun(BetamaxPatchTestCase):
 class TestImporter(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
+    def check_file_exists(self, code):
+        download_dir = settings.ESTAT_DOWNLOAD_DIR
+        pattern = f"{code}-*.json"
+
+        matched_files = list(download_dir.glob(pattern))
+        self.assertEqual(len(matched_files), 1, matched_files)
+        return matched_files[0]
+
     def test_download(self):
         config = ImportConfig.objects.first()
         config.run_import(delete_existing=True, force_download=True)
-
-        expected_path = settings.ESTAT_DOWNLOAD_DIR / f"{config.code}.json"
-        self.assertTrue(expected_path.is_file())
+        self.check_file_exists(config.code)
 
     def test_download_invalidate_cache(self):
         config = ImportConfig.objects.first()
         config.run_import(delete_existing=True, force_download=True)
 
-        expected_path = settings.ESTAT_DOWNLOAD_DIR / f"{config.code}.json"
-        self.assertTrue(expected_path.is_file())
+        expected_path = self.check_file_exists(config.code)
 
         with expected_path.open("r") as f:
             dataset = json.load(f)
@@ -471,7 +476,7 @@ class TestImporterErrors(BetamaxPatchTestCase):
 
     def test_invalid_filter_key(self):
         self.config.filters = {"geoX": ["EU"]}
-        self.check_error("no dimensions with that id found")
+        self.check_error("The parameter GEOX is not a valid dimension for the dataset")
 
     def test_invalid_filter_key_duplicate(self):
         self.config.filters = {"geo": ["EU"], "GEO": ["EU"]}
@@ -479,7 +484,9 @@ class TestImporterErrors(BetamaxPatchTestCase):
 
     def test_invalid_filter_value(self):
         self.config.filters = {"geo": ["EUROVISION"]}
-        self.check_error("for dimension 'geo' not found")
+        self.check_error(
+            "The following values for dimension are not allowed: GEO=EUROVISION."
+        )
 
     def test_invalid_filter_value_duplicate(self):
         self.config.filters = {"geo": ["EU", "eu"]}
