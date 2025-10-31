@@ -251,6 +251,10 @@ class TestImporterDryRun(BetamaxPatchTestCase):
 class TestImporter(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
+    def setUp(self):
+        super().setUp()
+        self.config = ImportConfig.objects.get(code="isoc_ci_cm_h")
+
     def check_file_exists(self, code):
         download_dir = settings.ESTAT_DOWNLOAD_DIR
         pattern = f"{code}-*.json"
@@ -260,15 +264,13 @@ class TestImporter(BetamaxPatchTestCase):
         return matched_files[0]
 
     def test_download(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True, force_download=True)
-        self.check_file_exists(config.code)
+        self.config.run_import(delete_existing=True, force_download=True)
+        self.check_file_exists(self.config.code)
 
     def test_download_invalidate_cache(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True, force_download=True)
+        self.config.run_import(delete_existing=True, force_download=True)
 
-        expected_path = self.check_file_exists(config.code)
+        expected_path = self.check_file_exists(self.config.code)
 
         with expected_path.open("r") as f:
             dataset = json.load(f)
@@ -278,8 +280,8 @@ class TestImporter(BetamaxPatchTestCase):
         with expected_path.open("w") as f:
             json.dump(dataset, f)
 
-        config = ImportConfig.objects.first()
-        config.run_import()
+        self.config.refresh_from_db()
+        self.config.run_import()
 
         with expected_path.open("r") as f:
             dataset = json.load(f)
@@ -288,12 +290,11 @@ class TestImporter(BetamaxPatchTestCase):
             )
 
     def test_surrogate_indicator(self):
-        config = ImportConfig.objects.first()
-        config.indicator = "jingle_jangle"
-        config.indicator_is_surrogate = True
-        config.save()
+        self.config.indicator = "jingle_jangle"
+        self.config.indicator_is_surrogate = True
+        self.config.save()
 
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         expected = ["jingle_jangle"]
         codes = Indicator.objects.values_list("code", flat=True)
@@ -303,14 +304,13 @@ class TestImporter(BetamaxPatchTestCase):
         self.assertEqual(expected, list(fact_codes))
 
     def test_delete_existing(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         # Change the filter to check that old data has been removed
-        config.filters = {"hhtyp": ["A2"]}
-        config.save()
+        self.config.filters = {"hhtyp": ["A2"]}
+        self.config.save()
 
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         breakdown_codes = Fact.objects.values_list(
             "breakdown__code", flat=True
@@ -322,14 +322,13 @@ class TestImporter(BetamaxPatchTestCase):
         self.assertEqual(["a1", "a1_dch", "a2"], list(breakdowns))
 
     def test_keep_existing(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
 
         # Change the filter to check that old data has been removed
-        config.filters = {"hhtyp": ["A2"]}
-        config.save()
+        self.config.filters = {"hhtyp": ["A2"]}
+        self.config.save()
 
-        config.run_import()
+        self.config.run_import()
 
         breakdown_codes = (
             Fact.objects.order_by("breakdown__code")
@@ -339,8 +338,7 @@ class TestImporter(BetamaxPatchTestCase):
         self.assertEqual(["a1", "a1_dch", "a2"], list(breakdown_codes))
 
     def test_update_existing(self):
-        config = ImportConfig.objects.first()
-        config.run_import(delete_existing=True)
+        self.config.run_import(delete_existing=True)
         original_fact = Fact.objects.first()
 
         new_fact = Fact.objects.get(pk=original_fact.pk)
@@ -349,11 +347,33 @@ class TestImporter(BetamaxPatchTestCase):
         new_fact.import_config = None
         new_fact.save()
 
-        config.run_import()
+        self.config.run_import()
         new_fact.refresh_from_db()
         self.assertEqual(new_fact.value, original_fact.value)
         self.assertEqual(new_fact.flags, original_fact.flags)
         self.assertEqual(new_fact.import_config, original_fact.import_config)
+
+    def test_adjust_value(self):
+        self.config.run_import(delete_existing=True, force_download=True)
+
+        fact = Fact.objects.get(
+            indicator__code="h_comp",
+            breakdown__code="a1",
+            unit__code="pc_hh",
+            period__code="2010",
+            country__code="EU",
+        )
+        self.assertEqual(fact.value, 58.58)
+
+        self.config.value_multiplier = -0.1
+        self.config.value_offset = 100
+        self.config.value_decimal_places = 1
+        self.config.save()
+
+        self.config.run_import()
+        fact.refresh_from_db()
+        # Result should be (100 - value / 10) rounded to 1 decimal place
+        self.assertEqual(fact.value, 94.1)
 
 
 class TestImporterDataMerge(BetamaxPatchTestCase):
