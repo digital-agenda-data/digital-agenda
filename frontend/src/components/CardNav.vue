@@ -12,7 +12,12 @@
       "
       :title="item.plaintextDescription"
     >
-      <ecl-card :image="item.image" :title="item.title" :labels="item.label" />
+      <ecl-card
+        :image="item.image"
+        :title="item.title"
+        :labels="item.label"
+        :to="item.to"
+      />
       <div
         v-if="item.plaintextDescription"
         :id="`card-nav-description-${item.id}`"
