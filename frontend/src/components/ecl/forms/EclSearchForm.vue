@@ -23,7 +23,7 @@
     </div>
 
     <ecl-button
-      variant="search"
+      variant="ghost"
       label="Search"
       icon="search"
       type="submit"

@@ -13,7 +13,8 @@
         data-ecl-notification-close=""
         variant="ghost"
         label="Close"
-        icon="close-filled"
+        icon="close"
+        icon-only
         @click="$emit('close')"
       />
 
