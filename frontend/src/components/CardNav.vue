@@ -67,7 +67,7 @@ export default {
   grid-template-columns: repeat(1, 1fr);
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 560px) {
   .card-nav {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -75,14 +75,7 @@ export default {
 
 @media screen and (min-width: 768px) {
   .card-nav {
-    grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (min-width: 996px) {
-  .card-nav {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 
