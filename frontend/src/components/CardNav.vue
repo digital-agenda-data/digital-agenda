@@ -93,7 +93,7 @@ export default {
 .card-nav-item-active,
 .card-nav-item:hover {
   .ecl-card {
-    background-color: var(--ecl-color-neutral-60);
+    background-color: var(--ecl-color-neutral-40);
   }
 }
 </style>
