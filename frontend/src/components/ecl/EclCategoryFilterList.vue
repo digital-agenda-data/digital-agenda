@@ -6,32 +6,37 @@
       class="ecl-category-filter__list-item"
       aria-expanded="false"
     >
-      <router-link
-        :to="item.to"
-        class="ecl-category-filter__item"
-        :class="{
-          'ecl-category-filter__item--has-children': item.children?.length > 0,
-          [`ecl-category-filter__item--level-${level}`]: true,
-        }"
-        active-class="ecl-category-filter__item--current"
-      >
-        <ecl-icon
-          v-if="level > 1 && item.children?.length > 0"
-          icon="solid-arrow"
-          class="ecl-category-filter__item-icon"
-          size="m"
-          rotate="90"
-        />
+      <router-link v-slot="{ isActive, href, navigate }" :to="item.to" custom>
+        <a
+          :href="href"
+          class="ecl-category-filter__item"
+          :class="{
+            'ecl-category-filter__item--has-children':
+              item.children?.length > 0,
+            [`ecl-category-filter__item--level-${level}`]: true,
+            'ecl-category-filter__item--current': isActive,
+          }"
+          :aria-current="isActive"
+          @click="navigate"
+        >
+          <ecl-icon
+            v-if="level > 1 && item.children?.length > 0"
+            icon="solid-arrow"
+            class="ecl-category-filter__item-icon"
+            size="m"
+            rotate="90"
+          />
 
-        {{ item.text }}
+          {{ item.text }}
 
-        <ecl-icon
-          v-if="level === 1 && item.children?.length > 0"
-          icon="corner-arrow"
-          class="ecl-category-filter__item-icon"
-          size="xs"
-          rotate="180"
-        />
+          <ecl-icon
+            v-if="level === 1 && item.children?.length > 0"
+            icon="corner-arrow"
+            class="ecl-category-filter__item-icon"
+            size="xs"
+            rotate="180"
+          />
+        </a>
       </router-link>
 
       <!-- Recursive call for children -->

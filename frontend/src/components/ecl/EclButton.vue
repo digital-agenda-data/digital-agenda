@@ -1,25 +1,24 @@
 <template>
   <button
     class="ecl-button"
-    :class="`ecl-button--${variant}`"
+    :class="{
+      [`ecl-button--${variant}`]: true,
+      'ecl-button--icon-only': iconOnly,
+    }"
     :aria-label="ariaLabel || label"
   >
     <span class="ecl-button__container">
       <slot>
-        <span v-if="label" class="ecl-button__label" data-ecl-label="true">
-          {{ label }}
-        </span>
         <ecl-icon
           v-if="icon"
           :icon="icon"
           :rotate="iconRotate"
           :size="iconSize"
           class="ecl-button__icon"
-          :class="{
-            // Sets extra space if there is a label before
-            'ecl-button__icon--after': !!label,
-          }"
         />
+        <span v-if="label" class="ecl-button__label" data-ecl-label="true">
+          {{ label }}
+        </span>
       </slot>
     </span>
   </button>
@@ -50,9 +49,7 @@ export default {
       required: false,
       default: "primary",
       validator(value) {
-        return ["primary", "secondary", "call", "ghost", "search"].includes(
-          value,
-        );
+        return ["primary", "secondary", "call", "ghost"].includes(value);
       },
     },
     label: {
@@ -84,6 +81,11 @@ export default {
           value,
         );
       },
+    },
+    iconOnly: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 };

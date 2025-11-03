@@ -12,7 +12,12 @@
       "
       :title="item.plaintextDescription"
     >
-      <ecl-card :image="item.image" :title="item.title" :labels="item.label" />
+      <ecl-card
+        :image="item.image"
+        :title="item.title"
+        :labels="item.label"
+        :to="item.to"
+      />
       <div
         v-if="item.plaintextDescription"
         :id="`card-nav-description-${item.id}`"
@@ -62,7 +67,7 @@ export default {
   grid-template-columns: repeat(1, 1fr);
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 560px) {
   .card-nav {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -70,14 +75,7 @@ export default {
 
 @media screen and (min-width: 768px) {
   .card-nav {
-    grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (min-width: 996px) {
-  .card-nav {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -95,7 +93,7 @@ export default {
 .card-nav-item-active,
 .card-nav-item:hover {
   .ecl-card {
-    background-color: var(--ecl-color-neutral-60);
+    background-color: var(--ecl-color-neutral-40);
   }
 }
 </style>

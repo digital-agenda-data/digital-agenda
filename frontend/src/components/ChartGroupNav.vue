@@ -19,7 +19,11 @@
     >
       <div class="ecl-u-pa-xs">
         <h2>About this dataset</h2>
-        <ecl-category-filter :items="navRoutes" aria-label="Dataset details" />
+        <ecl-category-filter
+          :items="navRoutes"
+          aria-label="Dataset details"
+          class="ecl-u-bg-neutral-40"
+        />
       </div>
     </div>
   </div>
