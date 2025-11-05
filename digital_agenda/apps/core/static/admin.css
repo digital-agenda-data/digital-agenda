@@ -56,6 +56,8 @@ html[data-theme="light"] {
   --object-tools-bg: var(--close-button-bg);
   --object-tools-hover-bg: var(--close-button-hover-bg);
   --font-family-primary: Arial, sans-serif;
+
+  color-scheme: light!important;
 }
 
 body {
