@@ -39,6 +39,10 @@ EUROSTAT_FLAGS = {
     "n": "not significant",
     "p": "provisional",
     "u": "low reliability",
+    # Taken from https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Tutorial:Symbols_and_abbreviations
+    "|": "break in time series",
+    "0": "real zero",
+    "0n": "rounded zero",
     # Deprecated flags
     "s": "Eurostat estimate",
     "z": "not applicable",

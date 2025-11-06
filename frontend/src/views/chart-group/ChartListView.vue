@@ -4,7 +4,7 @@
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-else v-html="chartGroupStore.currentChartGroup.description" />
 
-    <h2>Please select one of the available charts:</h2>
+    <h2>Select one of the available charts:</h2>
 
     <hr class="ecl-u-border-color-primary" />
 
