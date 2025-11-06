@@ -358,41 +358,47 @@ export default {
       return {
         formatter() {
           const fact = this.point.options.fact;
-          const result = [`<b>${this.point.options.key ?? this.key}</b>`];
+          const result = [];
 
           if (this.series.userOptions.name) {
-            result.push(this.series.userOptions.name);
+            result.push(`<b>${this.series.userOptions.name}</b>`);
           }
+
+          result.push(`${this.point.options.key ?? this.key}`);
 
           if (parent.unit?.code) {
-            result.push(parent.getUnitDisplay(fact?.value, parent.unit));
-          }
-
-          for (const flag of fact?.flags || "") {
-            result.push("<b>Flag:</b> " + parent.getFlagDisplay(flag));
+            result.push(
+              `<b>${parent.getUnitDisplay(fact?.value, parent.unit)}</b>`,
+            );
           }
 
           if (parent.breakdown?.code) {
             result.push(
-              `<b>${parent.currentLabels.breakdown ?? "Breakdown"}:</b> ${getBreakdownLabel(parent.breakdown)}`,
+              `${parent.currentLabels.breakdown ?? "Breakdown"}: ${getBreakdownLabel(parent.breakdown)}`,
             );
           }
 
           if (parent.period?.code) {
             result.push(
-              `<b>${parent.currentLabels.period ?? "Time period"}:</b> ${getPeriodLabel(parent.period, "alt_label")}`,
+              `${parent.currentLabels.period ?? "Time period"}: ${getPeriodLabel(parent.period, "alt_label")}`,
             );
           }
 
           if (fact?.reference_period) {
-            result.push(`<b>Reference period:</b> ${fact.reference_period}`);
+            result.push(
+              `Reference period: ${fact.reference_period} ${parent.getExtraNotes()}`,
+            );
+          } else {
+            result.push(...parent.getExtraNotes());
+          }
+
+          for (const flag of fact?.flags || "") {
+            result.push(`<b>Flag: ${parent.getFlagDisplay(flag)}</b> `);
           }
 
           if (fact?.remarks) {
             result.push(`<b>Remarks:</b> ${fact.remarks}`);
           }
-
-          result.push(...parent.getExtraNotes());
 
           return result.join("<br/>");
         },
