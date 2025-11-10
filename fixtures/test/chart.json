@@ -478,5 +478,36 @@
         ]
       ]
     }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 56,
+      "chart_group": [
+        "test-custom-filters"
+      ],
+      "name": "Test Restrict Only Breakdown Group Total",
+      "code": "test-spline-compare-countries-restrict",
+      "chart_type": "SPLINE_COMPARE_COUNTRIES",
+      "description": "<p>This spline chart has restricted values for the breakdown group and countries</p>",
+      "indicator_group_filter_hidden": true,
+      "breakdown_filter_hidden": false,
+      "unit_filter_hidden": true,
+      "breakdown_group_filter_values": [
+        [
+          "total"
+        ]
+      ],
+      "country_filter_values": [
+        [
+          "EU"
+        ],
+        [
+          "DK"
+        ]
+      ]
+    }
   }
 ]

@@ -51,12 +51,22 @@ Cypress.Commands.addAll({
         .contains(label);
     }
   },
-  selectFilter(inputName, label) {
+  openFilter(inputName) {
     // Wait for multiselect to be rendered but wai until it's finished loading
     cy.get(`[data-name='${inputName}']`).should("exist");
     cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
     // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
+  },
+  checkFilterOptions(inputName, options) {
+    cy.openFilter(inputName);
+    cy.get(`[data-name='${inputName}'] [role='option']`).then(($els) => {
+      const actualTexts = Array.from($els).map((el) => el.innerText.trim());
+      expect(actualTexts).to.deep.equal(options);
+    });
+  },
+  selectFilter(inputName, label) {
+    cy.openFilter(inputName);
 
     if (!Array.isArray(label)) {
       cy.get(`[data-name='${inputName}'] [role='option']`)
