@@ -70,6 +70,7 @@ class ChartSerializer(serializers.ModelSerializer):
             "image",
             # Chart options
             *Chart.get_filter_options(),
+            "country_multi_filter",
             "legend_layout",
             "font_styles",
             "filter_order",

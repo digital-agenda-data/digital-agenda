@@ -299,6 +299,11 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     unit_filter = filter_option_field("core.Unit")
     country_filter = filter_option_field("core.Country")
 
+    country_multi_filter = models.BooleanField(
+        default=True,
+        help_text="Allow multiple countries to be selected for this chart.",
+    )
+
     indicator_label = ChartDimensionLabel()
     breakdown_label = ChartDimensionLabel()
     period_label = ChartDimensionLabel()

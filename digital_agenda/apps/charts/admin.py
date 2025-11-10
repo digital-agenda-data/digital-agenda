@@ -173,6 +173,7 @@ class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
                     "country_filter_defaults",
                     "country_filter_ignored",
                     "country_filter_values",
+                    "country_multi_filter",
                 ],
             },
         ),
