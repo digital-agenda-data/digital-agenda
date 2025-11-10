@@ -120,6 +120,14 @@ def filter_option_field(rel_model):
             blank=True,
             help_text="Values specified here will be hidden and not available for selection.",
         )
+        values = models.ManyToManyField(
+            rel_model,
+            related_name="restricted_charts",
+            blank=True,
+            help_text=(
+                "If specified, only values specified here will be available for selection."
+            ),
+        )
 
     return FilterOptionField()
 

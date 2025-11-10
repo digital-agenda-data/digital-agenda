@@ -26,24 +26,31 @@ class ChartSerializer(serializers.ModelSerializer):
     chart_group = CodeRelatedField()
     indicator_group_filter_defaults = CodeRelatedField(many=True)
     indicator_group_filter_ignored = CodeRelatedField(many=True)
+    indicator_group_filter_values = CodeRelatedField(many=True)
 
     indicator_filter_defaults = CodeRelatedField(many=True)
     indicator_filter_ignored = CodeRelatedField(many=True)
+    indicator_filter_values = CodeRelatedField(many=True)
 
     breakdown_group_filter_defaults = CodeRelatedField(many=True)
     breakdown_group_filter_ignored = CodeRelatedField(many=True)
+    breakdown_group_filter_values = CodeRelatedField(many=True)
 
     breakdown_filter_defaults = CodeRelatedField(many=True)
     breakdown_filter_ignored = CodeRelatedField(many=True)
+    breakdown_filter_values = CodeRelatedField(many=True)
 
     period_filter_defaults = CodeRelatedField(many=True)
     period_filter_ignored = CodeRelatedField(many=True)
+    period_filter_values = CodeRelatedField(many=True)
 
     unit_filter_defaults = CodeRelatedField(many=True)
     unit_filter_ignored = CodeRelatedField(many=True)
+    unit_filter_values = CodeRelatedField(many=True)
 
     country_filter_defaults = CodeRelatedField(many=True)
     country_filter_ignored = CodeRelatedField(many=True)
+    country_filter_values = CodeRelatedField(many=True)
 
     filter_order = serializers.SlugRelatedField(
         slug_field="filter_field", many=True, read_only=True
