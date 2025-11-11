@@ -38,42 +38,74 @@ export default {
     },
     endpointFilters() {
       return {
-        X: ["indicatorX", "breakdownX", "unitX", "countryX"],
-        Y: ["indicatorY", "breakdownY", "unitY", "countryX"],
+        X: ["indicatorX", "breakdownX", "unitX"],
+        Y: ["indicatorY", "breakdownY", "unitY"],
       };
     },
     groupBy() {
-      return ["axis", "period"];
+      return ["axis", "country", "period"];
+    },
+    countries() {
+      return this.filterStore.X.country;
+    },
+    isSameUnit() {
+      return this.filterStore.X.unit?.code === this.filterStore.Y.unit?.code;
     },
     series() {
-      return ["X", "Y"].map((axis, index) => {
-        const unit = this.filterStore[axis].unit;
-        const breakdown = this.filterStore[axis].breakdown;
-        const indicator = this.filterStore[axis].indicator;
-
-        return {
-          ...getCustomOptions([breakdown, indicator]),
-          yAxis: index,
-          name: getIndicatorLabel(indicator),
-          pointRange: 365 * 24 * 3600 * 1000,
-          data: this.apiDataPeriods.map((periodCode) => {
-            const apiValue = this.apiValuesGrouped[axis]?.[periodCode];
-            const period = this.periodByCode.get(periodCode);
+      return ["X", "Y"]
+        .map((axis, index) => {
+          return (this.countries || []).map((country) => {
+            const unit = this.filterStore[axis].unit;
+            const breakdown = this.filterStore[axis].breakdown;
+            const indicator = this.filterStore[axis].indicator;
 
             return {
-              y: apiValue,
-              x: period?.date,
-              name: this.getPeriodWithExtraNotes(period, indicator),
-              unit,
-              period,
-              indicator,
-              breakdown,
+              ...getCustomOptions([breakdown, indicator]),
+              yAxis: this.isSameUnit ? 0 : index,
+              name: this.joinStrings([
+                getCountryLabel(country),
+                getIndicatorLabel(indicator),
+              ]),
+              pointRange: 365 * 24 * 3600 * 1000,
+              data: this.apiDataPeriods.map((periodCode) => {
+                const apiValue =
+                  this.apiValuesGrouped[axis]?.[country.code]?.[periodCode];
+                const period = this.periodByCode.get(periodCode);
+
+                return {
+                  y: apiValue,
+                  x: period?.date,
+                  name: this.getPeriodWithExtraNotes(period, indicator),
+                  unit,
+                  period,
+                  indicator,
+                  breakdown,
+                };
+              }),
             };
-          }),
-        };
-      });
+          });
+        })
+        .flat();
     },
     chartOptions() {
+      const yAxis = [
+        {
+          title: {
+            text: getUnitLabel(this.filterStore.unitX),
+          },
+          min: 0,
+        },
+      ];
+      if (!this.isSameUnit) {
+        yAxis.push({
+          opposite: true,
+          title: {
+            text: getUnitLabel(this.filterStore.unitY),
+          },
+          min: 0,
+        });
+      }
+
       return {
         title: {
           text:
@@ -88,7 +120,7 @@ export default {
             ]),
         },
         subtitle: {
-          text: getCountryLabel(this.filterStore.countryX),
+          text: this.joinStrings(this.countries.map(getCountryLabel)),
         },
         legend: {
           enabled: true,
@@ -101,21 +133,7 @@ export default {
         xAxis: {
           type: "datetime",
         },
-        yAxis: [
-          {
-            title: {
-              text: getUnitLabel(this.filterStore.unitX),
-            },
-            min: 0,
-          },
-          {
-            opposite: true,
-            title: {
-              text: getUnitLabel(this.filterStore.unitY),
-            },
-            min: 0,
-          },
-        ],
+        yAxis,
       };
     },
     tooltip() {

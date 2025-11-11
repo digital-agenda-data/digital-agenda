@@ -7,7 +7,6 @@ import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
 import {
   getBreakdownLabel,
-  getCountriesLabel,
   getCountryLabel,
   getCustomOptions,
   getUnitLabel,
@@ -74,7 +73,7 @@ export default {
     chartOptions() {
       return {
         subtitle: {
-          text: getCountriesLabel(this.countries),
+          text: this.joinStrings(this.countries.map(getCountryLabel)),
         },
         legend: {
           enabled: (this.breakdown || []).length > 1,
