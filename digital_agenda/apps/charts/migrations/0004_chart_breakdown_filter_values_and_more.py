@@ -3,6 +3,18 @@
 from django.db import migrations, models
 
 
+def migrate_country_multi(apps, schema_editor):
+    db_alias = schema_editor.connection.alias
+    Chart = apps.get_model("charts", "Chart")
+
+    Chart.objects.using(db_alias).filter(
+        chart_type__in=(
+            "SPLINE_COMPARE_BREAKDOWNS",
+            "SPLINE_COMPARE_TWO_INDICATORS",
+        )
+    ).update(country_multi_filter=False)
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -91,5 +103,8 @@ class Migration(migrations.Migration):
                 related_name="restricted_charts",
                 to="core.unit",
             ),
+        ),
+        migrations.RunPython(
+            migrate_country_multi, reverse_code=migrations.RunPython.noop
         ),
     ]
