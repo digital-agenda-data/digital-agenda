@@ -7,6 +7,7 @@ import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
 import {
   getBreakdownLabel,
+  getCountriesLabel,
   getCountryLabel,
   getCustomOptions,
   getUnitLabel,
@@ -35,35 +36,45 @@ export default {
       ];
     },
     endpointFilters() {
-      return ["breakdownGroup", "indicator", "unit", "country"];
+      return ["breakdownGroup", "indicator", "unit"];
     },
     groupBy() {
-      return ["breakdown", "period"];
+      return ["country", "breakdown", "period"];
     },
     series() {
-      return (this.breakdown || []).map((breakdown) => {
-        return {
-          ...getCustomOptions(breakdown),
-          name: getBreakdownLabel(breakdown),
-          pointRange: 365 * 24 * 3600 * 1000,
-          data: this.apiDataPeriods.map((periodCode) => {
-            const fact = this.apiDataGrouped[breakdown.code]?.[periodCode];
-            const period = this.periodByCode.get(periodCode);
-
+      return (this.countries || [])
+        .map((country) => {
+          return (this.breakdown || []).map((breakdown) => {
             return {
-              fact,
-              y: fact?.value ?? null,
-              x: period?.date,
-              name: this.getPeriodWithExtraNotes(period),
+              ...getCustomOptions(breakdown),
+              name: this.joinStrings([
+                getCountryLabel(country),
+                getBreakdownLabel(breakdown),
+              ]),
+              pointRange: 365 * 24 * 3600 * 1000,
+              data: this.apiDataPeriods.map((periodCode) => {
+                const fact =
+                  this.apiDataGrouped[country.code]?.[breakdown.code]?.[
+                    periodCode
+                  ];
+                const period = this.periodByCode.get(periodCode);
+
+                return {
+                  fact,
+                  y: fact?.value ?? null,
+                  x: period?.date,
+                  name: this.getPeriodWithExtraNotes(period),
+                };
+              }),
             };
-          }),
-        };
-      });
+          });
+        })
+        .flat();
     },
     chartOptions() {
       return {
         subtitle: {
-          text: getCountryLabel(this.country),
+          text: getCountriesLabel(this.countries),
         },
         legend: {
           enabled: (this.breakdown || []).length > 1,

@@ -165,6 +165,12 @@ export function getCountryLabel(obj, defaultLabel = "alt_label") {
   return getDimensionLabel("country", obj, defaultLabel);
 }
 
+export function getCountriesLabel(obj, defaultLabel = "alt_label") {
+  return forceArray(obj)
+    .map((country) => getCountryLabel(country, defaultLabel))
+    .join(", ");
+}
+
 /**
  * Get a suitable display string for this unit value
  *
