@@ -66,6 +66,7 @@ export default {
               name: this.joinStrings([
                 getCountryLabel(country),
                 getIndicatorLabel(indicator),
+                getBreakdownLabel(breakdown),
               ]),
               pointRange: 365 * 24 * 3600 * 1000,
               data: this.apiDataPeriods.map((periodCode) => {

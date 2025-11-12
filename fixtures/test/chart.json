@@ -519,5 +519,53 @@
         ]
       ]
     }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 56,
+      "chart_group": [
+        "test-country-filter-options"
+      ],
+      "name": "Test Spline Compare Breakdowns Multi Country",
+      "code": "test-spline-compare-breakdown-multi-country",
+      "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "country_multi_filter": true,
+      "description": "<p>This spline chart compare breakdown that has multi country filter</p>"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 57,
+      "chart_group": [
+        "test-country-filter-options"
+      ],
+      "name": "Test Spline Compare Indicators Multi Country",
+      "code": "test-spline-compare-indicators-multi-country",
+      "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter": true,
+      "description": "<p>This spline chart compare indicators that has multi country filter</p>"
+    }
+  },
+  {
+    "model": "charts.chart",
+    "fields": {
+      "created_at": "2024-02-13T10:19:00.807Z",
+      "updated_at": "2024-02-13T10:19:00.807Z",
+      "display_order": 58,
+      "chart_group": [
+        "test-country-filter-options"
+      ],
+      "name": "Test Column Compare Breakdown Single Country",
+      "code": "test-column-compare-breakdown-single-country",
+      "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
+      "country_multi_filter": false,
+      "description": "<p>This column breakdown compare that has single country filter</p>"
+    }
   }
 ]
