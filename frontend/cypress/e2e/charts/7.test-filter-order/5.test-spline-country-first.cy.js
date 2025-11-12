@@ -14,7 +14,7 @@ describeResponsive("Check Chart", () => {
         unitY: "% of graduates",
       },
       title: ["ICT graduates, Females and ICT graduates, Males"],
-      point: "Year: 2019, 0.8. European Union, ICT graduates.",
+      point: "Year: 2019, 0.8. European Union, ICT graduates, Females.",
       definitions: [
         "Indicator: ICT graduates",
         "Breakdown: Females",

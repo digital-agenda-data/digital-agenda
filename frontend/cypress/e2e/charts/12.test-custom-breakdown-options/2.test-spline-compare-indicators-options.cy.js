@@ -16,7 +16,7 @@ describeResponsive("Check Chart", () => {
         "European Union",
       ],
       point:
-        "Year: 2010, 23.53. European Union, Games, images, films or music.",
+        "Year: 2010, 23.53. European Union, Games, images, films or music, Non-nationals.",
       tooltip: ["Non-nationals", "23.53% of individuals"],
     });
     // Check data labels

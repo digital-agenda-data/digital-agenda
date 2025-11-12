@@ -11,7 +11,7 @@ describeResponsive("Check Chart", () => {
         indicatorY: "Access to e-health records",
       },
       point:
-        "DESI period: 2018 (data from 2017), 58.3384. European Union, e-Government users.",
+        "DESI period: 2018 (data from 2017), 58.3384. European Union, e-Government users, All individuals.",
       tooltip: [
         "e-Government users",
         "58.34% of internet users (last 12 months)",
@@ -31,7 +31,7 @@ describeResponsive("Check Chart", () => {
         indicatorY: "Access to e-health records",
       },
       point:
-        "DESI period: 2019 (data from 2018), 24.7944. European Union, e-Invoices.",
+        "DESI period: 2019 (data from 2018), 24.7944. European Union, e-Invoices, All enterprises.",
       // 3 points from e-Invoices instead of 5 (because 2 are hidden via extra notes)
       // 1 point from Access to e-health records
       pointNr: 4,
