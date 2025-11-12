@@ -5,6 +5,7 @@ import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithG
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import {
+  forceArray,
   getBreakdownLabel,
   getCountryLabel,
   getCustomOptions,
@@ -46,7 +47,7 @@ export default {
       return ["axis", "country", "period"];
     },
     countries() {
-      return this.filterStore.X.country;
+      return forceArray(this.filterStore.X.country);
     },
     isSameUnit() {
       return this.filterStore.X.unit?.code === this.filterStore.Y.unit?.code;
