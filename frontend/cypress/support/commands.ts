@@ -38,9 +38,22 @@ Cypress.Commands.addAll({
   },
   checkNavigateBetweenCharts(chartGroup, chartNames) {
     cy.navigateToChart(chartGroup, chartNames[0]);
+
+    // Wait for loading
+    cy.get(".chart-container-digital-agenda").should("exist");
+    cy.get(".chart-container-digital-agenda .lds-app-loader").should(
+      "not.exist",
+    );
+    cy.get(".highcharts-credits").contains("European Commission");
     cy.checkHasChartData();
     for (const nextChart of chartNames.slice(1)) {
       cy.get("a").contains(nextChart).click();
+      // Wait for loading
+      cy.get(".chart-container-digital-agenda").should("exist");
+      cy.get(".chart-container-digital-agenda .lds-app-loader").should(
+        "not.exist",
+      );
+      cy.get(".highcharts-credits").contains("European Commission");
       cy.checkHasChartData();
     }
   },

@@ -10,7 +10,8 @@ describeResponsive("Check Chart", () => {
       // No filters since the chart should have the defaults already set to what we need.
       filters: {},
       title: ["e-Government users", "European Union"],
-      point: "DESI period: 2018 (data from 2017), 58.3384. All individuals.",
+      point:
+        "DESI period: 2018 (data from 2017), 58.3384. European Union, All individuals.",
       tooltip: [
         "All individuals",
         "58.34% of internet users (last 12 months)",
@@ -29,7 +30,8 @@ describeResponsive("Check Chart", () => {
       filters: {
         indicator: "e-Invoices",
       },
-      point: "DESI period: 2019 (data from 2018), 24.7944. All enterprises.",
+      point:
+        "DESI period: 2019 (data from 2018), 24.7944. European Union, All enterprises.",
       // 3 points from e-Invoices instead of 5 (because 2 are hidden via extra notes)
       pointNr: 3,
       tooltip: [

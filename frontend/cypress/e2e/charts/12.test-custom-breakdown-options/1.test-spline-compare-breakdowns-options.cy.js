@@ -14,7 +14,7 @@ describeResponsive("Check Chart", () => {
         "playing or downloading games, images, films or music",
         "European Union",
       ],
-      point: "Year: 2010, 23.53. Non-nationals.",
+      point: "Year: 2010, 23.53. European Union, Non-nationals.",
       tooltip: ["Non-nationals", "23.53% of individuals"],
     });
   });
