@@ -71,6 +71,7 @@
       "name": "Test Spline Country First",
       "code": "test-spline-country-first",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter":false,
       "description": "<p>This charts shows the country first</p>"
     }
   },
@@ -86,6 +87,7 @@
       "name": "Test Spline Custom Ranges",
       "code": "test-spline-custom-range",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter": false,
       "description": "<p>This charts has custom year and value ranges</p>",
       "min_value": -1,
       "max_value": 4,
@@ -156,6 +158,7 @@
       "name": "Test Spline Custom Fonts",
       "code": "test-spline-custom-fonts",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter": false,
       "description": "<p>This charts has custom font styles</p>"
     }
   },
@@ -186,6 +189,7 @@
       "name": "Test Spline Code Labels",
       "code": "test-spline-code-labels",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter": false,
       "description": "<p>This charts uses codes as labels for all dimensions</p>",
       "indicator_label": "code",
       "breakdown_label": "code",
@@ -286,6 +290,7 @@
       "name": "Test Spline Compare Indicators Notes",
       "code": "test-spline-compare-indicators-notes",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter": false,
       "description": "<p>This spline compare indicators with extra notes</p>",
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
@@ -322,6 +327,7 @@
       "name": "Test Spline Compare Breakdowns Notes",
       "code": "test-spline-compare-breakdowns-notes",
       "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "country_multi_filter":false,
       "description": "<p>This spline compare breakdowns with extra notes</p>",
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
@@ -394,6 +400,7 @@
       "name": "Test Spline Compare Breakdowns",
       "code": "test-spline-compare-breakdowns",
       "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "country_multi_filter": false,
       "description": "<p>This spline compare breakdowns with custom breakdown options</p>",
       "country_filter_defaults": [
         [
@@ -414,6 +421,7 @@
       "name": "Test Spline Compare Indicators",
       "code": "test-spline-compare-indicators",
       "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+      "country_multi_filter": false,
       "description": "<p>This spline compare indicators with custom breakdown options</p>",
       "breakdown_filter_defaults": [
         [
@@ -434,6 +442,7 @@
       "name": "Test Default And Ignore Breakdown Group Total",
       "code": "test-spline-compare-breakdown-total",
       "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "country_multi_filter": false,
       "description": "<p>This spline chart has both default and ignore values for the breakdown group</p>",
       "indicator_group_filter_hidden": true,
       "breakdown_filter_hidden": true,
@@ -462,6 +471,7 @@
       "name": "Test Default And Ignore Breakdown Group Gender",
       "code": "test-spline-compare-breakdown-gender",
       "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+      "country_multi_filter": false,
       "description": "<p>This spline chart has both default and ignore values for the breakdown group</p>",
       "indicator_group_filter_hidden": true,
       "breakdown_filter_hidden": true,
