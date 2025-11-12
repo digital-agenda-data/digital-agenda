@@ -252,6 +252,7 @@ Cypress.Commands.addAll({
   checkChart(config) {
     cy.task("cleanDownloadsFolder");
     // Wait for loading
+    cy.waitForNetworkIdle(500, { log: false });
     cy.get(".chart-container-digital-agenda").should("exist");
     cy.get(".chart-container-digital-agenda .lds-app-loader").should(
       "not.exist",
