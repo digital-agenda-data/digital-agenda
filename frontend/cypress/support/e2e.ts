@@ -8,5 +8,5 @@ import verifyDownloads from "cy-verify-downloads";
 verifyDownloads.addCustomCommand();
 
 Cypress.on("uncaught:exception", (err) => {
-  cy.task("log", err);
+  console.error(err);
 });
