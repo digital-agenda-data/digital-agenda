@@ -175,5 +175,25 @@
             ]
         ]
     }
+},
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 160,
+        "code": "test-reference-period",
+        "name": "Test Reference Period",
+        "short_name": "Test Reference Period",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test charts reference period</p>",
+        "indicator_groups": [
+            [
+                "broadband"
+            ]
+        ],
+        "period_start": 2020,
+        "period_end": 2022
+    }
 }
 ]

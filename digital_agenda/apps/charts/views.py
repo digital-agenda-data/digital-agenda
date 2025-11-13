@@ -88,7 +88,7 @@ class ChartGroupViewSet(
                 # valid link to a chart showing this indicator.
                 sample_fact_id=Subquery(fact_subquery.values("id")[:1]),
             )
-            .filter(groups__id__in=group_ids)
+            .filter(groups__id__in=group_ids, sample_fact_id__isnull=False)
         )
 
         # Prefetch all required objects in bulk
