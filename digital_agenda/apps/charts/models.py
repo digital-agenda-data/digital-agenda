@@ -120,6 +120,14 @@ def filter_option_field(rel_model):
             blank=True,
             help_text="Values specified here will be hidden and not available for selection.",
         )
+        values = models.ManyToManyField(
+            rel_model,
+            related_name="restricted_charts",
+            blank=True,
+            help_text=(
+                "If specified, only values specified here will be available for selection."
+            ),
+        )
 
     return FilterOptionField()
 
@@ -290,6 +298,11 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
     period_filter = filter_option_field("core.Period")
     unit_filter = filter_option_field("core.Unit")
     country_filter = filter_option_field("core.Country")
+
+    country_multi_filter = models.BooleanField(
+        default=True,
+        help_text="Allow multiple countries to be selected for this chart.",
+    )
 
     indicator_label = ChartDimensionLabel()
     breakdown_label = ChartDimensionLabel()

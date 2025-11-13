@@ -14,7 +14,7 @@ describeResponsive("Check Chart", () => {
         unitY: "% of graduates",
       },
       title: ["ict_grad, f and ict_grad, m", "EU"],
-      point: "2019, 0.8. ict_grad.",
+      point: "2019, 0.8. EU, ict_grad, f.",
       legend: ["ict_grad", "ict_grad"],
       definitions: [
         "Indicator: ICT graduates",

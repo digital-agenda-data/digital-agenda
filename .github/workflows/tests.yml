@@ -56,7 +56,7 @@ jobs:
         run: |
           cd frontend
           # Don't record videos since we don't upload them
-          npm run test -- -c 'video=false'
+          npm run test -- -c 'video=false' -e "viewport=1920x1080"
       - uses: actions/upload-artifact@v4
         if: ${{ failure() && steps.frontendTests.conclusion == 'failure' }}
         with:

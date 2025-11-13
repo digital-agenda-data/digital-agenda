@@ -45,7 +45,7 @@ export const useChartStore = defineStore("chart", {
     currentFilterOptions() {
       const result = {};
 
-      for (const key of ["hidden", "defaults", "ignored"]) {
+      for (const key of ["hidden", "defaults", "ignored", "values"]) {
         result[key] = {};
 
         for (const filterName of FILTERS) {

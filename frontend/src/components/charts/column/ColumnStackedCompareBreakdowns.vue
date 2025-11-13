@@ -4,7 +4,7 @@ import BreakdownGroupFilter from "@/components/chart-filters/BreakdownGroupFilte
 import BreakdownMultiFilter from "@/components/chart-filters/BreakdownMultiFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
-import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
+import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
 
 export default {
@@ -22,7 +22,7 @@ export default {
         PeriodFilter,
         UnitFilter,
         {
-          component: CountryMultiFilter,
+          component: CountryFilter,
           attrs: { allInitial: true, hidden: true, syncRoute: false },
         },
       ];

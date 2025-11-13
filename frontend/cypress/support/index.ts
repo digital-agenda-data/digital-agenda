@@ -36,6 +36,16 @@ declare global {
         chartNames: string[],
       ): undefined;
       /**
+       * Custom command to open the filter dropdown
+       * @example cy.openFilter("breakdown")
+       */
+      openFilter(inputName: string): undefined;
+      /**
+       * Custom command to check the options in the filter dropdown
+       * @example cy.checkFilterOptions("breakdown", ["Total", "Region", "Country"])
+       */
+      checkFilterOptions(inputName: string, options: string[]): undefined;
+      /**
        * Custom command to select an item from EclSelect component
        * @example cy.selectFilter("breakdown", "Total")
        */

@@ -3,12 +3,32 @@ import { randomStr } from "../../support/randomStr.js";
 describe("Check import configuration", () => {
   it("Create and run import config", () => {
     const title = randomStr("test-import-config-");
-
+    const filters = JSON.stringify({
+      hhtyp: ["total"],
+      indic_is: ["h_broad"],
+      unit: ["pc_hh"],
+      geo: ["EU27_2020"],
+    });
+    const mappings = JSON.stringify({
+      breakdown: { total: "hh_total" },
+      country: { EU27_2020: "EU" },
+      reference_period: { 2019: "2000" },
+    });
     cy.login();
     // Navigate to the import config page
     cy.get("a").contains("Import configs").click();
     cy.get("a").contains("Add import config").click();
     // Add a new import config with filters set to only import a single Fact
+    cy.get("#id_filters textarea.ace_text-input").clear({ force: true });
+    cy.get("#id_filters textarea.ace_text-input").type(filters, {
+      force: true,
+      parseSpecialCharSequences: false,
+    });
+    cy.get("#id_mappings textarea.ace_text-input").clear({ force: true });
+    cy.get("#id_mappings textarea.ace_text-input").type(mappings, {
+      force: true,
+      parseSpecialCharSequences: false,
+    });
     cy.get("input[name=code]").type("isoc_ci_it_h");
     cy.get("input[name=title]").type(title);
     cy.get("input[name=indicator]").type("indic_is");
@@ -18,23 +38,11 @@ describe("Check import configuration", () => {
     cy.get("input[name=remarks_is_surrogate]").click();
     cy.get("input[name=period_start]").type("2019");
     cy.get("input[name=period_end]").type("2019");
-    cy.get("#id_filters textarea.ace_text-input").clear({ force: true });
-    cy.get("#id_filters textarea.ace_text-input").type(
-      '{"hhtyp": ["total"], "indic_is": ["h_broad"], "unit": ["pc_hh"], "geo": ["EU27_2020"]}',
-      {
-        force: true,
-        parseSpecialCharSequences: false,
-      },
-    );
-    cy.get("#id_mappings textarea.ace_text-input").clear({ force: true });
-    cy.get("#id_mappings textarea.ace_text-input").type(
-      '{"breakdown": {"total": "hh_total"}, "country": {"EU27_2020": "EU"}, "reference_period": {"2019": "2000"}}',
-      {
-        force: true,
-        parseSpecialCharSequences: false,
-      },
-    );
-    cy.get("input[type=submit][value=Save]").click();
+    cy.get("input[type=submit][value='Save and continue editing']").click();
+
+    cy.get("#id_filters_textarea").should("not.equal", "{}");
+    cy.get("input[type=submit][value='Save']").click();
+
     // Trigger an import task
     cy.get("[role=search] input[type=text]").type(title);
     cy.get("[role=search] input[type=submit]").click();
@@ -43,11 +51,15 @@ describe("Check import configuration", () => {
     cy.get("button[type=submit]").contains("Go").click();
     // Wait for the task to finish
     cy.contains("1 result");
+    cy.reload();
     cy.get("tbody tr:first-child td.field-status_display").contains("SUCCESS", {
-      timeout: 10000,
+      timeout: 20000,
     });
-    // Navigate to the import config change form
-    cy.get("tbody tr:first-child td.field-import_config_link a").click();
+    // Navigate to the import config list
+    cy.get("a").contains("Import configs").click();
+    cy.get("[role=search] input[type=text]").type(title);
+    cy.get("[role=search] input[type=submit]").click();
+    cy.waitForNetworkIdle(1000, { log: false });
     // Check that only one fact has been imported, and open the fact details
     cy.get(".field-num_facts a")
       .invoke("text")
@@ -55,6 +67,7 @@ describe("Check import configuration", () => {
         expect(text.trim()).equal("1");
       });
     cy.get(".field-num_facts a").click();
+    cy.waitForNetworkIdle(1000, { log: false });
     cy.contains("1 fact");
     cy.get("tbody tr:first-child th.field-indicator a").click();
 

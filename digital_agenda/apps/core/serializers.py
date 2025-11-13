@@ -1,6 +1,7 @@
 import logging
 
 import requests
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 from rest_framework import serializers
@@ -161,6 +162,9 @@ class CaptchaValidator:
             self.code = code
 
     def __call__(self, value):
+        if not settings.CAPTCHA_ENABLED:
+            return
+
         if missing := self.REQUIRED_KEYS.difference(set(value.keys())):
             raise ValidationError(
                 f"Missing values for: {', '.join(missing)}", code=self.code
@@ -204,7 +208,7 @@ class FeedbackSerializer(serializers.Serializer):
     message = serializers.CharField(
         write_only=True, required=True, min_length=10, max_length=10_000
     )
-    captcha = CaptchaField(write_only=True, required=True)
+    captcha = CaptchaField(write_only=True, required=settings.CAPTCHA_ENABLED)
 
     class Meta:
         fields = ["url", "email", "message", "captcha"]

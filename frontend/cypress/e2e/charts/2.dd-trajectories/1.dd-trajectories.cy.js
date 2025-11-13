@@ -9,18 +9,22 @@ describeResponsive("Check Chart", () => {
     cy.selectFilter("indicator", "5G coverage");
     cy.selectFilter("country", "European Union");
     // Check various points
-    cy.checkPoint("Year: 2030, 100. 2030 target.");
-    cy.checkPoint("Year: 2030, 99.999994. Baseline trajectory.");
-    cy.checkPoint("Year: 2022, 81.2. Historical data.");
-    cy.checkPoint("Year: 2021, 39.192169. Baseline trajectory.");
+    cy.checkPoint("Year: 2030, 100. European Union, 2030 target.");
+    cy.checkPoint(
+      "Year: 2030, 99.999994. European Union, Baseline trajectory.",
+    );
+    cy.checkPoint("Year: 2022, 81.2. European Union, Historical data.");
+    cy.checkPoint(
+      "Year: 2021, 39.192169. European Union, Baseline trajectory.",
+    );
     // Check dash style is changed
     cy.get(".highcharts-series.highcharts-series-1 path.highcharts-graph")
       .invoke("attr", "stroke-dasharray")
       .should("not.contain", "none");
     // Check image is used for target point
-    cy.get('image[aria-label="Year: 2030, 100. 2030 target."]').should(
-      "be.visible",
-    );
+    cy.get(
+      'image[aria-label="Year: 2030, 100. European Union, 2030 target."]',
+    ).should("be.visible");
     // Check image is used for target legend
     cy.get(".highcharts-legend-item.highcharts-series-0").contains(
       "2030 target",
