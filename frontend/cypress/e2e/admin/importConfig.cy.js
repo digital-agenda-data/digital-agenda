@@ -46,8 +46,11 @@ describe("Check import configuration", () => {
     cy.get("tbody tr:first-child td.field-status_display").contains("SUCCESS", {
       timeout: 10000,
     });
-    // Navigate to the import config change form
-    cy.get("tbody tr:first-child td.field-import_config_link a").click();
+    // Navigate to the import config list
+    cy.get("a").contains("Import configs").click();
+    cy.get("[role=search] input[type=text]").type(title);
+    cy.get("[role=search] input[type=submit]").click();
+    cy.waitForNetworkIdle(1000, { log: false });
     // Check that only one fact has been imported, and open the fact details
     cy.get(".field-num_facts a")
       .invoke("text")
