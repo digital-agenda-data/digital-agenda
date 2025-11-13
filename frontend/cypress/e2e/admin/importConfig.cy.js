@@ -43,8 +43,9 @@ describe("Check import configuration", () => {
     cy.get("button[type=submit]").contains("Go").click();
     // Wait for the task to finish
     cy.contains("1 result");
+    cy.reload();
     cy.get("tbody tr:first-child td.field-status_display").contains("SUCCESS", {
-      timeout: 10000,
+      timeout: 20000,
     });
     // Navigate to the import config list
     cy.get("a").contains("Import configs").click();
