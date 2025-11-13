@@ -169,9 +169,14 @@ export default {
     ignoredCodes() {
       return new Set(this.currentFilterOptions.ignored[this.queryName]);
     },
+    onlyCodes() {
+      return new Set(this.currentFilterOptions.values[this.queryName]);
+    },
     apiData() {
       return this.apiDataRaw.filter(
-        (apiItem) => !this.ignoredCodes.has(apiItem.code),
+        (apiItem) =>
+          (this.onlyCodes.size === 0 || this.onlyCodes.has(apiItem.code)) &&
+          !this.ignoredCodes.has(apiItem.code),
       );
     },
     items() {

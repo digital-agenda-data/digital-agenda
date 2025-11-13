@@ -13,7 +13,7 @@ describeResponsive("Check Chart", () => {
         indicator: "ICT graduates",
       },
       title: ["ICT graduates", "European Union"],
-      point: "Year: 2015, 3.6. Total.",
+      point: "Year: 2015, 3.6. European Union, Total.",
     });
 
     // Click the card to check how filter preservation works for this impossible
@@ -30,7 +30,7 @@ describeResponsive("Check Chart", () => {
         indicator: "ICT graduates",
       },
       title: ["ICT graduates", "European Union"],
-      point: "Year: 2015, 0.7. Females.",
+      point: "Year: 2015, 0.7. European Union, Females.",
     });
   });
 });

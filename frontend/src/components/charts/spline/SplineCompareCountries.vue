@@ -1,7 +1,7 @@
 <script>
 import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
 import BaseChart from "@/components/charts/base/BaseChart.vue";
-import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
+import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import { getCountryLabel, getUnitLabel } from "@/lib/utils";
@@ -21,7 +21,7 @@ export default {
         IndicatorWithGroupsFilter,
         BreakdownWithGroupsFilter,
         UnitFilter,
-        CountryMultiFilter,
+        CountryFilter,
       ];
     },
     endpointFilters() {

@@ -1,5 +1,5 @@
 <script>
-import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
+import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import IndicatorWithGroupsFilter from "@/components/chart-filters/IndicatorWithGroupsFilter.vue";
 import BaseMultiAxisChart from "@/components/charts/base/BaseMultiAxisChart.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
@@ -32,7 +32,7 @@ export default {
         UnitFilter,
         PeriodFilter,
         {
-          component: CountryMultiFilter,
+          component: CountryFilter,
           attrs: { allInitial: true, hidden: true, syncRoute: false },
         },
       ];

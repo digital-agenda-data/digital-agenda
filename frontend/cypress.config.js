@@ -51,16 +51,12 @@ module.exports = defineConfig({
       on("before:browser:launch", (browser = {}, launchOptions) => {
         // Start browsers with prefers-reduced-motion set to "reduce" to avoid flakyness from
         // waiting for animations to finish.
-        if (browser.family === "firefox") {
-          launchOptions.preferences["ui.prefersReducedMotion"] = 1;
-        }
-
-        if (browser.family === "chromium") {
-          launchOptions.args.push("--force-prefers-reduced-motion");
-        }
-
         if (browser.name === "electron") {
           launchOptions.preferences.prefersReducedMotion = true;
+        } else if (browser.family === "chromium") {
+          launchOptions.args.push("--force-prefers-reduced-motion");
+        } else if (browser.family === "firefox") {
+          launchOptions.preferences["ui.prefersReducedMotion"] = 1;
         }
 
         return launchOptions;

@@ -4,7 +4,7 @@ import BaseChart from "@/components/charts/base/BaseChart.vue";
 import BreakdownWithGroupsFilter from "@/components/chart-filters/BreakdownWithGroupsFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import UnitFilter from "@/components/chart-filters/UnitFilter.vue";
-import CountryMultiFilter from "@/components/chart-filters/CountryMultiFilter.vue";
+import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import topologyUrl from "@/assets/topology/eu.json?url";
 import { getCountryLabel } from "@/lib/utils";
 
@@ -33,7 +33,7 @@ export default {
         PeriodFilter,
         UnitFilter,
         {
-          component: CountryMultiFilter,
+          component: CountryFilter,
           attrs: { allInitial: true, ignoreCountryGroups: true },
         },
       ];

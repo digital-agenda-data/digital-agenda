@@ -157,5 +157,23 @@
             ]
         ]
     }
+},
+{
+    "model": "charts.chartgroup",
+    "fields": {
+        "created_at": "2024-02-13T10:18:03.650Z",
+        "updated_at": "2024-02-13T10:18:03.650Z",
+        "display_order": 160,
+        "code": "test-country-filter-options",
+        "name": "Test Country Filter Options",
+        "short_name": "Test Country Filter Options",
+        "license": "<p>Nothing</p>",
+        "description": "<p>Test charts that have custom filter options for the country filter</p>",
+        "indicator_groups": [
+            [
+                "ict-skills"
+            ]
+        ]
+    }
 }
 ]

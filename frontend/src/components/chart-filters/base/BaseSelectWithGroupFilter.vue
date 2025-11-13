@@ -20,6 +20,11 @@ export default {
         this.currentFilterOptions.ignored[this.queryName + "Group"],
       );
     },
+    onlyGroupCodeValues() {
+      return new Set(
+        this.currentFilterOptions.values[this.queryName + "Group"],
+      );
+    },
     apiDataByCode() {
       return groupByUnique(this.apiData);
     },
@@ -30,6 +35,12 @@ export default {
         const children = [];
 
         if (this.ignoredGroupCodes.has(group.code)) {
+          continue;
+        }
+        if (
+          this.onlyGroupCodeValues.size > 0 &&
+          !this.onlyGroupCodeValues.has(group.code)
+        ) {
           continue;
         }
 

@@ -3,18 +3,19 @@ import describeResponsive from "../../../support/describeResponsive";
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
     cy.navigateToChart(
-      "Key Indicators",
-      "See the evolution of an indicator and compare breakdowns",
+      "Test Country Filter Options",
+      "Test Column Compare Breakdown Single Country",
     );
     cy.checkChart({
       filters: {
         indicator: "ICT graduates",
         breakdownGroup: "Gender",
+        period: "2019",
         unit: "% of graduates",
-        country: "European Union",
       },
-      title: ["ICT graduates", "European Union"],
-      point: "Year: 2019, 0.8. European Union, Females.",
+      title: ["ICT graduates", "Year: 2019"],
+      point: "European Union, 0.8. Females.",
+      tooltip: ["European Union", "Females", "0.80% of graduates"],
       definitions: [
         "Indicator: ICT graduates",
         "Definition: Individuals with a degree in ICT",

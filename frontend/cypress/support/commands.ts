@@ -38,9 +38,22 @@ Cypress.Commands.addAll({
   },
   checkNavigateBetweenCharts(chartGroup, chartNames) {
     cy.navigateToChart(chartGroup, chartNames[0]);
+
+    // Wait for loading
+    cy.get(".chart-container-digital-agenda").should("exist");
+    cy.get(".chart-container-digital-agenda .lds-app-loader").should(
+      "not.exist",
+    );
+    cy.get(".highcharts-credits").contains("European Commission");
     cy.checkHasChartData();
     for (const nextChart of chartNames.slice(1)) {
       cy.get("a").contains(nextChart).click();
+      // Wait for loading
+      cy.get(".chart-container-digital-agenda").should("exist");
+      cy.get(".chart-container-digital-agenda .lds-app-loader").should(
+        "not.exist",
+      );
+      cy.get(".highcharts-credits").contains("European Commission");
       cy.checkHasChartData();
     }
   },
@@ -51,12 +64,23 @@ Cypress.Commands.addAll({
         .contains(label);
     }
   },
-  selectFilter(inputName, label) {
+  openFilter(inputName) {
     // Wait for multiselect to be rendered but wai until it's finished loading
     cy.get(`[data-name='${inputName}']`).should("exist");
     cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
     // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
+    cy.get(`[data-name='${inputName}'] [role='listbox']`).should("be.visible");
+  },
+  checkFilterOptions(inputName, options) {
+    cy.openFilter(inputName);
+    cy.get(`[data-name='${inputName}'] [role='option']`).then(($els) => {
+      const actualTexts = Array.from($els).map((el) => el.innerText.trim());
+      expect(actualTexts).to.deep.equal(options);
+    });
+  },
+  selectFilter(inputName, label) {
+    cy.openFilter(inputName);
 
     if (!Array.isArray(label)) {
       cy.get(`[data-name='${inputName}'] [role='option']`)
@@ -141,6 +165,7 @@ Cypress.Commands.addAll({
     cy.visit("/");
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
+    cy.waitForNetworkIdle(500, { log: false });
   },
   hasTexts(selector, texts = []) {
     if (!texts?.length) return;

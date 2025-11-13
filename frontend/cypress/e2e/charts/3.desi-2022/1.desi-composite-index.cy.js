@@ -5,7 +5,6 @@ describeResponsive("Check Chart", () => {
     cy.navigateToChart("Digital Economy and Society Index", "composite index");
     // Fiddle with one of the sliders
     cy.get("input[type=range][name=desi_hc]")
-      .as("range")
       .invoke("val", 10)
       .trigger("input", { force: true });
     // Check the chart and verify that the values were indeed adjusted
