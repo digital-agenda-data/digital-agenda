@@ -70,6 +70,7 @@ Cypress.Commands.addAll({
     cy.get(`[data-name='${inputName}'][data-loading=true]`).should("not.exist");
     // Then click it to reveal the dropdown
     cy.get(`[data-name='${inputName}']`).click();
+    cy.get(`[data-name='${inputName}'] [role='listbox']`).should("be.visible");
   },
   checkFilterOptions(inputName, options) {
     cy.openFilter(inputName);
