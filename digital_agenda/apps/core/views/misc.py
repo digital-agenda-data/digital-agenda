@@ -25,6 +25,7 @@ class AppSettingsView(APIView):
                 "sentry_dsn": settings.SENTRY_DSN,
                 "environment_name": settings.ENVIRONMENT_NAME,
                 "chart_credits": config.CHART_CREDITS,
+                "captcha_enabled": settings.CAPTCHA_ENABLED,
             }
         )
 

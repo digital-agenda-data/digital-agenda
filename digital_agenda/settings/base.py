@@ -439,6 +439,8 @@ ENVIRONMENT_NAME = env.str("ENVIRONMENT_NAME", default="")
 ENVIRONMENT_COLOR = env.str("ENVIRONMENT_COLOR", default="")
 ENVIRONMENT_TEXT_COLOR = env.str("ENVIRONMENT_TEXT_COLOR", default="#ffffff")
 
+CAPTCHA_ENABLED = env.bool("CAPTCHA_ENABLED", default=True)
+
 
 LOGGING = {
     "version": 1,

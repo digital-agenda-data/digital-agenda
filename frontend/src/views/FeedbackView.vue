@@ -25,7 +25,11 @@
       placeholder-text="Type in your message"
       :errors="errors.message"
     />
-    <captcha-field ref="captchaField" :errors="errors.captcha" />
+    <captcha-field
+      v-if="appSettings.captcha_enabled"
+      ref="captchaField"
+      :errors="errors.captcha"
+    />
     <ecl-button label="Submit" type="submit" />
   </form>
 </template>
@@ -37,8 +41,9 @@ import EclButton from "@/components/ecl/EclButton.vue";
 import EclTextArea from "@/components/ecl/forms/EclTextArea.vue";
 import EclTextField from "@/components/ecl/forms/EclTextField.vue";
 import { api } from "@/lib/api";
+import { useAppSettings } from "@/stores/appSettingsStore.js";
 import { useMessagesStore } from "@/stores/messagesStore";
-import { mapActions } from "pinia";
+import { mapActions, mapState } from "pinia";
 
 export default {
   name: "FeedbackView",
@@ -63,9 +68,15 @@ export default {
       captcha: null,
     };
   },
+  computed: {
+    ...mapState(useAppSettings, ["appSettings"]),
+  },
   methods: {
     ...mapActions(useMessagesStore, ["addMessage"]),
     getCaptcha() {
+      if (!this.appSettings.captcha_enabled) {
+        return undefined;
+      }
       const inputs = this.$refs.captchaField.$el.querySelectorAll("input");
       const result = {};
       for (const inputEl of inputs) {
