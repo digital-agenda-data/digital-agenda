@@ -165,6 +165,7 @@ Cypress.Commands.addAll({
     cy.visit("/");
     cy.get(".ecl-list-illustration a").contains(chartGroup).click();
     cy.get(".ecl-list-illustration a").contains(chart).click();
+    cy.waitForNetworkIdle(500, { log: false });
   },
   hasTexts(selector, texts = []) {
     if (!texts?.length) return;
@@ -253,7 +254,6 @@ Cypress.Commands.addAll({
   checkChart(config) {
     cy.task("cleanDownloadsFolder");
     // Wait for loading
-    cy.waitForNetworkIdle(500, { log: false });
     cy.get(".chart-container-digital-agenda").should("exist");
     cy.get(".chart-container-digital-agenda .lds-app-loader").should(
       "not.exist",

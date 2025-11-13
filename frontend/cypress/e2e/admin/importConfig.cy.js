@@ -55,6 +55,7 @@ describe("Check import configuration", () => {
         expect(text.trim()).equal("1");
       });
     cy.get(".field-num_facts a").click();
+    cy.waitForNetworkIdle(1000, { log: false });
     cy.contains("1 fact");
     cy.get("tbody tr:first-child th.field-indicator a").click();
 
