@@ -221,9 +221,19 @@ class ChartGroupIndicatorSearchViewSet(
                    (%(is_auth)s OR charts_chartgroup.is_draft = False) AND 
                    -- Only show indicators that have data
                    EXISTS(
-                        SELECT 1 
-                        FROM core_fact 
-                        WHERE core_fact.indicator_id = core_indicator.id
+                        SELECT core_fact.id
+                        FROM core_fact
+                             INNER JOIN core_period
+                                        ON (core_period.id = core_fact.period_id)
+                        WHERE indicator_id = core_indicator.id
+                          AND (
+                            charts_chartgroup.period_start IS NULL OR
+                            EXTRACT(YEAR FROM core_period.date) >= charts_chartgroup.period_start
+                            )
+                          AND (
+                            charts_chartgroup.period_end IS NULL OR
+                            EXTRACT(YEAR FROM core_period.date) <= charts_chartgroup.period_end
+                            )
                    )
              ORDER BY rank DESC
         """
