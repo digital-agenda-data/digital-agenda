@@ -3,12 +3,6 @@ import { randomStr } from "../../support/randomStr.js";
 describe("Check import configuration", () => {
   it("Create and run import config", () => {
     const title = randomStr("test-import-config-");
-    const filters = JSON.stringify({
-      hhtyp: ["total"],
-      indic_is: ["h_broad"],
-      unit: ["pc_hh"],
-      geo: ["EU27_2020"],
-    });
     const mappings = JSON.stringify({
       breakdown: { total: "hh_total" },
       country: { EU27_2020: "EU" },
@@ -18,12 +12,6 @@ describe("Check import configuration", () => {
     // Navigate to the import config page
     cy.get("a").contains("Import configs").click();
     cy.get("a").contains("Add import config").click();
-    // Add a new import config with filters set to only import a single Fact
-    cy.get("#id_filters textarea.ace_text-input").clear({ force: true });
-    cy.get("#id_filters textarea.ace_text-input").type(filters, {
-      force: true,
-      parseSpecialCharSequences: false,
-    });
     cy.get("#id_mappings textarea.ace_text-input").clear({ force: true });
     cy.get("#id_mappings textarea.ace_text-input").type(mappings, {
       force: true,
@@ -38,9 +26,6 @@ describe("Check import configuration", () => {
     cy.get("input[name=remarks_is_surrogate]").click();
     cy.get("input[name=period_start]").type("2019");
     cy.get("input[name=period_end]").type("2019");
-    cy.get("input[type=submit][value='Save and continue editing']").click();
-
-    cy.get("#id_filters_textarea").should("not.equal", "{}");
     cy.get("input[type=submit][value='Save']").click();
 
     // Trigger an import task
@@ -59,23 +44,28 @@ describe("Check import configuration", () => {
     cy.get("a").contains("Import configs").click();
     cy.get("[role=search] input[type=text]").type(title);
     cy.get("[role=search] input[type=submit]").click();
-    cy.waitForNetworkIdle(1000, { log: false });
     // Check that only one fact has been imported, and open the fact details
     cy.get(".field-num_facts a")
       .invoke("text")
       .then((text) => {
-        expect(text.trim()).equal("1");
+        expect(text.trim()).equal("4616");
       });
     cy.get(".field-num_facts a").click();
-    cy.waitForNetworkIdle(1000, { log: false });
+    cy.contains("4616 facts");
+
+    // Check imported values
+    cy.get("[role=search] input[type=text]").type(
+      "h_broad hh_total pc_hh_iacc eu28 2019",
+    );
+    cy.get("[role=search] input[type=submit]").click();
     cy.contains("1 fact");
     cy.get("tbody tr:first-child th.field-indicator a").click();
 
-    // Check imported values
+    cy.get("[name=value]").should("have.value", "97.92");
     cy.get(".field-indicator").contains("[h_broad]");
     cy.get(".field-breakdown").contains("[hh_total]");
-    cy.get(".field-unit").contains("[pc_hh]");
-    cy.get(".field-country").contains("[EU]");
+    cy.get(".field-unit").contains("[pc_hh_iacc]");
+    cy.get(".field-country").contains("[eu28]");
     cy.get(".field-period").contains("[2019]");
     cy.get("[name=reference_period]").should("have.value", "2000");
     cy.get("[name=remarks]").should("have.value", "test remarks");

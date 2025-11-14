@@ -16,6 +16,8 @@ on:
 jobs:
   suite:
     runs-on: ubuntu-latest
+    env:
+      TERM: xterm
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -33,7 +35,6 @@ jobs:
           docker compose exec -T app wait_for_services.sh
       - name: "Top"
         run: |
-          docker compose logs
           docker compose top
       - name: "Install dev dependencies"
         run: |
@@ -57,8 +58,13 @@ jobs:
           cd frontend
           # Don't record videos since we don't upload them
           npm run test -- -c 'video=false' -e "viewport=1920x1080"
+      - name: "Dump logs"
+        if: ${{ !cancelled() }}
+        run: |
+          docker compose ps
+          docker compose logs
       - uses: actions/upload-artifact@v4
-        if: ${{ failure() && steps.frontendTests.conclusion == 'failure' }}
+        if: ${{ !cancelled() && failure() && steps.frontendTests.conclusion == 'failure' }}
         with:
           name: cypress-screenshots
           path: frontend/cypress/screenshots/

@@ -1,6 +1,7 @@
 from django.contrib.postgres.aggregates import ArrayAgg
 from django.db.models import OuterRef
 from django.db.models import Subquery
+from django.db.models.functions import Coalesce
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_cookie
@@ -23,6 +24,7 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views.facts import FactsViewSet
+from digital_agenda.common.citext import CICharField
 from digital_agenda.common.export import FactExportMixin
 
 
@@ -75,22 +77,22 @@ class ChartGroupViewSet(
             .annotate(
                 # Fetch all periods to correctly compute the "time coverage",
                 # including any gaps in the data.
-                period_ids=ArrayAgg("facts__period_id", distinct=True),
+                period_codes=ArrayAgg(
+                    Coalesce(
+                        "facts__reference_period",
+                        "facts__period__code",
+                    ),
+                    distinct=True,
+                ),
                 # Fetch one sample fact to have all necessary details to compute a
                 # valid link to a chart showing this indicator.
                 sample_fact_id=Subquery(fact_subquery.values("id")[:1]),
             )
-            .filter(groups__id__in=group_ids)
+            .filter(groups__id__in=group_ids, sample_fact_id__isnull=False)
         )
 
         # Prefetch all required objects in bulk
-        period_by_ids = Period.objects.in_bulk(
-            {
-                period_id
-                for indicator in indicators
-                for period_id in indicator.period_ids
-            }
-        )
+        period_by_codes = Period.objects.in_bulk(field_name="code")
         facts_by_id = FactsViewSet.queryset.in_bulk(
             {indicator.sample_fact_id for indicator in indicators}
         )
@@ -100,8 +102,8 @@ class ChartGroupViewSet(
             indicator.sample_fact = facts_by_id[indicator.sample_fact_id]
 
             all_periods = []
-            for period_id in indicator.period_ids:
-                period = period_by_ids[period_id]
+            for period_code in indicator.period_codes:
+                period = period_by_codes[period_code]
                 # Filter out any periods that are not included the chart group
                 # configured period interval
                 if start_date and period.date < start_date:
@@ -219,9 +221,19 @@ class ChartGroupIndicatorSearchViewSet(
                    (%(is_auth)s OR charts_chartgroup.is_draft = False) AND 
                    -- Only show indicators that have data
                    EXISTS(
-                        SELECT 1 
-                        FROM core_fact 
-                        WHERE core_fact.indicator_id = core_indicator.id
+                        SELECT core_fact.id
+                        FROM core_fact
+                             INNER JOIN core_period
+                                        ON (core_period.id = core_fact.period_id)
+                        WHERE indicator_id = core_indicator.id
+                          AND (
+                            charts_chartgroup.period_start IS NULL OR
+                            EXTRACT(YEAR FROM core_period.date) >= charts_chartgroup.period_start
+                            )
+                          AND (
+                            charts_chartgroup.period_end IS NULL OR
+                            EXTRACT(YEAR FROM core_period.date) <= charts_chartgroup.period_end
+                            )
                    )
              ORDER BY rank DESC
         """
