@@ -26,8 +26,12 @@ User = get_user_model()
 class ImportFromConfigJob(LoggingJob):
     @classmethod
     def _execute_import(cls, task):
-        importer = EstatImporter(task.import_config, force_download=task.force_download)
-        logger.info("Processing config: %r", importer.config)
+        config = task.import_config
+        importer = EstatImporter(config, force_download=task.force_download)
+        logger.info("Processing config %r: %r", config, config.title)
+        logger.info("Config %r filters=%r", config, config.filters)
+        logger.info("Config %r mappings=%r", config, config.mappings)
+        logger.info("Config %r multipliers=%r", config, config.multipliers)
 
         if task.delete_existing:
             result = Fact.objects.filter(import_config=importer.config).delete()
