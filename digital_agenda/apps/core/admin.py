@@ -242,6 +242,13 @@ class FactAdmin(admin.ModelAdmin):
         "import_config",
         "import_file",
     )
+    search_fields = (
+        "indicator__code",
+        "breakdown__code",
+        "unit__code",
+        "country__code",
+        "period__code",
+    )
 
     list_filter = [
         "indicator__groups__chartgroup",
