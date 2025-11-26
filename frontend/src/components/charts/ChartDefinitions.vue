@@ -22,7 +22,7 @@
       </div>
 
       <div
-        v-for="data_source in item.data_sources"
+        v-for="data_source in item.data_sources ?? []"
         :key="item.code + data_source"
       >
         <b>Data Source:&nbsp;</b>
@@ -106,19 +106,41 @@ export default {
       for (const axis of FILTER_SUFFIXES) {
         for (const itemType of ["indicator", "breakdown", "unit"]) {
           let dimensionLabel = this.currentLabels[itemType] || itemType;
-          const items = this.filterStore[axis][itemType];
+          // coerce all values to array if not already, to support
+          // multiple definitions of the same type
+          const items = forceArray(this.filterStore[axis][itemType]);
 
           if (axis && this.showAxisLabel) {
             dimensionLabel = `(${axis}) ${dimensionLabel}`;
           }
-          // coerce all values to array if not already, to support
-          // multiple definitions of the same type
-          for (const item of forceArray(items)) {
+
+          // If the dimension group doesn't have any extra information that
+          // needs to be displayed, put them on the same line.
+          const sameLine =
+            items.length > 0 &&
+            items.every(
+              (item) =>
+                !item.definition &&
+                !item.note &&
+                (!item.data_sources || item.data_sources.length === 0),
+            );
+
+          if (sameLine) {
             result.push({
               dimensionLabel,
               itemType,
-              ...item,
+              label: items
+                .map((item) => item.label || item.alt_label)
+                .join(", "),
             });
+          } else {
+            for (const item of items) {
+              result.push({
+                dimensionLabel,
+                itemType,
+                ...item,
+              });
+            }
           }
         }
       }
