@@ -1,4 +1,5 @@
 from django.contrib.postgres.aggregates import ArrayAgg
+from django.db.models import Exists
 from django.db.models import OuterRef
 from django.db.models import Subquery
 from django.db.models.functions import Coalesce
@@ -62,34 +63,40 @@ class ChartGroupViewSet(
         end_date = chart_group.period_end_date
         start_date = chart_group.period_start_date
 
-        fact_subquery = Fact.objects.filter(indicator_id=OuterRef("id")).order_by(
-            "-period__date"
-        )
+        fact_query = Fact.objects.order_by("-period__date")
         if start_date:
-            fact_subquery = fact_subquery.filter(period__date__gte=start_date)
+            fact_query = fact_query.filter(period__date__gte=start_date)
         if end_date:
-            fact_subquery = fact_subquery.filter(period__date__lte=end_date)
+            fact_query = fact_query.filter(period__date__lte=end_date)
 
         group_ids = chart_group.indicator_groups.all().values_list("id", flat=True)
         indicators = list(
-            Indicator.objects.filter(facts__period__isnull=False)
-            .prefetch_related("data_sources")
+            Indicator.objects.prefetch_related("data_sources")
             .annotate(
-                # Fetch all periods to correctly compute the "time coverage",
-                # including any gaps in the data.
-                period_codes=ArrayAgg(
-                    Coalesce(
-                        "facts__reference_period",
-                        "facts__period__code",
-                    ),
-                    distinct=True,
-                ),
                 # Fetch one sample fact to have all necessary details to compute a
                 # valid link to a chart showing this indicator.
-                sample_fact_id=Subquery(fact_subquery.values("id")[:1]),
+                sample_fact_id=Subquery(
+                    fact_query.filter(indicator_id=OuterRef("id")).values("id")[:1]
+                ),
             )
             .filter(groups__id__in=group_ids, sample_fact_id__isnull=False)
         )
+
+        indicators_with_all_periods = {
+            obj["indicator_id"]: obj["period_codes"]
+            for obj in fact_query.values("indicator_id")
+            .annotate(
+                period_codes=ArrayAgg(
+                    Coalesce(
+                        "reference_period",
+                        "period__code",
+                    ),
+                    distinct=True,
+                )
+            )
+            .filter(indicator__in=indicators)
+            .order_by("indicator_id")
+        }
 
         # Prefetch all required objects in bulk
         period_by_codes = Period.objects.in_bulk(field_name="code")
@@ -99,23 +106,12 @@ class ChartGroupViewSet(
 
         results = []
         for indicator in indicators:
-            indicator.sample_fact = facts_by_id[indicator.sample_fact_id]
-
-            all_periods = []
-            for period_code in indicator.period_codes:
-                period = period_by_codes[period_code]
-                # Filter out any periods that are not included the chart group
-                # configured period interval
-                if start_date and period.date < start_date:
-                    continue
-                if end_date and period.date > end_date:
-                    continue
-                all_periods.append(period)
-
-            if not all_periods:
+            if not (period_codes := indicators_with_all_periods.get(indicator.id)):
                 # Indicator has no facts in the chart group period range
                 continue
 
+            indicator.sample_fact = facts_by_id[indicator.sample_fact_id]
+            all_periods = [period_by_codes[period_code] for period_code in period_codes]
             all_periods.sort(key=lambda p: p.date)
             indicator.all_periods = all_periods
             indicator.min_period = all_periods[0]
