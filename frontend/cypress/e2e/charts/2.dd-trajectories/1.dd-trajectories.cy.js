@@ -47,9 +47,7 @@ describeResponsive("Check Chart", () => {
       definitions: [
         "Indicator: 5G coverage",
         "Definition: Percentage of populated areas covered by at least one 5G network regardless of the spectrum band used.",
-        "Breakdown: 2030 target",
-        "Breakdown: Historical data",
-        "Breakdown: Baseline trajectory based on past perfomance",
+        "Breakdown: 2030 target, Historical data, Baseline trajectory based on past perfomance",
         "Unit of measure: Percentage of households",
       ],
     });

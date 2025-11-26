@@ -130,7 +130,7 @@ export default {
               dimensionLabel,
               itemType,
               label: items
-                .map((item) => item.label || item.alt_label)
+                .map((item) => (item.label || item.alt_label || "").trim())
                 .join(", "),
             });
           } else {
