@@ -19,10 +19,7 @@ describeResponsive("Check Chart", () => {
       definitions: [
         "Indicator: Digital Economy and Society Index",
         "Definition: DESI overall index, calculated as the weighted average of the four main DESI dimensions with the weights selected by the user.",
-        "Breakdown: Human Capital",
-        "Breakdown: Connectivity",
-        "Breakdown: Integration of Digital Technology",
-        "Breakdown: Digital Public Services",
+        "Breakdown: Human Capital, Connectivity, Integration of Digital Technology, Digital Public Services",
         "Unit of measure: weighted score (0 to 100)",
         "Definition: Weighted score of the DESI dimension",
       ],

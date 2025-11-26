@@ -18,8 +18,7 @@ describeResponsive("Check Chart", () => {
       definitions: [
         "Indicator: ICT graduates",
         "Definition: Individuals with a degree in ICT",
-        "Breakdown: Females",
-        "Breakdown: Males",
+        "Breakdown: Females, Males",
         "Unit of measure: Percentage of graduates",
       ],
     });
