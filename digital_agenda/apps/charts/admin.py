@@ -38,6 +38,7 @@ class ChartFontStyleInline(admin.TabularInline):
 
 @admin.register(Chart)
 class ChartAdmin(SortableAdminMixin, HasChangesAdminMixin, admin.ModelAdmin):
+    save_as = True
     inlines = (
         ChartFontStyleInline,
         ChartFilterOrderInline,
