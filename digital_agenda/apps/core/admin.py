@@ -49,6 +49,7 @@ class DimensionAdmin(admin.ModelAdmin):
 
 @admin.register(DataSource)
 class DataSourceAdmin(ImportExportMixin, DimensionAdmin):
+    save_as = True
     resource_class = DataSourceResource
     list_display = ("code", "label", "indicator_codes", "definition")
     readonly_fields = ("indicator_codes", "indicators_list")
@@ -109,6 +110,7 @@ class DataSourceInline(admin.TabularInline):
 
 @admin.register(Indicator)
 class IndicatorAdmin(ImportExportMixin, HasFactsAdminMixIn, DimensionAdmin):
+    save_as = True
     resource_class = IndicatorResource
     list_filter = [
         "groups__chartgroup",
