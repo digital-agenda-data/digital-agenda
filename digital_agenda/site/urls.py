@@ -73,12 +73,11 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
-    path("admin/", admin.site.urls),
     path(
         "admin/ckeditor5/",
         include("django_ckeditor_5.urls"),
-        name="ck_editor_5_upload_file",
     ),
+    path("admin/", admin.site.urls),
     path("", RedirectView.as_view(pattern_name="admin:index")),
 ]
 
