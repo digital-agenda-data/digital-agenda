@@ -14,7 +14,7 @@ croniter==6.0.0
 crontab==1.0.5
 decorator==5.2.1
 diff-match-patch==20241021
-Django==5.2.8
+Django==5.2.9
 django-admin-autocomplete-filter==0.7.1
 django-admin-env-notice==1.0.1
 django-admin-sortable2==2.2.8
