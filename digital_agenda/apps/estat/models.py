@@ -352,32 +352,47 @@ class ImportConfig(models.Model):
                         }
                     )
 
-        if self.conflict_resolution == self.ConflictResolution.USE_FORMULA:
-            self._validate_formula()
+        self._validate_formula()
 
     def _validate_formula(self):
-        if not self.conflict_formula or not isinstance(self.conflict_formula, dict):
+        if not isinstance(self.conflict_formula, dict):
             raise ValidationError(
                 {"conflict_formula": "Formula must be a valid JSON object"}
             )
         if set(self.conflict_formula.keys()) != {"formula", "symbols"}:
             raise ValidationError(
-                {"conflict_formula": "Formula must contain formula and symbols keys"}
+                {
+                    "conflict_formula": "Formula must contain 'formula' and 'symbols' keys"
+                }
             )
 
+        formula = self.conflict_formula["formula"]
+        formula_symbols = self.conflict_formula["symbols"]
+        if (
+            self.conflict_resolution == self.ConflictResolution.USE_FORMULA
+            and not formula
+        ):
+            raise ValidationError(
+                {
+                    "conflict_formula": "Formula must not be empty if resolution is set to 'Use formula'"
+                }
+            )
+        if not formula:
+            return
+
         try:
-            formula = sympify(self.conflict_formula["formula"])
-        except (ValueError, KeyError) as e:
+            formula = sympify(formula)
+        except (ValueError, TypeError) as e:
             raise ValidationError({"conflict_formula": str(e)}) from e
 
-        defined_symbols = {symbols(key) for key in self.conflict_formula["symbols"]}
+        defined_symbols = {symbols(key) for key in formula_symbols}
         if formula.free_symbols != defined_symbols:
             raise ValidationError(
                 {
                     "conflict_formula": f"Defined symbols must match formula symbols: {formula.free_symbols} != {defined_symbols}"
                 }
             )
-        for symbol, symbol_definition in self.conflict_formula["symbols"].items():
+        for symbol, symbol_definition in formula_symbols.items():
             self._clean_json_dimensions("conflict_formula", symbol_definition)
 
     def _validate_json_dimensions(self, dataset, config_dict, config_type):
@@ -388,6 +403,9 @@ class ImportConfig(models.Model):
                         f"Invalid {config_type} {key!r}, no dimensions with that id found in": dataset.dimension_ids
                     }
                 )
+
+            if isinstance(values, str):
+                values = [values]
 
             categories = dataset.dimension_dict[key]
             for val in values:
@@ -402,6 +420,8 @@ class ImportConfig(models.Model):
         """Simple sanity checks to validate the data matches the given config."""
         self._validate_json_dimensions(dataset, self.ci_filters, "filter")
         self._validate_json_dimensions(dataset, self.ci_multipliers, "multiplier")
+        for symbol, definition in self.ci_formula["symbols"].items():
+            self._validate_json_dimensions(dataset, definition, "symbol")
         for dimension in ("indicator", "breakdown", "country", "unit", "period"):
             config_dim = getattr(self, dimension)
             is_surrogate = getattr(self, f"{dimension}_is_surrogate")

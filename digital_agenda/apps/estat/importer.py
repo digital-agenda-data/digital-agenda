@@ -19,7 +19,6 @@ from django.conf import settings
 from django.utils.text import get_valid_filename
 from sympy import symbols
 from sympy import sympify
-from sympy.core import symbol
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
@@ -345,7 +344,11 @@ class EstatImporter:
             yield fact
 
     def _handle_conflict(self, fact_group, key):
-        if len(fact_group) == 1:
+        if (
+            self.config.conflict_resolution
+            != self.config.ConflictResolution.USE_FORMULA
+            and len(fact_group) == 1
+        ):
             return fact_group[0]
 
         # Chose one fact to work on
@@ -384,16 +387,21 @@ class EstatImporter:
         return fact
 
     def apply_formula(self, fact_group):
+        formula = sympify(self.config.conflict_formula["formula"])
+        formula_symbols = self.config.ci_formula["symbols"]
+        if len(formula_symbols) != len(fact_group):
+            raise ImporterError(
+                f"Found {len(fact_group)} facts in group but formula only has {len(formula_symbols)} symbols"
+            )
+
         variables = {}
-        for symbol, definition in self.config.ci_formula["symbols"].items():
+        for symbol, definition in formula_symbols.items():
             possible_facts = []
             for fact in fact_group:
-                should_store = True
                 for filter_key, filter_value in definition.items():
                     if fact.observation[filter_key].id.lower() != filter_value:
-                        should_store = False
                         break
-                if should_store:
+                else:
                     possible_facts.append(fact)
 
             if len(possible_facts) == 0:
@@ -406,10 +414,9 @@ class EstatImporter:
                 )
             variables[symbols(symbol)] = possible_facts[0].value
 
-        formula = sympify(self.config.conflict_formula["formula"])
         if formula.free_symbols != set(variables):
             raise ImporterError(
-                f"Formula symbols {formula.free_symbols} doesn't match the dataset dimensions {variables.keys()}"
+                f"Formula symbols {formula.free_symbols} doesn't match the defined symbols {variables.keys()}"
             )
 
         return float(formula.subs(variables))
