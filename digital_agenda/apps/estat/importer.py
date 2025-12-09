@@ -394,8 +394,17 @@ class EstatImporter:
                 f"Found {len(fact_group)} facts in group but formula only has {len(formula_symbols)} symbols"
             )
 
+        variables = self.get_formula_variables(fact_group)
+        if formula.free_symbols != set(variables):
+            raise ImporterError(
+                f"Formula symbols {formula.free_symbols} doesn't match the defined symbols {variables.keys()}"
+            )
+
+        return float(formula.subs(variables))
+
+    def get_formula_variables(self, fact_group):
         variables = {}
-        for symbol, definition in formula_symbols.items():
+        for symbol, definition in self.config.ci_formula["symbols"].items():
             possible_facts = []
             for fact in fact_group:
                 for filter_key, filter_value in definition.items():
@@ -413,13 +422,7 @@ class EstatImporter:
                     f"Formula symbol {symbol!r} matches multiple dataset observations"
                 )
             variables[symbols(symbol)] = possible_facts[0].value
-
-        if formula.free_symbols != set(variables):
-            raise ImporterError(
-                f"Formula symbols {formula.free_symbols} doesn't match the defined symbols {variables.keys()}"
-            )
-
-        return float(formula.subs(variables))
+        return variables
 
     def create_batch(self, facts):
         return len(

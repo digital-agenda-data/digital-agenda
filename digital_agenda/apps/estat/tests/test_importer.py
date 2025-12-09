@@ -551,6 +551,82 @@ class TestImporterDataMerge(BetamaxPatchTestCase):
         self.assertEqual(fact.flags, "b")
 
 
+class TestImporterFormula(BetamaxPatchTestCase):
+    fixtures = ["test/geogroup", "test/formula_importconfig.json"]
+
+    def setUp(self):
+        super().setUp()
+        self.config = ImportConfig.objects.get(code="env_waseleeos")
+
+    def test_formula(self):
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="waste",
+            breakdown__code="recycled",
+            unit__code="percent",
+            period__code="2023",
+            country__code="EU",
+        )
+        # EU has the following values, so the result should be:
+        # round((327,269 + 265,110) / (397,214 + 341,035) * 100, 2)
+        self.assertEqual(fact.value, 80.24)
+        self.assertEqual(fact.flags, "i")
+
+    def test_formula_ci_definitions(self):
+        self.config.conflict_formula = {
+            "formula": "(REC_SME + REC_SITTE) / (COL_SME + COL_SITTE)",
+            "symbols": {
+                "COL_SME": {"wAStE": "ee_SME", "WST_OPER": "COL"},
+                "REC_SME": {"WASTE": "EE_SME", "wst_OPER": "RCY_prp_REU"},
+                "COL_SITTE": {"WASTE": "EE_SITTE", "WST_OPER": "col"},
+                "REC_SITTE": {"WasTE": "EE_sitte", "wst_oper": "RCY_PRP_REU"},
+            },
+        }
+        self.config.save()
+        self.config.run_import(delete_existing=True)
+
+        fact = Fact.objects.get(
+            indicator__code="waste",
+            breakdown__code="recycled",
+            unit__code="percent",
+            period__code="2023",
+            country__code="EU",
+        )
+        # EU has the following values, so the result should be:
+        # round((327,269 + 265,110) / (397,214 + 341,035) * 100, 2)
+        self.assertEqual(fact.value, 80.24)
+        self.assertEqual(fact.flags, "i")
+
+    def test_formula_without_surrogates(self):
+        self.config.value_multiplier = 1
+        self.config.indicator_is_surrogate = False
+        self.config.indicator = "WASTE"
+        self.config.breakdown_is_surrogate = False
+        self.config.breakdown = "WST_OPER"
+        self.config.unit_is_surrogate = False
+        self.config.unit = "UNIT"
+        self.config.conflict_formula = {
+            "formula": "A*2/1000",
+            "symbols": {
+                "A": {"unit": "T"},
+            },
+        }
+        self.config.save()
+
+        self.config.run_import(delete_existing=True)
+        fact = Fact.objects.get(
+            indicator__code="EE_SME",
+            breakdown__code="RCY_PRP_REU",
+            unit__code="T",
+            period__code="2023",
+            country__code="EU",
+        )
+        # EU has 327,269
+        self.assertEqual(fact.value, 654.54)
+        self.assertEqual(fact.flags, "i")
+
+
 class TestImporterErrors(BetamaxPatchTestCase):
     fixtures = ["test/geogroup", "test/importconfig.json"]
 
@@ -603,7 +679,7 @@ class TestImporterErrors(BetamaxPatchTestCase):
         self.check_error("for dimension 'geo' not found")
 
     def test_invalid_multiplier_value_duplicate(self):
-        self.config.filters = {"geo": {"EU": -1, "eu": -2}}
+        self.config.multipliers = {"geo": {"RO": -1, "ro": -2}}
         self.check_error("Duplicate values detected")
 
     def test_invalid_multiplier_multiple_dimensions(self):
@@ -657,3 +733,94 @@ class TestImporterErrors(BetamaxPatchTestCase):
         self.config.period_start = 2015
         self.config.period_end = 2013
         self.check_error("Start period must be less than or equal to the end period")
+
+    def test_wrong_type(self):
+        self.config.conflict_formula = ["A", "B"]
+        self.config.save()
+        self.check_error("must be a valid JSON object")
+
+    def test_wrong_keys(self):
+        self.config.conflict_formula = {
+            "formula": "a**2",
+            "symbolsX": {
+                "a": {"hhtyp": "total"},
+            },
+        }
+        self.config.save()
+        self.check_error("Formula must contain 'formula' and 'symbols' keys")
+
+    def test_missing_formula(self):
+        self.config.conflict_resolution = self.config.ConflictResolution.USE_FORMULA
+        self.config.save()
+        self.check_error("Formula must not be empty")
+
+    def test_invalid_formula(self):
+        self.config.conflict_formula = {
+            "formula": "a-*+a",
+            "symbols": {
+                "a": {"hhtyp": "total"},
+            },
+        }
+        self.config.save()
+        self.check_error("invalid syntax")
+
+    def test_missing_symbol(self):
+        self.config.conflict_formula = {
+            "formula": "a+b",
+            "symbols": {
+                "a": {"hhtyp": "total"},
+            },
+        }
+        self.config.save()
+        self.check_error("Defined symbols must match formula symbols")
+
+    def test_extra_symbol(self):
+        self.config.conflict_formula = {
+            "formula": "a+a",
+            "symbols": {
+                "a": {"hhtyp": "total"},
+                "b": {"hhtyp": "a1"},
+            },
+        }
+        self.config.save()
+        self.check_error("Defined symbols must match formula symbols")
+
+    def test_symbol_not_dict(self):
+        self.config.conflict_formula = {
+            "formula": "a*2",
+            "symbols": {
+                "a": ["hhtyp", "total"],
+            },
+        }
+        self.config.save()
+        self.check_error("Must be a valid JSON object")
+
+    def test_symbol_duplicate_key(self):
+        self.config.conflict_formula = {
+            "formula": "a*2",
+            "symbols": {
+                "a": {"hhtyp": "total", "HHTYP": "TOTAL"},
+            },
+        }
+        self.config.save()
+        self.check_error("Duplicate keys detected")
+
+    def test_symbol_invalid_dimension(self):
+        self.config.conflict_formula = {
+            "formula": "a*2",
+            "symbols": {
+                "a": {"hhtypX": "total"},
+            },
+        }
+        self.config.save()
+        self.check_error("no dimensions with that id found")
+
+    def test_symbol_invalid_dimension_value(self):
+        self.config.conflict_formula = {
+            "formula": "a*2",
+            "symbols": {
+                "a": {"hhtyp": "totalX"},
+            },
+        }
+        self.config.save()
+        self.check_error("for dimension 'hhtyp' not found")
