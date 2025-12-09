@@ -31,4 +31,5 @@ requests
 rich
 rq-scheduler
 sentry-sdk[django]
+sympy
 xlrd

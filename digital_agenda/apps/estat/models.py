@@ -7,6 +7,7 @@ from django.core.validators import MinValueValidator
 
 from django.db import models
 from django_task.models import TaskRQ
+from sympy import sympify, symbols
 
 from digital_agenda.apps.estat.importer import ImporterError
 from digital_agenda.common.citext import CICharField
@@ -72,6 +73,13 @@ def default_mappings():
     }
 
 
+def default_formula():
+    return {
+        "formula": "",
+        "symbols": {},
+    }
+
+
 def is_unique(values):
     return len(values) == len(set(v.lower() for v in values))
 
@@ -81,6 +89,7 @@ class ImportConfig(models.Model):
         RAISE_ERROR = "RAISE_ERROR", "Raise errors on duplicate keys"
         SUM_VALUES = "SUM_VALUES", "Add values and merge flags"
         AVERAGE_VALUES = "AVERAGE_VALUES", "Average values and merge flags"
+        USE_FORMULA = "USE_FORMULA", "Use an advanced formula to merge values"
 
     code = CICharField(max_length=60)
     title = models.CharField(
@@ -132,6 +141,17 @@ class ImportConfig(models.Model):
             "Can be used to merge multiple values into a single surrogate indicator."
         ),
     )
+    conflict_formula = models.JSONField(
+        blank=True,
+        default=default_formula,
+        help_text=(
+            "Formula to use when conflict resolution is set to 'Use formula'. "
+            "Must define both the formula and how to extract each symbol from the "
+            "dataset. Each symbol may use one or multiple dimensions values to "
+            "identify the corresponding observation."
+        ),
+    )
+
     value_multiplier = models.FloatField(
         default=1,
         help_text="Multiply all values by this factor before importing",
@@ -250,8 +270,20 @@ class ImportConfig(models.Model):
                 result[key.lower()][dimension_value.lower()] = multiplier_value
         return result
 
-    def _clean_json_dimensions(self, field_name):
-        config_dict = getattr(self, field_name)
+    @cached_property
+    def ci_formula(self):
+        new_symbols = collections.defaultdict(dict)
+        for symbol, definition in self.conflict_formula["symbols"].items():
+            for dimension, value in definition.items():
+                new_symbols[symbol][dimension.lower()] = value.lower()
+        return {
+            **self.conflict_formula,
+            "symbols": new_symbols,
+        }
+
+    def _clean_json_dimensions(self, field_name, config_dict=None):
+        if config_dict is None:
+            config_dict = getattr(self, field_name)
         if not isinstance(config_dict, dict):
             raise ValidationError({field_name: "Must be a valid JSON object"})
 
@@ -259,6 +291,8 @@ class ImportConfig(models.Model):
             raise ValidationError({field_name: "Duplicate keys detected"})
 
         for key, values in config_dict.items():
+            if not isinstance(values, (list, dict)):
+                continue
             if not is_unique(values):
                 raise ValidationError(
                     {field_name: f"Duplicate values detected for the {key!r} dimension"}
@@ -317,6 +351,34 @@ class ImportConfig(models.Model):
                             "multipliers": f"Multiplier for {dimension!r} must be a number: {multiplier!r}"
                         }
                     )
+
+        if self.conflict_resolution == self.ConflictResolution.USE_FORMULA:
+            self._validate_formula()
+
+    def _validate_formula(self):
+        if not self.conflict_formula or not isinstance(self.conflict_formula, dict):
+            raise ValidationError(
+                {"conflict_formula": "Formula must be a valid JSON object"}
+            )
+        if set(self.conflict_formula.keys()) != {"formula", "symbols"}:
+            raise ValidationError(
+                {"conflict_formula": "Formula must contain formula and symbols keys"}
+            )
+
+        try:
+            formula = sympify(self.conflict_formula["formula"])
+        except (ValueError, KeyError) as e:
+            raise ValidationError({"conflict_formula": str(e)}) from e
+
+        defined_symbols = {symbols(key) for key in self.conflict_formula["symbols"]}
+        if formula.free_symbols != defined_symbols:
+            raise ValidationError(
+                {
+                    "conflict_formula": f"Defined symbols must match formula symbols: {formula.free_symbols} != {defined_symbols}"
+                }
+            )
+        for symbol, symbol_definition in self.conflict_formula["symbols"].items():
+            self._clean_json_dimensions("conflict_formula", symbol_definition)
 
     def _validate_json_dimensions(self, dataset, config_dict, config_type):
         for key, values in config_dict.items():
