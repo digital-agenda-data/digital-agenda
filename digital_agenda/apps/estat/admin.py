@@ -29,6 +29,32 @@ class GeoGroupAdmin(admin.ModelAdmin):
     ordering = ("code",)
 
 
+MERGING_DESCRIPTION = """
+<p>
+Conflicting facts can be encountered when using surrogate dimensions. This normally 
+would raise an error as it would indicate there is a missing filter. However it can 
+also be used to merge multiple datapoints into a single one. 
+</p>
+<p>
+This can be done either using basic operation such as sum and average, or a complex 
+math function defined using the formula field using sympy.sympify. Each symbol used 
+in the formula must be defined using or or more dimension values.  
+</p>
+<p>
+Example formula:
+</p>
+<pre>
+{
+    "formula": "(REC_SME + REC_SITTE) / (COL_SME + COL_SITTE)",
+    "symbols": {
+        "REC_SME": { "WASTE": "EE_SME", "WST_OPER": "RCY_PRP_REU" },
+        "REC_SITTE": { "WASTE": "EE_SITTE", "WST_OPER": "RCY_PRP_REU" },
+        "COL_SME": { "WASTE": "EE_SME", "WST_OPER": "COL" },
+        "COL_SITTE": { "WASTE": "EE_SITTE", "WST_OPER": "COL" }
+    }
+}
+</pre>   
+"""
 DIMENSION_DESCRIPTION = """
 Choose what dimension from the ESTAT dataset to take values from. Notes:
 <dl>
@@ -123,9 +149,18 @@ class ImportConfigAdmin(admin.ModelAdmin):
                     "title",
                     "tags",
                     "additional_remarks",
-                    "conflict_resolution",
                     "disable_check_updates",
                 ]
+            },
+        ),
+        (
+            "Merging values",
+            {
+                "description": MERGING_DESCRIPTION,
+                "fields": [
+                    "conflict_resolution",
+                    "conflict_formula",
+                ],
             },
         ),
         (

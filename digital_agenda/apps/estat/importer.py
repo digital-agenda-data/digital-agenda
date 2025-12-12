@@ -17,6 +17,8 @@ import openpyxl
 import requests
 from django.conf import settings
 from django.utils.text import get_valid_filename
+from sympy import symbols
+from sympy import sympify
 
 from digital_agenda.apps.core.models import Breakdown
 from digital_agenda.apps.core.models import Country
@@ -304,12 +306,6 @@ class EstatImporter:
             except KeyError:
                 pass
 
-        value *= self.config.value_multiplier
-        value += self.config.value_offset
-
-        if self.config.value_decimal_places is not None:
-            value = round(value, self.config.value_decimal_places)
-
         return value
 
     def iter_facts(self):
@@ -323,6 +319,7 @@ class EstatImporter:
                 flags=obs["status"] or "",
                 import_config_id=self.config.id,
             )
+            fact.observation = obs
 
             # Set dimensions with related models
             unique_key = []
@@ -338,10 +335,20 @@ class EstatImporter:
                 setattr(fact, attr, dim_id or dim_label)
 
         for key, fact_group in fact_collection.items():
-            yield self._handle_conflict(fact_group, key)
+            fact = self._handle_conflict(fact_group, key)
+            if fact.value is not None:
+                fact.value *= self.config.value_multiplier
+                fact.value += self.config.value_offset
+                if self.config.value_decimal_places is not None:
+                    fact.value = round(fact.value, self.config.value_decimal_places)
+            yield fact
 
     def _handle_conflict(self, fact_group, key):
-        if len(fact_group) == 1:
+        if (
+            self.config.conflict_resolution
+            != self.config.ConflictResolution.USE_FORMULA
+            and len(fact_group) == 1
+        ):
             return fact_group[0]
 
         # Chose one fact to work on
@@ -361,6 +368,8 @@ class EstatImporter:
                 new_value = total
             case self.config.ConflictResolution.AVERAGE_VALUES:
                 new_value = total / len(fact_group)
+            case self.config.ConflictResolution.USE_FORMULA:
+                new_value = self.apply_formula(fact_group)
             case _:
                 raise ImporterError(
                     {
@@ -376,6 +385,44 @@ class EstatImporter:
         fact.flags = "".join(set.union(*all_flags))
 
         return fact
+
+    def apply_formula(self, fact_group):
+        formula = sympify(self.config.conflict_formula["formula"])
+        formula_symbols = self.config.ci_formula["symbols"]
+        if len(formula_symbols) != len(fact_group):
+            raise ImporterError(
+                f"Found {len(fact_group)} facts in group but formula only has {len(formula_symbols)} symbols"
+            )
+
+        variables = self.get_formula_variables(fact_group)
+        if formula.free_symbols != set(variables):
+            raise ImporterError(
+                f"Formula symbols {formula.free_symbols} doesn't match the defined symbols {variables.keys()}"
+            )
+
+        return float(formula.subs(variables))
+
+    def get_formula_variables(self, fact_group):
+        variables = {}
+        for symbol, definition in self.config.ci_formula["symbols"].items():
+            possible_facts = []
+            for fact in fact_group:
+                for filter_key, filter_value in definition.items():
+                    if fact.observation[filter_key].id.lower() != filter_value:
+                        break
+                else:
+                    possible_facts.append(fact)
+
+            if len(possible_facts) == 0:
+                raise ImporterError(
+                    f"Formula symbol {symbol!r} doesn't match any dataset observations"
+                )
+            if len(possible_facts) > 1:
+                raise ImporterError(
+                    f"Formula symbol {symbol!r} matches multiple dataset observations"
+                )
+            variables[symbols(symbol)] = possible_facts[0].value
+        return variables
 
     def create_batch(self, facts):
         return len(

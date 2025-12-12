@@ -1,0 +1,69 @@
+[
+  {
+    "model": "estat.importconfig",
+    "fields": {
+      "code": "env_waseleeos",
+      "title": "Merging data using formulas",
+      "conflict_resolution": "USE_FORMULA",
+      "indicator": "waste",
+      "indicator_is_surrogate": true,
+      "breakdown": "recycled",
+      "breakdown_is_surrogate": true,
+      "country": "geo",
+      "country_is_surrogate": false,
+      "unit": "percent",
+      "unit_is_surrogate": true,
+      "period": "time",
+      "period_is_surrogate": false,
+      "period_start": 2023,
+      "period_end": 2023,
+      "country_group": null,
+      "value_multiplier": 100,
+      "value_decimal_places": 2,
+      "conflict_formula": {
+        "formula": "(REC_SME + REC_SITTE) / (COL_SME + COL_SITTE)",
+        "symbols": {
+          "COL_SME": {
+            "WASTE": "EE_SME",
+            "WST_OPER": "COL"
+          },
+          "REC_SME": {
+            "WASTE": "EE_SME",
+            "WST_OPER": "RCY_PRP_REU"
+          },
+          "COL_SITTE": {
+            "WASTE": "EE_SITTE",
+            "WST_OPER": "COL"
+          },
+          "REC_SITTE": {
+            "WASTE": "EE_SITTE",
+            "WST_OPER": "RCY_PRP_REU"
+          }
+        }
+      },
+      "filters": {
+        "unit": [
+          "T"
+        ],
+        "waste": [
+          "EE_SME",
+          "EE_SITTE"
+        ],
+        "wst_oper": [
+          "COL",
+          "RCY_PRP_REU"
+        ]
+      },
+      "mappings": {
+        "unit": {},
+        "period": {},
+        "country": {
+          "EU27_2020": "EU"
+        },
+        "breakdown": {},
+        "indicator": {}
+      },
+      "tags": []
+    }
+  }
+]
