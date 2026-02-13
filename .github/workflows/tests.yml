@@ -57,7 +57,7 @@ jobs:
         run: |
           cd frontend
           # Don't record videos since we don't upload them
-          npm run test -- -c 'video=false' -e "viewport=1920x1080"
+          npm run test -- -c 'video=false'
       - name: "Dump logs"
         if: ${{ !cancelled() }}
         run: |
