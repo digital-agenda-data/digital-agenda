@@ -143,8 +143,9 @@ def check_estat_dataset_for_updates(code):
         code=code, new_version_available=False, disable_check_updates=False
     ):
         if (
-            dataflow.version != config.datastructure_last_version
-            or dataflow.update_data != config.data_last_update
+            # andrei, disable checking the dsd version
+            # dataflow.version != config.datastructure_last_version or
+            dataflow.update_data != config.data_last_update
             or dataflow.update_structure != config.datastructure_last_update
         ):
             logger.info("New version available for config %s: %s", config, dataflow)
