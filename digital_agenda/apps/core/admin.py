@@ -30,6 +30,7 @@ from .models import (
     DataFileImportTask,
     StaticPage,
 )
+from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.common.admin import HasFactsAdminMixIn
 from digital_agenda.apps.core.resources import (
     DataSourceResource,
@@ -47,11 +48,50 @@ class DimensionAdmin(admin.ModelAdmin):
     list_per_page = 20
 
 
+class DataSourceIndicatorGroupFilter(admin.SimpleListFilter):
+    title = "Indicator Group"
+    parameter_name = "indicator_group"
+
+    def lookups(self, request, model_admin):
+        return [
+            (indicator_group.id, indicator_group.label)
+            for indicator_group in IndicatorGroup.objects.filter(
+                indicators__data_sources__isnull=False
+            ).distinct()
+        ]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(indicators__groups__id=self.value()).distinct()
+        return queryset
+
+
+class DataSourceChartGroupFilter(admin.SimpleListFilter):
+    title = "Chart Group"
+    parameter_name = "chart_group"
+
+    def lookups(self, request, model_admin):
+        return [
+            (chart_group.id, str(chart_group))
+            for chart_group in ChartGroup.objects.filter(
+                indicator_groups__indicators__data_sources__isnull=False
+            ).distinct()
+        ]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(
+                indicators__groups__chartgroup__id=self.value()
+            ).distinct()
+        return queryset
+
+
 @admin.register(DataSource)
 class DataSourceAdmin(ImportExportMixin, DimensionAdmin):
     save_as = True
     resource_class = DataSourceResource
     list_display = ("code", "label", "indicator_codes", "definition")
+    list_filter = (DataSourceIndicatorGroupFilter, DataSourceChartGroupFilter)
     readonly_fields = ("indicator_codes", "indicators_list")
     fields = (
         "code",
