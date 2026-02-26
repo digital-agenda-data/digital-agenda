@@ -471,11 +471,14 @@ class EstatImporter:
         return total
 
     def update_config(self):
-        logger.info("Assigning indicator datasource")
         for indicator in self.cache["indicator"].values():
-            indicator.data_sources.add(self.data_source)
+            # add data source only if empty, refs #34089
+            if indicator.data_sources.count() == 0:
+                logger.info(f"Assigning datasource to indicator {indicator}")
+                indicator.data_sources.add(self.data_source)
         self.config.data_last_update = self.dataset.dataflow.update_data
         self.config.datastructure_last_update = self.dataset.dataflow.update_structure
+        logger.info(f"Updating config version to {self.dataset.dataflow.version}")
         self.config.datastructure_last_version = self.dataset.dataflow.version
         self.config.new_version_available = False
         self.config.save()
