@@ -491,6 +491,7 @@ class DryRunEstatImporter(EstatImporter):
         self.ws = self.wb.active
         self.set_headers()
         self.current_facts = self.get_current_facts()
+        self.change_counts = defaultdict(int)
 
     def get_current_facts(self):
         qs = Fact.objects.filter(import_config=self.config).select_related(
@@ -541,6 +542,8 @@ class DryRunEstatImporter(EstatImporter):
             else:
                 change_type = "NO CHANGE"
 
+            self.change_counts[change_type] += 1
+
             diff = None
             if old_fact and old_fact.value is not None and new_fact.value is not None:
                 diff = new_fact.value - old_fact.value
@@ -565,6 +568,7 @@ class DryRunEstatImporter(EstatImporter):
     def create_facts(self, batch_size=10_000):
         total = super().create_facts(batch_size=batch_size)
         for fact in self.current_facts.values():
+            self.change_counts["DELETE"] += 1
             self.ws.append(
                 [
                     fact.indicator.code,
@@ -581,6 +585,7 @@ class DryRunEstatImporter(EstatImporter):
                 ]
             )
         self.ws.auto_filter.ref = self.ws.dimensions
+        logger.info("Dry run complete. Change counts: %s", dict(self.change_counts))
         return total
 
     def update_config(self):
