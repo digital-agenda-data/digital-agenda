@@ -79,7 +79,7 @@ psycopg==3.2.10
 psycopg-binary==3.2.10
 ptyprocess==0.7.0
 pure_eval==0.2.3
-Pygments==2.19.2
+Pygments==2.20.0
 pytest==8.4.2
 pytest-cov==7.0.0
 pytest-django==4.11.1
