@@ -133,16 +133,23 @@ export default {
 
       onCancel(() => abortController.abort());
 
-      return (
-        await api.get("/chart-groups-indicator-search/", {
-          signal: abortController.signal,
-          params: {
-            search: this.searchQuery,
-            limit: this.pageSize,
-            offset: (pageNr - 1) * this.pageSize,
-          },
-        })
-      ).data;
+      try {
+        return (
+          await api.get("/chart-groups-indicator-search/", {
+            signal: abortController.signal,
+            params: {
+              search: this.searchQuery,
+              limit: this.pageSize,
+              offset: (pageNr - 1) * this.pageSize,
+            },
+          })
+        ).data;
+      } catch (e) {
+        // Ignore canceled error since that is on purpose.
+        if (e.code !== "ERR_CANCELED") {
+          throw e;
+        }
+      }
     },
   },
 };
