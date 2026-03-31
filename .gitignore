@@ -59,7 +59,6 @@ docs/_build/
 .venv*
 .envrc
 .vscode
-.nvmrc
 .python-version
 
 # Runtime data
