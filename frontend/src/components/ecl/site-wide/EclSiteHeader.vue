@@ -20,7 +20,7 @@
             >
               <source :srcset="logoURL" media="(min-width: 996px)" />
               <img
-                class="ecl-site-header__logo-image"
+                class="ecl-site-header__logo-image--l"
                 :src="logoURLSmall"
                 alt="European Commission logo"
               />
