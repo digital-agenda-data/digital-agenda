@@ -1,17 +1,8 @@
 <template>
-  <svg :class="classList" focusable="false" aria-hidden="true" data-ecl-icon="">
-    <use :href="href"></use>
-  </svg>
+  <span :class="classList" aria-hidden="true" data-ecl-icon=""></span>
 </template>
 
 <script>
-import iconSpritesURL from "@ecl/preset-ec/dist/images/icons/sprites/icons.svg?url";
-import spritesValidIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
-
-const allIcons = Object.fromEntries([
-  ...spritesValidIcons.map((icon) => [icon, iconSpritesURL + "#" + icon]),
-]);
-
 /**
  * ECL icon component. See full documentation here:
  *
@@ -32,9 +23,6 @@ export default {
     icon: {
       type: String,
       required: true,
-      validator(value) {
-        return !!allIcons[value];
-      },
     },
     size: {
       type: String,
@@ -74,15 +62,14 @@ export default {
     },
   },
   computed: {
-    href() {
-      return allIcons[this.icon];
-    },
     classList() {
       const result = [
+        `wt-icon--${this.icon}`,
         "ecl-icon",
         `ecl-icon--${this.size}`,
         `ecl-icon--${this.color}`,
         `ecl-icon--rotate-${this.rotate}`,
+        `ecl-icon--${this.icon}`,
       ];
 
       if (this.flipHorizontal) {
