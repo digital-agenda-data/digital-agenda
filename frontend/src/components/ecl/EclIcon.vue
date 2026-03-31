@@ -37,7 +37,7 @@ export default {
     color: {
       type: String,
       required: false,
-      default: "none",
+      default: null,
       validator(value) {
         return ["none", "primary", "inverted"].includes(value);
       },
@@ -60,17 +60,25 @@ export default {
       required: false,
       default: false,
     },
+    inverted: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     classList() {
       const result = [
-        `wt-icon--${this.icon}`,
+        `wt-icon-${this.icon}`,
         "ecl-icon",
         `ecl-icon--${this.size}`,
-        `ecl-icon--${this.color}`,
         `ecl-icon--rotate-${this.rotate}`,
         `ecl-icon--${this.icon}`,
       ];
+
+      if (this.color) {
+        result.push(`ecl-icon--${this.color}`);
+      }
 
       if (this.flipHorizontal) {
         result.push("ecl-icon--flip-horizontal");
@@ -78,6 +86,10 @@ export default {
 
       if (this.flipVertical) {
         result.push("ecl-icon--flip-vertical");
+      }
+
+      if (this.inverted) {
+        result.push("wt-icon--inverted");
       }
 
       return result;
