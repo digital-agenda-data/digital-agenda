@@ -72,3 +72,5 @@ docker/wheels/
 .idea/
 
 docker-compose.override.yml
+scratch.*
+todo.*

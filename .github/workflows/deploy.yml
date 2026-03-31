@@ -21,7 +21,7 @@ jobs:
       - self-hosted
       - ${{ inputs.deployEnvironment }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Update docker-compose.yml
         run: |
           cp docker-compose.yml "${{ inputs.workingDir }}"

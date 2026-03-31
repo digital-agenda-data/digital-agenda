@@ -19,8 +19,8 @@ jobs:
     env:
       TERM: xterm
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
       - name: "Configure env"
@@ -63,7 +63,7 @@ jobs:
         run: |
           docker compose ps
           docker compose logs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() && failure() && steps.frontendTests.conclusion == 'failure' }}
         with:
           name: cypress-screenshots
