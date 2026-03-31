@@ -2,7 +2,6 @@ import logging
 from rest_framework.views import exception_handler, Response
 from rest_framework import status
 
-
 logger = logging.getLogger(__name__)
 
 
