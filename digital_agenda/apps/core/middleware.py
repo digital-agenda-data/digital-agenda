@@ -3,7 +3,6 @@ import zoneinfo
 from django.conf import settings
 from django.utils import timezone
 
-
 # See https://docs.djangoproject.com/en/4.1/topics/i18n/timezones/#get-current-timezone
 
 

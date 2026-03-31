@@ -11,6 +11,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from health_check.views import HealthCheckView
 
 from digital_agenda.apps.accounts import views as accounts_views
 from digital_agenda.apps.shortner.views import ChartRedirectView
@@ -41,7 +42,19 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
-    path("ht/", include("health_check.urls")),
+    path(
+        "ht/",
+        HealthCheckView.as_view(
+            checks=[
+                "health_check.Cache",
+                "health_check.Database",
+                "health_check.Mail",
+                "health_check.Storage",
+                # 3rd party checks
+                "health_check.contrib.redis.Redis",
+            ]
+        ),
+    ),
     path("django-rq/", include("django_rq.urls")),
     path("django_task/", include("django_task.urls", namespace="django_task")),
     path("admin/adminactions/", include("adminactions.urls")),
