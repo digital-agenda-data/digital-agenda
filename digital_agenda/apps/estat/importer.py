@@ -29,7 +29,6 @@ from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.models import Unit
 from digital_agenda.apps.estat.json_stat import JSONStat
 
-
 if TYPE_CHECKING:
     from digital_agenda.apps.estat.models import ImportConfig
 

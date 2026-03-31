@@ -1,12 +1,9 @@
 import shutil
 from unittest.mock import patch
-from unittest.mock import patch
 
 from betamax.fixtures.unittest import BetamaxTestCase
 from django.conf import settings
-from django.conf import settings
-from django.test import TestCase
-from django.test import TestCase
+from django.test import TestCase, TransactionTestCase
 from rest_framework.test import APIClient
 
 
@@ -15,7 +12,7 @@ class APIBaseTest(TestCase):
     maxDiff = None
 
 
-class BetamaxPatchTestCase(BetamaxTestCase, TestCase):
+class BetamaxPatchTestCase(BetamaxTestCase, TransactionTestCase):
     def setUp(self):
         super().setUp()
         self._mock_session = patch(
