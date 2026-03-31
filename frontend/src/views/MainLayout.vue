@@ -4,7 +4,7 @@
     <header>
       <div
         v-if="appSettings.global_banner_enabled"
-        v-ec-wt-render="{ service: 'globan' }"
+        v-ec-wt-render="{ service: 'globan', theme: 'dark' }"
       />
       <div
         v-if="appSettings.cck_enabled"
