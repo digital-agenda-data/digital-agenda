@@ -21,7 +21,11 @@
         <h2>About this dataset</h2>
         <div class="ecl-u-pb-none ecl-u-bg-neutral-50 ecl-u-ph-xl ecl-u-pv-m">
           <ecl-list v-slot="{ item }" :items="navRoutes" divider>
-            <ecl-link :to="item.to" :label="item.text" />
+            <ecl-link
+              :to="item.to"
+              :label="item.text"
+              :variant="$route.name === item.to.name ? 'none' : 'standalone'"
+            />
           </ecl-list>
         </div>
       </div>
