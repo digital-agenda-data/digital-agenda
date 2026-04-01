@@ -4,7 +4,7 @@
     :class="`ecl-u-d-${mobileBreakpoint}-none`"
   >
     <div class="ecl-col-12">
-      <ecl-tabs :items="navRoutes" hide-controls />
+      <ecl-tabs :items="navRoutes" />
     </div>
   </div>
 
@@ -70,7 +70,7 @@ export default {
         },
         {
           id: "feedback",
-          text: "Submit feedback",
+          text: "Feedback",
           to: { name: "feedback" },
         },
       ];

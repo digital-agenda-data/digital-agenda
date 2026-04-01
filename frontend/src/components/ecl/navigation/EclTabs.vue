@@ -1,75 +1,80 @@
 <template>
-  <nav
+  <div
     v-ecl-init
     class="ecl-tabs"
     data-ecl-tabs="true"
     data-ecl-auto-init="Tabs"
   >
     <div class="ecl-tabs__container">
-      <ul class="ecl-tabs__list" role="tablist">
-        <li
+      <div class="ecl-tabs__list" role="tablist">
+        <router-link
           v-for="item in items"
           :key="item.id"
-          class="ecl-tabs__item"
-          role="presentation"
+          v-slot="{ isActive }"
+          :to="item.to"
+          custom
         >
-          <router-link
-            :to="item.to"
-            class="ecl-link ecl-tabs__link"
-            active-class="ecl-tabs__link--active"
-            role="tab"
-            tabindex="-1"
-          >
-            {{ item.text }}
-          </router-link>
-        </li>
-        <li class="ecl-tabs__item ecl-tabs__item--more" role="presentation">
+          <div class="ecl-tabs__item">
+            <ecl-link
+              :to="item.to"
+              class="ecl-tabs__link"
+              :class="{ 'ecl-tabs__link--active': isActive }"
+              :label="item.text"
+              role="tab"
+              tabindex="-1"
+              :aria-selected="isActive"
+            />
+          </div>
+        </router-link>
+        <div class="ecl-tabs__item ecl-tabs__item--more">
           <ecl-button
+            v-show="!hideShowMore"
             class="ecl-tabs__toggle"
-            variant="secondary"
-            label="More (%d)"
+            variant="tertiary"
+            label="Show more"
             icon="corner-arrow"
+            icon-size="fluid"
             icon-rotate="180"
             tabindex="-1"
             type="button"
+            aria-hidden="true"
           />
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <div v-show="!hideControls" class="ecl-tabs__controls">
-      <button class="ecl-tabs__prev" aria-hidden="true">
-        <ecl-icon
-          icon="corner-arrow"
-          color="inverted"
-          rotate="270"
-          class="ecl-u-d-block"
-          focusable="false"
-          aria-hidden="true"
-        />
-        <span class="ecl-u-sr-only"></span>
-      </button>
-      <button class="ecl-tabs__next" aria-hidden="true">
-        <ecl-icon
-          icon="corner-arrow"
-          color="inverted"
-          rotate="90"
-          class="ecl-u-d-block"
-          focusable="false"
-          aria-hidden="true"
-        />
-        <span class="ecl-u-sr-only"></span>
-      </button>
+      <ecl-button
+        variant="tertiary"
+        icon-only
+        icon="corner-arrow"
+        icon-rotate="270"
+        class="ecl-tabs__prev ecl-tabs__item--hidden"
+        tabindex="-1"
+        label="Previous"
+        aria-hidden="true"
+      />
+      <ecl-button
+        variant="tertiary"
+        icon-only
+        icon="corner-arrow"
+        icon-rotate="90"
+        class="ecl-tabs__next ecl-tabs__item--hidden"
+        tabindex="-1"
+        label="Next"
+        aria-hidden="true"
+      />
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
 import EclButton from "@/components/ecl/EclButton.vue";
 import EclIcon from "@/components/ecl/EclIcon.vue";
+import EclLink from "@/components/ecl/navigation/EclLink.vue";
 
 export default {
   name: "EclTabs",
-  components: { EclIcon, EclButton },
+  components: { EclLink, EclIcon, EclButton },
   props: {
     /**
      * Items must be in the following format:
@@ -89,6 +94,11 @@ export default {
       },
     },
     hideControls: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    hideShowMore: {
       type: Boolean,
       required: false,
       default: false,

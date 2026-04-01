@@ -42,9 +42,14 @@ export default {
       required: false,
       default: "primary",
       validator(value) {
-        return ["primary", "secondary", "call", "ghost", "neutral"].includes(
-          value,
-        );
+        return [
+          "primary",
+          "secondary",
+          "tertiary",
+          "call",
+          "ghost",
+          "neutral",
+        ].includes(value);
       },
     },
     size: {
