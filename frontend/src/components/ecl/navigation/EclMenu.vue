@@ -7,6 +7,7 @@
     data-ecl-auto-init="Menu"
     aria-expanded="false"
     role="navigation"
+    aria-label="Main navigation"
   >
     <div class="ecl-menu__overlay" data-ecl-menu-overlay=""></div>
     <div class="ecl-container ecl-menu__container">

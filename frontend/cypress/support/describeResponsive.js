@@ -5,17 +5,22 @@
  *
  * @param title {String}
  * @param fn {Function}
+ * @param viewports {Array}
  */
-export default function (title, fn) {
-  let viewports = Cypress.config("viewports");
+export default function (title, fn, viewports = null) {
+  let configuredViewports = [];
 
-  if (Cypress.env("viewport")) {
-    viewports = Cypress.env("viewport")
+  if (viewports) {
+    configuredViewports = viewports;
+  } else if (Cypress.env("viewport")) {
+    configuredViewports = Cypress.env("viewport")
       .split(";")
       .map((viewport) => viewport.split("x").map((i) => parseInt(i)));
+  } else {
+    configuredViewports = Cypress.config("viewports");
   }
 
-  for (const size of viewports) {
+  for (const size of configuredViewports) {
     describe(`${title} (${size.join("x")})`, () => {
       beforeEach(() => {
         cy.viewport(...size);
