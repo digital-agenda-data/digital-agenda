@@ -9,17 +9,8 @@
       <span>{{ item.label || item.alt_label }}</span>
     </div>
     <div class="ecl-u-ml-m ecl-u-mt-m">
-      <div v-if="item.definition">
-        <b>Definition:&nbsp;</b>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <span v-html="item.definition" />
-      </div>
-
-      <div v-if="item.note">
-        <b>Notes:&nbsp;</b>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <span v-html="item.note" />
-      </div>
+      <dimension-prop :value="item?.definition" label="Definition:" />
+      <dimension-prop :value="item?.note" label="Notes:" />
 
       <div
         v-for="data_source in item.data_sources ?? []"
@@ -36,17 +27,13 @@
           label="[More information]"
           no-visited
         />
-        <div v-if="dataSourceByCode.get(data_source)?.definition">
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <span v-html="dataSourceByCode.get(data_source)?.definition" />
-        </div>
-        <div v-if="dataSourceByCode.get(data_source)?.note">
-          <em>
-            <b>Notes:&nbsp;</b>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <span v-html="dataSourceByCode.get(data_source)?.note" />
-          </em>
-        </div>
+        <dimension-prop
+          :value="dataSourceByCode.get(data_source)?.definition"
+        />
+        <dimension-prop
+          :value="dataSourceByCode.get(data_source)?.note"
+          label="Notes:"
+        />
       </div>
     </div>
   </div>
@@ -77,6 +64,7 @@
 </template>
 
 <script>
+import DimensionProp from "@/components/charts/DimensionProp.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { FILTER_SUFFIXES } from "@/lib/constants";
 import { mapState, mapStores } from "pinia";
@@ -88,7 +76,7 @@ import { forceArray } from "@/lib/utils";
 
 export default {
   name: "ChartDefinitions",
-  components: { EclLink },
+  components: { DimensionProp, EclLink },
   props: {
     showAxisLabel: {
       type: Boolean,

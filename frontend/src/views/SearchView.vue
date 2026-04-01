@@ -29,8 +29,7 @@
                 <span v-html="item.code" />
                 )
               </ecl-link>
-              <!-- eslint-disable-next-line vue/no-v-html -->
-              <div class="ecl-u-mt-2xs" v-html="item.definition" />
+              <dimension-prop :value="item.definition" class="ecl-u-mt-2xs" />
             </div>
           </td>
           <td
@@ -57,6 +56,7 @@
 </template>
 
 <script>
+import DimensionProp from "@/components/charts/DimensionProp.vue";
 import EclSearchForm from "@/components/ecl/forms/EclSearchForm.vue";
 import { ref } from "vue";
 import { mapState } from "pinia";
@@ -74,7 +74,13 @@ import EclPagination from "@/components/ecl/navigation/EclPagination.vue";
 
 export default {
   name: "SearchView",
-  components: { EclSearchForm, EclPagination, EclLink, EclSpinner },
+  components: {
+    DimensionProp,
+    EclSearchForm,
+    EclPagination,
+    EclLink,
+    EclSpinner,
+  },
   data() {
     return {
       loading: ref(false),

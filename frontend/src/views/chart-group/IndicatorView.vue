@@ -106,17 +106,16 @@
                 <span>{{ indicator.code }}</span>
               </div>
 
-              <div v-if="indicator.definition" class="ecl-u-type-paragraph-m">
-                <strong>Definition:&nbsp;</strong>
-                <!-- eslint-disable-next-line vue/no-v-html -->
-                <span v-html="indicator.definition" />
-              </div>
-
-              <div v-if="indicator.note" class="ecl-u-type-paragraph-m">
-                <strong>Notes:&nbsp;</strong>
-                <!-- eslint-disable-next-line vue/no-v-html -->
-                <span v-html="indicator.note" />
-              </div>
+              <dimension-prop
+                :value="indicator.definition"
+                label="Definition:"
+                class="ecl-u-type-paragraph-m"
+              />
+              <dimension-prop
+                :value="indicator.note"
+                label="Notes:"
+                class="ecl-u-type-paragraph-m"
+              />
 
               <div class="ecl-u-type-paragraph-m">
                 <strong>Time coverage:&nbsp;</strong>
@@ -183,6 +182,7 @@
 
 <script>
 import ChartGroupNav from "@/components/ChartGroupNav.vue";
+import DimensionProp from "@/components/charts/DimensionProp.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import { api, apiURL } from "@/lib/api";
@@ -194,7 +194,7 @@ import { mapState } from "pinia";
 
 export default {
   name: "IndicatorView",
-  components: { ChartGroupNav, EclLink, EclSpinner },
+  components: { DimensionProp, ChartGroupNav, EclLink, EclSpinner },
   data() {
     return {
       apiURL,
