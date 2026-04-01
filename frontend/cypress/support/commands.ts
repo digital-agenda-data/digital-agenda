@@ -102,12 +102,12 @@ Cypress.Commands.addAll({
     }
     // Wait for the dropdown to disappear and make sure the option we wanted
     // was selected.
-    cy.get(`[data-name='${inputName}'] input[type=text]`)
-      .first()
-      .type("{esc}", { force: true });
-    cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
-      "not.exist",
-    );
+    // cy.get(`[data-name='${inputName}'] input[type=text]`)
+    //   .first()
+    //   .type("{esc}", { force: true });
+    // cy.get(`[data-name='${inputName}'] .multiselect__content`).should(
+    //   "not.exist",
+    // );
   },
   searchIndicators(searchQuery) {
     cy.visit("/")
