@@ -12,8 +12,8 @@ export default function (title, fn, viewports = null) {
 
   if (viewports) {
     configuredViewports = viewports;
-  } else if (Cypress.expose("viewport")) {
-    configuredViewports = Cypress.expose("viewport")
+  } else if (Cypress.env("viewport")) {
+    configuredViewports = Cypress.env("viewport")
       .split(";")
       .map((viewport) => viewport.split("x").map((i) => parseInt(i)));
   } else {
