@@ -70,7 +70,7 @@ export default {
         },
         {
           id: "feedback",
-          text: "Feedback",
+          text: "Submit feedback",
           to: { name: "feedback" },
         },
       ];
