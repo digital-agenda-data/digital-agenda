@@ -1,9 +1,9 @@
 <template>
   <router-view />
 
-  <div class="ecl-u-screen-only">
+  <div v-if="filteredChartGroupNavItems.length > 0" class="ecl-u-screen-only">
     <h3>Browse other datasets</h3>
-    <card-nav :items="chartGroupNavItems" />
+    <card-nav :items="filteredChartGroupNavItems" />
   </div>
 </template>
 
@@ -17,7 +17,15 @@ export default {
   name: "DatasetView",
   components: { CardNav },
   computed: {
-    ...mapState(useChartGroupStore, ["chartGroupNavItems"]),
+    ...mapState(useChartGroupStore, [
+      "currentChartGroup",
+      "chartGroupNavItems",
+    ]),
+    filteredChartGroupNavItems() {
+      return this.chartGroupNavItems.filter(
+        (item) => item.id !== this.currentChartGroup.code,
+      );
+    },
   },
 };
 </script>
