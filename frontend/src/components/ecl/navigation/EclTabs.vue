@@ -69,12 +69,11 @@
 
 <script>
 import EclButton from "@/components/ecl/EclButton.vue";
-import EclIcon from "@/components/ecl/EclIcon.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 
 export default {
   name: "EclTabs",
-  components: { EclLink, EclIcon, EclButton },
+  components: { EclLink, EclButton },
   props: {
     /**
      * Items must be in the following format:
