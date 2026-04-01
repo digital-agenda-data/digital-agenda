@@ -1,17 +1,8 @@
 <template>
-  <svg :class="classList" focusable="false" aria-hidden="true" data-ecl-icon="">
-    <use :href="href"></use>
-  </svg>
+  <span :class="classList" aria-hidden="true" data-ecl-icon=""></span>
 </template>
 
 <script>
-import iconSpritesURL from "@ecl/preset-ec/dist/images/icons/sprites/icons.svg?url";
-import spritesValidIcons from "@ecl/preset-ec/dist/images/icons/lists/all.json";
-
-const allIcons = Object.fromEntries([
-  ...spritesValidIcons.map((icon) => [icon, iconSpritesURL + "#" + icon]),
-]);
-
 /**
  * ECL icon component. See full documentation here:
  *
@@ -32,9 +23,6 @@ export default {
     icon: {
       type: String,
       required: true,
-      validator(value) {
-        return !!allIcons[value];
-      },
     },
     size: {
       type: String,
@@ -49,7 +37,7 @@ export default {
     color: {
       type: String,
       required: false,
-      default: "none",
+      default: null,
       validator(value) {
         return ["none", "primary", "inverted"].includes(value);
       },
@@ -72,18 +60,25 @@ export default {
       required: false,
       default: false,
     },
+    inverted: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
-    href() {
-      return allIcons[this.icon];
-    },
     classList() {
       const result = [
+        `wt-icon-${this.icon}`,
         "ecl-icon",
         `ecl-icon--${this.size}`,
-        `ecl-icon--${this.color}`,
         `ecl-icon--rotate-${this.rotate}`,
+        `ecl-icon--${this.icon}`,
       ];
+
+      if (this.color) {
+        result.push(`ecl-icon--${this.color}`);
+      }
 
       if (this.flipHorizontal) {
         result.push("ecl-icon--flip-horizontal");
@@ -91,6 +86,10 @@ export default {
 
       if (this.flipVertical) {
         result.push("ecl-icon--flip-vertical");
+      }
+
+      if (this.inverted) {
+        result.push("wt-icon--inverted");
       }
 
       return result;

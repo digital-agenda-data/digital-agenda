@@ -50,7 +50,10 @@
         <ecl-button
           v-if="!loading"
           label="Share"
+          size="m"
+          icon-size="m"
           icon="share"
+          variant="secondary"
           @click="getShortUrl"
         />
         <ecl-spinner v-else size="small" />

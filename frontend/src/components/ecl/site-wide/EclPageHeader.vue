@@ -3,6 +3,7 @@
     <ecl-breadcrumbs
       v-if="breadcrumbs.length > 1"
       id="nav"
+      :key="$route.name"
       class="ecl-page-header__breadcrumb"
       :items="breadcrumbs"
     />

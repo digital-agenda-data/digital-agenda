@@ -23,6 +23,7 @@
       :rotate="iconRotate"
       :size="iconSize"
       class="ecl-link__icon"
+      :inverted="inverted"
     />
   </component>
 </template>
@@ -69,11 +70,13 @@ export default {
       default: "standalone",
       validator(value) {
         return [
+          "",
           "standalone",
           "cta",
           "primary",
           "secondary",
           "negative",
+          "brand",
           "none",
         ].includes(value);
       },
@@ -130,13 +133,17 @@ export default {
 
       if (this.variant !== "none") {
         result.push("ecl-link");
-        result.push(`ecl-link--${this.variant}`);
+        if (this.variant) {
+          result.push(`ecl-link--${this.variant}`);
+        }
       }
 
       if (this.icon) {
         result.push("ecl-link--icon");
 
-        if (this.iconLeft) {
+        if (!this.label) {
+          result.push("ecl-link--icon-only");
+        } else if (this.iconLeft) {
           result.push("ecl-link--icon-before");
         } else {
           result.push("ecl-link--icon-after");

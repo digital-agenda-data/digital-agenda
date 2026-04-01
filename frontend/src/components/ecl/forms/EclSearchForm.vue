@@ -24,10 +24,11 @@
 
     <ecl-button
       variant="ghost"
-      label="Search"
+      icon-only
       icon="search"
       type="submit"
       class="ecl-search-form__button"
+      label="Search"
     />
   </form>
 </template>

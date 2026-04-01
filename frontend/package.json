@@ -17,7 +17,7 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "@ecl/preset-ec": "4.11.0",
+    "@ecl/preset-ec": "5.0.0-RC1",
     "@sentry/vue": "10.46.0",
     "@vueuse/core": "14.2.1",
     "@vueuse/router": "14.2.1",
@@ -26,7 +26,7 @@
     "highcharts-vue": "2.0.1",
     "pinia": "3.0.4",
     "vue": "3.5.31",
-    "vue-multiselect": "3.4.0",
+    "vue-multiselect": "3.2.0",
     "vue-router": "5.0.4"
   },
   "devDependencies": {
@@ -68,8 +68,5 @@
     "last 2 versions",
     "not dead",
     "not op_mini all"
-  ],
-  "overrides": {
-    "serialize-javascript": "3.1.0"
-  }
+  ]
 }

@@ -19,14 +19,27 @@
     </div>
 
     <div :id="contentId" class="ecl-popover__container" hidden="">
-      <div class="ecl-popover__content">
-        <slot></slot>
+      <div class="ecl-popover__scrollable">
+        <ecl-button
+          icon-only
+          icon="close"
+          class="ecl-popover__close"
+          variant="neutral"
+          data-ecl-popover-close
+          label="Close"
+          @click="closePopover"
+        />
+        <div class="ecl-popover__content">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import EclButton from "@/components/ecl/EclButton.vue";
+
 /**
  * ECL Popover component, see documentation here:
  *
@@ -35,6 +48,7 @@
  */
 export default {
   name: "EclPopover",
+  components: { EclButton },
   props: {
     /**
      * Disable the default click listener and toggle the popover manually

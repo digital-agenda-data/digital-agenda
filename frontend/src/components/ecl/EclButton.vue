@@ -1,12 +1,5 @@
 <template>
-  <button
-    class="ecl-button"
-    :class="{
-      [`ecl-button--${variant}`]: true,
-      'ecl-button--icon-only': iconOnly,
-    }"
-    :aria-label="ariaLabel || label"
-  >
+  <button :class="classList" :aria-label="ariaLabel || label">
     <span class="ecl-button__container">
       <slot>
         <ecl-icon
@@ -49,7 +42,17 @@ export default {
       required: false,
       default: "primary",
       validator(value) {
-        return ["primary", "secondary", "call", "ghost"].includes(value);
+        return ["primary", "secondary", "call", "ghost", "neutral"].includes(
+          value,
+        );
+      },
+    },
+    size: {
+      type: String,
+      required: false,
+      default: null,
+      validator(value) {
+        return ["s", "m", "l"].includes(value);
       },
     },
     label: {
@@ -86,6 +89,18 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+  },
+  computed: {
+    classList() {
+      const result = ["ecl-button", `ecl-button--${this.variant}`];
+      if (this.iconOnly) {
+        result.push("ecl-button--icon-only");
+      }
+      if (this.size) {
+        result.push(`ecl-button--${this.size}`);
+      }
+      return result;
     },
   },
 };
