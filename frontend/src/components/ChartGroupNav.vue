@@ -22,7 +22,7 @@
         <ecl-category-filter
           :items="navRoutes"
           aria-label="Dataset details"
-          class="ecl-u-bg-neutral-40"
+          class="ecl-u-bg-neutral-50"
         />
       </div>
     </div>
