@@ -19,23 +19,24 @@
     >
       <div class="ecl-u-pa-xs">
         <h2>About this dataset</h2>
-        <ecl-category-filter
-          :items="navRoutes"
-          aria-label="Dataset details"
-          class="ecl-u-bg-neutral-50"
-        />
+        <div class="ecl-u-pb-none ecl-u-bg-neutral-50 ecl-u-ph-xl ecl-u-pv-m">
+          <ecl-list v-slot="{ item }" :items="navRoutes" divider>
+            <ecl-link :to="item.to" :label="item.text" />
+          </ecl-list>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import EclList from "@/components/ecl/EclList.vue";
+import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclTabs from "@/components/ecl/navigation/EclTabs.vue";
-import EclCategoryFilter from "@/components/ecl/EclCategoryFilter.vue";
 
 export default {
   name: "ChartGroupNav",
-  components: { EclTabs, EclCategoryFilter },
+  components: { EclLink, EclList, EclTabs },
   data() {
     return {
       mobileBreakpoint: "l",

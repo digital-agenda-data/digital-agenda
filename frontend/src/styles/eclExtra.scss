@@ -77,3 +77,9 @@
 .ecl-social-media-follow__description {
   width: 100%;
 }
+
+// Fix ecl-divider-list style
+
+.ecl-unordered-list--divider {
+  list-style: none !important;
+}
