@@ -21,7 +21,7 @@
         <tr v-for="item in items" :key="item.id" class="ecl-table__row">
           <td class="ecl-table__cell" data-ecl-table-header="Indicator">
             <div>
-              <ecl-link :to="item.to" no-visited>
+              <ecl-link :to="item.to" no-visited variant="brand">
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span v-html="item.label" />
                 <!-- eslint-disable-next-line vue/no-v-html -->
@@ -41,6 +41,7 @@
               :to="item.toGroup"
               :label="item.chartGroup.name"
               no-visited
+              variant="brand"
             />
           </td>
         </tr>
@@ -160,10 +161,6 @@ export default {
   .dataset-cell {
     width: 25%;
   }
-}
-
-a {
-  color: #3860ed;
 }
 
 table {

@@ -76,6 +76,7 @@ export default {
           "primary",
           "secondary",
           "negative",
+          "brand",
           "none",
         ].includes(value);
       },

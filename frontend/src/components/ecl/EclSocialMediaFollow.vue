@@ -15,7 +15,7 @@
           icon-size="s"
           class="ecl-social-media-follow__link"
           inverted
-          :alt="item.label"
+          :aria-label="item.label"
         />
       </li>
     </ul>
