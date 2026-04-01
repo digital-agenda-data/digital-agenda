@@ -1,4 +1,5 @@
 <template>
+  <h2 class="ecl-u-sr-only">About this dataset</h2>
   <div
     class="ecl-row ecl-u-pt-m ecl-u-d-flex"
     :class="`ecl-u-d-${mobileBreakpoint}-none`"
@@ -18,7 +19,6 @@
       :class="`ecl-u-d-${mobileBreakpoint}-flex`"
     >
       <div class="ecl-u-pa-xs">
-        <h2>About this dataset</h2>
         <div class="ecl-u-pb-none ecl-u-bg-neutral-50 ecl-u-ph-xl ecl-u-pv-m">
           <ecl-list v-slot="{ item }" :items="navRoutes" divider>
             <ecl-link
