@@ -1,3 +1,5 @@
+import describeResponsive from "../support/describeResponsive.js";
+
 const pages = [
   "/",
   "/feedback",
@@ -32,38 +34,51 @@ function terminalLog(violations) {
   cy.task("table", violationData);
 }
 
-describe("Test accessibility", () => {
-  function checkPage(url) {
-    cy.visit(url);
-    cy.injectAxe();
+const a11yViewports = [
+  // Desktop
+  [1920, 1080],
+  // Tablet
+  [768, 1024],
+  // Phone
+  [414, 896],
+];
 
-    // Wait for landmark elements
-    cy.get("#header").should("be.visible");
-    cy.get("#nav").should("be.visible");
-    cy.get("#main").should("be.visible");
-    cy.get("#footer").should("be.visible");
+describeResponsive(
+  "Test accessibility",
+  () => {
+    function checkPage(url) {
+      cy.visit(url);
+      cy.injectAxe();
 
-    // Wait for all network requests to settle and loading indicator to disappear
-    cy.waitForNetworkIdle(1000, { log: false });
-    cy.get(".lds-app-loader").should("not.exist");
+      // Wait for landmark elements
+      cy.get("#header").should("be.visible");
+      cy.get("#nav").should("be.visible");
+      cy.get("#main").should("be.visible");
+      cy.get("#footer").should("be.visible");
 
-    // Check and log all accessibility issues.
-    cy.configureAxe({
-      checks: [
-        {
-          // Disable check because of upstream issue
-          // https://github.com/shentao/vue-multiselect/issues/1923
-          id: "aria-valid-attr-value",
-          enabled: false,
-        },
-      ],
-    });
-    cy.checkA11y(null, null, terminalLog);
-  }
+      // Wait for all network requests to settle and loading indicator to disappear
+      cy.waitForNetworkIdle(1000, { log: false });
+      cy.get(".lds-app-loader").should("not.exist");
 
-  for (const page of pages) {
-    it(`Check a11y for page: ${page}`, () => {
-      checkPage(page);
-    });
-  }
-});
+      // Check and log all accessibility issues.
+      cy.configureAxe({
+        checks: [
+          {
+            // Disable check because of upstream issue
+            // https://github.com/shentao/vue-multiselect/issues/1923
+            id: "aria-valid-attr-value",
+            enabled: false,
+          },
+        ],
+      });
+      cy.checkA11y(null, null, terminalLog);
+    }
+
+    for (const page of pages) {
+      it(`Check a11y for page: ${page}`, () => {
+        checkPage(page);
+      });
+    }
+  },
+  a11yViewports,
+);
