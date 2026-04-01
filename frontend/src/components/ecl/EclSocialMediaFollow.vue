@@ -46,6 +46,11 @@ export default {
       required: false,
       default: false,
     },
+    vertical: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     position: {
       type: String,
       required: false,
@@ -60,6 +65,9 @@ export default {
       ];
       if (this.horizontal) {
         result.push("ecl-social-media-follow--horizontal");
+      }
+      if (this.vertical) {
+        result.push("ecl-social-media-follow--vertical");
       }
       if (this.description) {
         result.push("ecl-social-media-follow--description_inline");
