@@ -34,7 +34,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
     cy.get(".ecl-list-illustration a").contains("Key Indicators").click();
 
     if (viewportWidth >= 996) {
-      cy.get(".ecl-category-filter a").contains("Indicators").click();
+      cy.get("li a").contains("Indicators").click();
     } else {
       cy.get(".ecl-tabs a").contains("Indicators").click();
     }
