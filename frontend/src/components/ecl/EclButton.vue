@@ -49,7 +49,9 @@ export default {
       required: false,
       default: "primary",
       validator(value) {
-        return ["primary", "secondary", "call", "ghost"].includes(value);
+        return ["primary", "secondary", "call", "ghost", "neutral"].includes(
+          value,
+        );
       },
     },
     label: {
