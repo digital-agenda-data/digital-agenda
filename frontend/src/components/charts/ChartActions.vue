@@ -7,7 +7,7 @@
           :to="item.to"
           :download-class="item.downloadClass"
           no-visited
-          @click.capture="item.action?.()"
+          @click.capture.prevent="item.action?.()"
         />
       </ecl-list>
     </div>
