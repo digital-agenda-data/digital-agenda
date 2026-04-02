@@ -1,9 +1,12 @@
 <template>
   <router-view />
 
-  <div class="ecl-u-screen-only">
+  <div v-if="chartGroupNavItems.length > 0" class="ecl-u-screen-only">
     <h3>Browse other datasets</h3>
-    <card-nav :items="chartGroupNavItems" />
+    <card-nav
+      :items="chartGroupNavItems"
+      :current-id="currentChartGroup.code"
+    />
   </div>
 </template>
 
@@ -17,7 +20,10 @@ export default {
   name: "DatasetView",
   components: { CardNav },
   computed: {
-    ...mapState(useChartGroupStore, ["chartGroupNavItems"]),
+    ...mapState(useChartGroupStore, [
+      "currentChartGroup",
+      "chartGroupNavItems",
+    ]),
   },
 };
 </script>

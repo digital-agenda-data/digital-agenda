@@ -33,7 +33,7 @@ class BaseDimensionSerializer(serializers.ModelSerializer):
     code = serializers.CharField(label="Code")
     label = serializers.CharField(label="Label")
     alt_label = serializers.CharField(label="Alt. label")
-    definition = serializers.CharField(label="Definition")
+    definition = serializers.SerializerMethodField(label="Definition", read_only=True)
     display = serializers.SerializerMethodField(label="Display", read_only=True)
 
     class Meta:
@@ -42,6 +42,25 @@ class BaseDimensionSerializer(serializers.ModelSerializer):
     def get_display(self, obj):
         """A suitable display string for this dimension"""
         return obj.alt_label or obj.label or obj.code
+
+    def _get_rich_text(self, obj, field):
+        result = (getattr(obj, field) or "").strip()
+        if result in ("", "<p></p>", "<p>&nbsp;</p>"):
+            # Ignore empty values, including the empty paragraph that CKEditor
+            # still adds.
+            return None
+
+        # Make sure the result is always consistent.
+        if not result.startswith("<"):
+            return f"<p>{result}</p>"
+
+        return result
+
+    def get_definition(self, obj):
+        return self._get_rich_text(obj, "definition")
+
+    def get_note(self, obj):
+        return self._get_rich_text(obj, "note")
 
 
 class BreakdownSerializer(BaseDimensionSerializer):
@@ -70,6 +89,8 @@ class PeriodSerializer(BaseDimensionSerializer):
 
 
 class DataSourceSerializer(BaseDimensionSerializer):
+    note = serializers.SerializerMethodField(label="Note", read_only=True)
+
     class Meta(BaseDimensionSerializer.Meta):
         model = DataSource
         fields = BaseDimensionSerializer.Meta.fields + ["note", "url"]
@@ -81,6 +102,7 @@ class IndicatorListSerializer(BaseDimensionSerializer):
     )
     chart_options = IndicatorChartOptionSerializer(many=False, read_only=True)
     extra_notes = ExtraChartNoteSerializer(many=True, read_only=True)
+    note = serializers.SerializerMethodField(label="Note", read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator

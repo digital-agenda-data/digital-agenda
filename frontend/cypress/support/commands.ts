@@ -37,17 +37,14 @@ Cypress.Commands.addAll({
     cy.get(".highcharts-point").should("exist");
   },
   checkNavigateBetweenCharts(chartGroup, chartNames) {
-    cy.navigateToChart(chartGroup, chartNames[0]);
+    for (let i = 0; i < chartNames.length; i += 1) {
+      const chartName = chartNames[i];
+      if (i === 0) {
+        cy.navigateToChart(chartGroup, chartName);
+      } else {
+        cy.get("a").contains(chartName).click();
+      }
 
-    // Wait for loading
-    cy.get(".chart-container-digital-agenda").should("exist");
-    cy.get(".chart-container-digital-agenda .lds-app-loader").should(
-      "not.exist",
-    );
-    cy.get(".highcharts-credits").contains("European Commission");
-    cy.checkHasChartData();
-    for (const nextChart of chartNames.slice(1)) {
-      cy.get("a").contains(nextChart).click();
       // Wait for loading
       cy.get(".chart-container-digital-agenda").should("exist");
       cy.get(".chart-container-digital-agenda .lds-app-loader").should(

@@ -2,6 +2,7 @@
   <div class="card-nav">
     <router-link
       v-for="item in items"
+      v-show="item.id !== currentId"
       :key="item.id"
       :to="item.to"
       class="card-nav-item"
@@ -55,6 +56,11 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+    currentId: {
+      type: String,
+      required: false,
+      default: null,
     },
   },
 };

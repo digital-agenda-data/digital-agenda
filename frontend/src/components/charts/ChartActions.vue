@@ -1,50 +1,17 @@
 <template>
   <div class="chart-actions">
-    <ecl-link
-      v-if="highchartInstance"
-      no-visited
-      label="Print chart"
-      to="#print-chart"
-      @click.capture.prevent="printChart"
-    />
-    <ecl-link
-      no-visited
-      label="Print page"
-      to="#print-page"
-      @click.capture.prevent="printPage"
-    />
-    <ecl-link
-      v-if="highchartInstance"
-      no-visited
-      label="Download image"
-      to="#download-chart"
-      download-class
-      @click.capture.prevent="downloadChart"
-    />
-    <ecl-link
-      v-if="highchartInstance"
-      no-visited
-      label="Download SVG"
-      to="#download-chart-svg"
-      download-class
-      @click.capture.prevent="downloadChart({ type: 'image/svg+xml' })"
-    />
-    <ecl-link
-      v-for="(exportLink, axis) in chartRef?.exportLinks ?? {}"
-      :key="'export' + axis"
-      no-visited
-      :to="exportLink"
-      :label="'Export data ' + axis"
-      download-class
-    />
-    <ecl-link no-visited label="Embedded URL" :to="embedURL" />
-    <ecl-link
-      no-visited
-      label="Submit feedback"
-      :to="{
-        name: 'feedback',
-      }"
-    />
+    <div class="ecl-u-pb-none ecl-u-bg-neutral-50 ecl-u-ph-xl ecl-u-pv-m">
+      <ecl-list v-slot="{ item }" :items="actionLinks" divider>
+        <ecl-link
+          :label="item.label"
+          :to="item.to"
+          :download-class="item.downloadClass"
+          no-visited
+          @click.capture.prevent="item.action?.()"
+        />
+      </ecl-list>
+    </div>
+
     <transition mode="out-in">
       <div v-if="!shareURL">
         <ecl-button
@@ -68,6 +35,7 @@
 </template>
 <script>
 import EclButton from "@/components/ecl/EclButton.vue";
+import EclList from "@/components/ecl/EclList.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclSocialMediaShare from "@/components/ecl/EclSocialMediaShare.vue";
@@ -78,7 +46,7 @@ import { useChartGroupStore } from "@/stores/chartGroupStore";
 
 export default {
   name: "ChartActions",
-  components: { EclSpinner, EclButton, EclLink, EclSocialMediaShare },
+  components: { EclList, EclSpinner, EclButton, EclLink, EclSocialMediaShare },
   props: {
     chartRef: {
       type: Object,
@@ -109,6 +77,66 @@ export default {
         query_arguments:
           "?" + new URLSearchParams(this.$route.query).toString(),
       };
+    },
+    actionLinks() {
+      const exportLinks = Object.entries(this.chartRef?.exportLinks ?? {}).map(
+        ([axis, exportLink]) => ({
+          id: `export-${axis}`,
+          label: `Export data ${axis}`,
+          to: exportLink,
+          downloadClass: true,
+        }),
+      );
+
+      const result = [];
+      if (this.highchartInstance) {
+        result.push({
+          id: "print-chart",
+          label: "Print chart",
+          to: "#print-chart",
+          action: () => this.printChart(),
+        });
+      }
+      result.push({
+        id: "print-page",
+        label: "Print page",
+        to: "#print-page",
+        action: "printPage",
+      });
+
+      if (this.highchartInstance) {
+        result.push(
+          {
+            id: "download-image",
+            label: "Download image",
+            to: "#download-chart",
+            action: () => this.downloadChart(),
+            downloadClass: true,
+          },
+          {
+            id: "download-svg",
+            label: "Download SVG",
+            to: "#download-chart-svg",
+            action: () => this.downloadChart({ type: "image/svg+xml" }),
+            downloadClass: true,
+          },
+        );
+      }
+
+      result.push(
+        ...exportLinks,
+        {
+          id: "embed-url",
+          label: "Embedded URL",
+          to: this.embedURL,
+        },
+        {
+          id: "feedback",
+          label: "Submit feedback",
+          to: { name: "feedback" },
+        },
+      );
+      return result;
     },
   },
   watch: {

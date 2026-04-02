@@ -22,9 +22,9 @@
     </div>
   </div>
 
-  <div class="ecl-u-screen-only">
+  <div v-if="chartNavKeepFilters.length > 0" class="ecl-u-screen-only">
     <h2>See more charts for the same data</h2>
-    <card-nav :items="chartNavKeepFilters" />
+    <card-nav :items="chartNavKeepFilters" :current-id="currentChart.code" />
   </div>
 </template>
 
