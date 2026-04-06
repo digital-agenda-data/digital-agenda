@@ -1,5 +1,4 @@
 from django.contrib.postgres.aggregates import ArrayAgg
-from django.db.models import Exists
 from django.db.models import OuterRef
 from django.db.models import Subquery
 from django.db.models.functions import Coalesce
@@ -25,7 +24,6 @@ from digital_agenda.apps.core.models import Indicator
 from digital_agenda.apps.core.models import Period
 from digital_agenda.apps.core.views import CodeLookupMixin
 from digital_agenda.apps.core.views.facts import FactsViewSet
-from digital_agenda.common.citext import CICharField
 from digital_agenda.common.export import FactExportMixin
 
 
