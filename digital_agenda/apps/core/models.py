@@ -69,12 +69,34 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
     and function as a hierarchical dimension table.
     """
 
+    parent = models.ForeignKey(
+        "self",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="children",
+    )
+    color = ColorField(blank=True)
     indicators = models.ManyToManyField(
         "Indicator", through="IndicatorGroupLink", related_name="groups", blank=True
     )
 
     class Meta:
         ordering = ["display_order", "code"]
+
+    def clean(self):
+        super().clean()
+
+        if not self.parent:
+            return
+
+        # prevent self-parent
+        if self.parent == self:
+            raise ValidationError({"parent": "Parent cannot be self"})
+
+        # only allow 2 levels for now
+        if self.parent.parent:
+            raise ValidationError({"parent": "Parent cannot have a parent"})
 
 
 class IndicatorDataSourceLinkManager(models.Manager):
@@ -464,3 +486,27 @@ class StaticPage(TimestampedModel):
     title = models.CharField(max_length=255)
     code = models.SlugField(max_length=255, unique=True)
     body = CleanCKEditor5Field()
+
+
+class CountryProfileIndicator(DisplayOrderModel):
+    period = models.ForeignKey("core.Period", on_delete=models.CASCADE)
+    indicator = models.ForeignKey("core.Indicator", on_delete=models.CASCADE)
+    indicator_group = models.ForeignKey("core.IndicatorGroup", on_delete=models.CASCADE)
+    breakdown = models.ForeignKey("core.Breakdown", on_delete=models.CASCADE)
+    unit = models.ForeignKey("core.Unit", on_delete=models.CASCADE)
+    is_dd_kpi = models.BooleanField(default=False)
+    is_percentage = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ("display_order",)
+        unique_together = ("period", "indicator")
+
+    def clean(self):
+        super().clean()
+
+        if not self.indicator_group.indicators.filter(pk=self.indicator.pk).exists():
+            raise ValidationError(
+                {
+                    "indicator": "Indicator does not belong to the selected indicator group."
+                }
+            )

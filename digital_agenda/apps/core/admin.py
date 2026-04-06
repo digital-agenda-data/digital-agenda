@@ -16,6 +16,7 @@ from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
 from import_export.admin import ImportExportMixin
 
+from .models import CountryProfileIndicator
 from .models import (
     DataSource,
     IndicatorGroup,
@@ -139,7 +140,13 @@ class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
 @admin.register(IndicatorGroup)
 class IndicatorGroupAdmin(SortableDimensionAdmin):
     inlines = (IndicatorTabularInline,)
-    list_filter = ["chartgroup", AutocompleteFilterFactory("indicator", "indicators")]
+    list_display = ("code", "label", "color", "parent")
+    list_filter = [
+        "chartgroup",
+        AutocompleteFilterFactory("indicator", "indicators"),
+        AutocompleteFilterFactory("parent", "parent"),
+    ]
+    autocomplete_fields = ["parent"]
 
 
 class DataSourceInline(admin.TabularInline):
@@ -474,3 +481,29 @@ class StaticPageAdmin(admin.ModelAdmin):
     def view_live(self, obj):
         url = f"{settings.PROTOCOL}{settings.FRONTEND_HOST[0]}/page/{obj.code}"
         return mark_safe(f"<a href='{url}'>View live</a>")
+
+
+@admin.register(CountryProfileIndicator)
+class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
+    list_display_links = ("indicator_group", "indicator", "period")
+    list_display = (
+        "indicator_group",
+        "indicator",
+        "period",
+        "breakdown",
+        "unit",
+        "is_percentage",
+        "is_dd_kpi",
+    )
+    list_filter = (
+        AutocompleteFilterFactory("period", "period"),
+        "is_dd_kpi",
+        "is_percentage",
+    )
+    autocomplete_fields = (
+        "indicator",
+        "indicator_group",
+        "period",
+        "breakdown",
+        "unit",
+    )
