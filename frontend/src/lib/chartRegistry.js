@@ -19,6 +19,7 @@ import EUMapCompareCountries from "@/components/charts/eu-map/EUMapCompareCountr
 import WorldMapCompareCountries from "@/components/charts/world-map/WorldMapCompareCountries.vue";
 
 import TableDebugData from "@/components/charts/table/TableDebugData.vue";
+import CountryProfileRainbow from "@/components/charts/country-profile/CountryProfileRainbow.vue";
 
 // Map values from the backend to frontend components
 export default {
@@ -38,5 +39,6 @@ export default {
   BUBBLE_COMPARE_THREE_INDICATORS: BubbleCompareThreeIndicators,
   MAP_EU_COMPARE_COUNTRIES: EUMapCompareCountries,
   MAP_WORLD_COMPARE_COUNTRIES: WorldMapCompareCountries,
+  COUNTRY_PROFILE_RAINBOW: CountryProfileRainbow,
   TABLE_DEBUG_DATA: TableDebugData,
 };
