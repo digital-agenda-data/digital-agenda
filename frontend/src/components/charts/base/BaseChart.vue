@@ -181,7 +181,11 @@ export default {
         result[axis] = {};
 
         for (const key of filterKeys[axis]) {
-          result[axis][toAPIKey(key)] = this.filterStore[key]?.code;
+          const value = [
+            this.filterStore[key]?.code,
+            ...(this.extraFilterValues[key] ?? []),
+          ];
+          result[axis][toAPIKey(key)] = value.filter(Boolean).join(",");
         }
 
         if (!Object.values(result[axis]).every((val) => val)) {
@@ -192,6 +196,17 @@ export default {
       }
 
       return result;
+    },
+    /**
+     * Force add extra filter values to an existing filter. E.g.
+     *
+     * {
+     *   country: ["EU"]
+     * }
+     *
+     */
+    extraFilterValues() {
+      return {};
     },
     /**
      * Series used for the HighCharts
