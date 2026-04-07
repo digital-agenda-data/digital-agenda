@@ -17,6 +17,14 @@ const BG_COLOR = "#F8F9FD";
 const EU_CODE = "EU";
 const TARGET_PERIOD = "2030";
 const TARGET_BREAKDOWN = "dd_target_2030";
+const SERIES = {
+  invisible: "Invisible",
+  background: "Background",
+  euTarget: `EU ${TARGET_PERIOD} Target`,
+  euAverage: "EU Average",
+  indicatorGroup: "Indicator Group",
+  mainGroup: "Main Group",
+};
 
 export default {
   name: "CountryProfileRainbow",
@@ -54,58 +62,30 @@ export default {
         (item) => item.is_percentage && item.period.code === this.period.code,
       );
     },
-    invisibleSeries() {
-      return {
-        name: "Invisible",
-        enableMouseTracking: false,
-        showInLegend: false,
-        data: [
-          ...this.getItems().map((item) => {
-            return {
-              fact: {},
-              y: 0,
-              name: getIndicatorLabel(item.indicator),
-              visible: false,
-            };
-          }),
-          // Highchart puts the last column with the left side AT the endAngle.
-          // Because of that there the last column will drop below the 180deg
-          // that want for our semicircle.
-          // By adding this invisible column, we can make sure that the last
-          // real column is properly positioned.
-          {
-            fact: {},
-            y: 0,
-            name: "// EXTRA FOR PADDING",
-            visible: false,
-          },
-        ],
-      };
-    },
     backgroundSeries() {
       return {
-        name: "Background",
+        showInLegend: false,
+        enableMouseTracking: false,
+        name: SERIES.background,
         data: this.getItems().map((item) => {
           return {
-            fact: {},
-            isMissing: item.isMissing,
+            item,
             y: 100,
             name: getIndicatorLabel(item.indicator),
             color: BG_COLOR,
           };
         }),
-        enableMouseTracking: false,
-        showInLegend: false,
       };
     },
     countrySeries() {
       return {
+        showInLegend: false,
+        enableMouseTracking: false,
         name: getCountryLabel(this.country),
         data: this.getItems().map((item) => {
           const value = item.isMissing ? 100 : Math.abs(item.fact?.value || 0);
           return {
-            fact: item.fact,
-            isMissing: item.isMissing,
+            item,
             y: value,
             name: getIndicatorLabel(item.indicator),
             color: !item.isMissing
@@ -125,35 +105,32 @@ export default {
     },
     euAverageSeries() {
       return {
+        showInLegend: false,
         type: "scatter",
-        name: "EU Average",
+        name: SERIES.euAverage,
         enableMouseTracking: false,
         data: this.getItems({ country: EU_CODE }).map((item) => {
+          const iconUrl = this.getStarIcon(BG_COLOR, item.color);
           return {
-            fact: item.fact,
-            isMissing: item.isMissing,
+            item,
             y: item.fact?.value || 0,
             name: getIndicatorLabel(item.indicator),
             visible: false,
             marker: {
-              symbol: this.getStarIcon(BG_COLOR, item.color),
+              symbol: `url(${iconUrl})`,
             },
           };
         }),
         states: {
           inactive: { opacity: 1 },
-          hover: {
-            enabled: true,
-            marker: {
-              enabled: true,
-            },
-          },
         },
       };
     },
     euTargetSeries() {
       return {
-        name: `EU ${TARGET_PERIOD} Target`,
+        showInLegend: false,
+        enableMouseTracking: false,
+        name: SERIES.euTarget,
         data: this.getItems({
           country: EU_CODE,
           period: TARGET_PERIOD,
@@ -162,8 +139,7 @@ export default {
           .filter((item) => !item.isMissing)
           .map((item) => {
             return {
-              fact: item.fact,
-              isMissing: item.isMissing,
+              item,
               color: item.lightColor,
               y: item.fact?.value || 0,
               name: getIndicatorLabel(item.indicator),
@@ -172,28 +148,20 @@ export default {
       };
     },
     groupCounts() {
-      const groupCounts = {};
-      this.getItems().forEach((item, index) => {
-        const group = item.indicator_group;
-
-        groupCounts[group.code] ??= {
-          group,
-          color: item.lightColor,
-          count: 0,
-          start: index,
-        };
-        groupCounts[group.code].count += 1;
-      });
-      return Object.values(groupCounts);
+      return this.getGroupCounts((item) => item.indicator_group);
+    },
+    mainGroupCounts() {
+      return this.getGroupCounts((item) => item.indicator_group.parent);
     },
     groupSeries() {
       return {
+        showInLegend: false,
         type: "pie",
-        name: "Indicator Groups",
-        data: this.groupCounts.map(({ group, color, count }) => {
+        name: SERIES.indicatorGroup,
+        data: this.groupCounts.map(({ group, lightColor, count }) => {
           return {
             name: getIndicatorGroupLabel(group),
-            color,
+            color: lightColor,
             y: count,
           };
         }),
@@ -203,14 +171,71 @@ export default {
         endAngle: 90,
       };
     },
+    mainGroupSeries() {
+      return {
+        // This series is only use to generate the legend.
+        showInLegend: true,
+        visible: false,
+        type: "pie",
+        name: SERIES.mainGroup,
+        data: this.mainGroupCounts.map(({ group, color, count }) => {
+          return {
+            name: getIndicatorGroupLabel(group),
+            color,
+            y: count,
+          };
+        }),
+        size: "31%",
+        innerSize: "90%",
+        startAngle: -90,
+        endAngle: 90,
+      };
+    },
+    invisibleSeries() {
+      return {
+        showInLegend: false,
+        name: SERIES.invisible,
+        data: [
+          // Invisible series to overlap with the other column series.
+          // This is the only one that listens to mouse events and triggers the
+          // tooltip. This way the position of the tooltip is consistent and
+          // smooth.
+          ...this.getItems().map((item) => {
+            return {
+              item,
+              y: 100,
+              name: getIndicatorLabel(item.indicator),
+              color: "#00000000",
+              states: {
+                hover: {
+                  color: "#00000011",
+                },
+              },
+            };
+          }),
+          // Highchart puts the last column with the left side AT the endAngle.
+          // Because of that there the last column will drop below the 180deg
+          // that want for our semicircle.
+          // By adding this invisible column, we can make sure that the last
+          // real column is properly positioned.
+          {
+            item: {},
+            y: 0,
+            name: "// EXTRA FOR PADDING",
+            visible: false,
+          },
+        ],
+      };
+    },
     series() {
       return [
         this.groupSeries,
-        this.invisibleSeries,
+        this.mainGroupSeries,
         this.backgroundSeries,
         this.euTargetSeries,
         this.countrySeries,
         this.euAverageSeries,
+        this.invisibleSeries,
       ];
     },
     chartOptions() {
@@ -241,17 +266,17 @@ export default {
               events: {
                 mouseOver: function () {
                   const scatter = this.series.chart.series.find(
-                    (s) => s.name === "EU Average",
+                    (s) => s.name === SERIES.euAverage,
                   );
                   const pt = scatter.points[this.index];
-                  if (pt && !pt.isMissing) {
+                  if (pt && !pt.item.isMissing) {
                     pt.update({ visible: true }, false);
                     this.series.chart.redraw();
                   }
                 },
                 mouseOut: function () {
                   const scatter = this.series.chart.series.find(
-                    (s) => s.name === "EU Average",
+                    (s) => s.name === SERIES.euAverage,
                   );
                   const pt = scatter.points[this.index];
                   if (pt) {
@@ -288,36 +313,139 @@ export default {
         },
       };
     },
+    legend() {
+      const defaults = {
+        enabled: true,
+        events: {
+          itemClick() {
+            return false;
+          },
+        },
+      };
+      if (this.currentChart?.legend_layout === "vertical") {
+        return {
+          ...defaults,
+          itemWidth: 150,
+          layout: "vertical",
+          align: "right",
+          verticalAlign: "top",
+        };
+      } else {
+        return {
+          ...defaults,
+          layout: "horizontal",
+          align: "center",
+          verticalAlign: "bottom",
+        };
+      }
+    },
+    tooltip() {
+      const parent = this;
+      return {
+        useHTML: true,
+        formatter() {
+          if (
+            this.series.name === SERIES.indicatorGroup ||
+            this.series.name === SERIES.mainGroup
+          ) {
+            return `<b>${this.series.name}</b><br/>${this.name}`;
+          }
+
+          const countryItem = parent.getChartItem(this.item);
+          const euAverageItem = parent.getChartItem(this.item, {
+            country: EU_CODE,
+          });
+          const euTargetItem = parent.getChartItem(this.item, {
+            country: EU_CODE,
+            period: TARGET_PERIOD,
+            breakdown: TARGET_BREAKDOWN,
+          });
+          const countryName = getCountryLabel(parent.country);
+
+          const result = [
+            `<b>${this.name}</b>`,
+            [
+              `<span class="dot" style="background-color: ${countryItem.color}"></span>`,
+              `${countryName}:&nbsp;`,
+              `<b>${countryItem.valueDisplay}</b>`,
+            ].join(" "),
+            [
+              `<span class="dot" style="background-color: ${countryItem.lightColor}"></span>`,
+              `${SERIES.euTarget}:&nbsp;`,
+              `<b>${euTargetItem.valueDisplay}</b>`,
+            ].join(" "),
+            [
+              `<span style="color: ${countryItem.color}">&starf;</span>`,
+              `${SERIES.euAverage}:&nbsp;`,
+              `<b>${euAverageItem.valueDisplay}</b>`,
+            ].join(" "),
+          ];
+
+          const referencePeriod =
+            countryItem.fact?.reference_period ??
+            euAverageItem.fact?.reference_period ??
+            euTargetItem.fact?.reference_period;
+
+          if (referencePeriod) {
+            result.push(
+              `Reference period: ${referencePeriod} ${parent.getExtraNotes()}`,
+            );
+          } else {
+            result.push(...parent.getExtraNotes());
+          }
+
+          const lines = result.map((line) => `<span>${line}</span>`).join("");
+
+          return `<div class="countryProfileTooltip">${lines}</div>`;
+        },
+      };
+    },
   },
   methods: {
-    getItems({
-      period = null,
-      indicator = null,
-      breakdown = null,
-      unit = null,
-      country = null,
-    } = {}) {
-      return this.chartDimensionList.map((item) => {
-        const color =
-          item.indicator_group.color ||
-          item.indicator_group.parent?.color ||
-          "#6083f6";
+    getItems(override = {}) {
+      return this.chartDimensionList.map((item) =>
+        this.getChartItem(item, override),
+      );
+    },
+    getChartItem(item, override = {}) {
+      let fact = this.apiDataGrouped;
+      fact = fact[override.period ?? item.period.code] ?? {};
+      fact = fact[override.indicator ?? item.indicator.code] ?? {};
+      fact = fact[override.breakdown ?? item.breakdown.code] ?? {};
+      fact = fact[override.unit ?? item.unit.code] ?? {};
+      fact = fact[override.country ?? this.country.code] ?? {};
 
-        let fact = this.apiDataGrouped;
-        fact = fact[period ?? item.period.code] ?? {};
-        fact = fact[indicator ?? item.indicator.code] ?? {};
-        fact = fact[breakdown ?? item.breakdown.code] ?? {};
-        fact = fact[unit ?? item.unit.code] ?? {};
-        fact = fact[country ?? this.country.code] ?? {};
-        return {
-          ...item,
-          fact,
-          color: color,
-          lightColor: brightenColor(color, 0.2),
-          darkColor: brightenColor(color, -0.4),
-          isMissing: typeof fact?.value === "undefined",
+      const color =
+        item.indicator_group.color ||
+        item.indicator_group.parent?.color ||
+        "#6083f6";
+
+      return {
+        ...item,
+        fact,
+        valueDisplay: this.getUnitDisplay(fact?.value, item.unit),
+        color: color,
+        lightColor: brightenColor(color, 0.2),
+        darkColor: brightenColor(color, -0.4),
+        isMissing: typeof fact?.value === "undefined",
+      };
+    },
+    getGroupCounts(getGroup) {
+      const groupCounts = {};
+      this.getItems().forEach((item, index) => {
+        const group = getGroup(item);
+        if (!group) return;
+
+        groupCounts[group.code] ??= {
+          group,
+          color: item.color,
+          lightColor: item.lightColor,
+          count: 0,
+          start: index,
         };
+        groupCounts[group.code].count += 1;
       });
+      return Object.values(groupCounts);
     },
     getStarIcon(bgColor, starColor) {
       const svgString = `<svg
@@ -354,8 +482,24 @@ export default {
         <path d="M496,203.3H312.36L256,32,199.64,203.3H16L166.21,308.7,107.71,480,256,373.84,404.29,480,345.68,308.7Z" />
       </g>
     </svg>`;
-      return `url(data:image/svg+xml;base64,${btoa(svgString)})`;
+      return `data:image/svg+xml;base64,${btoa(svgString)}`;
     },
   },
 };
 </script>
+
+<style>
+.countryProfileTooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.countryProfileTooltip .dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+</style>

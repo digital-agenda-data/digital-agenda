@@ -217,25 +217,25 @@ export default {
     mergedChartOptions() {
       return this.getMergedChartOptions();
     },
-    /**
-     * Default chart options, (shallow) merged with the chartOptions
-     * and used for HighCharts.
-     */
-    chartOptionsDefaults() {
-      let legend;
+    legend() {
       if (this.currentChart?.legend_layout === "horizontal") {
-        legend = {
+        return {
           layout: "horizontal",
         };
       } else {
-        legend = {
+        return {
           itemWidth: 150,
           layout: "vertical",
           align: "right",
           verticalAlign: "middle",
         };
       }
-
+    },
+    /**
+     * Default chart options, (shallow) merged with the chartOptions
+     * and used for HighCharts.
+     */
+    chartOptionsDefaults() {
       return {
         chart: {
           type: this.chartType,
@@ -269,7 +269,7 @@ export default {
             {
               condition: { minWidth: 768 },
               chartOptions: {
-                legend,
+                legend: this.legend,
               },
             },
           ],
