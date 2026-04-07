@@ -123,7 +123,12 @@ class IndicatorGroupSerializer(BaseDimensionSerializer):
 
     class Meta(BaseDimensionSerializer.Meta):
         model = IndicatorGroup
-        fields = BaseDimensionSerializer.Meta.fields + ["members", "color", "parent"]
+        fields = BaseDimensionSerializer.Meta.fields + [
+            "members",
+            "color",
+            "icon",
+            "parent",
+        ]
 
     def get_parent(self, obj):
         if obj.parent:

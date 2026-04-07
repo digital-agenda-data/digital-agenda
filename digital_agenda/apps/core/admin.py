@@ -140,7 +140,7 @@ class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
 @admin.register(IndicatorGroup)
 class IndicatorGroupAdmin(SortableDimensionAdmin):
     inlines = (IndicatorTabularInline,)
-    list_display = ("code", "label", "color", "parent")
+    list_display = ("code", "label", "parent", "color", "icon")
     list_filter = [
         "chartgroup",
         AutocompleteFilterFactory("indicator", "indicators"),

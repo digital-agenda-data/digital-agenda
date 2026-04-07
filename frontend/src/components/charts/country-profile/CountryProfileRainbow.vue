@@ -270,7 +270,6 @@ export default {
             point: {
               events: {
                 mouseOver: function () {
-                  console.log(this);
                   parent.showAverage(this.series.chart, this.index, true);
                   parent.fillCenter(this.series.chart, this.item);
                 },
@@ -449,7 +448,10 @@ export default {
       let content = "";
       if (item) {
         content = [
-          `<div class="parent">${getIndicatorGroupLabel(item.indicator_group.parent)}</div>`,
+          `<div class="parent">
+            <span>${getIndicatorGroupLabel(item.indicator_group.parent)}</span>
+            <img src="${item.indicator_group.parent?.icon}" alt=""/>
+          </div>`,
           `<div class="group">${getIndicatorGroupLabel(item.indicator_group)}</div>`,
           `<div class="indicator" style="color: ${item.colorDark}">${getIndicatorLabel(item.indicator)}</div>`,
         ].join("\n");
@@ -557,11 +559,19 @@ export default {
   white-space: normal;
 
   .parent {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
     font-size: 0.75rem;
     text-transform: uppercase;
     border: 1px solid #26324b;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
+
+    img {
+      height: 0.75rem;
+    }
   }
 
   .group {

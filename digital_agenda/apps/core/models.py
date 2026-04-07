@@ -77,6 +77,7 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
         related_name="children",
     )
     color = ColorField(blank=True)
+    icon = models.ImageField(blank=True)
     indicators = models.ManyToManyField(
         "Indicator", through="IndicatorGroupLink", related_name="groups", blank=True
     )
