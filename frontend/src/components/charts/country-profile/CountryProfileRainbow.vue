@@ -13,6 +13,7 @@ import { mapState } from "pinia";
 
 import missingPatternUrl from "@/assets/missing-pattern.png?url";
 
+const BG_COLOR = "#F8F9FD";
 const EU_CODE = "EU";
 const TARGET_PERIOD = "2030";
 const TARGET_BREAKDOWN = "dd_target_2030";
@@ -90,7 +91,7 @@ export default {
             isMissing: item.isMissing,
             y: 100,
             name: getIndicatorLabel(item.indicator),
-            color: "#F8F9FD",
+            color: BG_COLOR,
           };
         }),
         enableMouseTracking: false,
@@ -134,8 +135,20 @@ export default {
             y: item.fact?.value || 0,
             name: getIndicatorLabel(item.indicator),
             visible: false,
+            marker: {
+              symbol: this.getStarIcon(BG_COLOR, item.color),
+            },
           };
         }),
+        states: {
+          inactive: { opacity: 1 },
+          hover: {
+            enabled: true,
+            marker: {
+              enabled: true,
+            },
+          },
+        },
       };
     },
     euTargetSeries() {
@@ -251,26 +264,6 @@ export default {
           },
           scatter: {
             grouping: false,
-            states: {
-              inactive: { opacity: 1 },
-              hover: {
-                enabled: true,
-                halo: { size: 0 },
-                marker: {
-                  enabled: true,
-                  fillColor: "#fff",
-                  lineColor: "#185FA5",
-                  lineWidth: 2.5,
-                },
-              },
-            },
-            marker: {
-              symbol: "circle",
-              radius: 7,
-              fillColor: "#fff",
-              lineColor: "#185FA5",
-              lineWidth: 2.5,
-            },
           },
         },
         xAxis: {
@@ -325,6 +318,43 @@ export default {
           isMissing: typeof fact?.value === "undefined",
         };
       });
+    },
+    getStarIcon(bgColor, starColor) {
+      const svgString = `<svg
+      width="24px"
+      height="24px"
+      fill="${starColor}"
+      viewBox="-256 -256 1024.00 1024.00"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        id="SVGRepo_bgCarrier"
+        stroke-width="0"
+        transform="translate(0,0), scale(1)"
+      >
+        <rect
+          x="-256"
+          y="-256"
+          width="1024.00"
+          height="1024.00"
+          rx="512"
+          fill="${bgColor}"
+          strokeWidth="0"
+        />
+      </g>
+
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.024"
+      />
+
+      <g id="SVGRepo_iconCarrier">
+        <path d="M496,203.3H312.36L256,32,199.64,203.3H16L166.21,308.7,107.71,480,256,373.84,404.29,480,345.68,308.7Z" />
+      </g>
+    </svg>`;
+      return `url(data:image/svg+xml;base64,${btoa(svgString)})`;
     },
   },
 };
