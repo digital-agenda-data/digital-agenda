@@ -3,11 +3,12 @@ import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BaseChart from "@/components/charts/base/BaseChart.vue";
 import {
-  brightenColor,
   getCountryLabel,
   getIndicatorGroupLabel,
   getIndicatorLabel,
 } from "@/lib/utils.js";
+import chroma from "chroma-js";
+
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
 import { mapState } from "pinia";
 
@@ -140,7 +141,7 @@ export default {
           .map((item) => {
             return {
               item,
-              color: item.lightColor,
+              color: item.colorLighter,
               y: item.fact?.value || 0,
               name: getIndicatorLabel(item.indicator),
             };
@@ -158,14 +159,14 @@ export default {
         showInLegend: false,
         type: "pie",
         name: SERIES.indicatorGroup,
-        data: this.groupCounts.map(({ group, lightColor, count }) => {
+        data: this.groupCounts.map(({ group, colorLight, count }) => {
           return {
             name: getIndicatorGroupLabel(group),
-            color: lightColor,
+            color: colorLight,
             y: count,
           };
         }),
-        size: "35%",
+        size: "46.5%",
         innerSize: "90%",
         startAngle: -90,
         endAngle: 90,
@@ -185,7 +186,7 @@ export default {
             y: count,
           };
         }),
-        size: "31%",
+        size: "41.5%",
         innerSize: "90%",
         startAngle: -90,
         endAngle: 90,
@@ -239,11 +240,15 @@ export default {
       ];
     },
     chartOptions() {
+      const parent = this;
       return {
         chart: {
           polar: true,
           type: "column",
           margin: [0, 0, -500, 0],
+        },
+        title: {
+          text: this.joinStrings([getCountryLabel(this.country)]),
         },
         plotOptions: {
           pie: {
@@ -265,24 +270,13 @@ export default {
             point: {
               events: {
                 mouseOver: function () {
-                  const scatter = this.series.chart.series.find(
-                    (s) => s.name === SERIES.euAverage,
-                  );
-                  const pt = scatter.points[this.index];
-                  if (pt && !pt.item.isMissing) {
-                    pt.update({ visible: true }, false);
-                    this.series.chart.redraw();
-                  }
+                  console.log(this);
+                  parent.showAverage(this.series.chart, this.index, true);
+                  parent.fillCenter(this.series.chart, this.item);
                 },
                 mouseOut: function () {
-                  const scatter = this.series.chart.series.find(
-                    (s) => s.name === SERIES.euAverage,
-                  );
-                  const pt = scatter.points[this.index];
-                  if (pt) {
-                    pt.update({ visible: false }, false);
-                    this.series.chart.redraw();
-                  }
+                  parent.showAverage(this.series.chart, this.index, false);
+                  parent.fillCenter(this.series.chart);
                 },
               },
             },
@@ -309,7 +303,7 @@ export default {
         pane: {
           startAngle: -90,
           endAngle: 90,
-          innerSize: "42%",
+          innerSize: "55%",
         },
       };
     },
@@ -370,7 +364,7 @@ export default {
               `<b>${countryItem.valueDisplay}</b>`,
             ].join(" "),
             [
-              `<span class="dot" style="background-color: ${countryItem.lightColor}"></span>`,
+              `<span class="dot" style="background-color: ${countryItem.colorLight}"></span>`,
               `${SERIES.euTarget}:&nbsp;`,
               `<b>${euTargetItem.valueDisplay}</b>`,
             ].join(" "),
@@ -415,18 +409,20 @@ export default {
       fact = fact[override.unit ?? item.unit.code] ?? {};
       fact = fact[override.country ?? this.country.code] ?? {};
 
-      const color =
+      const base = chroma(
         item.indicator_group.color ||
-        item.indicator_group.parent?.color ||
-        "#6083f6";
+          item.indicator_group.parent?.color ||
+          "#6083f6",
+      );
 
       return {
         ...item,
         fact,
         valueDisplay: this.getUnitDisplay(fact?.value, item.unit),
-        color: color,
-        lightColor: brightenColor(color, 0.2),
-        darkColor: brightenColor(color, -0.4),
+        color: base.hex(),
+        colorLight: base.brighten(0.8).desaturate(0.3).hex(),
+        colorLighter: base.brighten(1.6).desaturate(0.6).hex(),
+        colorDark: base.darken(1.4).hex(),
         isMissing: typeof fact?.value === "undefined",
       };
     },
@@ -439,13 +435,60 @@ export default {
         groupCounts[group.code] ??= {
           group,
           color: item.color,
-          lightColor: item.lightColor,
+          colorLight: item.colorLight,
           count: 0,
           start: index,
         };
         groupCounts[group.code].count += 1;
       });
       return Object.values(groupCounts);
+    },
+    fillCenter(chart, item = null) {
+      const series = chart.series.find((s) => s.name === SERIES.indicatorGroup);
+
+      let content = "";
+      if (item) {
+        content = [
+          `<div class="parent">${getIndicatorGroupLabel(item.indicator_group.parent)}</div>`,
+          `<div class="group">${getIndicatorGroupLabel(item.indicator_group)}</div>`,
+          `<div class="indicator" style="color: ${item.colorDark}">${getIndicatorLabel(item.indicator)}</div>`,
+        ].join("\n");
+      }
+
+      const labelText = `<div class="countryProfileCenter">${content}</div>`;
+      if (!series.customLabel) {
+        series.customLabel = chart.renderer
+          .label(labelText, 0, 0, void 0, void 0, void 0, true)
+          .css({
+            pointerEvents: "none",
+          })
+          .add();
+      } else {
+        series.customLabel.attr({
+          text: labelText,
+        });
+      }
+
+      series.customLabel.attr({
+        text: labelText,
+        x:
+          chart.pane[0].center[0] +
+          chart.plotLeft -
+          series.customLabel.attr("width") / 2,
+        y:
+          chart.pane[0].center[1] +
+          chart.plotTop -
+          series.customLabel.attr("height") -
+          10,
+      });
+    },
+    showAverage(chart, index, visible) {
+      const scatter = chart.series.find((s) => s.name === SERIES.euAverage);
+      const pt = scatter.points[index];
+      if (pt && !pt.item.isMissing) {
+        pt.update({ visible }, false);
+        chart.redraw();
+      }
     },
     getStarIcon(bgColor, starColor) {
       const svgString = `<svg
@@ -488,18 +531,46 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .countryProfileTooltip {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+
+  .dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
 }
 
-.countryProfileTooltip .dot {
-  display: inline-block;
-  vertical-align: middle;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.countryProfileCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+  width: 20rem;
+  white-space: normal;
+
+  .parent {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border: 1px solid #26324b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  .group {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .indicator {
+    font-size: 1.5rem;
+  }
 }
 </style>
