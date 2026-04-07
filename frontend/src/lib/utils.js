@@ -91,6 +91,12 @@ export function toAPIKey(key) {
   return camelToSnakeCase(key).replace(/_[xyz]$/i, "");
 }
 
+export function brightenColor(color, alpha) {
+  const obj = new Highcharts.Color(color);
+  obj.brighten(alpha);
+  return obj.get();
+}
+
 /**
  * Get chart color for the specified country and series
  *
@@ -145,6 +151,10 @@ function getDimensionLabel(
 
 export function getIndicatorLabel(obj, defaultLabel = "alt_label") {
   return getDimensionLabel("indicator", obj, defaultLabel);
+}
+
+export function getIndicatorGroupLabel(obj, defaultLabel = "alt_label") {
+  return getDimensionLabel("indicator_group", obj, defaultLabel);
 }
 
 export function getBreakdownLabel(obj, defaultLabel = "alt_label") {

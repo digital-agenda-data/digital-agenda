@@ -2,9 +2,13 @@
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BaseChart from "@/components/charts/base/BaseChart.vue";
-import { getCountryLabel, getIndicatorLabel } from "@/lib/utils.js";
+import {
+  brightenColor,
+  getCountryLabel,
+  getIndicatorGroupLabel,
+  getIndicatorLabel,
+} from "@/lib/utils.js";
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
-import Highcharts from "highcharts";
 import { mapState } from "pinia";
 
 import missingPatternUrl from "@/assets/missing-pattern.png?url";
@@ -48,6 +52,34 @@ export default {
       return this.countryProfileIndicatorList.filter(
         (item) => item.is_percentage && item.period.code === this.period.code,
       );
+    },
+    invisibleSeries() {
+      return {
+        name: "Invisible",
+        enableMouseTracking: false,
+        showInLegend: false,
+        data: [
+          ...this.getItems().map((item) => {
+            return {
+              fact: {},
+              y: 0,
+              name: getIndicatorLabel(item.indicator),
+              visible: false,
+            };
+          }),
+          // Highchart puts the last column with the left side AT the endAngle.
+          // Because of that there the last column will drop below the 180deg
+          // that want for our semicircle.
+          // By adding this invisible column, we can make sure that the last
+          // real column is properly positioned.
+          {
+            fact: {},
+            y: 0,
+            name: "// EXTRA FOR PADDING",
+            visible: false,
+          },
+        ],
+      };
     },
     backgroundSeries() {
       return {
@@ -126,8 +158,42 @@ export default {
           }),
       };
     },
+    groupCounts() {
+      const groupCounts = {};
+      this.getItems().forEach((item, index) => {
+        const group = item.indicator_group;
+
+        groupCounts[group.code] ??= {
+          group,
+          color: item.lightColor,
+          count: 0,
+          start: index,
+        };
+        groupCounts[group.code].count += 1;
+      });
+      return Object.values(groupCounts);
+    },
+    groupSeries() {
+      return {
+        type: "pie",
+        name: "Indicator Groups",
+        data: this.groupCounts.map(({ group, color, count }) => {
+          return {
+            name: getIndicatorGroupLabel(group),
+            color,
+            y: count,
+          };
+        }),
+        size: "35%",
+        innerSize: "90%",
+        startAngle: -90,
+        endAngle: 90,
+      };
+    },
     series() {
       return [
+        this.groupSeries,
+        this.invisibleSeries,
         this.backgroundSeries,
         this.euTargetSeries,
         this.countrySeries,
@@ -139,8 +205,17 @@ export default {
         chart: {
           polar: true,
           type: "column",
+          margin: [0, 0, -500, 0],
         },
         plotOptions: {
+          pie: {
+            states: {
+              inactive: { opacity: 1 },
+            },
+            dataLabels: {
+              enabled: false,
+            },
+          },
           column: {
             grouping: false,
             pointPadding: 0,
@@ -216,9 +291,7 @@ export default {
         pane: {
           startAngle: -90,
           endAngle: 90,
-          size: "160%",
-          innerSize: "50%",
-          center: ["50%", "85%"],
+          innerSize: "42%",
         },
       };
     },
@@ -232,11 +305,11 @@ export default {
       country = null,
     } = {}) {
       return this.chartDimensionList.map((item) => {
-        const color = new Highcharts.Color(
+        const color =
           item.indicator_group.color ||
-            item.indicator_group.parent?.color ||
-            "#6083f6",
-        );
+          item.indicator_group.parent?.color ||
+          "#6083f6";
+
         let fact = this.apiDataGrouped;
         fact = fact[period ?? item.period.code] ?? {};
         fact = fact[indicator ?? item.indicator.code] ?? {};
@@ -246,9 +319,9 @@ export default {
         return {
           ...item,
           fact,
-          color: color.get(),
-          lightColor: color.brighten(0.4).get(),
-          darkColor: color.brighten(-0.4).get(),
+          color: color,
+          lightColor: brightenColor(color, 0.2),
+          darkColor: brightenColor(color, -0.4),
           isMissing: typeof fact?.value === "undefined",
         };
       });
