@@ -5,13 +5,36 @@
       :constructor-type="constructorType"
       :options="mergedChartOptions"
     />
+    <section class="rainbow-section chart-footer">
+      <div class="chart-notice">
+        <ecl-icon icon="information-outline" size="2xl" />
+        <span>
+          Indicators measured in absolute values were excluded from this chart,
+          as their units are not directly comparable with indicators expressed
+          on a standardized
+          <b>0–100 scale.</b>
+        </span>
+      </div>
+      <div class="kpi-toggle">
+        <ecl-radio-group
+          v-model="ddKpiFilter"
+          binary
+          :items="[
+            { value: 'all', label: 'All indicators' },
+            { value: 'dd_kpi', label: 'Digital Decade KPIs' },
+          ]"
+          input-name="ddKpiFilter"
+        />
+      </div>
+    </section>
+
     <section
       v-for="(parent, parentCode) in groupedItems"
       :id="`group-${parentCode}`"
       :key="parentCode"
       class="rainbow-section"
     >
-      <div :style="{ color: parent.color }">
+      <div :style="{ color: parent.color }" class="table-section-header">
         <img :src="parent.icon" alt="" />
         <span>{{ parent.label }}</span>
       </div>
@@ -71,6 +94,8 @@
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BaseChart from "@/components/charts/base/BaseChart.vue";
+import EclIcon from "@/components/ecl/EclIcon.vue";
+import EclRadioGroup from "@/components/ecl/forms/EclRadioGroup.vue";
 import EclTable from "@/components/ecl/table/EclTable.vue";
 import EclTbody from "@/components/ecl/table/EclTbody.vue";
 import EclTd from "@/components/ecl/table/EclTd.vue";
@@ -85,6 +110,7 @@ import {
   getPeriodLabel,
   getUnitDisplay,
 } from "@/lib/utils.js";
+import { useRouteQuery } from "@vueuse/router";
 import chroma from "chroma-js";
 
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
@@ -107,8 +133,22 @@ const SERIES = {
 
 export default {
   name: "CountryProfileRainbow",
-  components: { EclTd, EclTbody, EclTh, EclTr, EclThead, EclTable },
+  components: {
+    EclRadioGroup,
+    EclIcon,
+    EclTd,
+    EclTbody,
+    EclTh,
+    EclTr,
+    EclThead,
+    EclTable,
+  },
   extends: BaseChart,
+  data() {
+    return {
+      ddKpiFilter: useRouteQuery("filter", "all"),
+    };
+  },
   computed: {
     ...mapState(useCountryProfileIndicatorStore, [
       "countryProfileIndicatorList",
@@ -139,7 +179,9 @@ export default {
     },
     dimensionList() {
       return this.countryProfileIndicatorList.filter(
-        (item) => item.period.code === this.period?.code,
+        (item) =>
+          item.period.code === this.period?.code &&
+          (this.ddKpiFilter === "all" || item.is_dd_kpi),
       );
     },
     chartDimensionList() {
@@ -715,6 +757,25 @@ export default {
   }
 }
 
+.rainbow-section.chart-footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  .chart-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ecl-color-grey-600);
+    flex: 1;
+  }
+
+  .kpi-toggle {
+    flex: 1;
+    text-align: right;
+  }
+}
+
 .rainbow-section {
   height: auto !important;
   margin-bottom: 3.75rem;
@@ -724,7 +785,7 @@ export default {
     height: auto !important;
   }
 
-  & > div {
+  .table-section-header {
     text-transform: uppercase;
     font-size: 1rem;
     font-weight: 700;
