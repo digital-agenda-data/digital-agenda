@@ -17,6 +17,7 @@ import "highcharts/modules/offline-exporting";
 
 import "highcharts/modules/accessibility";
 import "highcharts/modules/no-data-to-display";
+import "highcharts/modules/pattern-fill";
 
 // highchart-more required for the Bubble chart
 // (adds a 3rd dimension to the scatter plot)

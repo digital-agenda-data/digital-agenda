@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 from rest_framework import serializers
 
+from .models import CountryProfileIndicator
 from .models import (
     IndicatorGroup,
     Indicator,
@@ -118,10 +119,21 @@ class IndicatorGroupSerializer(BaseDimensionSerializer):
     members = serializers.SlugRelatedField(
         source="indicators", slug_field="code", many=True, read_only=True
     )
+    parent = serializers.SerializerMethodField()
 
     class Meta(BaseDimensionSerializer.Meta):
         model = IndicatorGroup
-        fields = BaseDimensionSerializer.Meta.fields + ["members"]
+        fields = BaseDimensionSerializer.Meta.fields + [
+            "members",
+            "color",
+            "icon",
+            "parent",
+        ]
+
+    def get_parent(self, obj):
+        if obj.parent:
+            return self.__class__(obj.parent, context=self.context).data
+        return None
 
 
 class BreakdownGroupSerializer(BaseDimensionSerializer):
@@ -240,3 +252,23 @@ class StaticPageSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaticPage
         fields = ["code", "title", "body"]
+
+
+class CountryProfileIndicatorSerializer(serializers.ModelSerializer):
+    period = PeriodSerializer(read_only=True)
+    indicator = IndicatorListSerializer(read_only=True)
+    indicator_group = IndicatorGroupSerializer(read_only=True)
+    breakdown = BreakdownSerializer(read_only=True)
+    unit = UnitSerializer(read_only=True)
+
+    class Meta:
+        model = CountryProfileIndicator
+        fields = [
+            "indicator_group",
+            "indicator",
+            "period",
+            "breakdown",
+            "unit",
+            "is_percentage",
+            "is_dd_kpi",
+        ]

@@ -229,12 +229,27 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
                 ),
             ),
         ),
-        ("EU Map", (("MAP_EU_COMPARE_COUNTRIES", "EU Map Chart: Compare Countries"),)),
+        (
+            "EU Map",
+            (("MAP_EU_COMPARE_COUNTRIES", "EU Map Chart: Compare Countries"),),
+        ),
         (
             "World Map",
             (("MAP_WORLD_COMPARE_COUNTRIES", "World Map Chart: Compare Countries"),),
         ),
-        ("Table", (("TABLE_DEBUG_DATA", "Table: Debug Data"),)),
+        (
+            "Country Profile",
+            (
+                (
+                    "COUNTRY_PROFILE_RAINBOW",
+                    "Rainbow Chart: Compare indicators for a country",
+                ),
+            ),
+        ),
+        (
+            "Table",
+            (("TABLE_DEBUG_DATA", "Table: Debug Data"),),
+        ),
     ]
 
     id = BigHashidAutoField(primary_key=True)

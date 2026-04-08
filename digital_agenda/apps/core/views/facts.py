@@ -61,39 +61,38 @@ EUROSTAT_FLAGS = {
 
 
 class FactsFilter(filters.FilterSet):
-    unit = filters.CharFilter(
+    unit = filters.BaseInFilter(
         field_name="unit__code",
         label="unit.code",
         help_text="Filter results by unit code",
-        required=True,
     )
-    period = filters.CharFilter(
+    period = filters.BaseInFilter(
         field_name="period__code",
         label="period.code",
-        help_text="Filter results by period " "code",
+        help_text="Filter results by period code",
     )
-    country = filters.CharFilter(
+    country = filters.BaseInFilter(
         field_name="country__code",
         label="country.code",
-        help_text="Filter results by " "country code",
+        help_text="Filter results by country code",
     )
-    indicator = filters.CharFilter(
+    indicator = filters.BaseInFilter(
         field_name="indicator__code",
         label="indicator.code",
         help_text="Filter results by indicator code",
     )
-    breakdown = filters.CharFilter(
+    breakdown = filters.BaseInFilter(
         field_name="breakdown__code",
         label="breakdown.code",
         help_text="Filter results by breakdown code",
     )
-    indicator_group = filters.CharFilter(
+    indicator_group = filters.BaseInFilter(
         field_name="indicator",
         label="indicator_group.code",
         help_text="Filter result by indicator_group code",
         method="filter_group",
     )
-    breakdown_group = filters.CharFilter(
+    breakdown_group = filters.BaseInFilter(
         field_name="breakdown",
         label="breakdown_group.code",
         help_text="Filter result by breakdown_group code",
@@ -105,35 +104,11 @@ class FactsFilter(filters.FilterSet):
 
         return queryset.filter(
             Exists(
-                rel_model.objects.filter(id=OuterRef(f"{name}_id"), groups__code=value)
+                rel_model.objects.filter(
+                    id=OuterRef(f"{name}_id"), groups__code__in=value
+                )
             )
         )
-
-    def get_form_class(self):
-        # Ensure that at least one indicator and one breakdown filter
-        # has been used to avoid accidentally making huge queries.
-
-        def clean_indicator(form):
-            data = form.cleaned_data
-            if not data["indicator_group"] and not data["indicator"]:
-                raise forms.ValidationError(
-                    "Either indicator or indicator_group is required"
-                )
-            return data["indicator"]
-
-        def clean_breakdown(form):
-            data = form.cleaned_data
-            if not data["breakdown_group"] and not data["breakdown"]:
-                raise forms.ValidationError(
-                    "Either breakdown or breakdown_group is required"
-                )
-            return data["breakdown"]
-
-        form_class = super().get_form_class()
-        form_class.clean_indicator = clean_indicator
-        form_class.clean_breakdown = clean_breakdown
-
-        return form_class
 
     class Meta:
         model = Fact

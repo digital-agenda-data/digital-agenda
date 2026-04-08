@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
+from .views.country_profile_indicator import CountryProfileIndicatorViewSet
 from .views.misc import AppSettingsView
 from .views.facts import FactsViewSet
 from .views.feedback import FeedbackViewSet
@@ -26,6 +27,11 @@ router.register("breakdown-groups", BreakdownGroupViewSet)
 router.register("indicator-groups", IndicatorGroupViewSet)
 router.register("feedback", FeedbackViewSet, "feedback")
 router.register("static-pages", StaticPageViewSet)
+router.register(
+    "country-profile-indicators",
+    CountryProfileIndicatorViewSet,
+    basename="country-profile-indicators",
+)
 
 urlpatterns = [
     path("", include(router.urls)),
