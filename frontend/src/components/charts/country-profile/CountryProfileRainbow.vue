@@ -30,7 +30,7 @@
 
     <section
       v-for="(parent, parentCode) in groupedItems"
-      :id="`group-${parentCode}`"
+      :id="`indicator-group-${parentCode}`"
       :key="parentCode"
       class="rainbow-section"
     >
@@ -41,7 +41,7 @@
 
       <ecl-table>
         <template v-for="(group, groupCode) in parent.groups" :key="groupCode">
-          <ecl-thead :id="`group-${groupCode}`">
+          <ecl-thead :id="`indicator-group-${groupCode}`">
             <ecl-tr :style="{ backgroundColor: group.color }">
               <ecl-th>{{ group.label }}</ecl-th>
               <ecl-th>Reference year</ecl-th>
@@ -342,6 +342,7 @@ export default {
         name: SERIES.indicatorGroup,
         data: this.groupCounts.map(({ group, colorLight, count }) => {
           return {
+            item: group,
             name: getIndicatorGroupLabel(group),
             color: colorLight,
             y: count,
@@ -362,6 +363,7 @@ export default {
         name: SERIES.mainGroup,
         data: this.mainGroupCounts.map(({ group, color, count }) => {
           return {
+            item: group,
             name: getIndicatorGroupLabel(group),
             color,
             y: count,
@@ -440,6 +442,16 @@ export default {
             dataLabels: {
               enabled: false,
             },
+            point: {
+              events: {
+                click: function () {
+                  parent.$router.push({
+                    hash: `#indicator-group-${this.item.code}`,
+                    query: parent.$route.query,
+                  });
+                },
+              },
+            },
           },
           column: {
             grouping: false,
@@ -451,6 +463,12 @@ export default {
             },
             point: {
               events: {
+                click: function () {
+                  parent.$router.push({
+                    hash: `#indicator-${this.item.indicator.code}`,
+                    query: parent.$route.query,
+                  });
+                },
                 mouseOver: function () {
                   parent.showAverage(this.series.chart, this.index, true);
                   parent.fillCenter(this.series.chart, this.item);
