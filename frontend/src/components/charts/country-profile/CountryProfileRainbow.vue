@@ -379,12 +379,14 @@ export default {
             euAverageItem.fact?.reference_period ??
             euTargetItem.fact?.reference_period;
 
+          const extraNotes = parent
+            .getExtraNotes(parent.period, countryItem.indicator)
+            .join(" ");
+
           if (referencePeriod) {
-            result.push(
-              `Reference period: ${referencePeriod} ${parent.getExtraNotes()}`,
-            );
+            result.push(`Reference period: ${referencePeriod} ${extraNotes}`);
           } else {
-            result.push(...parent.getExtraNotes());
+            result.push(extraNotes);
           }
 
           const lines = result.map((line) => `<span>${line}</span>`).join("");
