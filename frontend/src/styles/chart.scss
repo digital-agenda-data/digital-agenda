@@ -49,6 +49,7 @@
 
   // Map Chart need totally different sizes
   .chart-container-digital-agenda {
+    &.CountryProfileRainbow,
     &.EUMapCompareCountries,
     &.WorldMapCompareCountries {
       min-height: 600px;
