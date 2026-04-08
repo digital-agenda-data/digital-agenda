@@ -104,7 +104,9 @@ class FactsFilter(filters.FilterSet):
 
         return queryset.filter(
             Exists(
-                rel_model.objects.filter(id=OuterRef(f"{name}_id"), groups__code=value)
+                rel_model.objects.filter(
+                    id=OuterRef(f"{name}_id"), groups__code__in=value
+                )
             )
         )
 
