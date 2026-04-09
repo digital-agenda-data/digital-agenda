@@ -67,6 +67,12 @@
       }
     }
   }
+
+  .chart-container-digital-agenda {
+    &.CountryProfileRainbow {
+      border: none !important;
+    }
+  }
 }
 
 body.digital-agenda-embedded {

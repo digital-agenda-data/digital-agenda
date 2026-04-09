@@ -59,7 +59,7 @@
                 backgroundColor: item.is_dd_kpi ? item.color : 'white',
               }"
             >
-              <ecl-td :header="group.label">
+              <ecl-td header="Indicator">
                 <ecl-link
                   no-visited
                   variant="brand"
@@ -74,7 +74,7 @@
                   {{ item.label }}
                 </ecl-link>
                 <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
-                  DD KPI
+                  DD&nbsp;KPI
                 </sup>
               </ecl-td>
               <ecl-td header="Reference year">
@@ -860,17 +860,32 @@ export default {
     font-weight: 600;
   }
 
+  thead,
+  tbody,
+  tr,
+  th,
+  th:before,
+  td,
+  td:before {
+    border-color: #e6e6e6 !important;
+    border-block-color: #e6e6e6 !important;
+    border-inline-color: #e6e6e6 !important;
+  }
+
+  th:before,
+  td:before {
+    background-color: inherit !important;
+  }
+
   th:first-of-type {
     width: 50%;
   }
 
   th,
   td {
-    border-inline-color: #e6e6e6 !important;
-  }
-
-  tr {
-    border-block-color: #e6e6e6 !important;
+    &:last-of-type:before {
+      border-block-end: 1px solid #e6e6e6 !important;
+    }
   }
 
   sup {
