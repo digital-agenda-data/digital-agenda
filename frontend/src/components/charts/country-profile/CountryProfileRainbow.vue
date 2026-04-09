@@ -566,24 +566,31 @@ export default {
 
           const item = parent.itemsByIndicator[this.item.indicator.code];
 
-          const result = [
-            `<b>${this.name}</b>`,
+          const result = [`<b>${this.name}</b>`];
+
+          result.push(
             [
               `<span class="dot" style="background-color: ${item.color}"></span>`,
               `${item.countryLabel}:&nbsp;`,
               `<b>${item.country.valueDisplay}</b>`,
             ].join(" "),
-            [
-              `<span class="dot" style="background-color: ${item.colorLight}"></span>`,
-              `${SERIES.euTarget}:&nbsp;`,
-              `<b>${item.euTarget.valueDisplay}</b>`,
-            ].join(" "),
+          );
+          if (item.target_breakdown) {
+            result.push(
+              [
+                `<span class="dot" style="background-color: ${item.colorLight}"></span>`,
+                `${SERIES.euTarget}:&nbsp;`,
+                `<b>${item.euTarget.valueDisplay}</b>`,
+              ].join(" "),
+            );
+          }
+          result.push(
             [
               `<span style="color: ${item.color}">&starf;</span>`,
               `${SERIES.euAverage}:&nbsp;`,
               `<b>${item.euAverage.valueDisplay}</b>`,
             ].join(" "),
-          ];
+          );
 
           const extraNotes = parent
             .getExtraNotes(parent.period, item.indicator)
@@ -610,7 +617,7 @@ export default {
     getUnitDisplay,
     getChartItem(item, override = {}) {
       let fact = this.apiDataGrouped;
-      fact = fact[override.period ?? this.period.code] ?? {};
+      fact = fact[override.period ?? this.period?.code] ?? {};
       fact = fact[override.indicator ?? item.indicator.code] ?? {};
       fact = fact[override.breakdown ?? item.breakdown.code] ?? {};
       fact = fact[override.unit ?? item.unit.code] ?? {};
