@@ -22,9 +22,12 @@
     </div>
   </div>
 
-  <div v-if="chartNavKeepFilters.length > 0" class="ecl-u-screen-only">
+  <div v-if="chartNavForCurrentGroup.length > 0" class="ecl-u-screen-only">
     <h2>See more charts for the same data</h2>
-    <card-nav :items="chartNavKeepFilters" :current-id="currentChart.code" />
+    <card-nav
+      :items="chartNavForCurrentGroup"
+      :current-id="currentChart.code"
+    />
   </div>
 </template>
 
@@ -52,27 +55,6 @@ export default {
     ...mapState(useChartStore, ["currentChart", "chartNavForCurrentGroup"]),
     chartRef() {
       return this.$refs.interactiveChart?.$refs.chart;
-    },
-    chartNavKeepFilters() {
-      return this.chartNavForCurrentGroup.map((item) => {
-        const newRoute = {
-          ...item.to,
-          query: {
-            ...item.to.query,
-            // This is slightly problematic as it will include:
-            //  - extra filters that are not used in the other chart
-            //    will be incorrectly kept in the URL
-            //  - multi-axis charts are completely incompatible with single
-            //  - if a filter changes from multi to single, only one
-            //    value will be used from the list in the other chart
-            ...this.$route.query,
-          },
-        };
-        return {
-          ...item,
-          to: newRoute,
-        };
-      });
     },
   },
 };
