@@ -1,11 +1,12 @@
 <template>
   <template v-if="ready">
     <highcharts
+      v-if="isLargeScreen"
       ref="highchartComponent"
       :constructor-type="constructorType"
       :options="mergedChartOptions"
     />
-    <section class="rainbow-section chart-footer">
+    <section v-if="isLargeScreen" class="rainbow-section chart-footer">
       <div class="chart-notice">
         <ecl-icon icon="information-outline" size="2xl" />
         <span>
@@ -124,6 +125,7 @@ import {
   getUnitDisplay,
 } from "@/lib/utils.js";
 import { useChartStore } from "@/stores/chartStore.js";
+import { useMediaQuery } from "@vueuse/core";
 import { useRouteQuery } from "@vueuse/router";
 
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
@@ -159,6 +161,7 @@ export default {
   extends: BaseChart,
   data() {
     return {
+      isLargeScreen: useMediaQuery("(min-width: 1024px)"),
       ddKpiFilter: useRouteQuery("filter", "all"),
     };
   },
