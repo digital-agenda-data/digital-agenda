@@ -7,7 +7,7 @@
           :to="item.to"
           :download-class="item.downloadClass"
           no-visited
-          @click.capture.prevent="item.action?.()"
+          @click.capture="handleAction($event, item.action)"
         />
       </ecl-list>
     </div>
@@ -101,7 +101,7 @@ export default {
         id: "print-page",
         label: "Print page",
         to: "#print-page",
-        action: "printPage",
+        action: () => this.printPage(),
       });
 
       if (this.highchartInstance) {
@@ -165,6 +165,11 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    handleAction(event, action) {
+      if (!action) return;
+      event.preventDefault();
+      action();
     },
   },
 };
