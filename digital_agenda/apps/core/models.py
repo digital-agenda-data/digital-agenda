@@ -9,6 +9,7 @@ import magic
 from colorfield.fields import ColorField
 
 from django.conf import settings
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
@@ -76,7 +77,7 @@ class IndicatorGroup(BaseDimensionModel, DisplayOrderModel):
         blank=True,
         related_name="children",
     )
-    color = ColorField(blank=True)
+    colors = ArrayField(ColorField(blank=True), default=list)
     icon = models.ImageField(blank=True)
     indicators = models.ManyToManyField(
         "Indicator", through="IndicatorGroupLink", related_name="groups", blank=True
@@ -490,17 +491,43 @@ class StaticPage(TimestampedModel):
 
 
 class CountryProfileIndicator(DisplayOrderModel):
-    period = models.ForeignKey("core.Period", on_delete=models.CASCADE)
-    indicator = models.ForeignKey("core.Indicator", on_delete=models.CASCADE)
-    indicator_group = models.ForeignKey("core.IndicatorGroup", on_delete=models.CASCADE)
-    breakdown = models.ForeignKey("core.Breakdown", on_delete=models.CASCADE)
-    unit = models.ForeignKey("core.Unit", on_delete=models.CASCADE)
+    indicator = models.ForeignKey(
+        "core.Indicator", on_delete=models.CASCADE, related_name="+"
+    )
+    indicator_group = models.ForeignKey(
+        "core.IndicatorGroup", on_delete=models.CASCADE, related_name="+"
+    )
+    breakdown = models.ForeignKey(
+        "core.Breakdown", on_delete=models.CASCADE, related_name="+"
+    )
+    unit = models.ForeignKey("core.Unit", on_delete=models.CASCADE, related_name="+")
+
+    target_breakdown = models.ForeignKey(
+        "core.Breakdown",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        help_text="Show EU target for this indicator using this breakdown",
+        related_name="+",
+    )
+    limit_to_periods = models.ManyToManyField(
+        "core.Period",
+        blank=True,
+        help_text="Show indicator in country profile only for these periods",
+        related_name="+",
+    )
+
     is_dd_kpi = models.BooleanField(default=False)
-    is_percentage = models.BooleanField(default=False)
+    is_in_chart = models.BooleanField(default=False)
 
     class Meta:
         ordering = ("display_order",)
-        unique_together = ("period", "indicator")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["indicator"],
+                name="country_profile_indicator_unique_indicator",
+            )
+        ]
 
     def clean(self):
         super().clean()

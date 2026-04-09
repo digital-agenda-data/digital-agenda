@@ -8,6 +8,8 @@ from django import forms
 
 from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
 from django.db.models import Count
+from django.db.models import Exists
+from django.db.models import OuterRef
 from django.db.models import Prefetch
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -15,6 +17,7 @@ from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
 from import_export.admin import ImportExportMixin
+from more_admin_filters import BooleanAnnotationFilter
 
 from .models import CountryProfileIndicator
 from .models import (
@@ -140,7 +143,7 @@ class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
 @admin.register(IndicatorGroup)
 class IndicatorGroupAdmin(SortableDimensionAdmin):
     inlines = (IndicatorTabularInline,)
-    list_display = ("code", "label", "parent", "color", "icon")
+    list_display = ("code", "label", "parent", "colors", "icon")
     list_filter = [
         "chartgroup",
         AutocompleteFilterFactory("indicator", "indicators"),
@@ -485,25 +488,90 @@ class StaticPageAdmin(admin.ModelAdmin):
 
 @admin.register(CountryProfileIndicator)
 class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display_links = ("indicator_group", "indicator", "period")
+    list_display_links = ("indicator_group", "indicator")
     list_display = (
         "indicator_group",
         "indicator",
-        "period",
         "breakdown",
         "unit",
-        "is_percentage",
+        "limit_to_periods_display",
+        "target_breakdown",
+        "is_in_chart",
         "is_dd_kpi",
+        "has_country_facts",
+        "has_eu_facts",
+        "has_eu_target",
     )
     list_filter = (
-        AutocompleteFilterFactory("period", "period"),
         "is_dd_kpi",
-        "is_percentage",
+        "is_in_chart",
+        BooleanAnnotationFilter.init("has_country_facts"),
+        BooleanAnnotationFilter.init("has_eu_facts"),
+        BooleanAnnotationFilter.init("has_eu_target"),
     )
     autocomplete_fields = (
         "indicator",
         "indicator_group",
-        "period",
+        "limit_to_periods",
         "breakdown",
+        "target_breakdown",
         "unit",
     )
+
+    def get_queryset(self, request):
+        return (
+            super()
+            .get_queryset(request)
+            .prefetch_related(
+                "limit_to_periods",
+                "indicator_group",
+                "indicator",
+                "breakdown",
+                "unit",
+                "target_breakdown",
+            )
+            .annotate(
+                has_country_facts=Exists(
+                    Fact.objects.filter(
+                        indicator=OuterRef("indicator"),
+                        breakdown=OuterRef("breakdown"),
+                        unit=OuterRef("unit"),
+                    ).exclude(country__code="EU")
+                ),
+                has_eu_facts=Exists(
+                    Fact.objects.filter(
+                        indicator=OuterRef("indicator"),
+                        breakdown=OuterRef("breakdown"),
+                        unit=OuterRef("unit"),
+                        country__code="EU",
+                    )
+                ),
+                has_eu_target=Exists(
+                    Fact.objects.filter(
+                        indicator=OuterRef("indicator"),
+                        breakdown=OuterRef("target_breakdown"),
+                        unit=OuterRef("unit"),
+                        country__code="EU",
+                        period__code="2030",
+                    )
+                ),
+            )
+        )
+
+    @admin.display(description="Limit to Periods")
+    def limit_to_periods_display(self, obj):
+        return ", ".join(obj.limit_to_periods.all().values_list("code", flat=True))
+
+    @admin.display(
+        description="Has Country Facts", ordering="has_country_facts", boolean=True
+    )
+    def has_country_facts(self, obj):
+        return obj.has_country_facts
+
+    @admin.display(description="Has EU Facts", ordering="has_eu_facts", boolean=True)
+    def has_eu_facts(self, obj):
+        return obj.has_eu_facts
+
+    @admin.display(description="Has EU Target", ordering="has_eu_target", boolean=True)
+    def has_eu_target(self, obj):
+        return obj.has_eu_target

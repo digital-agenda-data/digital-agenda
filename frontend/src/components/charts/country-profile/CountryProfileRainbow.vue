@@ -1,13 +1,130 @@
+<template>
+  <template v-if="ready">
+    <highcharts
+      ref="highchartComponent"
+      :constructor-type="constructorType"
+      :options="mergedChartOptions"
+    />
+    <section class="rainbow-section chart-footer">
+      <div class="chart-notice">
+        <ecl-icon icon="information-outline" size="2xl" />
+        <span>
+          Indicators measured in absolute values were excluded from this chart,
+          as their units are not directly comparable with indicators expressed
+          on a standardized
+          <b>0–100 scale.</b>
+        </span>
+      </div>
+      <div class="kpi-toggle">
+        <ecl-radio-group
+          v-model="ddKpiFilter"
+          binary
+          :items="[
+            { value: 'all', label: 'All indicators' },
+            { value: 'dd_kpi', label: 'Digital Decade KPIs' },
+          ]"
+          input-name="ddKpiFilter"
+        />
+      </div>
+    </section>
+
+    <section
+      v-for="(parent, parentCode) in groupedItems"
+      :id="`indicator-group-${parentCode}`"
+      :key="parentCode"
+      class="rainbow-section"
+    >
+      <div :style="{ color: parent.color }" class="table-section-header">
+        <img :src="parent.icon" alt="" />
+        <span>{{ parent.label }}</span>
+      </div>
+
+      <ecl-table>
+        <template v-for="(group, groupCode) in parent.groups" :key="groupCode">
+          <ecl-thead :id="`indicator-group-${groupCode}`">
+            <ecl-tr :style="{ backgroundColor: group.color }">
+              <ecl-th>{{ group.label }}</ecl-th>
+              <ecl-th>Reference year</ecl-th>
+              <ecl-th>{{ getCountryLabel(country) }}</ecl-th>
+              <ecl-th>EU Average</ecl-th>
+            </ecl-tr>
+          </ecl-thead>
+          <ecl-tbody>
+            <ecl-tr
+              v-for="(item, indicatorCode) in group.indicators"
+              :id="`indicator-${indicatorCode}`"
+              :key="indicatorCode"
+              :style="{
+                backgroundColor: item.is_dd_kpi ? item.color : 'white',
+              }"
+            >
+              <ecl-td :header="group.label">
+                <ecl-link
+                  no-visited
+                  variant="brand"
+                  :to="{
+                    ...linkedChartNav.to,
+                    query: {
+                      indicator: item.indicator.code,
+                      period: period.code,
+                    },
+                  }"
+                >
+                  {{ item.label }}
+                </ecl-link>
+                <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
+                  DD KPI
+                </sup>
+              </ecl-td>
+              <ecl-td header="Reference year">
+                <span
+                  v-if="!item.country.isMissing || !item.euAverage.isMissing"
+                >
+                  {{
+                    item.country.fact.reference_period || getPeriodLabel(period)
+                  }}
+                </span>
+              </ecl-td>
+              <ecl-td :header="getCountryLabel(country)">
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <span v-html="item.country.valueDisplay" />
+              </ecl-td>
+              <ecl-td header="EU Average">
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <span v-html="item.euAverage.valueDisplay" />
+              </ecl-td>
+            </ecl-tr>
+          </ecl-tbody>
+        </template>
+      </ecl-table>
+    </section>
+  </template>
+  <simple-spinner v-else />
+</template>
+
 <script>
 import CountryFilter from "@/components/chart-filters/CountryFilter.vue";
 import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BaseChart from "@/components/charts/base/BaseChart.vue";
+import EclIcon from "@/components/ecl/EclIcon.vue";
+import EclRadioGroup from "@/components/ecl/forms/EclRadioGroup.vue";
+import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import EclTable from "@/components/ecl/table/EclTable.vue";
+import EclTbody from "@/components/ecl/table/EclTbody.vue";
+import EclTd from "@/components/ecl/table/EclTd.vue";
+import EclTh from "@/components/ecl/table/EclTh.vue";
+import EclThead from "@/components/ecl/table/EclThead.vue";
+import EclTr from "@/components/ecl/table/EclTr.vue";
+import { SERIES_COLORS } from "@/lib/constants.js";
 import {
   getCountryLabel,
   getIndicatorGroupLabel,
   getIndicatorLabel,
+  getPeriodLabel,
+  getUnitDisplay,
 } from "@/lib/utils.js";
-import chroma from "chroma-js";
+import { useChartStore } from "@/stores/chartStore.js";
+import { useRouteQuery } from "@vueuse/router";
 
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
 import { mapState } from "pinia";
@@ -17,7 +134,6 @@ import missingPatternUrl from "@/assets/missing-pattern.png?url";
 const BG_COLOR = "#F8F9FD";
 const EU_CODE = "EU";
 const TARGET_PERIOD = "2030";
-const TARGET_BREAKDOWN = "dd_target_2030";
 const SERIES = {
   invisible: "Invisible",
   background: "Background",
@@ -29,11 +145,33 @@ const SERIES = {
 
 export default {
   name: "CountryProfileRainbow",
+  components: {
+    EclLink,
+    EclRadioGroup,
+    EclIcon,
+    EclTd,
+    EclTbody,
+    EclTh,
+    EclTr,
+    EclThead,
+    EclTable,
+  },
   extends: BaseChart,
+  data() {
+    return {
+      ddKpiFilter: useRouteQuery("filter", "all"),
+    };
+  },
   computed: {
     ...mapState(useCountryProfileIndicatorStore, [
       "countryProfileIndicatorList",
     ]),
+    ...mapState(useChartStore, ["currentChart", "chartNavForCurrentGroup"]),
+    linkedChartNav() {
+      return this.chartNavForCurrentGroup.find(
+        (nav) => nav.id !== this.currentChart.code,
+      );
+    },
     chartType() {
       return "column";
     },
@@ -58,17 +196,78 @@ export default {
     groupBy() {
       return ["period", "indicator", "breakdown", "unit", "country"];
     },
-    chartDimensionList() {
+    dimensionList() {
       return this.countryProfileIndicatorList.filter(
-        (item) => item.is_percentage && item.period.code === this.period.code,
+        (item) =>
+          (item.limit_to_periods.length === 0 ||
+            item.limit_to_periods.include(this.period?.code)) &&
+          (this.ddKpiFilter === "all" || item.is_dd_kpi),
       );
+    },
+    chartDimensionList() {
+      return this.dimensionList.filter((item) => item.is_in_chart);
+    },
+    itemsByIndicator() {
+      const result = {};
+      for (const item of this.dimensionList) {
+        const country = this.getChartItem(item);
+        const euAverage = this.getChartItem(item, { country: EU_CODE });
+        const euTarget = this.getChartItem(item, {
+          country: EU_CODE,
+          period: TARGET_PERIOD,
+          breakdown: item.target_breakdown?.code ?? "",
+        });
+
+        result[item.indicator.code] = {
+          ...this.getColors(item),
+          ...item,
+          countryLabel: getCountryLabel(this.country),
+          country,
+          euAverage,
+          euTarget,
+          referencePeriod:
+            country.fact?.reference_period ??
+            euAverage.fact?.reference_period ??
+            euTarget.fact?.reference_period,
+        };
+      }
+      return result;
+    },
+    groupedItems() {
+      const result = {};
+      for (const item of this.dimensionList) {
+        const parent = item.indicator_group.parent;
+        const group = item.indicator_group;
+        if (!parent) continue;
+
+        const colors = this.getColors(item);
+
+        result[parent.code] ??= {
+          groups: {},
+          label: getIndicatorGroupLabel(parent),
+          icon: parent.icon,
+          color: colors.colorDark,
+        };
+        result[parent.code].groups[group.code] ??= {
+          indicators: {},
+          label: getIndicatorGroupLabel(group),
+          color: colors.colorDark,
+        };
+        result[parent.code].groups[group.code].indicators[item.indicator.code] =
+          {
+            ...this.itemsByIndicator[item.indicator.code],
+            label: getIndicatorLabel(item.indicator),
+            color: colors.colorLighter,
+          };
+      }
+      return result;
     },
     backgroundSeries() {
       return {
         showInLegend: false,
         enableMouseTracking: false,
         name: SERIES.background,
-        data: this.getItems().map((item) => {
+        data: this.chartDimensionList.map((item) => {
           return {
             item,
             y: 100,
@@ -83,8 +282,10 @@ export default {
         showInLegend: false,
         enableMouseTracking: false,
         name: getCountryLabel(this.country),
-        data: this.getItems().map((item) => {
+        data: this.chartDimensionList.map(({ indicator }) => {
+          const item = this.itemsByIndicator[indicator.code].country;
           const value = item.isMissing ? 100 : Math.abs(item.fact?.value || 0);
+
           return {
             item,
             y: value,
@@ -110,7 +311,8 @@ export default {
         type: "scatter",
         name: SERIES.euAverage,
         enableMouseTracking: false,
-        data: this.getItems({ country: EU_CODE }).map((item) => {
+        data: this.chartDimensionList.map(({ indicator }) => {
+          const item = this.itemsByIndicator[indicator.code].euAverage;
           const iconUrl = this.getStarIcon(BG_COLOR, item.color);
           return {
             item,
@@ -132,11 +334,10 @@ export default {
         showInLegend: false,
         enableMouseTracking: false,
         name: SERIES.euTarget,
-        data: this.getItems({
-          country: EU_CODE,
-          period: TARGET_PERIOD,
-          breakdown: TARGET_BREAKDOWN,
-        })
+        data: this.chartDimensionList
+          .map(
+            ({ indicator }) => this.itemsByIndicator[indicator.code].euTarget,
+          )
           .filter((item) => !item.isMissing)
           .map((item) => {
             return {
@@ -149,10 +350,10 @@ export default {
       };
     },
     groupCounts() {
-      return this.getGroupCounts((item) => item.indicator_group);
+      return this.getChartGroupCounts((item) => item.indicator_group);
     },
     mainGroupCounts() {
-      return this.getGroupCounts((item) => item.indicator_group.parent);
+      return this.getChartGroupCounts((item) => item.indicator_group.parent);
     },
     groupSeries() {
       return {
@@ -161,6 +362,7 @@ export default {
         name: SERIES.indicatorGroup,
         data: this.groupCounts.map(({ group, colorLight, count }) => {
           return {
+            item: group,
             name: getIndicatorGroupLabel(group),
             color: colorLight,
             y: count,
@@ -181,6 +383,7 @@ export default {
         name: SERIES.mainGroup,
         data: this.mainGroupCounts.map(({ group, color, count }) => {
           return {
+            item: group,
             name: getIndicatorGroupLabel(group),
             color,
             y: count,
@@ -201,7 +404,8 @@ export default {
           // This is the only one that listens to mouse events and triggers the
           // tooltip. This way the position of the tooltip is consistent and
           // smooth.
-          ...this.getItems().map((item) => {
+          ...this.chartDimensionList.map(({ indicator }) => {
+            const item = this.itemsByIndicator[indicator.code].country;
             return {
               item,
               y: 100,
@@ -245,7 +449,7 @@ export default {
         chart: {
           polar: true,
           type: "column",
-          margin: [0, 0, -500, 0],
+          margin: [0, 0, -600, 0],
         },
         title: {
           text: this.joinStrings([getCountryLabel(this.country)]),
@@ -258,6 +462,16 @@ export default {
             dataLabels: {
               enabled: false,
             },
+            point: {
+              events: {
+                click: function () {
+                  parent.$router.push({
+                    hash: `#indicator-group-${this.item.code}`,
+                    query: parent.$route.query,
+                  });
+                },
+              },
+            },
           },
           column: {
             grouping: false,
@@ -269,6 +483,12 @@ export default {
             },
             point: {
               events: {
+                click: function () {
+                  parent.$router.push({
+                    hash: `#indicator-${this.item.indicator.code}`,
+                    query: parent.$route.query,
+                  });
+                },
                 mouseOver: function () {
                   parent.showAverage(this.series.chart, this.index, true);
                   parent.fillCenter(this.series.chart, this.item);
@@ -344,47 +564,44 @@ export default {
             return `<b>${this.series.name}</b><br/>${this.name}`;
           }
 
-          const countryItem = parent.getChartItem(this.item);
-          const euAverageItem = parent.getChartItem(this.item, {
-            country: EU_CODE,
-          });
-          const euTargetItem = parent.getChartItem(this.item, {
-            country: EU_CODE,
-            period: TARGET_PERIOD,
-            breakdown: TARGET_BREAKDOWN,
-          });
-          const countryName = getCountryLabel(parent.country);
+          const item = parent.itemsByIndicator[this.item.indicator.code];
 
-          const result = [
-            `<b>${this.name}</b>`,
-            [
-              `<span class="dot" style="background-color: ${countryItem.color}"></span>`,
-              `${countryName}:&nbsp;`,
-              `<b>${countryItem.valueDisplay}</b>`,
-            ].join(" "),
-            [
-              `<span class="dot" style="background-color: ${countryItem.colorLight}"></span>`,
-              `${SERIES.euTarget}:&nbsp;`,
-              `<b>${euTargetItem.valueDisplay}</b>`,
-            ].join(" "),
-            [
-              `<span style="color: ${countryItem.color}">&starf;</span>`,
-              `${SERIES.euAverage}:&nbsp;`,
-              `<b>${euAverageItem.valueDisplay}</b>`,
-            ].join(" "),
-          ];
+          const result = [`<b>${this.name}</b>`];
 
-          const referencePeriod =
-            countryItem.fact?.reference_period ??
-            euAverageItem.fact?.reference_period ??
-            euTargetItem.fact?.reference_period;
-
-          if (referencePeriod) {
+          result.push(
+            [
+              `<span class="dot" style="background-color: ${item.color}"></span>`,
+              `${item.countryLabel}:&nbsp;`,
+              `<b>${item.country.valueDisplay}</b>`,
+            ].join(" "),
+          );
+          if (item.target_breakdown) {
             result.push(
-              `Reference period: ${referencePeriod} ${parent.getExtraNotes()}`,
+              [
+                `<span class="dot" style="background-color: ${item.colorLight}"></span>`,
+                `${SERIES.euTarget}:&nbsp;`,
+                `<b>${item.euTarget.valueDisplay}</b>`,
+              ].join(" "),
+            );
+          }
+          result.push(
+            [
+              `<span style="color: ${item.color}">&starf;</span>`,
+              `${SERIES.euAverage}:&nbsp;`,
+              `<b>${item.euAverage.valueDisplay}</b>`,
+            ].join(" "),
+          );
+
+          const extraNotes = parent
+            .getExtraNotes(parent.period, item.indicator)
+            .join(" ");
+
+          if (item.referencePeriod) {
+            result.push(
+              `Reference period: ${item.referencePeriod} ${extraNotes}`,
             );
           } else {
-            result.push(...parent.getExtraNotes());
+            result.push(extraNotes);
           }
 
           const lines = result.map((line) => `<span>${line}</span>`).join("");
@@ -395,48 +612,48 @@ export default {
     },
   },
   methods: {
-    getItems(override = {}) {
-      return this.chartDimensionList.map((item) =>
-        this.getChartItem(item, override),
-      );
-    },
+    getPeriodLabel,
+    getCountryLabel,
+    getUnitDisplay,
     getChartItem(item, override = {}) {
       let fact = this.apiDataGrouped;
-      fact = fact[override.period ?? item.period.code] ?? {};
+      fact = fact[override.period ?? this.period?.code] ?? {};
       fact = fact[override.indicator ?? item.indicator.code] ?? {};
       fact = fact[override.breakdown ?? item.breakdown.code] ?? {};
       fact = fact[override.unit ?? item.unit.code] ?? {};
-      fact = fact[override.country ?? this.country.code] ?? {};
-
-      const base = chroma(
-        item.indicator_group.color ||
-          item.indicator_group.parent?.color ||
-          "#6083f6",
-      );
+      fact = fact[override.country ?? this.country?.code] ?? {};
 
       return {
         ...item,
+        ...this.getColors(item),
         fact,
         valueDisplay: this.getUnitDisplay(fact?.value, item.unit),
-        color: base.hex(),
-        colorLight: base.brighten(0.8).desaturate(0.3).hex(),
-        colorLighter: base.brighten(1.6).desaturate(0.6).hex(),
-        colorDark: base.darken(1.4).hex(),
         isMissing: typeof fact?.value === "undefined",
       };
     },
-    getGroupCounts(getGroup) {
+    getColors(item) {
+      const colors = item.indicator_group.parent?.colors ?? SERIES_COLORS[0];
+      const defaultColor = colors[0];
+
+      const [colorDark, color, colorLight, colorLighter] = colors;
+      return {
+        colorDark: colorDark ?? defaultColor,
+        color: color ?? defaultColor,
+        colorLight: colorLight ?? defaultColor,
+        colorLighter: colorLighter ?? defaultColor,
+      };
+    },
+    getChartGroupCounts(getGroup) {
       const groupCounts = {};
-      this.getItems().forEach((item, index) => {
+      this.chartDimensionList.forEach((item, index) => {
         const group = getGroup(item);
         if (!group) return;
 
         groupCounts[group.code] ??= {
           group,
-          color: item.color,
-          colorLight: item.colorLight,
           count: 0,
           start: index,
+          ...this.getColors(item),
         };
         groupCounts[group.code].count += 1;
       });
@@ -581,6 +798,80 @@ export default {
 
   .indicator {
     font-size: 1.5rem;
+  }
+}
+
+.rainbow-section.chart-footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  .chart-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ecl-color-grey-600);
+    flex: 1;
+  }
+
+  .kpi-toggle {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+.rainbow-section {
+  height: auto !important;
+  margin-bottom: 3.75rem;
+  padding: 0 1rem;
+
+  & > * {
+    height: auto !important;
+  }
+
+  .table-section-header {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-bottom: 1rem;
+
+    img {
+      height: 1rem;
+    }
+  }
+
+  table {
+    table-layout: fixed;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  thead {
+    color: white;
+    font-weight: 600;
+  }
+
+  th:first-of-type {
+    width: 50%;
+  }
+
+  th,
+  td {
+    border-inline-color: #e6e6e6 !important;
+  }
+
+  tr {
+    border-block-color: #e6e6e6 !important;
+  }
+
+  sup {
+    font-weight: 600;
   }
 }
 </style>

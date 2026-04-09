@@ -18,7 +18,7 @@ class CountryProfileIndicatorFilterSet(django_filters.FilterSet):
 
 class CountryProfileIndicatorViewSet(mixins.ListModelMixin, GenericViewSet):
     queryset = CountryProfileIndicator.objects.all().prefetch_related(
-        "period",
+        "limit_to_periods",
         "indicator",
         "indicator_group",
         "indicator_group__parent",
@@ -30,6 +30,8 @@ class CountryProfileIndicatorViewSet(mixins.ListModelMixin, GenericViewSet):
         "indicator__extra_notes__period",
         "breakdown",
         "breakdown__chart_options",
+        "target_breakdown",
+        "target_breakdown__chart_options",
         "unit",
     )
     serializer_class = CountryProfileIndicatorSerializer

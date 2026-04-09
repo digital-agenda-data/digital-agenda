@@ -125,7 +125,7 @@ class IndicatorGroupSerializer(BaseDimensionSerializer):
         model = IndicatorGroup
         fields = BaseDimensionSerializer.Meta.fields + [
             "members",
-            "color",
+            "colors",
             "icon",
             "parent",
         ]
@@ -255,20 +255,24 @@ class StaticPageSerializer(serializers.ModelSerializer):
 
 
 class CountryProfileIndicatorSerializer(serializers.ModelSerializer):
-    period = PeriodSerializer(read_only=True)
+    limit_to_periods = serializers.SlugRelatedField(
+        slug_field="code", many=True, read_only=True
+    )
     indicator = IndicatorListSerializer(read_only=True)
     indicator_group = IndicatorGroupSerializer(read_only=True)
     breakdown = BreakdownSerializer(read_only=True)
     unit = UnitSerializer(read_only=True)
+    target_breakdown = BreakdownSerializer(read_only=True)
 
     class Meta:
         model = CountryProfileIndicator
         fields = [
             "indicator_group",
             "indicator",
-            "period",
             "breakdown",
             "unit",
-            "is_percentage",
+            "limit_to_periods",
+            "target_breakdown",
+            "is_in_chart",
             "is_dd_kpi",
         ]

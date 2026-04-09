@@ -15,23 +15,24 @@
   </chart-group-nav>
 
   <ecl-spinner v-if="!loaded" size="large" class="ecl-u-ma-2xl" centered />
-  <table
+  <ecl-table
     v-else-if="indicatorGroupsFiltered.length > 0"
-    class="ecl-table ecl-table--zebra ecl-u-break-word"
+    class="ecl-u-break-word"
+    zebra
   >
-    <thead class="ecl-table__head">
-      <tr class="ecl-table__row">
-        <th class="ecl-table__header">Indicator</th>
-        <th class="ecl-table__header">Information</th>
-      </tr>
-    </thead>
+    <ecl-thead>
+      <ecl-tr>
+        <ecl-th>Indicator</ecl-th>
+        <ecl-th>Information</ecl-th>
+      </ecl-tr>
+    </ecl-thead>
     <template v-for="group in indicatorGroupsFiltered" :key="group.code">
-      <thead class="ecl-table__head">
-        <tr :id="group.code" class="ecl-table__row">
-          <th class="ecl-table__header">
+      <ecl-thead>
+        <ecl-tr :id="group.code">
+          <ecl-th>
             {{ group.label }}
-          </th>
-          <th>
+          </ecl-th>
+          <ecl-th>
             <span>Export:&nbsp;</span>
             <ecl-link
               :to="`${apiURL}/indicator-groups/${group.code}/facts/`"
@@ -80,26 +81,19 @@
               variant="none"
               label="units"
             />
-          </th>
-        </tr>
-      </thead>
-      <tbody class="ecl-table__body">
-        <tr
-          v-for="indicator in group.indicators"
-          :key="indicator.code"
-          class="ecl-table__row"
-        >
-          <td
-            class="ecl-table__cell label-cell"
-            data-ecl-table-header="Indicator"
-          >
+          </ecl-th>
+        </ecl-tr>
+      </ecl-thead>
+      <ecl-tbody>
+        <ecl-tr v-for="indicator in group.indicators" :key="indicator.code">
+          <ecl-td class="label-cell" header="Indicator">
             <ecl-link
               :to="getChartLink(group, indicator)"
               :label="indicator.label"
               no-visited
             />
-          </td>
-          <td class="ecl-table__cell" data-ecl-table-header="Information">
+          </ecl-td>
+          <ecl-td header="Information">
             <div>
               <div class="ecl-u-type-paragraph-m">
                 <strong>Notation:&nbsp;</strong>
@@ -172,11 +166,11 @@
                 />
               </div>
             </div>
-          </td>
-        </tr>
-      </tbody>
+          </ecl-td>
+        </ecl-tr>
+      </ecl-tbody>
     </template>
-  </table>
+  </ecl-table>
   <p v-else>No indicators found</p>
 </template>
 
@@ -185,6 +179,12 @@ import ChartGroupNav from "@/components/ChartGroupNav.vue";
 import DimensionProp from "@/components/charts/DimensionProp.vue";
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import EclLink from "@/components/ecl/navigation/EclLink.vue";
+import EclTable from "@/components/ecl/table/EclTable.vue";
+import EclTbody from "@/components/ecl/table/EclTbody.vue";
+import EclTd from "@/components/ecl/table/EclTd.vue";
+import EclTh from "@/components/ecl/table/EclTh.vue";
+import EclThead from "@/components/ecl/table/EclThead.vue";
+import EclTr from "@/components/ecl/table/EclTr.vue";
 import { api, apiURL } from "@/lib/api";
 import { groupByUnique, scrollToHash } from "@/lib/utils";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
@@ -194,7 +194,18 @@ import { mapState } from "pinia";
 
 export default {
   name: "IndicatorView",
-  components: { DimensionProp, ChartGroupNav, EclLink, EclSpinner },
+  components: {
+    EclTd,
+    EclTbody,
+    EclTr,
+    EclTh,
+    EclThead,
+    EclTable,
+    DimensionProp,
+    ChartGroupNav,
+    EclLink,
+    EclSpinner,
+  },
   data() {
     return {
       apiURL,
