@@ -59,7 +59,19 @@
               }"
             >
               <ecl-td :header="group.label">
-                {{ item.label }}
+                <ecl-link
+                  no-visited
+                  variant="brand"
+                  :to="{
+                    ...linkedChartNav.to,
+                    query: {
+                      indicator: item.indicator.code,
+                      period: period.code,
+                    },
+                  }"
+                >
+                  {{ item.label }}
+                </ecl-link>
                 <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
                   DD KPI
                 </sup>
@@ -96,6 +108,7 @@ import PeriodFilter from "@/components/chart-filters/PeriodFilter.vue";
 import BaseChart from "@/components/charts/base/BaseChart.vue";
 import EclIcon from "@/components/ecl/EclIcon.vue";
 import EclRadioGroup from "@/components/ecl/forms/EclRadioGroup.vue";
+import EclLink from "@/components/ecl/navigation/EclLink.vue";
 import EclTable from "@/components/ecl/table/EclTable.vue";
 import EclTbody from "@/components/ecl/table/EclTbody.vue";
 import EclTd from "@/components/ecl/table/EclTd.vue";
@@ -110,6 +123,8 @@ import {
   getPeriodLabel,
   getUnitDisplay,
 } from "@/lib/utils.js";
+import { useChartGroupStore } from "@/stores/chartGroupStore.js";
+import { useChartStore } from "@/stores/chartStore.js";
 import { useRouteQuery } from "@vueuse/router";
 import chroma from "chroma-js";
 
@@ -134,6 +149,7 @@ const SERIES = {
 export default {
   name: "CountryProfileRainbow",
   components: {
+    EclLink,
     EclRadioGroup,
     EclIcon,
     EclTd,
@@ -153,6 +169,12 @@ export default {
     ...mapState(useCountryProfileIndicatorStore, [
       "countryProfileIndicatorList",
     ]),
+    ...mapState(useChartStore, ["currentChart", "chartNavForCurrentGroup"]),
+    linkedChartNav() {
+      return this.chartNavForCurrentGroup.find(
+        (nav) => nav.id !== this.currentChart.code,
+      );
+    },
     chartType() {
       return "column";
     },
