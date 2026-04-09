@@ -255,7 +255,9 @@ class StaticPageSerializer(serializers.ModelSerializer):
 
 
 class CountryProfileIndicatorSerializer(serializers.ModelSerializer):
-    limit_to_periods = PeriodSerializer(many=True, read_only=True)
+    limit_to_periods = serializers.SlugRelatedField(
+        slug_field="code", many=True, read_only=True
+    )
     indicator = IndicatorListSerializer(read_only=True)
     indicator_group = IndicatorGroupSerializer(read_only=True)
     breakdown = BreakdownSerializer(read_only=True)

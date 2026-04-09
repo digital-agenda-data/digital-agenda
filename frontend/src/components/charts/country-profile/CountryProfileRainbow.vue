@@ -123,10 +123,8 @@ import {
   getPeriodLabel,
   getUnitDisplay,
 } from "@/lib/utils.js";
-import { useChartGroupStore } from "@/stores/chartGroupStore.js";
 import { useChartStore } from "@/stores/chartStore.js";
 import { useRouteQuery } from "@vueuse/router";
-import chroma from "chroma-js";
 
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
 import { mapState } from "pinia";
@@ -136,7 +134,6 @@ import missingPatternUrl from "@/assets/missing-pattern.png?url";
 const BG_COLOR = "#F8F9FD";
 const EU_CODE = "EU";
 const TARGET_PERIOD = "2030";
-const TARGET_BREAKDOWN = "dd_target_2030";
 const SERIES = {
   invisible: "Invisible",
   background: "Background",
@@ -202,12 +199,13 @@ export default {
     dimensionList() {
       return this.countryProfileIndicatorList.filter(
         (item) =>
-          item.period.code === this.period?.code &&
+          (item.limit_to_periods.length === 0 ||
+            item.limit_to_periods.include(this.period?.code)) &&
           (this.ddKpiFilter === "all" || item.is_dd_kpi),
       );
     },
     chartDimensionList() {
-      return this.dimensionList.filter((item) => item.is_percentage);
+      return this.dimensionList.filter((item) => item.is_in_chart);
     },
     itemsByIndicator() {
       const result = {};
@@ -217,7 +215,7 @@ export default {
         const euTarget = this.getChartItem(item, {
           country: EU_CODE,
           period: TARGET_PERIOD,
-          breakdown: TARGET_BREAKDOWN,
+          breakdown: item.target_breakdown.code,
         });
 
         result[item.indicator.code] = {
@@ -612,7 +610,7 @@ export default {
     getUnitDisplay,
     getChartItem(item, override = {}) {
       let fact = this.apiDataGrouped;
-      fact = fact[override.period ?? item.period.code] ?? {};
+      fact = fact[override.period ?? this.period.code] ?? {};
       fact = fact[override.indicator ?? item.indicator.code] ?? {};
       fact = fact[override.breakdown ?? item.breakdown.code] ?? {};
       fact = fact[override.unit ?? item.unit.code] ?? {};
@@ -627,16 +625,15 @@ export default {
       };
     },
     getColors(item) {
-      const base = chroma(
-        item.indicator_group.color ||
-          item.indicator_group.parent?.color ||
-          SERIES_COLORS[0],
-      );
+      const colors = item.indicator_group.parent?.colors ?? SERIES_COLORS[0];
+      const defaultColor = colors[0];
+
+      const [colorDark, color, colorLight, colorLighter] = colors;
       return {
-        colorDark: base.darken(1.4).saturate(-0.4).hex(),
-        color: base.hex(),
-        colorLight: base.brighten(1).desaturate(0.1).hex(),
-        colorLighter: base.brighten(1.7).desaturate(0.5).hex(),
+        colorDark: colorDark ?? defaultColor,
+        color: color ?? defaultColor,
+        colorLight: colorLight ?? defaultColor,
+        colorLighter: colorLighter ?? defaultColor,
       };
     },
     getChartGroupCounts(getGroup) {
