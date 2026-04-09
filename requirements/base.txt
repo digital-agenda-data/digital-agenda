@@ -17,6 +17,7 @@ django-health-check
 django-import-export
 django_json_widget
 django-model-utils
+django-more-admin-filters
 django-redis
 djangorestframework
 djangorestframework-csv
