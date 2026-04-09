@@ -1,6 +1,7 @@
 from django.db.models import Exists
 from django.db.models import OuterRef
 from django.utils.encoding import force_str
+from django.utils.text import get_valid_filename
 from django_filters import rest_framework as filters
 
 from digital_agenda.apps.core.models import Fact
@@ -100,4 +101,4 @@ class DimensionViewSetMixin(CodeLookupMixin, FilenameExportMixin):
                 filters.append(force_str(value))
         filters.append(force_str(self.model._meta.verbose_name_plural))
 
-        return "-".join(filters)
+        return get_valid_filename("-".join(filters))

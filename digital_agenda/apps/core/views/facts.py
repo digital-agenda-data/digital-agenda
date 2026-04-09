@@ -220,18 +220,19 @@ class FactXLSXSerializer:
             sheet, ["Dimension", "Code", "Label", "Alt. Label", "Definition"]
         )
 
-        for filter_key, value in self.filter_args.items():
-            obj = MODELS[filter_key].objects.get(code=value)
+        for filter_key, value_list in self.filter_args.items():
+            for value in value_list.split(","):
+                obj = MODELS[filter_key].objects.get(code=value)
 
-            sheet.append(
-                [
-                    self.get_label(filter_key),
-                    value,
-                    obj.label,
-                    obj.alt_label,
-                    obj.definition,
-                ]
-            )
+                sheet.append(
+                    [
+                        self.get_label(filter_key),
+                        value,
+                        obj.label,
+                        obj.alt_label,
+                        obj.definition,
+                    ]
+                )
 
     @functools.cached_property
     def dimensions_by_code(self):
