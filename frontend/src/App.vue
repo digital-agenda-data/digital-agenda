@@ -1,6 +1,6 @@
 <template>
   <simple-spinner v-if="!isReady" />
-  <interactive-chart v-else-if="isEmbedded" />
+  <interactive-chart v-else-if="isEmbedded" :is-embedded="isEmbedded" />
   <main-layout v-else />
 </template>
 

@@ -44,6 +44,13 @@ export default {
     SimpleSpinner,
     highcharts: Chart,
   },
+  props: {
+    isEmbedded: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   data() {
     return {
       loading: true,

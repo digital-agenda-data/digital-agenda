@@ -15,7 +15,7 @@
     class="ecl-u-mt-m ecl-u-mb-m ecl-u-border-width-1 ecl-u-border-style-solid ecl-u-border-color-neutral-60 chart-container-digital-agenda"
     :class="chartComponent?.name"
   >
-    <component :is="chartComponent" ref="chart" />
+    <component :is="chartComponent" ref="chart" :is-embedded="isEmbedded" />
   </div>
 </template>
 
@@ -33,6 +33,13 @@ import { mapState } from "pinia";
 export default {
   name: "InteractiveChart",
   components: { CardNav, EclIcon, ChartDefinitions, ChartActions },
+  props: {
+    isEmbedded: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   computed: {
     ...mapState(useChartStore, ["currentChart"]),
     chartComponent() {

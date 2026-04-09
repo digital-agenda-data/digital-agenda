@@ -6,99 +6,105 @@
       :constructor-type="constructorType"
       :options="mergedChartOptions"
     />
-    <section v-if="isLargeScreen" class="rainbow-section chart-footer">
-      <div class="chart-notice">
-        <ecl-icon icon="information-outline" size="2xl" />
-        <span>
-          Indicators measured in absolute values were excluded from this chart,
-          as their units are not directly comparable with indicators expressed
-          on a standardized
-          <b>0–100 scale.</b>
-        </span>
-      </div>
-      <div class="kpi-toggle">
-        <ecl-radio-group
-          v-model="ddKpiFilter"
-          binary
-          :items="[
-            { value: 'all', label: 'All indicators' },
-            { value: 'dd_kpi', label: 'Digital Decade KPIs' },
-          ]"
-          input-name="ddKpiFilter"
-        />
-      </div>
-    </section>
 
-    <section
-      v-for="(parent, parentCode) in groupedItems"
-      :id="`indicator-group-${parentCode}`"
-      :key="parentCode"
-      class="rainbow-section"
-    >
-      <div :style="{ color: parent.color }" class="table-section-header">
-        <img :src="parent.icon" alt="" />
-        <span>{{ parent.label }}</span>
-      </div>
+    <template v-if="!isEmbedded">
+      <section v-if="isLargeScreen" class="rainbow-section chart-footer">
+        <div class="chart-notice">
+          <ecl-icon icon="information-outline" size="2xl" />
+          <span>
+            Indicators measured in absolute values were excluded from this
+            chart, as their units are not directly comparable with indicators
+            expressed on a standardized
+            <b>0–100 scale.</b>
+          </span>
+        </div>
+        <div class="kpi-toggle">
+          <ecl-radio-group
+            v-model="ddKpiFilter"
+            binary
+            :items="[
+              { value: 'all', label: 'All indicators' },
+              { value: 'dd_kpi', label: 'Digital Decade KPIs' },
+            ]"
+            input-name="ddKpiFilter"
+          />
+        </div>
+      </section>
+      <section
+        v-for="(parent, parentCode) in groupedItems"
+        :id="`indicator-group-${parentCode}`"
+        :key="parentCode"
+        class="rainbow-section"
+      >
+        <div :style="{ color: parent.color }" class="table-section-header">
+          <img :src="parent.icon" alt="" />
+          <span>{{ parent.label }}</span>
+        </div>
 
-      <ecl-table>
-        <template v-for="(group, groupCode) in parent.groups" :key="groupCode">
-          <ecl-thead :id="`indicator-group-${groupCode}`">
-            <ecl-tr :style="{ backgroundColor: group.color }">
-              <ecl-th>{{ group.label }}</ecl-th>
-              <ecl-th>Reference year</ecl-th>
-              <ecl-th>{{ getCountryLabel(country) }}</ecl-th>
-              <ecl-th>EU Average</ecl-th>
-            </ecl-tr>
-          </ecl-thead>
-          <ecl-tbody>
-            <ecl-tr
-              v-for="(item, indicatorCode) in group.indicators"
-              :id="`indicator-${indicatorCode}`"
-              :key="indicatorCode"
-              :style="{
-                backgroundColor: item.is_dd_kpi ? item.color : 'white',
-              }"
-            >
-              <ecl-td header="Indicator">
-                <ecl-link
-                  no-visited
-                  variant="brand"
-                  :to="{
-                    ...linkedChartNav.to,
-                    query: {
-                      indicator: item.indicator.code,
-                      period: period.code,
-                    },
-                  }"
-                >
-                  {{ item.label }}
-                </ecl-link>
-                <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
-                  DD&nbsp;KPI
-                </sup>
-              </ecl-td>
-              <ecl-td header="Reference year">
-                <span
-                  v-if="!item.country.isMissing || !item.euAverage.isMissing"
-                >
-                  {{
-                    item.country.fact.reference_period || getPeriodLabel(period)
-                  }}
-                </span>
-              </ecl-td>
-              <ecl-td :header="getCountryLabel(country)">
-                <!-- eslint-disable-next-line vue/no-v-html -->
-                <span v-html="item.country.valueDisplay" />
-              </ecl-td>
-              <ecl-td header="EU Average">
-                <!-- eslint-disable-next-line vue/no-v-html -->
-                <span v-html="item.euAverage.valueDisplay" />
-              </ecl-td>
-            </ecl-tr>
-          </ecl-tbody>
-        </template>
-      </ecl-table>
-    </section>
+        <ecl-table>
+          <template
+            v-for="(group, groupCode) in parent.groups"
+            :key="groupCode"
+          >
+            <ecl-thead :id="`indicator-group-${groupCode}`">
+              <ecl-tr :style="{ backgroundColor: group.color }">
+                <ecl-th>{{ group.label }}</ecl-th>
+                <ecl-th>Reference year</ecl-th>
+                <ecl-th>{{ getCountryLabel(country) }}</ecl-th>
+                <ecl-th>EU Average</ecl-th>
+              </ecl-tr>
+            </ecl-thead>
+            <ecl-tbody>
+              <ecl-tr
+                v-for="(item, indicatorCode) in group.indicators"
+                :id="`indicator-${indicatorCode}`"
+                :key="indicatorCode"
+                :style="{
+                  backgroundColor: item.is_dd_kpi ? item.color : 'white',
+                }"
+              >
+                <ecl-td header="Indicator">
+                  <ecl-link
+                    no-visited
+                    variant="brand"
+                    :to="{
+                      ...linkedChartNav.to,
+                      query: {
+                        indicator: item.indicator.code,
+                        period: period.code,
+                      },
+                    }"
+                  >
+                    {{ item.label }}
+                  </ecl-link>
+                  <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
+                    DD&nbsp;KPI
+                  </sup>
+                </ecl-td>
+                <ecl-td header="Reference year">
+                  <span
+                    v-if="!item.country.isMissing || !item.euAverage.isMissing"
+                  >
+                    {{
+                      item.country.fact.reference_period ||
+                      getPeriodLabel(period)
+                    }}
+                  </span>
+                </ecl-td>
+                <ecl-td :header="getCountryLabel(country)">
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <span v-html="item.country.valueDisplay" />
+                </ecl-td>
+                <ecl-td header="EU Average">
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <span v-html="item.euAverage.valueDisplay" />
+                </ecl-td>
+              </ecl-tr>
+            </ecl-tbody>
+          </template>
+        </ecl-table>
+      </section>
+    </template>
   </template>
   <simple-spinner v-else />
 </template>
