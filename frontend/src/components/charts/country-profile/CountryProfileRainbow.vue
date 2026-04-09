@@ -1,11 +1,12 @@
 <template>
   <template v-if="ready">
     <highcharts
+      v-if="isLargeScreen"
       ref="highchartComponent"
       :constructor-type="constructorType"
       :options="mergedChartOptions"
     />
-    <section class="rainbow-section chart-footer">
+    <section v-if="isLargeScreen" class="rainbow-section chart-footer">
       <div class="chart-notice">
         <ecl-icon icon="information-outline" size="2xl" />
         <span>
@@ -58,7 +59,7 @@
                 backgroundColor: item.is_dd_kpi ? item.color : 'white',
               }"
             >
-              <ecl-td :header="group.label">
+              <ecl-td header="Indicator">
                 <ecl-link
                   no-visited
                   variant="brand"
@@ -73,7 +74,7 @@
                   {{ item.label }}
                 </ecl-link>
                 <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
-                  DD KPI
+                  DD&nbsp;KPI
                 </sup>
               </ecl-td>
               <ecl-td header="Reference year">
@@ -124,6 +125,7 @@ import {
   getUnitDisplay,
 } from "@/lib/utils.js";
 import { useChartStore } from "@/stores/chartStore.js";
+import { useMediaQuery } from "@vueuse/core";
 import { useRouteQuery } from "@vueuse/router";
 
 import { useCountryProfileIndicatorStore } from "@/stores/countryProfileIndicatorStore.js";
@@ -159,6 +161,7 @@ export default {
   extends: BaseChart,
   data() {
     return {
+      isLargeScreen: useMediaQuery("(min-width: 1024px)"),
       ddKpiFilter: useRouteQuery("filter", "all"),
     };
   },
@@ -717,22 +720,16 @@ export default {
       viewBox="-256 -256 1024.00 1024.00"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g
-        id="SVGRepo_bgCarrier"
-        stroke-width="0"
-        transform="translate(0,0), scale(1)"
-      >
-        <rect
-          x="-256"
-          y="-256"
-          width="1024.00"
-          height="1024.00"
-          rx="512"
-          fill="${bgColor}"
-          strokeWidth="0"
-        />
-      </g>
-
+      <rect
+        x="-225"
+        y="-225"
+        width="975"
+        height="975"
+        rx="475"
+        fill="${bgColor}"
+        stroke="${starColor}"
+        stroke-width="70"
+      />
       <g
         id="SVGRepo_tracerCarrier"
         stroke-linecap="round"
@@ -857,17 +854,32 @@ export default {
     font-weight: 600;
   }
 
+  thead,
+  tbody,
+  tr,
+  th,
+  th:before,
+  td,
+  td:before {
+    border-color: #e6e6e6 !important;
+    border-block-color: #e6e6e6 !important;
+    border-inline-color: #e6e6e6 !important;
+  }
+
+  th:before,
+  td:before {
+    background-color: inherit !important;
+  }
+
   th:first-of-type {
     width: 50%;
   }
 
   th,
   td {
-    border-inline-color: #e6e6e6 !important;
-  }
-
-  tr {
-    border-block-color: #e6e6e6 !important;
+    &:last-of-type:before {
+      border-block-end: 1px solid #e6e6e6 !important;
+    }
   }
 
   sup {

@@ -19,7 +19,7 @@ import ChartView from "@/views/chart-group/ChartView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
+    if (to.hash && to.hash !== from.hash) {
       return { el: to.hash };
     }
 
