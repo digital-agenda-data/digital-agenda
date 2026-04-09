@@ -720,22 +720,16 @@ export default {
       viewBox="-256 -256 1024.00 1024.00"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g
-        id="SVGRepo_bgCarrier"
-        stroke-width="0"
-        transform="translate(0,0), scale(1)"
-      >
-        <rect
-          x="-256"
-          y="-256"
-          width="1024.00"
-          height="1024.00"
-          rx="512"
-          fill="${bgColor}"
-          strokeWidth="0"
-        />
-      </g>
-
+      <rect
+        x="-225"
+        y="-225"
+        width="975"
+        height="975"
+        rx="475"
+        fill="${bgColor}"
+        stroke="${starColor}"
+        stroke-width="70"
+      />
       <g
         id="SVGRepo_tracerCarrier"
         stroke-linecap="round"
