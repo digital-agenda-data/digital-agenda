@@ -181,17 +181,15 @@ export default {
         result[axis] = {};
 
         for (const key of filterKeys[axis]) {
-          const value = [
-            this.filterStore[key]?.code,
-            ...(this.extraFilterValues[key] ?? []),
-          ];
-          result[axis][toAPIKey(key)] = value.filter(Boolean).join(",");
-        }
-
-        if (!Object.values(result[axis]).every((val) => val)) {
-          // If there isn't a value selected for ALL filters
-          // don't load any data
-          return null;
+          const filterValue = this.filterStore[key]?.code;
+          const apiValue = [filterValue, ...(this.extraFilterValues[key] ?? [])]
+            .filter(Boolean)
+            .join(",");
+          // If there isn't a value selected for ALL filters don't load any data
+          if (!filterValue) {
+            return null;
+          }
+          result[axis][toAPIKey(key)] = apiValue;
         }
       }
 
