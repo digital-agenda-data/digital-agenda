@@ -140,7 +140,7 @@ class IndicatorTabularInline(SortableInlineAdminMixin, admin.TabularInline):
 @admin.register(IndicatorGroup)
 class IndicatorGroupAdmin(SortableDimensionAdmin):
     inlines = (IndicatorTabularInline,)
-    list_display = ("code", "label", "parent", "color", "icon")
+    list_display = ("code", "label", "parent", "colors", "icon")
     list_filter = [
         "chartgroup",
         AutocompleteFilterFactory("indicator", "indicators"),
@@ -485,25 +485,30 @@ class StaticPageAdmin(admin.ModelAdmin):
 
 @admin.register(CountryProfileIndicator)
 class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display_links = ("indicator_group", "indicator", "period")
+    list_display_links = ("indicator_group", "indicator")
     list_display = (
         "indicator_group",
         "indicator",
-        "period",
         "breakdown",
         "unit",
-        "is_percentage",
+        "limit_to_period_display",
+        "target_breakdown",
+        "is_in_chart",
         "is_dd_kpi",
     )
     list_filter = (
-        AutocompleteFilterFactory("period", "period"),
         "is_dd_kpi",
-        "is_percentage",
+        "is_in_chart",
     )
     autocomplete_fields = (
         "indicator",
         "indicator_group",
-        "period",
+        "limit_to_periods",
         "breakdown",
+        "target_breakdown",
         "unit",
     )
+
+    @admin.display
+    def limit_to_period_display(self, obj):
+        return ", ".join(obj.limit_to_periods.all().values_list("code", flat=True))
