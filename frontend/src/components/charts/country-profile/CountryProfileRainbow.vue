@@ -215,7 +215,7 @@ export default {
         const euTarget = this.getChartItem(item, {
           country: EU_CODE,
           period: TARGET_PERIOD,
-          breakdown: item.target_breakdown.code,
+          breakdown: item.target_breakdown?.code ?? "",
         });
 
         result[item.indicator.code] = {
