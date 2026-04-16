@@ -2,20 +2,23 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("DESI 2023 dashboard", "Compare two indicators");
+    cy.navigateToChart(
+      "Digital Economy and Society Indicators",
+      "Compare two indicators",
+    );
     cy.checkChart({
       filters: {
-        indicatorX: "e-Government users",
+        periodX: "DESI 2023",
+        indicatorX: "e-Government users (until 2021)",
         breakdownX: "All individuals",
         unitX: "% of internet users (last 12 months)",
-        periodX: "DESI period: 2023",
+        periodY: "DESI 2023",
         indicatorY: "Access to e-health records",
         breakdownY: "All Life Events",
         unitY: "Score (0 to 100)",
-        periodY: "DESI period: 2023",
       },
       xAxisTitle: [
-        "e-Government users",
+        "e-Government users (until 2021)",
         "All Individuals",
         "Percentage of individuals who used Internet within the last 12 months",
         "DESI period: 2023 (data from 2022)",
@@ -28,7 +31,7 @@ describeResponsive("Check Chart", () => {
       ],
       point: "European Union (EU), 71.705804. European Union (EU).",
       definitions: [
-        "(X) Indicator: e-Government users",
+        "(X) Indicator: e-Government users (until 2021)",
         "(X) Breakdown: All Individuals (aged 16-74)",
         "(X) Unit of measure: Percentage of individuals who used Internet within the last 12 months",
         "(Y) Indicator: Access to e-health records",

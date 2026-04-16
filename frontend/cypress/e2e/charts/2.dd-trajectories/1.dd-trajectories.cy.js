@@ -3,8 +3,8 @@ import describeResponsive from "../../../support/describeResponsive";
 describeResponsive("Check Chart", () => {
   it("Check Chart Points", () => {
     cy.navigateToChart(
-      "Digital Decade indicators and trajectories",
-      "Digital Decade indicators and trajectories",
+      "Digital Decade - EU-level trajectories",
+      "Digital Decade - EU-level trajectories (2023)",
     );
     cy.selectFilter("indicator", "5G coverage");
     cy.selectFilter("country", "European Union");
@@ -35,8 +35,8 @@ describeResponsive("Check Chart", () => {
   });
   it("Check Chart", () => {
     cy.navigateToChart(
-      "Digital Decade indicators and trajectories",
-      "Digital Decade indicators and trajectories",
+      "Digital Decade - EU-level trajectories",
+      "Digital Decade - EU-level trajectories (2023)",
     );
     cy.checkChart({
       filters: {
