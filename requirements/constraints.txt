@@ -72,7 +72,7 @@ packaging==26.0
 parso==0.8.6
 pathspec==1.0.4
 pexpect==4.9.0
-pillow==12.1.1
+pillow==12.2.0
 platformdirs==4.9.4
 pluggy==1.6.0
 prompt_toolkit==3.0.52
