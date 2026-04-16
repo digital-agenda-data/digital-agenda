@@ -587,7 +587,7 @@ export default {
           if (item.target_breakdown) {
             result.push(
               [
-                `<span class="dot" style="background-color: ${item.colorLight}"></span>`,
+                `<span class="dot" style="background-color: ${item.colorLighter}"></span>`,
                 `${SERIES.euTarget}:&nbsp;`,
                 `<b>${item.euTarget.valueDisplay}</b>`,
               ].join(" "),
