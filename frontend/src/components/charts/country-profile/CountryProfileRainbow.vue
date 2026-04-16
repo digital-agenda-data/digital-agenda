@@ -85,10 +85,7 @@
                   <span
                     v-if="!item.country.isMissing || !item.euAverage.isMissing"
                   >
-                    {{
-                      item.country.fact.reference_period ||
-                      getPeriodLabel(period)
-                    }}
+                    {{ item.referencePeriod || getPeriodLabel(period) }}
                   </span>
                 </ecl-td>
                 <ecl-td :header="getCountryLabel(country)">
