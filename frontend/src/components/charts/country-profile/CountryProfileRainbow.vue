@@ -77,9 +77,7 @@
                   >
                     {{ item.label }}
                   </ecl-link>
-                  <sup v-if="item.is_dd_kpi" :style="{ color: group.color }">
-                    DD&nbsp;KPI
-                  </sup>
+                  <sup v-if="item.is_dd_kpi">&nbsp;DD&nbsp;KPI</sup>
                 </ecl-td>
                 <ecl-td header="Reference year">
                   <span

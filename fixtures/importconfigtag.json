@@ -52,5 +52,11 @@
     "fields": {
         "code": "DII"
     }
+},
+{
+    "model": "estat.importconfigtag",
+    "fields": {
+        "code": "DESI"
+    }
 }
 ]

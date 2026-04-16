@@ -2,16 +2,19 @@ import describeResponsive from "../../../support/describeResponsive";
 
 describeResponsive("Check Chart", () => {
   it("Check Chart", () => {
-    cy.navigateToChart("DESI 2023 dashboard", "DESI 2023 indicators");
+    cy.navigateToChart(
+      "Digital Economy and Society Indicators",
+      "Digital Economy and Society Indicators",
+    );
     cy.checkChart({
       filters: {
-        indicator: "e-Government users",
+        period: "DESI 2023",
+        indicator: "e-Government users (until 2021)",
         breakdown: "All individuals",
-        period: "DESI period: 2023",
         unit: "% of internet users (last 12 months)",
       },
       title: [
-        "e-Government users",
+        "e-Government users (until 2021)",
         "All Individuals",
         "(aged 16-74)",
         "DESI period: 2023",
@@ -23,12 +26,12 @@ describeResponsive("Check Chart", () => {
         "European Union",
         "All individuals",
         "74.20% of internet users (last 12 months)",
-        "DESI period: 2023",
+        "DESI 2023",
         "(data from 2022)",
       ],
       definitions: [
-        "Indicator: e-Government users",
-        "Definition: Individuals who used the Internet, in the last 12 months, for interaction with public authorities on websites or on mobile applications",
+        "Indicator: e-Government users (until 2021)",
+        "Definition: Individuals who used the Internet, in the last 12 months, for interaction with public authorities.",
         "Breakdown: All Individuals (aged 16-74)",
         "Unit of measure: Percentage of individuals who used Internet within the last 12 months",
       ],

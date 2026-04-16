@@ -45,7 +45,7 @@ class TestDimensionAPI(APIBaseTest):
     def create_facts(self):
         for indicator, breakdown, period, unit, country in itertools.product(
             ["e_cc", "e_bd"],
-            ["men", "women"],
+            ["m", "f"],
             ["2020", "2021"],
             ["nr", "euro"],
             ["EU", "RO"],
@@ -117,46 +117,46 @@ class TestDimensionAPI(APIBaseTest):
 
     def test_list_indicator_filter_existing_facts(self):
         self.create_facts()
-        self.remove_facts(period="2021", breakdown="men", indicator="e_bd")
+        self.remove_facts(period="2021", breakdown="m", indicator="e_bd")
         self.check_response_single(
             "v1:indicator-list",
-            {"period": "2021", "breakdown": "men"},
+            {"period": "2021", "breakdown": "m"},
             "e_cc",
         )
 
     def test_list_breakdown_filter_existing_facts(self):
         self.create_facts()
-        self.remove_facts(period="2021", breakdown="men", country="RO")
+        self.remove_facts(period="2021", breakdown="m", country="RO")
         self.check_response_single(
             "v1:breakdown-list",
             {"period": "2021", "country": "RO"},
-            "women",
+            "f",
         )
 
     def test_list_period_filter_existing_facts(self):
         self.create_facts()
-        self.remove_facts(period="2021", breakdown="men", country="RO")
+        self.remove_facts(period="2021", breakdown="m", country="RO")
         self.check_response_single(
             "v1:period-list",
-            {"breakdown": "men", "country": "RO"},
+            {"breakdown": "m", "country": "RO"},
             "2020",
         )
 
     def test_list_unit_filter_existing_facts(self):
         self.create_facts()
-        self.remove_facts(period="2021", breakdown="men", unit="euro")
+        self.remove_facts(period="2021", breakdown="m", unit="euro")
         self.check_response_single(
             "v1:unit-list",
-            {"period": "2021", "breakdown": "men"},
+            {"period": "2021", "breakdown": "m"},
             "nr",
         )
 
     def test_list_country_filter_existing_facts(self):
         self.create_facts()
-        self.remove_facts(period="2021", breakdown="men", country="RO")
+        self.remove_facts(period="2021", breakdown="m", country="RO")
         self.check_response_single(
             "v1:country-list",
-            {"period": "2021", "breakdown": "men"},
+            {"period": "2021", "breakdown": "m"},
             "EU",
         )
 
@@ -184,7 +184,7 @@ class TestDimensionAPI(APIBaseTest):
             "Applied Filters",
             {
                 "indicator": "e_cc",
-                "breakdown": "women",
+                "breakdown": "f",
                 "unit": "euro",
             },
             {
@@ -192,7 +192,7 @@ class TestDimensionAPI(APIBaseTest):
                 "A3": "Breakdown",
                 "A4": "Unit",
                 "B2": "e_cc",
-                "B3": "women",
+                "B3": "f",
                 "B4": "euro",
             },
         )
@@ -202,7 +202,7 @@ class TestDimensionAPI(APIBaseTest):
             "Period",
             {
                 "indicator": "e_cc",
-                "breakdown": "women",
+                "breakdown": "f",
                 "unit": "euro",
                 "format": "xlsx",
             },
@@ -217,7 +217,7 @@ class TestDimensionAPI(APIBaseTest):
             "Country",
             {
                 "indicator": "e_cc",
-                "breakdown": "women",
+                "breakdown": "f",
                 "unit": "euro",
             },
             {
@@ -233,7 +233,7 @@ class TestDimensionAPI(APIBaseTest):
             "Flags",
             {
                 "indicator": "e_cc",
-                "breakdown": "women",
+                "breakdown": "f",
                 "unit": "euro",
             },
             {
@@ -251,7 +251,7 @@ class TestDimensionAPI(APIBaseTest):
             "Raw Data",
             {
                 "indicator": "e_cc",
-                "breakdown": "women",
+                "breakdown": "f",
                 "period": "2021",
                 "unit": "euro",
             },
@@ -259,14 +259,14 @@ class TestDimensionAPI(APIBaseTest):
                 "A2": "2021",
                 "B2": "EU",
                 "C2": "e_cc",
-                "D2": "women",
+                "D2": "f",
                 "E2": "euro",
                 "F2": 42,
                 "G2": "be",
                 "A3": "2021",
                 "B3": "RO",
                 "C3": "e_cc",
-                "D3": "women",
+                "D3": "f",
                 "E3": "euro",
                 "F3": 42,
                 "G3": "be",
@@ -278,7 +278,7 @@ class TestDimensionAPI(APIBaseTest):
             "Data",
             {
                 "indicator": "e_cc",
-                "breakdown": "women",
+                "breakdown": "f",
                 "period": "2021",
                 "unit": "euro",
             },
@@ -286,14 +286,14 @@ class TestDimensionAPI(APIBaseTest):
                 "A2": "Year: 2021",
                 "B2": "European Union",
                 "C2": "Buy Cloud Computing services used over the internet",
-                "D2": "Women",
+                "D2": "Females",
                 "E2": "Euro",
                 "F2": 42,
                 "G2": "break in time series, estimated",
                 "A3": "Year: 2021",
                 "B3": "Romania",
                 "C3": "Buy Cloud Computing services used over the internet",
-                "D3": "Women",
+                "D3": "Females",
                 "E3": "Euro",
                 "F3": 42,
                 "G3": "break in time series, estimated",

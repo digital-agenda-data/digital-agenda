@@ -1,1 +1,170 @@
-[]
+[
+{
+    "model": "charts.chartfilterorder",
+    "pk": 2,
+    "fields": {
+        "display_order": 1,
+        "chart": [
+            "desi",
+            "desi-indicators"
+        ],
+        "filter_field": "period"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 3,
+    "fields": {
+        "display_order": 1,
+        "chart": [
+            "desi",
+            "compare-two-indicators"
+        ],
+        "filter_field": "period"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 4,
+    "fields": {
+        "display_order": 1,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2023"
+        ],
+        "filter_field": "breakdownGroup"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 5,
+    "fields": {
+        "display_order": 2,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2023"
+        ],
+        "filter_field": "indicator"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 6,
+    "fields": {
+        "display_order": 3,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2023"
+        ],
+        "filter_field": "country"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 7,
+    "fields": {
+        "display_order": 1,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2024"
+        ],
+        "filter_field": "breakdownGroup"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 8,
+    "fields": {
+        "display_order": 2,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2024"
+        ],
+        "filter_field": "indicator"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 9,
+    "fields": {
+        "display_order": 3,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2024"
+        ],
+        "filter_field": "country"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 10,
+    "fields": {
+        "display_order": 1,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2025"
+        ],
+        "filter_field": "breakdownGroup"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 11,
+    "fields": {
+        "display_order": 2,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2025"
+        ],
+        "filter_field": "indicator"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 12,
+    "fields": {
+        "display_order": 3,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2025"
+        ],
+        "filter_field": "country"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 13,
+    "fields": {
+        "display_order": 100000,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2026"
+        ],
+        "filter_field": "breakdownGroup"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 14,
+    "fields": {
+        "display_order": 100000,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2026"
+        ],
+        "filter_field": "indicator"
+    }
+},
+{
+    "model": "charts.chartfilterorder",
+    "pk": 15,
+    "fields": {
+        "display_order": 100000,
+        "chart": [
+            "dd-trajectories",
+            "dd-trajectories-2026"
+        ],
+        "filter_field": "country"
+    }
+}
+]

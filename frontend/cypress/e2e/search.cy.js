@@ -24,11 +24,12 @@ describeResponsive("Check Search Page", () => {
   });
   it("Check search results and links", () => {
     cy.searchIndicators("Social Media");
-    cy.get(".ecl-table tbody tr").should("have.length", 3);
+    cy.get(".ecl-table tbody tr").should("have.length", 6);
     cy.get("[data-ecl-table-header=Indicator] a").eq(0).click();
-    cy.get("h1").contains("DESI 2022 by components").go("back");
+    cy.get("h1").contains("DESI 2022 by components");
+    cy.searchIndicators("Social Media");
     cy.get("[data-ecl-table-header=Dataset] a").eq(0).click();
-    cy.get("h1").contains("Digital Economy and Society Index");
+    cy.get("h1").contains("Digital Economy and Society Index (until 2022)");
   });
   it("Check search page pagination", () => {
     cy.searchIndicators("enterprise");

@@ -3,20 +3,20 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100,
+        "updated_at": "2025-11-06T15:18:11.365Z",
+        "display_order": 43,
         "code": "by_location",
         "label": "Geographical area",
         "alt_label": "Geographical area",
-        "definition": "The following breakdown is considered: Own country, Other EU countries, Rest of the world"
+        "definition": "<p>The following breakdown is considered: Own country, Other EU countries, Rest of the world</p>"
     }
 },
 {
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 2,
+        "updated_at": "2024-02-06T15:12:08.163Z",
+        "display_order": 8,
         "code": "byage3classes",
         "label": "Age (3 groups)",
         "alt_label": "Age (3 groups)",
@@ -27,8 +27,8 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 3,
+        "updated_at": "2024-02-06T15:08:20.174Z",
+        "display_order": 7,
         "code": "byage6classes",
         "label": "Age (6 groups)",
         "alt_label": "Age (6 groups)",
@@ -40,7 +40,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 7,
+        "display_order": 17,
         "code": "bycbirth",
         "label": "Country of birth",
         "alt_label": "Country of birth",
@@ -52,7 +52,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 8,
+        "display_order": 19,
         "code": "byccitizen",
         "label": "Citizenship",
         "alt_label": "Citizenship",
@@ -64,7 +64,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 54,
         "code": "byccsophistication",
         "label": "CC services sophistication",
         "alt_label": "CC services sophistication",
@@ -76,7 +76,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 12,
+        "display_order": 5,
         "code": "bydensity",
         "label": "Urban-rural density of the living area",
         "alt_label": "Urban-rural density of the living area",
@@ -88,7 +88,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 10,
+        "display_order": 25,
         "code": "bydigint2015",
         "label": "Level of digital intensity",
         "alt_label": "Level of digital intensity",
@@ -100,7 +100,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 29,
+        "display_order": 37,
         "code": "bydownloadspeed",
         "label": "Maximum advertised download speed 3 categories",
         "alt_label": "Max. adv. download speed 3 cat.",
@@ -112,7 +112,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 30,
+        "display_order": 39,
         "code": "bydownloadspeed4",
         "label": "Maximum advertised download speed 4 categories",
         "alt_label": "Max. adv. download speed 4 cat.",
@@ -136,7 +136,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 21,
+        "display_order": 29,
         "code": "byedugrade",
         "label": "Education grade (years of schooling)",
         "alt_label": "Education grade (years of schooling)",
@@ -148,7 +148,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 5,
+        "display_order": 31,
         "code": "byemp",
         "label": "Employment status",
         "alt_label": "Employment status",
@@ -160,7 +160,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 15,
+        "display_order": 35,
         "code": "byentsize",
         "label": "Enterprise size (SMEs, Large)",
         "alt_label": "Enterprise size (SMEs, Large)",
@@ -172,7 +172,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 16,
+        "display_order": 36,
         "code": "byentsize_s_m_l",
         "label": "Enterprise size (Small, Medium, Large)",
         "alt_label": "Enterprise size (Small, Medium, Large)",
@@ -184,7 +184,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 19,
+        "display_order": 39,
         "code": "byfbbtech",
         "label": "Fixed broadband technology",
         "alt_label": "Fixed broadband technology",
@@ -196,7 +196,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 6,
+        "display_order": 3,
         "code": "bygender",
         "label": "Gender",
         "alt_label": "Gender",
@@ -208,7 +208,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 55,
         "code": "byictsector2subsec",
         "label": "ICT Sectors (2 sub-sectors)",
         "alt_label": "ICT Sectors (2 sub-sectors)",
@@ -220,7 +220,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 56,
         "code": "byictsector6subsec",
         "label": "ICT Sectors (6 sub-sectors)",
         "alt_label": "ICT Sectors (6 sub-sectors)",
@@ -232,7 +232,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 16,
+        "display_order": 37,
         "code": "bynaceeu",
         "label": "NACE EU",
         "alt_label": "NACE EU",
@@ -244,7 +244,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 17,
+        "display_order": 38,
         "code": "bynacenat",
         "label": "NACE NAT",
         "alt_label": "NACE NAT",
@@ -256,7 +256,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 20,
+        "display_order": 40,
         "code": "byorganizationclass",
         "label": "Type of organization",
         "alt_label": "Type of organization",
@@ -268,7 +268,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 13,
+        "display_order": 32,
         "code": "byregion",
         "label": "Objective1-Convergence regions",
         "alt_label": "Objective1-Convergence regions",
@@ -280,7 +280,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 9,
+        "display_order": 22,
         "code": "byrisk",
         "label": "Disadvantage factors",
         "alt_label": "Disadvantage factors",
@@ -292,7 +292,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 10,
+        "display_order": 26,
         "code": "byskills",
         "label": "Computer skills",
         "alt_label": "Computer skills",
@@ -304,7 +304,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 22,
+        "display_order": 30,
         "code": "bytypeproduct",
         "label": "Type of products",
         "alt_label": "Type of products",
@@ -316,7 +316,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 28,
+        "display_order": 36,
         "code": "childrenhh",
         "label": "Household with or without  children",
         "alt_label": "Household with or without  children",
@@ -328,7 +328,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 57,
         "code": "cnect_directorates",
         "label": "DG CONNECT Directorates",
         "alt_label": "DG CONNECT Directorates",
@@ -340,7 +340,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2023-03-28T13:21:51.572Z",
-        "display_order": 2,
+        "display_order": 13,
         "code": "desi",
         "label": "Main Dimensions of the DESI",
         "alt_label": "",
@@ -352,7 +352,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 6,
+        "display_order": 15,
         "code": "desi_c_bbpi",
         "label": "Indicators under Broadband prices",
         "alt_label": null,
@@ -364,7 +364,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2023-09-15T09:46:05.196Z",
-        "display_order": 4,
+        "display_order": 28,
         "code": "desi_c_fbbc",
         "label": "Indicators under Fixed broadband coverage",
         "alt_label": "",
@@ -376,7 +376,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 3,
+        "display_order": 20,
         "code": "desi_c_fbbtc",
         "label": "Indicators under Fixed broadband take-up",
         "alt_label": null,
@@ -388,7 +388,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 5,
+        "display_order": 33,
         "code": "desi_c_mbb",
         "label": "Indicators under Mobile broadband",
         "alt_label": null,
@@ -400,7 +400,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 2,
+        "display_order": 14,
         "code": "desi_conn",
         "label": "Sub-dimensions of Connectivity",
         "alt_label": null,
@@ -412,7 +412,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 4,
+        "display_order": 30,
         "code": "desi_dps",
         "label": "Sub-dimensions of Digital public services",
         "alt_label": null,
@@ -424,7 +424,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 10,
+        "display_order": 27,
         "code": "desi_dps_egov",
         "label": "Indicators under e-Government",
         "alt_label": null,
@@ -448,7 +448,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 2,
+        "display_order": 16,
         "code": "desi_hc_asd",
         "label": "Indicators under Advanced skills and development",
         "alt_label": null,
@@ -472,7 +472,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 3,
+        "display_order": 23,
         "code": "desi_idt",
         "label": "Sub-dimensions of Integration of digital technology",
         "alt_label": null,
@@ -484,7 +484,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 7,
+        "display_order": 18,
         "code": "desi_idt_di",
         "label": "Indicators under Digital intensity",
         "alt_label": null,
@@ -496,7 +496,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 8,
+        "display_order": 21,
         "code": "desi_idt_dtb",
         "label": "Indicators under Digital technologies for businesses",
         "alt_label": null,
@@ -508,7 +508,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 9,
+        "display_order": 24,
         "code": "desi_idt_ecomm",
         "label": "Indicators under e-Commerce",
         "alt_label": null,
@@ -532,7 +532,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 25,
+        "display_order": 33,
         "code": "digskill_level",
         "label": "Digital skills level",
         "alt_label": "Digital skills level",
@@ -544,7 +544,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 108,
+        "display_order": 31,
         "code": "e_gov_1_uc",
         "label": "User centricity",
         "alt_label": "User centricity",
@@ -556,7 +556,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 108,
+        "display_order": 32,
         "code": "e_gov_1_ucg",
         "label": "User Centric Government",
         "alt_label": "User Centric Government",
@@ -568,7 +568,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 109,
+        "display_order": 33,
         "code": "e_gov_2_tg",
         "label": "Transparent Government",
         "alt_label": "Transparent Government",
@@ -580,7 +580,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 109,
+        "display_order": 34,
         "code": "e_gov_2_tr",
         "label": "Transparency",
         "alt_label": "Transparency",
@@ -592,7 +592,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 110,
+        "display_order": 35,
         "code": "e_gov_3_cm",
         "label": "Citizen Mobility",
         "alt_label": "Citizen Mobility",
@@ -604,7 +604,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 110,
+        "display_order": 36,
         "code": "e_gov_3_ke",
         "label": "Key Enablers",
         "alt_label": "Key Enablers",
@@ -616,7 +616,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 111,
+        "display_order": 38,
         "code": "e_gov_4_bm",
         "label": "Business Mobility",
         "alt_label": "Business Mobility",
@@ -628,7 +628,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 111,
+        "display_order": 37,
         "code": "e_gov_4_cb",
         "label": "Cross-border services",
         "alt_label": "Cross-border services",
@@ -640,7 +640,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 112,
+        "display_order": 39,
         "code": "e_gov_5_ke",
         "label": "Key Enablers",
         "alt_label": "Key Enablers",
@@ -652,7 +652,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 107,
+        "display_order": 30,
         "code": "e_gov_events",
         "label": "Life Events for eGovernment",
         "alt_label": "Life Events for eGovernment",
@@ -664,7 +664,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2023-09-19T12:27:33.568Z",
-        "display_order": 112,
+        "display_order": 40,
         "code": "e_gov_scope",
         "label": "Citizen and business",
         "alt_label": "Citizen and business",
@@ -699,12 +699,12 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 24,
+        "updated_at": "2026-04-06T14:30:10.574Z",
+        "display_order": 29,
         "code": "egov_le",
-        "label": "Life Events for eGovernment benchmarking",
-        "alt_label": "Life Events for eGovernment benchmarking",
-        "definition": "Life Events constitute situations in which a citizen or business needs to interact with with Public Authorities. The eGovernment benchmarking defines a set of Life Events and assesses how well different countries perform in supporting all the necessary interactions between the citizen and the public administration when going through each of those Life Events."
+        "label": "By life event",
+        "alt_label": "",
+        "definition": "<p>Life Events constitute situations in which a citizen or business needs to interact with with Public Authorities. The eGovernment benchmark defines a set of Life Events and assesses how well different countries perform in supporting all the necessary interactions between the citizen and the public administration when going through each of those Life Events.</p>"
     }
 },
 {
@@ -712,7 +712,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 58,
         "code": "epsi_dimensions",
         "label": "PSI sub-dimensions",
         "alt_label": "PSI sub-dimensions",
@@ -724,7 +724,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 11,
+        "display_order": 29,
         "code": "hhbyiq",
         "label": "Household Income in quartiles",
         "alt_label": "Household Income in quartiles",
@@ -736,7 +736,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 14,
+        "display_order": 34,
         "code": "hhbytype",
         "label": "Presence of dependent childrens",
         "alt_label": "Dependent childrens",
@@ -748,7 +748,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 27,
+        "display_order": 35,
         "code": "ictproffession",
         "label": "ICT and non-ICT profession",
         "alt_label": "ICT and non-ICT profession",
@@ -760,7 +760,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 59,
         "code": "infso_directorates",
         "label": "DG INFSO Directorates",
         "alt_label": "DG INFSO Directorates",
@@ -772,7 +772,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 26,
+        "display_order": 34,
         "code": "labour_force",
         "label": "Labour force",
         "alt_label": "Labour force",
@@ -784,7 +784,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 60,
         "code": "mhz_bands",
         "label": "Spectrum Bands ",
         "alt_label": "Spectrum Bands",
@@ -796,7 +796,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 99,
+        "display_order": 42,
         "code": "others",
         "label": "others",
         "alt_label": "others",
@@ -808,7 +808,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 23,
+        "display_order": 31,
         "code": "rural_pop",
         "label": "Rural population",
         "alt_label": "Rural population",
@@ -820,7 +820,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 100000,
+        "display_order": 61,
         "code": "sos_agg",
         "label": "Strategic Objectives Aggregated",
         "alt_label": "Strategic Objectives (27)",
@@ -831,12 +831,12 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
-        "updated_at": "2023-09-19T14:01:17.534Z",
+        "updated_at": "2026-04-06T14:30:50.354Z",
         "display_order": 1,
         "code": "total",
         "label": "Total",
         "alt_label": "Total",
-        "definition": "Total (no breakdown)"
+        "definition": "<p>Total (no breakdown)</p>"
     }
 },
 {
@@ -844,7 +844,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 114,
+        "display_order": 53,
         "code": "wid_score",
         "label": "Women in Digital score",
         "alt_label": "Women in digital score",
@@ -856,7 +856,7 @@
     "fields": {
         "created_at": "2022-05-27T14:13:37.683Z",
         "updated_at": "2022-05-27T14:13:37.683Z",
-        "display_order": 29,
+        "display_order": 38,
         "code": "workingscheme",
         "label": "Working patterns and conditions",
         "alt_label": "Working patterns and conditions",
@@ -868,7 +868,7 @@
     "fields": {
         "created_at": "2023-04-17T09:22:42.857Z",
         "updated_at": "2023-04-17T10:43:15.987Z",
-        "display_order": 100001,
+        "display_order": 62,
         "code": "nace_r2_17",
         "label": "Economic sectors (17 NACE groups)",
         "alt_label": "Economic sectors (17 NACE groups)",
@@ -879,11 +879,191 @@
     "model": "core.breakdowngroup",
     "fields": {
         "created_at": "2023-09-23T14:10:12.305Z",
-        "updated_at": "2023-09-26T14:16:15.930Z",
-        "display_order": 100002,
-        "code": "digital_decade",
-        "label": "Digital Decade trajectories",
-        "alt_label": "Digital Decade trajectories",
+        "updated_at": "2025-05-12T14:24:55.347Z",
+        "display_order": 64,
+        "code": "digital_decade_2024",
+        "label": "Digital Decade trajectories (2024)",
+        "alt_label": "Digital Decade trajectories (2024)",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-02-06T15:06:48.195Z",
+        "updated_at": "2024-02-06T15:11:20.060Z",
+        "display_order": 11,
+        "code": "byageandgender_f_6classes",
+        "label": "Females by age (6 groups)",
+        "alt_label": "",
+        "definition": "breakdown by 6 age groups: 16-24, 25-34,35-44, 45-54, 55-64 and 65-74 years"
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-02-06T15:07:45.435Z",
+        "updated_at": "2024-02-06T15:11:27.619Z",
+        "display_order": 12,
+        "code": "byageandgender_m_6classes",
+        "label": "Males by age (6 groups)",
+        "alt_label": "",
+        "definition": "breakdown by 6 age groups: 16-24, 25-34,35-44, 45-54, 55-64 and 65-74 years"
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-02-06T15:09:44.124Z",
+        "updated_at": "2024-02-06T15:11:33.405Z",
+        "display_order": 9,
+        "code": "byageandgender_f_3classes",
+        "label": "Females by age (3 groups)",
+        "alt_label": "",
+        "definition": "breakdown by 3 age groups: 16-24, 25-54 and 55-74 years"
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-02-06T15:10:21.789Z",
+        "updated_at": "2024-02-06T15:11:38.101Z",
+        "display_order": 10,
+        "code": "byageandgender_m_3classes",
+        "label": "Males by age (3 groups)",
+        "alt_label": "",
+        "definition": "breakdown by 3 age groups: 16-24, 25-54 and 55-74 years"
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-03-06T14:49:50.849Z",
+        "updated_at": "2026-04-06T10:35:00.517Z",
+        "display_order": 28,
+        "code": "egov_user_type",
+        "label": "By type of user",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-06-12T14:41:56.360Z",
+        "updated_at": "2024-06-12T14:47:25.456Z",
+        "display_order": 65,
+        "code": "digital_decade_2023",
+        "label": "Digital Decade trajectories (2023)",
+        "alt_label": "Digital Decade trajectories (2023)",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2024-10-27T08:47:19.161Z",
+        "updated_at": "2024-10-27T08:50:49.803Z",
+        "display_order": 2,
+        "code": "dsk_competence",
+        "label": "Competence areas",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2025-05-12T14:29:34.597Z",
+        "updated_at": "2025-05-12T16:02:01.361Z",
+        "display_order": 63,
+        "code": "digital_decade_2025",
+        "label": "Digital Decade trajectories (2025)",
+        "alt_label": "Digital Decade trajectories (2025)",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2025-09-15T16:17:43.640Z",
+        "updated_at": "2025-09-15T16:17:43.640Z",
+        "display_order": 67,
+        "code": "ict",
+        "label": "ICT sector",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2025-10-22T08:28:17.850Z",
+        "updated_at": "2025-10-23T15:22:55.311Z",
+        "display_order": 68,
+        "code": "IMP_EXP",
+        "label": "Stock or flow",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2025-11-12T11:11:59.642Z",
+        "updated_at": "2025-11-12T11:14:41.160Z",
+        "display_order": 6,
+        "code": "byage2classes",
+        "label": "Age (2 groups)",
+        "alt_label": "",
+        "definition": "<p>breakdown by 2 age groups: 16-24, 25-64 years</p>"
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2025-12-03T07:26:40.176Z",
+        "updated_at": "2025-12-03T07:26:52.497Z",
+        "display_order": 100013,
+        "code": "wst_oper",
+        "label": "Waste management operations",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2025-12-18T13:31:59.297Z",
+        "updated_at": "2025-12-18T13:31:59.297Z",
+        "display_order": 100014,
+        "code": "desi_iuai",
+        "label": "Use of generative AI tools",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2026-03-26T12:29:59.857Z",
+        "updated_at": "2026-03-26T12:37:33.144Z",
+        "display_order": 100015,
+        "code": "desi_transparency",
+        "label": "Transparency",
+        "alt_label": "",
+        "definition": ""
+    }
+},
+{
+    "model": "core.breakdowngroup",
+    "fields": {
+        "created_at": "2026-04-08T11:15:23.178Z",
+        "updated_at": "2026-04-08T11:22:15.747Z",
+        "display_order": 100016,
+        "code": "digital_decade_2026",
+        "label": "Digital Decade trajectories (2026)",
+        "alt_label": "",
         "definition": ""
     }
 }

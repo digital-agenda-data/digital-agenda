@@ -224,7 +224,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-21T08:58:07.512Z",
+        "updated_at": "2024-04-01T11:25:44.484Z",
         "code": "bb_speed100",
         "label": "Share of fixed broadband subscriptions >= 100 Mbps - Advertised download speed",
         "alt_label": "Share of fixed broadband subscriptions >= 100 Mbps",
@@ -367,7 +367,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-29T16:38:10.813Z",
+        "updated_at": "2024-09-24T12:37:22.958Z",
         "code": "desi_5g",
         "label": "5G spectrum",
         "alt_label": "5G spectrum",
@@ -627,11 +627,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-29T16:38:51.256Z",
+        "updated_at": "2024-08-08T09:39:20.838Z",
         "code": "desi_hc_abss",
         "label": "At least basic digital content creation skills",
         "alt_label": "At least basic digital content creation skills",
-        "definition": "Individuals with at a basic level of skills in using software for digital content creation",
+        "definition": "Individuals with at least a basic level of skills (basic or above basic) in using software for digital content creation",
         "time_coverage": null,
         "note": ""
     }
@@ -757,7 +757,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-29T16:39:25.542Z",
+        "updated_at": "2024-09-20T16:20:44.157Z",
         "code": "desi_idt_bigdat",
         "label": "Big data",
         "alt_label": "Big data",
@@ -835,7 +835,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-29T16:39:35.480Z",
+        "updated_at": "2024-09-20T16:14:56.977Z",
         "code": "desi_idt_einv",
         "label": "e-Invoices",
         "alt_label": "e-Invoices",
@@ -900,7 +900,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-29T16:39:49.544Z",
+        "updated_at": "2024-04-16T09:12:29.435Z",
         "code": "desi_idt_smeso",
         "label": "SMEs selling online",
         "alt_label": "SMEs selling online",
@@ -913,11 +913,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-29T16:39:52.397Z",
+        "updated_at": "2024-04-16T09:15:21.805Z",
         "code": "desi_idt_socmed",
         "label": "Social media",
         "alt_label": "Social media",
-        "definition": "Enterprises using two or more of the following social media: social networks, enterprise's blog or microblog, multimedia content sharing websites, wiki-based knowledge sharing tools. Using social media means that the enterprise has a user profile, an account or a user license depending on the requirements and the type of the social media.",
+        "definition": "Enterprises using two or more of the following social media: social networks, enterprise&#39;s blog or microblog, multimedia content sharing websites, wiki-based knowledge sharing tools. Using social media means that the enterprise has a user profile, an account or a user license depending on the requirements and the type of the social media.",
         "time_coverage": null,
         "note": ""
     }
@@ -1251,52 +1251,52 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-12-19T15:02:18.038Z",
+        "updated_at": "2025-11-29T18:04:49.819Z",
         "code": "e_di3_hi",
         "label": "DII v3: Enterprises with high digital intensity index (2021, 2023)",
         "alt_label": "DII v3: Enterprises with high digital intensity index (2021, 2023)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-12-19T15:02:23.930Z",
+        "updated_at": "2025-11-29T18:04:58.748Z",
         "code": "e_di3_lo",
         "label": "DII v3: Enterprises with low digital intensity index (2021, 2023)",
         "alt_label": "DII v3: Enterprises with low digital intensity index (2021, 2023)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-12-19T15:02:30.167Z",
+        "updated_at": "2025-11-29T18:05:08.496Z",
         "code": "e_di3_vhi",
         "label": "DII v3: Enterprises with very high digital intensity index (2021, 2023)",
         "alt_label": "DII v3: Enterprises with very high digital intensity index (2021, 2023)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-12-19T15:02:35.658Z",
+        "updated_at": "2025-11-29T18:05:16.161Z",
         "code": "e_di3_vlo",
         "label": "DII v3: Enterprises with very low digital intensity index (2021, 2023)",
         "alt_label": "DII v3: Enterprises with very low digital intensity index (2021, 2023)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
@@ -3669,13 +3669,13 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2022-05-27T14:14:32.070Z",
+        "updated_at": "2024-09-20T15:49:43.272Z",
         "code": "ict_spec3_broad",
         "label": "Persons Employed with ICT Specialist Skills (broad measure)",
         "alt_label": "Persons Employed with ICT Specialist Skills (broad measure)",
-        "definition": "The definition of the ICT Specialists' occupations is based on the new ISCO-08 classification. It includes ICT service managers (code 133), ICT professionals (25), ICT technicians (35) and some other groups, from electronic and telecomunnications engineers (215*) up to ICT installers and servicers (7422). Where 4-digit data was not available, the share of computing graduates in the corresponding 3-digit data was estimated. See <a href=\"http://ec.europa.eu/eurostat/cache/metadata/en/isoc_sks_esms.htm\">metadata fiche</a> for a complete explanation of the methodology  (Eurostat table isoc_sks_itspt)",
+        "definition": "The definition of the ICT Specialists&#39; occupations is based on the new ISCO-08 classification. It includes ICT service managers (code 133), ICT professionals (25), ICT technicians (35) and some other groups, from electronic and telecomunnications engineers (215*) up to ICT installers and servicers (7422). Where 4-digit data was not available, the share of computing graduates in the corresponding 3-digit data was estimated. See <a href=\"http://ec.europa.eu/eurostat/cache/metadata/en/isoc_sks_esms.htm\">metadata fiche</a> for a complete explanation of the methodology (Eurostat table isoc_sks_itspt)",
         "time_coverage": null,
-        "note": "The definition of the ICT Specialists' occupations before 2010 is based on ISCO-88. It includes codes 213, 312, 313, 1236, 2144, 2359, 3114, 7242, 7243. Due to change of the classification and the related definition, the data on ICT Specialists for 2011 and later are not fully comparable with previous years."
+        "note": "The definition of the ICT Specialists&#39; occupations before 2010 is based on ISCO-88. It includes codes 213, 312, 313, 1236, 2144, 2359, 3114, 7242, 7243. Due to change of the classification and the related definition, the data on ICT Specialists for 2011 and later are not fully comparable with previous years."
     }
 },
 {
@@ -4059,11 +4059,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2022-05-27T14:14:32.070Z",
-        "updated_at": "2023-09-20T16:57:42.015Z",
+        "updated_at": "2024-08-08T09:39:50.377Z",
         "code": "wid_ius_ss",
         "label": "2.3 At least basic digital content creation skills",
         "alt_label": "2.3 At least basic digital content creation skills",
-        "definition": "Individuals with a basic level in using software for digital content creation",
+        "definition": "Individuals with at least a basic level of skills (basic or above basic) in using software for digital content creation",
         "time_coverage": null,
         "note": ""
     }
@@ -4267,78 +4267,78 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.067Z",
-        "updated_at": "2023-12-19T14:36:10.480Z",
+        "updated_at": "2025-11-29T18:06:56.311Z",
         "code": "e_di4_vlo",
         "label": "DII v4: Enterprises with very low digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with very low digital intensity index (2022)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.131Z",
-        "updated_at": "2023-12-19T14:36:34.567Z",
+        "updated_at": "2025-11-29T18:06:44.242Z",
         "code": "e_di4_lo",
         "label": "DII v4: Enterprises with low digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with low digital intensity index (2022)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.143Z",
-        "updated_at": "2023-12-19T14:36:41.299Z",
+        "updated_at": "2025-11-29T18:06:38.131Z",
         "code": "e_di4_hi",
         "label": "DII v4: Enterprises with high digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with high digital intensity index (2022)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-05T10:13:31.153Z",
-        "updated_at": "2023-12-19T14:36:19.495Z",
+        "updated_at": "2025-11-29T18:06:50.327Z",
         "code": "e_di4_vhi",
         "label": "DII v4: Enterprises with very high digital intensity index (2022)",
         "alt_label": "DII v4: Enterprises with very high digital intensity index (2022)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Then they are divided into four clusters of digital intensity: Very Low (scores 0-3), Low (score 4-6), High (score 7-9), Very High (score 10-12).</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-11T18:09:29.818Z",
-        "updated_at": "2023-12-19T14:47:53.826Z",
+        "updated_at": "2025-11-29T18:07:29.872Z",
         "code": "e_di3_sme_gelo",
         "label": "DII v3: SMEs with at least a basic level of digital intensity (2021, 2023)",
         "alt_label": "DII v3: SMEs with at least a basic level of digital intensity (2021, 2023)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Basic levels are attributed to those enterprises using at least 4 of the listed digital technologies.",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Basic levels are attributed to those enterprises using at least 4 of the listed digital technologies.</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-07-11T18:17:13.122Z",
-        "updated_at": "2023-12-19T14:39:41.503Z",
+        "updated_at": "2025-11-29T18:07:42.220Z",
         "code": "e_di4_sme_gelo",
         "label": "DII v4: SMEs with at least a basic level of digital intensity (2022)",
         "alt_label": "DII v4: SMEs with at least a basic level of digital intensity (2022)",
-        "definition": "The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Basic levels are attributed to those enterprises using at least 4 of the listed digital technologies.",
+        "definition": "<p>The Digital Intensity score is based on counting how many out of 12 technologies are used by each enterprise. Basic levels are attributed to those enterprises using at least 4 of the listed digital technologies.</p>",
         "time_coverage": null,
-        "note": "The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf."
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_1.pdf.</p>"
     }
 },
 {
@@ -4384,10 +4384,10 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-20T11:25:53.933Z",
-        "updated_at": "2023-09-20T11:25:53.933Z",
+        "updated_at": "2024-08-29T12:30:27.159Z",
         "code": "5g_cov_3400_3800",
-        "label": "5G coverage on the 3.4-3.8 GHz spectrum band",
-        "alt_label": "5G coverage on the 3.4-3.8 GHz spectrum band",
+        "label": "5G coverage in the 3.4-3.8 GHz spectrum band",
+        "alt_label": "5G coverage in the 3.4-3.8 GHz spectrum band",
         "definition": "% of populated areas with coverage by 5G using the 3.4-3.8GHz spectrum band",
         "time_coverage": null,
         "note": ""
@@ -4553,11 +4553,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-20T16:52:38.088Z",
-        "updated_at": "2023-09-20T16:56:45.907Z",
+        "updated_at": "2024-08-08T09:41:05.039Z",
         "code": "rid_ius_ss",
         "label": "2.3 At least basic digital content creation skills",
         "alt_label": "2.3 At least basic digital content creation skills",
-        "definition": "Individuals with a basic level in using software for digital content creation",
+        "definition": "Individuals with at least a basic level of skills (basic or above basic) in using software for digital content creation",
         "time_coverage": null,
         "note": ""
     }
@@ -4682,90 +4682,12 @@
 {
     "model": "core.indicator",
     "fields": {
-        "created_at": "2023-09-23T12:53:21.186Z",
-        "updated_at": "2023-09-28T11:57:44.676Z",
-        "code": "desi_aehr",
-        "label": "Access to e-health records",
-        "alt_label": "Access to e-health records",
-        "definition": "measured as (i) the nationwide availability of online access services for citizens to their electronic health records data (via a patient portal, or a patient mobile app) with additional measures in place that enable certain categories of people (e.g. guardians for children, people with disabilities, elderly) to also access their data, and (ii) the percentage of individuals that have the ability to obtain or make use of their own minimum set of health-related data currently stored in public and private electronic health-record (EHR) systems.",
-        "time_coverage": "2022",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-23T12:58:33.359Z",
-        "updated_at": "2023-09-28T13:17:52.910Z",
-        "code": "desi_hc_fbds",
-        "label": "Females having at least basic digital skills",
-        "alt_label": "Females having at least basic digital skills",
-        "definition": "Females with \"basic\" or \"above basic\" digital skills in each of the following five dimensions: information, communication, problem solving, software for content creation and safety",
-        "time_coverage": "2021",
-        "note": "Overall digital skills refer to five areas: information and data literacy skills (for example, searching online); communication and collaboration skills (for example, communication via e-mail); digital content creation skills (for example, writing programming code); safety skills (for example, protecting personal data); and problem-solving skills (for example, installing software)."
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-23T12:59:37.322Z",
-        "updated_at": "2023-09-28T11:52:24.292Z",
-        "code": "desi_hc_iu",
-        "label": "Internet use",
-        "alt_label": "Internet use",
-        "definition": "Individuals who use the internet at least once a week",
-        "time_coverage": "2017-2022",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-23T13:00:29.457Z",
-        "updated_at": "2023-09-28T11:57:36.238Z",
-        "code": "desi_mf",
-        "label": "Mobile friendliness",
-        "alt_label": "Mobile friendliness",
-        "definition": "The extent to which e-government services are provided through a mobile-friendly interface, an interface that is responsive to the mobile device.",
-        "time_coverage": "2021-2022",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-23T13:01:01.658Z",
-        "updated_at": "2023-09-28T11:57:22.178Z",
-        "code": "desi_tdpd",
-        "label": "Transparency of service delivery, design and personal data",
-        "alt_label": "Transparency of service delivery, design and personal data",
-        "definition": "The extent to which service processes are transparent, services are designed with user involvement and users can manage their personal data",
-        "time_coverage": "2021-2022",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-23T13:01:21.537Z",
-        "updated_at": "2023-09-28T11:57:29.976Z",
-        "code": "desi_us",
-        "label": "User support",
-        "alt_label": "User support",
-        "definition": "The extent to which online support, help features, and feedback mechanisms are available incl. cross-border",
-        "time_coverage": "2021-2022",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
         "created_at": "2023-09-23T14:20:44.195Z",
-        "updated_at": "2023-09-26T13:31:52.324Z",
+        "updated_at": "2026-01-20T13:50:44.464Z",
         "code": "dd_bds",
         "label": "At least basic digital skills",
         "alt_label": "At least basic digital skills",
-        "definition": "Individuals with ‘basic’ or ‘above basic’ digital skills in each of the following five dimensions: information, communication, problem solving, digital content creation and safety skills",
+        "definition": "<p>Individuals with ‘basic’ or ‘above basic’ digital skills in ALL the following five competences:<br>1. <i>Information and data literacy</i>: Finding information about goods or services; Seeking health-related information; Reading online news sites, newspapers or news magazines; Activities related to fact-checking online information and its sources.<br>2. <i>Communication and collaboration</i>: Sending/receiving emails; Telephoning/video calls over the internet; Instant messaging; Participating in social networks; Expressing opinions on civic or political issues on websites or in social media; Taking part in online consultations or voting to define civic or political issues.<br>3. <i>Digital content creation</i>: Using word processing or spreadsheet software; Editing photos, video or audio files; Copying or moving files (such as documents, data, images, video) between folders, devices (via e-mail, instant messaging, USB, cable) or on the cloud; Creating files incorporating several elements such as text, picture, table, chart, animation or sound; Using advanced features of spreadsheet software (functions, formulas, macros and other developer functions) to organize, analyse, structure or modify data; Writing code in a programming language.<br>4. <i>Safety</i>: Managing access to own personal data by checking that the website where the respondent provided personal data was secure, reading privacy statements before providing personal data, restricting or refusing access to own geographical location, &nbsp;limiting access to profile or content on social networking sites or shared online storage, refusing allowing use of personal data for advertising purposes, changing settings in own internet browser to prevent or limit cookies on any of the respondent devices.<br>5. <i>Problem solving</i>: Downloading or installing software or apps; Changing settings of software, app or device; Online purchases; Selling online; Used online learning resources; Internet banking; Looking for a job or sending a job application.</p>",
         "time_coverage": null,
         "note": ""
     }
@@ -4774,11 +4696,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:21:00.367Z",
-        "updated_at": "2023-09-26T13:33:11.573Z",
+        "updated_at": "2024-10-11T12:31:37.787Z",
         "code": "dd_ictspec",
         "label": "ICT specialists",
         "alt_label": "ICT specialists",
-        "definition": "In accordance with the ISCO-083 code classification, ICT specialists are workers who have the ability to develop, operate and maintain ICT systems, and for whom ICT constitutes the main part of their job.",
+        "definition": "Employed ICT specialists.<br />\r\nIn accordance with the ISCO-083 code classification, ICT specialists are workers who have the ability to develop, operate and maintain ICT systems, and for whom ICT constitutes the main part of their job,&nbsp;including jobs like ICT service managers, ICT professionals, ICT technicians, ICT installers and servicers.",
         "time_coverage": null,
         "note": ""
     }
@@ -4787,11 +4709,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:50:41.515Z",
-        "updated_at": "2023-09-26T13:36:26.418Z",
+        "updated_at": "2026-01-12T11:17:57.214Z",
         "code": "dd_vhcnc",
         "label": "Gigabit connectivity",
         "alt_label": "Gigabit connectivity",
-        "definition": "measured as the percentage of households covered by fixed Very High-Capacity Networks (VHCN).",
+        "definition": "<p>measured as the percentage of households covered by fixed Very High-Capacity Networks (VHCN).</p>",
         "time_coverage": null,
         "note": ""
     }
@@ -4800,11 +4722,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:51:41.061Z",
-        "updated_at": "2023-09-23T17:11:26.632Z",
+        "updated_at": "2026-01-12T11:17:51.596Z",
         "code": "dd_fttpc",
         "label": "Fiber to the Premises (FTTP) coverage",
         "alt_label": "Fiber to the Premises (FTTP) coverage",
-        "definition": "Share of households covered by fiber to the premises (FTTP)",
+        "definition": "<p>Percentage of households covered by FTTH and FTTB</p>",
         "time_coverage": null,
         "note": ""
     }
@@ -4813,11 +4735,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:52:08.524Z",
-        "updated_at": "2023-09-26T13:37:12.994Z",
+        "updated_at": "2026-01-12T11:17:47.080Z",
         "code": "dd_5gc",
         "label": "5G coverage",
         "alt_label": "5G coverage",
-        "definition": "Percentage of populated areas covered by at least one 5G network regardless of the spectrum band used.",
+        "definition": "<p>Percentage of populated areas covered by at least one 5G network regardless of the spectrum band used.</p>",
         "time_coverage": null,
         "note": ""
     }
@@ -4826,11 +4748,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:52:37.796Z",
-        "updated_at": "2023-09-26T13:38:07.003Z",
+        "updated_at": "2025-04-14T13:09:01.573Z",
         "code": "dd_edge",
         "label": "Edge nodes",
         "alt_label": "Edge nodes",
-        "definition": "defined as the number of compute nodes providing latencies below 20 milliseconds.",
+        "definition": "Number of edge computing nodes providing latencies below 20 milliseconds.",
         "time_coverage": null,
         "note": ""
     }
@@ -4839,7 +4761,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:52:58.965Z",
-        "updated_at": "2023-09-26T14:04:14.961Z",
+        "updated_at": "2025-05-13T08:26:03.584Z",
         "code": "dd_quantum",
         "label": "Quantum computing",
         "alt_label": "Quantum computing",
@@ -4852,11 +4774,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:53:30.027Z",
-        "updated_at": "2023-09-26T13:40:34.856Z",
+        "updated_at": "2024-11-04T15:28:19.618Z",
         "code": "dd_cloud",
         "label": "Cloud computing",
         "alt_label": "Cloud computing",
-        "definition": "percentage of enterprises using at least one of the cloud computing services reported in the Commission Decision C(2023)4288 art. 2.1(8)",
+        "definition": "Cloud computing, measured as the percentage of enterprises using&nbsp;at least one intermediate or sophisticated cloud computing services:&nbsp;finance or accounting software applications, enterprise resource planning (ERP) software applications, customer relationship management (CRM) software applications, security software applications, hosting the enterprise&rsquo;s database(s), and computing platform providing a hosted environment for application development, testing or deployment.",
         "time_coverage": null,
         "note": ""
     }
@@ -4865,11 +4787,11 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:53:53.051Z",
-        "updated_at": "2023-09-26T13:41:14.769Z",
+        "updated_at": "2024-10-11T12:11:45.036Z",
         "code": "dd_bigdata",
-        "label": "Big data",
-        "alt_label": "Big data",
-        "definition": "Percentage of enterprises analysing big data from any data source.",
+        "label": "Data Analytics (former Big Data)",
+        "alt_label": "Data Analytics (former Big Data)",
+        "definition": "Enterprises performing data analytics (internally or externally). Data analytics refers to the use of technologies, techniques or software tools for analysing data to extract patterns, trends and insights to make conclusions, predictions and better decision-making with the aim of improving performance (e.g. increase production, reduce costs). Data may be extracted from own enterprise data source or from external sources (e.g. suppliers, customers, government). Before 2023 this indicator was &quot;Big data&quot;.",
         "time_coverage": null,
         "note": ""
     }
@@ -4878,7 +4800,7 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:54:01.994Z",
-        "updated_at": "2023-09-26T13:41:43.683Z",
+        "updated_at": "2024-09-24T12:55:14.025Z",
         "code": "dd_ai",
         "label": "Artificial Intelligence",
         "alt_label": "Artificial Intelligence",
@@ -4891,52 +4813,52 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:54:12.405Z",
-        "updated_at": "2023-09-26T13:42:54.499Z",
+        "updated_at": "2026-03-11T08:50:51.472Z",
         "code": "dd_dii",
-        "label": "SMEs with at least a basic level of digital intensity",
-        "alt_label": "SMEs with at least a basic level of digital intensity",
-        "definition": "Percentage of SMEs using at least 4 of 12 selected digital technologies",
+        "label": "SMEs with at least a basic level of digital intensity intensity index",
+        "alt_label": "",
+        "definition": "<p>Percentage of SMEs using at least 4 of 12 selected digital technologies.</p>",
         "time_coverage": null,
-        "note": ""
+        "note": "<p>The composition of the Digital Intensity Index (DII) varies between different survey years, depending on the questions included in the survey. The exact composition for each survey year can be found at <a href=\"Digital Intensity Index composition\">Digital Intensity Index composition</a>.<br><br>Under the Digital Decade, the digitalisation of SMEs is measured through version 3 of the DII for the estimation of the EU-level baseline trajectory. This version of the index was used in the State of the Digital Decade reports 2023 and 2024 to estimate the EU-level baseline trajectory and serves as the reference point for the State of the Digital Decade Report 2025 as well.<br><br><i>Version 4 of the DII (measured in 2024) includes a different blend of technologies used by SMEs. While the absolute values of both versions 3 and 4 are not comparable, their recent annual growth is similar, and version 4’s growth can be used to approximate the trajectory of version 3 of the DII. Hence, the estimated 2024 DII version 3 value was calculated based on the recent annual growth of DII version 4, which is 2.8% year on year. The estimated DII version 3 value of 59.3% matches the reference baseline trajectory published in the 2024 SDDR, therefore no revision of the baseline trajectory was implemented.</i><br>&nbsp;</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:54:24.102Z",
-        "updated_at": "2023-09-26T13:44:06.120Z",
+        "updated_at": "2025-05-13T08:49:08.994Z",
         "code": "dd_unicorns",
         "label": "Unicorns",
         "alt_label": "Unicorns",
         "definition": "calculated as the sum of unicorns referred to in Article 2, point (11)(a), of Decision (EU) 2022/2481 and those referred to in Article 2, point (11)(b), of that Decision",
         "time_coverage": null,
-        "note": ""
+        "note": "Data was extracted from Dealroom on 24/03/2025 and included all possible retroactive revisions. As for all the previous DESI editions, the UK is excluded from the statistics."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:54:39.452Z",
-        "updated_at": "2023-09-26T14:03:59.062Z",
+        "updated_at": "2024-10-11T17:39:50.586Z",
         "code": "dd_pscit",
         "label": "Online provision of key public services for citizens",
         "alt_label": "Online provision of key public services for citizens",
-        "definition": "Defined as the share of administrative steps that can be done fully online for major life events listed in the Commission decision C2023(4288) art.2.1(13).",
+        "definition": "Online provision of key public services for citizens, measured as the share of administrative steps that can be completed fully online for major life events.&nbsp;There are 7 life events considered for citizens:&nbsp;1. Family, 2. Career, 3. Studying, 4. Health, 5. Transport, 6. Moving, 7. Starting a Small Claims Procedure.<br />\r\nThe indicator is an aggregate score of multiple elements describing:<br />\r\n- the number of services which are provided online to national users;<br />\r\n- the number of services for which online information is provided to national users;<br />\r\n- the number of services provided through a portal;<br />\r\n- the number of services which are provided online to cross-border users;<br />\r\n- and the number of services for which online information is provided to cross-border users.",
         "time_coverage": null,
-        "note": ""
+        "note": "See also Commission decision C2023(4288) art.2.1(13)."
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-23T14:55:18.335Z",
-        "updated_at": "2023-09-26T14:12:54.648Z",
+        "updated_at": "2024-10-11T17:39:12.550Z",
         "code": "dd_psbiz",
         "label": "Online provision of key public services for businesses",
         "alt_label": "Online provision of key public services for businesses",
-        "definition": "measured as the share of administrative steps needed to start a business and conduct regular business\r\noperations, which can be done fully online",
+        "definition": "Online provision of key public services for entrepreneurs, measured as the share of administrative steps that can be completed fully online for major life events.&nbsp;There are 2 life events considered for businesses:&nbsp;1. Business Start-up, 2. Regular Business Operations.<br />\r\nThe indicator is an aggregate score of multiple elements describing:<br />\r\n- the number of services which are provided online to national users;<br />\r\n- the number of services for which online information is provided to national users;<br />\r\n- the number of services provided through a portal;<br />\r\n- the number of services which are provided online to cross-border users;<br />\r\n- and the number of services for which online information is provided to cross-border users.",
         "time_coverage": null,
-        "note": ""
+        "note": "See also Commission decision C2023(4288) art.2.1(14)."
     }
 },
 {
@@ -4969,12 +4891,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:25:16.604Z",
-        "code": "desi_2b3",
+        "updated_at": "2025-03-05T15:31:45.021Z",
+        "code": "desi_5g_spectrum",
         "label": "5G spectrum",
         "alt_label": "5G spectrum",
         "definition": "The amount of spectrum assigned and ready for 5G use within the so-called 5G pioneer bands. These bands are 700 MHz (703-733 MHz and 758-788 MHz), 3.6 GHz (3400-3800 MHz) and 26 GHz (1000 MHz within 24250-27500 MHz). All three spectrum bands have an equal weight",
-        "time_coverage": "2019-2023",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -4982,12 +4904,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:26:59.034Z",
-        "code": "desi_2b2",
+        "updated_at": "2026-01-12T11:00:05.460Z",
+        "code": "desi_5gcov",
         "label": "Overall 5G coverage",
         "alt_label": "5G coverage",
-        "definition": "Percentage of populated areas with coverage by at least one 5G mobile network",
-        "time_coverage": "2020-2022",
+        "definition": "<p>Percentage of households with coverage by at least one 5G mobile network</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -4995,12 +4917,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-10-18T09:52:56.114Z",
-        "code": "desi_4a1",
-        "label": "e-Government users",
-        "alt_label": "e-Government users",
-        "definition": "Individuals who used the Internet, in the last 12 months, for interaction with public authorities on websites or on mobile applications",
-        "time_coverage": "2022",
+        "updated_at": "2025-12-17T15:49:24.936Z",
+        "code": "desi_egov_users",
+        "label": "e-Government users (until 2021)",
+        "alt_label": "e-Government users (until 2021)",
+        "definition": "<p>Individuals who used the Internet, in the last 12 months, for interaction with public authorities. It includes obtaining information from public authorities web sites, OR downloading official forms OR sending filled in forms.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5008,12 +4930,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:32:50.717Z",
-        "code": "desi_4a4",
+        "updated_at": "2025-12-17T15:54:27.120Z",
+        "code": "desi_pff",
         "label": "Pre-filled Forms",
         "alt_label": "Pre-filled Forms",
-        "definition": "Amount of data that is pre-filled in public service online forms",
-        "time_coverage": "2021-2022",
+        "definition": "<p>Pre-filled forms, measured as the share of administrative steps that present prefilled data, already known to public administrations, in online forms to the user. The indicator is a single score describing&nbsp;the number of services requesting data through a form which present already available data to the user.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5021,12 +4943,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:31:47.037Z",
-        "code": "desi_4a3",
+        "updated_at": "2025-12-17T15:51:27.005Z",
+        "code": "desi_dps_biz",
         "label": "Digital public services for businesses",
         "alt_label": "Digital public services for businesses",
-        "definition": "The indicator broadly reflects the share of public services needed for starting a business and conducting regular business operations that are available online for domestic as well as foreign users. Services provided through a portal receive a higher score, services which provide only information (but have to be completed offline) receive a more limited score.",
-        "time_coverage": "2021-2022",
+        "definition": "<p>Online provision of key public services for entrepreneurs, measured as the share of administrative steps that can be completed fully online for major life events.&nbsp;There are 2 life events considered for businesses:&nbsp;1. Business Start-up, 2. Regular Business Operations.<br>The indicator is an aggregate score of multiple elements describing:<br>- the number of services which are provided online to national users;<br>- the number of services for which online information is provided to national users;<br>- the number of services provided through a portal;<br>- the number of services which are provided online to cross-border users;<br>- and the number of services for which online information is provided to cross-border users.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5034,12 +4956,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:31:55.889Z",
-        "code": "desi_4a2",
+        "updated_at": "2025-12-17T15:51:02.953Z",
+        "code": "desi_dps_cit",
         "label": "Digital public services for citizens",
         "alt_label": "Digital public services for citizens",
-        "definition": "The share of administrative steps that can be done online for major life events (birth of a child, new residence, etc.) for citizens",
-        "time_coverage": "2021-2022",
+        "definition": "<p>Online provision of key public services for citizens, measured as the share of administrative steps that can be completed fully online for major life events.&nbsp;There are 7 life events considered for citizens:&nbsp;1. Family, 2. Career, 3. Studying, 4. Health, 5. Transport, 6. Moving, 7. Starting a Small Claims Procedure.<br>The indicator is an aggregate score of multiple elements describing:<br>- the number of services which are provided online to national users;<br>- the number of services for which online information is provided to national users;<br>- the number of services provided through a portal;<br>- the number of services which are provided online to cross-border users;<br>- and the number of services for which online information is provided to cross-border users.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5047,12 +4969,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:25:46.302Z",
+        "updated_at": "2024-09-24T12:38:32.679Z",
         "code": "desi_2a2",
-        "label": "At least 1 Gbps broadband take-up",
-        "alt_label": "At least 1 Gbps broadband take-up",
+        "label": "At least 1 Gbps fixed broadband take-up",
+        "alt_label": "At least 1 Gbps fixed broadband take-up",
         "definition": "Percentage of of households subscribing to fixed broadband of at least 1 Gbps, calculated as overall broadband take-up multiplied with the percentage of fixed broadband lines of at least 1 Gbps",
-        "time_coverage": "2019-2022",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5060,12 +4982,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:21:05.925Z",
-        "code": "desi_1a3",
+        "updated_at": "2026-02-26T08:47:25.636Z",
+        "code": "desi_dsk_ab",
         "label": "Above basic digital skills",
         "alt_label": "Above basic digital skills",
-        "definition": "Individuals with ‘above basic’ digital skills in each of the following five dimensions: information, and data literacy, communication and collaboration, problem solving, digital content creation and safety",
-        "time_coverage": "2021",
+        "definition": "<p>Individuals with ‘above basic’ digital skills in ALL the following five competences:<br>1. <i>Information and data literacy</i>: Finding information about goods or services; Seeking health-related information; Reading online news sites, newspapers or news magazines; Activities related to fact-checking online information and its sources.<br>2. <i>Communication and collaboration</i>: Sending/receiving emails; Telephoning/video calls over the internet; Instant messaging; Participating in social networks; Expressing opinions on civic or political issues on websites or in social media; Taking part in online consultations or voting to define civic or political issues.<br>3. <i>Digital content creation</i>: Using word processing or spreadsheet software; Editing photos, video or audio files; Copying or moving files (such as documents, data, images, video) between folders, devices (via e-mail, instant messaging, USB, cable) or on the cloud; Creating files incorporating several elements such as text, picture, table, chart, animation or sound; Using advanced features of spreadsheet software (functions, formulas, macros and other developer functions) to organize, analyse, structure or modify data; Writing code in a programming language.<br>4. <i>Safety</i>: Managing access to own personal data by checking that the website where the respondent provided personal data was secure, reading privacy statements before providing personal data, restricting or refusing access to own geographical location, &nbsp;limiting access to profile or content on social networking sites or shared online storage, refusing allowing use of personal data for advertising purposes, changing settings in own internet browser to prevent or limit cookies on any of the respondent devices.<br>5. <i>Problem solving</i>: Downloading or installing software or apps; Changing settings of software, app or device; Online purchases; Selling online; Used online learning resources; Internet banking; Looking for a job or sending a job application.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5073,25 +4995,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:21:21.424Z",
-        "code": "desi_1a4",
-        "label": "At least basic digital content creation skills",
-        "alt_label": "At least basic digital content creation skills",
-        "definition": "Individuals with at a basic level of skills in using software for digital content creation",
-        "time_coverage": "2021",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:20:52.171Z",
-        "code": "desi_1a2",
+        "updated_at": "2026-02-26T08:47:33.205Z",
+        "code": "desi_dsk_bab",
         "label": "At least basic digital skills",
         "alt_label": "At least basic digital skills",
-        "definition": "Individuals with ‘basic’ or ‘above basic’ digital skills in each of the following five dimensions: information, and data literacy, communication and collaboration, problem solving, digital content creation and safety",
-        "time_coverage": "2021",
+        "definition": "<p>Individuals with ‘basic’ or ‘above basic’ digital skills in ALL the following five competences:<br>1. <i>Information and data literacy</i>: Finding information about goods or services; Seeking health-related information; Reading online news sites, newspapers or news magazines; Activities related to fact-checking online information and its sources.<br>2. <i>Communication and collaboration</i>: Sending/receiving emails; Telephoning/video calls over the internet; Instant messaging; Participating in social networks; Expressing opinions on civic or political issues on websites or in social media; Taking part in online consultations or voting to define civic or political issues.<br>3. <i>Digital content creation</i>: Using word processing or spreadsheet software; Editing photos, video or audio files; Copying or moving files (such as documents, data, images, video) between folders, devices (via e-mail, instant messaging, USB, cable) or on the cloud; Creating files incorporating several elements such as text, picture, table, chart, animation or sound; Using advanced features of spreadsheet software (functions, formulas, macros and other developer functions) to organize, analyse, structure or modify data; Writing code in a programming language.<br>4. <i>Safety</i>: Managing access to own personal data by checking that the website where the respondent provided personal data was secure, reading privacy statements before providing personal data, restricting or refusing access to own geographical location, &nbsp;limiting access to profile or content on social networking sites or shared online storage, refusing allowing use of personal data for advertising purposes, changing settings in own internet browser to prevent or limit cookies on any of the respondent devices.<br>5. <i>Problem solving</i>: Downloading or installing software or apps; Changing settings of software, app or device; Online purchases; Selling online; Used online learning resources; Internet banking; Looking for a job or sending a job application.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5099,12 +5008,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:22:39.372Z",
-        "code": "desi_1a5",
+        "updated_at": "2024-12-17T10:40:19.434Z",
+        "code": "desi_eitt",
         "label": "Enterprises providing ICT training",
         "alt_label": "Enterprises providing ICT training",
         "definition": "Enterprises who provided training in ICT to their personnel",
-        "time_coverage": "2017-2022",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5112,25 +5021,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:24:17.728Z",
-        "code": "desi_1b3",
-        "label": "Female ICT specialists",
-        "alt_label": "Female ICT specialists",
-        "definition": "Employed female ICT specialists. Broad definition based on the ISCO-08 classification and including jobs like ICT service managers, ICT professionals, ICT technicians, ICT installers and servicers.",
-        "time_coverage": "2017-2022",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:23:45.696Z",
-        "code": "desi_1b2",
+        "updated_at": "2025-11-27T08:06:05.598Z",
+        "code": "desi_ict_grad",
         "label": "ICT graduates",
         "alt_label": "ICT graduates",
-        "definition": "Persons with a degree in ICT",
-        "time_coverage": "2016-2021",
+        "definition": "<p>Persons with a degree in ICT</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5138,12 +5034,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:23:16.586Z",
-        "code": "desi_1b1",
+        "updated_at": "2026-01-20T13:55:54.078Z",
+        "code": "desi_ict_spec",
         "label": "ICT specialists",
         "alt_label": "ICT specialists",
-        "definition": "Employed ICT specialists. Broad definition based on the ISCO-08 classification and including jobs like ICT service managers, ICT professionals, ICT technicians, ICT installers and servicers.",
-        "time_coverage": "2017-2022",
+        "definition": "<p>Employed ICT specialists. Broad definition based on the ISCO-08 classification and including jobs like ICT service managers, ICT professionals, ICT technicians, ICT installers and servicers.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5151,12 +5047,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:27:52.919Z",
-        "code": "desi_3b5",
+        "updated_at": "2024-12-17T12:04:26.130Z",
+        "code": "desi_ai",
         "label": "Artificial intelligence",
-        "alt_label": "AI",
+        "alt_label": "Artificial intelligence",
         "definition": "Enterprises using any AI technology",
-        "time_coverage": "2021",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5164,12 +5060,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:28:05.736Z",
-        "code": "desi_3b3",
+        "updated_at": "2024-09-20T16:20:35.117Z",
+        "code": "desi_bigdata",
         "label": "Big data",
         "alt_label": "Big data",
         "definition": "Enterprises analysing big data from any data source",
-        "time_coverage": "2016, 2018, 2020",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5177,12 +5073,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:28:20.063Z",
-        "code": "desi_3b4",
+        "updated_at": "2025-12-17T15:48:14.047Z",
+        "code": "desi_cloud",
         "label": "Cloud",
         "alt_label": "Cloud",
-        "definition": "Enterprises purchasing at least one of the following cloud computing services: hosting of the enterprise's database, accounting software applications, CRM software, computing power",
-        "time_coverage": "2021",
+        "definition": "<p>Cloud computing, measured as the percentage of enterprises using&nbsp;at least one intermediate or sophisticated cloud computing services:&nbsp;finance or accounting software applications, enterprise resource planning (ERP) software applications, customer relationship management (CRM) software applications, security software applications, hosting the enterprise’s database(s), and computing platform providing a hosted environment for application development, testing or deployment.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5190,12 +5086,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:28:35.482Z",
-        "code": "desi_3c2",
+        "updated_at": "2024-12-17T10:50:40.770Z",
+        "code": "desi_sme_eturn",
         "label": "e-Commerce turnover",
         "alt_label": "e-Commerce turnover",
         "definition": "SMEs total turnover from e-commerce",
-        "time_coverage": "2017-2022",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5203,12 +5099,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:28:52.416Z",
-        "code": "desi_3b6",
+        "updated_at": "2024-09-20T16:12:49.365Z",
+        "code": "desi_einv",
         "label": "e-Invoices",
         "alt_label": "e-Invoices",
         "definition": "Enterprises sending e-invoices, suitable for automated processing",
-        "time_coverage": "2018, 2020",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5216,12 +5112,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:29:06.073Z",
-        "code": "desi_3b1",
+        "updated_at": "2025-12-17T15:49:00.502Z",
+        "code": "desi_erp",
         "label": "Electronic information sharing",
         "alt_label": "Electronic information sharing",
-        "definition": "Enterprises who have in use an ERP (enterprise resource planning) software package to share information between different functional areas (e.g. accounting, planning, production, marketing)",
-        "time_coverage": "2017, 2019, 2021",
+        "definition": "<p>Enterprises who have in use an ERP (enterprise resource planning) software package to share information between different functional areas (e.g. accounting, planning, production, marketing)</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5229,12 +5125,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:29:18.326Z",
-        "code": "desi_3c3",
-        "label": "Selling online cross-border",
-        "alt_label": "Selling online cross-border",
-        "definition": "SMEs that carried out electronic sales to other EU countries",
-        "time_coverage": "2017, 2019, 2021",
+        "updated_at": "2026-02-26T08:46:03.875Z",
+        "code": "desi_sme_esell_eu",
+        "label": "SMEs selling online cross-border",
+        "alt_label": "SMEs selling online cross-border",
+        "definition": "<p>SMEs that carried out electronic sales to other EU countries</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5242,25 +5138,25 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-10-18T09:43:40.384Z",
-        "code": "desi_3a1",
-        "label": "SMEs with at least a basic level of digital intensity",
-        "alt_label": "SMEs with at least a basic level of digital intensity",
-        "definition": "The digital intensity score is based on counting how many out of 12 selected technologies are used by enterprises. A basic level requires usage of at least 4 technologies.",
-        "time_coverage": "2022",
-        "note": ""
+        "updated_at": "2026-03-11T08:49:31.978Z",
+        "code": "desi_sme_di3_gelo",
+        "label": "SMEs with at least a basic level of digital intensity index (DII v3, available years: 2021, 2023, 2025)",
+        "alt_label": "",
+        "definition": "<p>The digital intensity score is based on counting how many out of 12 selected technologies are used by enterprises. A basic level requires usage of at least 4 technologies.</p>",
+        "time_coverage": null,
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_Digital_Intensity_Index_compos.pdf\">Digital Intensity Index composition</a>.</p>"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:29:32.240Z",
-        "code": "desi_3c1",
+        "updated_at": "2026-02-02T11:16:09.193Z",
+        "code": "desi_sme_esell",
         "label": "SMEs selling online",
         "alt_label": "SMEs selling online",
-        "definition": "SMEs selling online (at least 1% of turnover)",
-        "time_coverage": "2017-2022",
+        "definition": "<p>SMEs selling online (at least 1% of turnover)</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5268,12 +5164,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:30:16.647Z",
-        "code": "desi_3b2",
-        "label": "Social media",
-        "alt_label": "Social media",
-        "definition": "Enterprises using two or more of the following social media: social networks, enterprise's blog or microblog, multimedia content sharing websites, wiki-based knowledge sharing tools. Using social media means that the enterprise has a user profile, an account or a user license depending on the requirements and the type of the social media.",
-        "time_coverage": "2017, 2019, 2021",
+        "updated_at": "2025-09-16T13:06:20.916Z",
+        "code": "desi_sm_ge2",
+        "label": "Social media (discontinued)",
+        "alt_label": "Social media (discontinued)",
+        "definition": "Enterprises using two or more of the following social media: social networks, enterprise&#39;s blog or microblog, multimedia content sharing websites, wiki-based knowledge sharing tools. Using social media means that the enterprise has a user profile, an account or a user license depending on the requirements and the type of the social media.",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5281,25 +5177,25 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:26:40.910Z",
-        "code": "desi_2b1",
+        "updated_at": "2024-04-16T09:05:47.744Z",
+        "code": "desi_iug_md",
         "label": "Mobile broadband take-up",
         "alt_label": "Mobile broadband take-up",
-        "definition": "Number of mobile data subscriptions per 100 people",
-        "time_coverage": "2016, 2018, 2021",
-        "note": ""
+        "definition": "Individuals who used the internet on a mobile device",
+        "time_coverage": null,
+        "note": "Eurostat - European Union survey on ICT usage in Households and by Individuals [I_IUG_MD]"
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:25:30.079Z",
+        "updated_at": "2024-09-24T12:39:11.771Z",
         "code": "desi_2a1",
         "label": "At least 100 Mbps fixed broadband take-up",
         "alt_label": "At least 100 Mbps fixed broadband take-up",
         "definition": "Percentage of households subscribing to fixed broadband of at least 100 Mbps, calculated as overall broadband take-up multiplied with the percentage of fixed broadband lines of at least 100 Mbps",
-        "time_coverage": "2017-2022",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5307,12 +5203,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:26:26.992Z",
-        "code": "desi_2a3",
+        "updated_at": "2026-01-12T11:00:24.655Z",
+        "code": "desi_vhcn",
         "label": "Fixed Very High Capacity Network (VHCN) coverage",
         "alt_label": "Fixed Very High Capacity Network (VHCN) coverage",
-        "definition": "Percentage of households covered by any fixed VHCN.\r\nThe technologies considered are FTTH and FTTB for 2017-2018 and FTTH, FTTB and Cable DOCSIS 3.1 for 2019 onwards.",
-        "time_coverage": "2017-2022",
+        "definition": "<p>Percentage of households covered by any fixed VHCN. The technologies considered are FTTH and FTTB for 2017-2018 and FTTH, FTTB and Cable DOCSIS 3.1 for 2019 onwards.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5320,25 +5216,25 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:26:05.455Z",
-        "code": "desi_2a4",
+        "updated_at": "2026-01-12T11:00:29.457Z",
+        "code": "desi_fttp",
         "label": "Fibre to the Premises (FTTP) coverage",
         "alt_label": "Fibre to the Premises (FTTP) coverage",
-        "definition": "Percentage of households covered by FTTH and FTTB",
-        "time_coverage": "2017-2022",
-        "note": "Broadband coverage in Europe studies for the European Commission by IHS Markit, Omdia and Point Topic"
+        "definition": "<p>Percentage of households covered by FTTH and FTTB</p>",
+        "time_coverage": null,
+        "note": ""
     }
 },
 {
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:31:33.595Z",
-        "code": "desi_4b1",
+        "updated_at": "2025-12-17T15:50:50.853Z",
+        "code": "desi_aehr",
         "label": "Access to e-health records",
         "alt_label": "Access to e-health records",
-        "definition": "measured as (i) the nationwide availability of online access services for citizens to their electronic health records data (via a patient portal, or a patient mobile app) with additional measures in place that enable certain categories of people (e.g. guardians for children, people with disabilities, elderly) to also access their data, and (ii) the percentage of individuals that have the ability to obtain or make use of their own minimum set of health-related data currently stored in public and private electronic health-record (EHR) systems.",
-        "time_coverage": "2022",
+        "definition": "<p>measured as (i) the nationwide availability of online access services for citizens to their electronic health records data (via a patient portal, or a patient mobile app) with additional measures in place that enable certain categories of people (e.g. guardians for children, people with disabilities, elderly) to also access their data, and (ii) the percentage of individuals that have the ability to obtain or make use of their own minimum set of health-related data currently stored in public and private electronic health-record (EHR) systems.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5346,25 +5242,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-10-01T16:25:50.549Z",
-        "code": "desi_1a6",
-        "label": "Females having at least basic digital skills",
-        "alt_label": "Females having at least basic digital skills",
-        "definition": "Females with \"basic\" or \"above basic\" digital skills in each of the following five dimensions: information, communication, problem solving, software for content creation and safety",
-        "time_coverage": "2021",
-        "note": ""
-    }
-},
-{
-    "model": "core.indicator",
-    "fields": {
-        "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:20:15.672Z",
-        "code": "desi_1a1",
+        "updated_at": "2024-12-17T12:15:24.582Z",
+        "code": "desi_iuse",
         "label": "Internet use",
         "alt_label": "Internet use",
         "definition": "Individuals who use the internet at least once a week",
-        "time_coverage": "2017-2022",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5372,12 +5255,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:32:32.632Z",
-        "code": "desi_4a7",
+        "updated_at": "2025-03-11T09:50:58.673Z",
+        "code": "desi_mf",
         "label": "Mobile friendliness",
         "alt_label": "Mobile friendliness",
-        "definition": "The extent to which e-government services are provided through a mobile-friendly interface, an interface that is responsive to the mobile device.",
-        "time_coverage": "2021-2022",
+        "definition": "The share of services which are provided through a mobile-friendly interface, an interface that is responsive to the mobile device.&nbsp;The indicator is a single score describing&nbsp;the share of services which are adaptive to screens of smartphones and tablets.",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5385,12 +5268,12 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:32:57.917Z",
-        "code": "desi_4a5",
+        "updated_at": "2025-12-17T15:56:28.715Z",
+        "code": "desi_tdpd",
         "label": "Transparency of service delivery, design and personal data",
         "alt_label": "Transparency of service delivery, design and personal data",
-        "definition": "The extent to which service processes are transparent, services are designed with user involvement and users can manage their personal data",
-        "time_coverage": "2021-2022",
+        "definition": "<p>Transparency of service delivery, design and personal data, measured as the extent to which service processes are transparent, services are designed with user involvement and users can manage their personal data.&nbsp;The indicator is an aggregate score of multiple elements describing, among others:<br>- the share of services providing a delivery of completion notice,<br>- the share of services that track progress during completion,<br>- the degree to which portals provide online access to personal data,<br>- the extent to which users are involved in the design of services,<br>- and the extend to which users are involved in policy making processes.</p>",
+        "time_coverage": null,
         "note": ""
     }
 },
@@ -5398,12 +5281,415 @@
     "model": "core.indicator",
     "fields": {
         "created_at": "2023-09-28T21:00:00Z",
-        "updated_at": "2023-09-29T16:33:04.353Z",
-        "code": "desi_4a6",
+        "updated_at": "2025-12-17T15:54:40.225Z",
+        "code": "desi_us",
         "label": "User support",
         "alt_label": "User support",
-        "definition": "The extent to which online support, help features, and feedback mechanisms are available incl. cross-border",
-        "time_coverage": "2021-2022",
+        "definition": "<p>The extent to which online support, help features, and feedback mechanisms are available to both national as well as cross-border users.&nbsp;The indicator is an aggregate score of multiple elements describing, among others:<br>- the share of portals which provide a FAQ section,<br>- the share of portals for which discussion fora are available,<br>- the share of portals for which a help functionality is available to cross-border users,<br>- and the share of portals for which complaint procedures are available for cross-border users.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-01-25T14:35:57.218Z",
+        "updated_at": "2024-12-17T12:04:04.118Z",
+        "code": "desi_ai_cloud_da",
+        "label": "AI or Cloud or Data analytics",
+        "alt_label": "",
+        "definition": "Enterprises using AI technologies or buying sophisticated or intermediate cloud computing services or performing data analytics",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-02-03T13:59:58.165Z",
+        "updated_at": "2024-12-17T10:44:38.010Z",
+        "code": "desi_ci_in_h",
+        "label": "Overall internet take-up",
+        "alt_label": "Overall internet take-up",
+        "definition": "Households with access to the Internet at home",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-02-07T08:35:19.869Z",
+        "updated_at": "2026-03-11T08:50:14.594Z",
+        "code": "desi_sme_di4_gelo",
+        "label": "SMEs with at least a basic level of digital intensity index (DII v4, available years: 2022 and 2024)",
+        "alt_label": "",
+        "definition": "<p>The digital intensity score is based on counting how many out of 12 selected technologies are used by enterprises. A basic level requires usage of at least 4 technologies.</p>",
+        "time_coverage": null,
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_Digital_Intensity_Index_compos.pdf\">Digital Intensity Index composition</a>.</p>"
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-02-08T19:37:29.092Z",
+        "updated_at": "2026-01-26T16:36:54.549Z",
+        "code": "desi_unicorns",
+        "label": "Unicorns",
+        "alt_label": "",
+        "definition": "<p>Calculated as the sum of unicorns referred to in Article 2, point (11)(a), of Decision (EU) 2022/2481 and those referred to in Article 2, point (11)(b), of that Decision</p>",
+        "time_coverage": null,
+        "note": "<p>Data was extracted from Dealroom on 21/01/2026 and included all possible retroactive revisions. As for all the previous DESI editions, the UK is excluded from the statistics.</p>"
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-02-28T17:17:30.224Z",
+        "updated_at": "2025-04-14T13:09:09.852Z",
+        "code": "desi_edge",
+        "label": "Edge nodes",
+        "alt_label": "Edge nodes",
+        "definition": "Number of edge computing nodes providing latencies below 20 milliseconds.",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-03-18T10:16:13.065Z",
+        "updated_at": "2024-03-18T10:16:13.065Z",
+        "code": "desi_1a2",
+        "label": "Individuals with basic or above basic overall digital skills (all five component indicators are at basic or above basic level)",
+        "alt_label": null,
+        "definition": null,
+        "time_coverage": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-03-18T10:16:13.074Z",
+        "updated_at": "2024-03-18T10:16:13.074Z",
+        "code": "desi_1a3",
+        "label": "Individuals with above basic overall digital skills (all five component indicators are at above basic level)",
+        "alt_label": null,
+        "definition": null,
+        "time_coverage": null,
+        "note": null
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-03-20T07:46:30.890Z",
+        "updated_at": "2025-12-17T15:49:12.774Z",
+        "code": "desi_egov_users_anys",
+        "label": "e-Government users",
+        "alt_label": "e-Government users",
+        "definition": "<p>Individuals who used the Internet, in the last 12 months, for interaction with public authorities on websites or on mobile applications.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-03-28T10:52:41.422Z",
+        "updated_at": "2025-12-17T15:48:27.573Z",
+        "code": "desi_da",
+        "label": "Data analytics",
+        "alt_label": "Data analytics",
+        "definition": "<p>Enterprises performing data analytics (internally or externally). Data analytics refers to the use of technologies, techniques or software tools for analysing data to extract patterns, trends and insights to make conclusions, predictions and better decision-making with the aim of improving performance (e.g. increase production, reduce costs). Data may be extracted from own enterprise data source or from external sources (e.g. suppliers, customers, government). Before 2023 this indicator was \"Big data\".</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-03-29T08:04:18.113Z",
+        "updated_at": "2025-03-14T18:07:43.025Z",
+        "code": "desi_bbspeed_100",
+        "label": "Share of fixed broadband subscriptions >= 100 Mbps",
+        "alt_label": "Share of fixed broadband subscriptions >= 100 Mbps",
+        "definition": "Based on advertised download speeds.",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-03-29T08:05:17.015Z",
+        "updated_at": "2025-03-14T18:07:31.590Z",
+        "code": "desi_bbspeed_1000",
+        "label": "Share of fixed broadband subscriptions >= 1 Gbps",
+        "alt_label": "Share of fixed broadband subscriptions >= 1 Gbps",
+        "definition": "Based on advertised download speeds.",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-04-26T15:53:25.025Z",
+        "updated_at": "2025-03-14T17:13:08.974Z",
+        "code": "desi_5g_sim",
+        "label": "5G SIM cards share of population",
+        "alt_label": "",
+        "definition": "5G mobile subscriptions defined as SIM cards that generated any internet traffic on a domestic 5G network in the last 90 days.",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-05-13T12:18:32.290Z",
+        "updated_at": "2026-01-12T11:00:17.188Z",
+        "code": "desi_5gcov_3400_3800",
+        "label": "5G coverage in the 3.4–3.8 GHz band",
+        "alt_label": "5G coverage in the 3.4–3.8 GHz band",
+        "definition": "<p>% of households with coverage by 5G using the 3.4-3.8GHz spectrum band</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2024-06-12T07:34:27.158Z",
+        "updated_at": "2024-06-12T07:35:32.349Z",
+        "code": "dd_ai_cloud_da",
+        "label": "AI or Cloud or Data analytics",
+        "alt_label": "AI or Cloud or Data analytics",
+        "definition": "Enterprises using AI technologies or buying sophisticated or intermediate cloud computing services or performing data analytics",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-09-15T16:10:22.631Z",
+        "updated_at": "2025-11-22T17:19:08.268Z",
+        "code": "desi_ae_ict",
+        "label": "Air emissions from the ICT sector",
+        "alt_label": "",
+        "definition": "<p>Different pollutants and greenhouse emissions produced by the ICT sector</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-09-15T16:35:20.926Z",
+        "updated_at": "2025-11-22T16:53:44.277Z",
+        "code": "desi_aec_ict",
+        "label": "Contribution of the ICT sector to the air emissions in the economy",
+        "alt_label": "",
+        "definition": "<p>Share of ICT sector emissions in the emissions of total economy</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-09-15T16:48:58.541Z",
+        "updated_at": "2025-11-22T16:53:39.042Z",
+        "code": "desi_aed_ict",
+        "label": "Distribution of air emissions from the ICT sector",
+        "alt_label": "",
+        "definition": "<p>Share of economic activities, of which the ICT sector consists, in the total ICT sector emissions</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-09-16T13:04:23.981Z",
+        "updated_at": "2025-12-17T15:48:48.238Z",
+        "code": "desi_sm_any",
+        "label": "Enterprises using social media",
+        "alt_label": "Enterprises using social media",
+        "definition": "<p>Enterprises using any of the following social media: social networks, enterprise's blog or microblog, multimedia content sharing websites, wiki-based knowledge sharing tools. Using social media means that the enterprise has a user profile, an account or a user license depending on the requirements and the type of the social media.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-10-22T07:36:08.284Z",
+        "updated_at": "2026-02-12T08:26:06.591Z",
+        "code": "desi_bal_trade_services_world",
+        "label": "Balance of international trade in ICT services outside the EU (Credits – Debits)",
+        "alt_label": "Balance of international trade in ICT services outside the EU",
+        "definition": "<p>International trade in ICT services present annual data on the value in million euro of the trade in ICT services according to the sixth edition of the Balance of Payments and International Investment Position Manual (BPM6) and by geographical partner (intra-EU and extra-EU). These statistics provide information on the net result or \"balance\" (credits minus debits) of the transactions with each partner. These statistics are part of the available data on the international trade in services (since 2010) (BPM6).&nbsp;<br>ICT services can be defined, as BPM6 component <i>telecommunication, computer and information services</i>. These can be further disaggregated into sub-components:</p><ul><li>telecommunication services</li><li>computer services</li><li>computer software</li><li>software originals</li><li>other computer services</li><li>information services</li><li>news agency services</li><li>other information services<br>&nbsp;</li></ul>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-10-22T08:21:40.620Z",
+        "updated_at": "2026-02-12T08:34:17.584Z",
+        "code": "desi_bal_trade_goods_world",
+        "label": "Balance of international trade in ICT goods outside the EU  (Exports – Imports)",
+        "alt_label": "Balance of international trade in ICT goods outside the EU",
+        "definition": "<p>The statistics on international trade in information and communications technology (ICT) goods can provide insights on importance of ICT trade between the EU countries (intra-EU) and ICT goods traded by EU countries with non-EU countries (extra-EU). They measure the value of the international trade in ICT goods. The balance of international trade in ICT goods is the exports minus the imports of ICT goods.</p><p>The most recent list of ICT goods consists of 93 goods defined at the 6-digit level of Harmonised System (HS) 2017. The ICT goods include:</p><ul><li>Total ICT goods</li><li>Computers and peripheral equipment</li><li>Communication equipment</li><li>Consumer electronic equipment</li><li>Electronic components</li><li>Miscellaneous ICT goods<br>&nbsp;</li></ul>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-10-22T09:41:37.108Z",
+        "updated_at": "2026-02-12T08:11:54.192Z",
+        "code": "desi_ent_web_sales_eu",
+        "label": "Enterprises with ICT web sales to other EU countries",
+        "alt_label": "",
+        "definition": "<p>This indicator reflects the extent to which enterprises are leveraging the Digital Single Market to reach customers beyond their national borders, which is a key objective of the Digital Single Market, creating a seamless market across the EU.</p><p>Higher percentages indicate that enterprises are more integrated into the digital market, suggesting that they are competitive enough to attract and serve customers from other EU countries. The indicator can also reflect how digitally advanced and capable enterprises are in terms of e-commerce infrastructure, logistics, and cross-border sales capabilities.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-10-22T10:13:52.634Z",
+        "updated_at": "2026-02-12T08:11:59.585Z",
+        "code": "desi_ent_web_sales_world",
+        "label": "Enterprises with ICT web sales to the rest of the world",
+        "alt_label": "",
+        "definition": "<p>This indicator refers to enterprises engaged in web sales outside the EU,&nbsp;demonstrating&nbsp;an ability to compete on a global scale, not just within the European market. Higher values in this indicator show that enterprises are not only digitally mature domestically, but also capable of adapting to diverse international markets, regulations, and customer preferences.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-11-12T10:20:11.238Z",
+        "updated_at": "2026-01-20T14:05:47.236Z",
+        "code": "desi_iudi",
+        "label": "Online exposure to untrue or doubtful content",
+        "alt_label": "",
+        "definition": "<p>Individuals who have seen untrue or doubtful information or content on the internet news sites or social media (3 months).</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-11-12T10:20:48.891Z",
+        "updated_at": "2026-01-20T14:06:00.099Z",
+        "code": "desi_itic",
+        "label": "Online verification of information",
+        "alt_label": "",
+        "definition": "<p>Individuals who have checked the truthfulness of the information or content they found on the internet news sites or social media (3 months)</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-11-12T10:44:01.571Z",
+        "updated_at": "2025-11-22T19:27:24.342Z",
+        "code": "desi_ihm",
+        "label": "Online exposure to hostile or degrading messages",
+        "alt_label": "",
+        "definition": "<p>Individuals who have encountered messages online that were considered to be hostile or degrading towards groups of people or individuals in the last 3 months</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-11-26T20:16:07.409Z",
+        "updated_at": "2026-03-10T16:59:51.401Z",
+        "code": "desi_sme_di3_vhi",
+        "label": "SMEs with very high level of digital intensity index (DII v3, available years: 2021, 2023, 2025)",
+        "alt_label": "",
+        "definition": "<p>The digital intensity score is based on counting how many out of 12 selected technologies are used by enterprises. A very high level requires usage of at least 10 technologies.</p>",
+        "time_coverage": null,
+        "note": "<p>The DII composition varies between different survey years, depending on the questions included in the survey. The exact composition for the different survey years can be found at <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/isoc_e_dii_esmsip2_an_Digital_Intensity_Index_compos.pdf\">Digital Intensity Index composition</a>.</p>"
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-12-15T13:26:22.202Z",
+        "updated_at": "2025-12-17T15:44:48.946Z",
+        "code": "desi_ict_recycling",
+        "label": "ICT Recycling/ Reuse",
+        "alt_label": "",
+        "definition": "<p>This indicator represents the share of Waste of Electrical and Electronic Equipment (WEEE) from two defined equipment categories that undergoes recycling or preparation for reuse relative to the total WEEE collected for those categories. It quantifies recovery efficiency within the selected product groups. The two electronic equipment categories selected are:&nbsp;</p><p>1. Screens, monitors, and equipment containing screens having a surface greater than 100 cm<sup>2</sup> [EE_SME] and&nbsp;</p><p>2. Small IT and telecommunication equipment (no external dimension more than 50 cm) [EE_SITTE].</p><p>The indicator is computed by combining the two categories in this way:</p><p><img src=\"/media/desi_ict_waste.png\" alt=\"Recycling and preparing for reuse (EE_SME + EE_SITTE) / Waste collected (EE_SME + EE_SITTE)\" width=\"500\" height=\"65\"></p><p>The indicator is computed for a country only when both values of the two waste management operations(Waste collected, Recycling and preparing for reuse) are available and the denominator is not equal to 0. If these conditions are not fulfilled, there is not value for this indicator for that country.</p><p>Please note that waste collected in one year may be treated in later years, so if a country treats waste from previous years in addition to current collections, the total treated can exceed the amount collected in the reference year, leading to values above 100%. This is a known feature of waste flow indicators and reflects waste stock management over time, not a calculation error.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2025-12-18T12:05:59.073Z",
+        "updated_at": "2026-02-03T08:48:45.233Z",
+        "code": "desi_genai",
+        "label": "Use of generative AI",
+        "alt_label": "",
+        "definition": "<p>The indicator refers to the use of any generative AI tools (e.g. ChatGPT, Copilot, Gemini, LLaMA, Midjourney, DALL-E, Mistral) to create content like text, images, programming code, or videos in the last 3 months.</p>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2026-01-26T17:23:51.579Z",
+        "updated_at": "2026-02-02T15:17:01.642Z",
+        "code": "desi_ent_secmge5",
+        "label": "Enterprises using at least 5 ICT security measures",
+        "alt_label": "",
+        "definition": "<p>ICT security measures are applied on enterprise’s ICT systems to ensure integrity, authenticity, availability and confidentiality of enterprise’s data and systems.&nbsp;</p><p>The ICT security measures, included in the Eurostat model questionnaire on ICT (Information and Communication Technologies) usage and e-commerce in enterprises, are the following:</p><ul><li>strong password authentication</li><li>authentication via biometric methods implemented by the enterprise</li><li>encryption techniques for data, documents or e-mails</li><li>data backup to a separate location (including backup to the cloud)</li><li>network access control (management of access by devices and users to the enterprise's network)</li><li>VPN (Virtual Private Network extends a private network across a public network to enable secure exchange of data over public network)</li><li>maintaining log files for analysis after security incidents</li><li>ICT risk assessment, i.e. periodically assessment of probability and consequences of ICT security incidents</li><li>ICT security tests</li><li>combination of at least two authentication mechanisms (e.g. user-defined password, one-time password (OTP), code generated via a security token or received via a smartphone, biometric methods)</li><li>monitoring system used to detect suspicious activity in the ICT systems (e.g. intrusion detection or prevention systems that monitors users’ or devices’ behaviour, network traffic) excluding standalone anti-virus software and default firewall solutions</li></ul>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2026-02-12T08:02:19.421Z",
+        "updated_at": "2026-02-12T08:34:23.803Z",
+        "code": "desi_bal_trade_goods_eu",
+        "label": "Balance of international trade in ICT goods inside the EU (Exports – Imports)",
+        "alt_label": "Balance of international trade in ICT goods inside the EU",
+        "definition": "<p>The statistics on international trade in information and communications technology (ICT) goods can provide insights on importance of ICT trade between the EU countries (intra-EU) and ICT goods traded by EU countries with non-EU countries (extra-EU). They measure the value of the international trade in ICT goods. The balance of international trade in ICT goods is the exports minus the imports of ICT goods.</p><p>The most recent list of ICT goods consists of 93 goods defined at the 6-digit level of Harmonised System (HS) 2017. The ICT goods include:</p><ul><li>Total ICT goods</li><li>Computers and peripheral equipment</li><li>Communication equipment</li><li>Consumer electronic equipment</li><li>Electronic components</li><li>Miscellaneous ICT goods<br>&nbsp;</li></ul>",
+        "time_coverage": null,
+        "note": ""
+    }
+},
+{
+    "model": "core.indicator",
+    "fields": {
+        "created_at": "2026-02-12T08:02:34.879Z",
+        "updated_at": "2026-02-12T08:26:14.744Z",
+        "code": "desi_bal_trade_services_eu",
+        "label": "Balance of international trade in ICT services inside the EU (Credits – Debits)",
+        "alt_label": "Balance of international trade in ICT services inside the EU",
+        "definition": "<p>International trade in ICT services present annual data on the value in million euro of the trade in ICT services according to the sixth edition of the Balance of Payments and International Investment Position Manual (BPM6) and by geographical partner (intra-EU and extra-EU). These statistics provide information on the net result or \"balance\" (credits minus debits) of the transactions with each partner. These statistics are part of the available data on the international trade in services (since 2010) (BPM6).&nbsp;<br>ICT services can be defined, as BPM6 component <i>telecommunication, computer and information services</i>. These can be further disaggregated into sub-components:</p><ul><li>telecommunication services</li><li>computer services</li><li>computer software</li><li>software originals</li><li>other computer services</li><li>information services</li><li>news agency services</li><li>other information services<br>&nbsp;</li></ul>",
+        "time_coverage": null,
         "note": ""
     }
 }

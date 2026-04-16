@@ -324,5 +324,151 @@
             "EU27_2020"
         ]
     }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU-xES",
+        "size": 27,
+        "note": "EU27 without Spain",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "EU27_2020"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU27xNLHUHRES",
+        "size": 24,
+        "note": "EU27 without NL, HU, HR, ES",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "FI",
+            "FR",
+            "IE",
+            "IT",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "EU27_2020"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU27xITESIECZ",
+        "size": 24,
+        "note": "EU27 without IT, ES, IE, CZ",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "EU27_2020"
+        ]
+    }
+},
+{
+    "model": "estat.geogroup",
+    "fields": {
+        "code": "EU27+NOISLI",
+        "size": 31,
+        "note": "EU27 + EFTA states",
+        "geo_codes": [
+            "AT",
+            "BE",
+            "BG",
+            "CY",
+            "CZ",
+            "DE",
+            "DK",
+            "EE",
+            "EL",
+            "ES",
+            "FI",
+            "FR",
+            "HR",
+            "HU",
+            "IE",
+            "IS",
+            "IT",
+            "LI",
+            "LT",
+            "LU",
+            "LV",
+            "MT",
+            "NL",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "SE",
+            "SI",
+            "SK",
+            "EU27_2020"
+        ]
+    }
 }
 ]

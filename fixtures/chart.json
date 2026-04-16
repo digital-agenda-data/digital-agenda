@@ -16,6 +16,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -23,19 +25,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -159,7 +174,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -179,6 +195,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -186,19 +204,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
         "country_filter_ignored": [
             [
@@ -237,7 +268,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -257,6 +289,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -264,19 +298,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
         "country_filter_ignored": [
             [
@@ -315,7 +362,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -331,11 +379,12 @@
         "name": "See the evolution of an indicator and compare breakdowns",
         "code": "see-the-evolution-of-an-indicator-and-compare-breakdowns",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
-        "country_multi_filter":false,
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -343,19 +392,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
         "country_filter_ignored": [
             [
@@ -394,7 +456,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -405,7 +468,7 @@
         "display_order": 14,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "Analyse one indicator and compare countries",
         "code": "egov-analyse-one-indicator-and-compare-countries",
@@ -414,6 +477,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -421,19 +486,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -520,7 +598,8 @@
                 "SK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -531,7 +610,7 @@
         "display_order": 15,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "Analyse one indicator (by life events)",
         "code": "egov-analyse-one-indicator-by-life-events",
@@ -540,6 +619,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -547,25 +628,39 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [
             [
                 "total"
             ]
         ],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -576,7 +671,7 @@
         "display_order": 16,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "See the evolution of an indicator and compare countries",
         "code": "egov-see-the-evolution-of-an-indicator-by-country",
@@ -585,6 +680,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -592,21 +689,35 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -617,16 +728,17 @@
         "display_order": 17,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "See the evolution of an indicator (by life events)",
         "code": "egov-see-the-evolution-of-an-indicator-by-life-events",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
-        "country_multi_filter": false,
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -634,25 +746,39 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [
             [
                 "total"
             ]
         ],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -672,6 +798,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -679,19 +807,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -778,7 +919,8 @@
                 "SK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -798,6 +940,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -805,25 +949,39 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [
             [
                 "total"
             ]
         ],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -843,6 +1001,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -850,21 +1010,35 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -880,11 +1054,12 @@
         "name": "See the evolution of an indicator (by life events)",
         "code": "egov-see-the-evolution-of-an-indicator-by-life-events",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
-        "country_multi_filter": false,
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. households grouped into four income levels or individuals divided into three formal education levels). You can select only one country at a time.</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -892,25 +1067,39 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [
             [
                 "total"
             ]
         ],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -930,6 +1119,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -937,19 +1128,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -1085,7 +1289,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -1105,6 +1310,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1112,19 +1319,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -1260,7 +1480,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -1276,11 +1497,12 @@
         "name": "Compare the evolution of two indicators",
         "code": "compare-the-evolution-of-two-indicators",
         "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
-        "country_multi_filter":false,
         "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1288,19 +1510,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
         "country_filter_ignored": [
             [
@@ -1339,7 +1574,8 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
@@ -1359,6 +1595,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -1366,9 +1604,17 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [
             [
                 "desi"
@@ -1379,20 +1625,26 @@
                 "desi_sliders"
             ]
         ],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [
             [
                 "desi_totals"
             ]
         ],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -1408,11 +1660,12 @@
         "name": "DESI 2022 - Compare the evolution of DESI components",
         "code": "desi-compare-evolution-desi-components",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
-        "country_multi_filter": false,
         "description": "<p>This time-lines chart allows you to select one indicator, and see its evolution over time for the different modalities of a breakdown group (i.e. sub-dimensions of Connectivity). You can select only one country at a time.</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -1420,29 +1673,43 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [
             [
                 "desi_sliders"
             ]
         ],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [
             [
                 "desi_totals"
             ]
         ],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -1462,6 +1729,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1469,25 +1738,39 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [
             [
                 "desi_sliders"
             ]
         ],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -1507,6 +1790,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1514,6 +1799,13 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [
@@ -1521,20 +1813,26 @@
                 "desi"
             ]
         ],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [
             [
                 "desi_sliders"
             ]
         ],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -1627,7 +1925,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -1647,6 +1946,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1654,21 +1955,35 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -1688,6 +2003,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1695,19 +2012,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AT"
@@ -1840,14 +2170,15 @@
             [
                 "XK"
             ]
-        ]
+        ],
+        "country_filter_values": []
     }
 },
 {
     "model": "charts.chart",
     "fields": {
         "created_at": "2022-12-06T12:49:06.975Z",
-        "updated_at": "2023-12-27T10:14:56.657Z",
+        "updated_at": "2024-02-14T08:35:17.624Z",
         "display_order": 1,
         "is_draft": false,
         "chart_group": [
@@ -1860,6 +2191,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": true,
         "breakdown_group_filter_hidden": true,
@@ -1867,25 +2200,39 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": true,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [
             [
                 "desi_sliders"
             ]
         ],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -1896,7 +2243,7 @@
         "display_order": 18,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "Maps by country",
         "code": "egov-maps-by-country",
@@ -1905,6 +2252,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -1912,19 +2261,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AL"
@@ -2038,7 +2400,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2049,7 +2412,7 @@
         "display_order": 19,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "Compare two indicators",
         "code": "egov-compare-two-indicators",
@@ -2058,6 +2421,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2065,19 +2430,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AL"
@@ -2191,7 +2569,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2202,7 +2581,7 @@
         "display_order": 20,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "Compare two indicators, using country bubbles sized on a third one",
         "code": "egov-compare-three-indicators",
@@ -2211,6 +2590,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2218,19 +2599,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AL"
@@ -2344,7 +2738,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2355,16 +2750,17 @@
         "display_order": 21,
         "is_draft": false,
         "chart_group": [
-            "e-gov-2020"
+            "e-gov-2020-2022"
         ],
         "name": "Compare the evolution of two indicators",
         "code": "egov-compare-the-evolution-of-two-indicators",
         "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
-        "country_multi_filter": false,
         "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2372,21 +2768,35 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2406,6 +2816,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2413,19 +2825,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AL"
@@ -2539,7 +2964,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2559,6 +2985,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2566,19 +2994,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AL"
@@ -2692,7 +3133,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2712,6 +3154,8 @@
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2719,19 +3163,32 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [
             [
                 "AL"
@@ -2845,7 +3302,8 @@
                 "UK"
             ]
         ],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
@@ -2861,11 +3319,12 @@
         "name": "Compare the evolution of two indicators",
         "code": "egov-compare-the-evolution-of-two-indicators",
         "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
-        "country_multi_filter": false,
         "description": "<p>The simultaneous visualization of two indicators on the time-line charts allows seeing if the two phenomena have been going up or down at the same periods. The slope should be interpreted with caution because the two curbs are usually expressed with different units. The two scales are on the left and right side of the chart</p>",
         "image": "",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": false,
@@ -2873,40 +3332,56 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T13:11:16.022Z",
-        "updated_at": "2023-12-07T15:24:29.240Z",
+        "updated_at": "2026-04-08T09:12:00.796Z",
         "display_order": 30,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
-        "name": "DESI 2023 indicators",
+        "name": "Digital Economy and Society Indicators",
         "code": "desi-indicators",
         "chart_type": "COLUMN_COMPARE_COUNTRIES",
         "description": "<p>This bar-chart allows you to select one DESI indicator and see how countries are performing.</p>",
-        "image": "",
+        "image": "bar-chart-small_aZK9Kkg.png",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -2914,40 +3389,64 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": "alt_label",
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
-        "breakdown_filter_ignored": [],
+        "breakdown_filter_ignored": [
+            [
+                "dd_target_2030"
+            ]
+        ],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
-        "period_filter_ignored": [],
+        "period_filter_ignored": [
+            [
+                "2030"
+            ]
+        ],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T13:17:07.224Z",
-        "updated_at": "2023-12-27T10:15:45.597Z",
+        "updated_at": "2026-04-08T09:12:10.401Z",
         "display_order": 31,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
-        "name": "DESI 2023 - Compare countries progress",
+        "name": "Compare countries progress",
         "code": "compare-countries-progress",
         "chart_type": "SPLINE_COMPARE_COUNTRIES",
-        "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for DESI indicators, selecting a group of countries and comparing with the European average trend.</p>",
-        "image": "",
+        "description": "<p>This time-line chart allows you to visualise trends of DESI indicators, select a group of countries and compare with the European average trend.</p>",
+        "image": "line-chart-small_ygMIqOi.png",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -2955,40 +3454,64 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": "label",
+        "breakdown_label": null,
+        "period_label": "alt_label",
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": true,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
-        "breakdown_filter_ignored": [],
+        "breakdown_filter_ignored": [
+            [
+                "dd_target_2030"
+            ]
+        ],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
-        "period_filter_ignored": [],
+        "period_filter_ignored": [
+            [
+                "2030"
+            ]
+        ],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T13:21:23.600Z",
-        "updated_at": "2023-12-27T10:15:53.908Z",
+        "updated_at": "2026-04-08T09:12:19.925Z",
         "display_order": 32,
         "is_draft": false,
         "chart_group": [
             "desi"
         ],
-        "name": "DESI 2023 - Compare two indicators",
+        "name": "Compare two indicators",
         "code": "compare-two-indicators",
         "chart_type": "SCATTER_COMPARE_TWO_INDICATORS",
-        "description": "<p>Compare two indicators using a scatter-plot chart. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows clustering countries according to their similarities along the two selected indicators and illustrates how much they are correlated. You can also zoom inside the chart.</p>",
-        "image": "",
+        "description": "<p>Compare two indicators using a scatter-plot chart. Each country appears as a point whose coordinates are its values on the two selected indicators. It allows clustering countries according to their similarities along the two selected indicators and illustrates how much they are correlated. You can also zoom inside the chart by creating a rectangle in the area you want to zoom.</p>",
+        "image": "scatter-chart-small_zNAb4RJ.png",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": false,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -2996,41 +3519,64 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": false,
         "country_filter_hidden": false,
+        "country_multi_filter": true,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": null,
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
         "breakdown_group_filter_defaults": [],
         "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
-        "breakdown_filter_ignored": [],
+        "breakdown_filter_ignored": [
+            [
+                "dd_target_2030"
+            ]
+        ],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
-        "period_filter_ignored": [],
+        "period_filter_ignored": [
+            [
+                "2030"
+            ]
+        ],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 },
 {
     "model": "charts.chart",
     "fields": {
         "created_at": "2023-09-23T14:28:03.082Z",
-        "updated_at": "2023-09-28T18:13:39.819Z",
-        "display_order": 33,
+        "updated_at": "2026-04-08T11:17:22.420Z",
+        "display_order": 36,
         "is_draft": false,
         "chart_group": [
             "dd-trajectories"
         ],
-        "name": "Digital Decade indicators and trajectories",
-        "code": "dd-trajectories",
+        "name": "Digital Decade - EU-level trajectories (2024)",
+        "code": "dd-trajectories-2024",
         "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
-        "country_multi_filter": false,
-        "description": "<p>Union-level projected trajectories of the Digital Decade Policy Programme KPIs</p>",
-        "image": "",
+        "description": "<p>Union-level projected trajectories of the Digital Decade Policy Programme KPIs (2024).<br><br>Updated baseline trajectories are presented in&nbsp;“<a href=\"https://ec.europa.eu/newsroom/dae/redirection/document/106689\">Annex II of the State of the Digital Decade Report 2024: Update of the EU-level trajectories for the digital targets</a>”</p>",
+        "image": "DD-2024-whitebg.png",
         "min_value": null,
         "max_value": null,
+        "min_year": null,
+        "max_year": null,
         "indicator_group_filter_hidden": true,
         "indicator_filter_hidden": false,
         "breakdown_group_filter_hidden": true,
@@ -3038,21 +3584,481 @@
         "period_filter_hidden": false,
         "unit_filter_hidden": true,
         "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
         "legend_layout": "horizontal",
         "indicator_group_filter_defaults": [],
         "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
         "indicator_filter_defaults": [],
         "indicator_filter_ignored": [],
-        "breakdown_group_filter_defaults": [],
-        "breakdown_group_filter_ignored": [],
+        "indicator_filter_values": [],
+        "breakdown_group_filter_defaults": [
+            [
+                "digital_decade_2024"
+            ]
+        ],
+        "breakdown_group_filter_ignored": [
+            [
+                "digital_decade_2025"
+            ],
+            [
+                "digital_decade_2023"
+            ],
+            [
+                "digital_decade_2026"
+            ]
+        ],
+        "breakdown_group_filter_values": [],
         "breakdown_filter_defaults": [],
         "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
         "period_filter_defaults": [],
         "period_filter_ignored": [],
+        "period_filter_values": [],
         "unit_filter_defaults": [],
         "unit_filter_ignored": [],
+        "unit_filter_values": [],
         "country_filter_defaults": [],
-        "country_filter_ignored": []
+        "country_filter_ignored": [],
+        "country_filter_values": []
+    }
+},
+{
+    "model": "charts.chart",
+    "fields": {
+        "created_at": "2024-03-08T09:32:01.682Z",
+        "updated_at": "2026-04-08T09:54:13.278Z",
+        "display_order": 33,
+        "is_draft": false,
+        "chart_group": [
+            "desi"
+        ],
+        "name": "Compare the evolution of two indicators",
+        "code": "desi-compare-evolution-two-indicators",
+        "chart_type": "SPLINE_COMPARE_TWO_INDICATORS",
+        "description": "<p>To assess progress and estimate future developments it is essential to know where we come from. Time-line charts allow you to visualise this kind of trends for DESI indicators, selecting a pair of indicators and comparing their trends.</p>",
+        "image": "compare-evolution-2ind-small.png",
+        "min_value": null,
+        "max_value": null,
+        "min_year": 2019,
+        "max_year": 2026,
+        "indicator_group_filter_hidden": false,
+        "indicator_filter_hidden": false,
+        "breakdown_group_filter_hidden": false,
+        "breakdown_filter_hidden": false,
+        "period_filter_hidden": false,
+        "unit_filter_hidden": false,
+        "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": "label",
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
+        "legend_layout": "horizontal",
+        "indicator_group_filter_defaults": [],
+        "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
+        "indicator_filter_defaults": [],
+        "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
+        "breakdown_group_filter_defaults": [],
+        "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
+        "breakdown_filter_defaults": [],
+        "breakdown_filter_ignored": [
+            [
+                "dd_target_2030"
+            ]
+        ],
+        "breakdown_filter_values": [],
+        "period_filter_defaults": [],
+        "period_filter_ignored": [
+            [
+                "2030"
+            ]
+        ],
+        "period_filter_values": [],
+        "unit_filter_defaults": [],
+        "unit_filter_ignored": [],
+        "unit_filter_values": [],
+        "country_filter_defaults": [],
+        "country_filter_ignored": [],
+        "country_filter_values": []
+    }
+},
+{
+    "model": "charts.chart",
+    "fields": {
+        "created_at": "2024-06-12T14:46:24.932Z",
+        "updated_at": "2026-04-08T11:17:11.229Z",
+        "display_order": 37,
+        "is_draft": false,
+        "chart_group": [
+            "dd-trajectories"
+        ],
+        "name": "Digital Decade - EU-level trajectories (2023)",
+        "code": "dd-trajectories-2023",
+        "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+        "description": "<p>Union-level projected trajectories of the Digital Decade Policy Programme KPIs (2023).<br><br>Digital Decade and baseline trajectories are presented in the “<a href=\"https://digital-strategy.ec.europa.eu/en/library/communication-establishing-union-level-projected-trajectories-digital-targets\">Communication from the Commission establishing Union-level projected trajectories for the digital targets</a>”.</p>",
+        "image": "DD-2023-whitebg.png",
+        "min_value": null,
+        "max_value": null,
+        "min_year": null,
+        "max_year": null,
+        "indicator_group_filter_hidden": true,
+        "indicator_filter_hidden": false,
+        "breakdown_group_filter_hidden": true,
+        "breakdown_filter_hidden": true,
+        "period_filter_hidden": false,
+        "unit_filter_hidden": true,
+        "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
+        "legend_layout": "horizontal",
+        "indicator_group_filter_defaults": [],
+        "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
+        "indicator_filter_defaults": [],
+        "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
+        "breakdown_group_filter_defaults": [
+            [
+                "digital_decade_2023"
+            ]
+        ],
+        "breakdown_group_filter_ignored": [
+            [
+                "digital_decade_2025"
+            ],
+            [
+                "digital_decade_2024"
+            ],
+            [
+                "digital_decade_2026"
+            ]
+        ],
+        "breakdown_group_filter_values": [],
+        "breakdown_filter_defaults": [],
+        "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
+        "period_filter_defaults": [],
+        "period_filter_ignored": [],
+        "period_filter_values": [],
+        "unit_filter_defaults": [],
+        "unit_filter_ignored": [],
+        "unit_filter_values": [],
+        "country_filter_defaults": [],
+        "country_filter_ignored": [],
+        "country_filter_values": []
+    }
+},
+{
+    "model": "charts.chart",
+    "fields": {
+        "created_at": "2025-05-12T14:58:38.615Z",
+        "updated_at": "2026-04-08T11:17:34.137Z",
+        "display_order": 35,
+        "is_draft": false,
+        "chart_group": [
+            "dd-trajectories"
+        ],
+        "name": "Digital Decade - EU-level trajectories (2025)",
+        "code": "dd-trajectories-2025",
+        "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+        "description": "<p>Union-level projected trajectories of the Digital Decade Policy Programme KPIs (2025).<br><br>Updated baseline trajectories are presented in&nbsp;“<a href=\"https://digital-strategy.ec.europa.eu/en/library/state-digital-decade-2025-report\">Annex I of the State of the Digital Decade Report 2025</a>”</p>",
+        "image": "DD-2025-whitebg.png",
+        "min_value": null,
+        "max_value": null,
+        "min_year": null,
+        "max_year": null,
+        "indicator_group_filter_hidden": true,
+        "indicator_filter_hidden": false,
+        "breakdown_group_filter_hidden": true,
+        "breakdown_filter_hidden": false,
+        "period_filter_hidden": false,
+        "unit_filter_hidden": true,
+        "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
+        "legend_layout": "horizontal",
+        "indicator_group_filter_defaults": [],
+        "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
+        "indicator_filter_defaults": [],
+        "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
+        "breakdown_group_filter_defaults": [
+            [
+                "digital_decade_2025"
+            ]
+        ],
+        "breakdown_group_filter_ignored": [
+            [
+                "digital_decade_2024"
+            ],
+            [
+                "digital_decade_2023"
+            ],
+            [
+                "digital_decade_2026"
+            ]
+        ],
+        "breakdown_group_filter_values": [],
+        "breakdown_filter_defaults": [],
+        "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
+        "period_filter_defaults": [],
+        "period_filter_ignored": [],
+        "period_filter_values": [],
+        "unit_filter_defaults": [],
+        "unit_filter_ignored": [],
+        "unit_filter_values": [],
+        "country_filter_defaults": [],
+        "country_filter_ignored": [],
+        "country_filter_values": []
+    }
+},
+{
+    "model": "charts.chart",
+    "fields": {
+        "created_at": "2025-11-05T17:13:51.155Z",
+        "updated_at": "2026-04-01T10:09:00.923Z",
+        "display_order": 37,
+        "is_draft": true,
+        "chart_group": [
+            "desi"
+        ],
+        "name": "International trade in ICT",
+        "code": "international-trade-in-ict",
+        "chart_type": "COLUMN_COMPARE_BREAKDOWNS",
+        "description": "<p><span style=\"background-color:#ffbe5c;color:#0a1f6c;\">[Temporary chart for data analysis purposes]</span></p>",
+        "image": "bar-chart-2-small.png",
+        "min_value": null,
+        "max_value": null,
+        "min_year": null,
+        "max_year": null,
+        "indicator_group_filter_hidden": false,
+        "indicator_filter_hidden": false,
+        "breakdown_group_filter_hidden": true,
+        "breakdown_filter_hidden": false,
+        "period_filter_hidden": false,
+        "unit_filter_hidden": false,
+        "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
+        "legend_layout": null,
+        "indicator_group_filter_defaults": [
+            [
+                "desi-tbd"
+            ]
+        ],
+        "indicator_group_filter_ignored": [
+            [
+                "desi-dsk"
+            ],
+            [
+                "desi-infra"
+            ],
+            [
+                "desi-dtb"
+            ],
+            [
+                "desi-dps"
+            ]
+        ],
+        "indicator_group_filter_values": [],
+        "indicator_filter_defaults": [],
+        "indicator_filter_ignored": [],
+        "indicator_filter_values": [
+            [
+                "desi_bal_trade_goods_world"
+            ],
+            [
+                "desi_bal_trade_services_world"
+            ]
+        ],
+        "breakdown_group_filter_defaults": [
+            [
+                "by_location"
+            ]
+        ],
+        "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
+        "breakdown_filter_defaults": [],
+        "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
+        "period_filter_defaults": [],
+        "period_filter_ignored": [],
+        "period_filter_values": [],
+        "unit_filter_defaults": [],
+        "unit_filter_ignored": [],
+        "unit_filter_values": [],
+        "country_filter_defaults": [
+            [
+                "EU"
+            ]
+        ],
+        "country_filter_ignored": [],
+        "country_filter_values": []
+    }
+},
+{
+    "model": "charts.chart",
+    "fields": {
+        "created_at": "2026-04-08T07:32:35.796Z",
+        "updated_at": "2026-04-08T11:27:41.217Z",
+        "display_order": 38,
+        "is_draft": false,
+        "chart_group": [
+            "desi"
+        ],
+        "name": "Country profile (WIP)",
+        "code": "country-profile",
+        "chart_type": "COUNTRY_PROFILE_RAINBOW",
+        "description": "<p><span style=\"background-color:#ffad33;color:#0f2fa2;\"><strong>Intro text TBD</strong></span></p>",
+        "image": "bar-chart-horizontal-2.png",
+        "min_value": null,
+        "max_value": null,
+        "min_year": null,
+        "max_year": null,
+        "indicator_group_filter_hidden": false,
+        "indicator_filter_hidden": false,
+        "breakdown_group_filter_hidden": false,
+        "breakdown_filter_hidden": false,
+        "period_filter_hidden": false,
+        "unit_filter_hidden": false,
+        "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
+        "legend_layout": null,
+        "indicator_group_filter_defaults": [],
+        "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
+        "indicator_filter_defaults": [],
+        "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
+        "breakdown_group_filter_defaults": [],
+        "breakdown_group_filter_ignored": [],
+        "breakdown_group_filter_values": [],
+        "breakdown_filter_defaults": [],
+        "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
+        "period_filter_defaults": [
+            [
+                "desi_2026"
+            ]
+        ],
+        "period_filter_ignored": [],
+        "period_filter_values": [
+            [
+                "desi_2026"
+            ]
+        ],
+        "unit_filter_defaults": [],
+        "unit_filter_ignored": [],
+        "unit_filter_values": [],
+        "country_filter_defaults": [],
+        "country_filter_ignored": [],
+        "country_filter_values": []
+    }
+},
+{
+    "model": "charts.chart",
+    "fields": {
+        "created_at": "2026-04-08T11:16:56.687Z",
+        "updated_at": "2026-04-08T11:20:43.441Z",
+        "display_order": 34,
+        "is_draft": true,
+        "chart_group": [
+            "dd-trajectories"
+        ],
+        "name": "Digital Decade - EU-level trajectories (2026)",
+        "code": "dd-trajectories-2026",
+        "chart_type": "SPLINE_COMPARE_BREAKDOWNS",
+        "description": "<p>Union-level projected trajectories of the Digital Decade Policy Programme KPIs (2026).<br><br>Updated baseline trajectories are presented in&nbsp;“<a href=\"https://digital-strategy.ec.europa.eu/en/library/state-digital-decade-2025-report\"><span style=\"background-color:#ffad33;\">Annex I of the State of the Digital Decade Report 2026</span></a>”</p>",
+        "image": "DD-2026.png",
+        "min_value": null,
+        "max_value": null,
+        "min_year": null,
+        "max_year": null,
+        "indicator_group_filter_hidden": true,
+        "indicator_filter_hidden": false,
+        "breakdown_group_filter_hidden": true,
+        "breakdown_filter_hidden": false,
+        "period_filter_hidden": false,
+        "unit_filter_hidden": true,
+        "country_filter_hidden": false,
+        "country_multi_filter": false,
+        "indicator_label": null,
+        "breakdown_label": null,
+        "period_label": null,
+        "unit_label": null,
+        "country_label": null,
+        "use_period_label_for_axis": false,
+        "legend_layout": "horizontal",
+        "indicator_group_filter_defaults": [],
+        "indicator_group_filter_ignored": [],
+        "indicator_group_filter_values": [],
+        "indicator_filter_defaults": [],
+        "indicator_filter_ignored": [],
+        "indicator_filter_values": [],
+        "breakdown_group_filter_defaults": [
+            [
+                "digital_decade_2026"
+            ]
+        ],
+        "breakdown_group_filter_ignored": [
+            [
+                "digital_decade_2025"
+            ],
+            [
+                "digital_decade_2024"
+            ],
+            [
+                "digital_decade_2023"
+            ]
+        ],
+        "breakdown_group_filter_values": [],
+        "breakdown_filter_defaults": [],
+        "breakdown_filter_ignored": [],
+        "breakdown_filter_values": [],
+        "period_filter_defaults": [],
+        "period_filter_ignored": [],
+        "period_filter_values": [],
+        "unit_filter_defaults": [],
+        "unit_filter_ignored": [],
+        "unit_filter_values": [],
+        "country_filter_defaults": [],
+        "country_filter_ignored": [],
+        "country_filter_values": []
     }
 }
 ]

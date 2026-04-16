@@ -55,10 +55,10 @@
     "model": "core.country",
     "fields": {
         "created_at": "2022-11-16T13:46:43.574Z",
-        "updated_at": "2023-04-17T17:11:08.256Z",
+        "updated_at": "2024-02-14T14:19:40.974Z",
         "code": "CZ",
         "label": "Czechia",
-        "alt_label": "Czechia",
+        "alt_label": "",
         "definition": "",
         "color": "#1C3FFD",
         "is_group": false
@@ -380,10 +380,10 @@
     "model": "core.country",
     "fields": {
         "created_at": "2022-11-16T13:46:45.359Z",
-        "updated_at": "2023-04-17T17:12:09.739Z",
+        "updated_at": "2024-02-14T14:19:47.274Z",
         "code": "SK",
         "label": "Slovakia",
-        "alt_label": "Slovakia",
+        "alt_label": "",
         "definition": "",
         "color": "#7DC30F",
         "is_group": false

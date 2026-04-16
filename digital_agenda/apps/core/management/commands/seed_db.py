@@ -5,11 +5,42 @@ from django.conf import settings
 from django.core.files import File
 from django.core.management import BaseCommand
 from django.core.management import call_command
+from rich.console import Console
 
 from digital_agenda.apps.charts.models import BreakdownChartOption
 from digital_agenda.apps.charts.models import ChartGroup
 from digital_agenda.apps.charts.models import IndicatorChartOption
 from digital_agenda.apps.core.cache import clear_all_caches
+
+console = Console()
+TEST_FIXTURES = [
+    # Create users / password:
+    #  - admin@example.com / admin
+    #  - user@example.com / user
+    #  - inactive@example.com / inactive:
+    "test/users",
+    # Import some testing extra notes
+    "test/extra-chart-notes",
+    # Import some breakdown chart options for testing
+    "test/breakdown-chart-options",
+    # Import some facts
+    "test/facts",
+    # Import some data for DESI (with extra notes indicators)
+    "test/desi-extra-notes-facts",
+    # Import some data for Digital Decade indicators and trajectories
+    "test/digital-trajectory-facts",
+    # Import some data for Digital Economy and Society Index (until 2022)
+    "test/desi-facts",
+    # Import some data for Country Profile
+    "test/country-profile-facts",
+    # Import some test charts with custom options
+    "test/chartgroup",
+    "test/chart",
+    "test/chartfilterorder",
+    "test/chartfontstyle",
+    # Import some facts from some small ESTAT configs
+    "test/seed_importconfigs",
+]
 
 
 class Command(BaseCommand):
@@ -37,38 +68,10 @@ class Command(BaseCommand):
         call_command("flush", "--noinput")
         call_command("load_initial_fixtures", "--exclude", "importconfig")
 
-        # Create users / password:
-        #  - admin@example.com / admin
-        #  - user@example.com / user
-        #  - inactive@example.com / inactive:
-        call_command("loaddata", "test/users")
+        for name in TEST_FIXTURES:
+            console.print(f"Loading from fixture: '{name}'")
+            call_command("loaddata", name)
 
-        # Import some testing extra notes
-        call_command("loaddata", "test/extra-chart-notes")
-
-        # Import some breakdown chart options for testing
-        call_command("loaddata", "test/breakdown-chart-options")
-
-        # Import some facts
-        call_command("loaddata", "test/facts")
-
-        # Import some data for DESI (with extra notes indicators)
-        call_command("loaddata", "test/desi-extra-notes-facts")
-
-        # Import some data for Digital Decade indicators and trajectories
-        call_command("loaddata", "test/digital-trajectory-facts")
-
-        # Import some data for Digital Economy and Society Index (until 2022)
-        call_command("loaddata", "test/desi-facts")
-
-        # Import some test charts with custom options
-        call_command("loaddata", "test/chartgroup")
-        call_command("loaddata", "test/chart")
-        call_command("loaddata", "test/chartfilterorder")
-        call_command("loaddata", "test/chartfontstyle")
-
-        # Import some facts from some small ESTAT configs
-        call_command("loaddata", "test/seed_importconfigs")
         call_command("estat_import")
 
         for group in ChartGroup.objects.all():

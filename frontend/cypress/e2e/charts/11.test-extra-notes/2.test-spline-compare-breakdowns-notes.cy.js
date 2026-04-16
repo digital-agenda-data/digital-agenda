@@ -9,7 +9,7 @@ describeResponsive("Check Chart", () => {
     cy.checkChart({
       // No filters since the chart should have the defaults already set to what we need.
       filters: {},
-      title: ["e-Government users", "European Union"],
+      title: ["e-Government users (until 2021)", "European Union"],
       point:
         "DESI period: 2018 (data from 2017), 58.3384. European Union, All individuals.",
       tooltip: [
@@ -32,8 +32,8 @@ describeResponsive("Check Chart", () => {
       },
       point:
         "DESI period: 2019 (data from 2018), 24.7944. European Union, All enterprises.",
-      // 3 points from e-Invoices instead of 5 (because 2 are hidden via extra notes)
-      pointNr: 3,
+      // 2 points from e-Invoices instead of 4 (because 2 are hidden via extra notes)
+      pointNr: 2,
       tooltip: [
         "All enterprises",
         "24.79% of enterprises",
