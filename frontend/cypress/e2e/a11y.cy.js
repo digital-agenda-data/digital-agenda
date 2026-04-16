@@ -12,6 +12,7 @@ const pages = [
   "/datasets/desi-2022/charts/desi-components",
   "/datasets/desi-2022/charts/desi-compare-two-indicators",
   "/datasets/desi-2022/charts/desi-compare-countries-progress",
+  "/datasets/desi/charts/country-profile",
 ];
 
 function terminalLog(violations) {
