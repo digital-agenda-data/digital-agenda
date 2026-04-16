@@ -4324,414 +4324,6 @@
     "fields": {
         "display_order": 1,
         "indicator": [
-            "desi_hc_iu"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "desi_hc_bds"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "desi_hc_abds"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_hc_abss"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "desi_hc_entict"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "desi_hc_fbds"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 7,
-        "indicator": [
-            "desi_hc_ictspec"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 8,
-        "indicator": [
-            "desi_hc_ictg"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 9,
-        "indicator": [
-            "desi_hc_fictspec"
-        ],
-        "group": [
-            "desi2023-ds"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "desi_ufbbtu"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "desi_gbpstc"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "desi_vhcnc"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_fttpc"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "desi_mbbtu"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "desi_5gc"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 7,
-        "indicator": [
-            "desi_5g"
-        ],
-        "group": [
-            "desi2023-di"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "desi_idt_smedi"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "desi_idt_eis"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "desi_idt_socmed"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_idt_bigdat"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "desi_idt_cloud"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "desi_idt_ai"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 7,
-        "indicator": [
-            "desi_idt_einv"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 8,
-        "indicator": [
-            "desi_idt_smeso"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 9,
-        "indicator": [
-            "desi_idt_ecomturn"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 10,
-        "indicator": [
-            "desi_idt_sellcb"
-        ],
-        "group": [
-            "desi2023-db"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "desi_dps_egovuser"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "desi_dps_pscit"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "desi_dps_psbiz"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_dps_prefform"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "desi_tdpd"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "desi_us"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 7,
-        "indicator": [
-            "desi_mf"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 8,
-        "indicator": [
-            "desi_aehr"
-        ],
-        "group": [
-            "desi2023-dps"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
             "dd_bds"
         ],
         "group": [
@@ -4850,7 +4442,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 11,
+        "display_order": 12,
         "indicator": [
             "dd_dii"
         ],
@@ -4862,7 +4454,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 12,
+        "display_order": 13,
         "indicator": [
             "dd_unicorns"
         ],
@@ -4874,7 +4466,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 13,
+        "display_order": 14,
         "indicator": [
             "dd_pscit"
         ],
@@ -4886,7 +4478,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 14,
+        "display_order": 15,
         "indicator": [
             "dd_psbiz"
         ],
@@ -4898,7 +4490,7 @@
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 15,
+        "display_order": 16,
         "indicator": [
             "dd_aehr"
         ],
@@ -4924,10 +4516,10 @@
     "fields": {
         "display_order": 1,
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "group": [
-            "desi2023-1"
+            "desi-dsk"
         ]
     }
 },
@@ -4936,10 +4528,10 @@
     "fields": {
         "display_order": 2,
         "indicator": [
-            "desi_1a2"
+            "desi_dsk_bab"
         ],
         "group": [
-            "desi2023-1"
+            "desi-dsk"
         ]
     }
 },
@@ -4948,22 +4540,10 @@
     "fields": {
         "display_order": 3,
         "indicator": [
-            "desi_1a3"
+            "desi_dsk_ab"
         ],
         "group": [
-            "desi2023-1"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_1a4"
-        ],
-        "group": [
-            "desi2023-1"
+            "desi-dsk"
         ]
     }
 },
@@ -4972,22 +4552,10 @@
     "fields": {
         "display_order": 5,
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "group": [
-            "desi2023-1"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "desi_1a6"
-        ],
-        "group": [
-            "desi2023-1"
+            "desi-dsk"
         ]
     }
 },
@@ -4996,10 +4564,10 @@
     "fields": {
         "display_order": 7,
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "group": [
-            "desi2023-1"
+            "desi-dsk"
         ]
     }
 },
@@ -5008,82 +4576,10 @@
     "fields": {
         "display_order": 8,
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "group": [
-            "desi2023-1"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 9,
-        "indicator": [
-            "desi_1b3"
-        ],
-        "group": [
-            "desi2023-1"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "desi_2a1"
-        ],
-        "group": [
-            "desi2023-2"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "desi_2a2"
-        ],
-        "group": [
-            "desi2023-2"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "desi_2a3"
-        ],
-        "group": [
-            "desi2023-2"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_2a4"
-        ],
-        "group": [
-            "desi2023-2"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "desi_2b1"
-        ],
-        "group": [
-            "desi2023-2"
+            "desi-dsk"
         ]
     }
 },
@@ -5092,10 +4588,10 @@
     "fields": {
         "display_order": 6,
         "indicator": [
-            "desi_2b2"
+            "desi_vhcn"
         ],
         "group": [
-            "desi2023-2"
+            "desi-infra"
         ]
     }
 },
@@ -5104,106 +4600,10 @@
     "fields": {
         "display_order": 7,
         "indicator": [
-            "desi_2b3"
+            "desi_fttp"
         ],
         "group": [
-            "desi2023-2"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 1,
-        "indicator": [
-            "desi_3a1"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 2,
-        "indicator": [
-            "desi_3b1"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 3,
-        "indicator": [
-            "desi_3b2"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 4,
-        "indicator": [
-            "desi_3b3"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 5,
-        "indicator": [
-            "desi_3b4"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 6,
-        "indicator": [
-            "desi_3b5"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 7,
-        "indicator": [
-            "desi_3b6"
-        ],
-        "group": [
-            "desi2023-3"
-        ]
-    }
-},
-{
-    "model": "core.indicatorgrouplink",
-    "fields": {
-        "display_order": 8,
-        "indicator": [
-            "desi_3c1"
-        ],
-        "group": [
-            "desi2023-3"
+            "desi-infra"
         ]
     }
 },
@@ -5212,10 +4612,82 @@
     "fields": {
         "display_order": 9,
         "indicator": [
-            "desi_3c2"
+            "desi_5gcov"
         ],
         "group": [
-            "desi2023-3"
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 11,
+        "indicator": [
+            "desi_5g_spectrum"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_sme_di3_gelo"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_erp"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_sm_ge2"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_bigdata"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "desi_cloud"
+        ],
+        "group": [
+            "desi-dtb"
         ]
     }
 },
@@ -5224,22 +4696,58 @@
     "fields": {
         "display_order": 10,
         "indicator": [
-            "desi_3c3"
+            "desi_ai"
         ],
         "group": [
-            "desi2023-3"
+            "desi-dtb"
         ]
     }
 },
 {
     "model": "core.indicatorgrouplink",
     "fields": {
-        "display_order": 1,
+        "display_order": 11,
         "indicator": [
-            "desi_4a1"
+            "desi_einv"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 15,
+        "indicator": [
+            "desi_sme_esell"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 14,
+        "indicator": [
+            "desi_sme_eturn"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 16,
+        "indicator": [
+            "desi_sme_esell_eu"
+        ],
+        "group": [
+            "desi-dtb"
         ]
     }
 },
@@ -5248,10 +4756,10 @@
     "fields": {
         "display_order": 2,
         "indicator": [
-            "desi_4a2"
+            "desi_egov_users"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
         ]
     }
 },
@@ -5260,10 +4768,10 @@
     "fields": {
         "display_order": 3,
         "indicator": [
-            "desi_4a3"
+            "desi_dps_cit"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
         ]
     }
 },
@@ -5272,10 +4780,10 @@
     "fields": {
         "display_order": 4,
         "indicator": [
-            "desi_4a4"
+            "desi_dps_biz"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
         ]
     }
 },
@@ -5284,10 +4792,10 @@
     "fields": {
         "display_order": 5,
         "indicator": [
-            "desi_4a5"
+            "desi_pff"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
         ]
     }
 },
@@ -5296,10 +4804,10 @@
     "fields": {
         "display_order": 6,
         "indicator": [
-            "desi_4a6"
+            "desi_tdpd"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
         ]
     }
 },
@@ -5308,10 +4816,10 @@
     "fields": {
         "display_order": 7,
         "indicator": [
-            "desi_4a7"
+            "desi_us"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
         ]
     }
 },
@@ -5320,10 +4828,406 @@
     "fields": {
         "display_order": 8,
         "indicator": [
-            "desi_4b1"
+            "desi_mf"
         ],
         "group": [
-            "desi2023-4"
+            "desi-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 10,
+        "indicator": [
+            "desi_aehr"
+        ],
+        "group": [
+            "desi-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 12,
+        "indicator": [
+            "desi_ai_cloud_da"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_sme_di4_gelo"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 13,
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_2a1"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_2a2"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_iug_md"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 13,
+        "indicator": [
+            "desi_edge"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "group": [
+            "desi-dps"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_da"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_bbspeed_100"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 12,
+        "indicator": [
+            "desi_5g_sim"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 10,
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "group": [
+            "desi-infra"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 11,
+        "indicator": [
+            "dd_ai_cloud_da"
+        ],
+        "group": [
+            "digital_decade"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_sme_di3_vhi"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_iudi"
+        ],
+        "group": [
+            "desi-dcts"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_itic"
+        ],
+        "group": [
+            "desi-dcts"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_ihm"
+        ],
+        "group": [
+            "desi-dcts"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "group": [
+            "desi-ict-carbon"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "group": [
+            "desi-ict-carbon"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "group": [
+            "desi-ict-carbon"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "group": [
+            "desi-ict-carbon"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "group": [
+            "desi-ict-trade-sales"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "group": [
+            "desi-ict-trade-sales"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "group": [
+            "desi-ict-trade-sales"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "group": [
+            "desi-ict-trade-sales"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 100000,
+        "indicator": [
+            "desi_genai"
+        ],
+        "group": [
+            "desi-dsk"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 100000,
+        "indicator": [
+            "desi_ent_secmge5"
+        ],
+        "group": [
+            "desi-dtb"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_bal_trade_goods_eu"
+        ],
+        "group": [
+            "desi-ict-trade-sales"
+        ]
+    }
+},
+{
+    "model": "core.indicatorgrouplink",
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_bal_trade_services_eu"
+        ],
+        "group": [
+            "desi-ict-trade-sales"
         ]
     }
 }

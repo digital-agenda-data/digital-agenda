@@ -4,14 +4,15 @@
     "pk": 41,
     "fields": {
         "created_at": "2023-09-29T13:53:22.037Z",
-        "updated_at": "2023-10-04T08:15:20.018Z",
+        "updated_at": "2025-11-22T16:10:30.546Z",
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -19,14 +20,15 @@
     "pk": 42,
     "fields": {
         "created_at": "2023-09-29T13:53:44.453Z",
-        "updated_at": "2023-10-04T08:15:20.008Z",
+        "updated_at": "2025-11-22T16:10:30.539Z",
         "indicator": [
-            "desi_1a2"
+            "desi_dsk_bab"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -34,29 +36,15 @@
     "pk": 43,
     "fields": {
         "created_at": "2023-09-29T13:53:56.513Z",
-        "updated_at": "2023-10-04T08:15:19.997Z",
+        "updated_at": "2025-11-22T16:10:30.532Z",
         "indicator": [
-            "desi_1a3"
+            "desi_dsk_ab"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 44,
-    "fields": {
-        "created_at": "2023-09-29T13:54:03.465Z",
-        "updated_at": "2023-10-04T08:15:19.986Z",
-        "indicator": [
-            "desi_1a4"
-        ],
-        "period": [
-            "desi_2023"
-        ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -64,29 +52,15 @@
     "pk": 45,
     "fields": {
         "created_at": "2023-09-29T13:54:14.917Z",
-        "updated_at": "2023-10-04T08:15:19.962Z",
+        "updated_at": "2025-11-22T16:10:30.518Z",
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 46,
-    "fields": {
-        "created_at": "2023-09-29T13:54:24.543Z",
-        "updated_at": "2023-10-04T08:15:19.936Z",
-        "indicator": [
-            "desi_1a6"
-        ],
-        "period": [
-            "desi_2023"
-        ],
-        "note": "(data from 2021)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -94,14 +68,15 @@
     "pk": 47,
     "fields": {
         "created_at": "2023-09-29T13:54:40.262Z",
-        "updated_at": "2023-10-04T08:15:19.917Z",
+        "updated_at": "2025-11-22T16:10:30.504Z",
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -109,29 +84,15 @@
     "pk": 48,
     "fields": {
         "created_at": "2023-09-29T13:56:03.707Z",
-        "updated_at": "2023-10-04T08:15:19.895Z",
+        "updated_at": "2025-11-22T16:10:30.497Z",
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 49,
-    "fields": {
-        "created_at": "2023-09-29T13:56:31.601Z",
-        "updated_at": "2023-10-04T08:15:19.870Z",
-        "indicator": [
-            "desi_1b3"
-        ],
-        "period": [
-            "desi_2023"
-        ],
-        "note": "(data from 2022)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -139,14 +100,15 @@
     "pk": 50,
     "fields": {
         "created_at": "2023-09-29T16:09:35.271Z",
-        "updated_at": "2023-10-04T08:15:19.855Z",
+        "updated_at": "2025-11-22T16:10:30.483Z",
         "indicator": [
             "desi_2a1"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -154,14 +116,15 @@
     "pk": 51,
     "fields": {
         "created_at": "2023-09-29T16:09:47.301Z",
-        "updated_at": "2023-10-04T08:15:19.831Z",
+        "updated_at": "2025-11-22T16:10:30.477Z",
         "indicator": [
             "desi_2a2"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -169,14 +132,15 @@
     "pk": 52,
     "fields": {
         "created_at": "2023-09-29T16:13:20.605Z",
-        "updated_at": "2023-10-04T08:15:19.806Z",
+        "updated_at": "2025-11-22T16:10:30.470Z",
         "indicator": [
-            "desi_2a3"
+            "desi_vhcn"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -184,14 +148,15 @@
     "pk": 53,
     "fields": {
         "created_at": "2023-09-29T16:13:33.791Z",
-        "updated_at": "2023-10-04T08:15:19.786Z",
+        "updated_at": "2025-11-22T16:10:30.463Z",
         "indicator": [
-            "desi_2a4"
+            "desi_fttp"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -199,14 +164,15 @@
     "pk": 54,
     "fields": {
         "created_at": "2023-09-29T16:13:46.198Z",
-        "updated_at": "2023-10-04T08:15:19.763Z",
+        "updated_at": "2025-11-22T16:10:30.456Z",
         "indicator": [
-            "desi_2b1"
+            "desi_iug_md"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -214,14 +180,15 @@
     "pk": 55,
     "fields": {
         "created_at": "2023-09-29T16:13:57.495Z",
-        "updated_at": "2023-10-04T08:15:19.737Z",
+        "updated_at": "2025-11-22T16:10:30.449Z",
         "indicator": [
-            "desi_2b2"
+            "desi_5gcov"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -229,29 +196,15 @@
     "pk": 56,
     "fields": {
         "created_at": "2023-09-29T16:14:07.333Z",
-        "updated_at": "2023-10-04T08:15:19.713Z",
+        "updated_at": "2025-11-22T16:10:30.442Z",
         "indicator": [
-            "desi_2b3"
+            "desi_5g_spectrum"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2023)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 57,
-    "fields": {
-        "created_at": "2023-09-29T16:14:29.251Z",
-        "updated_at": "2023-10-04T08:15:19.696Z",
-        "indicator": [
-            "desi_3a1"
-        ],
-        "period": [
-            "desi_2023"
-        ],
-        "note": "(data from 2022)"
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -259,14 +212,15 @@
     "pk": 58,
     "fields": {
         "created_at": "2023-09-29T16:14:38.027Z",
-        "updated_at": "2023-10-04T08:15:19.668Z",
+        "updated_at": "2025-11-22T16:10:30.435Z",
         "indicator": [
-            "desi_3b1"
+            "desi_erp"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -274,14 +228,15 @@
     "pk": 59,
     "fields": {
         "created_at": "2023-09-29T16:14:47.400Z",
-        "updated_at": "2023-10-04T08:15:19.646Z",
+        "updated_at": "2025-11-22T16:10:30.429Z",
         "indicator": [
-            "desi_3b2"
+            "desi_sm_ge2"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -289,14 +244,15 @@
     "pk": 60,
     "fields": {
         "created_at": "2023-09-29T16:14:53.365Z",
-        "updated_at": "2023-10-04T08:15:19.626Z",
+        "updated_at": "2025-11-22T16:10:30.422Z",
         "indicator": [
-            "desi_3b3"
+            "desi_bigdata"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -304,14 +260,15 @@
     "pk": 61,
     "fields": {
         "created_at": "2023-09-29T16:15:22.721Z",
-        "updated_at": "2023-10-04T08:15:19.607Z",
+        "updated_at": "2025-11-22T16:10:30.415Z",
         "indicator": [
-            "desi_3b4"
+            "desi_cloud"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -319,14 +276,15 @@
     "pk": 62,
     "fields": {
         "created_at": "2023-09-29T16:15:29.382Z",
-        "updated_at": "2023-10-04T08:15:19.585Z",
+        "updated_at": "2025-11-22T16:10:30.409Z",
         "indicator": [
-            "desi_3b5"
+            "desi_ai"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -334,14 +292,15 @@
     "pk": 63,
     "fields": {
         "created_at": "2023-09-29T16:15:40.495Z",
-        "updated_at": "2023-10-04T08:15:19.562Z",
+        "updated_at": "2025-11-22T16:10:30.402Z",
         "indicator": [
-            "desi_3b6"
+            "desi_einv"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -349,14 +308,15 @@
     "pk": 64,
     "fields": {
         "created_at": "2023-09-29T16:15:52.263Z",
-        "updated_at": "2023-10-04T08:15:19.541Z",
+        "updated_at": "2025-11-22T16:10:30.395Z",
         "indicator": [
-            "desi_3c1"
+            "desi_sme_esell"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -364,14 +324,15 @@
     "pk": 65,
     "fields": {
         "created_at": "2023-09-29T16:16:00.238Z",
-        "updated_at": "2023-10-04T08:15:19.522Z",
+        "updated_at": "2025-11-22T16:10:30.388Z",
         "indicator": [
-            "desi_3c2"
+            "desi_sme_eturn"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -379,14 +340,15 @@
     "pk": 66,
     "fields": {
         "created_at": "2023-09-29T16:16:12.626Z",
-        "updated_at": "2023-10-04T08:15:19.501Z",
+        "updated_at": "2025-11-22T16:10:30.382Z",
         "indicator": [
-            "desi_3c3"
+            "desi_sme_esell_eu"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -394,14 +356,15 @@
     "pk": 67,
     "fields": {
         "created_at": "2023-09-29T16:16:33.006Z",
-        "updated_at": "2023-10-04T08:15:19.478Z",
+        "updated_at": "2025-11-22T16:10:30.375Z",
         "indicator": [
-            "desi_4a1"
+            "desi_egov_users"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -409,14 +372,15 @@
     "pk": 68,
     "fields": {
         "created_at": "2023-09-29T16:16:38.519Z",
-        "updated_at": "2023-10-04T08:15:19.455Z",
+        "updated_at": "2025-11-22T16:10:30.369Z",
         "indicator": [
-            "desi_4a2"
+            "desi_dps_cit"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -424,14 +388,15 @@
     "pk": 69,
     "fields": {
         "created_at": "2023-09-29T16:16:44.150Z",
-        "updated_at": "2023-10-04T08:15:19.430Z",
+        "updated_at": "2025-11-22T16:10:30.362Z",
         "indicator": [
-            "desi_4a3"
+            "desi_dps_biz"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -439,14 +404,15 @@
     "pk": 70,
     "fields": {
         "created_at": "2023-09-29T16:16:49.794Z",
-        "updated_at": "2023-10-04T08:15:19.411Z",
+        "updated_at": "2025-11-22T16:10:30.355Z",
         "indicator": [
-            "desi_4a4"
+            "desi_pff"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -454,14 +420,15 @@
     "pk": 71,
     "fields": {
         "created_at": "2023-09-29T16:16:55.982Z",
-        "updated_at": "2023-10-04T08:15:19.397Z",
+        "updated_at": "2025-11-22T16:10:30.348Z",
         "indicator": [
-            "desi_4a5"
+            "desi_tdpd"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -469,14 +436,15 @@
     "pk": 72,
     "fields": {
         "created_at": "2023-09-29T16:17:04.169Z",
-        "updated_at": "2023-10-04T08:15:19.382Z",
+        "updated_at": "2025-11-22T16:10:30.341Z",
         "indicator": [
-            "desi_4a6"
+            "desi_us"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -484,14 +452,15 @@
     "pk": 73,
     "fields": {
         "created_at": "2023-09-29T16:17:09.878Z",
-        "updated_at": "2023-10-04T08:15:19.356Z",
+        "updated_at": "2025-11-22T16:10:30.334Z",
         "indicator": [
-            "desi_4a7"
+            "desi_mf"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -499,14 +468,15 @@
     "pk": 74,
     "fields": {
         "created_at": "2023-09-29T16:17:18.877Z",
-        "updated_at": "2023-10-04T08:15:19.336Z",
+        "updated_at": "2025-11-22T16:10:30.327Z",
         "indicator": [
-            "desi_4b1"
+            "desi_aehr"
         ],
         "period": [
             "desi_2023"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -514,14 +484,15 @@
     "pk": 181,
     "fields": {
         "created_at": "2023-10-04T08:15:20.027Z",
-        "updated_at": "2023-10-04T08:15:20.027Z",
+        "updated_at": "2025-11-22T16:10:30.321Z",
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -529,14 +500,15 @@
     "pk": 182,
     "fields": {
         "created_at": "2023-10-04T08:15:20.035Z",
-        "updated_at": "2023-10-04T08:15:20.035Z",
+        "updated_at": "2025-11-22T16:10:30.314Z",
         "indicator": [
-            "desi_1a2"
+            "desi_dsk_bab"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -544,29 +516,15 @@
     "pk": 183,
     "fields": {
         "created_at": "2023-10-04T08:15:20.044Z",
-        "updated_at": "2023-10-04T08:15:20.044Z",
+        "updated_at": "2025-11-22T16:10:30.307Z",
         "indicator": [
-            "desi_1a3"
+            "desi_dsk_ab"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 184,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.052Z",
-        "updated_at": "2023-10-04T08:15:20.052Z",
-        "indicator": [
-            "desi_1a4"
-        ],
-        "period": [
-            "desi_2022"
-        ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -574,29 +532,15 @@
     "pk": 185,
     "fields": {
         "created_at": "2023-10-04T08:15:20.060Z",
-        "updated_at": "2023-10-04T08:15:20.060Z",
+        "updated_at": "2025-11-22T16:10:30.294Z",
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 186,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.068Z",
-        "updated_at": "2023-10-04T08:15:20.068Z",
-        "indicator": [
-            "desi_1a6"
-        ],
-        "period": [
-            "desi_2022"
-        ],
-        "note": "(data from 2021)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -604,14 +548,15 @@
     "pk": 187,
     "fields": {
         "created_at": "2023-10-04T08:15:20.076Z",
-        "updated_at": "2023-10-04T08:15:20.076Z",
+        "updated_at": "2025-11-22T16:10:30.281Z",
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -619,29 +564,15 @@
     "pk": 188,
     "fields": {
         "created_at": "2023-10-04T08:15:20.086Z",
-        "updated_at": "2023-10-04T08:15:20.086Z",
+        "updated_at": "2025-11-22T16:10:30.274Z",
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2020)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 189,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.094Z",
-        "updated_at": "2023-10-04T08:15:20.094Z",
-        "indicator": [
-            "desi_1b3"
-        ],
-        "period": [
-            "desi_2022"
-        ],
-        "note": "(data from 2021)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -649,14 +580,15 @@
     "pk": 190,
     "fields": {
         "created_at": "2023-10-04T08:15:20.102Z",
-        "updated_at": "2023-10-04T08:15:20.102Z",
+        "updated_at": "2025-11-22T16:10:30.261Z",
         "indicator": [
             "desi_2a1"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -664,14 +596,15 @@
     "pk": 191,
     "fields": {
         "created_at": "2023-10-04T08:15:20.110Z",
-        "updated_at": "2023-10-04T08:15:20.110Z",
+        "updated_at": "2025-11-22T16:10:30.255Z",
         "indicator": [
             "desi_2a2"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -679,14 +612,15 @@
     "pk": 192,
     "fields": {
         "created_at": "2023-10-04T08:15:20.118Z",
-        "updated_at": "2023-10-04T08:15:20.118Z",
+        "updated_at": "2025-11-22T16:10:30.248Z",
         "indicator": [
-            "desi_2a3"
+            "desi_vhcn"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -694,14 +628,15 @@
     "pk": 193,
     "fields": {
         "created_at": "2023-10-04T08:15:20.126Z",
-        "updated_at": "2023-10-04T08:15:20.126Z",
+        "updated_at": "2025-11-22T16:10:30.242Z",
         "indicator": [
-            "desi_2a4"
+            "desi_fttp"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -709,14 +644,15 @@
     "pk": 194,
     "fields": {
         "created_at": "2023-10-04T08:15:20.136Z",
-        "updated_at": "2023-10-04T08:15:20.136Z",
+        "updated_at": "2025-11-22T16:10:30.235Z",
         "indicator": [
-            "desi_2b1"
+            "desi_iug_md"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -724,14 +660,15 @@
     "pk": 195,
     "fields": {
         "created_at": "2023-10-04T08:15:20.144Z",
-        "updated_at": "2023-10-04T08:15:20.145Z",
+        "updated_at": "2025-11-22T16:10:30.228Z",
         "indicator": [
-            "desi_2b2"
+            "desi_5gcov"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -739,14 +676,15 @@
     "pk": 196,
     "fields": {
         "created_at": "2023-10-04T08:15:20.153Z",
-        "updated_at": "2023-10-04T08:15:20.153Z",
+        "updated_at": "2025-11-22T16:10:30.222Z",
         "indicator": [
-            "desi_2b3"
+            "desi_5g_spectrum"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2022)"
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -754,14 +692,15 @@
     "pk": 197,
     "fields": {
         "created_at": "2023-10-04T08:15:20.161Z",
-        "updated_at": "2023-10-04T08:15:20.161Z",
+        "updated_at": "2025-11-22T16:10:30.215Z",
         "indicator": [
-            "desi_3a1"
+            "desi_sme_di3_gelo"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -769,14 +708,15 @@
     "pk": 198,
     "fields": {
         "created_at": "2023-10-04T08:15:20.169Z",
-        "updated_at": "2023-10-04T08:15:20.169Z",
+        "updated_at": "2025-11-22T16:10:30.208Z",
         "indicator": [
-            "desi_3b1"
+            "desi_erp"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -784,14 +724,15 @@
     "pk": 199,
     "fields": {
         "created_at": "2023-10-04T08:15:20.177Z",
-        "updated_at": "2023-10-04T08:15:20.177Z",
+        "updated_at": "2025-11-22T16:10:30.202Z",
         "indicator": [
-            "desi_3b2"
+            "desi_sm_ge2"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -799,14 +740,15 @@
     "pk": 200,
     "fields": {
         "created_at": "2023-10-04T08:15:20.185Z",
-        "updated_at": "2023-10-04T08:15:20.185Z",
+        "updated_at": "2025-11-22T16:10:30.195Z",
         "indicator": [
-            "desi_3b3"
+            "desi_bigdata"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -814,14 +756,15 @@
     "pk": 201,
     "fields": {
         "created_at": "2023-10-04T08:15:20.193Z",
-        "updated_at": "2023-10-04T08:15:20.193Z",
+        "updated_at": "2025-11-22T16:10:30.188Z",
         "indicator": [
-            "desi_3b4"
+            "desi_cloud"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -829,14 +772,15 @@
     "pk": 202,
     "fields": {
         "created_at": "2023-10-04T08:15:20.201Z",
-        "updated_at": "2023-10-04T08:15:20.201Z",
+        "updated_at": "2025-11-22T16:10:30.181Z",
         "indicator": [
-            "desi_3b5"
+            "desi_ai"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -844,14 +788,15 @@
     "pk": 203,
     "fields": {
         "created_at": "2023-10-04T08:15:20.209Z",
-        "updated_at": "2023-10-04T08:15:20.209Z",
+        "updated_at": "2025-11-22T16:10:30.175Z",
         "indicator": [
-            "desi_3b6"
+            "desi_einv"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -859,14 +804,15 @@
     "pk": 204,
     "fields": {
         "created_at": "2023-10-04T08:15:20.218Z",
-        "updated_at": "2023-10-04T08:15:20.218Z",
+        "updated_at": "2025-11-22T16:10:30.168Z",
         "indicator": [
-            "desi_3c1"
+            "desi_sme_esell"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -874,14 +820,15 @@
     "pk": 205,
     "fields": {
         "created_at": "2023-10-04T08:15:20.226Z",
-        "updated_at": "2023-10-04T08:15:20.226Z",
+        "updated_at": "2025-11-22T16:10:30.161Z",
         "indicator": [
-            "desi_3c2"
+            "desi_sme_eturn"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -889,14 +836,15 @@
     "pk": 206,
     "fields": {
         "created_at": "2023-10-04T08:15:20.236Z",
-        "updated_at": "2023-10-04T08:15:20.236Z",
+        "updated_at": "2025-11-22T16:10:30.154Z",
         "indicator": [
-            "desi_3c3"
+            "desi_sme_esell_eu"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -904,14 +852,15 @@
     "pk": 207,
     "fields": {
         "created_at": "2023-10-04T08:15:20.245Z",
-        "updated_at": "2023-10-04T08:15:20.245Z",
+        "updated_at": "2025-11-22T16:10:30.147Z",
         "indicator": [
-            "desi_4a1"
+            "desi_egov_users"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -919,14 +868,15 @@
     "pk": 208,
     "fields": {
         "created_at": "2023-10-04T08:15:20.253Z",
-        "updated_at": "2023-10-04T08:15:20.253Z",
+        "updated_at": "2025-11-22T16:10:30.140Z",
         "indicator": [
-            "desi_4a2"
+            "desi_dps_cit"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -934,14 +884,15 @@
     "pk": 209,
     "fields": {
         "created_at": "2023-10-04T08:15:20.270Z",
-        "updated_at": "2023-10-04T08:15:20.270Z",
+        "updated_at": "2025-11-22T16:10:30.134Z",
         "indicator": [
-            "desi_4a3"
+            "desi_dps_biz"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -949,14 +900,15 @@
     "pk": 210,
     "fields": {
         "created_at": "2023-10-04T08:15:20.282Z",
-        "updated_at": "2023-10-04T08:15:20.283Z",
+        "updated_at": "2025-11-22T16:10:30.127Z",
         "indicator": [
-            "desi_4a4"
+            "desi_pff"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -964,14 +916,15 @@
     "pk": 211,
     "fields": {
         "created_at": "2023-10-04T08:15:20.293Z",
-        "updated_at": "2023-10-04T08:15:20.293Z",
+        "updated_at": "2025-11-22T16:10:30.120Z",
         "indicator": [
-            "desi_4a5"
+            "desi_tdpd"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -979,14 +932,15 @@
     "pk": 212,
     "fields": {
         "created_at": "2023-10-04T08:15:20.304Z",
-        "updated_at": "2023-10-04T08:15:20.304Z",
+        "updated_at": "2025-11-22T16:10:30.113Z",
         "indicator": [
-            "desi_4a6"
+            "desi_us"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -994,14 +948,15 @@
     "pk": 213,
     "fields": {
         "created_at": "2023-10-04T08:15:20.317Z",
-        "updated_at": "2023-10-04T08:15:20.317Z",
+        "updated_at": "2025-11-22T16:10:30.106Z",
         "indicator": [
-            "desi_4a7"
+            "desi_mf"
         ],
         "period": [
             "desi_2022"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1009,14 +964,15 @@
     "pk": 214,
     "fields": {
         "created_at": "2023-10-04T08:15:20.330Z",
-        "updated_at": "2023-10-04T08:15:20.330Z",
+        "updated_at": "2025-11-22T16:10:30.099Z",
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1024,14 +980,15 @@
     "pk": 215,
     "fields": {
         "created_at": "2023-10-04T08:15:20.340Z",
-        "updated_at": "2023-10-04T08:15:20.340Z",
+        "updated_at": "2025-11-22T16:10:30.092Z",
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1039,14 +996,15 @@
     "pk": 216,
     "fields": {
         "created_at": "2023-10-04T08:15:20.354Z",
-        "updated_at": "2023-10-04T08:15:20.354Z",
+        "updated_at": "2025-11-22T16:10:30.085Z",
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1054,29 +1012,15 @@
     "pk": 217,
     "fields": {
         "created_at": "2023-10-04T08:15:20.366Z",
-        "updated_at": "2023-10-04T08:15:20.366Z",
+        "updated_at": "2025-11-22T16:10:30.078Z",
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2019)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 218,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.382Z",
-        "updated_at": "2023-10-04T08:15:20.382Z",
-        "indicator": [
-            "desi_1b3"
-        ],
-        "period": [
-            "desi_2021"
-        ],
-        "note": "(data from 2020)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1084,14 +1028,15 @@
     "pk": 219,
     "fields": {
         "created_at": "2023-10-04T08:15:20.396Z",
-        "updated_at": "2023-10-04T08:15:20.396Z",
+        "updated_at": "2025-11-22T16:10:30.063Z",
         "indicator": [
             "desi_2a1"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1099,14 +1044,15 @@
     "pk": 220,
     "fields": {
         "created_at": "2023-10-04T08:15:20.408Z",
-        "updated_at": "2023-10-04T08:15:20.408Z",
+        "updated_at": "2025-11-22T16:10:30.055Z",
         "indicator": [
             "desi_2a2"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1114,14 +1060,15 @@
     "pk": 221,
     "fields": {
         "created_at": "2023-10-04T08:15:20.416Z",
-        "updated_at": "2023-10-04T08:15:20.416Z",
+        "updated_at": "2025-11-22T16:10:30.047Z",
         "indicator": [
-            "desi_2a3"
+            "desi_vhcn"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1129,14 +1076,15 @@
     "pk": 222,
     "fields": {
         "created_at": "2023-10-04T08:15:20.424Z",
-        "updated_at": "2023-10-04T08:15:20.424Z",
+        "updated_at": "2025-11-22T16:10:30.040Z",
         "indicator": [
-            "desi_2a4"
+            "desi_fttp"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1144,14 +1092,15 @@
     "pk": 223,
     "fields": {
         "created_at": "2023-10-04T08:15:20.432Z",
-        "updated_at": "2023-10-04T08:15:20.432Z",
+        "updated_at": "2025-11-22T16:10:30.033Z",
         "indicator": [
-            "desi_2b1"
+            "desi_iug_md"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1159,14 +1108,15 @@
     "pk": 224,
     "fields": {
         "created_at": "2023-10-04T08:15:20.448Z",
-        "updated_at": "2023-10-04T08:15:20.448Z",
+        "updated_at": "2025-11-22T16:10:30.025Z",
         "indicator": [
-            "desi_2b2"
+            "desi_5gcov"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1174,14 +1124,15 @@
     "pk": 225,
     "fields": {
         "created_at": "2023-10-04T08:15:20.465Z",
-        "updated_at": "2023-10-04T08:15:20.465Z",
+        "updated_at": "2025-11-22T16:10:30.018Z",
         "indicator": [
-            "desi_2b3"
+            "desi_5g_spectrum"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2021)"
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1189,14 +1140,15 @@
     "pk": 226,
     "fields": {
         "created_at": "2023-10-04T08:15:20.474Z",
-        "updated_at": "2023-10-04T08:15:20.474Z",
+        "updated_at": "2025-11-22T16:10:30.011Z",
         "indicator": [
-            "desi_3b1"
+            "desi_erp"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1204,14 +1156,15 @@
     "pk": 227,
     "fields": {
         "created_at": "2023-10-04T08:15:20.504Z",
-        "updated_at": "2023-10-04T08:15:20.504Z",
+        "updated_at": "2025-11-22T16:10:30.003Z",
         "indicator": [
-            "desi_3b2"
+            "desi_sm_ge2"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1219,14 +1172,15 @@
     "pk": 228,
     "fields": {
         "created_at": "2023-10-04T08:15:20.514Z",
-        "updated_at": "2023-10-04T08:15:20.514Z",
+        "updated_at": "2025-11-22T16:10:29.996Z",
         "indicator": [
-            "desi_3b3"
+            "desi_bigdata"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1234,14 +1188,15 @@
     "pk": 229,
     "fields": {
         "created_at": "2023-10-04T08:15:20.523Z",
-        "updated_at": "2023-10-04T08:15:20.523Z",
+        "updated_at": "2025-11-22T16:10:29.989Z",
         "indicator": [
-            "desi_3b6"
+            "desi_einv"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1249,14 +1204,15 @@
     "pk": 230,
     "fields": {
         "created_at": "2023-10-04T08:15:20.531Z",
-        "updated_at": "2023-10-04T08:15:20.531Z",
+        "updated_at": "2025-11-22T16:10:29.982Z",
         "indicator": [
-            "desi_3c1"
+            "desi_sme_esell"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1264,14 +1220,15 @@
     "pk": 231,
     "fields": {
         "created_at": "2023-10-04T08:15:20.540Z",
-        "updated_at": "2023-10-04T08:15:20.540Z",
+        "updated_at": "2025-11-22T16:10:29.975Z",
         "indicator": [
-            "desi_3c2"
+            "desi_sme_eturn"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1279,14 +1236,15 @@
     "pk": 232,
     "fields": {
         "created_at": "2023-10-04T08:15:20.548Z",
-        "updated_at": "2023-10-04T08:15:20.548Z",
+        "updated_at": "2025-11-22T16:10:29.968Z",
         "indicator": [
-            "desi_3c3"
+            "desi_sme_esell_eu"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1294,14 +1252,15 @@
     "pk": 233,
     "fields": {
         "created_at": "2023-10-04T08:15:20.556Z",
-        "updated_at": "2023-10-04T08:15:20.556Z",
+        "updated_at": "2025-11-22T16:10:29.961Z",
         "indicator": [
-            "desi_4a1"
+            "desi_egov_users"
         ],
         "period": [
             "desi_2021"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1309,14 +1268,15 @@
     "pk": 234,
     "fields": {
         "created_at": "2023-10-04T08:15:20.564Z",
-        "updated_at": "2023-10-04T08:15:20.564Z",
+        "updated_at": "2025-11-22T16:10:29.954Z",
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1324,14 +1284,15 @@
     "pk": 235,
     "fields": {
         "created_at": "2023-10-04T08:15:20.572Z",
-        "updated_at": "2023-10-04T08:15:20.572Z",
+        "updated_at": "2025-11-22T16:10:29.948Z",
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1339,14 +1300,15 @@
     "pk": 236,
     "fields": {
         "created_at": "2023-10-04T08:15:20.580Z",
-        "updated_at": "2023-10-04T08:15:20.580Z",
+        "updated_at": "2025-11-22T16:10:29.941Z",
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1354,29 +1316,15 @@
     "pk": 237,
     "fields": {
         "created_at": "2023-10-04T08:15:20.588Z",
-        "updated_at": "2023-10-04T08:15:20.588Z",
+        "updated_at": "2025-11-22T16:10:29.934Z",
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2018)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 238,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.596Z",
-        "updated_at": "2023-10-04T08:15:20.596Z",
-        "indicator": [
-            "desi_1b3"
-        ],
-        "period": [
-            "desi_2020"
-        ],
-        "note": "(data from 2019)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1384,14 +1332,15 @@
     "pk": 239,
     "fields": {
         "created_at": "2023-10-04T08:15:20.605Z",
-        "updated_at": "2023-10-04T08:15:20.605Z",
+        "updated_at": "2025-11-22T16:10:29.921Z",
         "indicator": [
             "desi_2a1"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1399,14 +1348,15 @@
     "pk": 240,
     "fields": {
         "created_at": "2023-10-04T08:15:20.613Z",
-        "updated_at": "2023-10-04T08:15:20.613Z",
+        "updated_at": "2025-11-22T16:10:29.915Z",
         "indicator": [
             "desi_2a2"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1414,14 +1364,15 @@
     "pk": 241,
     "fields": {
         "created_at": "2023-10-04T08:15:20.621Z",
-        "updated_at": "2023-10-04T08:15:20.621Z",
+        "updated_at": "2025-11-22T16:10:29.908Z",
         "indicator": [
-            "desi_2a3"
+            "desi_vhcn"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1429,14 +1380,15 @@
     "pk": 242,
     "fields": {
         "created_at": "2023-10-04T08:15:20.630Z",
-        "updated_at": "2023-10-04T08:15:20.630Z",
+        "updated_at": "2025-11-22T16:10:29.901Z",
         "indicator": [
-            "desi_2a4"
+            "desi_fttp"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1444,14 +1396,15 @@
     "pk": 243,
     "fields": {
         "created_at": "2023-10-04T08:15:20.636Z",
-        "updated_at": "2023-10-04T08:15:20.636Z",
+        "updated_at": "2025-11-22T16:10:29.895Z",
         "indicator": [
-            "desi_2b1"
+            "desi_iug_md"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1459,14 +1412,15 @@
     "pk": 244,
     "fields": {
         "created_at": "2023-10-04T08:15:20.642Z",
-        "updated_at": "2023-10-04T08:15:20.642Z",
+        "updated_at": "2025-11-22T16:10:29.888Z",
         "indicator": [
-            "desi_2b3"
+            "desi_5g_spectrum"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2020)"
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1474,14 +1428,15 @@
     "pk": 245,
     "fields": {
         "created_at": "2023-10-04T08:15:20.649Z",
-        "updated_at": "2023-10-04T08:15:20.649Z",
+        "updated_at": "2025-11-22T16:10:29.882Z",
         "indicator": [
-            "desi_3b1"
+            "desi_erp"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1489,14 +1444,15 @@
     "pk": 246,
     "fields": {
         "created_at": "2023-10-04T08:15:20.658Z",
-        "updated_at": "2023-10-04T08:15:20.658Z",
+        "updated_at": "2025-11-22T16:10:29.875Z",
         "indicator": [
-            "desi_3b2"
+            "desi_sm_ge2"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1504,14 +1460,15 @@
     "pk": 247,
     "fields": {
         "created_at": "2023-10-04T08:15:20.672Z",
-        "updated_at": "2023-10-04T08:15:20.672Z",
+        "updated_at": "2025-11-22T16:10:29.868Z",
         "indicator": [
-            "desi_3b3"
+            "desi_bigdata"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1519,14 +1476,15 @@
     "pk": 248,
     "fields": {
         "created_at": "2023-10-04T08:15:20.686Z",
-        "updated_at": "2023-10-04T08:15:20.686Z",
+        "updated_at": "2025-11-22T16:10:29.862Z",
         "indicator": [
-            "desi_3b6"
+            "desi_einv"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1534,14 +1492,15 @@
     "pk": 249,
     "fields": {
         "created_at": "2023-10-04T08:15:20.699Z",
-        "updated_at": "2023-10-04T08:15:20.699Z",
+        "updated_at": "2025-11-22T16:10:29.855Z",
         "indicator": [
-            "desi_3c1"
+            "desi_sme_esell"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1549,14 +1508,15 @@
     "pk": 250,
     "fields": {
         "created_at": "2023-10-04T08:15:20.707Z",
-        "updated_at": "2023-10-04T08:15:20.707Z",
+        "updated_at": "2025-11-22T16:10:29.848Z",
         "indicator": [
-            "desi_3c2"
+            "desi_sme_eturn"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1564,14 +1524,15 @@
     "pk": 251,
     "fields": {
         "created_at": "2023-10-04T08:15:20.713Z",
-        "updated_at": "2023-10-04T08:15:20.713Z",
+        "updated_at": "2025-11-22T16:10:29.842Z",
         "indicator": [
-            "desi_3c3"
+            "desi_sme_esell_eu"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1579,14 +1540,15 @@
     "pk": 252,
     "fields": {
         "created_at": "2023-10-04T08:15:20.720Z",
-        "updated_at": "2023-10-04T08:15:20.720Z",
+        "updated_at": "2025-11-22T16:10:29.835Z",
         "indicator": [
-            "desi_4a1"
+            "desi_egov_users"
         ],
         "period": [
             "desi_2020"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1594,14 +1556,15 @@
     "pk": 253,
     "fields": {
         "created_at": "2023-10-04T08:15:20.727Z",
-        "updated_at": "2023-10-04T08:15:20.727Z",
+        "updated_at": "2025-11-22T16:10:29.828Z",
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1609,14 +1572,15 @@
     "pk": 254,
     "fields": {
         "created_at": "2023-10-04T08:15:20.735Z",
-        "updated_at": "2023-10-04T08:15:20.735Z",
+        "updated_at": "2025-11-22T16:10:29.822Z",
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1624,14 +1588,15 @@
     "pk": 255,
     "fields": {
         "created_at": "2023-10-04T08:15:20.743Z",
-        "updated_at": "2023-10-04T08:15:20.743Z",
+        "updated_at": "2025-11-22T16:10:29.815Z",
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1639,29 +1604,15 @@
     "pk": 256,
     "fields": {
         "created_at": "2023-10-04T08:15:20.750Z",
-        "updated_at": "2023-10-04T08:15:20.750Z",
+        "updated_at": "2025-11-22T16:10:29.808Z",
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2017)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 257,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.756Z",
-        "updated_at": "2023-10-04T08:15:20.756Z",
-        "indicator": [
-            "desi_1b3"
-        ],
-        "period": [
-            "desi_2019"
-        ],
-        "note": "(data from 2018)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1669,14 +1620,15 @@
     "pk": 258,
     "fields": {
         "created_at": "2023-10-04T08:15:20.768Z",
-        "updated_at": "2023-10-04T08:15:20.768Z",
+        "updated_at": "2025-11-22T16:10:29.795Z",
         "indicator": [
             "desi_2a1"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1684,14 +1636,15 @@
     "pk": 259,
     "fields": {
         "created_at": "2023-10-04T08:15:20.782Z",
-        "updated_at": "2023-10-04T08:15:20.782Z",
+        "updated_at": "2025-11-22T16:10:29.788Z",
         "indicator": [
-            "desi_2a3"
+            "desi_vhcn"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1699,14 +1652,15 @@
     "pk": 260,
     "fields": {
         "created_at": "2023-10-04T08:15:20.798Z",
-        "updated_at": "2023-10-04T08:15:20.798Z",
+        "updated_at": "2025-11-22T16:10:29.782Z",
         "indicator": [
-            "desi_2a4"
+            "desi_fttp"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1714,14 +1668,15 @@
     "pk": 261,
     "fields": {
         "created_at": "2023-10-04T08:15:20.824Z",
-        "updated_at": "2023-10-04T08:15:20.824Z",
+        "updated_at": "2025-11-22T16:10:29.775Z",
         "indicator": [
-            "desi_2b1"
+            "desi_iug_md"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1729,14 +1684,15 @@
     "pk": 262,
     "fields": {
         "created_at": "2023-10-04T08:15:20.843Z",
-        "updated_at": "2023-10-04T08:15:20.843Z",
+        "updated_at": "2025-11-22T16:10:29.768Z",
         "indicator": [
-            "desi_2b3"
+            "desi_5g_spectrum"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2019)"
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1744,14 +1700,15 @@
     "pk": 263,
     "fields": {
         "created_at": "2023-10-04T08:15:20.852Z",
-        "updated_at": "2023-10-04T08:15:20.852Z",
+        "updated_at": "2025-11-22T16:10:29.761Z",
         "indicator": [
-            "desi_3b1"
+            "desi_erp"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1759,14 +1716,15 @@
     "pk": 264,
     "fields": {
         "created_at": "2023-10-04T08:15:20.860Z",
-        "updated_at": "2023-10-04T08:15:20.860Z",
+        "updated_at": "2025-11-22T16:10:29.754Z",
         "indicator": [
-            "desi_3b2"
+            "desi_sm_ge2"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1774,14 +1732,15 @@
     "pk": 265,
     "fields": {
         "created_at": "2023-10-04T08:15:20.868Z",
-        "updated_at": "2023-10-04T08:15:20.868Z",
+        "updated_at": "2025-11-22T16:10:29.747Z",
         "indicator": [
-            "desi_3b3"
+            "desi_bigdata"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1789,14 +1748,15 @@
     "pk": 266,
     "fields": {
         "created_at": "2023-10-04T08:15:20.878Z",
-        "updated_at": "2023-10-04T08:15:20.878Z",
+        "updated_at": "2025-11-22T16:10:29.740Z",
         "indicator": [
-            "desi_3b6"
+            "desi_einv"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1804,14 +1764,15 @@
     "pk": 267,
     "fields": {
         "created_at": "2023-10-04T08:15:20.885Z",
-        "updated_at": "2023-10-04T08:15:20.885Z",
+        "updated_at": "2025-11-22T16:10:29.734Z",
         "indicator": [
-            "desi_3c1"
+            "desi_sme_esell"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1819,14 +1780,15 @@
     "pk": 268,
     "fields": {
         "created_at": "2023-10-04T08:15:20.891Z",
-        "updated_at": "2023-10-04T08:15:20.892Z",
+        "updated_at": "2025-11-22T16:10:29.727Z",
         "indicator": [
-            "desi_3c2"
+            "desi_sme_eturn"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1834,14 +1796,15 @@
     "pk": 269,
     "fields": {
         "created_at": "2023-10-04T08:15:20.898Z",
-        "updated_at": "2023-10-04T08:15:20.898Z",
+        "updated_at": "2025-11-22T16:10:29.720Z",
         "indicator": [
-            "desi_3c3"
+            "desi_sme_esell_eu"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": true
     }
 },
 {
@@ -1849,14 +1812,15 @@
     "pk": 270,
     "fields": {
         "created_at": "2023-10-04T08:15:20.905Z",
-        "updated_at": "2023-10-04T08:15:20.905Z",
+        "updated_at": "2025-11-22T16:10:29.714Z",
         "indicator": [
-            "desi_4a1"
+            "desi_egov_users"
         ],
         "period": [
             "desi_2019"
         ],
-        "note": "(data from 2018)"
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1864,14 +1828,15 @@
     "pk": 271,
     "fields": {
         "created_at": "2023-10-04T08:15:20.911Z",
-        "updated_at": "2023-10-04T08:15:20.911Z",
+        "updated_at": "2025-11-22T16:10:29.707Z",
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1879,14 +1844,15 @@
     "pk": 272,
     "fields": {
         "created_at": "2023-10-04T08:15:20.918Z",
-        "updated_at": "2023-10-04T08:15:20.918Z",
+        "updated_at": "2025-11-22T16:10:29.701Z",
         "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1894,14 +1860,15 @@
     "pk": 273,
     "fields": {
         "created_at": "2023-10-04T08:15:20.924Z",
-        "updated_at": "2023-10-04T08:15:20.924Z",
+        "updated_at": "2025-11-22T16:10:29.694Z",
         "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1909,29 +1876,15 @@
     "pk": 274,
     "fields": {
         "created_at": "2023-10-04T08:15:20.931Z",
-        "updated_at": "2023-10-04T08:15:20.931Z",
+        "updated_at": "2025-11-22T16:10:29.687Z",
         "indicator": [
-            "desi_1b2"
+            "desi_ict_grad"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2016)"
-    }
-},
-{
-    "model": "charts.extrachartnote",
-    "pk": 275,
-    "fields": {
-        "created_at": "2023-10-04T08:15:20.938Z",
-        "updated_at": "2023-10-04T08:15:20.938Z",
-        "indicator": [
-            "desi_1b3"
-        ],
-        "period": [
-            "desi_2018"
-        ],
-        "note": "(data from 2017)"
+        "note": "(data from 2016)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1939,14 +1892,15 @@
     "pk": 276,
     "fields": {
         "created_at": "2023-10-04T08:15:20.944Z",
-        "updated_at": "2023-10-04T08:15:20.944Z",
+        "updated_at": "2025-11-22T16:10:29.674Z",
         "indicator": [
             "desi_2a1"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1954,14 +1908,15 @@
     "pk": 277,
     "fields": {
         "created_at": "2023-10-04T08:15:20.951Z",
-        "updated_at": "2023-10-04T08:15:20.951Z",
+        "updated_at": "2025-11-22T16:10:29.667Z",
         "indicator": [
-            "desi_2a3"
+            "desi_vhcn"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1969,14 +1924,15 @@
     "pk": 278,
     "fields": {
         "created_at": "2023-10-04T08:15:20.959Z",
-        "updated_at": "2023-10-04T08:15:20.959Z",
+        "updated_at": "2025-11-22T16:10:29.660Z",
         "indicator": [
-            "desi_2a4"
+            "desi_fttp"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1984,14 +1940,15 @@
     "pk": 279,
     "fields": {
         "created_at": "2023-10-04T08:15:20.966Z",
-        "updated_at": "2023-10-04T08:15:20.966Z",
+        "updated_at": "2025-11-22T16:10:29.654Z",
         "indicator": [
-            "desi_2b1"
+            "desi_iug_md"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2016)"
+        "note": "(data from 2016)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -1999,14 +1956,15 @@
     "pk": 280,
     "fields": {
         "created_at": "2023-10-04T08:15:20.973Z",
-        "updated_at": "2023-10-04T08:15:20.973Z",
+        "updated_at": "2025-11-22T16:10:29.647Z",
         "indicator": [
-            "desi_3b1"
+            "desi_erp"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -2014,14 +1972,15 @@
     "pk": 281,
     "fields": {
         "created_at": "2023-10-04T08:15:20.984Z",
-        "updated_at": "2023-10-04T08:15:20.985Z",
+        "updated_at": "2025-11-22T16:10:29.640Z",
         "indicator": [
-            "desi_3b2"
+            "desi_sm_ge2"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -2029,14 +1988,15 @@
     "pk": 282,
     "fields": {
         "created_at": "2023-10-04T08:15:21.005Z",
-        "updated_at": "2023-10-04T08:15:21.005Z",
+        "updated_at": "2025-11-22T16:10:29.634Z",
         "indicator": [
-            "desi_3b3"
+            "desi_bigdata"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2016)"
+        "note": "(data from 2016)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -2044,14 +2004,15 @@
     "pk": 283,
     "fields": {
         "created_at": "2023-10-04T08:15:21.017Z",
-        "updated_at": "2023-10-04T08:15:21.017Z",
+        "updated_at": "2025-11-22T16:10:29.627Z",
         "indicator": [
-            "desi_3c1"
+            "desi_sme_esell"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -2059,14 +2020,15 @@
     "pk": 284,
     "fields": {
         "created_at": "2023-10-04T08:15:21.026Z",
-        "updated_at": "2023-10-04T08:15:21.026Z",
+        "updated_at": "2025-11-22T16:10:29.620Z",
         "indicator": [
-            "desi_3c2"
+            "desi_sme_eturn"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -2074,14 +2036,15 @@
     "pk": 285,
     "fields": {
         "created_at": "2023-10-04T08:15:21.035Z",
-        "updated_at": "2023-10-04T08:15:21.035Z",
+        "updated_at": "2025-11-22T16:10:29.614Z",
         "indicator": [
-            "desi_3c3"
+            "desi_sme_esell_eu"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
     }
 },
 {
@@ -2089,14 +2052,3535 @@
     "pk": 286,
     "fields": {
         "created_at": "2023-10-04T08:15:21.043Z",
-        "updated_at": "2023-10-04T08:15:21.043Z",
+        "updated_at": "2025-11-22T16:10:29.607Z",
         "indicator": [
-            "desi_4a1"
+            "desi_egov_users"
         ],
         "period": [
             "desi_2018"
         ],
-        "note": "(data from 2017)"
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 287,
+    "fields": {
+        "created_at": "2024-01-25T10:01:59.797Z",
+        "updated_at": "2025-11-22T16:10:29.600Z",
+        "indicator": [
+            "desi_iuse"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 288,
+    "fields": {
+        "created_at": "2024-01-25T10:13:08.630Z",
+        "updated_at": "2025-11-22T16:10:29.593Z",
+        "indicator": [
+            "desi_dsk_bab"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 289,
+    "fields": {
+        "created_at": "2024-01-25T10:13:15.585Z",
+        "updated_at": "2025-11-22T16:10:29.586Z",
+        "indicator": [
+            "desi_dsk_ab"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 292,
+    "fields": {
+        "created_at": "2024-01-25T10:40:33.470Z",
+        "updated_at": "2025-11-22T16:10:29.566Z",
+        "indicator": [
+            "desi_erp"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 293,
+    "fields": {
+        "created_at": "2024-01-25T10:43:31.714Z",
+        "updated_at": "2025-11-22T16:10:29.559Z",
+        "indicator": [
+            "desi_sm_ge2"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 294,
+    "fields": {
+        "created_at": "2024-01-25T10:48:00.834Z",
+        "updated_at": "2025-11-22T16:10:29.553Z",
+        "indicator": [
+            "desi_cloud"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 295,
+    "fields": {
+        "created_at": "2024-01-25T10:52:10.391Z",
+        "updated_at": "2025-11-22T16:10:29.545Z",
+        "indicator": [
+            "desi_bigdata"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 296,
+    "fields": {
+        "created_at": "2024-01-25T11:41:11.105Z",
+        "updated_at": "2025-11-22T16:10:29.539Z",
+        "indicator": [
+            "desi_ai"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 297,
+    "fields": {
+        "created_at": "2024-01-25T11:45:20.796Z",
+        "updated_at": "2025-11-22T16:10:29.532Z",
+        "indicator": [
+            "desi_sme_di3_gelo"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 298,
+    "fields": {
+        "created_at": "2024-01-25T11:51:03.977Z",
+        "updated_at": "2025-11-22T16:10:29.525Z",
+        "indicator": [
+            "desi_sme_esell"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 300,
+    "fields": {
+        "created_at": "2024-01-25T14:30:35.227Z",
+        "updated_at": "2025-11-22T16:10:29.512Z",
+        "indicator": [
+            "desi_sme_eturn"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 301,
+    "fields": {
+        "created_at": "2024-01-25T14:39:32.648Z",
+        "updated_at": "2025-11-22T16:10:29.505Z",
+        "indicator": [
+            "desi_ai_cloud_da"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 302,
+    "fields": {
+        "created_at": "2024-01-29T14:46:17.101Z",
+        "updated_at": "2025-11-22T16:10:29.498Z",
+        "indicator": [
+            "desi_einv"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 304,
+    "fields": {
+        "created_at": "2024-01-29T15:11:02.654Z",
+        "updated_at": "2025-11-22T16:10:29.492Z",
+        "indicator": [
+            "desi_iug_md"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 305,
+    "fields": {
+        "created_at": "2024-02-03T14:05:21.242Z",
+        "updated_at": "2025-11-22T16:10:29.485Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 306,
+    "fields": {
+        "created_at": "2024-02-03T14:05:30.238Z",
+        "updated_at": "2025-11-22T16:10:29.478Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 307,
+    "fields": {
+        "created_at": "2024-02-03T14:05:42.008Z",
+        "updated_at": "2025-11-22T16:10:29.472Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 308,
+    "fields": {
+        "created_at": "2024-02-03T14:05:51.272Z",
+        "updated_at": "2025-11-22T16:10:29.465Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 309,
+    "fields": {
+        "created_at": "2024-02-03T14:06:01.142Z",
+        "updated_at": "2025-11-22T16:10:29.458Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 310,
+    "fields": {
+        "created_at": "2024-02-03T14:06:43.046Z",
+        "updated_at": "2025-11-22T16:10:29.452Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 311,
+    "fields": {
+        "created_at": "2024-03-01T14:31:19.131Z",
+        "updated_at": "2025-11-22T16:10:29.445Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 312,
+    "fields": {
+        "created_at": "2024-03-01T14:31:28.677Z",
+        "updated_at": "2025-11-22T16:10:29.438Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 313,
+    "fields": {
+        "created_at": "2024-03-01T14:33:47.716Z",
+        "updated_at": "2025-11-22T16:10:29.432Z",
+        "indicator": [
+            "desi_sme_di4_gelo"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 314,
+    "fields": {
+        "created_at": "2024-03-06T15:28:24.713Z",
+        "updated_at": "2025-11-22T16:10:29.425Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 315,
+    "fields": {
+        "created_at": "2024-03-06T15:28:44.288Z",
+        "updated_at": "2025-11-22T16:10:29.418Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 316,
+    "fields": {
+        "created_at": "2024-03-06T15:29:03.891Z",
+        "updated_at": "2025-11-22T16:10:29.411Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 317,
+    "fields": {
+        "created_at": "2024-03-06T15:29:11.730Z",
+        "updated_at": "2025-11-22T16:10:29.405Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 318,
+    "fields": {
+        "created_at": "2024-03-22T15:26:08.701Z",
+        "updated_at": "2025-11-22T16:10:29.398Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 319,
+    "fields": {
+        "created_at": "2024-03-22T15:26:39.351Z",
+        "updated_at": "2025-11-22T16:10:29.391Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 320,
+    "fields": {
+        "created_at": "2024-03-22T15:27:08.941Z",
+        "updated_at": "2025-11-22T16:10:29.385Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 321,
+    "fields": {
+        "created_at": "2024-03-22T15:27:25.886Z",
+        "updated_at": "2025-11-22T16:10:29.378Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 322,
+    "fields": {
+        "created_at": "2024-03-22T15:34:03.114Z",
+        "updated_at": "2025-11-22T16:10:29.371Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 323,
+    "fields": {
+        "created_at": "2024-03-22T15:34:15.533Z",
+        "updated_at": "2025-11-22T16:10:29.365Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 324,
+    "fields": {
+        "created_at": "2024-03-22T15:34:26.760Z",
+        "updated_at": "2025-11-22T16:10:29.358Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 325,
+    "fields": {
+        "created_at": "2024-03-22T15:34:39.058Z",
+        "updated_at": "2025-11-22T16:10:29.351Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 326,
+    "fields": {
+        "created_at": "2024-03-28T12:51:18.992Z",
+        "updated_at": "2025-11-22T16:10:29.344Z",
+        "indicator": [
+            "desi_fttp"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 327,
+    "fields": {
+        "created_at": "2024-03-28T12:51:43.656Z",
+        "updated_at": "2025-11-22T16:10:29.338Z",
+        "indicator": [
+            "desi_vhcn"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 328,
+    "fields": {
+        "created_at": "2024-03-28T12:51:55.579Z",
+        "updated_at": "2025-11-22T16:10:29.331Z",
+        "indicator": [
+            "desi_5gcov"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 329,
+    "fields": {
+        "created_at": "2024-03-29T08:07:48.818Z",
+        "updated_at": "2025-11-22T16:10:29.324Z",
+        "indicator": [
+            "desi_bbspeed_100"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 330,
+    "fields": {
+        "created_at": "2024-03-29T08:08:00.423Z",
+        "updated_at": "2025-11-22T16:10:29.317Z",
+        "indicator": [
+            "desi_bbspeed_100"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 331,
+    "fields": {
+        "created_at": "2024-03-29T08:08:08.525Z",
+        "updated_at": "2025-11-22T16:10:29.310Z",
+        "indicator": [
+            "desi_bbspeed_100"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 332,
+    "fields": {
+        "created_at": "2024-03-29T08:08:15.714Z",
+        "updated_at": "2025-11-22T16:10:29.304Z",
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 333,
+    "fields": {
+        "created_at": "2024-03-29T08:08:24.400Z",
+        "updated_at": "2025-11-22T16:10:29.297Z",
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 334,
+    "fields": {
+        "created_at": "2024-03-29T08:08:33.608Z",
+        "updated_at": "2025-11-22T16:10:29.290Z",
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 335,
+    "fields": {
+        "created_at": "2024-04-16T09:44:39.920Z",
+        "updated_at": "2025-11-22T16:10:29.284Z",
+        "indicator": [
+            "desi_5g_spectrum"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 336,
+    "fields": {
+        "created_at": "2024-04-26T12:03:03.524Z",
+        "updated_at": "2025-11-22T16:10:29.277Z",
+        "indicator": [
+            "desi_ict_spec"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 337,
+    "fields": {
+        "created_at": "2024-04-26T16:13:42.655Z",
+        "updated_at": "2025-11-22T16:10:29.271Z",
+        "indicator": [
+            "desi_5g_sim"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 338,
+    "fields": {
+        "created_at": "2024-05-01T08:14:27.804Z",
+        "updated_at": "2025-11-22T16:10:29.264Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 339,
+    "fields": {
+        "created_at": "2024-05-01T08:14:42.008Z",
+        "updated_at": "2025-11-22T16:10:29.257Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 340,
+    "fields": {
+        "created_at": "2024-05-01T08:15:16.222Z",
+        "updated_at": "2025-11-22T16:10:29.251Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 341,
+    "fields": {
+        "created_at": "2024-05-01T08:15:28.009Z",
+        "updated_at": "2025-11-22T16:10:29.244Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 342,
+    "fields": {
+        "created_at": "2024-05-01T08:16:51.039Z",
+        "updated_at": "2025-11-22T16:10:29.237Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 343,
+    "fields": {
+        "created_at": "2024-05-01T08:17:00.899Z",
+        "updated_at": "2025-11-22T16:10:29.230Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 344,
+    "fields": {
+        "created_at": "2024-05-01T08:17:10.580Z",
+        "updated_at": "2025-11-22T16:10:29.224Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 345,
+    "fields": {
+        "created_at": "2024-05-01T08:17:23.792Z",
+        "updated_at": "2025-11-22T16:10:29.217Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 346,
+    "fields": {
+        "created_at": "2024-05-01T08:18:02.861Z",
+        "updated_at": "2025-11-22T16:10:29.210Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 347,
+    "fields": {
+        "created_at": "2024-05-01T08:18:22.813Z",
+        "updated_at": "2025-11-22T16:10:29.204Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 348,
+    "fields": {
+        "created_at": "2024-05-01T08:18:30.809Z",
+        "updated_at": "2025-11-22T16:10:29.197Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 349,
+    "fields": {
+        "created_at": "2024-05-01T08:18:40.262Z",
+        "updated_at": "2025-11-22T16:10:29.190Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 350,
+    "fields": {
+        "created_at": "2024-05-01T08:22:23.487Z",
+        "updated_at": "2025-11-22T16:10:29.183Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 351,
+    "fields": {
+        "created_at": "2024-05-01T08:22:36.702Z",
+        "updated_at": "2025-11-22T16:10:29.177Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 352,
+    "fields": {
+        "created_at": "2024-05-01T08:22:46.169Z",
+        "updated_at": "2025-11-22T16:10:29.170Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 353,
+    "fields": {
+        "created_at": "2024-05-01T08:22:55.845Z",
+        "updated_at": "2025-11-22T16:10:29.163Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 354,
+    "fields": {
+        "created_at": "2024-05-04T08:34:53.970Z",
+        "updated_at": "2025-11-22T16:10:29.157Z",
+        "indicator": [
+            "desi_ict_grad"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 355,
+    "fields": {
+        "created_at": "2024-05-07T08:15:34.932Z",
+        "updated_at": "2025-11-22T16:10:29.150Z",
+        "indicator": [
+            "desi_edge"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 356,
+    "fields": {
+        "created_at": "2024-05-07T08:15:46.605Z",
+        "updated_at": "2025-11-22T16:10:29.143Z",
+        "indicator": [
+            "desi_edge"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 357,
+    "fields": {
+        "created_at": "2024-05-13T12:24:37.644Z",
+        "updated_at": "2025-11-22T16:10:29.136Z",
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 358,
+    "fields": {
+        "created_at": "2024-05-13T12:24:57.423Z",
+        "updated_at": "2025-11-22T16:10:29.129Z",
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 359,
+    "fields": {
+        "created_at": "2024-05-15T14:23:47.131Z",
+        "updated_at": "2025-11-22T16:10:29.123Z",
+        "indicator": [
+            "desi_aehr"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 360,
+    "fields": {
+        "created_at": "2024-06-07T15:29:28.822Z",
+        "updated_at": "2025-11-22T16:10:29.116Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 361,
+    "fields": {
+        "created_at": "2024-06-07T15:29:41.297Z",
+        "updated_at": "2025-11-22T16:10:29.109Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 362,
+    "fields": {
+        "created_at": "2024-09-10T15:24:02.654Z",
+        "updated_at": "2025-11-22T16:10:29.103Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 363,
+    "fields": {
+        "created_at": "2024-09-10T15:24:14.481Z",
+        "updated_at": "2025-11-22T16:10:29.096Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 364,
+    "fields": {
+        "created_at": "2024-09-10T15:24:26.319Z",
+        "updated_at": "2025-11-22T16:10:29.090Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 365,
+    "fields": {
+        "created_at": "2024-09-10T15:24:53.508Z",
+        "updated_at": "2025-11-22T16:10:29.083Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 366,
+    "fields": {
+        "created_at": "2024-09-10T15:25:04.009Z",
+        "updated_at": "2025-11-22T16:10:29.076Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 367,
+    "fields": {
+        "created_at": "2024-09-10T15:25:36.694Z",
+        "updated_at": "2025-11-22T16:10:29.069Z",
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 368,
+    "fields": {
+        "created_at": "2024-09-10T15:25:47.874Z",
+        "updated_at": "2025-11-22T16:10:29.063Z",
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 369,
+    "fields": {
+        "created_at": "2024-09-10T15:30:29.478Z",
+        "updated_at": "2025-11-22T16:10:29.056Z",
+        "indicator": [
+            "desi_da"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 371,
+    "fields": {
+        "created_at": "2024-12-17T10:40:57.850Z",
+        "updated_at": "2025-11-22T16:10:29.049Z",
+        "indicator": [
+            "desi_eitt"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 372,
+    "fields": {
+        "created_at": "2024-12-17T10:41:23.770Z",
+        "updated_at": "2025-11-22T16:10:29.042Z",
+        "indicator": [
+            "desi_eitt"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": true
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 373,
+    "fields": {
+        "created_at": "2024-12-17T10:44:56.521Z",
+        "updated_at": "2025-11-22T16:10:29.036Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 374,
+    "fields": {
+        "created_at": "2024-12-17T10:48:21.869Z",
+        "updated_at": "2025-11-22T16:10:29.029Z",
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 375,
+    "fields": {
+        "created_at": "2024-12-17T10:50:55.401Z",
+        "updated_at": "2025-11-22T16:10:29.022Z",
+        "indicator": [
+            "desi_sme_eturn"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 376,
+    "fields": {
+        "created_at": "2024-12-17T10:53:56.564Z",
+        "updated_at": "2025-11-22T16:10:29.016Z",
+        "indicator": [
+            "desi_sme_esell"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 378,
+    "fields": {
+        "created_at": "2024-12-17T12:05:12.924Z",
+        "updated_at": "2025-11-22T16:10:29.001Z",
+        "indicator": [
+            "desi_ai"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 379,
+    "fields": {
+        "created_at": "2024-12-17T12:05:21.095Z",
+        "updated_at": "2025-11-22T16:10:28.994Z",
+        "indicator": [
+            "desi_ai_cloud_da"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 380,
+    "fields": {
+        "created_at": "2024-12-17T12:07:01.068Z",
+        "updated_at": "2025-11-22T16:10:28.987Z",
+        "indicator": [
+            "desi_da"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 381,
+    "fields": {
+        "created_at": "2024-12-17T12:08:47.046Z",
+        "updated_at": "2025-11-22T16:10:28.981Z",
+        "indicator": [
+            "desi_cloud"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 382,
+    "fields": {
+        "created_at": "2024-12-17T12:15:40.825Z",
+        "updated_at": "2025-11-22T16:10:28.974Z",
+        "indicator": [
+            "desi_iuse"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 383,
+    "fields": {
+        "created_at": "2025-03-04T10:07:46.168Z",
+        "updated_at": "2025-11-22T16:10:28.967Z",
+        "indicator": [
+            "desi_edge"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 384,
+    "fields": {
+        "created_at": "2025-03-05T13:05:44.006Z",
+        "updated_at": "2025-11-22T16:10:28.960Z",
+        "indicator": [
+            "desi_5gc"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 385,
+    "fields": {
+        "created_at": "2025-03-05T13:05:57.057Z",
+        "updated_at": "2025-11-22T16:10:28.953Z",
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 386,
+    "fields": {
+        "created_at": "2025-03-05T13:06:11.148Z",
+        "updated_at": "2025-11-22T16:10:28.946Z",
+        "indicator": [
+            "desi_vhcn"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 387,
+    "fields": {
+        "created_at": "2025-03-05T13:06:22.948Z",
+        "updated_at": "2025-11-22T16:10:28.939Z",
+        "indicator": [
+            "desi_fttp"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 388,
+    "fields": {
+        "created_at": "2025-03-11T09:57:19.014Z",
+        "updated_at": "2025-11-22T16:10:28.933Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 389,
+    "fields": {
+        "created_at": "2025-03-11T09:57:28.891Z",
+        "updated_at": "2025-11-22T16:10:28.926Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 390,
+    "fields": {
+        "created_at": "2025-03-11T09:57:36.958Z",
+        "updated_at": "2025-11-22T16:10:28.919Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 391,
+    "fields": {
+        "created_at": "2025-03-11T09:57:44.477Z",
+        "updated_at": "2025-11-22T16:10:28.913Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 392,
+    "fields": {
+        "created_at": "2025-03-11T09:57:51.478Z",
+        "updated_at": "2025-11-22T16:10:28.906Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 393,
+    "fields": {
+        "created_at": "2025-03-11T09:58:00.117Z",
+        "updated_at": "2025-11-22T16:10:28.899Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 394,
+    "fields": {
+        "created_at": "2025-03-11T10:39:02.808Z",
+        "updated_at": "2025-11-22T16:10:28.893Z",
+        "indicator": [
+            "desi_5g_spectrum"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 395,
+    "fields": {
+        "created_at": "2025-03-14T17:13:42.733Z",
+        "updated_at": "2025-11-22T16:10:28.886Z",
+        "indicator": [
+            "desi_5g_sim"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 396,
+    "fields": {
+        "created_at": "2025-03-14T18:07:56.435Z",
+        "updated_at": "2025-11-22T16:10:28.879Z",
+        "indicator": [
+            "desi_bbspeed_100"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 397,
+    "fields": {
+        "created_at": "2025-03-14T18:08:05.837Z",
+        "updated_at": "2025-11-22T16:10:28.873Z",
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 398,
+    "fields": {
+        "created_at": "2025-03-26T16:18:34.779Z",
+        "updated_at": "2025-11-22T16:10:28.866Z",
+        "indicator": [
+            "desi_aehr"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 399,
+    "fields": {
+        "created_at": "2025-03-31T08:28:10.927Z",
+        "updated_at": "2025-11-22T16:10:28.859Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 400,
+    "fields": {
+        "created_at": "2025-04-14T10:07:24.180Z",
+        "updated_at": "2025-11-22T16:10:28.853Z",
+        "indicator": [
+            "desi_erp"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": true
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 401,
+    "fields": {
+        "created_at": "2025-04-14T10:19:37.776Z",
+        "updated_at": "2025-11-22T16:10:28.846Z",
+        "indicator": [
+            "desi_sme_di4_gelo"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 402,
+    "fields": {
+        "created_at": "2025-04-15T13:13:39.387Z",
+        "updated_at": "2025-11-22T16:10:28.839Z",
+        "indicator": [
+            "desi_ict_spec"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 403,
+    "fields": {
+        "created_at": "2025-04-15T13:32:34.704Z",
+        "updated_at": "2025-11-22T16:10:28.832Z",
+        "indicator": [
+            "desi_dsk_ab"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": true
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 404,
+    "fields": {
+        "created_at": "2025-04-15T13:32:52.496Z",
+        "updated_at": "2025-11-22T16:10:28.826Z",
+        "indicator": [
+            "desi_dsk_bab"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": true
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 405,
+    "fields": {
+        "created_at": "2025-09-15T11:59:55.985Z",
+        "updated_at": "2025-11-22T16:10:28.819Z",
+        "indicator": [
+            "desi_ict_grad"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 406,
+    "fields": {
+        "created_at": "2025-09-15T16:28:13.904Z",
+        "updated_at": "2025-11-22T16:10:28.812Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2014)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 407,
+    "fields": {
+        "created_at": "2025-09-15T16:28:51.100Z",
+        "updated_at": "2025-11-22T16:10:28.805Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2015)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 408,
+    "fields": {
+        "created_at": "2025-09-15T16:29:05.726Z",
+        "updated_at": "2025-11-22T16:10:28.798Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2016)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 409,
+    "fields": {
+        "created_at": "2025-09-15T16:29:25.013Z",
+        "updated_at": "2025-11-22T16:10:28.792Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 410,
+    "fields": {
+        "created_at": "2025-09-15T16:29:38.980Z",
+        "updated_at": "2025-11-22T16:10:28.785Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 411,
+    "fields": {
+        "created_at": "2025-09-15T16:29:55.611Z",
+        "updated_at": "2025-11-22T16:10:28.778Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 412,
+    "fields": {
+        "created_at": "2025-09-15T16:30:13.739Z",
+        "updated_at": "2025-11-22T16:10:28.772Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 413,
+    "fields": {
+        "created_at": "2025-09-15T16:30:42.239Z",
+        "updated_at": "2025-11-22T16:10:28.765Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 414,
+    "fields": {
+        "created_at": "2025-09-15T16:30:59.640Z",
+        "updated_at": "2025-11-22T16:10:28.758Z",
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 415,
+    "fields": {
+        "created_at": "2025-09-15T16:38:58.865Z",
+        "updated_at": "2025-11-22T16:10:28.751Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2014)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 416,
+    "fields": {
+        "created_at": "2025-09-15T16:39:14.433Z",
+        "updated_at": "2025-11-22T16:10:28.745Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2015)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 417,
+    "fields": {
+        "created_at": "2025-09-15T16:39:29.457Z",
+        "updated_at": "2025-11-22T16:10:28.738Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2016)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 418,
+    "fields": {
+        "created_at": "2025-09-15T16:39:43.451Z",
+        "updated_at": "2025-11-22T16:10:28.731Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 419,
+    "fields": {
+        "created_at": "2025-09-15T16:40:07.303Z",
+        "updated_at": "2025-11-22T16:10:28.724Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 420,
+    "fields": {
+        "created_at": "2025-09-15T16:40:17.640Z",
+        "updated_at": "2025-11-22T16:10:28.717Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 421,
+    "fields": {
+        "created_at": "2025-09-15T16:40:29.256Z",
+        "updated_at": "2025-11-22T16:10:28.710Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 422,
+    "fields": {
+        "created_at": "2025-09-15T16:40:46.537Z",
+        "updated_at": "2025-11-22T16:10:28.703Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 423,
+    "fields": {
+        "created_at": "2025-09-15T16:40:54.314Z",
+        "updated_at": "2025-11-22T16:10:28.696Z",
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 424,
+    "fields": {
+        "created_at": "2025-09-15T16:52:17.209Z",
+        "updated_at": "2025-11-22T16:10:28.688Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2014)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 425,
+    "fields": {
+        "created_at": "2025-09-15T16:52:27.725Z",
+        "updated_at": "2025-11-22T16:10:28.682Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2019"
+        ],
+        "note": "(data from 2015)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 426,
+    "fields": {
+        "created_at": "2025-09-15T16:52:37.358Z",
+        "updated_at": "2025-11-22T16:10:28.675Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2016)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 427,
+    "fields": {
+        "created_at": "2025-09-15T16:52:45.608Z",
+        "updated_at": "2025-11-22T16:10:28.668Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 428,
+    "fields": {
+        "created_at": "2025-09-15T16:52:55.087Z",
+        "updated_at": "2025-11-22T16:10:28.662Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 429,
+    "fields": {
+        "created_at": "2025-09-15T16:53:09.069Z",
+        "updated_at": "2025-11-22T16:10:28.655Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 430,
+    "fields": {
+        "created_at": "2025-09-15T16:53:21.298Z",
+        "updated_at": "2025-11-22T16:10:28.649Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 431,
+    "fields": {
+        "created_at": "2025-09-15T16:53:32.673Z",
+        "updated_at": "2025-11-22T16:10:28.642Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 432,
+    "fields": {
+        "created_at": "2025-09-15T16:53:40.650Z",
+        "updated_at": "2025-11-22T16:10:28.636Z",
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 433,
+    "fields": {
+        "created_at": "2025-09-16T13:19:29.819Z",
+        "updated_at": "2025-11-22T16:10:28.629Z",
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 434,
+    "fields": {
+        "created_at": "2025-09-16T13:19:52.356Z",
+        "updated_at": "2025-11-22T16:10:28.623Z",
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 435,
+    "fields": {
+        "created_at": "2025-09-16T13:20:22.917Z",
+        "updated_at": "2025-11-22T16:10:28.617Z",
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 436,
+    "fields": {
+        "created_at": "2025-09-16T13:20:38.594Z",
+        "updated_at": "2025-11-22T16:10:28.610Z",
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 437,
+    "fields": {
+        "created_at": "2025-09-16T13:21:43.820Z",
+        "updated_at": "2025-11-22T16:10:28.604Z",
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 438,
+    "fields": {
+        "created_at": "2025-11-22T15:39:53.939Z",
+        "updated_at": "2025-11-22T16:10:28.597Z",
+        "indicator": [
+            "desi_ihm"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 439,
+    "fields": {
+        "created_at": "2025-11-22T15:40:10.031Z",
+        "updated_at": "2025-11-22T16:10:28.591Z",
+        "indicator": [
+            "desi_ihm"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 441,
+    "fields": {
+        "created_at": "2025-11-22T15:43:57.181Z",
+        "updated_at": "2025-11-22T16:10:28.584Z",
+        "indicator": [
+            "desi_iudi"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 442,
+    "fields": {
+        "created_at": "2025-11-22T15:44:08.150Z",
+        "updated_at": "2025-11-22T16:10:28.578Z",
+        "indicator": [
+            "desi_iudi"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 443,
+    "fields": {
+        "created_at": "2025-11-22T15:44:15.563Z",
+        "updated_at": "2025-11-22T16:10:28.571Z",
+        "indicator": [
+            "desi_iudi"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 444,
+    "fields": {
+        "created_at": "2025-11-22T15:45:20.534Z",
+        "updated_at": "2025-11-22T16:10:28.565Z",
+        "indicator": [
+            "desi_itic"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 445,
+    "fields": {
+        "created_at": "2025-11-22T15:45:27.945Z",
+        "updated_at": "2025-11-22T16:10:28.558Z",
+        "indicator": [
+            "desi_itic"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 446,
+    "fields": {
+        "created_at": "2025-11-22T15:45:41.182Z",
+        "updated_at": "2025-11-22T16:10:28.552Z",
+        "indicator": [
+            "desi_itic"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 447,
+    "fields": {
+        "created_at": "2025-11-22T15:51:48.726Z",
+        "updated_at": "2026-02-02T14:52:15.916Z",
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 448,
+    "fields": {
+        "created_at": "2025-11-22T15:52:16.110Z",
+        "updated_at": "2026-02-02T14:52:06.156Z",
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 449,
+    "fields": {
+        "created_at": "2025-11-22T15:53:02.742Z",
+        "updated_at": "2026-02-02T14:51:56.107Z",
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 450,
+    "fields": {
+        "created_at": "2025-11-22T15:53:25.961Z",
+        "updated_at": "2026-02-02T14:51:42.286Z",
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 451,
+    "fields": {
+        "created_at": "2025-11-22T15:53:39.170Z",
+        "updated_at": "2026-02-02T14:51:35.334Z",
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 452,
+    "fields": {
+        "created_at": "2025-11-22T15:58:23.891Z",
+        "updated_at": "2026-02-02T14:50:24.804Z",
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "period": [
+            "desi_2018"
+        ],
+        "note": "(data from 2017)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 453,
+    "fields": {
+        "created_at": "2025-11-22T15:58:44.833Z",
+        "updated_at": "2026-02-02T14:50:06.992Z",
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 454,
+    "fields": {
+        "created_at": "2025-11-22T15:58:58.861Z",
+        "updated_at": "2026-02-02T14:49:55.160Z",
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 455,
+    "fields": {
+        "created_at": "2025-11-22T15:59:21.089Z",
+        "updated_at": "2026-02-02T14:49:44.873Z",
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 470,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.419Z",
+        "updated_at": "2025-11-22T16:10:28.419Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 471,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.424Z",
+        "updated_at": "2025-11-22T16:10:28.424Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 472,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.430Z",
+        "updated_at": "2025-11-22T16:10:28.430Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 473,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.435Z",
+        "updated_at": "2025-11-22T16:10:28.435Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 474,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.440Z",
+        "updated_at": "2025-11-22T16:10:28.440Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 475,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.445Z",
+        "updated_at": "2025-11-22T16:10:28.445Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 476,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.450Z",
+        "updated_at": "2025-11-22T16:10:28.450Z",
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 477,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.455Z",
+        "updated_at": "2025-11-22T16:10:28.455Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2020"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 478,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.460Z",
+        "updated_at": "2025-11-22T16:10:28.460Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 479,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.465Z",
+        "updated_at": "2025-11-22T16:10:28.465Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 480,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.470Z",
+        "updated_at": "2025-11-22T16:10:28.470Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 481,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.475Z",
+        "updated_at": "2025-11-22T16:10:28.475Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 482,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.480Z",
+        "updated_at": "2025-11-22T16:10:28.480Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 483,
+    "fields": {
+        "created_at": "2025-11-22T16:10:28.484Z",
+        "updated_at": "2025-11-22T16:10:28.484Z",
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 484,
+    "fields": {
+        "created_at": "2025-12-03T08:29:52.049Z",
+        "updated_at": "2025-12-15T14:18:03.243Z",
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 485,
+    "fields": {
+        "created_at": "2025-12-03T08:30:00.091Z",
+        "updated_at": "2025-12-15T14:17:59.311Z",
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 486,
+    "fields": {
+        "created_at": "2025-12-03T08:30:08.617Z",
+        "updated_at": "2025-12-15T14:17:55.907Z",
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 487,
+    "fields": {
+        "created_at": "2025-12-03T08:30:21.629Z",
+        "updated_at": "2025-12-15T14:17:52.774Z",
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "period": [
+            "desi_2023"
+        ],
+        "note": "(data from 2020)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 488,
+    "fields": {
+        "created_at": "2025-12-03T08:30:32.583Z",
+        "updated_at": "2025-12-15T14:17:48.848Z",
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2019)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 489,
+    "fields": {
+        "created_at": "2025-12-03T08:30:41.767Z",
+        "updated_at": "2025-12-15T14:17:36.434Z",
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "period": [
+            "desi_2021"
+        ],
+        "note": "(data from 2018)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 490,
+    "fields": {
+        "created_at": "2025-12-12T16:26:57.309Z",
+        "updated_at": "2025-12-12T16:26:57.309Z",
+        "indicator": [
+            "desi_sme_eturn"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 491,
+    "fields": {
+        "created_at": "2025-12-12T16:27:24.812Z",
+        "updated_at": "2025-12-12T16:27:24.812Z",
+        "indicator": [
+            "desi_sme_esell"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 492,
+    "fields": {
+        "created_at": "2025-12-12T16:28:08.951Z",
+        "updated_at": "2025-12-12T16:28:08.951Z",
+        "indicator": [
+            "desi_sme_di3_gelo"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 493,
+    "fields": {
+        "created_at": "2025-12-12T16:28:20.659Z",
+        "updated_at": "2025-12-12T16:28:20.659Z",
+        "indicator": [
+            "desi_sme_di3_vhi"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 494,
+    "fields": {
+        "created_at": "2025-12-12T16:28:42.442Z",
+        "updated_at": "2025-12-12T16:28:42.442Z",
+        "indicator": [
+            "desi_ai"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 495,
+    "fields": {
+        "created_at": "2025-12-12T16:28:52.419Z",
+        "updated_at": "2025-12-12T16:28:52.419Z",
+        "indicator": [
+            "desi_ai_cloud_da"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 496,
+    "fields": {
+        "created_at": "2025-12-12T16:29:11.762Z",
+        "updated_at": "2025-12-12T16:29:11.762Z",
+        "indicator": [
+            "desi_da"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 497,
+    "fields": {
+        "created_at": "2025-12-12T16:30:04.277Z",
+        "updated_at": "2025-12-12T16:30:04.277Z",
+        "indicator": [
+            "desi_erp"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 498,
+    "fields": {
+        "created_at": "2025-12-16T12:21:08.939Z",
+        "updated_at": "2025-12-16T12:21:08.939Z",
+        "indicator": [
+            "desi_iuse"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 499,
+    "fields": {
+        "created_at": "2025-12-16T12:22:06.863Z",
+        "updated_at": "2025-12-16T12:22:06.863Z",
+        "indicator": [
+            "desi_dsk_bab"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 500,
+    "fields": {
+        "created_at": "2025-12-16T12:22:21.809Z",
+        "updated_at": "2025-12-16T12:22:21.809Z",
+        "indicator": [
+            "desi_dsk_ab"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 501,
+    "fields": {
+        "created_at": "2025-12-16T12:24:12.534Z",
+        "updated_at": "2025-12-16T12:24:12.534Z",
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 502,
+    "fields": {
+        "created_at": "2025-12-16T12:24:27.719Z",
+        "updated_at": "2025-12-16T12:24:27.719Z",
+        "indicator": [
+            "desi_iug_md"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 503,
+    "fields": {
+        "created_at": "2025-12-16T12:25:04.574Z",
+        "updated_at": "2025-12-16T12:25:36.136Z",
+        "indicator": [
+            "desi_iug_md"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": true
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 504,
+    "fields": {
+        "created_at": "2025-12-16T12:26:44.058Z",
+        "updated_at": "2025-12-16T12:26:44.058Z",
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 505,
+    "fields": {
+        "created_at": "2025-12-16T12:28:36.707Z",
+        "updated_at": "2025-12-16T12:28:36.707Z",
+        "indicator": [
+            "desi_cloud"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 506,
+    "fields": {
+        "created_at": "2025-12-16T12:31:33.388Z",
+        "updated_at": "2025-12-16T12:31:33.388Z",
+        "indicator": [
+            "desi_sme_di3_vhi"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2023)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 507,
+    "fields": {
+        "created_at": "2025-12-16T12:31:41.589Z",
+        "updated_at": "2025-12-16T12:31:41.589Z",
+        "indicator": [
+            "desi_sme_di3_vhi"
+        ],
+        "period": [
+            "desi_2022"
+        ],
+        "note": "(data from 2021)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 508,
+    "fields": {
+        "created_at": "2025-12-18T13:33:54.690Z",
+        "updated_at": "2025-12-18T13:33:54.690Z",
+        "indicator": [
+            "desi_genai"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 509,
+    "fields": {
+        "created_at": "2026-01-12T08:07:42.853Z",
+        "updated_at": "2026-01-12T08:07:42.853Z",
+        "indicator": [
+            "desi_5gcov"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 510,
+    "fields": {
+        "created_at": "2026-01-26T13:54:56.723Z",
+        "updated_at": "2026-01-26T13:54:56.723Z",
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 511,
+    "fields": {
+        "created_at": "2026-01-26T17:33:02.644Z",
+        "updated_at": "2026-02-02T15:04:11.770Z",
+        "indicator": [
+            "desi_ent_secmge5"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 512,
+    "fields": {
+        "created_at": "2026-01-26T17:33:13.870Z",
+        "updated_at": "2026-02-02T15:04:19.727Z",
+        "indicator": [
+            "desi_ent_secmge5"
+        ],
+        "period": [
+            "desi_2024"
+        ],
+        "note": "(data from 2022)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 513,
+    "fields": {
+        "created_at": "2026-02-02T11:09:34.136Z",
+        "updated_at": "2026-02-02T11:09:34.136Z",
+        "indicator": [
+            "desi_ict_grad"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 514,
+    "fields": {
+        "created_at": "2026-02-02T14:48:06.380Z",
+        "updated_at": "2026-02-02T14:48:06.380Z",
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "period": [
+            "desi_2025"
+        ],
+        "note": "(data from 2024)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 515,
+    "fields": {
+        "created_at": "2026-02-02T14:49:19.809Z",
+        "updated_at": "2026-02-02T14:49:19.809Z",
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 516,
+    "fields": {
+        "created_at": "2026-02-02T14:51:15.301Z",
+        "updated_at": "2026-02-02T14:51:15.301Z",
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 517,
+    "fields": {
+        "created_at": "2026-03-25T16:53:15.748Z",
+        "updated_at": "2026-03-25T16:53:15.748Z",
+        "indicator": [
+            "desi_fttp"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 518,
+    "fields": {
+        "created_at": "2026-03-25T16:53:32.943Z",
+        "updated_at": "2026-03-25T16:53:32.943Z",
+        "indicator": [
+            "desi_vhcn"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 519,
+    "fields": {
+        "created_at": "2026-03-25T16:53:53.002Z",
+        "updated_at": "2026-03-25T16:53:53.002Z",
+        "indicator": [
+            "desi_5gcov"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 520,
+    "fields": {
+        "created_at": "2026-03-25T16:54:01.440Z",
+        "updated_at": "2026-03-25T16:54:01.440Z",
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 521,
+    "fields": {
+        "created_at": "2026-03-25T22:06:01.879Z",
+        "updated_at": "2026-03-25T22:06:01.879Z",
+        "indicator": [
+            "desi_pff"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 522,
+    "fields": {
+        "created_at": "2026-03-25T22:06:17.407Z",
+        "updated_at": "2026-03-25T22:06:17.407Z",
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 523,
+    "fields": {
+        "created_at": "2026-03-25T22:06:25.433Z",
+        "updated_at": "2026-03-25T22:06:25.433Z",
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 524,
+    "fields": {
+        "created_at": "2026-03-25T22:06:33.200Z",
+        "updated_at": "2026-03-25T22:06:33.200Z",
+        "indicator": [
+            "desi_tdpd"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 525,
+    "fields": {
+        "created_at": "2026-03-25T22:06:40.913Z",
+        "updated_at": "2026-03-25T22:06:40.913Z",
+        "indicator": [
+            "desi_us"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 526,
+    "fields": {
+        "created_at": "2026-03-25T22:06:49.498Z",
+        "updated_at": "2026-03-25T22:06:49.498Z",
+        "indicator": [
+            "desi_mf"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
+    }
+},
+{
+    "model": "charts.extrachartnote",
+    "pk": 527,
+    "fields": {
+        "created_at": "2026-03-30T12:31:32.167Z",
+        "updated_at": "2026-03-30T12:31:32.167Z",
+        "indicator": [
+            "desi_edge"
+        ],
+        "period": [
+            "desi_2026"
+        ],
+        "note": "(data from 2025)",
+        "hide_from_line_charts": false
     }
 }
 ]

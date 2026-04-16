@@ -295,7 +295,7 @@
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
-          "desi_4a1"
+          "desi_egov_users"
         ]
       ],
       "breakdown_filter_defaults": [
@@ -332,7 +332,7 @@
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
-          "desi_4a1"
+          "desi_egov_users"
         ]
       ],
       "breakdown_group_filter_defaults": [
@@ -368,7 +368,7 @@
       "use_period_label_for_axis": true,
       "indicator_filter_defaults": [
         [
-          "desi_4a1"
+          "desi_egov_users"
         ]
       ],
       "breakdown_filter_defaults": [

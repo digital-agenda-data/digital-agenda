@@ -355,11 +355,11 @@
     "model": "core.unit",
     "fields": {
         "created_at": "2022-05-27T14:22:18.355Z",
-        "updated_at": "2022-05-27T14:22:18.355Z",
+        "updated_at": "2024-02-07T08:26:55.644Z",
         "code": "pc_ent",
         "label": "Percentage of enterprises",
         "alt_label": "% of enterprises",
-        "definition": "Enterprises with 10 or more persons employed. All manufacturing and service sectors, excluding the financial sector. Breaks in series because until 2008 economic activities according to NACE Rev 1.1 and from 2009 data are based on NACE Rev.2. Since 2010 include also sector S 95.1-Repair of computers and communication equipment."
+        "definition": "Enterprises with 10 or more persons employed. All manufacturing and service sectors, excluding the financial sector."
     }
 },
 {
@@ -740,10 +740,65 @@
     "model": "core.unit",
     "fields": {
         "created_at": "2023-09-23T15:45:32.086Z",
-        "updated_at": "2023-09-23T15:45:32.086Z",
+        "updated_at": "2026-01-26T13:58:34.155Z",
         "code": "nb_unicorns",
         "label": "Number of unicorns",
         "alt_label": "Number of unicorns",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2025-09-15T15:42:51.559Z",
+        "updated_at": "2025-11-17T08:14:21.563Z",
+        "code": "kg_hab",
+        "label": "Kilograms of CO₂ equivalent per capita",
+        "alt_label": "",
+        "definition": "<p>Kilograms of CO₂ equivalent per capita</p>"
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2025-09-15T16:36:38.670Z",
+        "updated_at": "2025-09-15T16:46:13.339Z",
+        "code": "pc",
+        "label": "Percentage",
+        "alt_label": "%",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2025-09-16T14:31:27.944Z",
+        "updated_at": "2025-09-16T14:35:02.577Z",
+        "code": "pc_ae",
+        "label": "Percentage of air emissions from total economy",
+        "alt_label": "% of air emissions",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2025-09-16T14:32:03.874Z",
+        "updated_at": "2025-09-16T14:36:19.496Z",
+        "code": "pc_ae_ict",
+        "label": "Percentage of air emissions from the ICT sector",
+        "alt_label": "% of ICT air emissions",
+        "definition": ""
+    }
+},
+{
+    "model": "core.unit",
+    "fields": {
+        "created_at": "2025-12-03T07:28:00.157Z",
+        "updated_at": "2025-12-03T07:28:00.157Z",
+        "code": "pc_waste_col",
+        "label": "Percentage of waste collected",
+        "alt_label": "% of waste collected",
         "definition": ""
     }
 }

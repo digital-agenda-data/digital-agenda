@@ -8,7 +8,10 @@
         "code": "audiovisual",
         "label": "Audiovisual & media content",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -20,7 +23,10 @@
         "code": "back",
         "label": "Background variables",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -32,7 +38,10 @@
         "code": "bbquality",
         "label": "Broadband speeds and prices",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -44,7 +53,10 @@
         "code": "broadband",
         "label": "Broadband take-up and coverage",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -56,7 +68,10 @@
         "code": "desi",
         "label": "DESI Stacked",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -68,7 +83,10 @@
         "code": "desi_dim",
         "label": "DESI Dimensions",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -80,7 +98,10 @@
         "code": "desi_ind",
         "label": "DESI Individual Indicators",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -92,7 +113,10 @@
         "code": "desi_sliders",
         "label": "DESI Overall Index - weight sliders",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -104,7 +128,10 @@
         "code": "desi_subdim",
         "label": "DESI Sub-dimensions",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -116,7 +143,10 @@
         "code": "desi_total",
         "label": "DESI Overall Index",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -128,7 +158,10 @@
         "code": "discontinued",
         "label": "Discontinued indicators",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -140,7 +173,10 @@
         "code": "ebusiness",
         "label": "eBusiness",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -152,7 +188,10 @@
         "code": "ecommerce",
         "label": "eCommerce",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -164,7 +203,10 @@
         "code": "egovernment",
         "label": "eGovernment",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -176,7 +218,10 @@
         "code": "ehealth",
         "label": "eHealth",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -188,7 +233,10 @@
         "code": "ict-sector",
         "label": "ICT sector",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -200,7 +248,10 @@
         "code": "ict-skills",
         "label": "Digital Skills",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -212,7 +263,10 @@
         "code": "ict-specialist",
         "label": "ICT Specialist",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -224,7 +278,10 @@
         "code": "internet-services",
         "label": "Take up of internet services",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -236,7 +293,10 @@
         "code": "internet-usage",
         "label": "Internet usage",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -248,7 +308,10 @@
         "code": "mobile",
         "label": "Mobile market",
         "alt_label": "",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -260,7 +323,10 @@
         "code": "research-and-development",
         "label": "EU Research and Development Programs",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -272,7 +338,10 @@
         "code": "research_einfra",
         "label": "Research e-Infrastructures",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -284,7 +353,10 @@
         "code": "security-privacy",
         "label": "Security and Privacy",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -296,7 +368,10 @@
         "code": "telecom",
         "label": "Telecom sector",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -308,7 +383,10 @@
         "code": "wid",
         "label": "Women in Digital",
         "alt_label": null,
-        "definition": null
+        "definition": null,
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -320,7 +398,10 @@
         "code": "egov2013-2019",
         "label": "eGovernment",
         "alt_label": "eGovernment",
-        "definition": "e-Government Benchmark (2013-2019)"
+        "definition": "e-Government Benchmark (2013-2019)",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -332,7 +413,10 @@
         "code": "egov2020",
         "label": "eGovernment",
         "alt_label": "eGovernment",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
@@ -344,115 +428,219 @@
         "code": "rid",
         "label": "Rural in Digital",
         "alt_label": "Rural in Digital",
-        "definition": ""
-    }
-},
-{
-    "model": "core.indicatorgroup",
-    "fields": {
-        "created_at": "2023-09-23T13:03:25.924Z",
-        "updated_at": "2023-09-23T13:03:25.924Z",
-        "display_order": 104,
-        "code": "desi2023-ds",
-        "label": "Digital skills",
-        "alt_label": "Digital skills",
-        "definition": ""
-    }
-},
-{
-    "model": "core.indicatorgroup",
-    "fields": {
-        "created_at": "2023-09-23T13:04:29.777Z",
-        "updated_at": "2023-09-23T13:04:29.777Z",
-        "display_order": 105,
-        "code": "desi2023-di",
-        "label": "Digital infrastructure",
-        "alt_label": "Digital infrastructure",
-        "definition": ""
-    }
-},
-{
-    "model": "core.indicatorgroup",
-    "fields": {
-        "created_at": "2023-09-23T13:05:54.263Z",
-        "updated_at": "2023-09-23T13:05:54.263Z",
-        "display_order": 106,
-        "code": "desi2023-db",
-        "label": "Digitalisation of businesses",
-        "alt_label": "Digitalisation of businesses",
-        "definition": ""
-    }
-},
-{
-    "model": "core.indicatorgroup",
-    "fields": {
-        "created_at": "2023-09-23T13:07:00.556Z",
-        "updated_at": "2023-09-23T13:07:00.556Z",
-        "display_order": 107,
-        "code": "desi2023-dps",
-        "label": "Digitalisation of public services",
-        "alt_label": "Digitalisation of public services",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2023-09-23T14:20:10.996Z",
-        "updated_at": "2023-09-26T14:06:02.693Z",
+        "updated_at": "2024-06-12T07:34:59.361Z",
         "display_order": 108,
         "code": "digital_decade",
         "label": "KPIs for the Digital Decade Policy Programme 2030",
         "alt_label": "Digital Decade 2030 KPI's",
-        "definition": ""
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2023-09-29T13:37:59.836Z",
-        "updated_at": "2023-09-29T13:44:16.844Z",
+        "updated_at": "2026-04-08T06:59:01.753Z",
         "display_order": 109,
-        "code": "desi2023-1",
+        "code": "desi-dsk",
         "label": "Digital skills",
         "alt_label": "Digital skills",
-        "definition": "The digital skills group of indicators assesses both internet user skills of citizens and the number of specialists with advanced digital skills.\r\nAt least basic digital skills and ICT specialists measure targets of the Digital Decade Policy Programme."
+        "definition": "<p>The digital skills group of indicators assesses both internet user skills of citizens and the number of specialists with advanced digital skills. At least basic digital skills and ICT specialists measure targets of the Digital Decade Policy Programme.</p>",
+        "parent": [
+            "dd_people"
+        ],
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2023-09-29T13:39:36.611Z",
-        "updated_at": "2023-09-29T13:44:22.633Z",
-        "display_order": 110,
-        "code": "desi2023-2",
-        "label": "Digital infrastructure",
-        "alt_label": "Digital infrastructure",
-        "definition": "Under this group of indicators, both fixed and mobile broadband are analysed with indicators measuring the supply and the demand side.\r\nFixed VHCN and 5G coverage measure targets of the Digital Decade Policy Programme."
+        "updated_at": "2026-04-08T06:59:28.303Z",
+        "display_order": 111,
+        "code": "desi-infra",
+        "label": "Fixed and mobile infrastructure",
+        "alt_label": "Fixed and mobile infrastructure",
+        "definition": "<p>Under this group of indicators, both fixed and mobile broadband are analysed with indicators measuring the supply and the demand side. Fixed VHCN and 5G coverage measure targets of the Digital Decade Policy Programme.</p>",
+        "parent": [
+            "dd_infra"
+        ],
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2023-09-29T13:41:42.059Z",
-        "updated_at": "2023-09-29T13:44:28.602Z",
-        "display_order": 111,
-        "code": "desi2023-3",
+        "updated_at": "2026-04-08T06:59:49.466Z",
+        "display_order": 112,
+        "code": "desi-dtb",
         "label": "Digital transformation of businesses",
         "alt_label": "Digital transformation of businesses",
-        "definition": "The Digital transformation of businesses group of indicators is made up of 3 sub-groups: digital intensity, take-up of selected technologies by enterprises and e-commerce.\r\nSMEs with at least a basic level of digital intensity, take-up of Big data, Cloud and AI are targets of the Digital Decade Policy Programme."
+        "definition": "<p>The Digital transformation of businesses group of indicators is made up of 3 sub-groups: digital intensity, take-up of selected technologies by enterprises and e-commerce. SMEs with at least a basic level of digital intensity, take-up of Big data, Cloud and AI are targets of the Digital Decade Policy Programme.</p>",
+        "parent": [
+            "dd_business"
+        ],
+        "colors": "[]",
+        "icon": ""
     }
 },
 {
     "model": "core.indicatorgroup",
     "fields": {
         "created_at": "2023-09-29T13:43:48.847Z",
-        "updated_at": "2023-09-29T13:43:48.847Z",
-        "display_order": 112,
-        "code": "desi2023-4",
+        "updated_at": "2026-04-08T07:00:06.860Z",
+        "display_order": 115,
+        "code": "desi-dps",
         "label": "Digitalisation of public services",
         "alt_label": "Digitalisation of public services",
-        "definition": "The digitalisation of public services group of indicators describes the demand and supply of e-government as well as e-health.\r\nThe Digital public services for citizens and businesses and the access to e-health records are indicators assessing targets of the Digital Decade Policy Programme."
+        "definition": "<p>The digitalisation of public services group of indicators describes the demand and supply of e-government as well as e-health. The Digital public services for citizens and businesses and the access to e-health records are indicators assessing targets of the Digital Decade Policy Programme.</p>",
+        "parent": [
+            "dd_public_service"
+        ],
+        "colors": "[]",
+        "icon": ""
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2025-09-15T09:19:26.593Z",
+        "updated_at": "2026-01-20T15:03:44.712Z",
+        "display_order": 116,
+        "code": "desi-tbd",
+        "label": "Candidate indicators",
+        "alt_label": "Candidate indicators",
+        "definition": "",
+        "parent": null,
+        "colors": "[]",
+        "icon": ""
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-01-20T14:54:49.749Z",
+        "updated_at": "2026-04-08T06:59:08.952Z",
+        "display_order": 110,
+        "code": "desi-dcts",
+        "label": "Digital content: Trust & safety",
+        "alt_label": "Digital content: Trust & safety",
+        "definition": "",
+        "parent": [
+            "dd_people"
+        ],
+        "colors": "[]",
+        "icon": ""
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-01-20T15:00:06.428Z",
+        "updated_at": "2026-04-08T06:59:55.326Z",
+        "display_order": 113,
+        "code": "desi-ict-carbon",
+        "label": "ICT Carbon footprint",
+        "alt_label": "ICT Carbon footprint",
+        "definition": "",
+        "parent": [
+            "dd_business"
+        ],
+        "colors": "[]",
+        "icon": ""
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-01-20T15:02:27.160Z",
+        "updated_at": "2026-04-08T07:00:29.198Z",
+        "display_order": 114,
+        "code": "desi-ict-trade-sales",
+        "label": "ICT trade & web sales",
+        "alt_label": "ICT trade & web sales",
+        "definition": "",
+        "parent": [
+            "dd_business"
+        ],
+        "colors": "[]",
+        "icon": ""
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-04-08T05:30:47.390Z",
+        "updated_at": "2026-04-09T06:38:56.090Z",
+        "display_order": 117,
+        "code": "dd_people",
+        "label": "People",
+        "alt_label": "",
+        "definition": "",
+        "parent": null,
+        "colors": "[\"#722626\", \"#DE5858\", \"#E88F7D\", \"#DFA299\"]",
+        "icon": "dd_people.png"
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-04-08T05:32:15.436Z",
+        "updated_at": "2026-04-09T06:39:02.031Z",
+        "display_order": 118,
+        "code": "dd_infra",
+        "label": "Infrastructures",
+        "alt_label": "",
+        "definition": "",
+        "parent": null,
+        "colors": "[\"#2D0679\", \"#4000A3\", \"#7756EC\", \"#B7B2D7\"]",
+        "icon": "dd_infra.png"
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-04-08T05:33:21.525Z",
+        "updated_at": "2026-04-09T06:39:11.095Z",
+        "display_order": 119,
+        "code": "dd_business",
+        "label": "Business & Economy",
+        "alt_label": "",
+        "definition": "",
+        "parent": null,
+        "colors": "[\"#4B8071\", \"#6AB8A6\", \"#9DDDD2\", \"#B7D6CE\"]",
+        "icon": "dd_business.png"
+    }
+},
+{
+    "model": "core.indicatorgroup",
+    "fields": {
+        "created_at": "2026-04-08T05:33:55.808Z",
+        "updated_at": "2026-04-09T06:39:18.766Z",
+        "display_order": 120,
+        "code": "dd_public_service",
+        "label": "Public Services",
+        "alt_label": "",
+        "definition": "",
+        "parent": null,
+        "colors": "[\"#5C1A5D\", \"#902B85\", \"#AE32A8\", \"#CCAED1\"]",
+        "icon": "dd_public_service.png"
     }
 }
 ]

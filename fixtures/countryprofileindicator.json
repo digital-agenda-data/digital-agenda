@@ -1,0 +1,674 @@
+[
+{
+    "model": "core.countryprofileindicator",
+    "pk": 1,
+    "fields": {
+        "display_order": 1,
+        "indicator": [
+            "desi_dsk_bab"
+        ],
+        "indicator_group": [
+            "desi-dsk"
+        ],
+        "breakdown": [
+            "ind_total"
+        ],
+        "unit": [
+            "pc_ind"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 2,
+    "fields": {
+        "display_order": 3,
+        "indicator": [
+            "desi_genai"
+        ],
+        "indicator_group": [
+            "desi-dsk"
+        ],
+        "breakdown": [
+            "i_iuai"
+        ],
+        "unit": [
+            "pc_ind"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 3,
+    "fields": {
+        "display_order": 4,
+        "indicator": [
+            "desi_iudi"
+        ],
+        "indicator_group": [
+            "desi-dcts"
+        ],
+        "breakdown": [
+            "ind_total"
+        ],
+        "unit": [
+            "pc_ind"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 4,
+    "fields": {
+        "display_order": 5,
+        "indicator": [
+            "desi_itic"
+        ],
+        "indicator_group": [
+            "desi-dcts"
+        ],
+        "breakdown": [
+            "ind_total"
+        ],
+        "unit": [
+            "pc_ind"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 5,
+    "fields": {
+        "display_order": 6,
+        "indicator": [
+            "desi_ihm"
+        ],
+        "indicator_group": [
+            "desi-dcts"
+        ],
+        "breakdown": [
+            "ind_total"
+        ],
+        "unit": [
+            "pc_ind"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 6,
+    "fields": {
+        "display_order": 7,
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total"
+        ],
+        "unit": [
+            "pc_lines"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 7,
+    "fields": {
+        "display_order": 8,
+        "indicator": [
+            "desi_vhcn"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total_pophh"
+        ],
+        "unit": [
+            "pc_hh"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 8,
+    "fields": {
+        "display_order": 9,
+        "indicator": [
+            "desi_fttp"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total_pophh"
+        ],
+        "unit": [
+            "pc_hh"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 9,
+    "fields": {
+        "display_order": 10,
+        "indicator": [
+            "desi_5gcov"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total_pophh"
+        ],
+        "unit": [
+            "pc_hh"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 10,
+    "fields": {
+        "display_order": 11,
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total_pophh"
+        ],
+        "unit": [
+            "pc_hh"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 11,
+    "fields": {
+        "display_order": 12,
+        "indicator": [
+            "desi_5g_sim"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total_pophh"
+        ],
+        "unit": [
+            "pc_hh"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 12,
+    "fields": {
+        "display_order": 13,
+        "indicator": [
+            "desi_edge"
+        ],
+        "indicator_group": [
+            "desi-infra"
+        ],
+        "breakdown": [
+            "total"
+        ],
+        "unit": [
+            "nb_edge"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": false,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 13,
+    "fields": {
+        "display_order": 2,
+        "indicator": [
+            "desi_ict_spec"
+        ],
+        "indicator_group": [
+            "desi-dsk"
+        ],
+        "breakdown": [
+            "total"
+        ],
+        "unit": [
+            "th_ind"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": false,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 14,
+    "fields": {
+        "display_order": 14,
+        "indicator": [
+            "desi_sme_di3_gelo"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_sm_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 15,
+    "fields": {
+        "display_order": 15,
+        "indicator": [
+            "desi_sme_di3_vhi"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_sm_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 16,
+    "fields": {
+        "display_order": 17,
+        "indicator": [
+            "desi_da"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_all_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 17,
+    "fields": {
+        "display_order": 18,
+        "indicator": [
+            "desi_cloud"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_all_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 18,
+    "fields": {
+        "display_order": 19,
+        "indicator": [
+            "desi_ai"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_all_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 19,
+    "fields": {
+        "display_order": 20,
+        "indicator": [
+            "desi_ai_cloud_da"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_all_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 20,
+    "fields": {
+        "display_order": 21,
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "total"
+        ],
+        "unit": [
+            "nb_unicorns"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": false,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 21,
+    "fields": {
+        "display_order": 16,
+        "indicator": [
+            "desi_ent_secmge5"
+        ],
+        "indicator_group": [
+            "desi-dtb"
+        ],
+        "breakdown": [
+            "ent_all_xfin"
+        ],
+        "unit": [
+            "pc_ent"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 22,
+    "fields": {
+        "display_order": 22,
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "indicator_group": [
+            "desi-ict-carbon"
+        ],
+        "breakdown": [
+            "ict"
+        ],
+        "unit": [
+            "kg_hab"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": false,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 23,
+    "fields": {
+        "display_order": 23,
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "indicator_group": [
+            "desi-ict-carbon"
+        ],
+        "breakdown": [
+            "ict"
+        ],
+        "unit": [
+            "pc_ae"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 24,
+    "fields": {
+        "display_order": 24,
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "indicator_group": [
+            "desi-ict-carbon"
+        ],
+        "breakdown": [
+            "rcy_prp_reu"
+        ],
+        "unit": [
+            "pc_waste_col"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 25,
+    "fields": {
+        "display_order": 25,
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "indicator_group": [
+            "desi-dps"
+        ],
+        "breakdown": [
+            "ind_total"
+        ],
+        "unit": [
+            "pc_ind_ilt12"
+        ],
+        "target_breakdown": null,
+        "is_dd_kpi": false,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 26,
+    "fields": {
+        "display_order": 26,
+        "indicator": [
+            "desi_dps_cit"
+        ],
+        "indicator_group": [
+            "desi-dps"
+        ],
+        "breakdown": [
+            "egov_le_cit"
+        ],
+        "unit": [
+            "egov_score"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 27,
+    "fields": {
+        "display_order": 27,
+        "indicator": [
+            "desi_dps_biz"
+        ],
+        "indicator_group": [
+            "desi-dps"
+        ],
+        "breakdown": [
+            "egov_le_biz"
+        ],
+        "unit": [
+            "egov_score"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+},
+{
+    "model": "core.countryprofileindicator",
+    "pk": 28,
+    "fields": {
+        "display_order": 28,
+        "indicator": [
+            "desi_aehr"
+        ],
+        "indicator_group": [
+            "desi-dps"
+        ],
+        "breakdown": [
+            "total"
+        ],
+        "unit": [
+            "egov_score"
+        ],
+        "target_breakdown": [
+            "dd_target_2030"
+        ],
+        "is_dd_kpi": true,
+        "is_in_chart": true,
+        "limit_to_periods": []
+    }
+}
+]

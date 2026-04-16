@@ -1,1 +1,100 @@
-[]
+[
+{
+    "model": "charts.chartfontstyle",
+    "pk": 1,
+    "fields": {
+        "chart": [
+            "desi",
+            "desi-indicators"
+        ],
+        "field": "yAxis.title.style",
+        "font_weight": 700,
+        "font_size_px": 14,
+        "font_color": "#000000"
+    }
+},
+{
+    "model": "charts.chartfontstyle",
+    "pk": 3,
+    "fields": {
+        "chart": [
+            "desi",
+            "compare-countries-progress"
+        ],
+        "field": "yAxis.title.style",
+        "font_weight": 700,
+        "font_size_px": 14,
+        "font_color": "#000000"
+    }
+},
+{
+    "model": "charts.chartfontstyle",
+    "pk": 4,
+    "fields": {
+        "chart": [
+            "desi",
+            "compare-two-indicators"
+        ],
+        "field": "yAxis.title.style",
+        "font_weight": 700,
+        "font_size_px": 14,
+        "font_color": "#000000"
+    }
+},
+{
+    "model": "charts.chartfontstyle",
+    "pk": 5,
+    "fields": {
+        "chart": [
+            "desi",
+            "compare-two-indicators"
+        ],
+        "field": "xAxis.title.style",
+        "font_weight": 700,
+        "font_size_px": 14,
+        "font_color": "#000000"
+    }
+},
+{
+    "model": "charts.chartfontstyle",
+    "pk": 6,
+    "fields": {
+        "chart": [
+            "desi",
+            "desi-indicators"
+        ],
+        "field": "xAxis.labels.style",
+        "font_weight": 700,
+        "font_size_px": 14,
+        "font_color": "#000000"
+    }
+},
+{
+    "model": "charts.chartfontstyle",
+    "pk": 7,
+    "fields": {
+        "chart": [
+            "desi",
+            "desi-compare-evolution-two-indicators"
+        ],
+        "field": "subtitle.style",
+        "font_weight": 600,
+        "font_size_px": 14,
+        "font_color": null
+    }
+},
+{
+    "model": "charts.chartfontstyle",
+    "pk": 8,
+    "fields": {
+        "chart": [
+            "desi",
+            "desi-compare-evolution-two-indicators"
+        ],
+        "field": "title.style",
+        "font_weight": 700,
+        "font_size_px": 16,
+        "font_color": null
+    }
+}
+]

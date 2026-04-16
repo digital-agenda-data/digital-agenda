@@ -190,17 +190,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "bb_speed100"
-        ],
-        "data_source": [
-            "broad_conn_ec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "bb_speed2"
         ],
         "data_source": [
@@ -293,17 +282,6 @@
         ],
         "data_source": [
             "einfrageant"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_5g"
-        ],
-        "data_source": [
-            "desi_5g"
         ]
     }
 },
@@ -509,17 +487,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_idt_bigdat"
-        ],
-        "data_source": [
-            "desi_idt_bigdat"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "desi_idt_cloud"
         ],
         "data_source": [
@@ -542,43 +509,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_idt_einv"
-        ],
-        "data_source": [
-            "desi_idt_einv"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_idt_eis"
-        ],
-        "data_source": [
-            "desi_idt_eis"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "desi_idt_ictsust"
         ],
         "data_source": [
             "desi_idt_ictsust"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_idt_sellcb"
-        ],
-        "data_source": [
-            "desi_idt_sellcb"
         ]
     }
 },
@@ -589,29 +523,7 @@
             "desi_idt_smedi"
         ],
         "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_idt_smeso"
-        ],
-        "data_source": [
-            "desi_idt_smeso"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_idt_socmed"
-        ],
-        "data_source": [
-            "desi_idt_socmed"
+            "estat_isoc_e_dii_di3_gelo"
         ]
     }
 },
@@ -3281,17 +3193,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "ict_spec3_broad"
-        ],
-        "data_source": [
-            "estat_isoc_sks_itsps"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "e_aws"
         ],
         "data_source": [
@@ -3523,61 +3424,6 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_hc_fbds"
-        ],
-        "data_source": [
-            "estat_isoc_sk_dskl_i21"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_aehr"
-        ],
-        "data_source": [
-            "cnect_ehealth"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_mf"
-        ],
-        "data_source": [
-            "e_gov_bench"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_tdpd"
-        ],
-        "data_source": [
-            "e_gov_bench"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_us"
-        ],
-        "data_source": [
-            "e_gov_bench"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "dd_ictspec"
         ],
         "data_source": [
@@ -3592,7 +3438,7 @@
             "dd_dii"
         ],
         "data_source": [
-            "estat_isoc_e_dii"
+            "estat_isoc_e_dii_di3_gelo"
         ]
     }
 },
@@ -3603,7 +3449,7 @@
             "dd_5gc"
         ],
         "data_source": [
-            "broad_conn_ec"
+            "broadband_coverage"
         ]
     }
 },
@@ -3622,54 +3468,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "dd_ai"
-        ],
-        "data_source": [
-            "desi_idt_ai"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "dd_bds"
-        ],
-        "data_source": [
-            "estat_isoc_sk_dskl_i21"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "dd_bigdata"
-        ],
-        "data_source": [
-            "desi_idt_bigdat"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "dd_cloud"
-        ],
-        "data_source": [
-            "desi_idt_cloud"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
             "dd_fttpc"
         ],
         "data_source": [
-            "broad_conn_ec"
+            "broadband_coverage"
         ]
     }
 },
@@ -3702,18 +3504,7 @@
             "dd_vhcnc"
         ],
         "data_source": [
-            "broad_conn_ec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_hc_iu"
-        ],
-        "data_source": [
-            "estat_isoc_ci_ifp_fu"
+            "broadband_coverage"
         ]
     }
 },
@@ -3776,7 +3567,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_1a1"
+            "desi_iuse"
         ],
         "data_source": [
             "estat_isoc_ci_ifp_fu"
@@ -3787,40 +3578,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_1a2"
-        ],
-        "data_source": [
-            "estat_isoc_sk_dskl_i21"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_1a3"
-        ],
-        "data_source": [
-            "estat_isoc_sk_dskl_i21"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_1a4"
-        ],
-        "data_source": [
-            "estat_isoc_sk_dskl_i21"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_1a5"
+            "desi_eitt"
         ],
         "data_source": [
             "estat_isoc_ske_itts"
@@ -3831,18 +3589,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_1a6"
-        ],
-        "data_source": [
-            "estat_isoc_sk_dskl_i21"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_1b1"
+            "desi_ict_spec"
         ],
         "data_source": [
             "estat_isoc_sks_itspt"
@@ -3853,10 +3600,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_1b2"
+            "desi_fttp"
         ],
         "data_source": [
-            "desi_hc_ictg"
+            "broadband_coverage"
         ]
     }
 },
@@ -3864,10 +3611,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_1b3"
+            "desi_vhcn"
         ],
         "data_source": [
-            "estat_isoc_sks_itsps"
+            "broadband_coverage"
         ]
     }
 },
@@ -3875,10 +3622,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_2b3"
+            "desi_5gcov"
         ],
         "data_source": [
-            "desi_5g"
+            "broadband_coverage"
         ]
     }
 },
@@ -3886,10 +3633,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_2a1"
+            "desi_sme_di3_gelo"
         ],
         "data_source": [
-            "desi_ufbbtu"
+            "estat_isoc_e_dii_di3_gelo"
         ]
     }
 },
@@ -3897,172 +3644,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_2a2"
-        ],
-        "data_source": [
-            "desi_gbpstc"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_2a4"
-        ],
-        "data_source": [
-            "broad_conn_ec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_2a3"
-        ],
-        "data_source": [
-            "broad_conn_ec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_2b1"
-        ],
-        "data_source": [
-            "desi_mbbtu"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_2b2"
-        ],
-        "data_source": [
-            "broad_conn_ec"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3b5"
-        ],
-        "data_source": [
-            "desi_idt_ai"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3b3"
-        ],
-        "data_source": [
-            "desi_idt_bigdat"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3b4"
-        ],
-        "data_source": [
-            "desi_idt_cloud"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3c2"
-        ],
-        "data_source": [
-            "desi_idt_ecomturn"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3b6"
-        ],
-        "data_source": [
-            "desi_idt_einv"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3b1"
-        ],
-        "data_source": [
-            "desi_idt_eis"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3c3"
-        ],
-        "data_source": [
-            "desi_idt_sellcb"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3c1"
-        ],
-        "data_source": [
-            "desi_idt_smeso"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3a1"
-        ],
-        "data_source": [
-            "estat_isoc_e_dii"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_3b2"
-        ],
-        "data_source": [
-            "desi_idt_socmed"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_4b1"
+            "desi_aehr"
         ],
         "data_source": [
             "cnect_ehealth"
@@ -4073,7 +3655,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_4a3"
+            "desi_dps_biz"
         ],
         "data_source": [
             "e_gov_bench"
@@ -4084,7 +3666,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_4a2"
+            "desi_dps_cit"
         ],
         "data_source": [
             "e_gov_bench"
@@ -4095,7 +3677,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_4a7"
+            "desi_mf"
         ],
         "data_source": [
             "e_gov_bench"
@@ -4106,7 +3688,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_4a4"
+            "desi_pff"
         ],
         "data_source": [
             "e_gov_bench"
@@ -4117,7 +3699,7 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_4a5"
+            "desi_tdpd"
         ],
         "data_source": [
             "e_gov_bench"
@@ -4128,21 +3710,10 @@
     "model": "core.indicatordatasourcelink",
     "fields": {
         "indicator": [
-            "desi_4a6"
+            "desi_us"
         ],
         "data_source": [
             "e_gov_bench"
-        ]
-    }
-},
-{
-    "model": "core.indicatordatasourcelink",
-    "fields": {
-        "indicator": [
-            "desi_4a1"
-        ],
-        "data_source": [
-            "desi_dps_egovuser"
         ]
     }
 },
@@ -4352,6 +3923,677 @@
         ],
         "data_source": [
             "estat_isoc_ciegi_ac"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_erp"
+        ],
+        "data_source": [
+            "estat_isoc_eb_iip"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sm_ge2"
+        ],
+        "data_source": [
+            "estat_isoc_cismt"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_cloud"
+        ],
+        "data_source": [
+            "estat_isoc_cicce_use"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ai"
+        ],
+        "data_source": [
+            "estat_isoc_eb_ai"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sme_eturn"
+        ],
+        "data_source": [
+            "estat_isoc_ec_evals"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ai_cloud_da"
+        ],
+        "data_source": [
+            "estat_isoc_eb_ai"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_einv"
+        ],
+        "data_source": [
+            "estat_isoc_eb_ics"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_iug_md"
+        ],
+        "data_source": [
+            "estat_isoc_ci_dev_i"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ci_in_h"
+        ],
+        "data_source": [
+            "estat_isoc_ci_in_h"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sme_di4_gelo"
+        ],
+        "data_source": [
+            "estat_isoc_e_dii_di4_gelo"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_unicorns"
+        ],
+        "data_source": [
+            "dealroom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_unicorns"
+        ],
+        "data_source": [
+            "dealroom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_1a2"
+        ],
+        "data_source": [
+            "estat_isoc_sk_dskl_i21"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_1a3"
+        ],
+        "data_source": [
+            "estat_isoc_sk_dskl_i21"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_da"
+        ],
+        "data_source": [
+            "estat_isoc_eb_das"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bbspeed_100"
+        ],
+        "data_source": [
+            "cocom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bbspeed_1000"
+        ],
+        "data_source": [
+            "cocom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "bb_speed100"
+        ],
+        "data_source": [
+            "cocom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_idt_smeso"
+        ],
+        "data_source": [
+            "estat_isoc_ec_esels"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_idt_socmed"
+        ],
+        "data_source": [
+            "estat_isoc_cismt"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_edge"
+        ],
+        "data_source": [
+            "desi_edge"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_5g_sim"
+        ],
+        "data_source": [
+            "cocom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ict_grad"
+        ],
+        "data_source": [
+            "estat_educ_uoe_grad03"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_5gcov_3400_3800"
+        ],
+        "data_source": [
+            "broadband_coverage"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_ai_cloud_da"
+        ],
+        "data_source": [
+            "estat_isoc_eb_ai"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_egov_users"
+        ],
+        "data_source": [
+            "estat_isoc_ciegi_ac"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_egov_users_anys"
+        ],
+        "data_source": [
+            "estat_isoc_ciegi_ac"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_idt_einv"
+        ],
+        "data_source": [
+            "estat_isoc_eb_ics"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bigdata"
+        ],
+        "data_source": [
+            "estat_isoc_eb_bd"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_idt_bigdat"
+        ],
+        "data_source": [
+            "estat_isoc_eb_bd"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_5g_spectrum"
+        ],
+        "data_source": [
+            "cnect_5gobs"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_5g"
+        ],
+        "data_source": [
+            "cnect_5gobs"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_2a2"
+        ],
+        "data_source": [
+            "cocom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_2a1"
+        ],
+        "data_source": [
+            "cocom"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_edge"
+        ],
+        "data_source": [
+            "desi_edge"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_ai"
+        ],
+        "data_source": [
+            "estat_isoc_eb_ai"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_cloud"
+        ],
+        "data_source": [
+            "estat_isoc_cicce_use"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_bigdata"
+        ],
+        "data_source": [
+            "estat_isoc_eb_das"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_quantum"
+        ],
+        "data_source": [
+            "quantum_kpi"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ae_ict"
+        ],
+        "data_source": [
+            "estat_isoc_env_ict_ae"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_aec_ict"
+        ],
+        "data_source": [
+            "estat_isoc_env_ict_aec"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_aed_ict"
+        ],
+        "data_source": [
+            "estat_isoc_env_ict_aed"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sm_any"
+        ],
+        "data_source": [
+            "estat_isoc_cismt"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bal_trade_goods_world"
+        ],
+        "data_source": [
+            "estat_isoc_it_ict_gd"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bal_trade_services_world"
+        ],
+        "data_source": [
+            "estat_bop_its6_det"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_iudi"
+        ],
+        "data_source": [
+            "estat_isoc_sk_edic_i21_udi"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_itic"
+        ],
+        "data_source": [
+            "estat_isoc_sk_edic_i21_tic"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ihm"
+        ],
+        "data_source": [
+            "estat_isoc_ci_hm"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sme_di3_vhi"
+        ],
+        "data_source": [
+            "estat_isoc_e_dii_di3_vhi"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ict_recycling"
+        ],
+        "data_source": [
+            "estat_env_waseleeos"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_genai"
+        ],
+        "data_source": [
+            "estat_isoc_ai_iaiu"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sme_esell_eu"
+        ],
+        "data_source": [
+            "estat_isoc_ec_esels_aeseu"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_sme_esell"
+        ],
+        "data_source": [
+            "estat_isoc_ec_esels_esell"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "dd_bds"
+        ],
+        "data_source": [
+            "estat_isoc_sk_dskl_bab"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_dsk_bab"
+        ],
+        "data_source": [
+            "estat_isoc_sk_dskl_bab"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_dsk_ab"
+        ],
+        "data_source": [
+            "estat_isoc_sk_dskl_ab"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ent_secmge5"
+        ],
+        "data_source": [
+            "desi_isoc_cisce_ra"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ent_web_sales_eu"
+        ],
+        "data_source": [
+            "desi_isoc_ec_eseln2_awseu"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_ent_web_sales_world"
+        ],
+        "data_source": [
+            "desi_isoc_ec_eseln2_awsww"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bal_trade_goods_eu"
+        ],
+        "data_source": [
+            "estat_isoc_it_ict_gd"
+        ]
+    }
+},
+{
+    "model": "core.indicatordatasourcelink",
+    "fields": {
+        "indicator": [
+            "desi_bal_trade_services_eu"
+        ],
+        "data_source": [
+            "estat_bop_its6_det"
         ]
     }
 }
