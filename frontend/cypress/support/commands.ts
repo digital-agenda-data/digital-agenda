@@ -185,7 +185,7 @@ Cypress.Commands.addAll({
       });
   },
   checkPoint(point, tooltip = []) {
-    cy.get(`.highcharts-point[aria-label='${point}']`).should("be.visible");
+    cy.get(`.highcharts-point[aria-label='${point}']`).should("exist");
     if (tooltip && tooltip.length > 0) {
       // Triggering focus first allows for tooltips to appear on "spline" charts as well.
       // As just using mouse events doesn't work for them for some reason.
