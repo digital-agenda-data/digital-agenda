@@ -60,7 +60,7 @@ ipython_pygments_lexers==1.1.1
 jedi==0.19.2
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
-lxml==6.0.2
+lxml==6.1.0
 markdown-it-py==4.0.0
 matplotlib-inline==0.2.1
 mdurl==0.1.2
