@@ -430,7 +430,7 @@ export default {
           {
             item: {},
             y: 0,
-            name: "// EXTRA FOR PADDING",
+            name: "",
             visible: false,
           },
         ],
@@ -453,7 +453,24 @@ export default {
         chart: {
           polar: true,
           type: "column",
-          margin: [0, 0, -600, 0],
+          margin: [0, 50, -500, 50],
+          events: {
+            render: function () {
+              const axis = this.xAxis[0];
+              if (!axis || !axis.ticks) return;
+
+              const middlePoint = Object.values(axis.ticks).length / 2;
+              Object.values(axis.ticks).forEach((tick) => {
+                if (tick.label) {
+                  if (tick.pos < middlePoint) {
+                    tick.label.attr({ align: "right" });
+                  } else {
+                    tick.label.attr({ align: "left" });
+                  }
+                }
+              });
+            },
+          },
         },
         title: {
           text: this.joinStrings([getCountryLabel(this.country)]),
@@ -512,8 +529,18 @@ export default {
           type: "category",
           lineWidth: 0,
           gridLineWidth: 0,
+          categories: [
+            ...this.chartDimensionList.map((item) =>
+              getIndicatorLabel(item.indicator),
+            ),
+            "",
+          ],
+
           labels: {
-            enabled: false,
+            enabled: true,
+            style: {
+              width: "120px",
+            },
           },
         },
         yAxis: {
