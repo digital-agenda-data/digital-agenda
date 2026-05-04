@@ -571,6 +571,9 @@ export default {
             return false;
           },
         },
+        itemStyle: {
+          fontSize: "1em",
+        },
       };
       if (this.currentChart?.legend_layout === "vertical") {
         return {
@@ -586,6 +589,7 @@ export default {
           layout: "horizontal",
           align: "center",
           verticalAlign: "bottom",
+          y: -75,
         };
       }
     },
