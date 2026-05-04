@@ -51,7 +51,8 @@
                 <ecl-th>{{ group.label }}</ecl-th>
                 <ecl-th>Reference year</ecl-th>
                 <ecl-th>{{ getCountryLabel(country) }}</ecl-th>
-                <ecl-th>EU Average</ecl-th>
+                <ecl-th>{{ SERIES.euAverage }}</ecl-th>
+                <ecl-th>{{ SERIES.euTarget }}</ecl-th>
               </ecl-tr>
             </ecl-thead>
             <ecl-tbody>
@@ -90,9 +91,13 @@
                   <!-- eslint-disable-next-line vue/no-v-html -->
                   <span v-html="item.country.valueDisplay" />
                 </ecl-td>
-                <ecl-td header="EU Average">
+                <ecl-td :header="SERIES.euAverage">
                   <!-- eslint-disable-next-line vue/no-v-html -->
                   <span v-html="item.euAverage.valueDisplay" />
+                </ecl-td>
+                <ecl-td :header="SERIES.euTarget">
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <span v-html="item.euTarget.valueDisplay" />
                 </ecl-td>
               </ecl-tr>
             </ecl-tbody>
@@ -162,6 +167,7 @@ export default {
   extends: BaseChart,
   data() {
     return {
+      SERIES,
       isLargeScreen: useMediaQuery("(min-width: 1024px)"),
       ddKpiFilter: useRouteQuery("filter", "all"),
     };
@@ -900,7 +906,7 @@ export default {
   }
 
   th:first-of-type {
-    width: 50%;
+    width: 40%;
   }
 
   th,
