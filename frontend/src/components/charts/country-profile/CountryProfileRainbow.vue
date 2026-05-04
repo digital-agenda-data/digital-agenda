@@ -51,7 +51,8 @@
                 <ecl-th>{{ group.label }}</ecl-th>
                 <ecl-th>Reference year</ecl-th>
                 <ecl-th>{{ getCountryLabel(country) }}</ecl-th>
-                <ecl-th>EU Average</ecl-th>
+                <ecl-th>{{ SERIES.euAverage }}</ecl-th>
+                <ecl-th>{{ SERIES.euTarget }}</ecl-th>
               </ecl-tr>
             </ecl-thead>
             <ecl-tbody>
@@ -90,9 +91,13 @@
                   <!-- eslint-disable-next-line vue/no-v-html -->
                   <span v-html="item.country.valueDisplay" />
                 </ecl-td>
-                <ecl-td header="EU Average">
+                <ecl-td :header="SERIES.euAverage">
                   <!-- eslint-disable-next-line vue/no-v-html -->
                   <span v-html="item.euAverage.valueDisplay" />
+                </ecl-td>
+                <ecl-td :header="SERIES.euTarget">
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <span v-html="item.euTarget.valueDisplay" />
                 </ecl-td>
               </ecl-tr>
             </ecl-tbody>
@@ -162,6 +167,7 @@ export default {
   extends: BaseChart,
   data() {
     return {
+      SERIES,
       isLargeScreen: useMediaQuery("(min-width: 1024px)"),
       ddKpiFilter: useRouteQuery("filter", "all"),
     };
@@ -284,6 +290,7 @@ export default {
     countrySeries() {
       return {
         showInLegend: false,
+        pointPadding: 0.1,
         enableMouseTracking: false,
         name: getCountryLabel(this.country),
         data: this.chartDimensionList.map(({ indicator }) => {
@@ -362,14 +369,15 @@ export default {
     groupSeries() {
       return {
         showInLegend: false,
-        type: "pie",
+        type: "sunburst",
         name: SERIES.indicatorGroup,
         data: this.groupCounts.map(({ group, colorLight, count }) => {
           return {
+            id: group.code,
             item: group,
             name: getIndicatorGroupLabel(group),
             color: colorLight,
-            y: count,
+            value: count,
           };
         }),
         size: "46.5%",
@@ -430,7 +438,7 @@ export default {
           {
             item: {},
             y: 0,
-            name: "// EXTRA FOR PADDING",
+            name: "",
             visible: false,
           },
         ],
@@ -453,19 +461,30 @@ export default {
         chart: {
           polar: true,
           type: "column",
-          margin: [0, 0, -600, 0],
+          margin: [0, 50, -500, 50],
+          events: {
+            render: function () {
+              const axis = this.xAxis[0];
+              if (!axis || !axis.ticks) return;
+
+              const middlePoint = Object.values(axis.ticks).length / 2;
+              Object.values(axis.ticks).forEach((tick) => {
+                if (tick.label) {
+                  if (tick.pos < middlePoint) {
+                    tick.label.attr({ align: "right" });
+                  } else {
+                    tick.label.attr({ align: "left" });
+                  }
+                }
+              });
+            },
+          },
         },
         title: {
           text: this.joinStrings([getCountryLabel(this.country)]),
         },
         plotOptions: {
-          pie: {
-            states: {
-              inactive: { opacity: 1 },
-            },
-            dataLabels: {
-              enabled: false,
-            },
+          sunburst: {
             point: {
               events: {
                 click: function () {
@@ -512,8 +531,18 @@ export default {
           type: "category",
           lineWidth: 0,
           gridLineWidth: 0,
+          categories: [
+            ...this.chartDimensionList.map((item) =>
+              getIndicatorLabel(item.indicator),
+            ),
+            "",
+          ],
+
           labels: {
-            enabled: false,
+            enabled: true,
+            style: {
+              width: "120px",
+            },
           },
         },
         yAxis: {
@@ -538,6 +567,9 @@ export default {
             return false;
           },
         },
+        itemStyle: {
+          fontSize: "1em",
+        },
       };
       if (this.currentChart?.legend_layout === "vertical") {
         return {
@@ -553,6 +585,7 @@ export default {
           layout: "horizontal",
           align: "center",
           verticalAlign: "bottom",
+          y: -75,
         };
       }
     },
@@ -873,7 +906,7 @@ export default {
   }
 
   th:first-of-type {
-    width: 50%;
+    width: 40%;
   }
 
   th,
