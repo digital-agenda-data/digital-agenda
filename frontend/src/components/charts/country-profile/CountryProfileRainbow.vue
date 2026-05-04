@@ -290,6 +290,7 @@ export default {
     countrySeries() {
       return {
         showInLegend: false,
+        pointPadding: 0.1,
         enableMouseTracking: false,
         name: getCountryLabel(this.country),
         data: this.chartDimensionList.map(({ indicator }) => {
