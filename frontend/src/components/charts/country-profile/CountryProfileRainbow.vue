@@ -369,14 +369,15 @@ export default {
     groupSeries() {
       return {
         showInLegend: false,
-        type: "pie",
+        type: "sunburst",
         name: SERIES.indicatorGroup,
         data: this.groupCounts.map(({ group, colorLight, count }) => {
           return {
+            id: group.code,
             item: group,
             name: getIndicatorGroupLabel(group),
             color: colorLight,
-            y: count,
+            value: count,
           };
         }),
         size: "46.5%",
@@ -483,13 +484,7 @@ export default {
           text: this.joinStrings([getCountryLabel(this.country)]),
         },
         plotOptions: {
-          pie: {
-            states: {
-              inactive: { opacity: 1 },
-            },
-            dataLabels: {
-              enabled: false,
-            },
+          sunburst: {
             point: {
               events: {
                 click: function () {

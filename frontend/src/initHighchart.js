@@ -11,6 +11,7 @@ import HighchartsVue from "highcharts-vue";
 
 import Highcharts from "highcharts";
 
+import "highcharts/modules/sunburst";
 import "highcharts/modules/exporting";
 import "highcharts/modules/export-data";
 import "highcharts/modules/offline-exporting";
