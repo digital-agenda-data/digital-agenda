@@ -373,7 +373,6 @@ export default {
         name: SERIES.indicatorGroup,
         data: this.groupCounts.map(({ group, colorLight, count }) => {
           return {
-            id: group.code,
             item: group,
             name: getIndicatorGroupLabel(group),
             color: colorLight,
