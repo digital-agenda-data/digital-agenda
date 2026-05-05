@@ -95,10 +95,11 @@
                   <!-- eslint-disable-next-line vue/no-v-html -->
                   <span v-html="item.euAverage.valueDisplay" />
                 </ecl-td>
-                <ecl-td :header="SERIES.euTarget">
+                <ecl-td v-if="item.is_dd_kpi" :header="SERIES.euTarget">
                   <!-- eslint-disable-next-line vue/no-v-html -->
                   <span v-html="item.euTarget.valueDisplay" />
                 </ecl-td>
+                <ecl-td v-else :header="SERIES.euTarget">-</ecl-td>
               </ecl-tr>
             </ecl-tbody>
           </template>
