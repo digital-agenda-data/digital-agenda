@@ -471,14 +471,23 @@ export default {
               const axis = this.xAxis[0];
               if (!axis || !axis.ticks) return;
 
-              const middlePoint = Object.values(axis.ticks).length / 2;
+              const size = Object.values(axis.ticks).length - 2;
+              const middlePoint = size / 2;
               Object.values(axis.ticks).forEach((tick) => {
-                if (tick.label) {
-                  if (tick.pos < middlePoint) {
-                    tick.label.attr({ align: "right" });
-                  } else {
-                    tick.label.attr({ align: "left" });
-                  }
+                if (!tick.label) return;
+
+                if (tick.pos < middlePoint - 2) {
+                  tick.label.attr({ align: "right" });
+                } else if (tick.pos > middlePoint + 1) {
+                  tick.label.attr({ align: "left" });
+                } else {
+                  tick.label.attr({ align: "center" });
+                }
+
+                if (size > 15 && tick.pos === parseInt(middlePoint)) {
+                  tick.label.attr({
+                    y: tick.label.xy.y - 35,
+                  });
                 }
               });
             },
