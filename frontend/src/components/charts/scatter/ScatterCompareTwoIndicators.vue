@@ -115,7 +115,7 @@ export default {
         xAxis: {
           lineWidth: 1,
           gridLineWidth: 1,
-          plotLines: this.getMidPlotLine("X"),
+          // plotLines: this.getMidPlotLine("X"),
           title: {
             text: this.joinStrings([
               getIndicatorLabel(this.filterStore.indicatorX, "label"),
@@ -132,7 +132,7 @@ export default {
         yAxis: {
           lineWidth: 1,
           gridLineWidth: 1,
-          plotLines: this.getMidPlotLine("Y"),
+          // plotLines: this.getMidPlotLine("Y"),
           title: {
             text: this.joinStrings([
               getIndicatorLabel(this.filterStore.indicatorY, "label"),
