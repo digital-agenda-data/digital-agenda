@@ -567,6 +567,17 @@ export default {
           startAngle: -90,
           endAngle: 90,
           innerSize: "55%",
+          background: [
+            {
+              outerRadius: "100%",
+              innerRadius: "0%",
+              backgroundColor: "transparent",
+              borderWidth: 0,
+            },
+          ],
+        },
+        exporting: {
+          sourceHeight: 800,
         },
       };
     },
