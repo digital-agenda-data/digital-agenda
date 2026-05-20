@@ -488,10 +488,16 @@ class StaticPageAdmin(admin.ModelAdmin):
 
 @admin.register(CountryProfileIndicator)
 class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
+    search_fields = (
+        "indicator__label",
+        "indicator__code",
+        "indicator_alias",
+    )
     list_display_links = ("indicator_group", "indicator")
     list_display = (
         "indicator_group",
         "indicator",
+        "indicator_alias",
         "breakdown",
         "unit",
         "limit_to_periods_display",

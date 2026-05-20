@@ -491,12 +491,13 @@ class StaticPage(TimestampedModel):
 
 
 class CountryProfileIndicator(DisplayOrderModel):
-    indicator = models.ForeignKey(
-        "core.Indicator", on_delete=models.CASCADE, related_name="+"
-    )
     indicator_group = models.ForeignKey(
         "core.IndicatorGroup", on_delete=models.CASCADE, related_name="+"
     )
+    indicator = models.ForeignKey(
+        "core.Indicator", on_delete=models.CASCADE, related_name="+"
+    )
+    indicator_alias = models.TextField(blank=True)
     breakdown = models.ForeignKey(
         "core.Breakdown", on_delete=models.CASCADE, related_name="+"
     )
