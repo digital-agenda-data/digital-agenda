@@ -152,6 +152,10 @@ const SERIES = {
   mainGroup: "Main Group",
 };
 
+function getIndicatorAlias(item) {
+  return item.indicator_alias || getIndicatorLabel(item.indicator);
+}
+
 export default {
   name: "CountryProfileRainbow",
   components: {
@@ -282,7 +286,7 @@ export default {
           return {
             item,
             y: 100,
-            name: getIndicatorLabel(item.indicator),
+            name: item.indicator_name || getIndicatorAlias(item),
             color: BG_COLOR,
           };
         }),
@@ -301,7 +305,7 @@ export default {
           return {
             item,
             y: value,
-            name: getIndicatorLabel(item.indicator),
+            name: getIndicatorAlias(item),
             color: !item.isMissing
               ? item.color
               : {
@@ -329,7 +333,7 @@ export default {
           return {
             item,
             y: item.fact?.value || 0,
-            name: getIndicatorLabel(item.indicator),
+            name: getIndicatorAlias(item),
             visible: false,
             marker: {
               symbol: `url(${iconUrl})`,
@@ -356,7 +360,7 @@ export default {
               item,
               color: item.colorLighter,
               y: item.fact?.value || 0,
-              name: getIndicatorLabel(item.indicator),
+              name: getIndicatorAlias(item),
             };
           }),
       };
@@ -421,7 +425,7 @@ export default {
             return {
               item,
               y: 100,
-              name: getIndicatorLabel(item.indicator),
+              name: getIndicatorAlias(item),
               color: "#00000000",
               states: {
                 hover: {
@@ -532,9 +536,7 @@ export default {
           lineWidth: 0,
           gridLineWidth: 0,
           categories: [
-            ...this.chartDimensionList.map((item) =>
-              getIndicatorLabel(item.indicator),
-            ),
+            ...this.chartDimensionList.map((item) => getIndicatorAlias(item)),
             "",
           ],
 
@@ -603,7 +605,7 @@ export default {
 
           const item = parent.itemsByIndicator[this.item.indicator.code];
 
-          const result = [`<b>${this.name}</b>`];
+          const result = [`<b>${getIndicatorLabel(item.indicator)}</b>`];
 
           result.push(
             [

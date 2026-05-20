@@ -269,6 +269,7 @@ class CountryProfileIndicatorSerializer(serializers.ModelSerializer):
         fields = [
             "indicator_group",
             "indicator",
+            "indicator_alias",
             "breakdown",
             "unit",
             "limit_to_periods",
