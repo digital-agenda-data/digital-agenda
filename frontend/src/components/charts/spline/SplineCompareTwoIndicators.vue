@@ -59,15 +59,18 @@ export default {
             const unit = this.filterStore[axis].unit;
             const breakdown = this.filterStore[axis].breakdown;
             const indicator = this.filterStore[axis].indicator;
-
+            const name = [];
+            if (this.currentChart.country_multi_filter) {
+              name.push(getCountryLabel(country));
+            }
+            name.push(
+              getIndicatorLabel(indicator),
+              getBreakdownLabel(breakdown),
+            );
             return {
               ...getCustomOptions([breakdown, indicator]),
               yAxis: this.isSameUnit ? 0 : index,
-              name: this.joinStrings([
-                getCountryLabel(country),
-                getIndicatorLabel(indicator),
-                getBreakdownLabel(breakdown),
-              ]),
+              name: this.joinStrings(name),
               pointRange: 365 * 24 * 3600 * 1000,
               data: this.apiDataPeriods.map((periodCode) => {
                 const apiValue =
