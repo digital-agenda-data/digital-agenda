@@ -44,12 +44,15 @@ export default {
       return (this.countries || [])
         .map((country) => {
           return (this.breakdown || []).map((breakdown) => {
+            const name = [];
+            if (this.currentChart.country_multi_filter) {
+              name.push(getCountryLabel(country));
+            }
+            name.push(getBreakdownLabel(breakdown));
+
             return {
               ...getCustomOptions(breakdown),
-              name: this.joinStrings([
-                getCountryLabel(country),
-                getBreakdownLabel(breakdown),
-              ]),
+              name: this.joinStrings(name),
               pointRange: 365 * 24 * 3600 * 1000,
               data: this.apiDataPeriods.map((periodCode) => {
                 const fact =
