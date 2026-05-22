@@ -29,6 +29,8 @@ describeResponsive("Check Chart", () => {
       )
       .click();
     // Time coverage should use the reference period instead of the regular period
-    cy.get("td").contains("Time coverage: 2020");
+    cy.waitForNetworkIdle(1000, { log: false });
+    cy.get("button").contains("Show indicators").click();
+    cy.get("td").contains("2020");
   });
 });

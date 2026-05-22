@@ -34,7 +34,7 @@
         v-for="(parent, parentCode) in groupedItems"
         :id="`indicator-group-${parentCode}`"
         :key="parentCode"
-        class="rainbow-section"
+        class="rainbow-section rainbow-table"
       >
         <div :style="{ color: parent.color }" class="table-section-header">
           <img :src="parent.icon" alt="" />
@@ -880,66 +880,6 @@ export default {
 
   & > * {
     height: auto !important;
-  }
-
-  .table-section-header {
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    margin-bottom: 1rem;
-
-    img {
-      height: 1rem;
-    }
-  }
-
-  table {
-    table-layout: fixed;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  thead {
-    color: white;
-    font-weight: 600;
-  }
-
-  thead,
-  tbody,
-  tr,
-  th,
-  th:before,
-  td,
-  td:before {
-    border-color: #e6e6e6 !important;
-    border-block-color: #e6e6e6 !important;
-    border-inline-color: #e6e6e6 !important;
-  }
-
-  th:before,
-  td:before {
-    background-color: inherit !important;
-  }
-
-  th:first-of-type {
-    width: 40%;
-  }
-
-  th,
-  td {
-    &:last-of-type:before {
-      border-block-end: 1px solid #e6e6e6 !important;
-    }
-  }
-
-  sup {
-    font-weight: 600;
   }
 }
 </style>

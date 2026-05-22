@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="ecl-row">
+  <div class="ecl-row ecl-u-mt-8xl">
     <div class="ecl-col-12" :class="`ecl-col-${mobileBreakpoint}-8`">
       <slot></slot>
     </div>
@@ -18,7 +18,7 @@
       class="ecl-u-d-none ecl-col-4"
       :class="`ecl-u-d-${mobileBreakpoint}-flex`"
     >
-      <div class="ecl-u-pa-xs">
+      <div class="ecl-u-pa-xs ecl-u-width-100">
         <div class="ecl-u-pb-none ecl-u-bg-neutral-50 ecl-u-ph-xl ecl-u-pv-m">
           <ecl-list v-slot="{ item }" :items="navRoutes" divider>
             <ecl-link

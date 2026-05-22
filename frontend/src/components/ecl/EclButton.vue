@@ -3,7 +3,7 @@
     <span class="ecl-button__container">
       <slot>
         <ecl-icon
-          v-if="icon"
+          v-if="icon && iconPosition === 'left'"
           :icon="icon"
           :rotate="iconRotate"
           :size="iconSize"
@@ -12,6 +12,13 @@
         <span v-if="label" class="ecl-button__label" data-ecl-label="true">
           {{ label }}
         </span>
+        <ecl-icon
+          v-if="icon && iconPosition === 'right'"
+          :icon="icon"
+          :rotate="iconRotate"
+          :size="iconSize"
+          class="ecl-button__icon"
+        />
       </slot>
     </span>
   </button>
@@ -94,6 +101,14 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    iconPosition: {
+      type: String,
+      required: false,
+      default: "left",
+      validator(value) {
+        return ["left", "right"].includes(value);
+      },
     },
   },
   computed: {
