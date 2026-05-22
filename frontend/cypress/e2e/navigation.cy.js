@@ -39,14 +39,16 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
       cy.get(".ecl-tabs a").contains("Indicators").click();
     }
 
-    cy.get("a").contains("Digital Skills").click();
+    cy.waitForNetworkIdle(1000, { log: false });
+    cy.get("button").contains("Show indicators").click();
+
     cy.get(".ecl-table td span")
-      .contains("ict_grad")
+      .contains("ICT graduates")
       .should("be.visible")
-      .parents("td")
+      .parents("tr")
       .should("contain", "2015-2020");
 
-    cy.get("a").contains("ICT graduates").click();
+    cy.get("h4 a").contains("ICT graduates").click();
     cy.get("h1").contains("Analyse one indicator and compare countries");
   });
 });
