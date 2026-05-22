@@ -42,11 +42,11 @@
           <!-- eslint-disable-next-line vue/no-v-html -->
           <span v-html="indicator.definition" />
         </p>
-        <p v-if="indicator.notes">
+        <p v-if="indicator.note">
           <strong>Notes</strong>
           <br />
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <span v-html="indicator.notes" />
+          <span v-html="indicator.note" />
         </p>
         <p>
           <strong>Time coverage</strong>
