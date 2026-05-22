@@ -42,7 +42,7 @@
     "@vue/tsconfig": "0.9.1",
     "axe-core": "4.11.1",
     "cy-verify-downloads": "0.3.0",
-    "cypress": "15.13.0",
+    "cypress": "15.15.0",
     "cypress-axe": "1.7.0",
     "cypress-network-idle": "2.0.1",
     "cypress-wait-until": "3.0.2",
