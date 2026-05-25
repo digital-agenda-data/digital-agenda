@@ -26,7 +26,13 @@
       <ecl-thead>
         <ecl-tr :id="group.code" :style="{ backgroundColor: parent.colors[0] }">
           <ecl-th>
-            {{ group.label }}
+            <ecl-link
+              :to="`#indicator-group-${group.code}`"
+              :label="group.label"
+              no-visited
+              variant="text"
+              inverted
+            />
           </ecl-th>
           <ecl-th>Time coverage</ecl-th>
           <ecl-th>Export links</ecl-th>
