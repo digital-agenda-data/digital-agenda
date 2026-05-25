@@ -32,10 +32,12 @@
       </section>
     </main>
     <ecl-site-footer />
+    <back-to-top />
   </div>
 </template>
 
 <script>
+import BackToTop from "@/components/BackToTop.vue";
 import SkipList from "@/components/SkipList.vue";
 import { mapState } from "pinia";
 import { useScriptTag } from "@vueuse/core";
@@ -50,7 +52,13 @@ import eclURL from "@ecl/preset-ec/dist/scripts/ecl-ec.js?url";
 
 export default {
   name: "MainLayout",
-  components: { SkipList, EclSiteFooter, EclPageHeader, EclSiteHeader },
+  components: {
+    BackToTop,
+    SkipList,
+    EclSiteFooter,
+    EclPageHeader,
+    EclSiteHeader,
+  },
   data() {
     return {
       host: window.location.host,
