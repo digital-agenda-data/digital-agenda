@@ -44,6 +44,7 @@ from digital_agenda.apps.core.resources import (
     UnitResource,
     CountryResource,
 )
+from .models import IndicatorMetadata
 
 
 class DimensionAdmin(admin.ModelAdmin):
@@ -581,3 +582,25 @@ class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
     @admin.display(description="Has EU Target", ordering="has_eu_target", boolean=True)
     def has_eu_target(self, obj):
         return obj.has_eu_target
+
+
+@admin.register(IndicatorMetadata)
+class IndicatorMetadataAdmin(admin.ModelAdmin):
+    list_display = ["indicator", "period", "breakdown", "country", "unit"]
+    search_fields = [
+        "indicator__code",
+        "indicator__label",
+        "period__code",
+        "breakdown__code",
+        "country__code",
+        "unit__code",
+        "description",
+    ]
+    list_filter = [
+        AutocompleteFilterFactory("indicator", "indicator"),
+        AutocompleteFilterFactory("breakdown", "breakdown"),
+        AutocompleteFilterFactory("country", "country"),
+        AutocompleteFilterFactory("period", "period"),
+        AutocompleteFilterFactory("unit", "unit"),
+    ]
+    autocomplete_fields = ["indicator", "period", "breakdown", "country", "unit"]

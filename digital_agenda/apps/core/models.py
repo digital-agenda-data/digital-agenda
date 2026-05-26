@@ -15,6 +15,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
 from django.utils.functional import cached_property
 from django_task.models import TaskRQ
+from pip._internal import metadata
 
 from digital_agenda.common.citext import CICharField
 from digital_agenda.common.models import CleanCKEditor5Field
@@ -539,3 +540,22 @@ class CountryProfileIndicator(DisplayOrderModel):
                     "indicator": "Indicator does not belong to the selected indicator group."
                 }
             )
+
+
+class IndicatorMetadata(TimestampedModel):
+    indicator = models.ForeignKey(
+        "core.Indicator", on_delete=models.CASCADE, related_name="metadata"
+    )
+    period = models.ForeignKey(
+        "core.Period", on_delete=models.CASCADE, blank=True, null=True
+    )
+    breakdown = models.ForeignKey(
+        "core.Breakdown", on_delete=models.CASCADE, blank=True, null=True
+    )
+    country = models.ForeignKey(
+        "core.Country", on_delete=models.CASCADE, blank=True, null=True
+    )
+    unit = models.ForeignKey(
+        "core.Unit", on_delete=models.CASCADE, blank=True, null=True
+    )
+    description = CleanCKEditor5Field(blank=True)

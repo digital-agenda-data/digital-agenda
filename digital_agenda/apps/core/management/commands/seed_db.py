@@ -40,6 +40,8 @@ TEST_FIXTURES = [
     "test/chartfontstyle",
     # Import some facts from some small ESTAT configs
     "test/seed_importconfigs",
+    # For testing indicator metadata
+    "test/indicatormetadata",
 ]
 
 

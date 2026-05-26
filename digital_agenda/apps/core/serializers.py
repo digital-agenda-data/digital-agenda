@@ -18,6 +18,7 @@ from .models import (
     Period,
     Fact,
 )
+from .models import IndicatorMetadata
 from .models import StaticPage
 from ..charts.serializers.chart_options import BreakdownChartOptionSerializer
 from ..charts.serializers.chart_options import ExtraChartNoteSerializer
@@ -97,21 +98,40 @@ class DataSourceSerializer(BaseDimensionSerializer):
         fields = BaseDimensionSerializer.Meta.fields + ["note", "url"]
 
 
+class IndicatorMetadataSerializer(serializers.ModelSerializer):
+    period = serializers.SlugRelatedField(slug_field="code", read_only=True)
+    breakdown = serializers.SlugRelatedField(slug_field="code", read_only=True)
+    country = serializers.SlugRelatedField(slug_field="code", read_only=True)
+    unit = serializers.SlugRelatedField(slug_field="code", read_only=True)
+
+    class Meta:
+        model = IndicatorMetadata
+        fields = [
+            "period",
+            "breakdown",
+            "country",
+            "unit",
+            "description",
+        ]
+
+
 class IndicatorListSerializer(BaseDimensionSerializer):
     data_sources = serializers.SlugRelatedField(
         slug_field="code", read_only=True, many=True
     )
     chart_options = IndicatorChartOptionSerializer(many=False, read_only=True)
     extra_notes = ExtraChartNoteSerializer(many=True, read_only=True)
+    metadata = IndicatorMetadataSerializer(many=True, read_only=True)
     note = serializers.SerializerMethodField(label="Note", read_only=True)
 
     class Meta(BaseDimensionSerializer.Meta):
         model = Indicator
         fields = BaseDimensionSerializer.Meta.fields + [
             "data_sources",
-            "note",
             "chart_options",
             "extra_notes",
+            "metadata",
+            "note",
         ]
 
 
