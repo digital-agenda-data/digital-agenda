@@ -355,7 +355,7 @@ class EstatImporter:
         try:
             # Convert to decimal (from string) to avoid janky float arithmetics
             total = sum(decimal.Decimal(str(fact.value)) for fact in fact_group)
-        except (TypeError, decimal.InvalidOperation):
+        except TypeError, decimal.InvalidOperation:
             # At least one value is missing, set the merged result to None as well
             # and set custom flags to indicate the missing part
             fact.value = None
