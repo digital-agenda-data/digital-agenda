@@ -14,7 +14,16 @@ class IndicatorViewSet(
     model = Indicator
     queryset = (
         Indicator.objects.select_related("chart_options")
-        .prefetch_related("data_sources", "extra_notes", "extra_notes__period")
+        .prefetch_related(
+            "data_sources",
+            "extra_notes",
+            "extra_notes__period",
+            "metadata",
+            "metadata__period",
+            "metadata__breakdown",
+            "metadata__country",
+            "metadata__unit",
+        )
         .order_by("indicatorgrouplink__display_order")
     )
     filter_backends = [filters.DjangoFilterBackend]
