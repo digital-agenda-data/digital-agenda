@@ -31,6 +31,11 @@
           :value="dataSourceByCode.get(data_source)?.definition"
         />
         <dimension-prop
+          v-for="(metadata, index) in item.metadata"
+          :key="`meta-${index}`"
+          :value="metadata.description"
+        />
+        <dimension-prop
           :value="dataSourceByCode.get(data_source)?.note"
           label="Notes:"
         />
@@ -92,11 +97,13 @@ export default {
     items() {
       const result = [];
       for (const axis of FILTER_SUFFIXES) {
+        const filterStore = this.filterStore[axis];
+
         for (const itemType of ["indicator", "breakdown", "unit"]) {
           let dimensionLabel = this.currentLabels[itemType] || itemType;
           // coerce all values to array if not already, to support
           // multiple definitions of the same type
-          const items = forceArray(this.filterStore[axis][itemType]);
+          const items = forceArray(filterStore[itemType]);
 
           if (axis && this.showAxisLabel) {
             dimensionLabel = `(${axis}) ${dimensionLabel}`;
@@ -127,12 +134,36 @@ export default {
                 dimensionLabel,
                 itemType,
                 ...item,
+                metadata: this.getMetadata(item, filterStore),
               });
             }
           }
         }
       }
       return result;
+    },
+  },
+  methods: {
+    getMetadata(item, filterStore) {
+      if (!item?.metadata?.length) return [];
+
+      const keys = ["period", "breakdown", "country", "unit"];
+
+      const currentFilters = Object.fromEntries(
+        keys.map((key) => [
+          key,
+          new Set(forceArray(filterStore[key]).map(({ code }) => code)),
+        ]),
+      );
+
+      return item.metadata.filter((metadata) =>
+        keys.every((key) => {
+          const value = metadata[key];
+          const filters = currentFilters[key];
+
+          return !value || filters.size === 0 || filters.has(value);
+        }),
+      );
     },
   },
 };
