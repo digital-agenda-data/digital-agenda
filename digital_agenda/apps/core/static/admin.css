@@ -183,3 +183,8 @@ input[type=checkbox] {
 .form-multiline {
   align-items: center;
 }
+
+/* Fix import table */
+.import-preview td ins {
+  color: black !important;
+}
