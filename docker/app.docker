@@ -1,5 +1,8 @@
-FROM python:3.14-slim
+FROM ghcr.io/astral-sh/uv:python3.14-trixie-slim
 
+ARG UV_ARGS=""
+
+ENV UV_SYSTEM_PYTHON=1
 ENV PYTHONUNBUFFERED 1
 ENV PIP_NO_CACHE_DIR=1
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
@@ -13,8 +16,9 @@ RUN apt-get update -y && \
     apt-get clean && \
     rm -vrf /var/lib/apt/lists/*
 
-COPY requirements/ requirements/
-RUN pip install -c requirements/constraints.txt -r requirements/prod.txt
+ADD pyproject.toml .
+ADD uv.lock .
+RUN uv sync --locked --no-default-groups $UV_ARGS
 
 COPY digital_agenda/ digital_agenda/
 COPY fixtures/ fixtures/
