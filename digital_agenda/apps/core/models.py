@@ -15,7 +15,6 @@ from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
 from django.utils.functional import cached_property
 from django_task.models import TaskRQ
-from pip._internal import metadata
 
 from digital_agenda.common.citext import CICharField
 from digital_agenda.common.models import CleanCKEditor5Field
