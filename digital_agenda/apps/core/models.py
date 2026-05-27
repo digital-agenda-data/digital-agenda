@@ -356,7 +356,7 @@ class Fact(TimestampedModel):
         unique_together = ("indicator", "breakdown", "unit", "country", "period")
         constraints = [
             models.CheckConstraint(
-                check=models.Q(value__isnull=False) | ~models.Q(flags=""),
+                condition=models.Q(value__isnull=False) | ~models.Q(flags=""),
                 name="core_fact_either_val_or_flags",
             )
         ]

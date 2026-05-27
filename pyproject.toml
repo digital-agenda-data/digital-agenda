@@ -111,3 +111,9 @@ omit = [
     "**/migrations/*",
 ]
 relative_files = true
+
+[tool.pytest.ini_options]
+addopts = [
+    "--ds=digital_agenda.settings.test",
+    "--pdbcls=IPython.terminal.debugger:Pdb",
+]
