@@ -131,7 +131,6 @@ export default {
   data() {
     return {
       apiURL,
-      collapsed: true,
     };
   },
   computed: {

@@ -14,15 +14,15 @@
             inverted
           />
           <div
-            :key="collapsed"
+            :key="isCollapsed"
             role="button"
-            :aria-expanded="!collapsed"
+            :aria-expanded="!isCollapsed"
             :aria-controls="tableId"
           >
-            <ecl-icon v-if="collapsed" icon="corner-arrow-down" />
+            <ecl-icon v-if="isCollapsed" icon="corner-arrow-down" />
             <ecl-icon v-else icon="corner-arrow-up" />
             <span class="ecl-u-sr-only">
-              {{ collapsed ? "Expand indicators" : "Collapse indicators" }}
+              {{ isCollapsed ? "Expand indicators" : "Collapse indicators" }}
             </span>
           </div>
         </div>
@@ -31,7 +31,7 @@
       <ecl-th>Export links</ecl-th>
     </ecl-tr>
   </ecl-thead>
-  <ecl-tbody v-show="!collapsed" :id="tableId">
+  <ecl-tbody v-show="!isCollapsed" :id="tableId">
     <ecl-tr v-for="indicator in group.indicators" :key="indicator.code">
       <ecl-td class="label-cell" header="Indicator">
         <ecl-link
@@ -86,6 +86,7 @@ import EclTh from "@/components/ecl/table/EclTh.vue";
 import EclThead from "@/components/ecl/table/EclThead.vue";
 import EclTr from "@/components/ecl/table/EclTr.vue";
 import { apiURL } from "@/lib/api.js";
+import { useMediaQuery } from "@vueuse/core";
 
 export default {
   name: "IndicatorGroupTable",
@@ -108,12 +109,19 @@ export default {
   data() {
     return {
       apiURL,
+      isLargeScreen: useMediaQuery("(min-width: 996px)"),
       collapsed: true,
     };
   },
   computed: {
     tableId() {
       return `indicator-group-table-${this.group.code}`;
+    },
+    isCollapsed() {
+      if (this.isLargeScreen) {
+        return this.forceExpand || this.collapsed;
+      }
+      return false;
     },
   },
 };
