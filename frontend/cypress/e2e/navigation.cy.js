@@ -40,7 +40,7 @@ describeResponsive("Check App Navigation", (viewportWidth) => {
     }
 
     cy.waitForNetworkIdle(1000, { log: false });
-    cy.get("button").contains("Show indicators").click();
+    cy.get('[aria-controls="indicator-group-table-ict-skills"]').click();
 
     cy.get(".ecl-table td span")
       .contains("ICT graduates")
