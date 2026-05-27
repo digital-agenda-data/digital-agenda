@@ -78,6 +78,7 @@ export default {
           "negative",
           "brand",
           "none",
+          "text",
         ].includes(value);
       },
     },
