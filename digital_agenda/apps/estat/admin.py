@@ -1,17 +1,22 @@
+import contextlib
+
 from admin_auto_filters.filters import AutocompleteFilterFactory
 from django.contrib import admin, messages
 from django.contrib.admin import EmptyFieldListFilter
-from django.db.models import Count
-from django.db.models import OuterRef
-from django.db.models import Prefetch
-from django.db.models import Subquery
+from django.db import models
+from django.db.models import Count, OuterRef, Prefetch, Subquery
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django_json_widget.widgets import JSONEditorWidget
 from django_task.admin import TaskAdmin
 
-from digital_agenda.apps.estat.models import *
+from digital_agenda.apps.estat.models import (
+    GeoGroup,
+    ImportConfig,
+    ImportConfigTag,
+    ImportFromConfigTask,
+)
 
 
 @admin.register(ImportConfigTag)
@@ -286,7 +291,7 @@ class ImportConfigAdmin(admin.ModelAdmin):
     @admin.display(description="Latest Task")
     def latest_import(self, obj):
         if not obj.latest_task:
-            return
+            return None
         url = reverse(
             "admin:estat_importfromconfigtask_change",
             kwargs={"object_id": obj.latest_task.id},
@@ -359,15 +364,15 @@ class ImportFromConfigTaskAdmin(TaskAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj=obj)
-        try:
+        with contextlib.suppress(ValueError):
             fields.remove("errors")
-        except ValueError:
-            pass
         return fields
 
     def get_exclude(self, request, obj=None):
         if not obj:
             return ["errors"]
+
+        return None
 
     def get_list_display(self, request):
         fields = super().get_list_display(request)

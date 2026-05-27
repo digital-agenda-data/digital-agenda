@@ -5,10 +5,12 @@ from django.core import mail
 from django.test import TestCase
 from pytz import UTC
 
-from digital_agenda.apps.estat.jobs import check_all_configs_for_updates
-from digital_agenda.apps.estat.jobs import check_estat_dataset_for_updates
-from digital_agenda.apps.estat.jobs import send_estat_update_alerts
-from digital_agenda.apps.estat.jobs import User
+from digital_agenda.apps.estat.jobs import (
+    User,
+    check_all_configs_for_updates,
+    check_estat_dataset_for_updates,
+    send_estat_update_alerts,
+)
 from digital_agenda.apps.estat.models import ImportConfig
 from digital_agenda.common.test_utils import BetamaxPatchTestCase
 
@@ -63,7 +65,8 @@ class TestSendAlert(TestCase):
     def setUp(self):
         super().setUp()
         self.user = User.objects.create_superuser(
-            email="super@example.com", password="foo"
+            email="super@example.com",
+            password="foo",  # noqa: S106
         )
         self.config = ImportConfig.objects.first()
 

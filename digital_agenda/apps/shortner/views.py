@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
-from rest_framework import mixins
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 from rest_framework.permissions import AllowAny
 
 from digital_agenda.apps.shortner.models import ShortURL

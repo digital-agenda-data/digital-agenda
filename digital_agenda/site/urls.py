@@ -1,11 +1,12 @@
+import adminactions.actions as actions
 import django_cas_ng.views
 from django.conf import settings
-from django.contrib import admin
 from django.conf.urls.static import static
-from django.urls import path, include
-from django.views.generic import RedirectView
+from django.contrib import admin
+from django.contrib.admin import site
 from django.contrib.auth import views as auth_views
-
+from django.urls import include, path
+from django.views.generic import RedirectView
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -15,9 +16,6 @@ from health_check.views import HealthCheckView
 
 from digital_agenda.apps.accounts import views as accounts_views
 from digital_agenda.apps.shortner.views import ChartRedirectView
-
-from django.contrib.admin import site
-import adminactions.actions as actions
 
 # register all adminactions
 actions.add_to_site(site)

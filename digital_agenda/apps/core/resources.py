@@ -1,12 +1,12 @@
 from import_export import resources
 
 from digital_agenda.apps.core.models import (
+    Breakdown,
+    Country,
     DataSource,
     Indicator,
-    Breakdown,
     Period,
     Unit,
-    Country,
 )
 
 

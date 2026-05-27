@@ -1,7 +1,6 @@
+import logging
 import os
 import socket
-import logging
-from datetime import timedelta
 from pathlib import Path
 
 import environ

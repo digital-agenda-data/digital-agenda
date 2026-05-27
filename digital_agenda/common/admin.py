@@ -1,12 +1,6 @@
 from django.contrib import admin
-from django.contrib.admin import BooleanFieldListFilter
 from django.contrib.admin import SimpleListFilter
-from django.db.models import Count
-from django.db.models import Exists
-from django.db.models import ManyToManyField
-from django.db.models import OuterRef
-from django.urls import reverse
-from django.utils.safestring import mark_safe
+from django.db.models import Exists, ManyToManyField, OuterRef
 
 from digital_agenda.apps.core.models import Fact
 
@@ -38,7 +32,7 @@ class HasChangesAdminMixin:
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = super().get_fieldsets(request, obj=obj)
-        for name, options in fieldsets:
+        for _name, options in fieldsets:
             if not options.get("classes"):
                 options["classes"] = []
 

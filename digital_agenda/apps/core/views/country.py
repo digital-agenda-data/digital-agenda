@@ -1,12 +1,11 @@
 from django.db.models import Value
 from django.db.models.functions import Coalesce, NullIf
-from rest_framework import viewsets
 from django_filters import rest_framework as filters
+from rest_framework import viewsets
 
 from digital_agenda.apps.core.models import Country
 from digital_agenda.apps.core.serializers import CountrySerializer
-from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import DimensionViewSetMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin, ExistingFactFilterSet
 
 
 class CountryViewSet(DimensionViewSetMixin, viewsets.ReadOnlyModelViewSet):

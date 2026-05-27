@@ -1,10 +1,9 @@
 from constance import config
-from rest_framework import mixins
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 from rest_framework.permissions import AllowAny
 
-from digital_agenda.apps.core.serializers import FeedbackSerializer
 from digital_agenda.apps.core.jobs import send_mail_job
+from digital_agenda.apps.core.serializers import FeedbackSerializer
 from digital_agenda.common.utils import split_email
 
 EMAIL_TEMPLATE = """

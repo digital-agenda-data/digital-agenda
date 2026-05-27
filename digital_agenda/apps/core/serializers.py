@@ -6,23 +6,25 @@ from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 from rest_framework import serializers
 
-from .models import CountryProfileIndicator
-from .models import (
-    IndicatorGroup,
-    Indicator,
-    DataSource,
-    BreakdownGroup,
-    Breakdown,
-    Unit,
-    Country,
-    Period,
-    Fact,
+from ..charts.serializers.chart_options import (
+    BreakdownChartOptionSerializer,
+    ExtraChartNoteSerializer,
+    IndicatorChartOptionSerializer,
 )
-from .models import IndicatorMetadata
-from .models import StaticPage
-from ..charts.serializers.chart_options import BreakdownChartOptionSerializer
-from ..charts.serializers.chart_options import ExtraChartNoteSerializer
-from ..charts.serializers.chart_options import IndicatorChartOptionSerializer
+from .models import (
+    Breakdown,
+    BreakdownGroup,
+    Country,
+    CountryProfileIndicator,
+    DataSource,
+    Fact,
+    Indicator,
+    IndicatorGroup,
+    IndicatorMetadata,
+    Period,
+    StaticPage,
+    Unit,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -226,7 +228,7 @@ class CaptchaValidator:
 
         try:
             resp = requests.post(
-                f"https://webtools.europa.eu/rest/captcha/verify",
+                "https://webtools.europa.eu/rest/captcha/verify",
                 headers={
                     # Seems weird that we need to fake the Referer header, but that's
                     # what the official docs recommend. ¯\_(ツ)_/¯
@@ -244,7 +246,9 @@ class CaptchaValidator:
             assert resp["status"] == "success", "incorrect answer"
         except (requests.RequestException, AssertionError, TypeError, ValueError) as e:
             logger.debug("Captcha validation failed: %s", e)
-            raise ValidationError(f"Unable to verify captcha: {e}", code=self.code)
+            raise ValidationError(
+                f"Unable to verify captcha: {e}", code=self.code
+            ) from e
 
     def __eq__(self, other):
         return isinstance(other, self.__class__) and self.code == other.code

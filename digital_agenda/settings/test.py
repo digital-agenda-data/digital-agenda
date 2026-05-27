@@ -1,4 +1,7 @@
-from .base import *
+from betamax import Betamax
+
+from .base import *  # noqa
+from .base import BASE_DIR
 
 # Disable caches while running tests
 CACHES = {"default": {"BACKEND": "django.core.cache.backends.dummy.DummyCache"}}
@@ -7,7 +10,6 @@ EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
 
 # Betamax settings
 # =============
-from betamax import Betamax
 
 BETAMAX_FIXTURES = str(BASE_DIR / "fixtures" / "test_betamax")
 

@@ -1,9 +1,10 @@
 import logging
 
-from django_rq import job
 from django.core.mail import send_mail
+from django_rq import job
 
 from digital_agenda.common.job import LoggingJob
+
 from .cache import clear_all_caches
 from .formats import get_loader
 from .models import Fact

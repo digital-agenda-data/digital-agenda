@@ -1,6 +1,0 @@
-[run]
-omit =
-    digital_agenda/settings/*
-    */tests/*
-    */migrations/*
-    */management/*

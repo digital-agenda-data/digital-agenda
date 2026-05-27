@@ -1,7 +1,6 @@
 from datetime import timedelta
 
 import pytest
-
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
 from django.utils import timezone
@@ -12,9 +11,9 @@ User = get_user_model()  # noqa
 
 
 def test_create_user():
-    user = User.objects.create_user(email="normal@example.com", password="foo")
+    user = User.objects.create_user(email="normal@example.com", password="foo")  # noqa: S106
     assert user.email == "normal@example.com"
-    assert user.is_active
+    assert user.is_active  # noqa: S106
     assert user.is_staff
     assert not user.is_superuser
 
@@ -31,14 +30,14 @@ def test_create_user():
         User.objects.create_user(email="normal@example.com")
 
     with pytest.raises(ValueError):
-        User.objects.create_user(email="", password="foo")
+        User.objects.create_user(email="", password="foo")  # noqa: S106
 
     with pytest.raises(ValueError):
         User.objects.create_user(email="normal@example.com", password="")
 
 
 def test_create_superuser():
-    user = User.objects.create_superuser(email="super@example.com", password="foo")
+    user = User.objects.create_superuser(email="super@example.com", password="foo")  # noqa: S106
     assert user.email == "super@example.com"
     assert user.is_active
     assert user.is_staff
@@ -46,8 +45,8 @@ def test_create_superuser():
 
 
 def test_disable_inactive_user():
-    user1 = User.objects.create_superuser(email="super1@example.com", password="foo")
-    user2 = User.objects.create_superuser(email="super2@example.com", password="foo")
+    user1 = User.objects.create_superuser(email="super1@example.com", password="foo")  # noqa: S106
+    user2 = User.objects.create_superuser(email="super2@example.com", password="foo")  # noqa: S106
 
     user1.last_login = timezone.now() - timedelta(days=179)
     user1.save()

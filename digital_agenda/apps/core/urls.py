@@ -1,19 +1,18 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 
+from .views.breakdown import BreakdownViewSet
+from .views.breakdown_group import BreakdownGroupViewSet
+from .views.country import CountryViewSet
 from .views.country_profile_indicator import CountryProfileIndicatorViewSet
-from .views.misc import AppSettingsView
+from .views.data_source import DataSourceViewSet
 from .views.facts import FactsViewSet
 from .views.feedback import FeedbackViewSet
-from .views.misc import StaticPageViewSet
-from .views.unit import UnitViewSet
-from .views.period import PeriodViewSet
-from .views.country import CountryViewSet
-from .views.breakdown import BreakdownViewSet
 from .views.indicator import IndicatorViewSet
-from .views.data_source import DataSourceViewSet
-from .views.breakdown_group import BreakdownGroupViewSet
 from .views.indicator_group import IndicatorGroupViewSet
+from .views.misc import AppSettingsView, StaticPageViewSet
+from .views.period import PeriodViewSet
+from .views.unit import UnitViewSet
 
 router = routers.DefaultRouter()
 router.register("facts", FactsViewSet)

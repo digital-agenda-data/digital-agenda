@@ -1,28 +1,26 @@
 from admin_auto_filters.filters import AutocompleteFilterFactory
-from adminsortable2.admin import SortableAdminMixin
-from adminsortable2.admin import SortableInlineAdminMixin
-from django.contrib import admin
-from django.contrib import messages
+from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
+from django.contrib import admin, messages
 from django.db import connection
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
-from django.urls import path
-from django.urls import reverse
+from django.urls import path, reverse
 from import_export import resources
 from import_export.admin import ImportExportMixin
 from import_export.widgets import ForeignKeyWidget
 
-from digital_agenda.apps.charts.models import BreakdownChartOption
-from digital_agenda.apps.charts.models import Chart
-from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.charts.models import ExtraChartNote
-from digital_agenda.apps.charts.models import ChartFontStyle
-from digital_agenda.apps.charts.models import ChartFilterOrder
-from digital_agenda.apps.charts.models import IndicatorChartOption
+from digital_agenda.apps.charts.models import (
+    BreakdownChartOption,
+    Chart,
+    ChartFilterOrder,
+    ChartFontStyle,
+    ChartGroup,
+    ExtraChartNote,
+    IndicatorChartOption,
+)
 from digital_agenda.apps.core.cache import clear_all_caches
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import Period
+from digital_agenda.apps.core.models import Indicator, Period
 from digital_agenda.common.admin import HasChangesAdminMixin
 
 

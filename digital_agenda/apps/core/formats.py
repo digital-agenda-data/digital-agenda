@@ -1,14 +1,14 @@
 import decimal
+import logging
 from abc import ABC, abstractmethod
 from collections import defaultdict
-import logging
 
-from django.db import transaction
-import xlrd
 import openpyxl
+import xlrd
+from django.db import transaction
 from openpyxl.utils import get_column_letter
 
-from .models import Period, Country, Indicator, Breakdown, Unit, Fact
+from .models import Breakdown, Country, Fact, Indicator, Period, Unit
 from .views.facts import EUROSTAT_FLAGS
 
 logger = logging.getLogger(__name__)
@@ -158,7 +158,7 @@ class RowReader:
                     self.header_columns[col], f"Column {col!r} must not be empty"
                 )
 
-        for dim_name, dim_model in DIMENSION_MODELS.items():
+        for dim_name in DIMENSION_MODELS:
             dim_code = self.row_dict[dim_name]
 
             self.fields[dim_name] = self.dimensions[dim_name].get(dim_code)
@@ -262,7 +262,7 @@ class BaseExcelLoader(BaseFileLoader, ABC):
 
         if not data and not errors:
             return 0, {"issue": "No valid row found"}
-        elif errors and not allow_errors:
+        if errors and not allow_errors:
             return 0, errors
 
         with transaction.atomic():
@@ -326,10 +326,9 @@ class XLSXLoader(BaseExcelLoader):
 def get_loader(data_file, extra_fields=None):
     if data_file.mime_type == "application/vnd.ms-excel":
         return XLSLoader(data_file.path, extra_fields=extra_fields)
-    elif (
+    if (
         data_file.mime_type
         == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     ):
         return XLSXLoader(data_file.path, extra_fields=extra_fields)
-    else:
-        raise TypeError("Unsupported MIME type")
+    raise TypeError("Unsupported MIME type")

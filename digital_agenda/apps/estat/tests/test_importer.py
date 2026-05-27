@@ -3,13 +3,15 @@ import json
 from django.conf import settings
 from openpyxl.reader.excel import load_workbook
 
-from digital_agenda.apps.core.models import Breakdown
-from digital_agenda.apps.core.models import Country
-from digital_agenda.apps.core.models import DataSource
-from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import Period
-from digital_agenda.apps.core.models import Unit
+from digital_agenda.apps.core.models import (
+    Breakdown,
+    Country,
+    DataSource,
+    Fact,
+    Indicator,
+    Period,
+    Unit,
+)
 from digital_agenda.apps.estat.models import ImportConfig
 from digital_agenda.common.test_utils import BetamaxPatchTestCase
 
@@ -159,7 +161,7 @@ class TestImporterDryRun(BetamaxPatchTestCase):
         for row in rows[1:]:
             row = [i.value for i in row]
             key = tuple(row[:5])
-            values[key] = dict(zip(headers, row))
+            values[key] = dict(zip(headers, row, strict=False))
         return values
 
     def create_fact(self, value, flags):

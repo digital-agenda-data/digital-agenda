@@ -3,13 +3,14 @@ import sys
 
 from django.conf import settings
 from django.core.files import File
-from django.core.management import BaseCommand
-from django.core.management import call_command
+from django.core.management import BaseCommand, call_command
 from rich.console import Console
 
-from digital_agenda.apps.charts.models import BreakdownChartOption
-from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.charts.models import IndicatorChartOption
+from digital_agenda.apps.charts.models import (
+    BreakdownChartOption,
+    ChartGroup,
+    IndicatorChartOption,
+)
 from digital_agenda.apps.core.cache import clear_all_caches
 
 console = Console()
@@ -59,10 +60,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, noinput=False, **options):
         if not noinput:
-            print(
+            self.stdout.write(
                 "This will IRREVERSIBLY DESTROY all data currently in the  database! "
                 "Are you sure you want to continue?",
-                end=" ",
+                ending=" ",
             )
             if input("[Y/n] ") != "Y":
                 sys.exit(1)

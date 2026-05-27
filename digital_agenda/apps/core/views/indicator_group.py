@@ -2,11 +2,9 @@ from django.db.models import Prefetch
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import IndicatorGroup
+from digital_agenda.apps.core.models import Indicator, IndicatorGroup
 from digital_agenda.apps.core.serializers import IndicatorGroupSerializer
-from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import DimensionViewSetMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin, ExistingFactFilterSet
 from digital_agenda.common.export import FactExportMixin
 
 

@@ -1,12 +1,11 @@
+from constance.admin import Config, ConstanceAdmin
+from constance.forms import ConstanceForm
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
-
-from constance.admin import ConstanceAdmin, Config
-from constance.forms import ConstanceForm
 from django.core.exceptions import ValidationError
 
-from .forms import UserCreationForm, UserChangeForm
+from .forms import UserChangeForm, UserCreationForm
 from .models import User
 
 # We are not using authentication groups. If we want to ever add this back, we need

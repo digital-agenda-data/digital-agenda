@@ -1,12 +1,13 @@
 from hashid_field.rest import HashidSerializerCharField
 from rest_framework import serializers
 
-from digital_agenda.apps.charts.models import Chart
-from digital_agenda.apps.charts.models import ChartFontStyle
-from digital_agenda.apps.core.serializers import BaseDimensionSerializer
-from digital_agenda.apps.core.serializers import FactSerializer
-from digital_agenda.apps.core.serializers import IndicatorListSerializer
-from digital_agenda.apps.core.serializers import PeriodSerializer
+from digital_agenda.apps.charts.models import Chart, ChartFontStyle
+from digital_agenda.apps.core.serializers import (
+    BaseDimensionSerializer,
+    FactSerializer,
+    IndicatorListSerializer,
+    PeriodSerializer,
+)
 from digital_agenda.common.serializers import CodeRelatedField
 
 

@@ -1,6 +1,7 @@
 import logging
-from rest_framework.views import exception_handler, Response
+
 from rest_framework import status
+from rest_framework.views import Response, exception_handler
 
 logger = logging.getLogger(__name__)
 
@@ -34,11 +35,10 @@ def core_exception_handler(exc, context):
 
 
 def _handle_generic_error(exc, context, response):
-    response = Response(
+    return Response(
         {"error": "Server error", "details": getattr(exc, "messages", "")},
         status=status.HTTP_500_INTERNAL_SERVER_ERROR,
     )
-    return response
 
 
 def _handle_not_found_error(exc, context, response):
@@ -66,21 +66,17 @@ def _handle_not_found_error(exc, context, response):
 
 
 def _handle_validation_error(exc, context, response):
-    response = Response(
+    return Response(
         {"error": "Validation error", "details": getattr(exc, "detail", "")},
         status=status.HTTP_400_BAD_REQUEST,
     )
 
-    return response
-
 
 def _handle_integrity_error(exc, context, response):
-    response = Response(
+    return Response(
         {
             "error": "There is a conflict between the data you are trying to save and existing data.",
             "details": getattr(exc, "messages", ""),
         },
         status=status.HTTP_400_BAD_REQUEST,
     )
-
-    return response

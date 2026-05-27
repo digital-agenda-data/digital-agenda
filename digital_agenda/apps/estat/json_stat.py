@@ -3,9 +3,9 @@
 Full specifications here: https://json-stat.org/format/
 """
 
-import itertools
-import functools
 import collections
+import functools
+import itertools
 import logging
 import math
 
@@ -74,8 +74,7 @@ class JSONStat:
         try:
             if isinstance(self.dataset[key], list):
                 return self.dataset[key][index]
-            else:
-                return self.dataset[key].get(str(index))
+            return self.dataset[key].get(str(index))
         except KeyError:
             return None
 
