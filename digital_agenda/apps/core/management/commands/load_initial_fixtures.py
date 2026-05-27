@@ -1,10 +1,32 @@
-from django.core.management import BaseCommand
-from django.core.management import call_command
+from django.conf import settings
+from django.core.management import BaseCommand, call_command
 from rich.console import Console
 
-from digital_agenda.apps.core.models import *
-from digital_agenda.apps.estat.models import *
-from digital_agenda.apps.charts.models import *
+from digital_agenda.apps.charts.models import (
+    BreakdownChartOption,
+    Chart,
+    ChartFilterOrder,
+    ChartFontStyle,
+    ChartGroup,
+    ExtraChartNote,
+    IndicatorChartOption,
+)
+from digital_agenda.apps.core.models import (
+    Breakdown,
+    BreakdownGroup,
+    BreakdownGroupLink,
+    Country,
+    CountryProfileIndicator,
+    DataSource,
+    Indicator,
+    IndicatorDataSourceLink,
+    IndicatorGroup,
+    IndicatorGroupLink,
+    Period,
+    StaticPage,
+    Unit,
+)
+from digital_agenda.apps.estat.models import GeoGroup, ImportConfig, ImportConfigTag
 
 console = Console()
 

@@ -1,8 +1,10 @@
 from rest_framework import serializers
 
-from digital_agenda.apps.charts.models import BreakdownChartOption
-from digital_agenda.apps.charts.models import ExtraChartNote
-from digital_agenda.apps.charts.models import IndicatorChartOption
+from digital_agenda.apps.charts.models import (
+    BreakdownChartOption,
+    ExtraChartNote,
+    IndicatorChartOption,
+)
 
 
 class BaseChartOptionSerializer(serializers.ModelSerializer):

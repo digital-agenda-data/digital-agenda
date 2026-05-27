@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("estat", "0002_importfromconfigtask_dry_run_and_more"),
     ]

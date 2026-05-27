@@ -1,13 +1,11 @@
 import collections
-import datetime
 import functools
 import io
 
 import openpyxl
-from django import forms
 from django.conf import settings
-from django.db.models import Exists
-from django.db.models import OuterRef
+from django.db.models import Exists, OuterRef
+from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django_filters import rest_framework as filters
@@ -19,14 +17,16 @@ from rest_framework.mixins import ListModelMixin
 from rest_framework.renderers import BaseRenderer
 
 from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.core.models import Breakdown
-from digital_agenda.apps.core.models import BreakdownGroup
-from digital_agenda.apps.core.models import Country
-from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import IndicatorGroup
-from digital_agenda.apps.core.models import Period
-from digital_agenda.apps.core.models import Unit
+from digital_agenda.apps.core.models import (
+    Breakdown,
+    BreakdownGroup,
+    Country,
+    Fact,
+    Indicator,
+    IndicatorGroup,
+    Period,
+    Unit,
+)
 from digital_agenda.apps.core.serializers import FactSerializer
 from digital_agenda.apps.core.views import DimensionViewSetMixin
 
@@ -188,7 +188,7 @@ class FactXLSXSerializer:
 
         sheet = self.wb.create_sheet("General Information")
         self.set_dimensions(sheet, [30, 100])
-        sheet.append(["Extraction Date", str(datetime.date.today())])
+        sheet.append(["Extraction Date", str(timezone.now().date())])
 
         if not self.chart_group:
             return
@@ -251,7 +251,6 @@ class FactXLSXSerializer:
 
         return result
 
-    @functools.lru_cache()
     def get_label(self, dimension):
         if self.chart_group:
             return self.chart_group.get_label(dimension)

@@ -1,16 +1,13 @@
+import contextlib
 import json
 
 from admin_auto_filters.filters import AutocompleteFilterFactory
+from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
+from django import forms
 from django.conf import settings
 from django.contrib import admin, messages
 from django.db import models
-from django import forms
-
-from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
-from django.db.models import Count
-from django.db.models import Exists
-from django.db.models import OuterRef
-from django.db.models import Prefetch
+from django.db.models import Count, Exists, OuterRef, Prefetch
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.safestring import mark_safe
@@ -19,32 +16,33 @@ from django_task.admin import TaskAdmin
 from import_export.admin import ImportExportMixin
 from more_admin_filters import BooleanAnnotationFilter
 
-from .models import CountryProfileIndicator
-from .models import (
-    DataSource,
-    IndicatorGroup,
-    Indicator,
-    BreakdownGroup,
-    Breakdown,
-    Unit,
-    Country,
-    Period,
-    Fact,
-    DataFileImport,
-    DataFileImportTask,
-    StaticPage,
-)
 from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.common.admin import HasFactsAdminMixIn
 from digital_agenda.apps.core.resources import (
+    BreakdownResource,
+    CountryResource,
     DataSourceResource,
     IndicatorResource,
-    BreakdownResource,
     PeriodResource,
     UnitResource,
-    CountryResource,
 )
-from .models import IndicatorMetadata
+from digital_agenda.common.admin import HasFactsAdminMixIn
+
+from .models import (
+    Breakdown,
+    BreakdownGroup,
+    Country,
+    CountryProfileIndicator,
+    DataFileImport,
+    DataFileImportTask,
+    DataSource,
+    Fact,
+    Indicator,
+    IndicatorGroup,
+    IndicatorMetadata,
+    Period,
+    StaticPage,
+    Unit,
+)
 
 
 class DimensionAdmin(admin.ModelAdmin):
@@ -401,7 +399,7 @@ class DataFileImportAdmin(admin.ModelAdmin):
     @admin.display(description="Latest Task")
     def latest_import(self, obj):
         if not obj.latest_task:
-            return
+            return None
         url = reverse(
             "admin:core_datafileimporttask_change",
             kwargs={"object_id": obj.latest_task.id},
@@ -453,10 +451,8 @@ class DataFileImportTaskAdmin(TaskAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj=obj)
-        try:
+        with contextlib.suppress(ValueError):
             fields.remove("errors")
-        except ValueError:
-            pass
         return fields
 
     def get_list_display(self, request):

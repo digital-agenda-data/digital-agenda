@@ -56,15 +56,15 @@ class Command(BaseCommand):
             config_qs = config_qs.filter(code=code)
 
         if not config_qs.exists():
-            print("No import configurations found", file=sys.stderr)
+            self.stderr.write("No import configurations found")
             sys.exit(1)
 
         if not noinput and delete_existing:
             nr_facts = Fact.objects.filter(import_config__in=config_qs).count()
-            print(
+            self.stdout.write(
                 f"Warning! This will remove {nr_facts} facts "
                 f"from {len(config_qs)} import configurations. Continue?",
-                end=" ",
+                ending=" ",
             )
             if input("[Y/n] ") != "Y":
                 sys.exit(1)
@@ -77,5 +77,5 @@ class Command(BaseCommand):
             )
 
         if not all(config.latest_task.status == "SUCCESS" for config in config_qs):
-            print("Not ALL tasks completed successfully.")
+            self.stderr.write("Not ALL tasks completed successfully.")
             sys.exit(1)

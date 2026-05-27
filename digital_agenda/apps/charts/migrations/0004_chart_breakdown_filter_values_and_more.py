@@ -16,7 +16,6 @@ def migrate_country_multi(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         (
             "charts",

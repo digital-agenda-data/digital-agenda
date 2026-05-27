@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import (
-    UserCreationForm as BaseUserCreationForm,
     UserChangeForm as BaseUserChangeForm,
+)
+from django.contrib.auth.forms import (
+    UserCreationForm as BaseUserCreationForm,
 )
 
 from .models import User

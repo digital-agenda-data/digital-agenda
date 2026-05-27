@@ -1,14 +1,13 @@
 import collections
+import contextlib
 import datetime
-import gzip
+import decimal
 import hashlib
 import itertools
 import json
-import shutil
 import logging
-import decimal
-from functools import cached_property
 from collections import defaultdict
+from functools import cached_property
 from io import BytesIO
 from typing import TYPE_CHECKING
 from urllib.parse import urlencode
@@ -17,16 +16,17 @@ import openpyxl
 import requests
 from django.conf import settings
 from django.utils.text import get_valid_filename
-from sympy import symbols
-from sympy import sympify
+from sympy import symbols, sympify
 
-from digital_agenda.apps.core.models import Breakdown
-from digital_agenda.apps.core.models import Country
-from digital_agenda.apps.core.models import DataSource
-from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import Period
-from digital_agenda.apps.core.models import Unit
+from digital_agenda.apps.core.models import (
+    Breakdown,
+    Country,
+    DataSource,
+    Fact,
+    Indicator,
+    Period,
+    Unit,
+)
 from digital_agenda.apps.estat.json_stat import JSONStat
 
 if TYPE_CHECKING:
@@ -195,7 +195,7 @@ class EstatDataset(JSONStat):
 
     @cached_property
     def json_path(self):
-        filter_hash = hashlib.md5(self.download_url.encode()).hexdigest()
+        filter_hash = hashlib.sha256(self.download_url.encode()).hexdigest()
         filename = get_valid_filename(self.code + "-" + filter_hash) + ".json"
         return settings.ESTAT_DOWNLOAD_DIR / filename
 
@@ -268,10 +268,8 @@ class EstatImporter:
             category_label = obs[config_dim].label
 
             # Apply mapping if available, otherwise keep the original
-            try:
+            with contextlib.suppress(KeyError):
                 category_id = self.config.ci_mappings[dimension][category_id]
-            except KeyError:
-                pass
 
         return category_id, category_label
 
@@ -300,10 +298,8 @@ class EstatImporter:
         for config_dim, multipliers in self.config.ci_multipliers.items():
             category_id = obs[config_dim].id
 
-            try:
+            with contextlib.suppress(KeyError):
                 value *= multipliers[category_id]
-            except KeyError:
-                pass
 
         return value
 
@@ -473,11 +469,11 @@ class EstatImporter:
         for indicator in self.cache["indicator"].values():
             # add data source only if empty, refs #34089
             if indicator.data_sources.count() == 0:
-                logger.info(f"Assigning datasource to indicator {indicator}")
+                logger.info("Assigning datasource to indicator: %s", indicator)
                 indicator.data_sources.add(self.data_source)
         self.config.data_last_update = self.dataset.dataflow.update_data
         self.config.datastructure_last_update = self.dataset.dataflow.update_structure
-        logger.info(f"Updating config version to {self.dataset.dataflow.version}")
+        logger.info("Updating config version to %s", self.dataset.dataflow.version)
         self.config.datastructure_last_version = self.dataset.dataflow.version
         self.config.new_version_available = False
         self.config.save()

@@ -4,8 +4,7 @@ from constance import config
 from django.conf import settings
 from django.contrib.admin import AdminSite
 from django.contrib.admin.apps import AdminConfig
-from django.http import Http404
-from django.http import HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache

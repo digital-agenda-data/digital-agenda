@@ -4,7 +4,6 @@ from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 
 from digital_agenda.apps.core.models import CountryProfileIndicator
-from digital_agenda.apps.core.models import CountryProfileIndicator
 from digital_agenda.apps.core.serializers import CountryProfileIndicatorSerializer
 
 

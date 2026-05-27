@@ -2,11 +2,9 @@ from django.db.models import Prefetch
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
-from digital_agenda.apps.core.models import Breakdown
-from digital_agenda.apps.core.models import BreakdownGroup
+from digital_agenda.apps.core.models import Breakdown, BreakdownGroup
 from digital_agenda.apps.core.serializers import BreakdownGroupSerializer
-from digital_agenda.apps.core.views import ExistingFactFilterSet
-from digital_agenda.apps.core.views import DimensionViewSetMixin
+from digital_agenda.apps.core.views import DimensionViewSetMixin, ExistingFactFilterSet
 
 
 class BreakdownGroupFilterSet(ExistingFactFilterSet):

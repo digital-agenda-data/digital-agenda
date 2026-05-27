@@ -7,7 +7,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0004_indicatorgroup_color_indicatorgroup_icon_and_more"),
     ]

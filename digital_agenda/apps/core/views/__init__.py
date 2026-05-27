@@ -1,5 +1,4 @@
-from django.db.models import Exists
-from django.db.models import OuterRef
+from django.db.models import Exists, OuterRef
 from django.utils.encoding import force_str
 from django.utils.text import get_valid_filename
 from django_filters import rest_framework as filters

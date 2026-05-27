@@ -1,9 +1,7 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 
-from .views import ChartViewSet
-from .views import ChartGroupViewSet
-from .views import ChartGroupIndicatorSearchViewSet
+from .views import ChartGroupIndicatorSearchViewSet, ChartGroupViewSet, ChartViewSet
 
 router = routers.DefaultRouter()
 router.register("charts", ChartViewSet, basename="charts")

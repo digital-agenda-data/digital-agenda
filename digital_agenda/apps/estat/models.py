@@ -4,10 +4,9 @@ from functools import cached_property
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
-
 from django.db import models
 from django_task.models import TaskRQ
-from sympy import sympify, symbols
+from sympy import symbols, sympify
 
 from digital_agenda.apps.estat.importer import ImporterError
 from digital_agenda.common.citext import CICharField
@@ -42,10 +41,10 @@ class GeoGroup(models.Model):
             assert isinstance(self.geo_codes, list)
             assert len(self.geo_codes) > 0
             assert all(isinstance(code, str) for code in self.geo_codes)
-        except AssertionError:
+        except AssertionError as e:
             raise ValidationError(
                 {"geo_codes": ValidationError("Must be a non-empty Array of strings")}
-            )
+            ) from e
 
         if len(set(self.geo_codes)) != len(self.geo_codes):
             raise ValidationError(
@@ -81,7 +80,7 @@ def default_formula():
 
 
 def is_unique(values):
-    return len(values) == len(set(v.lower() for v in values))
+    return len(values) == len({v.lower() for v in values})
 
 
 class ImportConfig(models.Model):
@@ -233,6 +232,9 @@ class ImportConfig(models.Model):
         help_text="Define multipliers to apply to specific dimensions values.",
     )
 
+    def __str__(self):
+        return f"{self.code} ({self.pk})"
+
     @cached_property
     def ci_filters(self):
         """Convert the filters specified in the import config into lower-cased
@@ -344,7 +346,7 @@ class ImportConfig(models.Model):
             )
 
         for dimension, values in self.multipliers.items():
-            for code, multiplier in values.items():
+            for _code, multiplier in values.items():
                 if not isinstance(multiplier, (int, float)):
                     raise ValidationError(
                         {
@@ -392,7 +394,7 @@ class ImportConfig(models.Model):
                     "conflict_formula": f"Defined symbols must match formula symbols: {formula.free_symbols} != {defined_symbols}"
                 }
             )
-        for symbol, symbol_definition in formula_symbols.items():
+        for _symbol, symbol_definition in formula_symbols.items():
             self._clean_json_dimensions("conflict_formula", symbol_definition)
 
     def _validate_json_dimensions(self, dataset, config_dict, config_type):
@@ -420,7 +422,7 @@ class ImportConfig(models.Model):
         """Simple sanity checks to validate the data matches the given config."""
         self._validate_json_dimensions(dataset, self.ci_filters, "filter")
         self._validate_json_dimensions(dataset, self.ci_multipliers, "multiplier")
-        for symbol, definition in self.ci_formula["symbols"].items():
+        for _symbol, definition in self.ci_formula["symbols"].items():
             self._validate_json_dimensions(dataset, definition, "symbol")
         for dimension in ("indicator", "breakdown", "country", "unit", "period"):
             config_dim = getattr(self, dimension)
@@ -439,7 +441,7 @@ class ImportConfig(models.Model):
 
             mappings = self.ci_mappings.get(dimension, {})
             categories = dataset.dimension_dict[config_dim]
-            for val in mappings.keys():
+            for val in mappings:
                 if val not in categories:
                     raise ImporterError(
                         {
@@ -471,9 +473,6 @@ class ImportConfig(models.Model):
             return self.tasks.latest()
         except ImportFromConfigTask.DoesNotExist:
             return None
-
-    def __str__(self):
-        return f"{self.code} ({self.pk})"
 
 
 class ImportFromConfigTask(TaskRQ):

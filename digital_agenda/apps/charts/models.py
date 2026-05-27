@@ -5,18 +5,19 @@ from colorfield.fields import ColorField
 from composite_field import CompositeField
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.core.validators import MaxValueValidator
-from django.core.validators import MinValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.html import strip_tags
 from hashid_field import BigHashidAutoField
 
 from digital_agenda.apps.core.models import Fact
 from digital_agenda.common.citext import CICharField
-from digital_agenda.common.models import CleanCKEditor5Field
-from digital_agenda.common.models import DisplayOrderModel
-from digital_agenda.common.models import NaturalCodeManger
-from digital_agenda.common.models import TimestampedModel
+from digital_agenda.common.models import (
+    CleanCKEditor5Field,
+    DisplayOrderModel,
+    NaturalCodeManger,
+    TimestampedModel,
+)
 
 
 class DraftModel(models.Model):
@@ -29,8 +30,6 @@ class DraftModel(models.Model):
 
 
 class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
-    objects = NaturalCodeManger()
-
     code = CICharField(max_length=60, unique=True)
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=40)
@@ -62,14 +61,16 @@ class ChartGroup(DraftModel, TimestampedModel, DisplayOrderModel):
     )
     indicator_groups = models.ManyToManyField("core.IndicatorGroup")
 
+    objects = NaturalCodeManger()
+
     class Meta:
         ordering = ["display_order", "code"]
 
-    def natural_key(self):
-        return (self.code,)  # noqa
-
     def __str__(self):
         return f"[{self.code}] {self.short_name}"
+
+    def natural_key(self):
+        return (self.code,)  # noqa
 
     def clean(self):
         if (
@@ -161,7 +162,6 @@ class ChartManger(models.Manager):
 
 
 class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
-    objects = ChartManger()
     # !IMPORTANT WARNING!
     #
     # When adding an entry here, a corresponding entry must be added in
@@ -337,16 +337,17 @@ class Chart(DraftModel, TimestampedModel, DisplayOrderModel):
         help_text="Choose default legend layout type",
         choices=[("horizontal", "horizontal"), ("vertical", "vertical")],
     )
+    objects = ChartManger()
 
     class Meta:
         ordering = ["display_order", "code"]
         unique_together = ("chart_group", "code")
 
-    def natural_key(self):
-        return (self.chart_group.code, self.code)  # noqa
-
     def __str__(self):
         return self.name
+
+    def natural_key(self):
+        return (self.chart_group.code, self.code)  # noqa
 
     @classmethod
     def get_m2m_filter_options(cls):
@@ -556,6 +557,9 @@ class ChartFontStyle(models.Model):
 
     class Meta:
         unique_together = ("chart", "field")
+
+    def __str__(self):
+        return f"{self.chart} - {self.get_field_display()}"
 
 
 class ChartFilterOrder(DisplayOrderModel):

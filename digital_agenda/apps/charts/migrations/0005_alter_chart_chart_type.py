@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("charts", "0004_chart_breakdown_filter_values_and_more"),
     ]

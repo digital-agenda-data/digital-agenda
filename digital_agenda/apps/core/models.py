@@ -1,25 +1,25 @@
-import re
 import calendar
-from datetime import date
-from datetime import datetime
-from datetime import timedelta
+import re
+from datetime import date, timedelta
 from pathlib import Path
 
 import magic
 from colorfield.fields import ColorField
-
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
-from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
+from django.db import models
+from django.utils import timezone
 from django.utils.functional import cached_property
 from django_task.models import TaskRQ
 
 from digital_agenda.common.citext import CICharField
-from digital_agenda.common.models import CleanCKEditor5Field
-from digital_agenda.common.models import DisplayOrderModel
-from digital_agenda.common.models import TimestampedModel
+from digital_agenda.common.models import (
+    CleanCKEditor5Field,
+    DisplayOrderModel,
+    TimestampedModel,
+)
 
 
 class BaseDimensionManager(models.Manager):
@@ -48,10 +48,9 @@ class BaseDimensionModel(TimestampedModel):
     def __str__(self):
         if self.label:
             return f"[{self.code}] {self.label}"
-        elif self.alt_label:
+        if self.alt_label:
             return f"[{self.code}] {self.alt_label}"
-        else:
-            return str(self.code)
+        return str(self.code)
 
 
 class DataSource(BaseDimensionModel):
@@ -116,6 +115,9 @@ class IndicatorDataSourceLink(models.Model):
 
     class Meta:
         unique_together = ("indicator", "data_source")
+
+    def __str__(self):
+        return f"{self.indicator} -> {self.data_source}"
 
     def natural_key(self):
         return self.indicator.code, self.data_source.code
@@ -260,7 +262,7 @@ class Period(BaseDimensionModel):
 
         year = int(year)
         assert year >= 1900, f"year for date is likely too low '{year}'"
-        assert year <= date.today().year, f"year appears to be in the future '{year}'"
+        assert year <= timezone.now().year, f"year appears to be in the future '{year}'"
 
         if not qualifier:
             self.label = self.label or f"Year: {year}"
@@ -308,7 +310,7 @@ class Period(BaseDimensionModel):
                 {
                     "date": f"Unable to guess date; please check code or enter a date manually: {e}"
                 }
-            )
+            ) from e
 
     def save(self, *args, **kwargs):
         self.clean()
@@ -354,7 +356,7 @@ class Fact(TimestampedModel):
         unique_together = ("indicator", "breakdown", "unit", "country", "period")
         constraints = [
             models.CheckConstraint(
-                check=models.Q(value__isnull=False) | ~models.Q(flags=""),
+                condition=models.Q(value__isnull=False) | ~models.Q(flags=""),
                 name="core_fact_either_val_or_flags",
             )
         ]
@@ -372,17 +374,16 @@ class Fact(TimestampedModel):
 
 def upload_path(instance, filename):
     ts = (
-        datetime.now()
+        timezone.now()
         .isoformat()
         .replace("-", "")
         .replace(":", "")
         .replace("T", "")
         .split(".")[0]
     )
-    filename = Path(settings.IMPORT_FILES_SUBDIR) / Path(filename).with_stem(
+    return Path(settings.IMPORT_FILES_SUBDIR) / Path(filename).with_stem(
         f"{Path(filename).stem}_{ts}"
     )
-    return filename
 
 
 def validate_upload_mime_type(file):

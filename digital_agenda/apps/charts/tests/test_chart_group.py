@@ -1,13 +1,15 @@
 from django.urls import reverse
 
 from digital_agenda.apps.charts.models import ChartGroup
-from digital_agenda.apps.core.models import Breakdown
-from digital_agenda.apps.core.models import Country
-from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import IndicatorGroup
-from digital_agenda.apps.core.models import Period
-from digital_agenda.apps.core.models import Unit
+from digital_agenda.apps.core.models import (
+    Breakdown,
+    Country,
+    Fact,
+    Indicator,
+    IndicatorGroup,
+    Period,
+    Unit,
+)
 from digital_agenda.common.test_utils import APIBaseTest
 
 

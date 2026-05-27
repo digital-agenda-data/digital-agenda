@@ -9,15 +9,16 @@ from django_rq import job
 
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.estat.importer import DryRunEstatImporter
-from digital_agenda.apps.estat.importer import EstatDataflow
-from digital_agenda.apps.estat.importer import EstatImporter
-from digital_agenda.apps.estat.importer import ImporterError
+from digital_agenda.apps.estat.importer import (
+    DryRunEstatImporter,
+    EstatDataflow,
+    EstatImporter,
+    ImporterError,
+)
 from digital_agenda.apps.estat.models import ImportConfig
 from digital_agenda.common.job import LoggingJob
 from digital_agenda.common.scheduler import cron
-from digital_agenda.common.utils import reverse_absolute_uri
-from digital_agenda.common.utils import split_email
+from digital_agenda.common.utils import reverse_absolute_uri, split_email
 
 logger = logging.getLogger(__name__)
 User = get_user_model()

@@ -28,4 +28,4 @@ class LoggingJob(Job):
 
     @staticmethod
     def execute_with_logging(job, task):
-        raise NotImplemented
+        raise NotImplementedError

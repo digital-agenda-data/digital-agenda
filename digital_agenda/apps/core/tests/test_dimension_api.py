@@ -5,12 +5,14 @@ import openpyxl
 from django.urls import reverse
 from rest_framework import status
 
-from digital_agenda.apps.core.models import Breakdown
-from digital_agenda.apps.core.models import Country
-from digital_agenda.apps.core.models import Fact
-from digital_agenda.apps.core.models import Indicator
-from digital_agenda.apps.core.models import Period
-from digital_agenda.apps.core.models import Unit
+from digital_agenda.apps.core.models import (
+    Breakdown,
+    Country,
+    Fact,
+    Indicator,
+    Period,
+    Unit,
+)
 from digital_agenda.common.test_utils import APIBaseTest
 
 
