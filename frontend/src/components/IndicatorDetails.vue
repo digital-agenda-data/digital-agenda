@@ -14,6 +14,56 @@
     <h3 :style="{ color: parent.colors[0] }">
       <span>{{ group.label }}</span>
     </h3>
+    <div class="ecl-u-mb-2xl">
+      <b>Export:&nbsp;</b>
+      <ecl-link
+        :to="`${apiURL}/indicator-groups/${group.code}/facts/`"
+        no-visited
+        download-class
+        variant="none"
+        label="data"
+      />
+      <span>,&nbsp;</span>
+      <ecl-link
+        :to="`${apiURL}/indicators/?indicator_group=${group.code}&format=csv`"
+        no-visited
+        download-class
+        variant="none"
+        label="indicators"
+      />
+      <span>,&nbsp;</span>
+      <ecl-link
+        :to="`${apiURL}/data-sources/?indicator_group=${group.code}&format=csv`"
+        no-visited
+        download-class
+        variant="none"
+        label="data sources"
+      />
+      <span>,&nbsp;</span>
+      <ecl-link
+        :to="`${apiURL}/countries/?indicator_group=${group.code}&format=csv`"
+        no-visited
+        download-class
+        variant="none"
+        label="countries"
+      />
+      <span>,&nbsp;</span>
+      <ecl-link
+        :to="`${apiURL}/breakdowns/?indicator_group=${group.code}&format=csv`"
+        no-visited
+        download-class
+        variant="none"
+        label="breakdowns"
+      />
+      <span>,&nbsp;</span>
+      <ecl-link
+        :to="`${apiURL}/units/?indicator_group=${group.code}&format=csv`"
+        no-visited
+        download-class
+        variant="none"
+        label="units"
+      />
+    </div>
     <hr />
     <div
       v-for="indicator in group.indicators"
@@ -131,7 +181,6 @@ export default {
   data() {
     return {
       apiURL,
-      collapsed: true,
     };
   },
   computed: {

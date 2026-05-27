@@ -30,7 +30,7 @@ describeResponsive("Check Chart", () => {
       .click();
     // Time coverage should use the reference period instead of the regular period
     cy.waitForNetworkIdle(1000, { log: false });
-    cy.get("button").contains("Show indicators").click();
+    cy.get('[aria-controls="indicator-group-table-broadband"]').click();
     cy.get("td").contains("2020");
   });
 });

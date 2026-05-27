@@ -3,7 +3,16 @@
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="currentChartGroup.description" />
   </chart-group-nav>
-
+  <div class="ecl-form-group ecl-u-align-items-center ecl-u-mb-8xl">
+    <input
+      v-model="searchQuery"
+      autofocus
+      type="search"
+      class="ecl-text-input ecl-text-input--m ecl-u-width-100"
+      placeholder="Search for indicators"
+      aria-label="Search"
+    />
+  </div>
   <ecl-spinner v-if="!loaded" size="large" class="ecl-u-ma-2xl" centered />
   <div v-else-if="indicatorGroupsFiltered.length > 0">
     <div
@@ -28,6 +37,7 @@ import IndicatorTable from "@/components/IndicatorTable.vue";
 import { api } from "@/lib/api";
 import { groupByUnique, scrollToHash } from "@/lib/utils.js";
 import { useChartGroupStore } from "@/stores/chartGroupStore";
+import { useRouteQuery } from "@vueuse/router";
 import { mapState } from "pinia";
 
 export default {
@@ -43,6 +53,7 @@ export default {
       loaded: false,
       indicatorGroups: [],
       indicators: [],
+      searchQuery: useRouteQuery("q"),
     };
   },
   computed: {
@@ -51,13 +62,24 @@ export default {
       return groupByUnique(this.indicators);
     },
     indicatorGroupsFiltered() {
+      const searchValue = this.searchQuery?.toLocaleLowerCase() ?? "";
       return this.indicatorGroups
         .map((group) => {
           return {
             ...group,
             indicators: group.members
               .map((indicatorCode) => this.indicatorsByCode.get(indicatorCode))
-              .filter((i) => !!i),
+              .filter((i) => !!i)
+              .filter(
+                (i) =>
+                  searchValue === "" ||
+                  group.code.toLocaleLowerCase().includes(searchValue) ||
+                  group.label.toLocaleLowerCase().includes(searchValue) ||
+                  group.alt_label.toLocaleLowerCase().includes(searchValue) ||
+                  i.code.toLocaleLowerCase().includes(searchValue) ||
+                  i.label.toLocaleLowerCase().includes(searchValue) ||
+                  i.alt_label.toLocaleLowerCase().includes(searchValue),
+              ),
           };
         })
         .filter((group) => group.indicators.length > 0);

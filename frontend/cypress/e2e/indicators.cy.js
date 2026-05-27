@@ -3,7 +3,9 @@ import describeResponsive from "../support/describeResponsive";
 describeResponsive("Check Indicators Page", () => {
   it("Check links to chart", () => {
     cy.visit("/datasets/key-indicators/indicators");
-    cy.get("a").contains("Households having a broadband connection").click();
+    cy.get("#indicator-h_broad a")
+      .contains("Households having a broadband connection")
+      .click();
     cy.checkChartInstance({
       filters: {
         period: "2013",
@@ -19,7 +21,9 @@ describeResponsive("Check Indicators Page", () => {
   });
   it("Check links to chart period first", () => {
     cy.visit("/datasets/test-filter-order/indicators");
-    cy.get("a").contains("Households having a broadband connection").click();
+    cy.get("#indicator-h_broad a")
+      .contains("Households having a broadband connection")
+      .click();
     cy.checkChartInstance({
       filters: {
         period: "2013",
@@ -42,30 +46,32 @@ describeResponsive("Check Indicators Page", () => {
       .contains("Consult the list of indicators, their definition and sources")
       .click();
 
+    cy.waitForNetworkIdle(1000, { log: false });
+
     // Check exporting data for an indicator group
-    // cy.get("thead a")
-    //   .contains("data")
-    //   .parent("a")
-    //   .downloadLink()
-    //   .should("contain", "period,country,indicator,breakdown,unit,value,flags");
-    //
-    // // Check exporting values for an indicator group
-    // for (const label of [
-    //   "indicators",
-    //   "data sources",
-    //   "countries",
-    //   "breakdowns",
-    //   "units",
-    // ]) {
-    //   cy.get("thead a")
-    //     .contains(label)
-    //     .parent("a")
-    //     .downloadLink()
-    //     .should("contain", "code,label,alt_label,definition");
-    // }
+    cy.get("h3 + div a")
+      .contains("data")
+      .parent("a")
+      .downloadLink()
+      .should("contain", "period,country,indicator,breakdown,unit,value,flags");
+
+    // Check exporting values for an indicator group
+    for (const label of [
+      "indicators",
+      "data sources",
+      "countries",
+      "breakdowns",
+      "units",
+    ]) {
+      cy.get("h3 + div a")
+        .contains(label)
+        .parent("a")
+        .downloadLink()
+        .should("contain", "code,label,alt_label,definition");
+    }
 
     // Check exporting values for an indicator
-    cy.get("button").contains("Show indicators").click();
+    cy.get('[aria-controls="indicator-group-table-desi_ind"]').click();
     for (const label of ["countries", "breakdowns", "units"]) {
       cy.get("tbody a")
         .contains(label)
@@ -80,7 +86,7 @@ describeResponsive("Check Indicators Page", () => {
     cy.get("a")
       .contains("Consult the list of indicators, their definition and sources")
       .click();
-    cy.get("button").contains("Show indicators").click();
+    cy.get('[aria-controls="indicator-group-table-broadband"]').click();
 
     cy.contains("Broadband take-up and coverage");
     cy.contains("h_broad");
