@@ -45,33 +45,35 @@
         {{ indicator.time_coverage }}
       </ecl-td>
       <ecl-td header="Export links">
-        <ecl-link
-          :to="`${apiURL}/indicators/${indicator.code}/facts/`"
-          no-visited
-          download-class
-          label="data"
-        />
-        <span>,&nbsp;</span>
-        <ecl-link
-          :to="`${apiURL}/countries/?indicator=${indicator.code}&format=csv`"
-          no-visited
-          download-class
-          label="countries"
-        />
-        <span>,&nbsp;</span>
-        <ecl-link
-          :to="`${apiURL}/breakdowns/?indicator=${indicator.code}&format=csv`"
-          no-visited
-          download-class
-          label="breakdowns"
-        />
-        <span>,&nbsp;</span>
-        <ecl-link
-          :to="`${apiURL}/units/?indicator=${indicator.code}&format=csv`"
-          no-visited
-          download-class
-          label="units"
-        />
+        <div>
+          <ecl-link
+            :to="`${apiURL}/indicators/${indicator.code}/facts/`"
+            no-visited
+            download-class
+            label="data"
+          />
+          <span>,&nbsp;</span>
+          <ecl-link
+            :to="`${apiURL}/countries/?indicator=${indicator.code}&format=csv`"
+            no-visited
+            download-class
+            label="countries"
+          />
+          <span>,&nbsp;</span>
+          <ecl-link
+            :to="`${apiURL}/breakdowns/?indicator=${indicator.code}&format=csv`"
+            no-visited
+            download-class
+            label="breakdowns"
+          />
+          <span>,&nbsp;</span>
+          <ecl-link
+            :to="`${apiURL}/units/?indicator=${indicator.code}&format=csv`"
+            no-visited
+            download-class
+            label="units"
+          />
+        </div>
       </ecl-td>
     </ecl-tr>
   </ecl-tbody>
