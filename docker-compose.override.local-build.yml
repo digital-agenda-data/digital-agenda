@@ -3,11 +3,15 @@ services:
     build:
       context: .
       dockerfile: docker/app.docker
+      args:
+        UV_ARGS: "--group dev"
 
   worker:
     build:
       context: .
       dockerfile: docker/app.docker
+      args:
+        UV_ARGS: "--group dev"
 
   nginx:
     build:

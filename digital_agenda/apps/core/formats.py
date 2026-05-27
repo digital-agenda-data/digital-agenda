@@ -62,7 +62,7 @@ class DimensionCache:
         else:
             try:
                 obj = self.cache[code] = self.model.objects.get(code=code)
-            except (self.model.DoesNotExist, ValueError):
+            except self.model.DoesNotExist, ValueError:
                 obj = None
 
         return obj
@@ -103,7 +103,7 @@ class RowReader:
             try:
                 cell = self.row[index]
                 assert not empty_cell(cell)
-            except (IndexError, AssertionError):
+            except IndexError, AssertionError:
                 result[field] = None
                 continue
 
@@ -123,7 +123,7 @@ class RowReader:
                 # displaying 5.6621.
                 # Round to a sensible precision to (hopefully) get rid of the issue.
                 value = float(round(decimal.Decimal(value), 6))
-            except (TypeError, ValueError, ArithmeticError):
+            except TypeError, ValueError, ArithmeticError:
                 self.add_error(
                     self.header_columns["value"],
                     f"Invalid 'value', expected number but got {value!r} instead",

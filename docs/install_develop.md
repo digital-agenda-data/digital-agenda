@@ -8,6 +8,7 @@ This document describes installation steps required to install locally for devel
 
 - Install nodejs (>=22)
 - Install python and python-dev (>=3.14)
+- Install uv (>=0.11.10)
 - Install and start postgresql (>=14)
 - Install and start redis (>=7)
 - Install required packages for building dependencies:
@@ -18,7 +19,6 @@ This document describes installation steps required to install locally for devel
   ```shell
   sudo -u postgres createuser -Pds da && sudo -u postgres createdb da
   ``` 
-- _(Recommended)_ create and activate a python virtualenv
 - Clone this repository
 
 ## Installing Backend for development
@@ -29,8 +29,12 @@ This document describes installation steps required to install locally for devel
   ```
 - Install dependencies
   ```shell
-  pip install -c requirements/constraints.txt -r requirements/dev.txt 
+  uv sync
   ```
+- Activate virtualenv (or run all commands with `uv run`)
+  ```shell
+  source .venv/bin/activate
+  ```  
 - Run migrations
   ```shell
   ./manage.py migrate
@@ -76,7 +80,7 @@ This document describes installation steps required to install locally for devel
 - Update the code with the latest version
 - Update third-party packages required at runtime.
   ```shell
-  pip install -c requirements/constraints.txt -r requirements/dev.txt
+  uv sync
   ```
 - Update frontend dependencies
   ```shell

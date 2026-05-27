@@ -10,12 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
-        with:
-          python-version: 3.14
-      - name: "Install black"
+      - uses: astral-sh/setup-uv@v8.1.0
+      - name: "Install dependencies"
         run: |
-          pip install -c requirements/constraints.txt black
+          uv sync
       - name: "Lint backend code"
         run: |
-          black --extend-exclude=migrations --check digital_agenda/
+          uv run black --extend-exclude=migrations --check digital_agenda/

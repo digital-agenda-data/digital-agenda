@@ -29,7 +29,7 @@ class DigitalAgendaAdminSite(AdminSite):
                     secure=settings.HAS_HTTPS,
                     samesite="strict",
                 )
-            except (zoneinfo.ZoneInfoNotFoundError, KeyError):
+            except zoneinfo.ZoneInfoNotFoundError, KeyError:
                 pass
             return response
 

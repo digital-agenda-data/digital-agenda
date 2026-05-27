@@ -15,7 +15,8 @@ def cron(cron_string, *args, **kwargs):
     """
 
     def decorator(function):
-        kwargs_copy = {"id": f"{function.__module__}.{function.__name__}", **kwargs}
+        unique_id = f"{function.__module__}.{function.__name__}".replace(".", "-")
+        kwargs_copy = {"id": unique_id, **kwargs}
         scheduler = get_scheduler()
         with warnings.catch_warnings():
             # Ignore misleading warning, see upstream issue for details:
