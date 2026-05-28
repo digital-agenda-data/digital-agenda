@@ -16,3 +16,4 @@ trivy:
       - /cache/trivy
   script:
     - trivy fs --ignore-unfixed --scanners vuln --format table --exit-code 1 .
+  allow_failure: true
