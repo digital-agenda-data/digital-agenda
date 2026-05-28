@@ -8,5 +8,11 @@ trivy:
   image:
     name: aquasec/trivy:latest
     entrypoint: [""]
+  variables:
+    TRIVY_CACHE_DIR: /cache/trivy
+  cache:
+    key: trivy-db
+    paths:
+      - /cache/trivy
   script:
     - trivy fs --ignore-unfixed --scanners vuln --format table --exit-code 1 .
