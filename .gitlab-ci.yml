@@ -15,7 +15,7 @@ include:
 trivy:
   interruptible: true
   image:
-    name: aquasec/trivy:latest
+    name: registry.sdlc.webcloud.ec.europa.eu/desi/desi/trivy:0.70.0
     entrypoint: [""]
   variables:
     TRIVY_CACHE_DIR: /cache/trivy
@@ -30,10 +30,10 @@ trivy:
 
 build-image-latest:
   interruptible: true
-  image: docker:29.5.2-cli
+  image: registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-cli
   stage: build
   services:
-    - docker:29.5.2-dind
+    - registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-dind
   rules:
     # Run on pushes to the "main" branch
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
