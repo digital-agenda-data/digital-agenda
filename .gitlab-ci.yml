@@ -9,11 +9,7 @@ trivy-sbom:
     name: aquasec/trivy:latest
     entrypoint: [""]
   script:
-    - trivy fs \
-        --scanners vuln \
-        --format cyclonedx \
-        -o gl-sbom.cdx.json \
-        .
+    - trivy fs --scanners vuln --format cyclonedx -o gl-sbom.cdx.json .
   artifacts:
     reports:
       cyclonedx:
