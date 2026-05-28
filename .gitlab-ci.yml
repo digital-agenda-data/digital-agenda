@@ -33,7 +33,8 @@ build-image-latest:
   image: registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-cli
   stage: build
   services:
-    - registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-dind
+    - name: registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-dind
+      alias: docker
   rules:
     # Run on pushes to the "main" branch
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
