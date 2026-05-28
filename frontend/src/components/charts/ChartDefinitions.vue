@@ -31,9 +31,8 @@
           :value="dataSourceByCode.get(data_source)?.definition"
         />
         <dimension-prop
-          v-for="(metadata, index) in item.metadata"
-          :key="`meta-${index}`"
-          :value="metadata.description"
+          v-if="item.metadata"
+          :value="item.metadata.description"
         />
         <dimension-prop
           :value="dataSourceByCode.get(data_source)?.note"
@@ -145,7 +144,7 @@ export default {
   },
   methods: {
     getMetadata(item, filterStore) {
-      if (!item?.metadata?.length) return [];
+      if (!item?.metadata?.length) return null;
 
       const keys = ["period", "breakdown", "country", "unit"];
 
@@ -156,7 +155,7 @@ export default {
         ]),
       );
 
-      return item.metadata.filter((metadata) =>
+      return item.metadata.find((metadata) =>
         keys.every((key) => {
           const value = metadata[key];
           const filters = currentFilters[key];

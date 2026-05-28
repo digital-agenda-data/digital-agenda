@@ -581,8 +581,14 @@ class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
 
 
 @admin.register(IndicatorMetadata)
-class IndicatorMetadataAdmin(admin.ModelAdmin):
-    list_display = ["indicator", "period", "breakdown", "country", "unit"]
+class IndicatorMetadataAdmin(SortableAdminMixin, admin.ModelAdmin):
+    list_display = [
+        "indicator",
+        "period",
+        "breakdown",
+        "country",
+        "unit",
+    ]
     search_fields = [
         "indicator__code",
         "indicator__label",
@@ -600,3 +606,8 @@ class IndicatorMetadataAdmin(admin.ModelAdmin):
         AutocompleteFilterFactory("unit", "unit"),
     ]
     autocomplete_fields = ["indicator", "period", "breakdown", "country", "unit"]
+
+    def get_fields(self, request, obj=None):
+        fields = super().get_fields(request, obj=obj)
+        fields.append("display_order")
+        return fields

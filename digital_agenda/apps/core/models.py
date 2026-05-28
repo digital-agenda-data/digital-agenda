@@ -542,7 +542,7 @@ class CountryProfileIndicator(DisplayOrderModel):
             )
 
 
-class IndicatorMetadata(TimestampedModel):
+class IndicatorMetadata(DisplayOrderModel, TimestampedModel):
     indicator = models.ForeignKey(
         "core.Indicator", on_delete=models.CASCADE, related_name="metadata"
     )
@@ -559,3 +559,6 @@ class IndicatorMetadata(TimestampedModel):
         "core.Unit", on_delete=models.CASCADE, blank=True, null=True
     )
     description = CleanCKEditor5Field(blank=True)
+
+    class Meta:
+        ordering = ["display_order"]
