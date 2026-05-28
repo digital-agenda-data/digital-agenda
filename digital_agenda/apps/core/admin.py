@@ -599,6 +599,9 @@ class IndicatorMetadataAdmin(SortableAdminMixin, admin.ModelAdmin):
         "description",
     ]
     list_filter = [
+        "indicator__groups__chartgroup",
+        AutocompleteFilterFactory("data source", "indicator__data_sources"),
+        "indicator__groups",
         AutocompleteFilterFactory("indicator", "indicator"),
         AutocompleteFilterFactory("breakdown", "breakdown"),
         AutocompleteFilterFactory("country", "country"),
