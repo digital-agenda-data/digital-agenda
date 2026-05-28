@@ -4,13 +4,9 @@ include:
   - template: Jobs/Secret-Detection.gitlab-ci.yml
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
 
-trivy-sbom:
+trivy:
   image:
     name: aquasec/trivy:latest
     entrypoint: [""]
   script:
-    - trivy fs --scanners vuln --format cyclonedx -o gl-sbom.cdx.json .
-  artifacts:
-    reports:
-      cyclonedx:
-        - gl-sbom.cdx.json
+    - trivy fs --ignore-unfixed --scanners vuln --format table --exit-code 1 .
