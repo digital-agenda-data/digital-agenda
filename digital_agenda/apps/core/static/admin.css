@@ -188,3 +188,11 @@ input[type=checkbox] {
 .import-preview td ins {
   color: black !important;
 }
+
+/* CKEditor will sometimes put the dropdown up, so ensure the container has
+ its overflow visible so it actually shows.
+ */
+.form-row.field-definition,
+.form-row.field-description {
+  overflow: visible !important;
+}
