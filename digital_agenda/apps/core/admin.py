@@ -582,6 +582,7 @@ class CountryProfileIndicatorAdmin(SortableAdminMixin, admin.ModelAdmin):
 
 @admin.register(IndicatorMetadata)
 class IndicatorMetadataAdmin(SortableAdminMixin, admin.ModelAdmin):
+    save_as = True
     list_display = [
         "indicator",
         "period",
