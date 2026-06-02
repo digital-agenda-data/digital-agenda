@@ -2,10 +2,6 @@ workflow:
   auto_cancel:
     on_new_commit: interruptible
 
-variables:
-  DOCKER_HOST: tcp://docker:2375
-  DOCKER_TLS_CERTDIR: ""
-
 include:
   - template: Jobs/SAST.gitlab-ci.yml
   - template: Jobs/SAST-IaC.gitlab-ci.yml
@@ -39,9 +35,9 @@ build-image-latest:
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
       --destination "${CI_REGISTRY_IMAGE}/app:latest"
-      --registry-mirror "https://mirror.gcr.io/"
+      --registry-mirror "mirror.gcr.io"
     - /kaniko/executor
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
       --destination "${CI_REGISTRY_IMAGE}/nginx:latest"
-      --registry-mirror "https://mirror.gcr.io/"
+      --registry-mirror "mirror.gcr.io/"
