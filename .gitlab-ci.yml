@@ -56,3 +56,5 @@ build-image-latest:
         --local dockerfile=docker \
         --opt filename=nginx.docker \
         --output type=image,name=$CI_REGISTRY_IMAGE/nginx:latest,push=true
+  after_script:
+    - cat /tmp/buildkitd.log
