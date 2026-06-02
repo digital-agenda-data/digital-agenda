@@ -35,26 +35,21 @@ build-image-latest:
     name: registry.sdlc.webcloud.ec.europa.eu/desi/desi/buildkit:rootless
     entrypoint: [""]
   variables:
-    HOME: /tmp
+    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
   before_script:
     - mkdir -p ~/.docker
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > ~/.docker/config.json
   script:
-    - buildkitd --oci-worker-no-process-sandbox --addr unix:///tmp/buildkitd.sock > /tmp/buildkitd.log 2>&1 &
-    - sleep 3
     - |
-      buildctl --addr unix:///tmp/buildkitd.sock build \
+      buildctl-daemonless.sh build \
         --frontend dockerfile.v0 \
         --local context=. \
         --local dockerfile=docker \
         --opt filename=app.docker \
         --output type=image,name=$CI_REGISTRY_IMAGE/app:latest,push=true
-    - |
-      buildctl --addr unix:///tmp/buildkitd.sock build \
+      buildctl-daemonless.sh build \
         --frontend dockerfile.v0 \
         --local context=. \
         --local dockerfile=docker \
         --opt filename=nginx.docker \
         --output type=image,name=$CI_REGISTRY_IMAGE/nginx:latest,push=true
-  after_script:
-    - cat /tmp/buildkitd.log
