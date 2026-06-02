@@ -32,24 +32,14 @@ build-image-latest:
   interruptible: true
   stage: build
   image:
-    name: registry.sdlc.webcloud.ec.europa.eu/desi/desi/buildkit:rootless
+    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
     entrypoint: [""]
-  variables:
-    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
-  before_script:
-    - mkdir -p ~/.docker
-    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > ~/.docker/config.json
   script:
-    - |
-      buildctl-daemonless.sh build \
-        --frontend dockerfile.v0 \
-        --local context=. \
-        --local dockerfile=docker \
-        --opt filename=app.docker \
-        --output type=image,name=$CI_REGISTRY_IMAGE/app:latest,push=true
-      buildctl-daemonless.sh build \
-        --frontend dockerfile.v0 \
-        --local context=. \
-        --local dockerfile=docker \
-        --opt filename=nginx.docker \
-        --output type=image,name=$CI_REGISTRY_IMAGE/nginx:latest,push=true
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
+      --destination "${CI_REGISTRY_IMAGE}/app:latest"
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
+      --destination "${CI_REGISTRY_IMAGE}/nginx:latest"
