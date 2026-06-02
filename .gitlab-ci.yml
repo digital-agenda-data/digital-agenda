@@ -39,7 +39,9 @@ build-image-latest:
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
       --destination "${CI_REGISTRY_IMAGE}/app:latest"
+      --registry-mirror "${CI_DEPENDENCY_PROXY_SERVER}"
     - /kaniko/executor
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
       --destination "${CI_REGISTRY_IMAGE}/nginx:latest"
+      --registry-mirror "${CI_DEPENDENCY_PROXY_SERVER}"
