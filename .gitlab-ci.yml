@@ -46,11 +46,13 @@ build-image-latest:
       buildctl --addr unix:///tmp/buildkitd.sock build \
         --frontend dockerfile.v0 \
         --local context=. \
-        --local dockerfile=docker/app.docker \
+        --local dockerfile=docker \
+        --opt filename=app.docker \
         --output type=image,name=$CI_REGISTRY_IMAGE/app:latest,push=true
     - |
       buildctl --addr unix:///tmp/buildkitd.sock build \
         --frontend dockerfile.v0 \
         --local context=. \
-        --local dockerfile=docker/nginx.docker \
+        --local dockerfile=docker \
+        --opt filename=nginx.docker \
         --output type=image,name=$CI_REGISTRY_IMAGE/nginx:latest,push=true
