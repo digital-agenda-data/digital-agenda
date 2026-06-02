@@ -30,20 +30,24 @@ trivy:
 
 build-image-latest:
   interruptible: true
-  image: registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-cli
   stage: build
-  services:
-    - name: registry.sdlc.webcloud.ec.europa.eu/desi/desi/docker:29.5.2-dind
-      alias: docker
-  rules:
-    # Run on pushes to the "main" branch
-    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
-    # Run on manual triggers for the "main" branch.
-    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_BRANCH == "main"'
-      when: manual
+  image:
+    name: registry.sdlc.webcloud.ec.europa.eu/desi/desi/buildkit:rootless
+    entrypoint: [""]
+  variables:
+    BUILDKITD_FLAGS: --oci-worker-no-process-sandbox
+  before_script:
+    - mkdir -p ~/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > ~/.docker/config.json
   script:
-    - docker login --username gitlab-ci-token --password $CI_JOB_TOKEN $CI_REGISTRY
-    - docker build --tag $CI_REGISTRY_IMAGE/app:latest --file docker/app.docker .
-    - docker build --tag $CI_REGISTRY_IMAGE/nginx:latest --file docker/nginx.docker .
-    - docker push $CI_REGISTRY_IMAGE/app:latest
-    - docker push $CI_REGISTRY_IMAGE/nginx:latest
+    - |
+      buildctl-daemonless.sh build \
+        --frontend dockerfile.v0 \
+        --local context=. \
+        --local dockerfile=docker/app.docker \
+        --output type=image,name=$CI_REGISTRY_IMAGE/app:latest,push=true
+      buildctl-daemonless.sh build \
+        --frontend dockerfile.v0 \
+        --local context=. \
+        --local dockerfile=docker/nginx.docker \
+        --output type=image,name=$CI_REGISTRY_IMAGE/nginx:latest,push=true
