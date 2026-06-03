@@ -160,7 +160,7 @@ export default {
           const value = metadata[key];
           const filters = currentFilters[key];
 
-          return !value || filters.size === 0 || filters.has(value);
+          return !value || filters.has(value);
         }),
       );
     },
