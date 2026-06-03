@@ -1,0 +1,33 @@
+spec:
+  inputs:
+    tag:
+      default: 'latest'
+      description: 'Image tag'
+
+
+build-app:
+  interruptible: true
+  stage: test
+  image:
+    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
+    entrypoint: [""]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
+      --destination "${CI_REGISTRY_IMAGE}/app:$[[ inputs.tag ]]"
+      --registry-mirror "mirror.gcr.io"
+
+
+build-nginx:
+  interruptible: true
+  stage: test
+  image:
+    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
+    entrypoint: [ "" ]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
+      --destination "${CI_REGISTRY_IMAGE}/nginx:$[[ inputs.tag ]]"
+      --registry-mirror "mirror.gcr.io/"

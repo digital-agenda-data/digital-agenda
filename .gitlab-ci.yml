@@ -4,6 +4,7 @@ workflow:
 
 stages:
   - test
+  - deploy-tag
 
 include:
   - template: Jobs/SAST.gitlab-ci.yml
@@ -28,35 +29,7 @@ frontend-lint:
     - npm run lint:check
 
 
-build-app-latest:
-  interruptible: true
-  stage: test
-  image:
-    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
-    entrypoint: [""]
-  script:
-    - /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
-      --destination "${CI_REGISTRY_IMAGE}/app:latest"
-      --registry-mirror "mirror.gcr.io"
-
-
-build-nginx-latest:
-  interruptible: true
-  stage: test
-  image:
-    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
-    entrypoint: [ "" ]
-  script:
-    - /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
-      --destination "${CI_REGISTRY_IMAGE}/nginx:latest"
-      --registry-mirror "mirror.gcr.io/"
-
-
-trivy:
+dependency-scan:
   interruptible: true
   stage: test
   image:
@@ -71,3 +44,30 @@ trivy:
   script:
     - trivy fs --ignore-unfixed --scanners vuln --format table --exit-code 1 .
   allow_failure: true
+
+
+build-and-deploy-latest:
+  interruptible: true
+  stage: test
+  rules:
+    # Run on pushes to the "main" branch
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
+  trigger:
+    strategy: mirror
+    include:
+      - local: ".gitlab/deploy.yml"
+
+
+build-and-deploy-tag:
+  interruptible: true
+  stage: deploy-tag
+  rules:
+    # Run on manual triggers on any tag.
+    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_TAG'
+      when: manual
+  trigger:
+    strategy: mirror
+    include:
+      - local: ".gitlab/deploy.yml"
+        inputs:
+          tag: $CI_COMMIT_TAG
