@@ -115,7 +115,7 @@ export default {
         xAxis: {
           lineWidth: 1,
           gridLineWidth: 1,
-          // plotLines: this.getMidPlotLine("X"),
+          plotLines: this.getEUPlotLine("X"),
           title: {
             text: this.joinStrings([
               getIndicatorLabel(this.filterStore.indicatorX, "label"),
@@ -132,7 +132,7 @@ export default {
         yAxis: {
           lineWidth: 1,
           gridLineWidth: 1,
-          // plotLines: this.getMidPlotLine("Y"),
+          plotLines: this.getEUPlotLine("Y"),
           title: {
             text: this.joinStrings([
               getIndicatorLabel(this.filterStore.indicatorY, "label"),
@@ -151,21 +151,20 @@ export default {
   },
   methods: {
     /**
-     * Get the middle plot line for this axis
+     * Get the EU plot line for this axis
      *
      * @return {[{color: string, value: number}]}
      */
-    getMidPlotLine(axis) {
-      const values = this.apiData
-        .filter((item) => item.axis === axis)
-        .map((item) => item.value);
-      const min = Math.min(...values);
-      const max = Math.max(...values);
+    getEUPlotLine(axis) {
+      const euValue = this.apiData.find(
+        (item) => item.country === "EU" && item.axis === axis,
+      );
+      if (!euValue) return [];
 
       return [
         {
           color: "#000000",
-          value: (max - min) / 2 + min,
+          value: euValue.value,
         },
       ];
     },
