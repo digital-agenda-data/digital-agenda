@@ -3,11 +3,14 @@ spec:
     tag:
       default: 'latest'
       description: 'Image tag'
+---
 
+stages:
+  - build
 
 build-app:
   interruptible: true
-  stage: test
+  stage: build
   image:
     name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
     entrypoint: [""]
@@ -21,7 +24,7 @@ build-app:
 
 build-nginx:
   interruptible: true
-  stage: test
+  stage: build
   image:
     name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
     entrypoint: [ "" ]
