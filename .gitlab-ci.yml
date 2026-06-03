@@ -2,16 +2,65 @@ workflow:
   auto_cancel:
     on_new_commit: interruptible
 
+stages:
+  - test
+
 include:
   - template: Jobs/SAST.gitlab-ci.yml
   - template: Jobs/SAST-IaC.gitlab-ci.yml
   - template: Jobs/Secret-Detection.gitlab-ci.yml
-  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+
+backend-lint:
+  stage: test
+  image: ghcr.io/astral-sh/uv:python3.14-alpine
+  script:
+    - uv sync
+    - uv run ruff check
+    - uv run ruff format --check
+
+
+frontend-lint:
+  stage: test
+  image: mirror.gcr.io/library/node:24
+  script:
+    - cd frontend
+    - npm ci
+    - npm run lint:check
+
+
+build-app-latest:
+  interruptible: true
+  stage: test
+  image:
+    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
+    entrypoint: [""]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
+      --destination "${CI_REGISTRY_IMAGE}/app:latest"
+      --registry-mirror "mirror.gcr.io"
+
+
+build-nginx-latest:
+  interruptible: true
+  stage: test
+  image:
+    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
+    entrypoint: [ "" ]
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
+      --destination "${CI_REGISTRY_IMAGE}/nginx:latest"
+      --registry-mirror "mirror.gcr.io/"
+
 
 trivy:
   interruptible: true
+  stage: test
   image:
-    name: mirror.gcr.io/aquasec/trivy:latest
+    name: ghcr.io/aquasecurity/trivy:latest
     entrypoint: [""]
   variables:
     TRIVY_CACHE_DIR: /cache/trivy
@@ -22,22 +71,3 @@ trivy:
   script:
     - trivy fs --ignore-unfixed --scanners vuln --format table --exit-code 1 .
   allow_failure: true
-
-
-build-image-latest:
-  interruptible: true
-  stage: build
-  image:
-    name: registry.gitlab.com/gitlab-ci-utils/container-images/kaniko:debug
-    entrypoint: [""]
-  script:
-    - /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/docker/app.docker"
-      --destination "${CI_REGISTRY_IMAGE}/app:latest"
-      --registry-mirror "mirror.gcr.io"
-    - /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/docker/nginx.docker"
-      --destination "${CI_REGISTRY_IMAGE}/nginx:latest"
-      --registry-mirror "mirror.gcr.io/"
