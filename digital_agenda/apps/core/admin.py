@@ -2,7 +2,7 @@ import contextlib
 import json
 
 from admin_auto_filters.filters import AutocompleteFilterFactory
-from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
+from adminsortable2.admin import SortableInlineAdminMixin
 from django import forms
 from django.conf import settings
 from django.contrib import admin, messages
@@ -25,7 +25,7 @@ from digital_agenda.apps.core.resources import (
     PeriodResource,
     UnitResource,
 )
-from digital_agenda.common.admin import HasFactsAdminMixIn
+from digital_agenda.common.admin import HasFactsAdminMixIn, SortableAdminMixin
 
 from .models import (
     Breakdown,

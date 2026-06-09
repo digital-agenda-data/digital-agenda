@@ -1,5 +1,5 @@
 from admin_auto_filters.filters import AutocompleteFilterFactory
-from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
+from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin, messages
 from django.db import connection
 from django.http import HttpResponseRedirect
@@ -21,7 +21,7 @@ from digital_agenda.apps.charts.models import (
 )
 from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Indicator, Period
-from digital_agenda.common.admin import HasChangesAdminMixin
+from digital_agenda.common.admin import HasChangesAdminMixin, SortableAdminMixin
 
 
 class ChartFilterOrderInline(SortableInlineAdminMixin, admin.StackedInline):

@@ -1,7 +1,9 @@
+from adminsortable2.admin import SortableAdminMixin as DjangoSortableAdminMixin
 from django.contrib import admin
 from django.contrib.admin import SimpleListFilter
 from django.db.models import Exists, ManyToManyField, OuterRef
 
+from digital_agenda.apps.core.cache import clear_all_caches
 from digital_agenda.apps.core.models import Fact
 
 
@@ -95,3 +97,12 @@ class HasFactsAdminMixIn:
     @admin.display(description="Has Facts", ordering="has_facts", boolean=True)
     def has_facts(self, obj):
         return obj.has_facts
+
+
+class SortableAdminMixin(DjangoSortableAdminMixin):
+    def update_order(self, request):
+        # This uses a bulk_update which doesn't trigger the signal
+        # to clear caches, so clear them manually.
+        response = super().update_order(request)
+        clear_all_caches()
+        return response
