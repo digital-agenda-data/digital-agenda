@@ -13,6 +13,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 from health_check.views import HealthCheckView
+from redis.asyncio import Redis as RedisClient
 
 from digital_agenda.apps.accounts import views as accounts_views
 from digital_agenda.apps.shortner.views import ChartRedirectView
@@ -49,7 +50,14 @@ urlpatterns = [
                 "health_check.Mail",
                 "health_check.Storage",
                 # 3rd party checks
-                "health_check.contrib.redis.Redis",
+                (
+                    "health_check.contrib.redis.Redis",
+                    {
+                        "client_factory": lambda: RedisClient.from_url(
+                            settings.REDIS_LOCATION
+                        )
+                    },
+                ),
             ]
         ),
     ),
