@@ -46,24 +46,29 @@ export default defineComponent({
       logoURL,
       socialMediaLinks: [
         {
-          link: "https://www.facebook.com/EuropeanCommission",
-          label: "Facebook",
-          icon: "networks--facebook",
-        },
-        {
-          link: "https://www.instagram.com/europeancommission",
-          label: "Instagram",
-          icon: "networks--instagram",
-        },
-        {
-          link: "https://x.com/EU_Commission",
-          label: "X",
-          icon: "networks--x",
+          link: "https://ec.social-network.europa.eu/@EUCommission",
+          label: "Mastodon",
+          icon: "networks--mastodon",
         },
         {
           link: "https://www.linkedin.com/company/european-commission",
           label: "Linkedin",
           icon: "networks--linkedin",
+        },
+        {
+          link: "https://bsky.app/profile/ec.europa.eu",
+          label: "BlueSky",
+          icon: "networks--bluesky",
+        },
+        {
+          link: "https://www.facebook.com/EuropeanCommission",
+          label: "Facebook",
+          icon: "networks--facebook",
+        },
+        {
+          link: "https://www.youtube.com/user/eutube",
+          label: "Youtube",
+          icon: "networks--youtube",
         },
         {
           link: "https://european-union.europa.eu/contact-eu/social-media-channels_en",

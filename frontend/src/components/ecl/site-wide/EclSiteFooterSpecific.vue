@@ -9,6 +9,7 @@
           class="ecl-site-footer__title-link"
           variant=""
           inverted
+          icon-size="xs"
         />
       </div>
       <div class="ecl-site-footer__description">
@@ -24,10 +25,6 @@
     </div>
     <div class="ecl-site-footer__section ecl-site-footer__section--links">
       <div class="ecl-site-footer__row">
-        <div class="ecl-site-footer__section ecl-site-footer__section--contact">
-          <div class="ecl-site-footer__title">Contact us</div>
-          <ecl-site-footer-list :items="contactUsLinks" />
-        </div>
         <div class="ecl-site-footer__section ecl-site-footer__section--about">
           <div class="ecl-site-footer__title">About us</div>
           <ecl-site-footer-list :items="aboutUsLinks" />
@@ -50,14 +47,9 @@ export default defineComponent({
     return {
       socialMediaLinks: [
         {
-          link: "https://www.facebook.com/DigitalEU",
-          label: "Digital EU on Facebook",
-          icon: "networks--facebook",
-        },
-        {
-          link: "https://www.instagram.com/DigitalEU/",
-          label: "Digital EU on Instagram",
-          icon: "networks--instagram",
+          link: "https://ec.social-network.europa.eu/@digitaleu",
+          label: "Digital EU on Mastodon",
+          icon: "networks--mastodon",
         },
         {
           link: "https://www.linkedin.com/showcase/digital-eu/",
@@ -65,20 +57,24 @@ export default defineComponent({
           icon: "networks--linkedin",
         },
         {
+          link: "https://www.facebook.com/DigitalEU",
+          label: "Digital EU on Facebook",
+          icon: "networks--facebook",
+        },
+        {
           link: "https://www.youtube.com/c/DigitalEU",
           label: "Digital EU on YouTube",
           icon: "networks--youtube",
         },
         {
+          link: "https://www.instagram.com/DigitalEU/",
+          label: "Digital EU on Instagram",
+          icon: "networks--instagram",
+        },
+        {
           link: "https://x.com/DigitalEU",
           label: "DigitalEU on X",
           icon: "networks--x",
-        },
-      ],
-      contactUsLinks: [
-        {
-          link: "https://digital-strategy.ec.europa.eu/en/write-us",
-          label: "Contact DG CONNECT",
         },
       ],
       aboutUsLinks: [

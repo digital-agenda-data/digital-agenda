@@ -3,6 +3,7 @@ import functools
 import io
 
 import openpyxl
+from django import forms
 from django.conf import settings
 from django.db.models import Exists, OuterRef
 from django.utils import timezone
@@ -60,6 +61,27 @@ EUROSTAT_FLAGS = {
 }
 
 
+class FactsForm(forms.Form):
+    def clean(self):
+        data = super().clean()
+        specified_filters = [
+            key
+            for key in [
+                "indicator_group",
+                "indicator",
+                "breakdown_group",
+                "breakdown",
+                "country",
+                "period",
+            ]
+            if data.get(key)
+        ]
+
+        if len(specified_filters) < 2:
+            raise forms.ValidationError("Specify at least two filters.")
+        return data
+
+
 class FactsFilter(filters.FilterSet):
     unit = filters.BaseInFilter(
         field_name="unit__code",
@@ -112,6 +134,7 @@ class FactsFilter(filters.FilterSet):
 
     class Meta:
         model = Fact
+        form = FactsForm
         fields = [
             "indicator_group",
             "indicator",

@@ -13,6 +13,7 @@
         :label="item.label"
         class="ecl-site-footer__link"
         :icon="item.icon"
+        icon-size="xs"
         inverted
       />
     </li>
