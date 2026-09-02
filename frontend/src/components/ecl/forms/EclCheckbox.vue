@@ -42,8 +42,12 @@
           <ecl-icon icon="check" size="xs" class="ecl-checkbox__icon" />
         </span>
         <span class="ecl-checkbox__text">{{ label }}</span>
-        <span v-if="required" class="ecl-form-label__required">(required)</span>
-        <span v-else class="ecl-form-label__optional">(optional)</span>
+        <template v-if="!hideRequiredLabel">
+          <span v-if="required" class="ecl-form-label__required">
+            (required)
+          </span>
+          <span v-else class="ecl-form-label__optional">(optional)</span>
+        </template>
       </label>
     </div>
     <div
@@ -105,6 +109,11 @@ export default {
       type: Boolean,
       required: false,
       default: null,
+    },
+    hideRequiredLabel: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   emits: ["update:modelValue"],

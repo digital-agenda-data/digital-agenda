@@ -41,6 +41,7 @@
               <ecl-checkbox
                 :label="`Select all (${itemsById.size})`"
                 :model-value="modelValueSet.size === itemsById.size"
+                hide-required-label
               />
             </span>
           </li>
@@ -54,6 +55,7 @@
             v-else-if="multiple"
             :label="option.text"
             :model-value="modelValueSet.has(option.id)"
+            hide-required-label
           />
           <template v-else>
             {{ option.text }}
