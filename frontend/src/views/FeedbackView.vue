@@ -13,6 +13,14 @@
       help-text="Provide your email address if you want to be contacted back"
       :errors="errors.email"
     />
+    <ecl-checkbox
+      v-if="email"
+      v-model="consent"
+      input-name="consent"
+      label="I agree that the European Commission may contact me using the email address I provided."
+      :errors="errors.consent"
+      :required="true"
+    />
     <ecl-text-area
       v-model="message"
       :required="true"
@@ -38,6 +46,7 @@
 import EclSpinner from "@/components/ecl/EclSpinner.vue";
 import CaptchaField from "@/components/CaptchaField.vue";
 import EclButton from "@/components/ecl/EclButton.vue";
+import EclCheckbox from "@/components/ecl/forms/EclCheckbox.vue";
 import EclTextArea from "@/components/ecl/forms/EclTextArea.vue";
 import EclTextField from "@/components/ecl/forms/EclTextField.vue";
 import { api } from "@/lib/api";
@@ -48,6 +57,7 @@ import { mapActions, mapState } from "pinia";
 export default {
   name: "FeedbackView",
   components: {
+    EclCheckbox,
     EclSpinner,
     CaptchaField,
     EclButton,
@@ -61,9 +71,11 @@ export default {
         email: [],
         message: [],
         captcha: [],
+        consent: [],
         error: "",
       },
       email: "",
+      consent: false,
       message: "",
       captcha: null,
     };
@@ -92,6 +104,7 @@ export default {
         ).href,
         email: this.email,
         message: this.message,
+        consent: this.consent,
         captcha: this.getCaptcha(),
       };
     },

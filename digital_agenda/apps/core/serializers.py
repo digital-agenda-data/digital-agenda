@@ -262,6 +262,7 @@ class CaptchaField(serializers.JSONField):
 
 class FeedbackSerializer(serializers.Serializer):
     url = serializers.URLField(write_only=True, required=True)
+    consent = serializers.BooleanField(write_only=True, required=True)
     email = serializers.EmailField(write_only=True, required=False, allow_blank=True)
     message = serializers.CharField(
         write_only=True, required=True, min_length=10, max_length=10_000
@@ -270,6 +271,14 @@ class FeedbackSerializer(serializers.Serializer):
 
     class Meta:
         fields = ["url", "email", "message", "captcha"]
+
+    def validate(self, attrs):
+        attrs = super().validate(attrs)
+        if attrs["email"] and not attrs["consent"]:
+            raise ValidationError(
+                {"consent": "Must provide consent if you enter an email address."}
+            )
+        return attrs
 
 
 class StaticPageSerializer(serializers.ModelSerializer):
