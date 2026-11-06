@@ -36,12 +36,14 @@
         </template>
 
         <template v-if="multiple" #beforeList>
-          <li class="multiselect__element" @click="toggleAll">
+          <li class="multiselect__element">
             <span class="multiselect__option">
               <ecl-checkbox
                 :label="`Select all (${itemsById.size})`"
                 :model-value="modelValueSet.size === itemsById.size"
                 hide-required-label
+                :input-name="`${inputName}_select_all_`"
+                @click.stop.prevent="toggleAll"
               />
             </span>
           </li>
@@ -56,6 +58,8 @@
             :label="option.text"
             :model-value="modelValueSet.has(option.id)"
             hide-required-label
+            :input-name="`${inputName}-${option.id}`"
+            @click.prevent
           />
           <template v-else>
             {{ option.text }}
