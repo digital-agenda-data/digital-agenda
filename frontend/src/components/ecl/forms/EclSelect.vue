@@ -29,6 +29,12 @@
         @open="onOpen"
         @close="onClose"
       >
+        <template #tag="{ option }">
+          <span class="multiselect__tag">
+            {{ option.text }}
+          </span>
+        </template>
+
         <template #limit>
           <strong class="multiselect__tag">
             {{ modelValueSet.size }} out of {{ itemsById.size }} selected
